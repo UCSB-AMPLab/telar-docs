@@ -1,0 +1,12 @@
+{% if page.last_modified_at %}
+<div class="page-last-modified">
+  {% if page.lang == "es" %}
+    <span class="last-modified-label">Última actualización:</span>
+  {% else %}
+    <span class="last-modified-label">Last updated:</span>
+  {% endif %}
+  <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">
+    {{ page.last_modified_at | date: "%B %d, %Y" }}
+  </time>
+</div>
+{% endif %}

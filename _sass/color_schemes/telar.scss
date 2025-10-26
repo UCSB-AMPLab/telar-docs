@@ -1,0 +1,56 @@
+// Telar Color Scheme - Ultra Minimal (Inspired by AMPL)
+// Maximum simplicity with generous whitespace
+
+// Primary Colors - almost monochrome
+$telar-heading: #1a1a1a;        // Nearly black for headings
+$telar-link: #2c3e50;           // Dark blue-gray for links
+$telar-accent: #4a5a6a;         // Single accent color
+
+// Body colors - pure and simple
+$body-background-color: #ffffff;
+$body-text-color: #333333;
+$body-heading-color: $telar-heading;
+
+// Links - simple dark color
+$link-color: $telar-link;
+$btn-primary-color: $telar-link;
+
+// Navigation - minimal
+$nav-child-link-color: #666666;
+$sidebar-color: #ffffff;
+
+// Search
+$search-background-color: #fafafa;
+$search-result-preview-color: $body-text-color;
+
+// Code blocks - barely there
+$code-background-color: #fafafa;
+$code-snippet-color: $telar-accent;
+
+// Borders - almost invisible
+$border-color: #f0f0f0;
+
+// Tables - clean
+$table-background-color: #ffffff;
+$table-header-background-color: #fafafa;
+
+// Callout colors - extremely subtle
+$blue-000: #f8fafb;
+$blue-100: #f0f4f7;
+$blue-200: #e8eef3;
+$blue-300: $telar-accent;
+
+$green-000: #f8faf8;
+$green-100: #f0f4f0;
+$green-200: #e8efe8;
+$green-300: #6a8a6a;
+
+$yellow-000: #fffefa;
+$yellow-100: #fffcf5;
+$yellow-200: #fff9eb;
+$yellow-300: #b8a070;
+
+$red-000: #fffafa;
+$red-100: #fef5f5;
+$red-200: #fcf0f0;
+$red-300: #a86060;
