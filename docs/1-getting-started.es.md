@@ -3,7 +3,6 @@ layout: default
 title: 1. Primeros Pasos
 parent: Documentación
 nav_order: 1
-has_children: true
 lang: es
 permalink: /documentacion/1-primeros-pasos/
 ---

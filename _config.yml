@@ -3,6 +3,7 @@ title: Telar
 description: "A minimal computing framework for creating visual narrative exhibitions with IIIF images and scrollytelling"
 baseurl: ""
 url: "https://telar.org"
+logo: "/images/telar.png"
 
 # Theme
 theme: just-the-docs
@@ -69,14 +70,6 @@ permalink: pretty
 # Plugins
 plugins:
   - jekyll-seo-tag
-  - jekyll-polyglot
-  - jekyll-last-modified-at
-
-# Polyglot (multilingual) settings
-languages: ["en", "es"]
-default_lang: "en"
-exclude_from_localization: ["assets", "404.html"]
-parallel_localization: false
 
 # Exclude from build
 exclude:

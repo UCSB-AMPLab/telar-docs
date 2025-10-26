@@ -14,6 +14,12 @@ permalink: /es/
 > **Versión Beta - v0.3.1-beta**
 > Esta versión de parche corrige errores críticos con la carga de imágenes y miniaturas. La versión 0.3.0-beta introdujo mensajes de error completos, integración con Google Sheets y funcionalidad mejorada para copiar coordenadas IIIF.
 
+## ¿Qué es Telar?
+
+Telar entreteje imágenes IIIF, texto narrativo e información contextual en exposiciones narrativas visuales interactivas. Sigue los principios de computación mínima (*Minimal Computing*): autoría en texto plano, generación estática y alojamiento sostenible.
+
+Desarrollado por Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz y estudiantes e investigadores del [UCSB Archives, Memory, and Preservation Lab](https://ampl.clair.ucsb.edu), el UT Archives, Mapping, and Preservation Lab y [Neogranadina](https://neogranadina.org).
+
 ## Características principales
 
 <div class="grid" markdown="1">
@@ -53,9 +59,3 @@ Gestiona el contenido a través de una interfaz de hoja de cálculo familiar - i
 [Guía de inicio rápido](/es/documentacion/primeros-pasos/){: .btn .btn-primary .mr-2 }
 [Ver sitio de ejemplo](https://ampl.clair.ucsb.edu/telar){: .btn .mr-2 }
 [Repositorio GitHub](https://github.com/UCSB-AMPLab/telar){: .btn }
-
-## ¿Qué es Telar?
-
-Telar (en español, "loom" en inglés) entreteje imágenes IIIF, texto narrativo e información contextual en capas en exposiciones narrativas visuales interactivas. Sigue los principios de computación mínima (Minimal Computing): autoría en texto plano, generación estática y alojamiento sostenible.
-
-Desarrollado por Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz y estudiantes e investigadores del UCSB Archives, Memory, and Preservation Lab, el UT Archives, Mapping, and Preservation Lab y [Neogranadina](https://neogranadina.org).

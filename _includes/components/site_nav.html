@@ -1,0 +1,108 @@
+{%- comment -%}
+  Custom site navigation with language grouping
+  Each language section includes home link, pages, and external links
+{%- endcomment -%}
+
+<nav aria-label="Main" id="site-nav" class="site-nav">
+  <div class="nav-logo">
+    <h1>{{ site.title }} </h1>
+          <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
+  </div>
+
+  {%- comment -%}English Section{%- endcomment -%}
+  <div class="nav-category nav-lang-header">English</div>
+
+  {%- comment -%}English home link{%- endcomment -%}
+  <ul class="nav-list">
+    <li class="nav-list-item">
+      <a href="/" class="nav-list-link">Home</a>
+    </li>
+  </ul>
+
+  {%- comment -%}Filter English pages (excluding home){%- endcomment -%}
+  {% assign en_pages = site.html_pages
+        | where: "lang", "en"
+        | where_exp:"item", "item.title != 'Home'" %}
+
+  {% assign en_pages_top_size = en_pages
+        | where_exp:"item", "item.title != nil"
+        | where_exp:"item", "item.parent == nil"
+        | where_exp:"item", "item.nav_exclude != true"
+        | size %}
+  {% if en_pages_top_size > 0 %}
+    {% include components/nav/pages.html pages=en_pages all=include.all %}
+  {% endif %}
+
+  {%- comment -%}English external links{%- endcomment -%}
+  <ul class="nav-list">
+    <li class="nav-list-item external">
+      <a href="https://github.com/UCSB-AMPLab/telar" class="nav-list-link external" target="_blank" rel="noopener noreferrer">
+        Telar GitHub Repository
+        <svg viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>
+      </a>
+    </li>
+    <li class="nav-list-item external">
+      <a href="https://ampl.clair.ucsb.edu/telar" class="nav-list-link external" target="_blank" rel="noopener noreferrer">
+        Example Site
+        <svg viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>
+      </a>
+    </li>
+    <li class="nav-list-item external">
+      <a href="https://docs.google.com/spreadsheets/d/18dJWy9wkLD7Muokigg4wp85c3Vsjuphdrn0g51pwkGY/edit?usp=sharing" class="nav-list-link external" target="_blank" rel="noopener noreferrer">
+        Google Sheets Template
+        <svg viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>
+      </a>
+    </li>
+  </ul>
+
+  {%- comment -%}Spanish Section{%- endcomment -%}
+  <div class="nav-category nav-lang-header">Español</div>
+
+  {%- comment -%}Spanish home link{%- endcomment -%}
+  <ul class="nav-list">
+    <li class="nav-list-item">
+      <a href="/es/" class="nav-list-link">Inicio</a>
+    </li>
+  </ul>
+
+  {%- comment -%}Filter Spanish pages (excluding home){%- endcomment -%}
+  {% assign es_pages = site.html_pages
+        | where: "lang", "es"
+        | where_exp:"item", "item.title != 'Inicio'" %}
+
+  {% assign es_pages_top_size = es_pages
+        | where_exp:"item", "item.title != nil"
+        | where_exp:"item", "item.parent == nil"
+        | where_exp:"item", "item.nav_exclude != true"
+        | size %}
+  {% if es_pages_top_size > 0 %}
+    {% include components/nav/pages.html pages=es_pages all=include.all %}
+  {% endif %}
+
+  {%- comment -%}Spanish external links{%- endcomment -%}
+  <ul class="nav-list">
+    <li class="nav-list-item external">
+      <a href="https://github.com/UCSB-AMPLab/telar" class="nav-list-link external" target="_blank" rel="noopener noreferrer">
+        Repositorio de Telar en GitHub
+        <svg viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>
+      </a>
+    </li>
+    <li class="nav-list-item external">
+      <a href="https://ampl.clair.ucsb.edu/telar" class="nav-list-link external" target="_blank" rel="noopener noreferrer">
+        Sitio de demostración
+        <svg viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>
+      </a>
+    </li>
+    <li class="nav-list-item external">
+      <a href="https://docs.google.com/spreadsheets/d/18dJWy9wkLD7Muokigg4wp85c3Vsjuphdrn0g51pwkGY/edit?usp=sharing" class="nav-list-link external" target="_blank" rel="noopener noreferrer">
+        Plantilla de Google Sheets
+        <svg viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>
+      </a>
+    </li>
+  </ul>
+
+</nav>
+
+{% if site.nav_error_report %}
+{{ nav_error_report }}
+{%- endif %}

@@ -13,6 +13,12 @@ lang: en
 > **Beta Release - v0.3.1-beta**
 > This patch release fixes critical bugs with image and thumbnail loading. Version 0.3.0-beta introduced comprehensive error messaging, Google Sheets integration, and improved copy functionality for IIIF coordinates.
 
+## What is Telar?
+
+Telar (Spanish for "loom") weaves together IIIF images, narrative text, and layered contextual information into interactive visual narrative exhibitions. It follows minimal computing principles: plain text authoring, static generation, and sustainable hosting.
+
+Developed by Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz, and students and scholars at the [UCSB Archives, Memory, and Preservation Lab](https://ampl.clair.ucsb.edu), the UT Archives, Mapping, and Preservation Lab, and [Neogranadina](https://neogranadina.org).
+
 ## Key Features
 
 <div class="grid" markdown="1">
@@ -50,9 +56,3 @@ Ready to build your exhibition? Choose your workflow:
 [Quick Start Guide](/docs/getting-started/){: .btn .btn-primary .mr-2 }
 [View Example Site](https://ampl.clair.ucsb.edu/telar){: .btn .mr-2 }
 [GitHub Repository](https://github.com/UCSB-AMPLab/telar){: .btn }
-
-## What is Telar?
-
-Telar (Spanish for "loom") weaves together IIIF images, narrative text, and layered contextual information into interactive visual narrative exhibitions. It follows minimal computing principles: plain text authoring, static generation, and sustainable hosting.
-
-Developed by Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz, and students and scholars at the UCSB Archives, Memory, and Preservation Lab, the UT Archives, Mapping, and Preservation Lab, and [Neogranadina](https://neogranadina.org).

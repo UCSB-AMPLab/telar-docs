@@ -5,6 +5,5 @@ gem "just-the-docs", "0.10.0"
 
 group :jekyll_plugins do
   gem "jekyll-seo-tag"
-  gem "jekyll-polyglot"
   gem "jekyll-last-modified-at"
 end

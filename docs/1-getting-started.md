@@ -3,7 +3,6 @@ layout: default
 title: 1. Getting Started
 parent: Documentation
 nav_order: 1
-has_children: true
 lang: en
 ---
 

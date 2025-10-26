@@ -104,10 +104,35 @@ h6,
   margin-bottom: 0.5rem !important;
 }
 
-// Site title also not all caps
-.site-title {
-  text-transform: none !important;
-  font-weight: 400 !important;
+// Style the top bar - keep it minimal
+.site-header,
+.main-header,
+#main-header {
+  background: transparent !important;
+  border-bottom: none !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.site-nav {
+padding-top: 0rem;
+}
+
+// Logo at top of navigation menu
+.nav-logo {
+  padding: 1rem 0;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  a {
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    max-height: 12rem;
+  }
 }
 
 // Button Styling - Telar Rounded Style (only for actual buttons)
@@ -228,46 +253,27 @@ pre {
   line-height: 1.6;
 }
 
+.nav-list .nav-list-item .nav-list-link {
+padding-bottom: 0rem;
+margin-bottom: 0rem;
+line-height: 0.75rem;
+}
+
 .nav-list-item {
   margin-bottom: 0;
 }
 
-// Search - simple (keep border but override the removal above)
-.search-input-wrap {
-  position: relative;
-}
-
-.search-input {
-  border-radius: 0;
-  padding: 0.5rem 2.5rem 0.5rem 0.5rem !important;
-  border: 1px solid #e0e0e0 !important;
-  width: 100%;
-}
-
-// Move search icon to the right
-.search-icon {
-  position: absolute !important;
-  right: 0.75rem !important;
-  left: auto !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-}
-
-// If there's a label, adjust positioning
-.search-label {
-  display: none;
-}
 
 // Footer - clean spacing
 .site-footer {
-  margin-top: 3rem;
-  padding: 2rem 0;
+  margin-top: 1rem;
+  padding: 1rem 0;
   font-size: 0.875rem;
   line-height: 1.6;
   border-top: none !important;
 }
 
-// Remove ALL dividing lines/borders
+// Remove ALL dividing lines/borders (except search input)
 .site-header,
 .site-footer,
 .main-content,
@@ -276,7 +282,6 @@ pre {
 .nav-list,
 .nav-list-item,
 .search,
-.search-input,
 .main-content-wrap {
   border: none !important;
   border-top: none !important;
@@ -338,6 +343,51 @@ hr {
   }
 }
 
+// Page header bar with language switcher
+.page-header-bar {
+  margin-bottom: 1rem !important;
+  text-align: right !important;
+}
+
+// Language Switcher
+.page-header-bar .lang-switcher {
+  font-family: 'Source Sans Pro', sans-serif;
+
+  .lang-link {
+    color: #666666;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    &:hover {
+      color: #1a1a1a;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Breadcrumbs wrapper
+.breadcrumb-nav-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+// Language Section Headers in Navigation
+.nav-lang-header {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0 !important;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333333;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 // Responsive adjustments
 @media (max-width: 768px) {
   .btn, .site-button {
@@ -346,6 +396,11 @@ hr {
   }
 
   .language-switcher {
+    font-size: 0.8rem;
+  }
+
+  .lang-switcher {
+    padding: 0.5rem;
     font-size: 0.8rem;
   }
 

@@ -1,0 +1,38 @@
+{%- comment -%}
+Language switcher for bilingual navigation
+{%- endcomment -%}
+
+<div class="page-header-bar">
+  <div class="lang-switcher">
+    {%- comment -%}Build equivalent page path{%- endcomment -%}
+    {% if page.lang == "en" %}
+      {%- comment -%}Switch from English to Spanish: add .es before .md{%- endcomment -%}
+      {% assign equivalent_path = page.path | replace: ".md", ".es.md" %}
+      {% assign switch_lang = "es" %}
+      {% assign switch_label = "Español" %}
+    {% else %}
+      {%- comment -%}Switch from Spanish to English: remove .es{%- endcomment -%}
+      {% assign equivalent_path = page.path | replace: ".es.md", ".md" %}
+      {% assign switch_lang = "en" %}
+      {% assign switch_label = "English" %}
+    {% endif %}
+
+    {%- comment -%}Find the page with this path{%- endcomment -%}
+    {% assign equivalent_page = site.html_pages | where: "path", equivalent_path | first %}
+
+    {%- comment -%}Fallback to home page if not found{%- endcomment -%}
+    {% unless equivalent_page %}
+      {% if switch_lang == "en" %}
+        {% assign equivalent_page = site.html_pages | where: "path", "index.md" | first %}
+      {% else %}
+        {% assign equivalent_page = site.html_pages | where: "path", "index.es.md" | first %}
+      {% endif %}
+    {% endunless %}
+
+    {% if equivalent_page %}
+      <a href="{{ equivalent_page.url | relative_url }}" class="lang-link" aria-label="Switch to {{ switch_lang }}">
+        {{ switch_label }}
+      </a>
+    {% endif %}
+  </div>
+</div>
