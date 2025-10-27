@@ -55,7 +55,7 @@ You're ready! Now you have places to upload images and organize content.
 
 Telar supports two ways to add images:
 
-### Option A: Upload Your Own Images
+### Option A: Upload Your Images
 
 1. Navigate to `components/images/objects/` in your GitHub repository
 2. Click **Add file** → **Upload files**
@@ -133,7 +133,7 @@ Reference the markdown files you created:
 > **Ignoring Rows**
 > Add a `#` prefix to ignore rows or add notes:
 > - `# TODO: verify this date`
-> - The template includes a `# Instructions` column for guidance
+> - The template includes an `# Instructions` column for guidance
 
 ## Phase 5: Connect and Publish
 

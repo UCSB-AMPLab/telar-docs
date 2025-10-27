@@ -23,8 +23,8 @@ Developed by Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz, and student
 
 - **IIIF Integration:** Support for both local images (auto-generated tiles) and external IIIF resources from museums and libraries worldwide.
 - **Scrollytelling:** Discrete step-based scrolling with support for multiple IIIF objects in a single story - each object preloaded in its own viewer card.
-- **Layered Panels:** Progressive disclosure with three content layers plus glossary for rich, contextual storytelling.
-- **Objects Gallery:** Browsable object grid with detail pages and coordinate identification tools.
+- **Layered Panels:** Progressive narratives with three content layers plus glossary for rich, contextual storytelling.
+- **Objects Gallery:** See all the objects in the exhibition laid out in a grid. Clicking on an object provides further details about it.
 - **Minimal Computing:** Plain text authoring, static generation, and sustainable GitHub Pages hosting.
 - **Google Sheets Integration:** Manage content through a familiar spreadsheet interface - ideal for teams and non-technical users.
 

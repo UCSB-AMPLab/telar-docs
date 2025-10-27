@@ -9,7 +9,7 @@ lang: en
 
 # Workflows
 
-Telar offers two workflows for creating your exhibitions. Choose the one that best fits your needs and technical comfort level.
+Telar offers two workflows for creating your exhibitions. Choose the one that best fits your needs and technical knowledge.
 
 ## GitHub Web Interface
 

@@ -15,16 +15,16 @@ Make Telar your own with themes, custom styling, and layout modifications.
 
 Telar includes 4 preset themes that you can switch with a single line in `_config.yml`:
 
-- **Paisajes Coloniales** (default): Earth tones with terracotta and olive
-- **Neogranadina**: Colonial burgundy and gold
-- **Santa Barbara**: Modern teal and coral
+- **Paisajes Coloniales** (default): Terracotta and olive
+- **Neogranadina**: Burgundy and gold
+- **Santa Barbara**: Teal and coral
 - **Austin**: Burnt orange and slate blue
 
 [Learn about Themes](/docs/customization/themes/)
 
 ## Advanced Styling
 
-For deeper customization beyond themes, you can modify CSS variables, layouts, and component styles.
+For customization beyond the standard themes, you can modify CSS variables, layouts, and component styles.
 
 [Advanced Styling Guide](/docs/customization/styling/)
 

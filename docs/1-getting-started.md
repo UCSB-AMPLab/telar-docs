@@ -14,7 +14,7 @@ Welcome to Telar! This guide will help you create your first visual narrative ex
 
 Telar narratives are built around a layered storytelling structure. Understanding this model will help you plan your content effectively.
 
-Each page in your Telar site contains one or more stories, which can be independent narratives or chapters of a longer piece. Stories unfold through successive steps that show an image (or a detail of an image) alongside brief text.
+Each page in your Telar site contains one or more stories, which can be independent or related narratives. Stories unfold through successive steps that show an image (or a detail of an image) alongside a brief text.
 
 ### The Question/Answer/Invitation Pattern
 
@@ -23,11 +23,11 @@ Each step follows this pattern:
 - **Answer**: A brief 1-2 sentence response
 - **Invitation**: "Learn more" opens a layer panel with extended information
 
-You can provide up to two layer panels in each step, allowing viewers who want to go deeper to obtain even more detail.
+You can provide up to two layer panels in each step to give viewers further information.
 
 ### Layered Panels
 
-Layer panels are where you can really expand on your narrative. They are written in [markdown format](https://www.markdownguide.org/getting-started/), allowing you to include:
+Layer panels are where you can expand on your narrative. They are written in [markdown format](https://www.markdownguide.org/getting-started/), allowing you to include:
 - Headings, bold and italic text
 - Links and lists
 - Additional images
@@ -39,10 +39,10 @@ Before you start gathering materials or building your site, take time to sketch 
 
 1. What stories do you want to tell?
 2. What are the key moments in each story?
-3. What images or details will anchor each step?
-4. What information belongs in the brief answer and what in the deeper layers?
+3. What images or details will anchor each story?
+4. What information belongs in the brief answer and what in the panel layers?
 
-Planning this out on paper or in a digital tool will make the implementation much easier.
+Drafting these answers and panels will make the implementation much easier.
 
 {: .tip }
 > **Tip: Get Inspired**
@@ -53,7 +53,7 @@ Planning this out on paper or in a digital tool will make the implementation muc
 Once you're ready, choose one of the workflows based on your needs:
 
 ### GitHub Web Interface (Recommended)
-No installation required! Manage your content entirely through GitHub's web interface and Google Sheets. Perfect for storytellers and teams.
+No installation required. Manage your content entirely through GitHub's web interface and Google Sheets. Perfect for storytellers and teams.
 
 [GitHub Web Interface Guide](/docs/workflows/github-web/){: .btn .btn-primary }
 
