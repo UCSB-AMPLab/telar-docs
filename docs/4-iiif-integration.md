@@ -23,7 +23,7 @@ IIIF (pronounced "triple-eye-eff") is a set of open standards for delivering hig
 
 ## Option 1: Local Images
 
-Upload your own images and Telar will automatically generate IIIF tiles.
+Upload your images and Telar will automatically generate IIIF tiles.
 
 ### Adding Local Images
 

@@ -224,7 +224,7 @@ Typical build times:
 
 1. Manually trigger workflow (see above)
 2. Verify both shared and published URLs in `_config.yml`
-3. Check that sheet is published to web
+3. Check the sheet is published to web
 4. Review fetch logs in Actions tab
 
 ## Next Steps

@@ -76,9 +76,9 @@ telar_theme: "paisajes"  # Options: paisajes, neogranadina, santa-barbara, austi
 
 ### Available Themes
 
-- **paisajes** (default): Earth tones with terracotta and olive
-- **neogranadina**: Colonial burgundy and gold
-- **santa-barbara**: Modern teal and coral
+- **paisajes** (default): Terracotta and olive
+- **neogranadina**: Burgundy and gold
+- **santa-barbara**: Teal and coral
 - **austin**: Burnt orange and slate blue
 
 See [Customization: Themes](/docs/customization/themes/) for details and creating custom themes.

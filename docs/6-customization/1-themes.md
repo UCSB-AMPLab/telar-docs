@@ -15,47 +15,47 @@ Telar includes 4 preset visual themes that can be easily switched via `_config.y
 
 ### Paisajes Coloniales (Default)
 
-Earth tones inspired by colonial landscapes.
+Earthy tones, inspired by [Colonial Landscapes](https://colonial-landscapes.com)
 
 **Colors:**
 - Primary: Terracotta `#c7522a`
 - Secondary: Olive `#5f7351`
 - Accent: Warm brown
 
-**Best for:** Historical narratives, archaeological exhibits, earthy subject matter
+**Best for:** Historical narratives, archaeological exhibits.
 
 ### Neogranadina
 
-Colonial elegance with burgundy and gold.
+Bold colours.
 
 **Colors:**
 - Primary: Burgundy `#8B0000`
 - Secondary: Colonial gold `#D4AF37`
 - Accent: Deep red
 
-**Best for:** Colonial history, formal exhibitions, archival materials
+**Best for:** Contemporary materials.
 
 ### Santa Barbara
 
-Modern and vibrant with coastal inspiration.
+Inspired by sunset over the ocean.
 
 **Colors:**
 - Primary: Ocean teal `#2E8B9E`
 - Secondary: Coral `#FF6F61`
 - Accent: Navy blue
 
-**Best for:** Contemporary subjects, coastal themes, modern design aesthetic
+**Best for:** Greyscale and monochrome images
 
 ### Austin
 
-Bold and academic with burnt orange.
+Formal and subtle.
 
 **Colors:**
 - Primary: Burnt orange `#BF5700`
 - Secondary: Slate blue `#005F86`
 - Accent: Charcoal
 
-**Best for:** Academic exhibitions, bold statements, institutional sites
+**Best for:** Contemporary materials
 
 ## Switching Themes
 
