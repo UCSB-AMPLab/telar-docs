@@ -1,8 +1,8 @@
 # Telar - Official Project Site
 title: Telar
 description: "A minimal computing framework for creating visual narrative exhibitions with IIIF images and scrollytelling"
-baseurl: ""
-url: "https://telar.org"
+baseurl: "/telar-docs"
+url: "https://ampl.clair.ucsb.edu"
 logo: "/images/telar.png"
 
 # Theme
