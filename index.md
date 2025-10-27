@@ -32,6 +32,6 @@ Developed by Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz, and student
 
 Ready to build your exhibition? Choose your workflow:
 
-[Quick Start Guide](/docs/getting-started/){: .btn .btn-primary .mr-2 }
+[Quick Start Guide](/docs/1-getting-started/){: .btn .btn-primary .mr-2 }
 [View Example Site](https://ampl.clair.ucsb.edu/telar){: .btn .mr-2 }
 [GitHub Repository](https://github.com/UCSB-AMPLab/telar){: .btn }

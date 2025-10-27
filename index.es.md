@@ -33,6 +33,6 @@ Desarrollado por Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz y estudi
 
 ¿Listo para construir tu exposición? Elige tu flujo de trabajo:
 
-[Guía de inicio rápido](/es/documentacion/primeros-pasos/){: .btn .btn-primary .mr-2 }
+[Guía de inicio rápido](/documentacion/1-primeros-pasos/){: .btn .btn-primary .mr-2 }
 [Ver sitio de ejemplo](https://ampl.clair.ucsb.edu/telar){: .btn .mr-2 }
 [Repositorio GitHub](https://github.com/UCSB-AMPLab/telar){: .btn }
