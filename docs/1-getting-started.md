@@ -39,7 +39,7 @@ Before you start gathering materials or building your site, take time to sketch 
 
 1. What stories do you want to tell?
 2. What are the key moments in each story?
-3. What images or details will anchor each story?
+3. What images or details will anchor each step in the story?
 4. What information belongs in the brief answer and what in the panel layers?
 
 Drafting these answers and panels will make the implementation much easier.
