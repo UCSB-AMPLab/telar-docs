@@ -15,7 +15,7 @@ Telar includes 4 preset visual themes that can be easily switched via `_config.y
 
 ### Paisajes Coloniales (Default)
 
-Earthy tones.
+Earthy tones, inspired by [Colonial Landscapes](https://colonial-landscapes.com)
 
 **Colors:**
 - Primary: Terracotta `#c7522a`
