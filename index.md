@@ -21,33 +21,12 @@ Developed by Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz, and student
 
 ## Key Features
 
-<div class="grid" markdown="1">
-
-### IIIF Integration
-{: .text-delta }
-Support for both local images (auto-generated tiles) and external IIIF resources from museums and libraries worldwide.
-
-### Scrollytelling
-{: .text-delta }
-Discrete step-based scrolling with support for multiple IIIF objects in a single story - each object preloaded in its own viewer card.
-
-### Layered Panels
-{: .text-delta }
-Progressive disclosure with three content layers plus glossary for rich, contextual storytelling.
-
-### Objects Gallery
-{: .text-delta }
-Browsable object grid with detail pages and coordinate identification tools.
-
-### Minimal Computing
-{: .text-delta }
-Plain text authoring, static generation, and sustainable GitHub Pages hosting.
-
-### Google Sheets Integration
-{: .text-delta }
-Manage content through a familiar spreadsheet interface - ideal for teams and non-technical users.
-
-</div>
+- **IIIF Integration:** Support for both local images (auto-generated tiles) and external IIIF resources from museums and libraries worldwide.
+- **Scrollytelling:** Discrete step-based scrolling with support for multiple IIIF objects in a single story - each object preloaded in its own viewer card.
+- **Layered Panels:** Progressive disclosure with three content layers plus glossary for rich, contextual storytelling.
+- **Objects Gallery:** Browsable object grid with detail pages and coordinate identification tools.
+- **Minimal Computing:** Plain text authoring, static generation, and sustainable GitHub Pages hosting.
+- **Google Sheets Integration:** Manage content through a familiar spreadsheet interface - ideal for teams and non-technical users.
 
 ## Get Started
 

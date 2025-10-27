@@ -22,35 +22,12 @@ Desarrollado por Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz y estudi
 
 ## Características principales
 
-<div class="grid" markdown="1">
-
-### Integración IIIF
-{: .text-delta }
-Soporte para imágenes locales (_tiles_ autogenerados) y recursos IIIF externos de museos y bibliotecas de todo el mundo.
-
-### Scrollytelling
-{: .text-delta }
-Desplazamiento basado en pasos discretos con soporte para múltiples objetos IIIF en una sola historia - cada objeto precargado en su propia tarjeta de visualización.
-
-### Paneles en capas
-{: .text-delta }
-Divulgación progresiva con tres capas de contenido más glosario para una narración rica y contextual.
-
-### Galería de objetos
-{: .text-delta }
-Cuadrícula de objetos navegable con páginas de detalles y herramientas de identificación de coordenadas.
-
-### Computación mínima (Minimal Computing)
-{: .text-delta }
- 
-Autoría en texto plano, generación estática y alojamiento sostenible en GitHub Pages.
-
-### Integración con Google Sheets
-{: .text-delta }
- 
-Gestiona el contenido a través de una interfaz de hoja de cálculo familiar - ideal para equipos y usuarios no técnicos.
-
-</div>
+- **Integración IIIF:** Soporte para imágenes locales (*tiles* autogenerados) y recursos IIIF externos de museos y bibliotecas de todo el mundo.
+- **Scrollytelling:** Desplazamiento basado en pasos discretos con soporte para múltiples objetos IIIF en una sola historia - cada objeto precargado en su propia tarjeta de visualización.
+- **Paneles en capas:** Divulgación progresiva con tres capas de contenido más glosario para una narración rica y contextual.
+- **Galería de objetos:** Cuadrícula de objetos navegable con páginas de detalles y herramientas de identificación de coordenadas.
+- **Computación mínima (Minimal Computing):** Autoría en texto plano, generación estática y alojamiento sostenible en GitHub Pages.
+- **Integración con Google Sheets:** Gestiona el contenido a través de una interfaz de hoja de cálculo familiar - ideal para equipos y usuarios no técnicos.
 
 ## Comenzar
 
