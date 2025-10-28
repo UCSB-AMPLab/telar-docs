@@ -277,6 +277,16 @@ Prueba en:
 - Safari (última versión)
 - Navegadores móviles (iOS Safari, Chrome Mobile)
 
+### Validación
+
+```bash
+# Verifica validez de HTML
+bundle exec htmlproofer ./_site --disable-external
+
+# Revisa enlaces rotos
+bundle exec jekyll doctor
+```
+
 ## Publicación
 
 ### Preparar para publicación

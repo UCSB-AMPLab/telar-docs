@@ -195,6 +195,89 @@ Sobrescribe puntos de quiebre y comportamiento adaptable:
 }
 ```
 
+## Personalización de JavaScript
+
+### Modificar el comportamiento de la historia
+
+Edita `assets/js/story.js` para personalizar el comportamiento del desplazamiento:
+
+```javascript
+// Ajusta el desplazamiento
+const scrollOffset = 100;  // píxeles desde la parte superior
+
+// Personaliza la velocidad de zoom del visor
+const zoomDuration = 500;  // milisegundos
+
+// Agrega transiciones personalizadas por paso
+function onStepEnter(step) {
+  console.log('Entrando al paso:', step);
+  // Tu lógica personalizada
+}
+```
+
+### Agregar interacciones personalizadas
+
+Crea `assets/js/custom.js`:
+
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+  // Desplazamiento suave a enlaces internos
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Animación en tarjetas de objeto al entrar en vista
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+      }
+    });
+  });
+
+  document.querySelectorAll('.object-card').forEach(card => {
+    observer.observe(card);
+  });
+});
+```
+
+## Personalización de tipografía
+
+### Estilos de encabezados
+
+```scss
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+  color: var(--heading-color);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+// Tamaños personalizados de encabezado
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+```
+
+### Cuerpo de texto
+
+```scss
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+```
+
 ## Animación
 
 Agrega animaciones sutiles:
@@ -235,6 +318,25 @@ Agrega animaciones sutiles:
 4. **Mantenlo eficiente** (evita animaciones pesadas, imágenes grandes)
 5. **Comenta tu código** para referencia futura
 6. **Prueba en múltiples navegadores** (Chrome, Firefox, Safari)
+
+## Optimización de rendimiento
+
+```scss
+// Usa will-change para animaciones
+.animated-element {
+  will-change: transform;
+}
+
+// Optimiza imágenes
+.object-thumbnail {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+// Aceleración por hardware
+.smooth-scroll {
+  transform: translateZ(0);
+}
+```
 
 ## Próximos pasos
 

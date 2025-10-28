@@ -14,16 +14,16 @@ Telar incluye 4 temas visuales predeterminados que pueden cambiarse fácilmente 
 
 ## Temas disponibles
 
-### Paisajes coloniales (predeterminado)
+### Paisajes Coloniales (predeterminado)
 
-Tonos tierra inspirados en paisajes coloniales.
+Tonos tierra inspirados en [Paisajes Coloniales](https://paisajescoloniales.com).
 
 **Colores:**
 - Primario: Terracota `#c7522a`
 - Secundario: Oliva `#5f7351`
 - Acento: Marrón cálido
 
-**Mejor para:** Narrativas históricas, exposiciones arqueológicas, temas terrenales
+**Mejor para:** Narrativas históricas, exposiciones arqueológicas.
 
 ### Neogranadina
 
@@ -34,7 +34,7 @@ Elegancia colonial con burdeos y dorado.
 - Secundario: Dorado colonial `#D4AF37`
 - Acento: Rojo profundo
 
-**Mejor para:** Historia colonial, exposiciones formales, materiales de archivo
+**Mejor para:** Materiales contemporáneos.
 
 ### Santa Barbara
 
@@ -45,7 +45,7 @@ Moderno y vibrante con inspiración costera.
 - Secundario: Coral `#FF6F61`
 - Acento: Azul marino
 
-**Mejor para:** Temas contemporáneos, temas costeros, estética de diseño moderno
+**Mejor para:** Imágenes en escala de grises y monocromáticas.
 
 ### Austin
 
@@ -56,7 +56,7 @@ Atrevido y académico con naranja quemado.
 - Secundario: Azul pizarra `#005F86`
 - Acento: Carbón
 
-**Mejor para:** Exposiciones académicas, declaraciones audaces, sitios institucionales
+**Mejor para:** Materiales contemporáneos.
 
 ## Cambia temas
 
