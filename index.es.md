@@ -11,8 +11,8 @@ permalink: /es/
 **Un marco de computación mínima para crear exposiciones narrativas visuales con imágenes IIIF y scrollytelling.**
 
 {: .beta }
-> **Versión Beta - v0.3.2-beta**
-> Esta versión agrega parámetros de tamaño a la sintaxis las imágenes de markdown de los paneles y permite personalizar la página de inicio. La versión 0.3.1-beta corrigió errores críticos con la carga de imágenes y miniaturas. La versión 0.3.0-beta introdujo mensajes de error completos e integración con Google Sheets.
+> **Versión Beta - v0.3.3-beta**
+> Esta versión corrige un error crítico en el flujo de trabajo. La versión 0.3.2-beta agregó parámetros de tamaño a la sintaxis de imágenes de markdown de los paneles y permite personalizar la página de inicio. La versión 0.3.1-beta corrigió errores críticos con la carga de imágenes y miniaturas.
 
 ## ¿Qué es Telar?
 

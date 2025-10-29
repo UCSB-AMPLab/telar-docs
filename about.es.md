@@ -8,11 +8,11 @@ permalink: /acerca-de/
 
 # Acerca de Telar
 
-**Última versión:** 0.3.2-beta | **Fecha de publicación:** 28 de octubre de 2025
+**Última versión:** 0.3.3-beta | **Fecha de publicación:** 28 de octubre de 2025
 
 {: .beta }
 > **Versión Beta**
-> Esta es una versión beta para pruebas y retroalimentación. Esta versión agrega parámetros de tamaño a la sintaxis las imágenes de markdown de los paneles y permite personalizar la página de inicio.
+> Esta es una versión beta para pruebas y retroalimentación. La versión 0.3.3-beta corrige un error crítico en el flujo de trabajo que impedía el despliegue en ramas protegidas.
 
 Telar es un generador de sitios estáticos construido sobre Jekyll que entreteje imágenes IIIF, texto e información contextual en capas en exposiciones narrativas digitales interactivas. Telar utiliza el Marco Internacional de Interoperabilidad de Imágenes (IIIF) para mostrar imágenes de alta resolución que pueden ampliarse, desplazarse y explorarse en detalle. El marco combina estas imágenes con texto narrativo y paneles contextuales en capas para crear experiencias narrativas inmersivas.
 
