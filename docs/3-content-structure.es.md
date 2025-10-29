@@ -98,6 +98,10 @@ técnica de tejido compleja que era común en el período colonial.
 Estos patrones se crearon usando...
 ```
 
+{: .tip }
+> **Referencia Completa de Markdown**
+> Consulta la [Guía de Sintaxis de Markdown](/docs/reference/markdown-syntax/) para todas las opciones de formato disponibles, incluyendo dimensionamiento de imágenes, incrustación de medios enriquecidos y mejores prácticas.
+
 ### Archivos de glosario
 
 Los archivos de glosario definen términos referenciados en tus narrativas:

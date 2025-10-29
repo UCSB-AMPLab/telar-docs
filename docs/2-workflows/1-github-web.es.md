@@ -107,9 +107,13 @@ Escribe archivos markdown para el contenido de las capas de tu historia:
 6. Repite para cada capa de contenido que quieras agregar
 7. **Importante**: Mantén nota de tus nombres de archivo y sus ubicaciones. Necesitarás las rutas exactas (ej., `story1/tecnicas-tejido.md`) para incluir en tu hoja de cálculo de historia en la Fase 4
 
+{: .tip }
+> **Formato de Markdown**
+> Los paneles de contenido en Telar se deben escribir utilizando el formato Markdown, que permite incluir encabezados, notas al pie, imágenes, videos y más. Consulta la [Guía de Sintaxis de Markdown](/docs/reference/markdown-syntax/) para una guía completa de cómo funciona.
+
 ## Fase 4: estructura tu historia
 
-Conecta todo en tu hoja story de Google Sheets:
+Conecta todo en tu hoja de Google Sheets:
 
 ### Agrega pasos de historia
 
