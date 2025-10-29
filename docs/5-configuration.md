@@ -192,5 +192,6 @@ exclude:
 ## Next Steps
 
 - [Customize Your Theme](/docs/customization/themes/)
+- [Customize Your Home Page](/docs/customization/home-page/)
 - [Learn about GitHub Actions](/docs/reference/github-actions/)
 - [Explore Advanced Styling](/docs/customization/styling/)

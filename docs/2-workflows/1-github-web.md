@@ -211,7 +211,12 @@ After editing Google Sheets:
 
 1. Add additional content layers
 2. Add glossary terms
-3. Polish until your story shines
+3. Customize your homepage (edit `index.md` in the repository root)
+4. Polish until your story shines
+
+{: .tip }
+> **Customize Your Homepage**
+> Edit `index.md` to change your welcome message, section headings, or remove the demo notice. See the [Home Page Customization Guide](/docs/customization/home-page/) for details.
 
 ## Next Steps
 

@@ -10,8 +10,8 @@ lang: en
 **A minimal computing framework for creating visual narrative exhibitions with IIIF images and scrollytelling.**
 
 {: .beta }
-> **Beta Release - v0.3.1-beta**
-> This patch release fixes critical bugs with image and thumbnail loading. Version 0.3.0-beta introduced comprehensive error messaging, Google Sheets integration, and improved copy functionality for IIIF coordinates.
+> **Beta Release - v0.3.2-beta**
+> This release adds image sizing syntax for panel markdown and customizable index page. Version 0.3.1-beta fixed critical bugs with image and thumbnail loading. Version 0.3.0-beta introduced comprehensive error messaging and Google Sheets integration.
 
 ## What is Telar?
 
