@@ -97,6 +97,10 @@ weaving technique that was common in the colonial period.
 These patterns were created using...
 ```
 
+{: .tip }
+> **Complete Markdown Reference**
+> See the [Markdown Syntax Guide](/docs/reference/markdown-syntax/) for all available formatting options, including image sizing, rich media embeds, and best practices.
+
 ### Glossary Files
 
 Glossary files define terms referenced in your narratives:

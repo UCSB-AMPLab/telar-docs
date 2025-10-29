@@ -105,6 +105,10 @@ Write markdown files for your story layer content:
 5. Commit the file
 6. Keep note of paths for Phase 4
 
+{: .tip }
+> **Markdown Formatting**
+> Panel content supports rich markdown including image sizing, videos, and more. See the [Markdown Syntax Guide](/docs/reference/markdown-syntax/) for complete reference.
+
 ## Phase 4: Structure Your Story
 
 Connect everything in your Google Sheets story sheet:
