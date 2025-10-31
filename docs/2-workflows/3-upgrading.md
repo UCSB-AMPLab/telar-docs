@@ -50,7 +50,7 @@ The upgrade system:
 ### After Upgrading
 
 1. Visit your site to verify it's working correctly
-2. Check the upgrade summary page (linked in the PR description) for any manual steps
+2. **Check the upgrade summary page** (linked in the PR description) for any manual steps
 3. If you have custom themes or modifications, test them thoroughly
 4. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
@@ -60,7 +60,7 @@ If your site is running **v0.2.0 through v0.3.3**, you'll need to add the upgrad
 
 ### Step 1: Add the Upgrade Workflow File
 
-You only need to add **one file** to enable automated upgrades. The workflow will automatically fetch all necessary scripts when it runs.
+You need to add **two files** to enable automated upgrades: the upgrade workflow and the updated build workflow. The upgrade workflow will automatically fetch all necessary scripts when it runs.
 
 #### Method A: GitHub Web Interface (Recommended)
 
@@ -98,7 +98,48 @@ If you have your repository cloned locally:
 {: .note }
 > **That's it!** The workflow automatically downloads the latest upgrade scripts from the Telar repository each time it runs, so you don't need to copy any Python files manually.
 
-### Step 2: Run Your First Automated Upgrade
+### Step 2: Replace the Build Workflow File
+
+If you're upgrading from **v0.2.0 through v0.3.3**, you also need to replace your `.github/workflows/build.yml` file with the latest version. This removes deprecated features (cron schedule and git push step) that are no longer needed in v0.3.4+.
+
+#### Method A: GitHub Web Interface (Recommended)
+
+Work entirely in the browser:
+
+1. **Open the build workflow in Telar**:
+   - Go to [https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml](https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml)
+   - Click the **Copy raw contents** button (📋 icon in the top-right corner)
+
+2. **Replace the file in your repository**:
+   - Go to your repository on GitHub
+   - Navigate to `.github/workflows/build.yml`
+   - Click the **Edit** button (pencil icon)
+   - Select all content (Ctrl+A or Cmd+A) and delete
+   - Paste the copied contents
+   - Scroll down and click **Commit changes**
+   - Add commit message: "Update build workflow to v0.3.4"
+   - Click **Commit changes**
+
+#### Method B: Desktop/Local Development
+
+If you have your repository cloned locally:
+
+1. **Download the workflow file from Telar**:
+   ```bash
+   curl -o .github/workflows/build.yml https://raw.githubusercontent.com/UCSB-AMPLab/telar/main/.github/workflows/build.yml
+   ```
+
+2. **Commit and push**:
+   ```bash
+   git add .github/workflows/build.yml
+   git commit -m "Update build workflow to v0.3.4"
+   git push
+   ```
+
+{: .note }
+> **Optional Step**: If you skip this step now, the upgrade summary will include instructions to update build.yml manually after your first upgrade. However, doing it now ensures a smoother upgrade experience.
+
+### Step 3: Run Your First Automated Upgrade
 
 That's all the setup needed! Now follow the [Automated Upgrades](#automated-upgrades-v034) instructions above to upgrade to the latest version.
 

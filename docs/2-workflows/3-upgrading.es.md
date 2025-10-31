@@ -51,9 +51,24 @@ El sistema de actualización:
 ### Después de actualizar
 
 1. Visita tu sitio para verificar que esté funcionando correctamente
-2. Revisa la página de resumen de actualización (enlazada en la descripción del PR) para verificar si hay pasos manuales pendientes
+2. **Revisa la página de resumen de actualización** (enlazada en la descripción del PR) para verificar si hay pasos manuales pendientes
+   - **Importante:** Si estás actualizando desde v0.2.0-v0.3.3, necesitarás actualizar manualmente tu archivo `.github/workflows/build.yml`. Ver detalles abajo.
 3. Si tienes temas personalizados o modificaciones, pruébalos a fondo
 4. Si encuentras problemas, consulta los [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) o reporta un problema
+
+#### Actualización manual del archivo de flujo de trabajo (solo v0.2.0-v0.3.3)
+
+Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualización incluirá un paso manual para actualizar tu archivo de flujo de trabajo de GitHub Actions. Esto es necesario porque las restricciones de seguridad de GitHub impiden que los flujos de trabajo modifiquen otros archivos de flujo de trabajo.
+
+**Para actualizar el archivo de flujo de trabajo:**
+
+1. Abre [https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml](https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml)
+2. Haz clic en el botón **Copy raw contents** (icono 📋 en la esquina superior derecha)
+3. En tu repositorio, edita `.github/workflows/build.yml`
+4. Reemplaza todo el contenido con la versión copiada
+5. Confirma el cambio
+
+Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
 ## Configuración manual para versiones anteriores
 
@@ -61,7 +76,7 @@ Si tu sitio está en la versión **v0.2.0 hasta v0.3.3**, primero necesitas agre
 
 ### Paso 1: Agregar el archivo del flujo de trabajo de actualización
 
-Solo necesitas agregar **un archivo** para habilitar las actualizaciones automatizadas. El flujo de trabajo descargará automáticamente todos los scripts necesarios cuando se ejecute.
+Necesitas agregar **dos archivos** para habilitar las actualizaciones automatizadas: el flujo de trabajo de actualización y el flujo de trabajo de build actualizado. El flujo de trabajo de actualización descargará automáticamente todos los scripts necesarios cuando se ejecute.
 
 #### Método A: Interfaz web de GitHub (Recomendado)
 
@@ -99,7 +114,48 @@ Si tienes tu repositorio clonado localmente:
 {: .note }
 > **¡Eso es todo!** El flujo de trabajo descarga automáticamente los scripts de actualización más recientes del repositorio de Telar cada vez que se ejecuta, así que no necesitas copiar ningún archivo de Python manualmente.
 
-### Paso 2: Ejecuta tu primera actualización automatizada
+### Paso 2: Reemplazar el archivo del flujo de trabajo de build
+
+Si estás actualizando desde la **v0.2.0 hasta v0.3.3**, también necesitas reemplazar tu archivo `.github/workflows/build.yml` con la versión más reciente. Esto elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
+
+#### Método A: Interfaz web de GitHub (Recomendado)
+
+Trabaja completamente en el navegador:
+
+1. **Abre el flujo de trabajo de build en Telar**:
+   - Ve a [https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml](https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml)
+   - Haz clic en el botón **Copy raw contents** (icono 📋 en la esquina superior derecha)
+
+2. **Reemplaza el archivo en tu repositorio**:
+   - Ve a tu repositorio en GitHub
+   - Navega a `.github/workflows/build.yml`
+   - Haz clic en el botón **Edit** (icono de lápiz)
+   - Selecciona todo el contenido (Ctrl+A o Cmd+A) y bórralo
+   - Pega el contenido copiado
+   - Desplázate hacia abajo y haz clic en **Commit changes**
+   - Agrega el mensaje de commit: "Update build workflow to v0.3.4"
+   - Haz clic en **Commit changes**
+
+#### Método B: Desarrollo local (computador)
+
+Si tienes tu repositorio clonado localmente:
+
+1. **Descarga el archivo del flujo de trabajo desde Telar**:
+   ```bash
+   curl -o .github/workflows/build.yml https://raw.githubusercontent.com/UCSB-AMPLab/telar/main/.github/workflows/build.yml
+   ```
+
+2. **Confirma y empuja los cambios**:
+   ```bash
+   git add .github/workflows/build.yml
+   git commit -m "Update build workflow to v0.3.4"
+   git push
+   ```
+
+{: .note }
+> **Paso opcional**: Si omites este paso ahora, el resumen de actualización incluirá instrucciones para actualizar build.yml manualmente después de tu primera actualización. Sin embargo, hacerlo ahora asegura una experiencia de actualización más fluida.
+
+### Paso 3: Ejecuta tu primera actualización automatizada
 
 Con eso queda lista la configuración. Ahora sigue las instrucciones de [Actualizaciones automatizadas](#actualizaciones-automatizadas-v034) para actualizar a la versión más reciente.
 
