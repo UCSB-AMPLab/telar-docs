@@ -36,6 +36,18 @@ Previsualiza cambios localmente antes de publicar. Control total sobre el proces
 
 [Conocer más sobre el flujo de trabajo de Desarrollo Local](/documentacion/2-flujos-de-trabajo/2-desarrollo-local/)
 
+## Actualizar Telar
+
+Mantén tu sitio actualizado con las últimas funciones y mejoras de Telar.
+
+**Mejor para:**
+- Sitios de Telar existentes
+- Obtener nuevas funciones y correcciones de errores
+- Mantener compatibilidad
+- Actualizaciones automatizadas con un clic (v0.3.4+)
+
+[Conocer más sobre Actualizar Telar](/documentacion/2-flujos-de-trabajo/3-actualizar/)
+
 ## Opciones de Gestión de Contenido
 
 Ambos flujos de trabajo soportan dos enfoques de gestión de contenido:

@@ -35,6 +35,18 @@ Preview changes locally before publishing. Full control over the build process.
 
 [Learn more about Local Development workflow](/docs/workflows/local-dev/)
 
+## Upgrading Telar
+
+Keep your site up to date with the latest Telar features and improvements.
+
+**Best for:**
+- Existing Telar sites
+- Getting new features and bug fixes
+- Maintaining compatibility
+- One-click automated updates (v0.3.4+)
+
+[Learn more about Upgrading Telar](/docs/workflows/upgrading/)
+
 ## Content Management Options
 
 Both workflows support two content management approaches:
