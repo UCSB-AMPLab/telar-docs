@@ -47,7 +47,7 @@ Antes de empezar, planea tu historia/recorrido:
 ### Duplica la plantilla de Google Sheets
 
 1. Ve a [https://bit.ly/telar-template](https://bit.ly/telar-template)
-2. Haz clic en **Archivo** → **Hacer una copia**
+2. Haz clic en **Archivo** → **Hacer una copia** (File → Make a copy)
 3. Guárdala en tu Google Drive con un nombre descriptivo
 
 ¡Estás listo! Ahora tienes lugares para subir imágenes y organizar contenido.
