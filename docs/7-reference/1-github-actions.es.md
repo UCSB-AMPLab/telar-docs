@@ -40,10 +40,10 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
    - Incrusta contenido markdown de `components/texts/`
    - Genera archivos JSON en `_data/` para Jekyll
 
-3. **Genera _tiles_ IIIF**
+3. **Genera teselas (*tiles*) IIIF**
    - Ejecuta `scripts/generate_iiif.py`
    - Procesa imágenes de `components/images/objects/`
-   - Crea pirámides de imágenes en mosaico en `iiif/objects/`
+   - Crea pirámides de teselas (*tiles*) de imagen en `iiif/objects/`
    - Genera archivos de manifiesto
 
 4. **Hace el _build_ del sitio Jekyll**
@@ -136,7 +136,7 @@ Tiempos de construcción típicos:
 
 ### Optimiza el tiempo de construcción
 
-- **Usa IIIF externo** para imágenes grandes (evita generación de _tiles_)
+- **Usa IIIF externo** para imágenes grandes (evita generar teselas (*tiles*))
 - **Confirma menos imágenes** a la vez (divide cargas grandes)
 - **Limpia repositorio** periódicamente (elimina archivos sin usar)
 

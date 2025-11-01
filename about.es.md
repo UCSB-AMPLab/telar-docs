@@ -27,7 +27,7 @@ Telar fue construido con:
 - [Jekyll](https://jekyllrb.com/) - Generador de sitios estáticos
 - [UniversalViewer](https://universalviewer.io/) - Visualizador IIIF
 - [Bootstrap 5](https://getbootstrap.com/) - Marco CSS
-- [iiif-static](https://github.com/bodleian/iiif-static-choices) - Generador de _tiles_ IIIF
+- [iiif-static](https://github.com/bodleian/iiif-static-choices) - Generador de teselas (*tiles*) IIIF
 
 Está basado en [Paisajes Coloniales](https://paisajescoloniales.com/), e inspirado por:
 

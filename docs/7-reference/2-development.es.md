@@ -76,7 +76,7 @@ url: "http://localhost:4000"
 # Convierte CSVs a JSON
 python3 scripts/csv_to_json.py
 
-# Genera tiles IIIF
+# Genera teselas (*tiles*) IIIF
 python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
 
 # Sirve con recarga automática
@@ -136,7 +136,7 @@ bundle exec jekyll serve --livereload
 # 3. Reconstruye datos (cuando CSVs cambian)
 python3 scripts/csv_to_json.py
 
-# 4. Regenera tiles (cuando imágenes cambian)
+# 4. Regenera teselas (*tiles*) (cuando imágenes cambian)
 python3 scripts/generate_iiif.py
 
 # 5. Jekyll recarga automáticamente el navegador
@@ -171,7 +171,7 @@ tu-sitio-telar/
 │   ├── structures/          # Archivos CSV
 │   ├── images/objects/      # Imágenes fuente
 │   └── texts/               # Archivos Markdown
-├── iiif/                    # Tiles IIIF generados
+├── iiif/                    # Teselas (*tiles*) IIIF generadas
 ├── scripts/                 # Scripts de construcción
 │   ├── csv_to_json.py
 │   └── generate_iiif.py
@@ -202,7 +202,7 @@ bundle exec jekyll serve --livereload
 # Recarga forzada del navegador (Cmd+Shift+R o Ctrl+Shift+R)
 ```
 
-**Los _tiles_ IIIF no se generan:**
+**Las teselas (*tiles*) IIIF no se generan:**
 
 ```bash
 # Verifica dependencias de Python
@@ -317,7 +317,7 @@ git push origin main
 4. **Documenta cambios**: Mensajes de confirmación claros
 5. **Respalda contenido**: Mantén copias de archivos importantes
 6. **Control de versiones**: Rastrea todo el contenido en git
-7. **Builds limpios**: ejecuta `jekyll clean` de forma periódica
+7. **_*Builds*_ limpios**: ejecuta `jekyll clean` de forma periódica
 
 ## Obtener ayuda
 

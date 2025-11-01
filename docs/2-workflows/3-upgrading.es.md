@@ -42,14 +42,14 @@ El sistema de actualización:
 3. Selecciona el flujo de trabajo **"Upgrade Telar"** en la barra lateral izquierda
 4. Haz clic en **Run workflow** (botón verde a la derecha)
 5. Haz clic en el botón verde **Run workflow** en el menú desplegable
-6. Espera a que el workflow se complete (generalmente 1-2 minutos)
+6. Espera a que el flujo de trabajo se complete (generalmente 1-2 minutos)
 7. Revisa el *issue* de actualización creado automáticamente
 8. Haz clic en el enlace del *issue* para crear un pull request
-9. Revisa los cambios y haz merge del pull request para completar la actualización
+9. Revisa los cambios y haz *merge* del pull request para completar la actualización
 
 {: .note }
 > **Seguro y reversible**
-> La actualización crea un *issue* y una rama, dándote control total. Revisa los cambios usando el enlace de comparación, crea un pull request cuando estés listo y haz merge solo después de verificar.
+> La actualización crea un *issue* y una rama, dándote control total. Revisa los cambios usando el enlace de comparación, crea un pull request cuando estés listo y haz *merge* solo después de verificar.
 
 ### Después de actualizar
 
@@ -80,7 +80,7 @@ Si tu sitio está en la versión **v0.2.0 hasta v0.3.3**, primero necesitas agre
 
 ### Paso 1: Agregar el archivo del flujo de trabajo de actualización
 
-Necesitas agregar **dos archivos** para habilitar las actualizaciones automatizadas: el flujo de trabajo de actualización y el flujo de trabajo de build actualizado. El flujo de trabajo de actualización descargará automáticamente todos los scripts necesarios cuando se ejecute.
+Necesitas agregar **dos archivos** para habilitar las actualizaciones automatizadas: el flujo de trabajo de actualización y el flujo de trabajo de *build* actualizado. El flujo de trabajo de actualización descargará automáticamente todos los scripts necesarios cuando se ejecute.
 
 #### Método A: Interfaz web de GitHub (Recomendado)
 
@@ -118,7 +118,7 @@ Si tienes tu repositorio clonado localmente:
 {: .note }
 > **¡Eso es todo!** El flujo de trabajo descarga automáticamente los scripts de actualización más recientes del repositorio de Telar cada vez que se ejecuta, así que no necesitas copiar ningún archivo de Python manualmente.
 
-### Paso 2: Reemplazar el archivo del flujo de trabajo de build
+### Paso 2: Reemplazar el archivo del flujo de trabajo de *build*
 
 Si estás actualizando desde la **v0.2.0 hasta v0.3.3**, también necesitas reemplazar tu archivo `.github/workflows/build.yml` con la versión más reciente. Esto elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
@@ -126,7 +126,7 @@ Si estás actualizando desde la **v0.2.0 hasta v0.3.3**, también necesitas reem
 
 Trabaja completamente en el navegador:
 
-1. **Abre el flujo de trabajo de build en Telar**:
+1. **Abre el flujo de trabajo de *build* en Telar**:
    - Ve a [https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml](https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml)
    - Haz clic en el botón **Copy raw contents** (icono 📋 en la esquina superior derecha)
 
@@ -157,7 +157,7 @@ Si tienes tu repositorio clonado localmente:
    ```
 
 {: .note }
-> **Paso opcional**: Si omites este paso ahora, el resumen de actualización incluirá instrucciones para actualizar build.yml manualmente después de tu primera actualización. Sin embargo, hacerlo ahora asegura una experiencia de actualización más fluida.
+> **Paso opcional**: Si omites este paso ahora, el resumen de actualización incluirá instrucciones para actualizar `build.yml` manualmente después de tu primera actualización. Sin embargo, hacerlo ahora asegura una experiencia de actualización más fluida.
 
 ### Paso 3: Ejecuta tu primera actualización automatizada
 
@@ -200,9 +200,9 @@ El flujo de trabajo hará lo siguiente de forma automática:
 - Verifica que los *issues* estén habilitados en la configuración de tu repositorio
 - Vuelve a ejecutar el workflow
 
-### Conflictos de merge
+### Conflictos de *merge*
 
-**Problema**: El PR de actualización tiene conflictos de merge.
+**Problema**: El PR de actualización tiene conflictos de *merge*.
 
 **Solución**:
 - Revisa qué archivos tienen conflictos

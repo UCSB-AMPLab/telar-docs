@@ -14,7 +14,7 @@ permalink: /documentacion/2-flujos-de-trabajo/1-interfaz-web/
 
 ## Descripción general
 
-Este flujo de trabajo te permite crear exposiciones con Telar sin instalar ningún software. Administrarás el contenido a través de la interfaz web de GitHub y Google Sheets, con builds automáticos gestionados por GitHub Actions.
+Este flujo de trabajo te permite crear exposiciones con Telar sin instalar ningún software. Administrarás el contenido a través de la interfaz web de GitHub y Google Sheets, con *builds* automáticos gestionados por GitHub Actions.
 
 {: .note }
 > **Inicio rápido**
