@@ -55,5 +55,7 @@ Ambos flujos de trabajo soportan dos enfoques de gestión de contenido:
 ### Google Sheets (Recomendado)
 Administra contenido a través de una interfaz familiar de hoja de cálculo. Ideal para equipos y la mayoría de usuarios.
 
+[Guía de Google Sheets](/documentacion/2-flujos-de-trabajo/4-google-sheets/)
+
 ### Archivos CSV (Opcional)
 Edita archivos CSV directamente en tu repositorio. Funciona completamente a través de GitHub sin servicios externos.

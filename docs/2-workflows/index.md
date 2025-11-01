@@ -54,5 +54,7 @@ Both workflows support two content management approaches:
 ### Google Sheets (Recommended)
 Manage content through a familiar spreadsheet interface. Ideal for teams and most users.
 
+[See Google Sheets guide](/docs/workflows/google-sheets/)
+
 ### CSV Files (Optional)
 Edit CSV files directly in your repository. Works entirely through GitHub without external services.
