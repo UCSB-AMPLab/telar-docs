@@ -55,7 +55,8 @@ The upgrade system:
 1. Visit your site to verify it's working correctly
 2. **Check the upgrade issue** for any manual steps (visible in the "After Merging" section)
 3. If you have custom themes or modifications, test them thoroughly
-4. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
+4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
+5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
 ## Manual Setup for Earlier Versions
 
