@@ -40,7 +40,7 @@ Edita `assets/css/telar.scss` para agregar estilos personalizados:
 Crea `assets/css/custom.css`:
 
 ```css
-/* Sobrescrituras personalizadas */
+/* Ajustes personalizados */
 .site-header {
   background: linear-gradient(to right, #667eea 0%, #764ba2 100%);
 }
@@ -165,7 +165,7 @@ Edita componentes reutilizables en `_includes/`:
 
 ## Diseño adaptable
 
-Sobrescribe puntos de quiebre y comportamiento adaptable:
+Ajusta los breakpoints y el comportamiento responsivo:
 
 ```scss
 // Móvil

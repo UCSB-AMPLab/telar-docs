@@ -317,7 +317,7 @@ git push origin main
 4. **Documenta cambios**: Mensajes de confirmación claros
 5. **Respalda contenido**: Mantén copias de archivos importantes
 6. **Control de versiones**: Rastrea todo el contenido en git
-7. **Construcciones limpias**: `jekyll clean` periódico ayuda
+7. **Builds limpios**: ejecuta `jekyll clean` de forma periódica
 
 ## Obtener ayuda
 

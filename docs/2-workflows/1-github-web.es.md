@@ -14,7 +14,7 @@ permalink: /documentacion/2-flujos-de-trabajo/1-interfaz-web/
 
 ## Descripción general
 
-Este flujo de trabajo te permite crear exposiciones con Telar sin instalar ningún software. Administrarás el contenido a través de la interfaz web de GitHub y Google Sheets, con construcciones automáticas manejadas por GitHub Actions.
+Este flujo de trabajo te permite crear exposiciones con Telar sin instalar ningún software. Administrarás el contenido a través de la interfaz web de GitHub y Google Sheets, con builds automáticos gestionados por GitHub Actions.
 
 {: .note }
 > **Inicio rápido**
@@ -64,7 +64,7 @@ Telar admite dos formas de agregar imágenes:
 4. Nombra los archivos con IDs de objeto simples (ej., `textile-001.jpg`, `ceramic-002.jpg`)
    - Evita espacios en los nombres de archivo
 5. Agrega el ID del objeto (con o sin extensión de archivo) a la pestaña "objects" de tu hoja de cálculo
-6. Confirma los cambios para guardar
+6. Haz commit de los cambios para guardarlos
 
 {: .warning }
 > **Límites de tamaño de archivo**
@@ -136,7 +136,7 @@ Referencia los archivos markdown que creaste:
 - Deja en blanco para usar los predeterminados ("Learn more" y "Go deeper")
 
 {: .tip }
-> **Ignorando Filas**
+> **Cómo omitir filas**
 > Agrega un prefijo `#` para ignorar filas o agregar notas:
 > - `# TODO: verificar esta fecha`
 > - La plantilla incluye una columna `# Instructions` para orientación
