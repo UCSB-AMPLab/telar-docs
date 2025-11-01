@@ -29,29 +29,32 @@ El sistema de actualización:
 1. Detecta tu versión actual de Telar desde `_config.yml`
 2. Aplica todas las migraciones necesarias de manera incremental (ej., v0.3.4 → v0.3.5 → v0.3.6)
 3. Actualiza los archivos del marco y la configuración
-4. Crea un pull request (PR) con un resumen detallado de la actualización
+4. Crea una rama de actualización y un issue con resumen detallado
 5. Destaca cualquier paso manual que necesites completar
 
 ### Ejecutar una actualización automatizada
+
+{: .note }
+> **Solo para repositorios con fork**: Si creaste tu sitio haciendo fork de otro repositorio, necesitarás habilitar los issues en la configuración de tu repositorio (**Settings** → **General** → marca **Issues**). Los sitios creados usando el botón "Use this template" ya tienen los issues habilitados.
 
 1. Ve a tu repositorio en GitHub
 2. Haz clic en la pestaña **Actions**
 3. Selecciona el flujo de trabajo **"Upgrade Telar"** en la barra lateral izquierda
 4. Haz clic en **Run workflow** (botón verde a la derecha)
 5. Haz clic en el botón verde **Run workflow** en el menú desplegable
-6. Espera a que el flujo de trabajo se complete (generalmente 1-2 minutos)
-7. Revisa el pull request creado automáticamente
-8. Revisa la página de resumen de actualización para cualquier paso manual
-9. Haz merge del pull request para completar la actualización
+6. Espera a que el workflow se complete (generalmente 1-2 minutos)
+7. Revisa el issue de actualización creado automáticamente
+8. Haz clic en el enlace del issue para crear un pull request
+9. Revisa los cambios y haz merge del pull request para completar la actualización
 
 {: .note }
 > **Seguro y reversible**
-> La actualización crea un pull request, así que puedes revisar todos los cambios antes de hacer merge. Si algo sale mal, simplemente cierra el PR sin hacer merge.
+> La actualización crea un issue y una rama, dándote control total. Revisa los cambios usando el enlace de comparación, crea un pull request cuando estés listo y haz merge solo después de verificar.
 
 ### Después de actualizar
 
 1. Visita tu sitio para verificar que esté funcionando correctamente
-2. **Revisa la página de resumen de actualización** (enlazada en la descripción del PR) para verificar si hay pasos manuales pendientes
+2. **Revisa el issue de actualización** para ver si hay pasos manuales (visibles en la sección "After Merging")
    - **Importante:** Si estás actualizando desde v0.2.0-v0.3.3, necesitarás actualizar manualmente tu archivo `.github/workflows/build.yml`. Ver detalles abajo.
 3. Si tienes temas personalizados o modificaciones, pruébalos a fondo
 4. Si encuentras problemas, consulta los [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) o reporta un problema
@@ -186,14 +189,15 @@ El flujo de trabajo hará lo siguiente de forma automática:
 - El flujo de trabajo descarga scripts automáticamente, así que un problema de red podría causar fallas
 - Si el error persiste, [reporta un problema](https://github.com/UCSB-AMPLab/telar/issues) con el mensaje de error
 
-### No se creó el PR
+### No se creó el issue
 
-**Problema**: La actualización se completa pero no se crea ningún pull request.
+**Problema**: La actualización se completa pero no se crea ningún issue.
 
 **Solución**:
-- Verifica si ya existe un pull request para "Upgrade Telar"
-- Verifica que GitHub Actions tenga permisos para crear PR en tu repositorio
-- Vuelve a ejecutar el flujo de trabajo con la opción "Create Pull Request" habilitada
+- Verifica si ya existe un issue con título "Upgrade Telar to [versión]"
+- Verifica que GitHub Actions tenga permiso `issues: write` en tu repositorio
+- Verifica que los issues estén habilitados en la configuración de tu repositorio
+- Vuelve a ejecutar el workflow
 
 ### Conflictos de merge
 

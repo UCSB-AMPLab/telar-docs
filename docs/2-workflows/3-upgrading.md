@@ -28,10 +28,13 @@ The upgrade system:
 1. Detects your current Telar version from `_config.yml`
 2. Applies all necessary migrations incrementally (e.g., v0.3.4 → v0.3.5 → v0.3.6)
 3. Updates framework files and configurations
-4. Creates a pull request with a detailed upgrade summary
+4. Creates an upgrade branch and issue with detailed summary
 5. Highlights any manual steps you need to complete
 
 ### Running an Automated Upgrade
+
+{: .note }
+> **Forked repositories only**: If you forked your site from another repository, you'll need to enable issues in your repository settings (**Settings** → **General** → check **Issues**). Sites created using the "Use this template" button already have issues enabled.
 
 1. Go to your repository on GitHub
 2. Click the **Actions** tab
@@ -39,18 +42,18 @@ The upgrade system:
 4. Click **Run workflow** (green button on the right)
 5. Click the green **Run workflow** button in the dropdown
 6. Wait for the workflow to complete (usually 1-2 minutes)
-7. Review the automatically created pull request
-8. Check the upgrade summary page for any manual steps
-9. Merge the pull request to complete the upgrade
+7. Review the automatically created upgrade issue
+8. Click the link in the issue to create a pull request
+9. Review changes and merge the pull request to complete the upgrade
 
 {: .note }
 > **Safe and Reversible**
-> The upgrade creates a pull request, so you can review all changes before merging. If something goes wrong, you can simply close the PR without merging.
+> The upgrade creates an issue and branch, giving you full control. Review the changes via the compare link, create a PR when ready, and merge only after verification.
 
 ### After Upgrading
 
 1. Visit your site to verify it's working correctly
-2. **Check the upgrade summary page** (linked in the PR description) for any manual steps
+2. **Check the upgrade issue** for any manual steps (visible in the "After Merging" section)
 3. If you have custom themes or modifications, test them thoroughly
 4. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
@@ -170,14 +173,15 @@ The workflow will automatically:
 - The workflow downloads scripts automatically, so network issues could cause failures
 - If the error persists, [report an issue](https://github.com/UCSB-AMPLab/telar/issues) with the error message
 
-### PR Not Created
+### Issue Not Created
 
-**Problem**: The upgrade completes but no pull request is created.
+**Problem**: The upgrade completes but no issue is created.
 
 **Solution**:
-- Check if a pull request already exists for "Upgrade Telar"
-- Verify GitHub Actions has permission to create PRs in your repository
-- Try running the workflow again with the "Create Pull Request" option enabled
+- Check if an issue already exists with title "Upgrade Telar to [version]"
+- Verify GitHub Actions has `issues: write` permission in your repository
+- Check that issues are enabled in your repository settings
+- Try running the workflow again
 
 ### Merge Conflicts
 
