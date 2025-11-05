@@ -54,7 +54,7 @@ Sube tus propias imágenes y Telar generará automáticamente _tiles_ IIIF.
 
 {: .tip }
 > **Convención de nombres**
-> Usa IDs simples y descriptivos sin espacios: `textile-001.jpg`, `ceramic-bowl-blue.jpg`
+> Usa IDs simples y descriptivos sin espacios y sin caracteres especiales: `textile-001.jpg`, `ceramic-bowl-blue.jpg`
 
 ### Cómo funciona
 
