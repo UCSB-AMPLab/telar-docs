@@ -46,12 +46,14 @@ In your repository, set:
 ```yaml
 google_sheets:
   enabled: true
-  shared_url: "https://docs.google.com/..."      # Share: Anyone with the link (Viewer)
-  published_url: "https://docs.google.com/..."   # File → Share → Publish to web
+  shared_url: "https://docs.google.com/..." # Share: Anyone with the link (Viewer)
+  published_url: "https://docs.google.com/..." # File → Share → Publish to web
 ```
 
 - The `shared_url` ensures the fetcher can read the spreadsheet
 - The `published_url` provides stable CSV endpoints for each sheet
+
+![GitHub screenshot for editing config file](/images/config_drive.gif)
 
 ## Fetching data (local dev only)
 
@@ -84,6 +86,8 @@ bundle exec jekyll build
 `objects` tab (common fields)
 
 - object_id, title, description, iiif_manifest, creator, period, medium, dimensions, location, credit, thumbnail
+
+![GitHub screenshot for editing sheet objects](/images/object-sheet.png)
 
 `story-X` tabs
 

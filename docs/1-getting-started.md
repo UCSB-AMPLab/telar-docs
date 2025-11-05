@@ -19,6 +19,7 @@ Each page in your Telar site contains one or more stories, which can be independ
 ### The Question/Answer/Invitation Pattern
 
 Each step follows this pattern:
+
 - **Question**: Draws viewers in with a compelling heading
 - **Answer**: A brief 1-2 sentence response
 - **Invitation**: "Learn more" opens a layer panel with extended information
@@ -28,6 +29,7 @@ You can provide up to two layer panels in each step to give viewers further info
 ### Layered Panels
 
 Layer panels are where you can expand on your narrative. They are written in [markdown format](https://www.markdownguide.org/getting-started/), allowing you to include:
+
 - Headings, bold and italic text
 - Links and lists
 - Additional images
@@ -45,6 +47,7 @@ Before you start gathering materials or building your site, take time to sketch 
 Drafting these answers and panels will make the implementation much easier.
 
 {: .tip }
+
 > **Tip: Get Inspired**
 > Browse the [example site](https://ampl.clair.ucsb.edu/telar) to see this structure in action.
 
@@ -53,11 +56,13 @@ Drafting these answers and panels will make the implementation much easier.
 Once you're ready, choose one of the workflows based on your needs:
 
 ### GitHub Web Interface (Recommended)
+
 No installation required. Manage your content entirely through GitHub's web interface and Google Sheets. Perfect for storytellers and teams.
 
-[GitHub Web Interface Guide](/docs/workflows/github-web/){: .btn .btn-primary }
+[GitHub Web Interface Guide](/docs/2-workflows/github-web/){: .btn .btn-primary }
 
 ### Local Development
+
 Best for developers who want to preview changes locally before publishing. Requires Ruby and Python installation.
 
-[Local Development Guide](/docs/workflows/local-dev/){: .btn }
+[Local Development Guide](/docs/2-workflows/local-dev/){: .btn }

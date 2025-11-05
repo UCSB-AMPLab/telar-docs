@@ -16,6 +16,7 @@ lang: en
 This workflow lets you create Telar exhibitions without installing any software. You'll manage content through GitHub's web interface and Google Sheets, with automatic builds handled by GitHub Actions.
 
 {: .note }
+
 > **Quick Start Option**
 > If you're eager to experiment, skip to [Phase 2: Get Your Workspace Ready](#phase-2-get-your-workspace-ready) and then jump to [Phase 4: Structure Your Story](#phase-4-structure-your-story).
 
@@ -39,8 +40,10 @@ Before diving in, plan your story:
 2. Click the green **Use this template** button
 3. Choose a repository name
 4. Click **Create repository**
+   ![GitHub screenshot for Use this template button](/images/use-this-template.png)
 
 {: .note }
+
 > You'll need a GitHub account if you don't have one. Sign up at [github.com](https://github.com/join).
 
 ### Duplicate the Google Sheets Template
@@ -66,19 +69,25 @@ Telar supports two ways to add images:
 6. Commit changes to save
 
 {: .warning }
+
 > **File Size Limits**
 > Individual images: Up to 100 MB
 > Total repository: Keep under 1 GB
+
+![GitHub screenshot for uploading files](/images/add-files.png)
+![GitHub screenshot for uploading files](/images/commit-files.png)
 
 ### Option B: Use IIIF Images
 
 1. Find IIIF resources from institutions ([IIIF Guide to Finding Resources](https://iiif.io/guides/finding_resources/))
 2. Copy the manifest URL (e.g., `https://iiif.io/api/cookbook/recipe/0001-mvm-image/manifest.json`)
 3. Add to the "objects" tab with a simple object_id (e.g., `museum-textile-001`)
+   ![GitHub screenshot for uploading files](/images/external-iiif-manifest.png)
 
 ### Add Object Details
 
 Fill in the objects tab of your spreadsheet:
+
 - `object_id`: Simple identifier (matches filename for uploaded images)
 - `title`: Display name
 - `description`: Brief description
@@ -95,6 +104,7 @@ Write markdown files for your story layer content:
    - Avoid spaces (use hyphens or underscores)
    - Use `.md` extension
 4. Add frontmatter and content:
+
    ```markdown
    ---
    title: "Weaving Techniques"
@@ -102,10 +112,15 @@ Write markdown files for your story layer content:
 
    The interlocking warp pattern visible here indicates...
    ```
+
 5. Commit the file
 6. Keep note of paths for Phase 4
+   ![GitHub screenshot for creating new layer](/images/create-new-layer.png)
+
+![GitHub screenshot for editing file](/images/edit-layer.png)
 
 {: .tip }
+
 > **Markdown Formatting**
 > Panel content supports rich markdown including image sizing, videos, and more. See the [Markdown Syntax Guide](/docs/reference/markdown-syntax/) for complete reference.
 
@@ -116,6 +131,7 @@ Connect everything in your Google Sheets story sheet:
 ### Add Story Steps
 
 For each step in your story, add a row with:
+
 - **Question**: The heading text (e.g., "What is this textile?")
 - **Answer**: A brief 1-2 sentence response
 - **Object ID**: The object to display (matching your objects sheet)
@@ -124,6 +140,7 @@ For each step in your story, add a row with:
 ### Connect Narrative Content
 
 Reference the markdown files you created:
+
 - In `layer1_file` column: add path (e.g., `story1/step1-layer1.md`)
 - In `layer2_file` column: add path if you have a second layer
 - Leave blank if a step doesn't need a panel
@@ -134,8 +151,10 @@ Reference the markdown files you created:
 - Leave blank to use defaults ("Learn more" and "Go deeper")
 
 {: .tip }
+
 > **Ignoring Rows**
 > Add a `#` prefix to ignore rows or add notes:
+>
 > - `# TODO: verify this date`
 > - The template includes an `# Instructions` column for guidance
 
@@ -146,6 +165,7 @@ Reference the markdown files you created:
 1. Go to repository **Settings** → **Pages**
 2. Source: **GitHub Actions**
 3. Click **Save**
+   ![GitHub screenshot for setting up github actions](/images/github-actions.gif)
 
 ### Share Your Google Sheet
 
@@ -169,9 +189,12 @@ Reference the markdown files you created:
 6. Paste published URL into `published_url`
 7. (Optional) Choose your theme:
    ```yaml
-   telar_theme: "paisajes"  # Options: paisajes, neogranadina, santa-barbara, austin
+   telar_theme: "paisajes" # Options: paisajes, neogranadina, santa-barbara, austin
    ```
 8. Commit changes
+   ![GitHub screenshot for editing config file](/images/config_title.gif)
+   ![GitHub screenshot for editing config file](/images/config_drive.gif)
+   ![GitHub screenshot for editing config file](/images/config_theme.gif)
 
 ### Wait for Build
 
@@ -215,6 +238,7 @@ After editing Google Sheets:
 4. Polish until your story shines
 
 {: .tip }
+
 > **Customize Your Homepage**
 > Edit `index.md` to change your welcome message, section headings, or remove the demo notice. See the [Home Page Customization Guide](/docs/customization/home-page/) for details.
 
