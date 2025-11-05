@@ -8,7 +8,7 @@ permalink: /es/
 
 # Telar
 
-**Un marco de computación mínima para crear exposiciones narrativas visuales con imágenes IIIF y scrollytelling.**
+**Un marco de computación mínima para crear narrativas visuales con imágenes IIIF y _scrollytelling_.**
 
 {: .beta }
 > **Versión Beta - v0.3.3-beta**
@@ -16,18 +16,18 @@ permalink: /es/
 
 ## ¿Qué es Telar?
 
-Telar entreteje imágenes IIIF, texto narrativo e información contextual en exposiciones narrativas visuales interactivas. Sigue los principios de computación mínima (*Minimal Computing*): autoría en texto plano, generación estática y alojamiento sostenible.
+Telar entreteje imágenes IIIF, texto narrativo e información contextual en narrativas visuales e interactivas. Sigue los principios de computación mínima (*Minimal Computing*): autoría en texto plano, generación estática y alojamiento sostenible.
 
 Desarrollado por Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz y estudiantes e investigadores del [UCSB Archives, Memory, and Preservation Lab](https://ampl.clair.ucsb.edu), el UT Archives, Mapping, and Preservation Lab y [Neogranadina](https://neogranadina.org).
 
 ## Características principales
 
-- **Integración IIIF:** Soporte para imágenes locales (*tiles* autogenerados) y recursos IIIF externos de museos y bibliotecas de todo el mundo.
-- **Scrollytelling:** Desplazamiento basado en pasos discretos con soporte para múltiples objetos IIIF en una sola historia - cada objeto precargado en su propia tarjeta de visualización.
-- **Paneles en capas:** Divulgación progresiva con tres capas de contenido más glosario para una narración rica y contextual.
-- **Galería de objetos:** Cuadrícula de objetos navegable con páginas de detalles y herramientas de identificación de coordenadas.
+- **Integración IIIF:** Soporte para cargar imágenes de alta calidad (con *tiles* autogenerados que permiten ampliar sin perder resolución) y vincular recursos IIIF externos de museos y bibliotecas de todo el mundo.
+- **Scrollytelling:** Construye una narración que avanza al hacer scroll (desplazarse hacia abajo). Cada paso revela nuevas imágenes o documentos, dado que soporta múltiples objetos IIIF en una sola historia. Cada objeto viene precargado en su propia tarjeta de visualización para una mejor experiencia de carga.
+- **Paneles en capas:** Exposición con tres capas de contenido, más glosario para una narración rica y contextual.
+- **Galería de objetos:** Navega por la cuadrícula de objetos y accede a cada páginas con detalles y herramientas de identificación de coordenadas.
 - **Computación mínima (Minimal Computing):** Autoría en texto plano, generación estática y alojamiento sostenible en GitHub Pages.
-- **Integración con Google Sheets:** Gestiona el contenido a través de una interfaz de hoja de cálculo familiar - ideal para equipos y usuarios no técnicos.
+- **Integración con Google Sheets:** Gestiona el contenido a través de una interfaz de hoja de cálculo - ideal para equipos y usuarios no técnicos.
 
 ## Comenzar
 
