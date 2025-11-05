@@ -9,7 +9,7 @@ permalink: /documentacion/
 
 # Documentación
 
-Bienvenido a la documentación de Telar. Esta guía te ayudará a crear exposiciones narrativas visuales usando imágenes IIIF y scrollytelling.
+Bienvenido a la documentación de Telar. Esta guía te ayudará a crear narrativas visuales usando imágenes IIIF y scrollytelling.
 
 ## Primeros Pasos
 
