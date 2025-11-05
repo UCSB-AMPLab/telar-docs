@@ -9,7 +9,7 @@ permalink: /documentacion/1-primeros-pasos/
 
 ## Primeros pasos
 
-¡Bienvenido a Telar! Esta guía te ayudará a crear tu primera exposición narrativa visual.
+¡Bienvenido a Telar! Esta guía te ayudará a crear tu primera narrativa visual.
 
 ## Antes de comenzar: planea tu narrativa
 
@@ -25,7 +25,7 @@ Cada paso sigue este patrón:
 - **Respuesta**: Una breve respuesta de 1-2 oraciones
 - **Invitación**: "Conoce más" abre un panel de contenido con información extendida
 
-Puedes proporcionar hasta dos paneles de contenido en cada paso, permitiendo a los espectadores que quieran profundizar obtener aún más detalle.
+Puedes proporcionar hasta dos paneles adicionales de contenido en cada paso, permitiendo a los espectadores que quieran obtener más detalle.
 
 ### Paneles en capas
 
