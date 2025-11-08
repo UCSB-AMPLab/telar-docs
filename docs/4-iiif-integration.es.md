@@ -18,13 +18,13 @@ IIIF (pronunciado "triple-i-efe") es un conjunto de estándares abiertos para en
 - Ampliar imágenes de alta resolución
 - Desplazarte con fluidez por imágenes grandes
 - Usar imágenes de museos y bibliotecas de todo el mundo
-- Alojar tus propias imágenes con mosaicos automáticos
+- Alojar tus propias imágenes con teselas automáticas
 
 [Aprende más sobre IIIF](https://iiif.io/)
 
 ## Opción 1: imágenes locales
 
-Sube tus propias imágenes y Telar generará automáticamente _tiles_ IIIF.
+Sube tus propias imágenes y Telar generará automáticamente teselas (*tiles*) IIIF.
 
 ### Agrega imágenes locales
 
@@ -39,7 +39,7 @@ Sube tus propias imágenes y Telar generará automáticamente _tiles_ IIIF.
 **En desarrollo local:**
 
 1. Agrega imágenes de alta resolución a `components/images/objects/`
-2. Genera _tiles_ IIIF:
+2. Genera teselas IIIF:
    ```bash
    python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
    ```
@@ -60,10 +60,10 @@ Sube tus propias imágenes y Telar generará automáticamente _tiles_ IIIF.
 
 Cuando agregas una imagen:
 
-1. El generador IIIF crea versiones en mosaico a múltiples niveles de zoom
-2. Los _tiles_ se guardan en `iiif/objects/[object-id]/`
+1. El generador IIIF crea versiones en teselas a múltiples niveles de zoom
+2. Las teselas se guardan en `iiif/objects/[object-id]/`
 3. Un archivo de manifiesto describe la estructura de la imagen
-4. El UniversalViewer carga _tiles_ progresivamente según sea necesario
+4. El UniversalViewer carga teselas progresivamente según sea necesario
 
 Esto permite un zoom fluido incluso en imágenes muy grandes.
 
@@ -112,6 +112,150 @@ local-ceramic-001,Mi Cerámica,,,
 
 Deja `iiif_manifest` en blanco para imágenes locales.
 
+## Autorrelleno de metadatos
+
+Telar v0.4.0+ puede extraer automáticamente metadatos de objetos desde manifiestos IIIF, lo que reduce la carga de digitación manual y mejora la consistencia.
+
+### Cómo funciona
+
+Cuando proporcionas una URL en `iiif_manifest`, Telar intenta extraer automáticamente:
+
+- **title** - Título del objeto
+- **description** - Descripción detallada
+- **creator** - Artista, creadora o creador
+- **period** - Fecha, periodo o rango temporal
+- **location** - Institución o repositorio
+- **credit** - Línea de atribución
+
+### Versiones de IIIF compatibles
+
+Telar es compatible con las dos versiones de la API de Presentación de IIIF:
+
+- **Versión 2.0** - Amplia adopción institucional
+- **Versión 3.0** - Estándar más reciente con mapas de idioma
+
+El sistema detecta automáticamente la versión y usa la estructura de metadatos correspondiente.
+
+### Cómo usarlo
+
+Simplemente agrega la URL del manifiesto IIIF a tu CSV de objetos o a la hoja de Google y deja los demás campos vacíos:
+
+```csv
+object_id,title,description,iiif_manifest,creator,period,location,credit
+map-001,,,https://example.org/iiif/manifest.json,,,,
+```
+
+Cuando el sitio se construye, Telar:
+
+1. Obtiene el manifiesto IIIF
+2. Extrae los campos de metadatos disponibles
+3. Llena los campos vacíos con la información extraída
+4. Respeta los valores que tú hayas escrito en el CSV
+
+### Control de sobrescritura
+
+**Tu CSV siempre tiene prioridad.** Puedes:
+
+- Dejar que Telar extraiga todos los campos (déjalos vacíos)
+- Sobrescribir algunos campos (llena los que quieras y deja los demás vacíos)
+- Sobrescribir todo (llena todo y se ignorará el manifiesto)
+
+**Ejemplo - sobrescritura parcial:**
+```csv
+object_id,title,description,iiif_manifest,creator,period,location,credit
+map-001,Mi título personalizado,,https://example.org/manifest.json,,,,
+```
+
+Telar hará lo siguiente:
+- Usará "Mi título personalizado" (desde el CSV)
+- Extraerá la descripción, creador, periodo, ubicación y crédito del manifiesto IIIF
+
+### Detección de idioma
+
+La extracción respeta la configuración `telar_language` en `_config.yml`:
+
+- **Sitios en inglés** (`en`) - Prioriza metadatos en inglés y recurre a otros idiomas si no están disponibles
+- **Sitios en español** (`es`) - Prioriza metadatos en español, luego en inglés y después en otros idiomas
+
+Si el manifiesto ofrece metadatos multilingües, Telar selecciona el idioma más apropiado para tu sitio.
+
+### Detección inteligente de créditos
+
+Para el campo `credit`, Telar aplica una lógica de respaldo inteligente:
+
+1. Busca campos llamados "Attribution" o "Rights"
+2. Filtra texto legal (URLs de Creative Commons, avisos de derechos)
+3. Usa el nombre del repositorio si no encuentra una atribución específica
+
+Así obtienes líneas de crédito útiles en lugar de texto legal extenso.
+
+### Validación
+
+Durante la *build*, Telar valida los manifiestos IIIF:
+
+- ✅ **Manifiesto válido** - Metadatos extraídos con éxito
+- ⚠️ **Manifiesto no disponible** - Errores HTTP; se reintenta en la siguiente *build*
+- ⚠️ **Sin metadatos** - El manifiesto es válido pero no contiene campos legibles
+
+Revisa los registros de la *build* para conocer el estado de la extracción y posibles advertencias.
+
+### Procesamiento durante la *build*
+
+La extracción de metadatos ocurre durante el paso `python3 scripts/csv_to_json.py`:
+
+**GitHub Pages:** Se ejecuta automáticamente durante el despliegue.
+**Desarrollo local:** Ejecútalo manualmente cuando actualices manifiestos:
+
+```bash
+python3 scripts/csv_to_json.py
+```
+
+### Ejemplo de flujo de trabajo
+
+1. Busca una URL de manifiesto IIIF de un museo o biblioteca
+2. Agrégala a tu CSV de objetos con solo `object_id` y `iiif_manifest`
+3. Construye tu sitio
+4. Revisa la página del objeto: los metadatos deberían aparecer completos
+5. Sobrescribe cualquier campo que necesite ajustes
+
+### Campos comunes de metadatos
+
+Cada institución nombra los campos de manera diferente. Telar busca variaciones frecuentes:
+
+**Para title:**
+- "Title", "Label", "Name"
+
+**Para description:**
+- "Description", "Summary", "Note"
+
+**Para creator:**
+- "Creator", "Artist", "Maker", "Author"
+
+**Para period:**
+- "Date", "Period", "Creation Date", "Date Created"
+
+**Para location:**
+- "Repository", "Holding Institution", "Current Location"
+
+**Para credit:**
+- "Attribution", "Rights Holder", "Credit Line", "Provider"
+
+### Cuándo sobrescribir
+
+Quizás quieras sobrescribir metadatos extraídos cuando:
+
+- **Necesitas traducción** - El manifiesto está en otro idioma
+- **Hay abreviaturas** - La institución usa códigos o siglas
+- **Existen múltiples valores** - El manifiesto incluye demasiado detalle y prefieres un resumen
+- **Por el nivel del público** - La descripción original es muy técnica o académica
+
+### Limitaciones
+
+- Solo funciona con **manifiestos IIIF externos** (no con imágenes locales)
+- Requiere manifiestos de acceso público (sin autenticación)
+- Se eliminan etiquetas HTML de las descripciones para mantener YAML seguro
+- Algunos manifiestos pueden carecer de campos de metadatos
+
 ## Sistema de coordenadas
 
 Las coordenadas IIIF en Telar usan valores normalizados (0-1):
@@ -141,7 +285,7 @@ Usa la herramienta de identificación de coordenadas integrada:
 **Para imágenes locales:**
 - Verifica que el archivo exista en `components/images/objects/`
 - Verifica que object_id coincida con el nombre del archivo
-- Asegúrate de que se hayan generado _tiles_ IIIF
+- Asegúrate de que se hayan generado teselas IIIF
 
 **Para IIIF externo:**
 - Verifica que la URL del manifiesto sea correcta

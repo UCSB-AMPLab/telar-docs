@@ -111,6 +111,150 @@ local-ceramic-001,My Ceramic,,,
 
 Leave `iiif_manifest` blank for local images.
 
+## Metadata Auto-Population
+
+Telar v0.4.0+ can automatically extract object metadata from IIIF manifests, reducing manual data entry and improving accuracy.
+
+### How It Works
+
+When you provide an `iiif_manifest` URL, Telar automatically attempts to extract:
+
+- **title** - Object title
+- **description** - Detailed description
+- **creator** - Artist, maker, or creator
+- **period** - Date, period, or time range
+- **location** - Repository or holding institution
+- **credit** - Attribution line
+
+### Supported IIIF Versions
+
+Telar supports both IIIF Presentation API versions:
+
+- **Version 2.0** - Widely used by many institutions
+- **Version 3.0** - Latest standard with language maps
+
+The extraction system automatically detects the version and uses the appropriate metadata structure.
+
+### How to Use
+
+Simply add the IIIF manifest URL to your objects CSV or Google Sheet. Leave other fields blank:
+
+```csv
+object_id,title,description,iiif_manifest,creator,period,location,credit
+map-001,,,https://example.org/iiif/manifest.json,,,,
+```
+
+When the site builds, Telar will:
+
+1. Fetch the IIIF manifest
+2. Extract available metadata fields
+3. Populate empty fields with extracted data
+4. Use your CSV data for any fields you filled in
+
+### Override Control
+
+**Your CSV data always wins.** You can:
+
+- Let Telar extract all fields (leave them blank)
+- Override some fields (fill them in, leave others blank)
+- Override all fields (fill everything in, ignore manifest metadata)
+
+**Example - partial override:**
+```csv
+object_id,title,description,iiif_manifest,creator,period,location,credit
+map-001,My Custom Title,,https://example.org/manifest.json,,,,
+```
+
+Telar will:
+- Use "My Custom Title" (from CSV)
+- Extract description, creator, period, location, and credit from IIIF manifest
+
+### Language Detection
+
+Metadata extraction respects your site's language setting (`telar_language` in `_config.yml`):
+
+- **English sites** (`en`) - Prioritizes English metadata, falls back to other languages
+- **Spanish sites** (`es`) - Prioritizes Spanish metadata, falls back to English, then others
+
+If a manifest provides multilingual metadata, Telar selects the most appropriate language for your site.
+
+### Smart Credit Detection
+
+For the `credit` field, Telar uses intelligent fallback logic:
+
+1. Looks for "Attribution" or "Rights" fields
+2. Filters out legal boilerplate (Creative Commons URLs, rights statements)
+3. Falls back to repository name if no specific attribution found
+
+This ensures you get meaningful credit lines, not just legal text.
+
+### Validation
+
+During the build, Telar validates IIIF manifests:
+
+- ✅ **Valid manifest** - Metadata extracted successfully
+- ⚠️ **Manifest unavailable** - HTTP errors, will retry next build
+- ⚠️ **No metadata found** - Manifest valid but contains no metadata fields
+
+Check your build logs for extraction status and warnings.
+
+### Build-Time Processing
+
+Metadata extraction happens during the `python3 scripts/csv_to_json.py` step:
+
+**GitHub Pages:** Automatic during deployment
+**Local development:** Run manually when updating manifests:
+
+```bash
+python3 scripts/csv_to_json.py
+```
+
+### Example Workflow
+
+1. Find a IIIF manifest URL from a museum or library
+2. Add to your objects CSV with just the `object_id` and `iiif_manifest`
+3. Build your site
+4. Check the object page - metadata should be populated
+5. Override any fields that need adjustment
+
+### Common Metadata Fields
+
+Different institutions use different field names. Telar searches for common variations:
+
+**For title:**
+- "Title", "Label", "Name"
+
+**For description:**
+- "Description", "Summary", "Note"
+
+**For creator:**
+- "Creator", "Artist", "Maker", "Author"
+
+**For period:**
+- "Date", "Period", "Creation Date", "Date Created"
+
+**For location:**
+- "Repository", "Holding Institution", "Current Location"
+
+**For credit:**
+- "Attribution", "Rights Holder", "Credit Line", "Provider"
+
+### When to Override
+
+You might want to override extracted metadata when:
+
+- **Translation needed** - Manifest is in a different language
+- **Abbreviations** - Institution uses codes or abbreviations
+- **Multiple values** - Manifest has too much detail, you want a summary
+- **Audience level** - Original description is too technical/academic
+
+### Limitations
+
+- Only works with **external IIIF manifests** (not local images)
+- Requires publicly accessible manifests (no authentication)
+- HTML tags are stripped from descriptions for YAML safety
+- Some manifests may not include metadata fields
+
 ## Coordinate System
 
 IIIF coordinates in Telar use normalized values (0-1):

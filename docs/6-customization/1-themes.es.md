@@ -161,6 +161,125 @@ Para usar fuentes no incluidas por defecto:
    font_headings: "Tu Fuente, serif"
    ```
 
+## Atribución de la persona creadora del tema
+
+Telar v0.4.0+ permite añadir atribución opcional para reconocer a quienes diseñan temas personalizados en el pie de página del sitio.
+
+### Agrega atribución a temas personalizados
+
+Al crear un tema propio, agrega la información de la persona creadora en tu archivo YAML:
+
+```yaml
+name: "Miami"
+description: "Retro Cool. Digital Heat."
+creator: "Material/Image Research Lab"
+creator_url: "https://mirl.ucsb.edu"
+
+colors:
+   text:
+      heading: "#F990E8"
+      body: "#000000"
+      link: "#0BD2D3"
+      button: "#F990E8"
+      panel_layer1: "#FFFFFF"
+      panel_layer2: "#FFFFFF"
+      panel_glossary: "#FFFFFF"
+
+   background:
+      button: "#0BD2D3"
+      panel_layer1: "#F990E8"
+      panel_layer2: "#0BD2D3"
+      panel_glossary: "#F990E8"
+
+fonts:
+   headings: "'Limelight', serif"
+   body: "'Inter', sans-serif"
+```
+
+### Campos de atribución
+
+Todos los campos son opcionales:
+
+**name** - Nombre visible del tema
+```yaml
+name: "Miami"
+```
+
+**creator** - Persona u organización que diseñó el tema
+```yaml
+creator: "Material/Image Research Lab"
+creator: "Jeff"
+```
+
+**creator_url** - Sitio web o perfil para enlazar la atribución
+```yaml
+creator_url: "https://mirl.ucsb.edu"
+creator_url: "https://github.com/mirl-ucsb"
+```
+
+**description** - Nota breve sobre el diseño (uso interno)
+```yaml
+description: "Retro Cool. Digital Heat."
+```
+
+### Cómo se muestra la atribución
+
+Cuando agregas información de atribución, aparece en el pie de página:
+
+**Con nombre y creadora:**
+"Miami theme by MIRL Lab" (enlazado a `creator_url` si existe)
+
+**Solo con creadora:**
+"Theme by MIRL Lab"
+
+**Solo con nombre:**
+"Miami theme"
+
+**Sin ninguno:**
+No se muestra atribución
+
+### Atribución para temas predeterminados
+
+Todos los temas incluidos en Telar traen atribución por defecto:
+
+**Paisajes Coloniales**
+- Creador: Neogranadina
+- URL: https://neogranadina.org
+
+**Neogranadina**
+- Creador: Neogranadina
+- URL: https://neogranadina.org
+
+**Santa Barbara**
+- Creador: AMPL en UC Santa Barbara
+- URL: https://ampl.clair.ucsb.edu
+
+**Austin**
+- Creador: AMPL en UT Austin
+- URL: https://liberalarts.utexas.edu/history/
+
+### Comparte temas personalizados
+
+Si quieres compartir un tema con la comunidad de Telar:
+
+1. Incluye metadatos completos de atribución
+2. Documenta la paleta de colores y la lógica del diseño
+3. Describe recomendaciones de uso (ej., ideal para imágenes en escala de grises)
+4. Compártelo en el foro [Telar Discussions](https://github.com/UCSB-AMPLab/telar/discussions)
+
+### Quitar la atribución
+
+Si prefieres usar un tema sin atribución:
+
+- Omite los campos `creator` y `creator_url` en el archivo del tema
+- O asígnales cadenas vacías:
+   ```yaml
+   creator: ""
+   creator_url: ""
+   ```
+
+No se mostrará ninguna atribución en el pie de página.
+
 ## Accesibilidad del color
 
 Al crear temas personalizados, asegura buen contraste:

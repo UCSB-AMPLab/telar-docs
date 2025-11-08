@@ -75,7 +75,7 @@ Telar admite dos formas de agregar imágenes:
 
 1. Encuentra recursos IIIF de instituciones ([Guía IIIF para Encontrar Recursos](https://iiif.io/guides/finding_resources/))
 2. Copia la URL del manifiesto (ej., `https://iiif.io/api/cookbook/recipe/0001-mvm-image/manifest.json`)
-3. Agrégala a la pestaña "objects" con un object_id simple (ej., `museum-textile-001`)
+3. Agrégala a la pestaña **Objects** con un object_id simple (ej., `museum-textile-001`)
 
 ### Agrega detalles de objetos
 

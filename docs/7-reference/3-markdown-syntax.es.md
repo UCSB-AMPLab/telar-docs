@@ -283,7 +283,7 @@ Usa nombres de archivo descriptivos, en minúsculas con guiones:
 
 - **Sin JavaScript**: Markdown se convierte a HTML estático
 - **Sin atributos HTML personalizados**: Usa la sintaxis de tamaño proporcionada en lugar de clases personalizadas
-- **Procesamiento de imágenes**: Solo las imágenes en `/components/images/objects/` generan automáticamente _tiles_ IIIF
+- **Procesamiento de imágenes**: Solo las imágenes en `/components/images/objects/` generan automáticamente teselas (*tiles*) IIIF
 
 ---
 

@@ -39,7 +39,7 @@ components/
 
 - **Archivos CSV** contienen datos estructurales (coordenadas, referencias de archivos)
 - **Archivos Markdown** contienen contenido narrativo de formato largo
-- **Imágenes** se procesan automáticamente en _tiles_ IIIF
+- **Imágenes** se procesan automáticamente en teselas (*tiles*) IIIF
 
 ## Estructura CSV de historia
 
@@ -114,6 +114,232 @@ related_terms: encomienda,virreinato
 ---
 
 El Período Colonial en las Américas comenzó con...
+```
+
+### Autoenlaces del glosario
+
+Puedes crear enlaces dentro del texto a términos del glosario usando sintaxis tipo wiki:
+
+```markdown
+El [[colonial-period]] comenzó con el establecimiento de [[viceroyalty|virreinatos]].
+```
+
+**Sintaxis:**
+- `[[term_id]]` - Crea un enlace al término y muestra el título del término
+- `[[term_id|custom text]]` - Crea un enlace al término y muestra el texto personalizado
+
+Cuando las personas hacen clic en estos enlaces, la definición del glosario se abre en un panel lateral deslizante sin abandonar la historia.
+
+## Widgets en los paneles de la historia
+
+Telar v0.4.0+ incluye un sistema de widgets interactivos para presentar contenido enriquecido dentro de los paneles de las historias. Los widgets te permiten incrustar carruseles, contenido con pestañas y secciones plegables directamente en tus archivos markdown.
+
+### Widgets disponibles
+
+**Carrusel** - Carrusel de imágenes con controles de navegación
+**Pestañas** - Paneles con pestañas para información multiperspectiva
+**Acordeón** - Secciones plegables para contenido jerárquico
+
+### Sintaxis de widgets
+
+Los widgets usan la sintaxis de contenedor estilo CommonMark con triple dos puntos:
+
+```markdown
+:::widget_type
+contenido del widget aquí
+:::
+```
+
+### Widget de carrusel
+
+Muestra varias imágenes con controles de navegación, leyendas y créditos.
+
+**Sintaxis:**
+```markdown
+:::carousel
+image: story1/map.jpg
+alt: Mapa histórico de la región
+caption: Mapa de 1650 que muestra los límites coloniales
+credit: National Archives
+
+---
+
+image: story1/document.jpg
+alt: Documento colonial
+caption: Decreto real que establece el asentamiento
+credit: Archivo General de Indias
+:::
+```
+
+**Campos:**
+- `image` (obligatorio) - Ruta relativa a `assets/images/`
+- `alt` (recomendado) - Descripción para accesibilidad
+- `caption` (opcional) - Texto que se muestra debajo de la imagen
+- `credit` (opcional) - Línea de atribución
+
+**Imágenes externas:** Puedes usar URLs completas para imágenes alojadas en otros servidores:
+```markdown
+image: https://example.org/images/photo.jpg
+```
+
+{: .note }
+> **Separador**
+> Usa `---` para separar elementos del carrusel
+
+### Widget de pestañas
+
+Organiza contenido en pestañas conmutables, ideal para presentar distintas perspectivas o fuentes.
+
+**Sintaxis:**
+```markdown
+:::tabs
+## Relato español
+Las autoridades reales reportaron que el levantamiento comenzó el...
+
+Los registros históricos muestran testimonios contradictorios...
+
+## Perspectiva indígena
+Las lideresas y los líderes comunitarios organizaron la resistencia...
+
+Las tradiciones orales describen una respuesta coordinada...
+
+## Análisis contemporáneo
+Hoy las personas historiadoras reconocen este evento como...
+:::
+```
+
+**Estructura:**
+- Cada `## Encabezado` crea una pestaña nueva
+- El contenido entre encabezados se convierte en el contenido de la pestaña
+- Se admite la sintaxis estándar de Markdown
+- Mínimo 2 pestañas, máximo 4 pestañas
+
+### Widget de acordeón
+
+Crea paneles plegables para secuencias cronológicas, información jerárquica o detalles opcionales.
+
+**Sintaxis:**
+```markdown
+:::accordion
+## 1600-1650: Primer periodo colonial
+La corona española estableció estructuras administrativas en todo el territorio.
+
+Las poblaciones indígenas se reorganizaron en asentamientos...
+
+## 1650-1700: Consolidación
+Los sistemas de hacienda se afianzaron a medida que maduraba la economía colonial.
+
+## 1700-1750: Era de reformas
+Las reformas borbónicas retaron las estructuras de poder existentes...
+:::
+```
+
+**Estructura:**
+- Cada `## Encabezado` crea un panel plegable
+- Todos los paneles empiezan colapsados
+- Mínimo 2 paneles, máximo 6 paneles
+- Se admite la sintaxis estándar de Markdown
+
+### Ubicación de widgets
+
+Los widgets funcionan en todos los archivos markdown de los paneles de las historias:
+
+- **Paneles de la capa 1** - Contenido de "Learn more"
+- **Paneles de la capa 1** - Contenido de **Learn more**
+- **Paneles de la capa 2** - Contenido de **Go deeper**
+- **Paneles de la capa 3** - El nivel más profundo de detalle
+
+{: .tip }
+> **Contraste visual**
+> Los widgets usan automáticamente colores opuestos para lograr contraste visual. Los widgets de la capa 1 aparecen con los colores de la capa 2 y viceversa.
+
+### Imágenes en widgets
+
+**Imágenes locales:**
+Coloca las imágenes en `assets/images/` y haz referencia a ellas de forma relativa a esa carpeta:
+
+```
+assets/images/
+├── story1/
+│   ├── map.jpg
+│   └── document.jpg
+└── story2/
+    └── artifact.jpg
+```
+
+```markdown
+image: story1/map.jpg
+image: story2/artifact.jpg
+```
+
+**Imágenes externas:**
+Usa URLs completas para imágenes alojadas en otros lugares:
+
+```markdown
+image: https://digital-collections.library.edu/iiif/image123.jpg
+image: https://archive.org/download/item/photo.jpg
+```
+
+### Validación y errores
+
+Telar valida los widgets durante el proceso de *build*:
+
+**Errores que detienen la *build*:**
+- Falta el campo `image` obligatorio en el carrusel
+- Muy pocas o demasiadas pestañas/paneles de acordeón
+- Secciones de contenido vacías
+
+**Advertencias:**
+- Falta texto `alt` en imágenes del carrusel (impacta accesibilidad)
+- No se encuentran archivos de imagen en las rutas especificadas
+
+Revisa la salida de la *build* para ver mensajes de validación de widgets.
+
+### Ejemplos de widgets
+
+**Acordeón para línea de tiempo histórica:**
+```markdown
+:::accordion
+## 1520-1550: Conquista
+Las fuerzas españolas establecieron control sobre el territorio por medio de varias campañas militares...
+
+## 1550-1600: Asentamiento
+Se fundaron pueblos coloniales como centros administrativos...
+
+## 1600-1680: Consolidación
+Se consolidó la economía colonial basada en minería y agricultura...
+:::
+```
+
+**Pestañas con fuentes comparativas:**
+```markdown
+:::tabs
+## Fuente primaria
+"El día 15 de agosto, el virrey decretó..." (Archivo Colonial, Doc. 234)
+
+## Análisis secundario
+Las personas historiadoras contemporáneas interpretan este decreto como evidencia de...
+
+## Evidencia arqueológica
+Las excavaciones en el sitio revelaron...
+:::
+```
+
+**Carrusel de comparación de imágenes:**
+```markdown
+:::carousel
+image: before.jpg
+alt: Fotografía del sitio en 1920
+caption: La plaza antes de la restauración
+credit: Archivo Municipal
+
+---
+
+image: after.jpg
+alt: Fotografía del sitio en 2020
+caption: La plaza después de la restauración arqueológica
+credit: Instituto Nacional de Antropología
+:::
 ```
 
 ## Colecciones de Jekyll

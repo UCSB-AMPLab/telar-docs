@@ -72,7 +72,7 @@ A lo largo de tu flujo de trabajo, usarás estos comandos:
 # Convierte CSVs a JSON (ejecuta después de editar CSVs)
 python3 scripts/csv_to_json.py
 
-# Genera tiles IIIF (ejecuta después de agregar/actualizar imágenes)
+# Genera teselas IIIF (ejecuta después de agregar/actualizar imágenes)
 python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
 
 # Sirve con recarga automática
@@ -91,7 +91,7 @@ Elige una de dos opciones:
 
 1. Agrega imágenes de alta resolución al directorio `components/images/objects/`
 2. Nombra archivos para que coincidan con IDs de objeto (ej., `textile-001.jpg`)
-3. Genera _tiles_ IIIF:
+3. Genera teselas IIIF:
    ```bash
    python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
    ```
@@ -239,7 +239,7 @@ Cuando trabajes en tu sitio:
 # 2. Convierte CSVs a JSON (después de editar CSVs)
 python3 scripts/csv_to_json.py
 
-# 3. Genera tiles IIIF (después de agregar/actualizar imágenes)
+# 3. Genera teselas IIIF (después de agregar/actualizar imágenes)
 python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
 
 # 4. Sirve con recarga automática

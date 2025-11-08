@@ -22,7 +22,7 @@ Desarrollado por Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz y estudi
 
 ## Características principales
 
-- **Integración IIIF:** Soporte para cargar imágenes de alta calidad (con *tiles* autogenerados que permiten ampliar sin perder resolución) y vincular recursos IIIF externos de museos y bibliotecas de todo el mundo.
+- **Integración IIIF:** Soporte para cargar imágenes de alta calidad (con teselas (*tiles*) autogeneradas que permiten ampliar sin perder resolución) y vincular recursos IIIF externos de museos y bibliotecas de todo el mundo.
 - **Scrollytelling:** Construye una narración que avanza al hacer scroll (desplazarse hacia abajo). Cada paso revela nuevas imágenes o documentos, dado que soporta múltiples objetos IIIF en una sola historia. Cada objeto viene precargado en su propia tarjeta de visualización para una mejor experiencia de carga.
 - **Paneles en capas:** Exposición con tres capas de contenido, más glosario para una narración rica y contextual.
 - **Galería de objetos:** Navega por la cuadrícula de objetos y accede a cada páginas con detalles y herramientas de identificación de coordenadas.

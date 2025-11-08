@@ -84,6 +84,104 @@ telar_theme: "paisajes"  # Opciones: paisajes, neogranadina, santa-barbara, aust
 
 Consulta [Personalización: Temas](/documentacion/6-personalizacion/1-temas/) para ver detalles y cómo crear temas personalizados.
 
+## Interfaz multilingüe
+
+Telar v0.4.0+ admite interfaces en inglés y español. Esta opción controla el idioma de los elementos de interfaz, incluyendo navegación, botones, etiquetas, mensajes de error e instrucciones.
+
+```yaml
+telar_language: "en"  # Opciones: "en" (English), "es" (Español)
+```
+
+### Qué se traduce
+
+El ajuste `telar_language` cambia el idioma de:
+
+- **Menú de navegación**: Home, Objects, Stories, Glossary, About
+- **Botones**: Copy, Back, Learn More, Go Deeper, etc.
+- **Campos de metadatos**: Creator, Period, Medium, Location, Credit, etc.
+- **Mensajes de error**: Todas las advertencias IIIF, errores de validación y problemas de configuración
+- **Interfaz de historias**: Indicadores de paso, encabezados de panel, herramienta de coordenadas
+- **Páginas de objetos**: Etiquetas de manifiestos IIIF, instrucciones de coordenadas
+- **Glosario**: Encabezados de panel y elementos de navegación
+
+### Qué permanece en tu idioma
+
+El ajuste `telar_language` **no** traduce tu contenido:
+
+- Narrativas y texto de panel (archivos markdown que escribes)
+- Descripciones de objetos y metadatos (datos de tu CSV)
+- Definiciones del glosario
+- Contenido de la página About
+- Título y descripción del sitio
+
+{: .note }
+> **Nota sobre la traducción de contenido**
+> Si necesitas un sitio completamente bilingüe, crea instalaciones separadas de Telar para cada idioma o espera el sistema multilingüe de contenido previsto para la versión 0.5.0.
+
+### Configura tu idioma
+
+**Sitios nuevos:** Selecciona el idioma cuando configures tu sitio en `_config.yml`.
+
+**Sitios existentes:** Agrega o actualiza la opción en tu `_config.yml`:
+
+```yaml
+# Configuración del sitio
+title: Mi exposición
+description: Una descripción de mi sitio
+telar_language: "es"  # Cambia de "en" a "es" para español
+```
+
+Luego recompila tu sitio:
+
+```bash
+bundle exec jekyll build
+```
+
+### Detección de idioma en metadatos IIIF
+
+Cuando Telar extrae metadatos de manifiestos IIIF, respeta tu ajuste `telar_language`:
+
+- Para **sitios en inglés** (`en`): Prioriza metadatos en inglés y recurre a otros idiomas si no existen
+- Para **sitios en español** (`es`): Prioriza metadatos en español, luego en inglés, y finalmente en otros idiomas
+
+Así, los metadatos se muestran en el idioma más adecuado disponible desde la institución fuente.
+
+{: .warning }
+> **Plantilla de Google Sheets en español**
+> Si vas a crear un sitio en español con integración de Google Sheets, usa la plantilla en español que incluye encabezados y notas traducidas.
+
+### Archivos de idioma
+
+Las traducciones de la interfaz se almacenan en:
+
+- `_data/lang/en.yml` - Cadenas en inglés
+- `_data/lang/es.yml` - Cadenas en español
+
+Estos archivos los mantiene el proyecto Telar y se actualizan automáticamente cuando haces *upgrade* a nuevas versiones.
+
+## Ajustes de la interfaz de historias
+
+Controla cómo se muestran y se comportan las historias:
+
+```yaml
+story_interface:
+  show_story_steps: true  # Ponlo en false para ocultar la superposición "Step X"
+  include_demo_content: false  # Función de la versión 0.5.0 (aún no disponible)
+```
+
+### show_story_steps
+
+Controla si el indicador **Step X** aparece en la esquina superior izquierda del visor de historias.
+
+- **`true` (predeterminado)**: Muestra **Step 1**, **Step 2**, etc. en el visor
+- **`false`**: Oculta los indicadores para una experiencia más limpia e inmersiva
+
+Es un cambio visual; las personas siguen pudiendo navegar por los pasos normalmente.
+
+### include_demo_content
+
+Reservado para versiones futuras (v0.5.0). Permitirá incluir historias de demostración y contenido desde un repositorio externo.
+
 ## Navegación
 
 Configura la navegación del sitio:
@@ -193,6 +291,7 @@ exclude:
 ## Próximos pasos
 
 - [Personaliza tu Tema](/documentacion/6-personalizacion/1-temas/)
+- [Personaliza tu página inicial](/documentacion/6-personalizacion/3-pagina-inicial/)
 - [Aprende sobre GitHub Actions](/documentacion/7-referencia/1-github-actions/)
 - [Explora Estilos Avanzados](/documentacion/6-personalizacion/2-estilos/)
 

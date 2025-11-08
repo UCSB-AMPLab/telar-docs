@@ -165,7 +165,7 @@ Edita componentes reutilizables en `_includes/`:
 
 ## Diseño adaptable
 
-Ajusta los breakpoints y el comportamiento responsivo:
+Ajusta los breakpoints y el comportamiento adaptable:
 
 ```scss
 // Móvil
@@ -315,7 +315,7 @@ Agrega animaciones sutiles:
 1. **Usa variables CSS** para valores que se repiten
 2. **Prueba en múltiples tamaños de pantalla**
 3. **Mantén accesibilidad** (contraste, navegación por teclado)
-4. **Mantenlo eficiente** (evita animaciones pesadas, imágenes grandes)
+4. **Manténlo eficiente** (evita animaciones pesadas, imágenes grandes)
 5. **Comenta tu código** para referencia futura
 6. **Prueba en múltiples navegadores** (Chrome, Firefox, Safari)
 

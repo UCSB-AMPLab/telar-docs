@@ -160,6 +160,125 @@ To use fonts not included by default:
    font_headings: "Your Font, serif"
    ```
 
+## Theme Creator Attribution
+
+Telar v0.4.0+ supports optional theme creator attribution, allowing you to credit theme designers in your site footer.
+
+### Adding Attribution to Custom Themes
+
+When creating a custom theme, you can add creator information to your theme YAML file:
+
+```yaml
+name: "Miami"
+description: "Retro Cool. Digital Heat."
+creator: "Material/Image Research Lab"
+creator_url: "https://mirl.ucsb.edu"
+
+colors:
+  text:
+    heading: "#F990E8"
+    body: "#000000"
+    link: "#0BD2D3"
+    button: "#F990E8"
+    panel_layer1: "#FFFFFF"
+    panel_layer2: "#FFFFFF"
+    panel_glossary: "#FFFFFF"
+
+  background:
+    button: "#0BD2D3"
+    panel_layer1: "#F990E8"
+    panel_layer2: "#0BD2D3"
+    panel_glossary: "#F990E8"
+
+fonts:
+  headings: "'Limelight', serif"
+  body: "'Inter', sans-serif"
+```
+
+### Attribution Fields
+
+All fields are optional:
+
+**name** - Display name for your theme
+```yaml
+name: "Miami"
+```
+
+**creator** - Name of the person or organization who designed the theme
+```yaml
+creator: "Material/Image Research Lab"
+creator: "Jeff"
+```
+
+**creator_url** - Website or profile URL for attribution link
+```yaml
+creator_url: "https://mirl.ucsb.edu"
+creator_url: "https://github.com/mirl-ucsb"
+```
+
+**description** - Brief note about the theme's design (for internal use)
+```yaml
+description: "Retro Cool. Digital Heat."
+```
+
+### How Attribution Displays
+
+When you add creator information, it appears in your site footer:
+
+**With both name and creator:**
+"Miami theme by MIRL Lab" (linked to creator_url if provided)
+
+**With only creator:**
+"Theme by MIRL Lab"
+
+**With only name:**
+"Miami theme"
+
+**With neither:**
+No theme attribution shown
+
+### Attribution for Preset Themes
+
+All of Telar's preset themes include attribution:
+
+**Paisajes Coloniales**
+- Creator: Neogranadina
+- URL: https://neogranadina.org
+
+**Neogranadina**
+- Creator: Neogranadina
+- URL: https://neogranadina.org
+
+**Santa Barbara**
+- Creator: AMPL at UC Santa Barbara
+- URL: https://ampl.clair.ucsb.edu
+
+**Austin**
+- Creator: AMPL at UT Austin
+- URL: https://liberalarts.utexas.edu/history/
+
+### Sharing Custom Themes
+
+If you create a theme you'd like to share with the Telar community:
+
+1. Add complete attribution metadata
+2. Document color choices and design philosophy
+3. Include usage recommendations (best for grayscale images, colorful content, etc.)
+4. Share on the [Telar Discussions](https://github.com/UCSB-AMPLab/telar/discussions) forum
+
+### Removing Attribution
+
+To use a theme without attribution:
+
+- Simply omit the `creator` and `creator_url` fields from your theme file
+- Or set them to empty strings:
+  ```yaml
+  creator: ""
+  creator_url: ""
+  ```
+
+No attribution will appear in the footer.
+
 ## Color Accessibility
 
 When creating custom themes, ensure good contrast:

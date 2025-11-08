@@ -83,6 +83,104 @@ telar_theme: "paisajes"  # Options: paisajes, neogranadina, santa-barbara, austi
 
 See [Customization: Themes](/docs/customization/themes/) for details and creating custom themes.
 
+## Multilingual Interface
+
+Telar v0.4.0+ supports multilingual user interfaces in English and Spanish. This controls the language of all interface elements, including navigation, buttons, labels, error messages, and instructions.
+
+```yaml
+telar_language: "en"  # Options: "en" (English), "es" (Español)
+```
+
+### What Gets Translated
+
+The `telar_language` setting changes the language of:
+
+- **Navigation menu**: Home, Objects, Stories, Glossary, About
+- **Button labels**: Copy, Back, Learn More, Go Deeper, etc.
+- **Metadata fields**: Creator, Period, Medium, Location, Credit, etc.
+- **Error messages**: All IIIF warnings, validation errors, and configuration issues
+- **Story interface**: Step indicators, panel headers, coordinate tool
+- **Object pages**: IIIF manifest labels, coordinate identification instructions
+- **Glossary**: Panel headers, navigation elements
+
+### What Stays in Your Language
+
+The `telar_language` setting **does not** translate your content:
+
+- Story narratives and panel text (markdown files you create)
+- Object descriptions and metadata (CSV data you provide)
+- Glossary definitions
+- About page content
+- Site title and description
+
+{: .note }
+> **Note on Content Translation**
+> If you need a fully bilingual site with content in multiple languages, you'll need to create separate Telar sites for each language or wait for v0.5.0's multilingual content system.
+
+### Setting Your Language
+
+**New sites:** The language is set when you first configure your site in `_config.yml`.
+
+**Existing sites:** Add or update the setting in your `_config.yml`:
+
+```yaml
+# Site Settings
+title: My Exhibition
+description: A description of my site
+telar_language: "es"  # Change from "en" to "es" for Spanish
+```
+
+Then rebuild your site:
+
+```bash
+bundle exec jekyll build
+```
+
+### IIIF Metadata Language Detection
+
+When Telar auto-extracts metadata from IIIF manifests, it respects your `telar_language` setting:
+
+- For **English sites** (`en`): Prioritizes English metadata, falls back to other languages if unavailable
+- For **Spanish sites** (`es`): Prioritizes Spanish metadata, falls back to English, then other languages
+
+This ensures that object metadata appears in your preferred language when available from the source institution.
+
+{: .warning }
+> **Spanish Google Sheets Template**
+> If you're creating a Spanish-language site with Google Sheets integration, use the Spanish template which includes translated column headers and instructions.
+
+### Language Files
+
+The interface translations are stored in:
+
+- `_data/lang/en.yml` - English strings
+- `_data/lang/es.yml` - Spanish strings
+
+These files are maintained by the Telar project and update automatically when you upgrade to new versions.
+
+## Story Interface Settings
+
+Control how stories display and behave:
+
+```yaml
+story_interface:
+  show_story_steps: true  # Set to false to hide "Step X" overlay
+  include_demo_content: false  # v0.5.0 feature (not yet available)
+```
+
+### show_story_steps
+
+Controls whether the "Step X" indicator appears in the top-left corner of story viewers.
+
+- **`true` (default)**: Shows "Step 1", "Step 2", etc. in the viewer
+- **`false`**: Hides the step indicators for a cleaner, more immersive experience
+
+This is purely visual - users can still navigate through steps normally.
+
+### include_demo_content
+
+Reserved for future use (v0.5.0). Will allow including demonstration stories and content from an external repository.
+
 ## Navigation
 
 Configure site navigation:

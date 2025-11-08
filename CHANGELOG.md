@@ -6,13 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [v0.4.0] - 2025-11-07
+
 ### Added
-- Comprehensive upgrade guide (English and Spanish)
-- Automated upgrade workflow documentation for v0.3.4+
-- Manual setup instructions for upgrading from earlier versions
+
+- **Multilingual UI configuration guide** - Complete documentation for English/Spanish interface support (5-configuration.md)
+- **Widget system documentation** - Carousel, tabs, and accordion widget usage with examples (3-content-structure.md)
+- **IIIF metadata auto-population guide** - Automatic metadata extraction from IIIF manifests (4-iiif-integration.md)
+- **Mobile optimization guide** - Comprehensive mobile responsiveness best practices (6-customization/4-mobile.md)
+- **Theme creator attribution documentation** - How to add creator credits to custom themes (6-customization/1-themes.md)
+- Spanish translations for all new v0.4.0 documentation
 
 ### Changed
-- Updated workflow index pages to include upgrade documentation
+
+- Updated configuration documentation with story interface settings
+- Expanded content structure guide with glossary auto-linking syntax
+- Enhanced IIIF integration guide with metadata extraction workflow
+
+See the [main Telar CHANGELOG](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md#040-beta---2025-11-07) for full v0.4.0-beta feature list.
 
 ## [v0.3.3] - 2025-10-28
 

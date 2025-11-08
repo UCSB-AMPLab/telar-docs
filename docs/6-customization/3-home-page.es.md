@@ -5,11 +5,12 @@ parent: 6. Personalización
 grand_parent: Documentación
 nav_order: 3
 lang: es
+permalink: /documentacion/6-personalizacion/3-pagina-inicial/
 ---
 
 ## Personalizar la página de inicio
 
-La página principa de tu sitio de Telar está controlada por un archivo Markdown sencillo (`index.md`) que vive en el directorio raíz de tu repositorio. Ahí puedes editar o quitar el mensaje de bienvenida y cambiar los encabezados de cada sección.
+La página principal de tu sitio Telar está controlada por un archivo Markdown sencillo (`index.md`) en el directorio raíz del repositorio. Ahí puedes editar o quitar el mensaje de bienvenida y cambiar los encabezados de cada sección.
 
 ## Ubicación del archivo
 
@@ -85,7 +86,7 @@ Navega a través de las historias a continuación para descubrir las técnicas y
 
 ### Ejemplo: cuadro de alerta
 
-Puedes usar tags de alera para mostrar advertencias:
+Puedes usar etiquetas de alerta para mostrar advertencias:
 
 ```markdown
 ---
@@ -100,7 +101,7 @@ objects_intro: "Browse {count} objects featured in the stories."
 {: .alert .alert-warning}
 > **🚧 Exposición en desarrollo**
 >
-> Esta exposición se está desarrollando activamente. Estmaos agregando nuevas historias
+> Esta exposición se está desarrollando activamente. Estamos agregando nuevas historias
 > y objetos regularmente. ¡Vuelve pronto para ver cómo nos queda!
 ```
 
