@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [v0.4.1] - 2025-11-08
+
+### Changed
+
+- Updated documentation to reflect v0.4.1-beta framework release
+- Updated version numbers across index and about pages (English and Spanish)
+- Added supporter acknowledgments to all pages:
+  - Caribbean Digital Scholarship Collective
+  - Center for Innovative Teaching, Research, and Learning (CITRAL) at UC Santa Barbara
+  - UCSB Library
+  - Routes of Enslavement in the Americas University of California MRPI
+  - Department of History of The University of Texas at Austin
+
+See the [main Telar CHANGELOG](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md#041-beta---2025-11-08) for full v0.4.1-beta feature list (mobile responsive features restoration, object gallery mobile layout, multilingual coordinate picker).
+
 ## [v0.4.0] - 2025-11-07
 
 ### Added

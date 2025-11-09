@@ -11,14 +11,16 @@ permalink: /es/
 **Un marco de computación mínima para crear narrativas visuales con imágenes IIIF y _scrollytelling_.**
 
 {: .beta }
-> **Versión Beta - v0.3.3-beta**
-> Esta versión corrige un error crítico en el flujo de trabajo. La versión 0.3.2-beta agregó parámetros de tamaño a la sintaxis de imágenes de markdown de los paneles y permite personalizar la página de inicio. La versión 0.3.1-beta corrigió errores críticos con la carga de imágenes y miniaturas.
+> **Versión Beta - v0.4.1-beta**
+> Esta versión restaura funcionalidades móviles críticas perdidas accidentalmente en v0.4.0, mejora el diseño móvil de la galería de objetos, y añade selector de coordenadas multilingüe con soporte para copiar directamente a Google Sheets.
 
 ## ¿Qué es Telar?
 
 Telar entreteje imágenes IIIF, texto narrativo e información contextual en narrativas visuales e interactivas. Sigue los principios de computación mínima (*Minimal Computing*): autoría en texto plano, generación estática y alojamiento sostenible.
 
 Desarrollado por Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz y estudiantes e investigadores del [UCSB Archives, Memory, and Preservation Lab](https://ampl.clair.ucsb.edu), el UT Archives, Mapping, and Preservation Lab y [Neogranadina](https://neogranadina.org).
+
+Agradecemos el apoyo del [Caribbean Digital Scholarship Collective](https://cdscollective.org), el [Center for Innovative Teaching, Research, and Learning (CITRAL)](https://citral.ucsb.edu/home) de la Universidad de California, Santa Bárbara, la [UCSB Library](https://library.ucsb.edu), el [Routes of Enslavement in the Americas University of California MRPI](https://www.humanities.uci.edu/routes-enslavement-americas), y el [Departamento de Historia de la Universidad de Texas en Austin](https://liberalarts.utexas.edu/history/).
 
 ## Características principales
 

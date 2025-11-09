@@ -55,3 +55,19 @@ The language switcher appears at the top-right of each page.
 - **Theme styles**: `_sass/custom/custom.scss`
 - **Logo**: `images/telar.png` (placeholder - replace with final logo)
 - **Site config**: `_config.yml`
+
+## Credits
+
+Telar is developed by Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz, and students and scholars at the [UCSB Archives, Memory, and Preservation Lab](https://ampl.clair.ucsb.edu), the UT Archives, Mapping, and Preservation Lab, and [Neogranadina](https://neogranadina.org).
+
+We gratefully acknowledge the support of the [Caribbean Digital Scholarship Collective](https://cdscollective.org), the [Center for Innovative Teaching, Research, and Learning (CITRAL)](https://citral.ucsb.edu/home) at the University of California, Santa Barbara, the [UCSB Library](https://library.ucsb.edu), the [Routes of Enslavement in the Americas University of California MRPI](https://www.humanities.uci.edu/routes-enslavement-americas), and the [Department of History of The University of Texas at Austin](https://liberalarts.utexas.edu/history/).
+
+Telar is built with:
+- [Jekyll](https://jekyllrb.com/) - Static site generator
+- [UniversalViewer](https://universalviewer.io/) - IIIF viewer
+- [Bootstrap 5](https://getbootstrap.com/) - CSS framework
+- [iiif-static](https://github.com/bodleian/iiif-static-choices) - IIIF tile generator
+
+It is based on [Paisajes Coloniales](https://paisajescoloniales.com/), and inspired by:
+- [Wax](https://minicomp.github.io/wax/) - Minimal computing for digital exhibitions
+- [CollectionBuilder](https://collectionbuilder.github.io/) - Static digital collections

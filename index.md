@@ -10,14 +10,16 @@ lang: en
 **A minimal computing framework for creating visual narrative exhibitions with IIIF images and scrollytelling.**
 
 {: .beta }
-> **Beta Release - v0.3.3-beta**
-> This release fixes a critical workflow bug. Version 0.3.2-beta added image sizing syntax for panel markdown and customizable index page. Version 0.3.1-beta fixed critical bugs with image and thumbnail loading.
+> **Beta Release - v0.4.1-beta**
+> This release restores critical mobile responsive features accidentally lost in v0.4.0, improves object gallery mobile layout, and adds multilingual coordinate picker with Google Sheets copy support.
 
 ## What is Telar?
 
 Telar (Spanish for "loom") weaves together IIIF images, narrative text, and layered contextual information into interactive visual narrative exhibitions. It follows minimal computing principles: plain text authoring, static generation, and sustainable hosting.
 
 Developed by Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz, and students and scholars at the [UCSB Archives, Memory, and Preservation Lab](https://ampl.clair.ucsb.edu), the UT Archives, Mapping, and Preservation Lab, and [Neogranadina](https://neogranadina.org).
+
+We gratefully acknowledge the support of the [Caribbean Digital Scholarship Collective](https://cdscollective.org), the [Center for Innovative Teaching, Research, and Learning (CITRAL)](https://citral.ucsb.edu/home) at the University of California, Santa Barbara, the [UCSB Library](https://library.ucsb.edu), the [Routes of Enslavement in the Americas University of California MRPI](https://www.humanities.uci.edu/routes-enslavement-americas), and the [Department of History of The University of Texas at Austin](https://liberalarts.utexas.edu/history/).
 
 ## Key Features
 
