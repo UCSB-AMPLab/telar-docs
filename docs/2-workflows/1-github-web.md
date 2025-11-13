@@ -187,8 +187,9 @@ Reference the markdown files you created:
 #### First, edit your site's basic settings
 3. Edit your site name, description, and include your name and details.
 4. Make sure to edit your site's URL and basename. 
-   1. The URL should be either the default GitHub pages URL for your account, for example, `https://yourgithubusername.github.io`, or a custom domain if you have configured one (e.g. `https://mywebsite.com`). 
-   2. the basename should match the name of your repository.
+   1. The `URL` should be either the default GitHub pages URL for your account, for example, `https://yourgithubusername.github.io`, or a custom domain if you have configured one (e.g. `https://mywebsite.com`). 
+   2. the `basename` should match the name you gave your repository. 
+   3. the website's full address will be `url/basename`, e.g. `https://yourgithubusername.github.io/my-telar-site`.
    ![GitHub screenshot for editing config file](/telar-docs/images/config_title.gif)
 
 #### Add the details for your Google Sheet
