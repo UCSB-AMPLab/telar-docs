@@ -193,10 +193,10 @@ Reference the markdown files you created:
    ![GitHub screenshot for editing config file](/telar-docs/images/config_title.gif)
 
 #### Add the details for your Google Sheet
-5. Find `google_sheets` section
-6. Set `enabled: true`
-7. Paste shared URL into `shared_url`
-8.  Paste published URL into `published_url`
+1. Scroll down in to find `google_sheets` section
+2. Ensure that the Google Sheets integration is on (it should say `enabled: true` - if it says `enabled: false` change it to `enabled: true`)
+3. Paste the shared URL into `shared_url`
+4. Paste the published URL into `published_url`
 
 #### Optionally, choose a theme
 9.  (Optional) Choose your theme:
