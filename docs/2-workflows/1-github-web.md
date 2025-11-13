@@ -183,17 +183,28 @@ Reference the markdown files you created:
 
 1. Navigate to `_config.yml` in your repository
 2. Click pencil icon to edit
-3. Find `google_sheets` section
-4. Set `enabled: true`
-5. Paste shared URL into `shared_url`
-6. Paste published URL into `published_url`
-7. (Optional) Choose your theme:
+
+#### First, edit your site's basic settings
+3. Edit your site name, description, and include your name and details.
+4. Make sure to edit your site's URL and basename. 
+   1. The URL should be either the default GitHub pages URL for your account, for example, `https://yourgithubusername.github.io`, or a custom domain if you have configured one (e.g. `https://mywebsite.com`). 
+   2. the basename should match the name of your repository.
+   ![GitHub screenshot for editing config file](/telar-docs/images/config_title.gif)
+
+#### Add the details for your Google Sheet
+5. Find `google_sheets` section
+6. Set `enabled: true`
+7. Paste shared URL into `shared_url`
+8.  Paste published URL into `published_url`
+
+#### Optionally, choose a theme
+9.  (Optional) Choose your theme:
    ```yaml
    telar_theme: "paisajes" # Options: paisajes, neogranadina, santa-barbara, austin
    ```
-8. Commit changes
-   ![GitHub screenshot for editing config file](/telar-docs/images/config_title.gif)
-   ![GitHub screenshot for editing config file](/telar-docs/images/config_drive.gif)
+
+#### Commit changes
+10. Click the green "Commit changes" button to save.  
    ![GitHub screenshot for editing config file](/telar-docs/images/config_theme.gif)
 
 ### Wait for Build
