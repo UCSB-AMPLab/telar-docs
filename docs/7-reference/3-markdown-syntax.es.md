@@ -124,12 +124,12 @@ Telar proporciona sintaxis especial para controlar los tamaños de imagen en los
 
 ### Rutas de imagen
 
-**Rutas relativas** (sin barra inicial) se cargan automáticamente desde `/components/images/additional/`:
+**Rutas relativas** (sin barra inicial) se cargan automáticamente desde `/components/images/`:
 
 ```markdown
 ![Detalle de tejido](textile-closeup.jpg){md}
 ```
-→ Carga `/components/images/additional/textile-closeup.jpg`
+→ Carga `/components/images/textile-closeup.jpg`
 
 **Rutas absolutas** (comenzando con `/`) cargan desde la ubicación especificada:
 
@@ -251,10 +251,10 @@ Siempre proporciona texto alternativo descriptivo para las imágenes:
 
 ### Organización de imágenes
 
-Mantén las imágenes de los paneles en `/components/images/additional/` para fácil referencia:
+Mantén las imágenes de los paneles en `/components/images/` para fácil referencia:
 
 ```
-components/images/additional/
+components/images/
 ├── story1-context.jpg
 ├── story1-detail.jpg
 ├── story2-map.jpg
@@ -283,7 +283,7 @@ Usa nombres de archivo descriptivos, en minúsculas con guiones:
 
 - **Sin JavaScript**: Markdown se convierte a HTML estático
 - **Sin atributos HTML personalizados**: Usa la sintaxis de tamaño proporcionada en lugar de clases personalizadas
-- **Procesamiento de imágenes**: Solo las imágenes en `/components/images/objects/` generan automáticamente teselas (*tiles*) IIIF
+- **Procesamiento de imágenes**: Las imágenes en `/components/images/` que aparecen en la pestaña `objects` de Google Sheets o en `objects.csv` se convertirán automáticamente en teselas (*tiles*) IIIF, a menos que hayas especificado un manifiesto IIIF externo.
 
 ---
 

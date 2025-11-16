@@ -124,12 +124,12 @@ Telar provides special syntax for controlling image sizes in panels.
 
 ### Image Paths
 
-**Relative paths** (no leading slash) automatically load from `/components/images/additional/`:
+**Relative paths** (no leading slash) automatically load from `/components/images/`:
 
 ```markdown
 ![Weaving detail](textile-closeup.jpg){md}
 ```
-→ Loads `/components/images/additional/textile-closeup.jpg`
+→ Loads `/components/images/textile-closeup.jpg`
 
 **Absolute paths** (starting with `/`) load from specified location:
 
@@ -251,10 +251,10 @@ Always provide descriptive alt text for images:
 
 ### Image Organization
 
-Keep panel images in `/components/images/additional/` for easy reference:
+Keep panel images in `/components/images/` for easy reference:
 
 ```
-components/images/additional/
+components/images/
 ├── story1-context.jpg
 ├── story1-detail.jpg
 ├── story2-map.jpg
@@ -283,7 +283,7 @@ Use descriptive, lowercase filenames with hyphens:
 
 - **No JavaScript**: Markdown is converted to static HTML
 - **No custom HTML attributes**: Use the provided size syntax instead of custom classes
-- **Image processing**: Only images in `/components/images/objects/` generate IIIF tiles automatically
+- **Image processing**: Images from `/components/images/` that are listed in the `objects` tab of your Google Sheet or `objects.csv` without external IIIF manifests will be converted into IIIF tiles automatically.
 
 ---
 
