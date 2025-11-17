@@ -289,6 +289,111 @@ rm -rf _site/
 # Restart Jekyll server
 ```
 
+### Embedding Issues
+
+**Navigation buttons not working in iframe:**
+
+Check if embed mode is properly detected:
+
+1. Open browser DevTools in the iframe (right-click iframe content)
+2. Check console for JavaScript errors
+3. Verify `?embed=true` parameter in URL
+4. Confirm `body.embed-mode` class is applied:
+   ```javascript
+   document.body.classList.contains('embed-mode')
+   ```
+
+If embed mode is not detected, verify the URL parameter is correct.
+
+**Images not loading in embedded view:**
+
+IIIF tiles fail to load in iframe:
+
+1. Check browser console for CORS errors
+2. Verify your site is deployed and publicly accessible:
+   ```bash
+   # Test IIIF manifest URL
+   curl https://yoursite.com/iiif/objects/object-1/info.json
+   ```
+3. Ensure GitHub Pages deployment completed successfully
+4. For external IIIF manifests, verify the source institution allows CORS
+
+**"View full site" banner not appearing:**
+
+The embed banner should appear automatically:
+
+1. Verify `?embed=true` parameter in URL
+2. Check browser console for JavaScript errors in `embed.js`
+3. Confirm `window.telarLang.embedBanner` is defined:
+   ```javascript
+   console.log(window.telarLang.embedBanner)
+   ```
+4. Check if banner exists in DOM but is hidden by CSS:
+   ```javascript
+   document.querySelector('.embed-banner')
+   ```
+
+If banner is missing, verify `assets/js/embed.js` is loading.
+
+**Scroll issues in LMS:**
+
+Telar uses button navigation in embed mode, not scrolling:
+
+1. Verify navigation buttons are visible
+2. Check if buttons are clickable (not behind other elements)
+3. Test keyboard navigation (arrow keys, Page Up/Down)
+4. Ensure iframe height is adequate (minimum 600px recommended)
+
+If buttons are not visible, check that `body.embed-mode` class is applied.
+
+**IIIF viewer not displaying:**
+
+UniversalViewer fails to load in iframe:
+
+1. Check if UniversalViewer scripts are loading:
+   ```javascript
+   // In browser console
+   typeof UV
+   ```
+2. Verify IIIF manifest URL is accessible
+3. Check for Content Security Policy (CSP) restrictions in host site
+4. Test the story URL directly (not in iframe) to isolate the issue
+
+**Share panel not opening:**
+
+Share button should be hidden in embed mode:
+
+1. Verify this is expected behavior (share button intentionally hidden)
+2. If you need sharing in embed mode, users can dismiss the embed banner and click "View full site"
+3. For custom behavior, modify `body.embed-mode .share-button` CSS
+
+**Embed code not generating:**
+
+In the share panel, embed code textarea is empty:
+
+**On homepage:**
+1. Select a story from the dropdown first
+2. Verify story data JSON is present in page source
+3. Check browser console for JavaScript errors in `share-panel.js`
+
+**On story page:**
+1. Refresh the page to reset the share panel
+2. Check console for errors
+3. Verify `currentStoryUrl` is set:
+   ```javascript
+   // Should be set when page loads
+   console.log(window.location.href)
+   ```
+
+**Dimensions not updating:**
+
+When changing width/height inputs:
+
+1. Click the input field and type the value
+2. Press Enter or click outside the field to trigger update
+3. Check if preset dropdown is interfering (select "Custom" preset)
+4. Verify JavaScript is running without errors
+
 ## Testing
 
 ### Local Testing Checklist
