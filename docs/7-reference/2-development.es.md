@@ -79,13 +79,13 @@ python3 scripts/csv_to_json.py
 # Genera teselas (*tiles*) IIIF
 python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
 
-# Sirve con recarga automática
+# Inicia el servidor con recarga automática
 bundle exec jekyll serve --livereload
 
-# Construir solamente (salida a _site/)
+# Solo construir (salida a _site/)
 bundle exec jekyll build
 
-# Limpiar artefactos de construcción
+# Limpia archivos de construcción
 bundle exec jekyll clean
 ```
 
@@ -133,10 +133,10 @@ bundle exec jekyll serve --livereload
 # - Edita markdown en components/texts/
 # - Agrega imágenes a components/images/objects/
 
-# 3. Reconstruye datos (cuando CSVs cambian)
+# 3. Reconstruye los datos (cuando cambian los CSV)
 python3 scripts/csv_to_json.py
 
-# 4. Regenera teselas (*tiles*) (cuando imágenes cambian)
+# 4. Regenera las teselas (*tiles*) (cuando cambian las imágenes)
 python3 scripts/generate_iiif.py
 
 # 5. Jekyll recarga automáticamente el navegador
@@ -253,7 +253,7 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### Problemas de inserción (*embedding*)
+### Problemas de inserción (*embed*)
 
 **Los botones de navegación no funcionan en el iframe:**
 
@@ -282,7 +282,7 @@ Las teselas IIIF no cargan en el iframe:
 3. Asegúrate de que el despliegue de GitHub Pages se completó exitosamente
 4. Para manifiestos IIIF externos, verifica que la institución fuente permita CORS
 
-**El banner "View full site" no aparece:**
+**El banner **View full site** no aparece:**
 
 El banner de *embed* debería aparecer automáticamente:
 
@@ -328,7 +328,7 @@ UniversalViewer no carga en el iframe:
 El botón de compartir debería estar oculto en modo *embed*:
 
 1. Verifica que este es el comportamiento esperado (botón de compartir intencionalmente oculto)
-2. Si necesitas compartir en modo *embed*, las personas pueden descartar el banner de *embed* y hacer clic en "View full site"
+2. Si necesitas compartir en modo *embed*, las personas pueden descartar el banner de *embed* y hacer clic en **View full site**
 3. Para comportamiento personalizado, modifica el CSS de `body.embed-mode .share-button`
 
 **El código de inserción no se genera:**
@@ -422,7 +422,7 @@ git push origin main
 4. **Documenta cambios**: Mensajes de confirmación claros
 5. **Respalda contenido**: Mantén copias de archivos importantes
 6. **Control de versiones**: Rastrea todo el contenido en git
-7. *Builds* limpios: ejecuta `jekyll clean` de forma periódica
+7. *Builds* limpios: ejecuta `jekyll clean` periódicamente
 
 ## Obtener ayuda
 

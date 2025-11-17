@@ -20,10 +20,10 @@ Cuando publicas vía GitHub Pages, el proceso de construcción es **completament
 
 Edita contenido directamente en GitHub o empuja desde local:
 
-1. **Edita Google Sheets o CSVs** en `components/structures/`
+1. **Edita la pestaña `objects` de tu Google Sheet o `objects.csv`** en `components/structures/`
 2. **Edita markdown** en `components/texts/`
-3. **Agrega imágenes** a `components/images/objects/`
-4. **Confirma y empuja** a rama main
+3. **Agrega imágenes** a `components/images/`
+4. **Haz *commit* y *push*** a la rama main
 
 ### Acciones automatizadas (GitHub)
 
@@ -40,10 +40,11 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
    - Incrusta contenido markdown de `components/texts/`
    - Genera archivos JSON en `_data/` para Jekyll
 
-3. **Genera teselas (*tiles*) IIIF**
+3. **Genera teselas IIIF**
    - Ejecuta `scripts/generate_iiif.py`
-   - Procesa imágenes de `components/images/objects/`
-   - Crea pirámides de teselas (*tiles*) de imagen en `iiif/objects/`
+   - Procesa solo los objetos listados en `objects.csv` que no tienen manifiestos IIIF externos
+   - Busca imágenes en `components/images/` según el `object_id`
+   - Crea pirámides de teselas en `iiif/objects/`
    - Genera archivos de manifiesto
 
 4. **Hace el _build_ del sitio Jekyll**
@@ -101,10 +102,10 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 **Error:** `Failed to process image textile-001.jpg`
 
 **Solución:**
-
-- Verifica que el archivo de imagen exista en `components/images/objects/`
-- Verifica que la imagen no esté corrupta
-- Asegura que el formato de imagen sea soportado (JPG, PNG, TIFF)
+- Verifica que el archivo de imagen exista en `components/images/`
+- Asegúrate de que el objeto esté listado en la pestaña `objects` de tu Google Sheet o en `objects.csv` con la columna `iiif_manifest` vacía
+- Verifica que la imagen no esté dañada
+- Asegúrate de que el formato de imagen sea compatible (JPG, PNG, TIFF)
 
 ### Error de construcción de Jekyll
 

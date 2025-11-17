@@ -30,7 +30,7 @@ Sube tus propias imágenes y Telar generará automáticamente teselas (*tiles*) 
 
 **Desde la interfaz web de GitHub:**
 
-1. Navega a `components/images/objects/` en tu repositorio
+1. Navega a `components/images/` en tu repositorio
 2. Haz clic en **Add file** → **Upload files**
 3. Arrastra imágenes al área de carga
 4. Nombra archivos para que coincidan con IDs de objeto (ej., `textile-001.jpg`)
@@ -38,11 +38,15 @@ Sube tus propias imágenes y Telar generará automáticamente teselas (*tiles*) 
 
 **En desarrollo local:**
 
-1. Agrega imágenes de alta resolución a `components/images/objects/`
+1. Agrega imágenes de alta resolución a `components/images/`
 2. Genera teselas IIIF:
    ```bash
-   python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
+   python3 scripts/generate_iiif.py --base-url http://localhost:4000
    ```
+
+{: .note }
+> **Procesamiento a partir de CSV/Sheets**
+> Desde la v0.5.0, Telar solo genera teselas (*tiles*) IIIF para los objetos que aparecen en la hoja `objects` de Google Sheets o en `objects.csv`, siempre y cuando estos no tengan un manifiesto IIIF externo. Esto es automático: simplemente agrega tus imágenes y ejecuta el script.
 
 ### Requisitos de archivo
 
@@ -283,9 +287,10 @@ Usa la herramienta de identificación de coordenadas integrada:
 ### La imagen no carga
 
 **Para imágenes locales:**
-- Verifica que el archivo exista en `components/images/objects/`
-- Verifica que object_id coincida con el nombre del archivo
-- Asegúrate de que se hayan generado teselas IIIF
+- Verifica que el archivo exista en `components/images/`
+- Verifica que el `object_id` coincida con el nombre del archivo (sin extensión)
+- Asegúrate de que el objeto esté listado en `objects.csv` con la columna `iiif_manifest` vacía
+- Asegúrate de que se hayan generado las teselas IIIF
 
 **Para IIIF externo:**
 - Verifica que la URL del manifiesto sea correcta

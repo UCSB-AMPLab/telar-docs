@@ -29,7 +29,7 @@ Upload your images and Telar will automatically generate IIIF tiles.
 
 **For GitHub Web Interface:**
 
-1. Navigate to `components/images/objects/` in your repository
+1. Navigate to `components/images/` in your repository
 2. Click **Add file** → **Upload files**
 3. Drag images into upload area
 4. Name files to match object IDs (e.g., `textile-001.jpg`)
@@ -37,11 +37,15 @@ Upload your images and Telar will automatically generate IIIF tiles.
 
 **For Local Development:**
 
-1. Add high-resolution images to `components/images/objects/`
+1. Add high-resolution images to `components/images/`
 2. Generate IIIF tiles:
    ```bash
-   python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
+   python3 scripts/generate_iiif.py --base-url http://localhost:4000
    ```
+
+{: .note }
+> **Sheet/CSV-Driven Processing**
+> As of v0.5.0, Telar only generates IIIF tiles for objects listed in the `objects` tab of your Google Sheet or `objects.csv`, as long as these don't have an external IIIF manifest. This is automatic - just add your images and run the script.
 
 ### File Requirements
 
@@ -282,8 +286,9 @@ Use the built-in coordinate identification tool:
 ### Image Not Loading
 
 **For local images:**
-- Verify file exists in `components/images/objects/`
-- Check that object_id matches filename
+- Verify file exists in `components/images/`
+- Check that object_id matches filename (without extension)
+- Ensure object is listed in `objects.csv` with a blank `iiif_manifest` column
 - Ensure IIIF tiles were generated
 
 **For external IIIF:**

@@ -19,9 +19,9 @@ When you deploy via GitHub Pages, the build process is **fully automated**. No m
 
 Edit content directly on GitHub or push from local:
 
-1. **Edit Google Sheets or CSVs** in `components/structures/`
+1. **Edit the `objects` tab in your Google Sheet or `objects.csv`** in `components/structures/`
 2. **Edit markdown** in `components/texts/`
-3. **Add images** to `components/images/objects/`
+3. **Add images** to `components/images/`
 4. **Commit and push** to main branch
 
 ### Automated Actions (GitHub)
@@ -41,7 +41,8 @@ The workflow (`.github/workflows/build.yml`) automatically:
 
 3. **Generates IIIF Tiles**
    - Runs `scripts/generate_iiif.py`
-   - Processes images from `components/images/objects/`
+   - Processes only objects listed in `objects.csv` without external IIIF manifests
+   - Finds images in `components/images/` by object_id
    - Creates tiled image pyramids in `iiif/objects/`
    - Generates manifest files
 
@@ -168,7 +169,8 @@ jobs:
 **Error:** `Failed to process image textile-001.jpg`
 
 **Solution:**
-- Verify image file exists in `components/images/objects/`
+- Verify image file exists in `components/images/`
+- Ensure object is listed in the `objects` tab of your Google Sheet or `objects.csv` with blank `iiif_manifest`
 - Check image isn't corrupted
 - Ensure image format is supported (JPG, PNG, TIFF)
 
