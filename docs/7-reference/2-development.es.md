@@ -253,6 +253,111 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+### Problemas de inserción (*embedding*)
+
+**Los botones de navegación no funcionan en el iframe:**
+
+Verifica si el modo *embed* se detecta correctamente:
+
+1. Abre DevTools del navegador en el iframe (clic derecho en el contenido del iframe)
+2. Verifica errores de JavaScript en la consola
+3. Verifica el parámetro `?embed=true` en la URL
+4. Confirma que la clase `body.embed-mode` está aplicada:
+   ```javascript
+   document.body.classList.contains('embed-mode')
+   ```
+
+Si el modo *embed* no se detecta, verifica que el parámetro de URL sea correcto.
+
+**Las imágenes no cargan en la vista insertada:**
+
+Las teselas IIIF no cargan en el iframe:
+
+1. Verifica errores de CORS en la consola del navegador
+2. Verifica que tu sitio esté desplegado y accesible públicamente:
+   ```bash
+   # Prueba la URL del manifiesto IIIF
+   curl https://tusitio.com/iiif/objects/object-1/info.json
+   ```
+3. Asegúrate de que el despliegue de GitHub Pages se completó exitosamente
+4. Para manifiestos IIIF externos, verifica que la institución fuente permita CORS
+
+**El banner "View full site" no aparece:**
+
+El banner de *embed* debería aparecer automáticamente:
+
+1. Verifica el parámetro `?embed=true` en la URL
+2. Verifica errores de JavaScript en la consola en `embed.js`
+3. Confirma que `window.telarLang.embedBanner` está definido:
+   ```javascript
+   console.log(window.telarLang.embedBanner)
+   ```
+4. Verifica si el banner existe en el DOM pero está oculto por CSS:
+   ```javascript
+   document.querySelector('.embed-banner')
+   ```
+
+Si el banner falta, verifica que `assets/js/embed.js` se está cargando.
+
+**Problemas de desplazamiento en LMS:**
+
+Telar usa navegación por botones en modo *embed*, no desplazamiento:
+
+1. Verifica que los botones de navegación sean visibles
+2. Verifica que los botones sean clicables (no detrás de otros elementos)
+3. Prueba la navegación por teclado (teclas de flecha, Re Pág/Av Pág)
+4. Asegúrate de que la altura del iframe sea adecuada (mínimo 600px recomendado)
+
+Si los botones no son visibles, verifica que la clase `body.embed-mode` esté aplicada.
+
+**El visor IIIF no se muestra:**
+
+UniversalViewer no carga en el iframe:
+
+1. Verifica si los scripts de UniversalViewer se están cargando:
+   ```javascript
+   // En la consola del navegador
+   typeof UV
+   ```
+2. Verifica que la URL del manifiesto IIIF sea accesible
+3. Verifica restricciones de Content Security Policy (CSP) en el sitio anfitrión
+4. Prueba la URL de la historia directamente (no en iframe) para aislar el problema
+
+**El panel de compartir no se abre:**
+
+El botón de compartir debería estar oculto en modo *embed*:
+
+1. Verifica que este es el comportamiento esperado (botón de compartir intencionalmente oculto)
+2. Si necesitas compartir en modo *embed*, las personas pueden descartar el banner de *embed* y hacer clic en "View full site"
+3. Para comportamiento personalizado, modifica el CSS de `body.embed-mode .share-button`
+
+**El código de inserción no se genera:**
+
+En el panel de compartir, el área de texto del código de inserción está vacía:
+
+**En la página de inicio:**
+1. Selecciona una historia del menú desplegable primero
+2. Verifica que el JSON de datos de historia esté presente en el código fuente de la página
+3. Verifica errores de JavaScript en la consola en `share-panel.js`
+
+**En la página de historia:**
+1. Actualiza la página para restablecer el panel de compartir
+2. Verifica errores en la consola
+3. Verifica que `currentStoryUrl` esté establecido:
+   ```javascript
+   // Debería estar establecido cuando la página carga
+   console.log(window.location.href)
+   ```
+
+**Las dimensiones no se actualizan:**
+
+Al cambiar las entradas de ancho/alto:
+
+1. Haz clic en el campo de entrada y escribe el valor
+2. Presiona Enter o haz clic fuera del campo para activar la actualización
+3. Verifica si el menú desplegable de tamaños predefinidos está interfiriendo (selecciona el tamaño predefinido "Custom")
+4. Verifica que JavaScript se esté ejecutando sin errores
+
 ## Pruebas
 
 ### Lista de verificación de pruebas locales
