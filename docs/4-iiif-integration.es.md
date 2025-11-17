@@ -50,11 +50,15 @@ Sube tus propias imágenes y Telar generará automáticamente teselas (*tiles*) 
 
 ### Requisitos de archivo
 
-- **Formatos**: JPG, PNG, TIFF
+- **Formatos**: JPG, PNG, HEIC, WebP, TIFF (sin distinción de mayúsculas/minúsculas: `.JPG`, `.png`, etc. funcionan)
 - **Resolución**: Mientras más alta mejor (al menos 2000px en el lado más largo recomendado)
 - **Límites de tamaño**:
   - Imágenes individuales: Hasta 100 MB
   - Repositorio total: Mantener bajo 1 GB para GitHub
+
+{: .tip }
+> **Las fotos de iPhone funcionan directamente**
+> Desde la v0.5.0, las fotos HEIC de iPhone funcionan de manera nativa - no necesitas convertirlas a otro formato manualmente. El generador IIIF las convierte automáticamente a JPEG durante la generación de teselas (*tiles*) preservando tus archivos originales.
 
 {: .tip }
 > **Convención de nombres**

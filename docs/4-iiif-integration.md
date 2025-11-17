@@ -49,11 +49,15 @@ Upload your images and Telar will automatically generate IIIF tiles.
 
 ### File Requirements
 
-- **Formats**: JPG, PNG, TIFF
+- **Formats**: JPG, PNG, HEIC, WebP, TIFF (case-insensitive: `.JPG`, `.png`, etc. all work)
 - **Resolution**: Higher is better (at least 2000px on longest side recommended)
 - **Size limits**:
   - Individual images: Up to 100 MB
   - Total repository: Keep under 1 GB for GitHub
+
+{: .tip }
+> **iPhone Photos Work Directly**
+> As of v0.5.0, HEIC photos from iPhones are supported natively - no manual conversion needed. The IIIF generator automatically converts them to JPEG during tile generation while preserving your original files.
 
 {: .tip }
 > **Naming Convention**
