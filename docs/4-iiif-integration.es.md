@@ -93,7 +93,7 @@ Muchas instituciones proporcionan manifiestos IIIF:
 **En tu CSV de objetos u hoja de Google:**
 
 1. Crea un `object_id` (ej., `museum-textile-001`)
-2. Agrega la URL del manifiesto IIIF en la columna `iiif_manifest`:
+2. Agrega la URL del manifiesto IIIF en la columna `source_url`:
    ```
    https://example.org/iiif/image/abc123/info.json
    ```
@@ -118,7 +118,7 @@ museum-textile-002,Textil de Museo,...,https://example.org/iiif/manifest.json
 local-ceramic-001,Mi Cerámica,,,
 ```
 
-Deja `iiif_manifest` en blanco para imágenes locales.
+Deja `source_url` en blanco para imágenes locales.
 
 ## Autorrelleno de metadatos
 
@@ -126,7 +126,7 @@ Telar v0.4.0+ puede extraer automáticamente metadatos de objetos desde manifies
 
 ### Cómo funciona
 
-Cuando proporcionas una URL en `iiif_manifest`, Telar intenta extraer automáticamente:
+Cuando proporcionas una URL en `source_url`, Telar intenta extraer automáticamente:
 
 - **title** - Título del objeto
 - **description** - Descripción detallada
@@ -149,7 +149,7 @@ El sistema detecta automáticamente la versión y usa la estructura de metadatos
 Simplemente agrega la URL del manifiesto IIIF a tu CSV de objetos o a la hoja de Google y deja los demás campos vacíos:
 
 ```csv
-object_id,title,description,iiif_manifest,creator,period,location,credit
+object_id,title,description,source_url,creator,period,location,credit
 map-001,,,https://example.org/iiif/manifest.json,,,,
 ```
 
@@ -170,7 +170,7 @@ Cuando el sitio se construye, Telar:
 
 **Ejemplo - sobrescritura parcial:**
 ```csv
-object_id,title,description,iiif_manifest,creator,period,location,credit
+object_id,title,description,source_url,creator,period,location,credit
 map-001,Mi título personalizado,,https://example.org/manifest.json,,,,
 ```
 
@@ -221,7 +221,7 @@ python3 scripts/csv_to_json.py
 ### Ejemplo de flujo de trabajo
 
 1. Busca una URL de manifiesto IIIF de un museo o biblioteca
-2. Agrégala a tu CSV de objetos con solo `object_id` y `iiif_manifest`
+2. Agrégala a tu CSV de objetos con solo `object_id` y `source_url`
 3. Construye tu sitio
 4. Revisa la página del objeto: los metadatos deberían aparecer completos
 5. Sobrescribe cualquier campo que necesite ajustes
@@ -293,7 +293,7 @@ Usa la herramienta de identificación de coordenadas integrada:
 **Para imágenes locales:**
 - Verifica que el archivo exista en `components/images/`
 - Verifica que el `object_id` coincida con el nombre del archivo (sin extensión)
-- Asegúrate de que el objeto esté listado en `objects.csv` con la columna `iiif_manifest` vacía
+- Asegúrate de que el objeto esté listado en `objects.csv` con la columna `source_url` vacía
 - Asegúrate de que se hayan generado las teselas IIIF
 
 **Para IIIF externo:**

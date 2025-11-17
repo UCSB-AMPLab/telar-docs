@@ -72,11 +72,11 @@ step,question,answer,object,x,y,zoom,layer1_button,layer1_file,layer2_button,lay
 The `objects.csv` file catalogs all objects:
 
 ```csv
-object_id,title,description,creator,date,medium,dimensions,location,credit,thumbnail,iiif_manifest
+object_id,title,description,creator,date,medium,dimensions,location,credit,thumbnail,source_url
 textile-001,Colonial Textile,A woven fragment...,Unknown,circa 1650,Wool,45 x 60 cm,,,
 ```
 
-For external IIIF resources, include the `iiif_manifest` URL.
+For external IIIF resources, include the `source_url` URL.
 
 ## Markdown Files
 

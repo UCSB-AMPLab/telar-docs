@@ -170,7 +170,7 @@ jobs:
 
 **Solution:**
 - Verify image file exists in `components/images/`
-- Ensure object is listed in the `objects` tab of your Google Sheet or `objects.csv` with blank `iiif_manifest`
+- Ensure object is listed in the `objects` tab of your Google Sheet or `objects.csv` with blank `source_url`
 - Check image isn't corrupted
 - Ensure image format is supported (JPG, PNG, TIFF)
 

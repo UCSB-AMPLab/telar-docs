@@ -92,7 +92,7 @@ Many institutions provide IIIF manifests:
 **In your objects CSV or Google Sheet:**
 
 1. Create an `object_id` (e.g., `museum-textile-001`)
-2. Add the IIIF manifest URL in the `iiif_manifest` column:
+2. Add the IIIF manifest URL in the `source_url` column:
    ```
    https://example.org/iiif/image/abc123/info.json
    ```
@@ -111,13 +111,13 @@ Telar supports both formats.
 You can use both local and external IIIF images in the same project:
 
 ```csv
-object_id,title,...,iiif_manifest
+object_id,title,...,source_url
 local-textile-001,My Textile,,,
 museum-textile-002,Museum Textile,...,https://example.org/iiif/manifest.json
 local-ceramic-001,My Ceramic,,,
 ```
 
-Leave `iiif_manifest` blank for local images.
+Leave `source_url` blank for local images.
 
 ## Metadata Auto-Population
 
@@ -125,7 +125,7 @@ Telar v0.4.0+ can automatically extract object metadata from IIIF manifests, red
 
 ### How It Works
 
-When you provide an `iiif_manifest` URL, Telar automatically attempts to extract:
+When you provide a `source_url` with an IIIF manifest, Telar automatically attempts to extract:
 
 - **title** - Object title
 - **description** - Detailed description
@@ -148,7 +148,7 @@ The extraction system automatically detects the version and uses the appropriate
 Simply add the IIIF manifest URL to your objects CSV or Google Sheet. Leave other fields blank:
 
 ```csv
-object_id,title,description,iiif_manifest,creator,period,location,credit
+object_id,title,description,source_url,creator,period,location,credit
 map-001,,,https://example.org/iiif/manifest.json,,,,
 ```
 
@@ -169,7 +169,7 @@ When the site builds, Telar will:
 
 **Example - partial override:**
 ```csv
-object_id,title,description,iiif_manifest,creator,period,location,credit
+object_id,title,description,source_url,creator,period,location,credit
 map-001,My Custom Title,,https://example.org/manifest.json,,,,
 ```
 
@@ -220,7 +220,7 @@ python3 scripts/csv_to_json.py
 ### Example Workflow
 
 1. Find a IIIF manifest URL from a museum or library
-2. Add to your objects CSV with just the `object_id` and `iiif_manifest`
+2. Add to your objects CSV with just the `object_id` and `source_url`
 3. Build your site
 4. Check the object page - metadata should be populated
 5. Override any fields that need adjustment
@@ -292,7 +292,7 @@ Use the built-in coordinate identification tool:
 **For local images:**
 - Verify file exists in `components/images/`
 - Check that object_id matches filename (without extension)
-- Ensure object is listed in `objects.csv` with a blank `iiif_manifest` column
+- Ensure object is listed in `objects.csv` with a blank `source_url` column
 - Ensure IIIF tiles were generated
 
 **For external IIIF:**

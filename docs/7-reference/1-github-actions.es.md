@@ -103,7 +103,7 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 
 **Solución:**
 - Verifica que el archivo de imagen exista en `components/images/`
-- Asegúrate de que el objeto esté listado en la pestaña `objects` de tu Google Sheet o en `objects.csv` con la columna `iiif_manifest` vacía
+- Asegúrate de que el objeto esté listado en la pestaña `objects` de tu Google Sheet o en `objects.csv` con la columna `source_url` vacía
 - Verifica que la imagen no esté dañada
 - Asegúrate de que el formato de imagen sea compatible (JPG, PNG, TIFF)
 
