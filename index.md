@@ -10,8 +10,8 @@ lang: en
 **A minimal computing framework for creating visual narrative exhibitions with IIIF images and scrollytelling.**
 
 {: .beta }
-> **Beta Release - v0.4.1-beta**
-> This release restores critical mobile responsive features accidentally lost in v0.4.0, improves object gallery mobile layout, and adds multilingual coordinate picker with Google Sheets copy support.
+> **Beta Release - v0.5.0-beta**
+> This release adds complete Canvas LMS embedding support, share/embed UI with platform presets, extended image format support (HEIC/iPhone photos, WebP, TIFF), flattened image directory structure, and CSV-driven IIIF tile generation.
 
 ## What is Telar?
 

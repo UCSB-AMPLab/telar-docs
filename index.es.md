@@ -11,8 +11,8 @@ permalink: /es/
 **Un marco de computación mínima para crear narrativas visuales con imágenes IIIF y _scrollytelling_.**
 
 {: .beta }
-> **Versión Beta - v0.4.1-beta**
-> Esta versión restaura funcionalidades móviles críticas perdidas accidentalmente en v0.4.0, mejora el diseño móvil de la galería de objetos, y añade selector de coordenadas multilingüe con soporte para copiar directamente a Google Sheets.
+> **Versión Beta - v0.5.0-beta**
+> Esta versión añade soporte completo para inserción (*embed*) en Canvas LMS, una interfaz de compartir e insertar con configuraciones para distintas plataformas, compatibilidad ampliada con formatos de imagen (HEIC/fotos de iPhone, WebP, TIFF), una estructura de directorios de imágenes simplificada y generación de teselas (*tiles*) IIIF basada en CSV.
 
 ## ¿Qué es Telar?
 
