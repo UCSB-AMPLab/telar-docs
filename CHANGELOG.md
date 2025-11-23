@@ -6,6 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+
+- **Site logo configuration documentation** - How to add a logo to replace site title in header (5-configuration.md)
+
+## [v0.5.0] - 2025-11-22
+
+### Added
+
+- **Embed mode documentation** - Complete guide for embedding Telar stories in external websites (2-workflows/5-embedding.md)
+- **Embed reference documentation** - Technical reference for embed parameters and iframe integration (7-reference/4-embedding.md)
+- Spanish translations for all embedding documentation
+
+### Changed
+
+- Updated IIIF integration guide with clarifications
+- Updated GitHub Actions reference documentation
+- Updated development reference with additional guidance
+
+See the [main Telar CHANGELOG](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md#050-beta---2025-11-17) for full v0.5.0-beta feature list.
+
 ## [v0.4.1] - 2025-11-08
 
 ### Changed

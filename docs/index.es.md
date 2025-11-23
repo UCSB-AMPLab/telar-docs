@@ -4,7 +4,7 @@ title: Documentación
 nav_order: 3
 has_children: true
 lang: es
-permalink: /documentacion/
+permalink: /guia/
 ---
 
 # Documentación
