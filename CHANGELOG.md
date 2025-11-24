@@ -6,8 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-## [v0.6.0] - 2025-11-23
-
 ### Added
 
 - **Custom docs theme** - Replaced Just the Docs with a custom bilingual theme
