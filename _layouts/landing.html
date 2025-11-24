@@ -1,0 +1,561 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Mulish:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Paisajes colors */
+      --paisajes-brown: #8b4513;
+      --paisajes-slate: #2c3e50;
+      --paisajes-blue: #A8C5D4;
+      --paisajes-purple: #3d2645;
+      --paisajes-cream: #F5EDE1;
+      /* Text colors */
+      --text-dark: #2c3e50;
+      --text-medium: #6C7A89;
+      --text-light: #AEB3BB;
+      --bg-white: #ffffff;
+      --bg-light: #f4f5f6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'IBM Plex Serif', serif;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* Sections */
+    .section {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 30px;
+      position: relative;
+    }
+
+    .section--half {
+      min-height: 50vh;
+    }
+
+    .section__content {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--bg-white);
+      text-align: center;
+      padding: 40px 30px 80px;
+    }
+
+    .hero__logo {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 8px;
+    }
+
+    .hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 10vw, 72px);
+      font-weight: 600;
+      letter-spacing: -1.5px;
+      margin-bottom: 8px;
+    }
+
+    .hero__lang-toggle {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .hero__lang-toggle button {
+      padding: 6px 16px;
+      border: 1px solid var(--text-light);
+      background: transparent;
+      cursor: pointer;
+      border-radius: 50px;
+      font-family: 'Mulish', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .hero__lang-toggle button.active {
+      background: var(--paisajes-slate);
+      color: white;
+      border-color: var(--paisajes-slate);
+    }
+
+    .hero__lang-toggle button:hover:not(.active) {
+      border-color: var(--text-medium);
+    }
+
+    .hero__tagline {
+      font-size: clamp(18px, 3vw, 24px);
+      color: var(--text-medium);
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .hero__cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Mulish', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0.4px;
+      transition: all 0.2s;
+    }
+
+    .btn--primary {
+      background: var(--paisajes-slate);
+      color: white;
+    }
+
+    .btn--primary:hover {
+      background: #1a2a38;
+      transform: translateY(-2px);
+    }
+
+    .btn--secondary {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    .btn--secondary:hover {
+      background: #e8e9ea;
+      transform: translateY(-2px);
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
+
+    .hero__scroll svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--text-light);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* Beta Notice */
+    .beta-notice {
+      background: var(--paisajes-cream);
+      border-left: 4px solid var(--paisajes-brown);
+      padding: 12px 16px;
+      margin: 0 auto 24px;
+      max-width: 600px;
+      text-align: left;
+      border-radius: 0 6px 6px 0;
+      font-size: 14px;
+    }
+
+    .beta-notice strong {
+      color: var(--paisajes-brown);
+      font-family: 'Mulish', sans-serif;
+      font-weight: 500;
+    }
+
+    /* About Section */
+    .about {
+      background: var(--bg-light);
+    }
+
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .about p {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: var(--text-medium);
+    }
+
+    .about__screenshot {
+      display: block;
+      max-width: 100%;
+      margin: 10px auto;
+    }
+
+    .about__video {
+      max-width: 100%;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+
+    .about__video iframe {
+      border: none;
+      transform: scale(1.02);
+    }
+
+    /* Features Section */
+    .features {
+      background: var(--bg-white);
+      padding-top: 40px;
+      padding-bottom: 80px;
+    }
+
+    .features h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 600;
+      margin-bottom: 32px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+
+    .features__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .features__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .features__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-card {
+      padding: 24px;
+      background: var(--bg-light);
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 16px;
+      color: var(--text-medium);
+    }
+
+    /* Sponsors Section */
+    .sponsors-section {
+      background: var(--paisajes-purple);
+      color: white;
+      text-align: center;
+    }
+
+    .sponsors-row {
+      margin-bottom: 60px;
+    }
+
+    .sponsors-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .sponsors-row h3 {
+      font-family: 'Mulish', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 28px;
+      opacity: 0.8;
+    }
+
+    .sponsors-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .sponsors-break {
+      flex-basis: 100%;
+      height: 0;
+    }
+
+    .sponsor-logo {
+      display: block;
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
+    }
+
+    .sponsor-logo:hover {
+      opacity: 1;
+    }
+
+    .sponsor-logo img {
+    height: 130px;
+    width: 350px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    }
+
+    /* Smaller logos for "Supported by" row */
+    .sponsors-row:last-child .sponsor-logo img {
+      height: auto;
+      max-height: 80px;
+      max-width: 250px;
+    }
+
+    /* Keep Developed by logos on one row */
+    .sponsors-row:first-child .sponsors-logos {
+      flex-wrap: nowrap;
+    }
+
+    /* Narrower width for AMPL logos in Developed by row */
+    .sponsors-row:first-child .sponsor-logo img[src*="ampl"] {
+      width: 250px;
+    }
+
+    /* Don't invert already-white logos */
+    .sponsor-logo img[src*="blanco"],
+    .sponsor-logo img[src*="white"] {
+      filter: none;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--bg-light);
+      text-align: center;
+      min-height: auto;
+      padding: 60px 30px 40px;
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      color: var(--text-medium);
+      margin-bottom: 32px;
+    }
+
+    /* Footer */
+    .landing-footer {
+      padding: 40px 30px;
+      text-align: center;
+      background: var(--bg-light);
+      font-size: 14px;
+      color: var(--text-medium);
+    }
+
+    .landing-footer p {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .landing-footer a {
+      color: var(--paisajes-brown);
+    }
+
+    /* Language content visibility */
+    [data-lang="es"] { display: none; }
+    html[lang="es"] [data-lang="en"] { display: none; }
+    html[lang="es"] [data-lang="es"] { display: block; }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      background: var(--paisajes-slate);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: #1a2a38;
+      transform: translateY(-3px);
+    }
+
+    .back-to-top svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      html {
+        scroll-snap-type: none;
+      }
+
+      .section {
+        min-height: auto;
+        padding: 60px 20px;
+      }
+
+      .sponsor-panel {
+        min-height: auto;
+        padding: 30px 20px;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  {{ content }}
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <footer class="landing-footer">
+    <p data-lang="en">Telar is open source software released under the MIT License. It is developed by Adelaida Avila, Juan Cobo Betancourt, Santiago Munoz, and students and scholars at the <a href="https://ampl.clair.ucsb.edu">UCSB Archives, Memory, and Preservation Lab</a>, the UT Archives, Mapping, and Preservation Lab, and <a href="https://neogranadina.org/en">Neogranadina</a>. <a href="https://github.com/UCSB-AMPLab/telar">View on GitHub</a></p>
+    <p data-lang="es">Telar es software de codigo abierto publicado bajo la licencia MIT. Es desarrollado por Adelaida Avila, Juan Cobo Betancourt, Santiago Munoz y estudiantes e investigadores del <a href="https://ampl.clair.ucsb.edu">UCSB Archives, Memory, and Preservation Lab</a>, el UT Archives, Mapping, and Preservation Lab y <a href="https://neogranadina.org">Neogranadina</a>. <a href="https://github.com/UCSB-AMPLab/telar">Ver en GitHub</a></p>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      localStorage.setItem('telar-lang', lang);
+    }
+
+    // Check for saved preference or browser language
+    (function() {
+      const saved = localStorage.getItem('telar-lang');
+      if (saved) {
+        setLang(saved);
+      } else {
+        const browserLang = navigator.language.startsWith('es') ? 'es' : 'en';
+        setLang(browserLang);
+      }
+    })();
+
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

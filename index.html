@@ -1,0 +1,199 @@
+---
+layout: landing
+title: Telar
+description: A minimal-computing framework for creating layered IIIF visual narratives for digital scholarship, public exhibitions, community storytelling, and classroom projects.
+permalink: /
+---
+
+<!-- Hero Section -->
+<section class="section hero">
+  <div class="section__content">
+    <img src="{{ '/images/telar.png' | relative_url }}" alt="Telar loom" class="hero__logo">
+
+    <h1 class="hero__title">Telar</h1>
+
+    <div class="hero__lang-toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+      <button id="btn-es" onclick="setLang('es')">Español</button>
+    </div>
+
+    <p class="hero__tagline" data-lang="en">A minimal-computing framework for creating layered IIIF visual narratives for digital scholarship, public exhibitions, community storytelling, and classroom projects.</p>
+    <p class="hero__tagline" data-lang="es">Un marco de computación mínima para crear narrativas visuales con capas de texto e imágenes IIIF para humanidades digitales, exposiciones públicas y contextos educativos y comunitarios.</p>
+
+    <div class="hero__cta">
+      <a href="/docs/getting-started/" class="btn btn--primary" data-lang="en">Quick Start</a>
+      <a href="/guia/primeros-pasos/" class="btn btn--primary" data-lang="es">Guía rápida</a>
+      <a href="https://ampl.clair.ucsb.edu/telar" class="btn btn--secondary" data-lang="en">Demo Site</a>
+      <a href="https://ampl.clair.ucsb.edu/telar" class="btn btn--secondary" data-lang="es">Sitio de demostración</a>
+      <a href="https://github.com/UCSB-AMPLab/telar" class="btn btn--secondary" data-lang="en">GitHub Repo</a>
+      <a href="https://github.com/UCSB-AMPLab/telar" class="btn btn--secondary" data-lang="es">Repositorio en GitHub</a>
+      <a href="/docs/" class="btn btn--secondary" data-lang="en">Full Documentation</a>
+      <a href="/guia/" class="btn btn--secondary" data-lang="es">Documentación completa</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="section about fade-in">
+  <div class="section__content">
+    <h2 data-lang="en">What is Telar?</h2>
+    <h2 data-lang="es">¿Qué es Telar?</h2>
+
+    <p data-lang="en">Telar (Spanish for "loom") weaves together IIIF images, narrative text, and layered contextual information into interactive visual narrative exhibitions. It follows minimal computing principles: plain text authoring, static generation, and sustainable hosting.</p>
+    <p data-lang="es">Telar entreteje imágenes IIIF, texto narrativo e información contextual en exposiciones narrativas visuales e interactivas. Sigue los principios de computación mínima: autoría en texto plano, generación estática y alojamiento sostenible.</p>
+
+    <div class="about__video">
+      <div style="padding:67.63% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1139902893?h=e450fba07a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="telar-screenshot-light"></iframe></div>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section features fade-in">
+  <div class="section__content">
+    <h2 data-lang="en">Key Features</h2>
+    <h2 data-lang="es">Características principales</h2>
+
+    <div class="features__grid">
+      <!-- Row 1 -->
+      <div class="feature-card">
+        <h3 data-lang="en">Scrollytelling & Narrative</h3>
+        <h3 data-lang="es">Scrollytelling y narrativa</h3>
+        <p data-lang="en">Step-based storytelling with three content layers plus glossary. Guide viewers through progressive, contextual narratives.</p>
+        <p data-lang="es">Narrativa por pasos con tres capas de contenido y glosario. Guía a los visitantes a través de narrativas progresivas y contextuales.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3 data-lang="en">Pan & Zoom</h3>
+        <h3 data-lang="es">Pan y zoom</h3>
+        <p data-lang="en">Deep zoom into high-resolution images. Visual coordinate picker makes annotating specific regions easy.</p>
+        <p data-lang="es">Ampliación profunda de imágenes en alta resolución. El selector de coordenadas facilita anotar zonas específicas de la imagen.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3 data-lang="en">Pedagogy</h3>
+        <h3 data-lang="es">Pedagogía</h3>
+        <p data-lang="en">Create teaching resources or use in the classroom for student projects. Embed the results in Canvas and other LMS platforms.</p>
+        <p data-lang="es">Crea recursos didácticos o úsala para que estudiantes desarrollen proyectos. Integra los resultados en Canvas y otras plataformas LMS.</p>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="feature-card">
+        <h3 data-lang="en">IIIF Integration</h3>
+        <h3 data-lang="es">Integración IIIF</h3>
+        <p data-lang="en">Self-hosted tiles from your images, plus external manifests from museums and libraries worldwide.</p>
+        <p data-lang="es">Teselas autoalojadas de tus imágenes, más manifiestos externos de museos y bibliotecas de todo el mundo.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3 data-lang="en">Objects Gallery</h3>
+        <h3 data-lang="es">Galería de objetos</h3>
+        <p data-lang="en">Browse all exhibition objects in a grid. Click any item for details and deep zoom.</p>
+        <p data-lang="es">Explora todos los objetos de la exposición en una cuadrícula. Haz clic en cualquier objeto para ver detalles y ampliar.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3 data-lang="en">Multilingual</h3>
+        <h3 data-lang="es">Multilingüe</h3>
+        <p data-lang="en">Full English and Spanish interface. Other languages coming soon.</p>
+        <p data-lang="es">Interfaz completa en inglés y español. Más idiomas próximamente.</p>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="feature-card">
+        <h3 data-lang="en">Spreadsheet Workflows</h3>
+        <h3 data-lang="es">Flujos de trabajo con hojas de cálculo</h3>
+        <p data-lang="en">Manage content via Google Sheets or CSV files. Perfect for team collaboration.</p>
+        <p data-lang="es">Gestiona contenido con Google Sheets o archivos CSV. Ideal para colaboración en equipo.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3 data-lang="en">Mobile & Embeddable</h3>
+        <h3 data-lang="es">Móvil e insertable</h3>
+        <p data-lang="en">Responsive design with touch and swipe navigation. Embed exhibitions in any website or LMS.</p>
+        <p data-lang="es">Diseño adaptable con navegación táctil y por gestos. Inserta exposiciones en cualquier sitio web o LMS.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3 data-lang="en">Minimal Computing</h3>
+        <h3 data-lang="es">Computación mínima</h3>
+        <p data-lang="en">No server required. Version control friendly. Free hosting on GitHub Pages.</p>
+        <p data-lang="es">No necesita servidor. Compatible con control de versiones. Alojamiento gratuito en GitHub Pages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sponsors Section -->
+<section class="section sponsors-section fade-in">
+  <div class="section__content">
+    <div class="sponsors-row">
+      <h3 data-lang="en">Telar is developed by</h3>
+      <h3 data-lang="es">Telar es desarrollado por</h3>
+      <div class="sponsors-logos">
+        <a href="https://ampl.clair.ucsb.edu" class="sponsor-logo">
+          <img src="{{ '/images/sponsors/ucsb-ampl-logo.png' | relative_url }}" alt="UCSB AMPL">
+        </a>
+        <span class="sponsor-logo">
+          <img src="{{ '/images/sponsors/ut-ampl-logo.png' | relative_url }}" alt="UT AMPL">
+        </span>
+        <a href="https://neogranadina.org/en" class="sponsor-logo" data-lang="en">
+          <img src="{{ '/images/sponsors/neogranadina-white.png' | relative_url }}" alt="Neogranadina">
+        </a>
+        <a href="https://neogranadina.org" class="sponsor-logo" data-lang="es">
+          <img src="{{ '/images/sponsors/neogranadina-white.png' | relative_url }}" alt="Neogranadina">
+        </a>
+      </div>
+    </div>
+    <div class="sponsors-row">
+      <h3 data-lang="en">We are grateful for the support of</h3>
+      <h3 data-lang="es">Agradecemos el apoyo de</h3>
+      <div class="sponsors-logos">
+        <a href="https://cdscollective.org" class="sponsor-logo">
+          <img src="{{ '/images/sponsors/CDSC-logo.png' | relative_url }}" alt="Caribbean Digital Scholarship Collective">
+        </a>
+        <a href="https://liberalarts.utexas.edu/history/" class="sponsor-logo">
+          <img src="{{ '/images/sponsors/ut-history.svg' | relative_url }}" alt="UT Austin History">
+        </a>
+        <a href="https://agi.ucsb.edu/burdick-global-scholars-program" class="sponsor-logo">
+          <img src="{{ '/images/sponsors/ucsb-burdick.png' | relative_url }}" alt="Burdick Global Scholars Program">
+        </a>
+        <div class="sponsors-break"></div>
+        <a href="https://citral.ucsb.edu" class="sponsor-logo">
+          <img src="{{ '/images/sponsors/ucsb-citral.png' | relative_url }}" alt="CITRAL">
+        </a>
+        <a href="https://library.ucsb.edu" class="sponsor-logo">
+          <img src="{{ '/images/sponsors/ucsb-library.png' | relative_url }}" alt="UCSB Library">
+        </a>
+        <a href="https://clair.ucsb.edu" class="sponsor-logo">
+          <img src="{{ '/images/sponsors/clair-logo-white.svg' | relative_url }}" alt="CLAIR">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section cta-section fade-in">
+  <div class="section__content">
+    <h2 data-lang="en">Get Started</h2>
+    <h2 data-lang="es">Empezar</h2>
+
+    <p data-lang="en">Ready to build your exhibition? Choose your workflow:</p>
+    <p data-lang="es">¿Listo para construir tu exposición? Elige tu flujo de trabajo:</p>
+
+    <div class="hero__cta">
+      <a href="/docs/getting-started/" class="btn btn--primary" data-lang="en">Quick Start Guide</a>
+      <a href="/guia/primeros-pasos/" class="btn btn--primary" data-lang="es">Guía de inicio rápido</a>
+      <a href="https://github.com/UCSB-AMPLab/telar" class="btn btn--secondary" data-lang="en">GitHub Repo</a>
+      <a href="https://github.com/UCSB-AMPLab/telar" class="btn btn--secondary" data-lang="es">Repositorio en GitHub</a>
+    </div>
+  </div>
+</section>
