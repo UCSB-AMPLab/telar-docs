@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 2.5. Insertar en LMS y sitios web
 parent: 2. Flujos de trabajo
 grand_parent: Documentación

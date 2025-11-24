@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 6.3. Customizing the Home Page
 parent: 6. Customization
 grand_parent: Documentation

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 2.3. Actualizar Telar
 parent: 2. Flujos de Trabajo
 grand_parent: Documentación

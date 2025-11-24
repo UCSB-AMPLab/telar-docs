@@ -6,9 +6,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [v0.6.0] - 2025-11-23
+
 ### Added
 
+- **Custom docs theme** - Replaced Just the Docs with a custom bilingual theme
+- **Pagefind search** - Fast, bilingual static search with automatic language filtering
+- **New landing page** - Bilingual landing page with video demo and sponsor acknowledgments
 - **Site logo configuration documentation** - How to add a logo to replace site title in header (5-configuration.md)
+- **Version callout** - Documentation index pages now show current version with CHANGELOG link
+
+### Changed
+
+- **Domain migration** - Site now hosted at telar.org (from ampl.clair.ucsb.edu/telar-docs)
+- **URL structure** - Removed /telar-docs baseurl for cleaner URLs
+- **Navigation** - Sidebar now filters by current language with toggle navigation
+- **Active page highlighting** - Uses Paisajes purple accent for current page only (no parent highlighting)
+- Fixed hardcoded image paths in documentation
+
+### Styling
+
+- **Responsive layout** - Sidebar width and content width scale with viewport
+- **Wide images** - Documentation images extend beyond text column (150px each side on large screens)
+- **Search box** - Rounded corners matching Telar site style
+- **Blockquote callouts** - Yellow background with gold border for better visibility
+- **Navigation typography** - Larger font sizes (16px parent, 15px children), tighter line spacing
+
+### Infrastructure
+
+- Custom docs layout with inline CSS/JS (no external dependencies)
+- Pagefind integration in GitHub Actions workflow
+- Updated README with search development instructions
 
 ## [v0.5.0] - 2025-11-22
 

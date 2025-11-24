@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 2. Workflows
 parent: Documentation
 nav_order: 2

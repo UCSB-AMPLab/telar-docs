@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 6. Customization
 parent: Documentation
 nav_order: 6

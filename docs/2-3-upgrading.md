@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 2.3. Upgrading Telar
 parent: 2. Workflows
 grand_parent: Documentation

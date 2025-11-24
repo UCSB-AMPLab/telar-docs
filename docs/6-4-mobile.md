@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 6.4. Mobile Optimization
 parent: 6. Customization
 grand_parent: Documentation

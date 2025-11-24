@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 2.1. GitHub Web Interface
 parent: 2. Workflows
 grand_parent: Documentation
@@ -41,7 +41,7 @@ Before diving in, plan your story:
 2. Click the green **Use this template** button
 3. Choose a repository name
 4. Click **Create repository**
-   ![GitHub screenshot for Use this template button](/telar-docs/images/use-this-template.png)
+   ![GitHub screenshot for Use this template button](/images/use-this-template.png)
 
 {: .note }
 
@@ -75,15 +75,15 @@ Telar supports two ways to add images:
 > Individual images: Up to 100 MB
 > Total repository: Keep under 1 GB
 
-![GitHub screenshot for uploading files](/telar-docs/images/add-files.png)
-![GitHub screenshot for uploading files](/telar-docs/images/commit-files.png)
+![GitHub screenshot for uploading files](/images/add-files.png)
+![GitHub screenshot for uploading files](/images/commit-files.png)
 
 ### Option B: Use IIIF Images
 
 1. Find IIIF resources from institutions ([IIIF Guide to Finding Resources](https://iiif.io/guides/finding_resources/))
 2. Copy the manifest URL (e.g., `https://iiif.io/api/cookbook/recipe/0001-mvm-image/manifest.json`)
 3. Add to the "objects" tab with a simple object_id (e.g., `museum-textile-001`)
-   ![GitHub screenshot for uploading files](/telar-docs/images/external-iiif-manifest.png)
+   ![GitHub screenshot for uploading files](/images/external-iiif-manifest.png)
 
 ### Add Object Details
 
@@ -116,9 +116,9 @@ Write markdown files for your story layer content:
 
 5. Commit the file
 6. Keep note of paths for Phase 4
-   ![GitHub screenshot for creating new layer](/telar-docs/images/create-new-layer.png)
+   ![GitHub screenshot for creating new layer](/images/create-new-layer.png)
 
-![GitHub screenshot for editing file](/telar-docs/images/edit-layer.png)
+![GitHub screenshot for editing file](/images/edit-layer.png)
 
 {: .tip }
 
@@ -166,7 +166,7 @@ Reference the markdown files you created:
 1. Go to repository **Settings** → **Pages**
 2. Source: **GitHub Actions**
 3. Click **Save**
-   ![GitHub screenshot for setting up github actions](/telar-docs/images/github-actions.gif)
+   ![GitHub screenshot for setting up github actions](/images/github-actions.gif)
 
 ### Share Your Google Sheet
 
@@ -191,7 +191,7 @@ Reference the markdown files you created:
    1. The `URL` should be either the default GitHub pages URL for your account, for example, `https://yourgithubusername.github.io`, or a custom domain if you have configured one (e.g. `https://mywebsite.com`). 
    2. the `basename` should match the name you gave your repository. 
    3. the website's full address will be `url/basename`, e.g. `https://yourgithubusername.github.io/my-telar-site`.
-   ![GitHub screenshot for editing config file](/telar-docs/images/config_title.gif)
+   ![GitHub screenshot for editing config file](/images/config_title.gif)
 
 #### Add the details for your Google Sheet
 1. Scroll down in to find `google_sheets` section
@@ -207,7 +207,7 @@ Reference the markdown files you created:
 
 #### Commit changes
 10. Click the green "Commit changes" button to save.  
-   ![GitHub screenshot for editing config file](/telar-docs/images/config_theme.gif)
+   ![GitHub screenshot for editing config file](/images/config_theme.gif)
 
 ### Wait for Build
 

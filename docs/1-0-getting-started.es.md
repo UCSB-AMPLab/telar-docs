@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 1. Primeros Pasos
 parent: Documentación
 nav_order: 1

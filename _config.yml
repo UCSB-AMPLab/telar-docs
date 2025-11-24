@@ -1,8 +1,8 @@
 # Telar - Official Project Site
 title: Telar
-description: "A minimal computing framework for creating visual narrative exhibitions with IIIF images and scrollytelling"
-baseurl: "/telar-docs"
-url: "https://ampl.clair.ucsb.edu"
+description: "A minimal-computing framework for creating layered IIIF visual narratives for digital scholarship, public exhibitions, community storytelling, and classroom projects."
+baseurl: ""
+url: "https://telar.org"
 logo: "/images/telar.png"
 
 # Theme
@@ -11,9 +11,11 @@ color_scheme: telar
 
 # Aux links for header
 aux_links:
+  "Home":
+    - "/"
   "GitHub":
     - "https://github.com/UCSB-AMPLab/telar"
-  "Example Site":
+  "Demo":
     - "https://ampl.clair.ucsb.edu/telar"
 
 # Footer content

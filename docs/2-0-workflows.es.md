@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 2. Flujos de Trabajo
 parent: Documentación
 nav_order: 2

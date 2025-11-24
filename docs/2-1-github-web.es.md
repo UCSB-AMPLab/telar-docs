@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 2.1. Interfaz Web de GitHub
 parent: 2. Flujos de Trabajo
 grand_parent: Documentación
@@ -40,7 +40,7 @@ Antes de empezar, planea tu historia:
 2. Haz clic en el botón verde **Use this template**
 3. Elige un nombre para el repositorio
 4. Haz clic en **Create repository**
-   ![Captura de GitHub para el botón Use this template](/telar-docs/images/use-this-template.png)
+   ![Captura de GitHub para el botón Use this template](/images/use-this-template.png)
 
 {: .note }
 > Necesitarás una cuenta de GitHub si no tienes una. Regístrate en [github.com](https://github.com/join).
@@ -72,15 +72,15 @@ Telar admite dos maneras de agregar imágenes:
 > Imágenes individuales: hasta 100 MB
 > Repositorio total: mantén el peso por debajo de 1 GB
 
-![Captura de GitHub para subir archivos](/telar-docs/images/add-files.png)
-![Captura de GitHub para hacer commit de archivos](/telar-docs/images/commit-files.png)
+![Captura de GitHub para subir archivos](/images/add-files.png)
+![Captura de GitHub para hacer commit de archivos](/images/commit-files.png)
 
 ### Opción B: usa imágenes IIIF
 
 1. Encuentra recursos IIIF de instituciones ([Guía IIIF para Encontrar Recursos](https://iiif.io/guides/finding_resources/))
 2. Copia la URL del manifiesto (ej., `https://iiif.io/api/cookbook/recipe/0001-mvm-image/manifest.json`)
 3. Agrégala a la pestaña **objects** con un `object_id` simple (ej., `museum-textile-001`)
-   ![Captura de ejemplo de manifiesto IIIF externo](/telar-docs/images/external-iiif-manifest.png)
+   ![Captura de ejemplo de manifiesto IIIF externo](/images/external-iiif-manifest.png)
 
 ### Agrega detalles de objetos
 
@@ -112,9 +112,9 @@ Escribe archivos markdown para el contenido de las capas de tu historia:
 6. Repite para cada capa de contenido que quieras agregar
 7. **Importante**: Mantén nota de tus nombres de archivo y sus ubicaciones. Necesitarás las rutas exactas (ej., `story1/tecnicas-tejido.md`) para incluirlas en tu hoja de cálculo de historia en la Fase 4.
 
-   ![Captura de GitHub para crear una nueva capa](/telar-docs/images/create-new-layer.png)
+   ![Captura de GitHub para crear una nueva capa](/images/create-new-layer.png)
 
-![Captura de GitHub para editar una capa](/telar-docs/images/edit-layer.png)
+![Captura de GitHub para editar una capa](/images/edit-layer.png)
 
 {: .tip }
 > **Formato de Markdown**
@@ -161,7 +161,7 @@ Referencia los archivos markdown que creaste:
 1. Ve a **Settings** → **Pages** del repositorio
 2. En **Source**, selecciona **GitHub Actions**
 3. Haz clic en **Save**
-   ![Captura de GitHub para configurar GitHub Actions](/telar-docs/images/github-actions.gif)
+   ![Captura de GitHub para configurar GitHub Actions](/images/github-actions.gif)
 
 ### Comparte tu Google Sheet
 
@@ -187,7 +187,7 @@ Referencia los archivos markdown que creaste:
    1. `url` debe ser la URL predeterminada de GitHub Pages para tu cuenta (por ejemplo, `https://tugithubusuario.github.io`) o tu dominio personalizado si tienes uno (por ejemplo, `https://misitio.org`).
    2. `baseurl` debe coincidir con el nombre que le diste al repositorio.
    3. La dirección completa del sitio será `url/baseurl`, por ejemplo, `https://tugithubusuario.github.io/mi-sitio-telar`.
-   ![Captura de GitHub para editar la configuración del sitio](/telar-docs/images/config_title.gif)
+   ![Captura de GitHub para editar la configuración del sitio](/images/config_title.gif)
 
 #### Agrega los detalles de tu Google Sheet
 
@@ -206,7 +206,7 @@ Referencia los archivos markdown que creaste:
 #### Haz commit de los cambios
 
 10. Haz clic en el botón verde **Commit changes** para guardar.
-   ![Captura de GitHub para editar el tema](/telar-docs/images/config_theme.gif)
+   ![Captura de GitHub para editar el tema](/images/config_theme.gif)
 
 ### Espera la construcción
 

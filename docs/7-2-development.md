@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 7.2. Development
 parent: 7. Reference
 grand_parent: Documentation

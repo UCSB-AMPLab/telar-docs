@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 4. Integración IIIF
 parent: Documentación
 nav_order: 4

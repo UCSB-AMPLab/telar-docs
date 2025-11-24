@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 2.4. Google Sheets Integration
 parent: 2. Workflows
 grand_parent: Documentation
@@ -54,7 +54,7 @@ google_sheets:
 - The `shared_url` ensures the fetcher can read the spreadsheet
 - The `published_url` provides stable CSV endpoints for each sheet
 
-![GitHub screenshot for editing config file](/telar-docs/images/config_drive.gif)
+![GitHub screenshot for editing config file](/images/config_drive.gif)
 
 ## Fetching data (local dev only)
 
@@ -88,7 +88,7 @@ bundle exec jekyll build
 
 - object_id, title, description, iiif_manifest, creator, period, medium, dimensions, location, credit, thumbnail
 
-![GitHub screenshot for editing sheet objects](/telar-docs/images/object-sheet.png)
+![GitHub screenshot for editing sheet objects](/images/object-sheet.png)
 
 `story-X` tabs
 

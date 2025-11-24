@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 6.2. Estilos Avanzados
 parent: 6. Personalización
 grand_parent: Documentación

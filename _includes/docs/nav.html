@@ -1,0 +1,129 @@
+{%- comment -%}
+Build navigation from pages with parent frontmatter.
+Adds data-lang attribute for language filtering.
+{%- endcomment -%}
+
+{%- comment -%} Get top-level pages (no parent) {%- endcomment -%}
+{% assign top_pages = site.html_pages | where_exp: "item", "item.parent == nil" | where_exp: "item", "item.nav_exclude != true" | where_exp: "item", "item.title != nil" | sort: "nav_order" %}
+
+{%- comment -%} Group by language {%- endcomment -%}
+{% assign en_pages = top_pages | where: "lang", "en" %}
+{% assign es_pages = top_pages | where: "lang", "es" %}
+
+{%- comment -%} English Navigation {%- endcomment -%}
+<div data-lang="en">
+  <ul class="nav-list">
+    {% for node in en_pages %}
+      {% assign is_current = false %}
+      {% assign has_active_child = false %}
+      {% if page.url == node.url %}
+        {% assign is_current = true %}
+      {% endif %}
+      {% if page.parent == node.title %}
+        {% assign has_active_child = true %}
+      {% endif %}
+
+      <li class="nav-item">
+        <a href="{{ node.url | relative_url }}" class="nav-link {% if is_current %}active{% elsif has_active_child %}expanded{% endif %}">
+          {{ node.title }}
+        </a>
+
+        {%- comment -%} Children {%- endcomment -%}
+        {% if node.has_children %}
+          {% assign children = site.html_pages | where: "parent", node.title | where: "lang", "en" | sort: "nav_order" %}
+          {% if children.size > 0 %}
+            <ul class="nav-children">
+              {% for child in children %}
+                {% assign child_current = false %}
+                {% assign child_has_active = false %}
+                {% if page.url == child.url %}{% assign child_current = true %}{% endif %}
+                {% if page.parent == child.title %}{% assign child_has_active = true %}{% endif %}
+
+                <li class="nav-item">
+                  <a href="{{ child.url | relative_url }}" class="nav-link {% if child_current %}active{% elsif child_has_active %}expanded{% endif %}">
+                    {{ child.title }}
+                  </a>
+
+                  {%- comment -%} Grandchildren {%- endcomment -%}
+                  {% if child.has_children %}
+                    {% assign grandchildren = site.html_pages | where: "parent", child.title | where: "lang", "en" | sort: "nav_order" %}
+                    {% if grandchildren.size > 0 %}
+                      <ul class="nav-children">
+                        {% for grandchild in grandchildren %}
+                          <li class="nav-item">
+                            <a href="{{ grandchild.url | relative_url }}" class="nav-link {% if page.url == grandchild.url %}active{% endif %}">
+                              {{ grandchild.title }}
+                            </a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{%- comment -%} Spanish Navigation {%- endcomment -%}
+<div data-lang="es">
+  <ul class="nav-list">
+    {% for node in es_pages %}
+      {% assign is_current = false %}
+      {% assign has_active_child = false %}
+      {% if page.url == node.url %}
+        {% assign is_current = true %}
+      {% endif %}
+      {% if page.parent == node.title %}
+        {% assign has_active_child = true %}
+      {% endif %}
+
+      <li class="nav-item">
+        <a href="{{ node.url | relative_url }}" class="nav-link {% if is_current %}active{% elsif has_active_child %}expanded{% endif %}">
+          {{ node.title }}
+        </a>
+
+        {%- comment -%} Children {%- endcomment -%}
+        {% if node.has_children %}
+          {% assign children = site.html_pages | where: "parent", node.title | where: "lang", "es" | sort: "nav_order" %}
+          {% if children.size > 0 %}
+            <ul class="nav-children">
+              {% for child in children %}
+                {% assign child_current = false %}
+                {% assign child_has_active = false %}
+                {% if page.url == child.url %}{% assign child_current = true %}{% endif %}
+                {% if page.parent == child.title %}{% assign child_has_active = true %}{% endif %}
+
+                <li class="nav-item">
+                  <a href="{{ child.url | relative_url }}" class="nav-link {% if child_current %}active{% elsif child_has_active %}expanded{% endif %}">
+                    {{ child.title }}
+                  </a>
+
+                  {%- comment -%} Grandchildren {%- endcomment -%}
+                  {% if child.has_children %}
+                    {% assign grandchildren = site.html_pages | where: "parent", child.title | where: "lang", "es" | sort: "nav_order" %}
+                    {% if grandchildren.size > 0 %}
+                      <ul class="nav-children">
+                        {% for grandchild in grandchildren %}
+                          <li class="nav-item">
+                            <a href="{{ grandchild.url | relative_url }}" class="nav-link {% if page.url == grandchild.url %}active{% endif %}">
+                              {{ grandchild.title }}
+                            </a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

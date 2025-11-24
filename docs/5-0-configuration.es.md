@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 5. Configuración
 parent: Documentación
 nav_order: 5

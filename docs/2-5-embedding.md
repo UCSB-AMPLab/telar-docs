@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 2.5. Embedding in LMS & Websites
 parent: 2. Workflows
 grand_parent: Documentation

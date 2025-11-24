@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 7. Referencia
 parent: Documentación
 nav_order: 7

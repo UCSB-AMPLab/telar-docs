@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 6.1. Themes
 parent: 6. Customization
 grand_parent: Documentation

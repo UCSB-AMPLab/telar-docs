@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 2.2. Local Development
 parent: 2. Workflows
 grand_parent: Documentation

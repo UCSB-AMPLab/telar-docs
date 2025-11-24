@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 7.1. GitHub Actions
 parent: 7. Referencia
 grand_parent: Documentación

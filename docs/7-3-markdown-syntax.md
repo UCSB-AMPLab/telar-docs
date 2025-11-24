@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 7.3. Markdown Syntax
 parent: 7. Reference
 grand_parent: Documentation

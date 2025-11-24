@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 6.3. Personalizar la Página de Inicio
 parent: 6. Personalización
 grand_parent: Documentación

@@ -1,10 +1,10 @@
 # Telar Documentation
 
-Official documentation site for [Telar](https://github.com/UCSB-AMPLab/telar), a minimal computing framework for creating visual narrative exhibitions with IIIF images and scrollytelling.
+Official documentation site for [Telar](https://github.com/UCSB-AMPLab/telar), a minimal-computing framework for creating layered IIIF visual narratives for digital scholarship, public exhibitions, community storytelling, and classroom projects.
 
 ## About
 
-This is a bilingual (English/Spanish) documentation site built with Jekyll and the just-the-docs theme.
+This is a bilingual (English/Spanish) documentation site built with Jekyll using a custom docs theme with [Pagefind](https://pagefind.app/) search.
 
 ## Local Development
 
@@ -12,8 +12,9 @@ This is a bilingual (English/Spanish) documentation site built with Jekyll and t
 
 - Ruby 3.0+
 - Bundler
+- Node.js (for Pagefind search indexing)
 
-### Setup
+### Basic Setup (without search)
 
 ```bash
 # Install dependencies
@@ -24,6 +25,22 @@ bundle exec jekyll serve --livereload
 
 # View at http://localhost:4000
 ```
+
+### With Search
+
+Pagefind requires a two-step process (can't use `jekyll serve` as it overwrites the search index):
+
+```bash
+# Build Jekyll site
+bundle exec jekyll build
+
+# Build search index and serve
+npx pagefind --site _site --serve
+
+# View at http://localhost:1414
+```
+
+For regular development without search, use `jekyll serve`. Search is automatically built during GitHub Actions deployment.
 
 ## Bilingual Structure
 

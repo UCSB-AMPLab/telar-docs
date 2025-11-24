@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 7.4. Sistema de inserción (embedding)
 parent: 7. Referencia
 grand_parent: Documentación

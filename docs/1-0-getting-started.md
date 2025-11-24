@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 1. Getting Started
 parent: Documentation
 nav_order: 1

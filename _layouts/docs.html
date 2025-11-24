@@ -1,0 +1,763 @@
+---
+---
+{%- comment -%} Find equivalent page in other language {%- endcomment -%}
+{% if page.lang == "es" %}
+  {% assign current_lang = "es" %}
+  {% assign other_lang = "en" %}
+  {% assign equivalent_path = page.path | replace: ".es.md", ".md" %}
+  {% assign fallback_url = "/docs/" %}
+{% else %}
+  {% assign current_lang = "en" %}
+  {% assign other_lang = "es" %}
+  {% assign equivalent_path = page.path | replace: ".md", ".es.md" %}
+  {% assign fallback_url = "/guia/" %}
+{% endif %}
+{% assign equivalent_page = site.html_pages | where: "path", equivalent_path | first %}
+{% if equivalent_page %}
+  {% assign other_url = equivalent_page.url | relative_url %}
+{% else %}
+  {% assign other_url = fallback_url | relative_url %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="{{ current_lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="{{ '/pagefind/pagefind-ui.css' | relative_url }}" rel="stylesheet">
+  <script src="{{ '/pagefind/pagefind-ui.js' | relative_url }}"></script>
+  {% seo %}
+
+  <style>
+    :root {
+      /* Paisajes colors */
+      --paisajes-brown: #8b4513;
+      --paisajes-slate: #2c3e50;
+      --paisajes-blue: #A8C5D4;
+      --paisajes-purple: #3d2645;
+      --paisajes-cream: #F5EDE1;
+
+      /* Text colors */
+      --text-dark: #2c3e50;
+      --text-medium: #6C7A89;
+      --text-light: #AEB3BB;
+
+      /* Backgrounds */
+      --bg-white: #ffffff;
+      --bg-light: #f8f9fa;
+      --bg-sidebar: #fafafa;
+
+      /* Layout */
+      --sidebar-width: clamp(380px, 28vw, 450px);
+      --header-height: 60px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--bg-white);
+    }
+
+    /* Header */
+    .docs-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: var(--bg-white);
+      border-bottom: 1px solid #e9ecef;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 100;
+    }
+
+    .docs-header__left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .docs-header__logo {
+      height: 36px;
+      width: auto;
+    }
+
+    .docs-header__brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .docs-header__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .docs-header__center {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .docs-header__right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Language Toggle */
+    .lang-toggle {
+      display: flex;
+      gap: 4px;
+    }
+
+    .lang-toggle button {
+      padding: 6px 14px;
+      border: 1px solid var(--text-light);
+      background: transparent;
+      cursor: pointer;
+      border-radius: 50px;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-medium);
+      transition: all 0.2s;
+    }
+
+    .lang-toggle button.active {
+      background: var(--paisajes-slate);
+      color: white;
+      border-color: var(--paisajes-slate);
+    }
+
+    .lang-toggle button:hover:not(.active) {
+      border-color: var(--text-medium);
+      color: var(--text-dark);
+    }
+
+    /* Aux Links */
+    .aux-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .aux-links a {
+      color: var(--text-medium);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .aux-links a:hover {
+      color: var(--text-dark);
+    }
+
+    /* Mobile Menu Button */
+    .menu-button {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .menu-button svg {
+      width: 24px;
+      height: 24px;
+      color: var(--text-dark);
+    }
+
+    /* Sidebar */
+    .docs-sidebar {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      bottom: 0;
+      width: var(--sidebar-width);
+      background: var(--bg-sidebar);
+      border-right: 1px solid #e9ecef;
+      overflow-y: auto;
+      padding: 24px 0;
+      z-index: 50;
+    }
+
+    /* Navigation */
+    .docs-nav {
+      padding: 0 16px;
+    }
+
+    .nav-section {
+      margin-bottom: 24px;
+    }
+
+    .nav-section-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      padding: 0 12px;
+      margin-bottom: 8px;
+    }
+
+    .nav-list {
+      list-style: none;
+    }
+
+    .nav-item {
+      margin: 0;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 4px 12px;
+      color: var(--text-medium);
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+
+    .nav-link:hover {
+      color: var(--text-dark);
+      background: rgba(0,0,0,0.04);
+    }
+
+    .nav-link.active {
+      color: var(--paisajes-purple);
+      background: rgba(61, 38, 69, 0.08);
+      font-weight: 600;
+      border-left: 3px solid var(--paisajes-purple);
+      margin-left: -3px;
+      padding-left: 12px;
+    }
+
+    /* .nav-link.expanded - no styling, parent items not highlighted */
+
+    /* Nested navigation */
+    .nav-children {
+      list-style: none;
+      padding-left: 12px;
+      margin-top: 4px;
+    }
+
+    .nav-children .nav-link {
+      font-size: 15px;
+      padding: 3px 12px;
+    }
+
+    /* Language filtering */
+    [data-lang="es"] { display: none; }
+    html[lang="es"] [data-lang="en"] { display: none; }
+    html[lang="es"] [data-lang="es"] { display: block; }
+
+    /* Search */
+    .docs-search {
+      padding: 16px;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    /* Pagefind UI customization */
+    .docs-search .pagefind-ui {
+      --pagefind-ui-scale: 0.9;
+      --pagefind-ui-primary: var(--paisajes-purple);
+      --pagefind-ui-text: var(--text-dark);
+      --pagefind-ui-background: var(--bg-white);
+      --pagefind-ui-border: #d0d5db;
+      --pagefind-ui-border-width: 1px;
+      --pagefind-ui-border-radius: 24px;
+      --pagefind-ui-font: 'Source Sans Pro', sans-serif;
+    }
+
+    .docs-search .pagefind-ui__search-input {
+      font-size: 14px;
+      padding: 10px 16px 10px 44px;
+    }
+
+    .docs-search .pagefind-ui__search-clear {
+      border-radius: 50%;
+    }
+
+    .docs-search .pagefind-ui__result-link {
+      color: var(--paisajes-purple);
+    }
+
+    .docs-search .pagefind-ui__result-excerpt {
+      font-size: 13px;
+    }
+
+    /* Main Content */
+    .docs-main {
+      margin-left: var(--sidebar-width);
+      margin-top: var(--header-height);
+      min-height: calc(100vh - var(--header-height));
+    }
+
+    .docs-content {
+      max-width: clamp(600px, 50vw, 900px);
+      margin: 0 auto;
+      padding: 40px 48px;
+    }
+
+    /* Typography */
+    .docs-content h1,
+    .docs-content h2,
+    .docs-content h3,
+    .docs-content h4,
+    .docs-content h5,
+    .docs-content h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--text-dark);
+    }
+
+    .docs-content h1 {
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .docs-content h2 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .docs-content h3 {
+      font-size: 1.375rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .docs-content h4 {
+      font-size: 1.125rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .docs-content p {
+      margin-bottom: 1rem;
+    }
+
+    .docs-content ul,
+    .docs-content ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .docs-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .docs-content a {
+      color: var(--paisajes-slate);
+      text-decoration: underline;
+      text-decoration-color: rgba(44, 62, 80, 0.3);
+      text-underline-offset: 2px;
+    }
+
+    .docs-content a:hover {
+      text-decoration-color: var(--paisajes-slate);
+    }
+
+    /* Images - extend beyond text column on large screens */
+    .docs-content img {
+      max-width: calc(100% + 300px);
+      width: calc(100% + 300px);
+      margin-left: -150px;
+      margin-right: -150px;
+      height: auto;
+      border-radius: 4px;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .docs-content p > img {
+      display: block;
+    }
+
+    @media (max-width: 1200px) {
+      .docs-content img {
+        max-width: calc(100% + 150px);
+        width: calc(100% + 150px);
+        margin-left: -75px;
+        margin-right: -75px;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .docs-content img {
+        max-width: calc(100% + 60px);
+        width: calc(100% + 60px);
+        margin-left: -30px;
+        margin-right: -30px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .docs-content img {
+        max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    /* Code */
+    .docs-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.875em;
+      background: #f4f5f6;
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+    }
+
+    .docs-content pre {
+      background: #f8f9fa;
+      border-left: 3px solid #e9ecef;
+      padding: 16px 20px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .docs-content pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    /* Tables */
+    .docs-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+
+    .docs-content th,
+    .docs-content td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .docs-content th {
+      font-weight: 600;
+      background: #f8f9fa;
+    }
+
+    /* Callouts */
+    .docs-content blockquote {
+      border-left: 4px solid #e6b800;
+      padding: 12px 20px;
+      margin: 1.5rem 0;
+      background: #fffae6;
+      color: var(--text-dark);
+    }
+
+    .docs-content blockquote > :last-child {
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    .docs-footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid #e9ecef;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 1024px) {
+      .docs-content {
+        padding: 32px 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-button {
+        display: block;
+        padding: 10px;
+      }
+
+      .menu-button svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .docs-header__center {
+        display: none;
+      }
+
+      .aux-links {
+        display: none;
+      }
+
+      .docs-sidebar {
+        width: 85vw;
+        max-width: 320px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .docs-sidebar.open {
+        transform: translateX(0);
+      }
+
+      .docs-main {
+        margin-left: 0;
+      }
+
+      .docs-content {
+        padding: 24px 16px;
+      }
+
+      .docs-content h1 {
+        font-size: 1.75rem;
+      }
+
+      .docs-content h2 {
+        font-size: 1.5rem;
+      }
+
+      /* Larger touch targets for mobile nav */
+      .nav-link {
+        padding: 10px 14px;
+        font-size: 15px;
+      }
+
+      .nav-children .nav-link {
+        padding: 8px 14px;
+        font-size: 14px;
+      }
+    }
+
+    /* Sidebar overlay on mobile */
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 40;
+    }
+
+    .sidebar-overlay.open {
+      display: block;
+    }
+
+    /* Syntax highlighting - Rouge */
+    .highlight .c { color: #998; font-style: italic }
+    .highlight .err { color: #a61717; background-color: #e3d2d2 }
+    .highlight .k { font-weight: bold }
+    .highlight .o { font-weight: bold }
+    .highlight .cm { color: #998; font-style: italic }
+    .highlight .cp { color: #999; font-weight: bold }
+    .highlight .c1 { color: #998; font-style: italic }
+    .highlight .cs { color: #999; font-weight: bold; font-style: italic }
+    .highlight .gd { color: #000; background-color: #fdd }
+    .highlight .gd .x { color: #000; background-color: #faa }
+    .highlight .ge { font-style: italic }
+    .highlight .gr { color: #a00 }
+    .highlight .gh { color: #999 }
+    .highlight .gi { color: #000; background-color: #dfd }
+    .highlight .gi .x { color: #000; background-color: #afa }
+    .highlight .go { color: #888 }
+    .highlight .gp { color: #555 }
+    .highlight .gs { font-weight: bold }
+    .highlight .gu { color: #aaa }
+    .highlight .gt { color: #a00 }
+    .highlight .kc { font-weight: bold }
+    .highlight .kd { font-weight: bold }
+    .highlight .kp { font-weight: bold }
+    .highlight .kr { font-weight: bold }
+    .highlight .kt { color: #458; font-weight: bold }
+    .highlight .m { color: #099 }
+    .highlight .s { color: #d14 }
+    .highlight .na { color: #008080 }
+    .highlight .nb { color: #0086B3 }
+    .highlight .nc { color: #458; font-weight: bold }
+    .highlight .no { color: #008080 }
+    .highlight .ni { color: #800080 }
+    .highlight .ne { color: #900; font-weight: bold }
+    .highlight .nf { color: #900; font-weight: bold }
+    .highlight .nn { color: #555 }
+    .highlight .nt { color: #000080 }
+    .highlight .nv { color: #008080 }
+    .highlight .ow { font-weight: bold }
+    .highlight .w { color: #bbb }
+    .highlight .mf { color: #099 }
+    .highlight .mh { color: #099 }
+    .highlight .mi { color: #099 }
+    .highlight .mo { color: #099 }
+    .highlight .sb { color: #d14 }
+    .highlight .sc { color: #d14 }
+    .highlight .sd { color: #d14 }
+    .highlight .s2 { color: #d14 }
+    .highlight .se { color: #d14 }
+    .highlight .sh { color: #d14 }
+    .highlight .si { color: #d14 }
+    .highlight .sx { color: #d14 }
+    .highlight .sr { color: #009926 }
+    .highlight .s1 { color: #d14 }
+    .highlight .ss { color: #990073 }
+    .highlight .bp { color: #999 }
+    .highlight .vc { color: #008080 }
+    .highlight .vg { color: #008080 }
+    .highlight .vi { color: #008080 }
+    .highlight .il { color: #099 }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="docs-header">
+    <div class="docs-header__left">
+      <button class="menu-button" id="menuButton" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+      <a href="{% if current_lang == 'es' %}{{ '/guia/' | relative_url }}{% else %}{{ '/docs/' | relative_url }}{% endif %}" class="docs-header__brand">
+        <img src="{{ '/images/telar.png' | relative_url }}" alt="Telar" class="docs-header__logo">
+        <span class="docs-header__title" data-lang="en">Telar: Docs</span>
+        <span class="docs-header__title" data-lang="es">Telar: Documentación</span>
+      </a>
+    </div>
+
+    <div class="docs-header__center">
+      <div class="lang-toggle">
+        <button id="btn-en" {% if current_lang == "en" %}class="active"{% endif %} data-href="{% if current_lang == 'en' %}{{ page.url | relative_url }}{% else %}{{ other_url }}{% endif %}" onclick="switchLang('en', this)">EN</button>
+        <button id="btn-es" {% if current_lang == "es" %}class="active"{% endif %} data-href="{% if current_lang == 'es' %}{{ page.url | relative_url }}{% else %}{{ other_url }}{% endif %}" onclick="switchLang('es', this)">ES</button>
+      </div>
+    </div>
+
+    <div class="docs-header__right">
+      <nav class="aux-links">
+        <a href="{{ '/' | relative_url }}"><span data-lang="en">Telar Home</span><span data-lang="es">Inicio</span></a>
+        <a href="https://github.com/UCSB-AMPLab/telar"><span data-lang="en">GitHub Repo</span><span data-lang="es">Repositorio GitHub</span></a>
+        <a href="https://ampl.clair.ucsb.edu/telar"><span data-lang="en">Demo Site</span><span data-lang="es">Sitio de Demo</span></a>
+      </nav>
+      <!-- Mobile language toggle -->
+      <div class="lang-toggle" style="display: none;" id="mobileLangToggle">
+        <button id="btn-en-mobile" {% if current_lang == "en" %}class="active"{% endif %} data-href="{% if current_lang == 'en' %}{{ page.url | relative_url }}{% else %}{{ other_url }}{% endif %}" onclick="switchLang('en', this)">EN</button>
+        <button id="btn-es-mobile" {% if current_lang == "es" %}class="active"{% endif %} data-href="{% if current_lang == 'es' %}{{ page.url | relative_url }}{% else %}{{ other_url }}{% endif %}" onclick="switchLang('es', this)">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="docs-sidebar" id="sidebar">
+    <div id="search" class="docs-search"></div>
+    <nav class="docs-nav">
+      {% include docs/nav.html %}
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="docs-main">
+    <article class="docs-content" data-pagefind-body>
+      {{ content }}
+
+      <footer class="docs-footer">
+        <p>{{ site.footer_content }}</p>
+      </footer>
+    </article>
+  </main>
+
+  <script>
+    // Initialize Pagefind search
+    window.addEventListener('DOMContentLoaded', function() {
+      if (typeof PagefindUI !== 'undefined') {
+        new PagefindUI({
+          element: "#search",
+          showSubResults: true,
+          showImages: false,
+          pageSize: 5
+        });
+      }
+    });
+
+    // Switch language - navigates to equivalent page
+    function switchLang(lang, btn) {
+      localStorage.setItem('telar-lang', lang);
+      const href = btn.getAttribute('data-href');
+      if (href && href !== window.location.pathname) {
+        window.location.href = href;
+      }
+    }
+
+    // Set language display (for sidebar filtering)
+    function setLangDisplay(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[id^="btn-en"]').forEach(btn => {
+        btn.classList.toggle('active', lang === 'en');
+      });
+      document.querySelectorAll('[id^="btn-es"]').forEach(btn => {
+        btn.classList.toggle('active', lang === 'es');
+      });
+    }
+
+    // Initialize - set display based on current page language
+    (function() {
+      // Page lang is set by Liquid, just sync the localStorage
+      const pageLang = document.documentElement.lang;
+      localStorage.setItem('telar-lang', pageLang);
+      setLangDisplay(pageLang);
+    })();
+
+    // Mobile menu toggle
+    const menuButton = document.getElementById('menuButton');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const mobileLangToggle = document.getElementById('mobileLangToggle');
+
+    function toggleMenu() {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('open');
+    }
+
+    menuButton.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    // Show mobile lang toggle on small screens
+    function checkMobile() {
+      if (window.innerWidth <= 768) {
+        mobileLangToggle.style.display = 'flex';
+      } else {
+        mobileLangToggle.style.display = 'none';
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+    }
+
+    window.addEventListener('resize', checkMobile);
+    checkMobile();
+  </script>
+</body>
+</html>

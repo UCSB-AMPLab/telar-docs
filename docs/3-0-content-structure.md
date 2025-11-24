@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: 3. Content Structure
 parent: Documentation
 nav_order: 3
