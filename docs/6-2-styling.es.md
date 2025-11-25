@@ -340,6 +340,6 @@ Agrega animaciones sutiles:
 
 ## Próximos pasos
 
-- [Conoce sobre temas](/documentacion/6-personalizacion/1-temas/)
+- [Conoce sobre temas](/guia/personalizacion/temas/)
 - [Ver sitios de ejemplo](https://ampl.clair.ucsb.edu/telar)
 - [Explora los diseños de Jekyll](https://jekyllrb.com/docs/layouts/)

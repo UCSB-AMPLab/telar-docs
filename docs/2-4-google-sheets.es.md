@@ -98,6 +98,6 @@ Pestañas `story-X`
 
 ## Ver también
 
-- [Interfaz Web de GitHub](/documentacion/2-flujos-de-trabajo/1-interfaz-web/)
-- [Desarrollo local](/documentacion/2-flujos-de-trabajo/2-desarrollo-local/)
-- [Cómo actualizar](/documentacion/2-flujos-de-trabajo/3-actualizar/)
+- [Interfaz Web de GitHub](/guia/flujos-de-trabajo/interfaz-web-github/)
+- [Desarrollo local](/guia/flujos-de-trabajo/desarrollo-local/)
+- [Cómo actualizar](/guia/flujos-de-trabajo/actualizacion/)

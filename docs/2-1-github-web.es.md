@@ -118,11 +118,11 @@ Escribe archivos markdown para el contenido de las capas de tu historia:
 
 {: .tip }
 > **Formato de Markdown**
-> Los paneles de contenido en Telar se escriben en Markdown e incluyen opciones avanzadas como ajustar el tamaño de las imágenes o incrustar videos. Consulta la [Guía de sintaxis de Markdown](/docs/reference/markdown-syntax/) para ver todas las posibilidades.
+> Los paneles de contenido en Telar se escriben en Markdown e incluyen opciones avanzadas como ajustar el tamaño de las imágenes o incrustar videos. Consulta la [Guía de sintaxis de Markdown](/guia/referencia/sintaxis-markdown/) para ver todas las posibilidades.
 
 {: .tip }
 > **Formato de Markdown**
-> Los paneles de contenido en Telar se deben escribir utilizando el formato Markdown, que permite incluir encabezados, notas al pie, imágenes, videos y más. Consulta la [Guía de Sintaxis de Markdown](/docs/reference/markdown-syntax/) para una guía completa de cómo funciona.
+> Los paneles de contenido en Telar se deben escribir utilizando el formato Markdown, que permite incluir encabezados, notas al pie, imágenes, videos y más. Consulta la [Guía de Sintaxis de Markdown](/guia/referencia/sintaxis-markdown/) para una guía completa de cómo funciona.
 
 ## Fase 4: estructura tu historia
 
@@ -251,10 +251,10 @@ Después de editar Google Sheets:
 
 {: .tip }
 > **Personaliza tu página de inicio**
-> Edita `index.md` para cambiar el mensaje de bienvenida, los encabezados de sección o quitar el aviso de demostración. Consulta la [Guía de personalización de la página de inicio](/documentacion/6-personalizacion/3-pagina-inicial/) para ver detalles.
+> Edita `index.md` para cambiar el mensaje de bienvenida, los encabezados de sección o quitar el aviso de demostración. Consulta la [Guía de personalización de la página de inicio](/guia/personalizacion/pagina-de-inicio/) para ver detalles.
 
 ## Próximos pasos
 
-- [Conoce la estructura de contenido](/documentacion/3-estructura-de-contenido/)
-- [Explora la integración IIIF](/documentacion/4-integracion-iiif/)
-- [Personaliza tu tema](/documentacion/6-personalizacion/1-temas/)
+- [Conoce la estructura de contenido](/guia/estructura-de-contenido/)
+- [Explora la integración IIIF](/guia/integracion-iiif/)
+- [Personaliza tu tema](/guia/personalizacion/temas/)

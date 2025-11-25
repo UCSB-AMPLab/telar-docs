@@ -59,10 +59,10 @@ Una vez que estés listo, elige uno de los flujos de trabajo según tus necesida
 
 ¡No tienes que instalar nada! Administra tu contenido completamente a través de la interfaz web de GitHub y Google Sheets. Perfecto para narradores y equipos.
 
-[Guía de Interfaz Web de GitHub](/documentacion/2-flujos-de-trabajo/1-interfaz-web/){: .btn .btn-primary }
+[Guía de Interfaz Web de GitHub](/guia/flujos-de-trabajo/interfaz-web-github/){: .btn .btn-primary }
 
 ### Desarrollo local
 
 Mejor para desarrolladores que quieren previsualizar cambios localmente antes de publicar. Requiere instalación de Ruby y Python.
 
-[Guía de Desarrollo Local](/documentacion/2-flujos-de-trabajo/2-desarrollo-local/){: .btn }
+[Guía de Desarrollo Local](/guia/flujos-de-trabajo/desarrollo-local/){: .btn }

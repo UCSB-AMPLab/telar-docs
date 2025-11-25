@@ -21,13 +21,13 @@ Telar incluye 4 temas predeterminados que puedes cambiar con una sola línea en 
 - **Santa Barbara**: Turquesa y coral modernos
 - **Austin**: Naranja quemado y azul pizarra
 
-[Conoce sobre temas](/documentacion/6-personalizacion/1-temas/)
+[Conoce sobre temas](/guia/personalizacion/temas/)
 
 ## Estilos avanzados
 
 Para una personalización más profunda, además de los temas, puedes modificar variables CSS, diseños y estilos de componentes.
 
-[Guía de estilos avanzados](/documentacion/6-personalizacion/2-estilos/)
+[Guía de estilos avanzados](/guia/personalizacion/estilos/)
 
 ## Cambio rápido de tema
 

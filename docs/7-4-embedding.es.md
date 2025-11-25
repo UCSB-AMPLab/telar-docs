@@ -607,6 +607,6 @@ Sobrescribe estilos del banner en `telar.scss`:
 
 ## Documentación relacionada
 
-- **Guía para educadores**: [Insertar en LMS y sitios web](/docs/workflows/embedding/)
-- **Referencia de desarrollo**: [Desarrollo local](/docs/reference/development/)
-- **GitHub Actions**: [Flujo de trabajo de *build* automatizado](/docs/reference/github-actions/)
+- **Guía para educadores**: [Insertar en LMS y sitios web](/guia/flujos-de-trabajo/insercion/)
+- **Referencia de desarrollo**: [Desarrollo local](/guia/referencia/desarrollo/)
+- **GitHub Actions**: [Flujo de trabajo de *build* automatizado](/guia/referencia/github-actions/)

@@ -432,6 +432,6 @@ git push origin main
 
 ## Próximos pasos
 
-- [Referencia de GitHub Actions](/documentacion/7-referencia/1-github-actions/)
-- [Guía de Personalización](/documentacion/6-personalizacion/)
-- [Referencia de Configuración](/documentacion/5-configuracion/)
+- [Referencia de GitHub Actions](/guia/referencia/github-actions/)
+- [Guía de Personalización](/guia/personalizacion/)
+- [Referencia de Configuración](/guia/configuracion/)

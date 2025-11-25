@@ -163,10 +163,10 @@ El **Proyecto Textiles Coloniales** utiliza ...
 
 - La configuración `layout: index` es obligatoria y no debe cambiarse.
 - La configuración `title` controla la etiqueta `<title>` de la página.
-- Todas las funciones de Markdown son compatibles (consulta la [Guía de sintaxis de Markdown](/docs/reference/markdown-syntax/)).
+- Todas las funciones de Markdown son compatibles (consulta la [Guía de sintaxis de Markdown](/guia/referencia/sintaxis-markdown/)).
 
 ## Próximos pasos
 
-- [Aprende sobre temas](/documentacion/6-personalizacion/1-temas/) para dar estilo a tu página de inicio.
-- [Explora estilos avanzados](/documentacion/6-personalizacion/2-estilos/) para CSS personalizado.
-- [Consulta la referencia de Markdown](/docs/reference/markdown-syntax/) para opciones de formato.
+- [Aprende sobre temas](/guia/personalizacion/temas/) para dar estilo a tu página de inicio.
+- [Explora estilos avanzados](/guia/personalizacion/estilos/) para CSS personalizado.
+- [Consulta la referencia de Markdown](/guia/referencia/sintaxis-markdown/) para opciones de formato.

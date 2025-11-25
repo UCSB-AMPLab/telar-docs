@@ -60,10 +60,10 @@ Once you're ready, choose one of the workflows based on your needs:
 
 No installation required. Manage your content entirely through GitHub's web interface and Google Sheets. Perfect for storytellers and teams.
 
-[GitHub Web Interface Guide](/docs/2-workflows/github-web/){: .btn .btn-primary }
+[GitHub Web Interface Guide](/docs/workflows/github-web/){: .btn .btn-primary }
 
 ### Local Development
 
 Best for developers who want to preview changes locally before publishing. Requires Ruby and Python installation.
 
-[Local Development Guide](/docs/2-workflows/local-dev/){: .btn }
+[Local Development Guide](/docs/workflows/local-dev/){: .btn }

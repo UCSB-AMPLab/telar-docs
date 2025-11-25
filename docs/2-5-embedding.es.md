@@ -301,10 +301,10 @@ Si necesitas cambiar el ancho o alto:
 
 ## Solución de problemas
 
-Para problemas comunes de inserción y soluciones, consulta la sección [Problemas de inserción](/docs/reference/development/#embedding-issues) en la referencia de desarrollo.
+Para problemas comunes de inserción y soluciones, consulta la sección [Problemas de inserción](/guia/referencia/desarrollo/#problemas-de-insercion) en la referencia de desarrollo.
 
 ## Próximos pasos
 
 - **Enlaces para compartir**: Usa la pestaña Share Link para enlaces directos en lugar de insertar
-- **Personalización**: Aprende sobre [personalizar tu sitio Telar](/docs/customization/)
-- **Características avanzadas**: Explora la [documentación de referencia para desarrolladores](/docs/reference/embedding/) para detalles técnicos
+- **Personalización**: Aprende sobre [personalizar tu sitio Telar](/guia/personalizacion/)
+- **Características avanzadas**: Explora la [documentación de referencia para desarrolladores](/guia/referencia/insercion/) para detalles técnicos

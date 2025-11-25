@@ -270,6 +270,6 @@ Una vez que estés satisfecho con tu sitio local:
 
 ## Próximos pasos
 
-- [Conoce la estructura de contenido](/documentacion/3-estructura-de-contenido/)
-- [Aprende sobre la integración IIIF](/documentacion/4-integracion-iiif/)
-- [Personaliza tu tema](/documentacion/6-personalizacion/1-temas/)
+- [Conoce la estructura de contenido](/guia/estructura-de-contenido/)
+- [Aprende sobre la integración IIIF](/guia/integracion-iiif/)
+- [Personaliza tu tema](/guia/personalizacion/temas/)

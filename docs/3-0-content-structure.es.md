@@ -100,7 +100,7 @@ Estos patrones se crearon usando...
 
 {: .tip }
 > **Referencia Completa de Markdown**
-> Consulta la [Guía de Sintaxis de Markdown](/docs/reference/markdown-syntax/) para todas las opciones de formato disponibles, incluyendo dimensionamiento de imágenes, incrustación de medios enriquecidos y mejores prácticas.
+> Consulta la [Guía de Sintaxis de Markdown](/guia/referencia/sintaxis-markdown/) para todas las opciones de formato disponibles, incluyendo dimensionamiento de imágenes, incrustación de medios enriquecidos y mejores prácticas.
 
 ### Archivos de glosario
 
@@ -363,4 +363,4 @@ Cuando uses Google Sheets (recomendado):
 3. Los archivos CSV se procesan en JSON para Jekyll
 4. ¡No se necesita edición manual de CSV!
 
-Consulta [GitHub Actions](/documentacion/7-referencia/1-github-actions/) para ver cómo funciona esta automatización.
+Consulta [GitHub Actions](/guia/referencia/github-actions/) para ver cómo funciona esta automatización.

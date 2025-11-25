@@ -290,6 +290,6 @@ Usa nombres de archivo descriptivos, en minúsculas con guiones:
 
 ## Siguientes pasos
 
-- [Guía de estructura de contenido](/documentacion/3-estructura-de-contenido/) - Aprende a organizar tus archivos Markdown
-- [Flujo de trabajo web de GitHub](/documentacion/2-flujos-de-trabajo/1-interfaz-web/) - Crea y edita archivos Markdown
-- [Estilos avanzados](/documentacion/6-personalizacion/2-estilos/) - Personaliza la apariencia de los paneles
+- [Guía de estructura de contenido](/guia/estructura-de-contenido/) - Aprende a organizar tus archivos Markdown
+- [Flujo de trabajo web de GitHub](/guia/flujos-de-trabajo/interfaz-web-github/) - Crea y edita archivos Markdown
+- [Estilos avanzados](/guia/personalizacion/estilos/) - Personaliza la apariencia de los paneles

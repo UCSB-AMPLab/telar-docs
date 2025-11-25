@@ -296,6 +296,6 @@ Si falta un archivo de tema personalizado o tiene errores, Telar automáticament
 
 ## Próximos pasos
 
-- [Estilos avanzados](/documentacion/6-personalizacion/2-estilos/) para personalización más profunda
-- [Configuración](/documentacion/5-configuracion/) para otros ajustes del sitio
+- [Estilos avanzados](/guia/personalizacion/estilos/) para personalización más profunda
+- [Configuración](/guia/configuracion/) para otros ajustes del sitio
 - [Ver temas de ejemplo](https://ampl.clair.ucsb.edu/telar) en acción

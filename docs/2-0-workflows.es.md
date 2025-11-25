@@ -22,7 +22,7 @@ Telar ofrece dos flujos de trabajo para crear tus exposiciones. Elige el que mej
 - Prototipado rápido
 - Usuarios que prefieren no instalar software
 
-[Conocer más sobre el flujo de trabajo con la interfaz web de GitHub](/documentacion/2-flujos-de-trabajo/1-interfaz-web/)
+[Conocer más sobre el flujo de trabajo con la interfaz web de GitHub](/guia/flujos-de-trabajo/interfaz-web-github/)
 
 ## Desarrollo local
 
@@ -34,7 +34,7 @@ Previsualiza cambios localmente antes de publicar. Control total sobre el proces
 - Probar cambios antes de la publicación
 - Trabajar sin conexión
 
-[Conocer más sobre el flujo de trabajo de Desarrollo Local](/documentacion/2-flujos-de-trabajo/2-desarrollo-local/)
+[Conocer más sobre el flujo de trabajo de Desarrollo Local](/guia/flujos-de-trabajo/desarrollo-local/)
 
 ## Actualizar Telar
 
@@ -46,7 +46,7 @@ Mantén tu sitio actualizado con las últimas funciones y mejoras de Telar.
 - Mantener compatibilidad
 - Actualizaciones automatizadas con un clic (v0.3.4+)
 
-[Conocer más sobre Actualizar Telar](/documentacion/2-flujos-de-trabajo/3-actualizar/)
+[Conocer más sobre Actualizar Telar](/guia/flujos-de-trabajo/actualizacion/)
 
 ## Opciones de Gestión de Contenido
 
@@ -55,7 +55,7 @@ Ambos flujos de trabajo soportan dos enfoques de gestión de contenido:
 ### Google Sheets (Recomendado)
 Administra contenido a través de una interfaz familiar de hoja de cálculo. Ideal para equipos y la mayoría de usuarios.
 
-[Guía de Google Sheets](/documentacion/2-flujos-de-trabajo/4-google-sheets/)
+[Guía de Google Sheets](/guia/flujos-de-trabajo/google-sheets/)
 
 ### Archivos CSV (Opcional)
 Edita archivos CSV directamente en tu repositorio. Funciona completamente a través de GitHub sin servicios externos.

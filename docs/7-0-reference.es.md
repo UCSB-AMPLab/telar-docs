@@ -16,13 +16,13 @@ Referencia técnica para desarrolladores y usuarios avanzados.
 
 Aprende cómo el flujo de trabajo de construcción automatizada de Telar procesa tu contenido y publica tu sitio.
 
-[Referencia de GitHub Actions](/documentacion/7-referencia/1-github-actions/)
+[Referencia de GitHub Actions](/guia/referencia/github-actions/)
 
 ## Desarrollo
 
 Flujo de trabajo de desarrollo local, comandos de construcción y solución de problemas.
 
-[Referencia de Desarrollo](/documentacion/7-referencia/2-desarrollo/)
+[Referencia de Desarrollo](/guia/referencia/desarrollo/)
 
 ## Qué hay en esta Sección
 

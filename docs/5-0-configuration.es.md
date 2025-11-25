@@ -96,7 +96,7 @@ telar_theme: "paisajes"  # Opciones: paisajes, neogranadina, santa-barbara, aust
 - **santa-barbara**: Turquesa y coral modernos
 - **austin**: Naranja quemado y azul pizarra
 
-Consulta [Personalización: Temas](/documentacion/6-personalizacion/1-temas/) para ver detalles y cómo crear temas personalizados.
+Consulta [Personalización: Temas](/guia/personalizacion/temas/) para ver detalles y cómo crear temas personalizados.
 
 ## Interfaz multilingüe
 
@@ -305,9 +305,9 @@ exclude:
 
 ## Próximos pasos
 
-- [Personaliza tu Tema](/documentacion/6-personalizacion/1-temas/)
-- [Personaliza tu página inicial](/documentacion/6-personalizacion/3-pagina-inicial/)
-- [Aprende sobre GitHub Actions](/documentacion/7-referencia/1-github-actions/)
-- [Explora Estilos Avanzados](/documentacion/6-personalizacion/2-estilos/)
+- [Personaliza tu Tema](/guia/personalizacion/temas/)
+- [Personaliza tu página inicial](/guia/personalizacion/pagina-de-inicio/)
+- [Aprende sobre GitHub Actions](/guia/referencia/github-actions/)
+- [Explora Estilos Avanzados](/guia/personalizacion/estilos/)
 
 {% include last-modified.html %}

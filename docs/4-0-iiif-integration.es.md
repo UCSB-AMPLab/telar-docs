@@ -314,6 +314,6 @@ Usa la herramienta de identificación de coordenadas integrada:
 
 ## Próximos pasos
 
-- [Configura tu sitio](/documentacion/5-configuracion/)
-- [Estructura tu historia](/documentacion/2-flujos-de-trabajo/1-interfaz-web/#fase-4-estructura-tu-historia)
-- [Aprende sobre personalización](/documentacion/6-personalizacion/)
+- [Configura tu sitio](/guia/configuracion/)
+- [Estructura tu historia](/guia/flujos-de-trabajo/interfaz-web-github/#fase-4-estructura-tu-historia)
+- [Aprende sobre personalización](/guia/personalizacion/)
