@@ -156,6 +156,28 @@ Telar proporciona sintaxis especial para controlar los tamaños de imagen en los
 {: .tip }
 > **Tamaño Predeterminado**: Las imágenes sin etiqueta de tamaño predeterminan a mediano (450px). Siempre incluye etiquetas de tamaño para claridad.
 
+### Pies de imagen
+
+Agrega un pie de imagen colocando texto en la línea inmediatamente después de la imagen:
+
+```markdown
+![Fragmento textil colonial](textile.jpg){lg}
+Detalle que muestra el patrón de *urdimbre entrelazada* típico del período.
+```
+
+El pie de imagen aparece centrado debajo de la imagen en una fuente de peso ligero.
+
+**Prefijo opcional**: Puedes usar `caption:` para hacer los pies más explícitos:
+
+```markdown
+![Mapa de la región](map.jpg){md}
+caption: Mapa de la *Recopilación de Leyes*, 1680.
+```
+
+El prefijo `caption:` se elimina del texto mostrado.
+
+**Markdown en pies de imagen**: Los pies de imagen admiten formato markdown como `*cursivas*`, `**negritas**` y `[enlaces](url)`.
+
 ---
 
 ## Medios enriquecidos

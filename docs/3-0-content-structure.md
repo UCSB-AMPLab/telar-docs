@@ -174,8 +174,8 @@ credit: Archivo General de Indias
 **Fields:**
 - `image` (required) - Path relative to `assets/images/`
 - `alt` (recommended) - Accessibility description
-- `caption` (optional) - Text displayed below image
-- `credit` (optional) - Attribution line
+- `caption` (optional) - Text displayed below image; supports markdown (e.g., `*italics*`)
+- `credit` (optional) - Attribution line; supports markdown
 
 **External images:** You can use full URLs for images hosted elsewhere:
 ```markdown
@@ -329,14 +329,14 @@ Excavations at the site revealed...
 :::carousel
 image: before.jpg
 alt: Site photograph from 1920
-caption: The plaza before restoration
+caption: The *Plaza Mayor* before restoration
 credit: Municipal Archive
 
 ---
 
 image: after.jpg
 alt: Site photograph from 2020
-caption: The plaza after archaeological restoration
+caption: The *Plaza Mayor* after archaeological restoration
 credit: National Institute of Anthropology
 :::
 ```

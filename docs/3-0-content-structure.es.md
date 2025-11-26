@@ -174,8 +174,8 @@ credit: Archivo General de Indias
 **Campos:**
 - `image` (obligatorio) - Ruta relativa a `assets/images/`
 - `alt` (recomendado) - Descripción para accesibilidad
-- `caption` (opcional) - Texto que se muestra debajo de la imagen
-- `credit` (opcional) - Línea de atribución
+- `caption` (opcional) - Texto que se muestra debajo de la imagen; admite markdown (ej., `*cursivas*`)
+- `credit` (opcional) - Línea de atribución; admite markdown
 
 **Imágenes externas:** Puedes usar URLs completas para imágenes alojadas en otros servidores:
 ```markdown
@@ -330,14 +330,14 @@ Las excavaciones en el sitio revelaron...
 :::carousel
 image: before.jpg
 alt: Fotografía del sitio en 1920
-caption: La plaza antes de la restauración
+caption: La *Plaza Mayor* antes de la restauración
 credit: Archivo Municipal
 
 ---
 
 image: after.jpg
 alt: Fotografía del sitio en 2020
-caption: La plaza después de la restauración arqueológica
+caption: La *Plaza Mayor* después de la restauración arqueológica
 credit: Instituto Nacional de Antropología
 :::
 ```

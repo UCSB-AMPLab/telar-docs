@@ -156,6 +156,28 @@ Telar provides special syntax for controlling image sizes in panels.
 {: .tip }
 > **Default Size**: Images without a size tag default to medium (450px). Always include size tags for clarity.
 
+### Image Captions
+
+Add a caption to any image by placing text on the line immediately after the image:
+
+```markdown
+![Colonial textile fragment](textile.jpg){lg}
+Detail showing the *interlocking warp* pattern typical of the period.
+```
+
+The caption appears centered below the image in a lighter weight font.
+
+**Optional prefix**: You can use `caption:` to make captions more explicit:
+
+```markdown
+![Map of the region](map.jpg){md}
+caption: Map from *Recopilación de Leyes*, 1680.
+```
+
+The `caption:` prefix is stripped from the displayed text.
+
+**Markdown in captions**: Captions support inline markdown formatting like `*italics*`, `**bold**`, and `[links](url)`.
+
 ---
 
 ## Rich Media
