@@ -41,6 +41,29 @@ components/
 - **Markdown files** contain long-form narrative content
 - **Images** are processed into IIIF tiles automatically
 
+## Project CSV Structure
+
+The `project.csv` file defines your site's stories and their display order:
+
+```csv
+order,title,subtitle,byline
+1,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith
+2,Trade Routes,Following the threads of commerce,based on [original research](https://example.com)
+```
+
+### Column Reference
+
+| Column | Description |
+|--------|-------------|
+| `order` | Display order on homepage (1, 2, 3...) |
+| `title` | Story title shown on homepage and story page |
+| `subtitle` | Brief description shown on story cards |
+| `byline` | Author attribution; supports markdown for links and formatting |
+
+{: .tip }
+> **Markdown in Bylines**
+> The `byline` field supports markdown syntax. Use `[text](url)` for links, `*italics*` for emphasis, etc. On homepage cards, links are displayed as plain text; on story pages, they render as clickable links.
+
 ## Story CSV Structure
 
 Each story CSV (e.g., `story-1.csv`) contains step-by-step navigation data:

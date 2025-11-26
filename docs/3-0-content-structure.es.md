@@ -41,6 +41,29 @@ components/
 - **Archivos Markdown** contienen contenido narrativo de formato largo
 - **Imágenes** se procesan automáticamente en teselas (*tiles*) IIIF
 
+## Estructura CSV de proyecto
+
+El archivo `project.csv` define las historias de tu sitio y su orden de visualización:
+
+```csv
+order,title,subtitle,byline
+1,Textiles Coloniales,Tradiciones de tejido de las Américas,por Dra. María García
+2,Rutas Comerciales,Siguiendo los hilos del comercio,basado en [investigación original](https://example.com)
+```
+
+### Referencia de columnas
+
+| Columna | Descripción |
+|---------|-------------|
+| `order` | Orden de visualización en la página principal (1, 2, 3...) |
+| `title` | Título de la historia mostrado en la página principal y en la historia |
+| `subtitle` | Breve descripción mostrada en las tarjetas de historia |
+| `byline` | Atribución de autoría; admite markdown para enlaces y formato |
+
+{: .tip }
+> **Markdown en bylines**
+> El campo `byline` admite sintaxis markdown. Usa `[texto](url)` para enlaces, `*cursivas*` para énfasis, etc. En las tarjetas de la página principal, los enlaces se muestran como texto plano; en las páginas de historia, se renderizan como enlaces clicables.
+
 ## Estructura CSV de historia
 
 Cada CSV de historia (ej., `story-1.csv`) contiene datos de navegación paso a paso:
