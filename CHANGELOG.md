@@ -6,21 +6,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [v0.6.0] - 2025-11-28
+
 ### Added
 
 - **Custom docs theme** - Replaced Just the Docs with a custom bilingual theme
 - **Pagefind search** - Fast, bilingual static search with automatic language filtering
 - **New landing page** - Bilingual landing page with video demo and sponsor acknowledgments
-- **Site logo configuration documentation** - How to add a logo to replace site title in header (5-configuration.md)
 - **Version callout** - Documentation index pages now show current version with CHANGELOG link
+- **Section 8: For Developers** - New developer-focused section with four subsections:
+  - 8.1 Local Development workflow guide
+  - 8.2 GitHub Actions reference (moved from Section 7)
+  - 8.3 Demo System Architecture
+  - 8.4 Embedding System Architecture
+- **Story ID documentation** - Optional `story_id` column for semantic story names (7-reference/2-csv-reference.md)
+- **Bilingual CSV documentation** - Spanish column headers and dual header row support (7-reference/2-csv-reference.md)
+- **Object credits documentation** - Display object attribution in viewer with dismiss option (5-configuration.md)
+- **Custom pages documentation** - Create user-editable pages with widgets and glossary support (3-content-structure.md, new 3-5-custom-pages.md)
+- **Configurable navigation documentation** - Data-driven menu via navigation.yml (new 3-6-navigation.md)
+- **Site logo configuration** - How to add a logo to replace site title in header (5-configuration.md)
 
 ### Changed
 
+- **Documentation reorganization** - Split Section 7 into "Reference" (Section 7) and "For Developers" (Section 8)
 - **Domain migration** - Site now hosted at telar.org (from ampl.clair.ucsb.edu/telar-docs)
 - **URL structure** - Removed /telar-docs baseurl for cleaner URLs
 - **Navigation** - Sidebar now filters by current language with toggle navigation
 - **Active page highlighting** - Uses Paisajes purple accent for current page only (no parent highlighting)
+- **Section 7: Reference** - Now focused on user reference material (CSV reference, markdown syntax)
+- **CSV reference expanded** - Added optional columns, bilingual support, dual headers (7-reference/2-csv-reference.md)
+- **Content structure updated** - Added custom pages and navigation sections (3-content-structure.md)
 - Fixed hardcoded image paths in documentation
+- Fixed internal cross-references to match new Section 8 structure
 
 ### Styling
 
@@ -35,6 +52,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Custom docs layout with inline CSS/JS (no external dependencies)
 - Pagefind integration in GitHub Actions workflow
 - Updated README with search development instructions
+- Backwards-compatibility redirects at ampl.clair.ucsb.edu/telar-docs for all moved documentation
+
+See the [main Telar CHANGELOG](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md#060-beta) for full v0.6.0-beta framework feature list.
 
 ## [v0.5.0] - 2025-11-22
 
