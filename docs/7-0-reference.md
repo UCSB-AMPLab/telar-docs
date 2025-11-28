@@ -10,24 +10,18 @@ permalink: /docs/reference/
 
 # Reference
 
-Technical reference for developers and advanced users.
-
-## GitHub Actions
-
-Learn how Telar's automated build workflow processes your content and deploys your site.
-
-[GitHub Actions Reference](/docs/reference/github-actions/)
-
-## Development
-
-Local development workflow, build commands, and troubleshooting.
-
-[Development Reference](/docs/reference/development/)
+Quick reference materials for storytellers.
 
 ## What's in this Section
 
-- **Automated workflows**: How GitHub Actions builds your site
-- **Build pipeline**: CSV conversion, IIIF generation, Jekyll compilation
-- **Manual triggers**: When and how to manually trigger builds
-- **Local development**: Commands and workflows for local preview
-- **Troubleshooting**: Common issues and solutions
+### [7.1 Markdown Syntax](/docs/reference/markdown-syntax/)
+Complete reference for all markdown formatting available in Telar panels and pages.
+
+### [7.2 CSV Reference](/docs/reference/csv-reference/)
+Comprehensive column reference for project.csv, objects.csv, and story CSVs, including bilingual support.
+
+---
+
+## Looking for Developer Docs?
+
+If you're looking for build pipelines, GitHub Actions workflows, or framework architecture, check out [Section 8: For Developers](/docs/developers/).

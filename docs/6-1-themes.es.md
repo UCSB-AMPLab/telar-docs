@@ -14,7 +14,7 @@ Telar incluye 4 temas visuales predeterminados que pueden cambiarse fácilmente 
 
 ## Temas disponibles
 
-### Paisajes Coloniales (predeterminado)
+### Paisajes coloniales (predeterminado)
 
 Tonos tierra inspirados en [Paisajes Coloniales](https://paisajescoloniales.com).
 

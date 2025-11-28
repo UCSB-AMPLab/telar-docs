@@ -20,7 +20,8 @@ components/
 ├── structures/           # CSV files with organizational data
 │   ├── project.csv       # Site settings and story list
 │   ├── objects.csv       # Object catalog metadata
-│   └── story-1.csv       # Story structure with step coordinates
+│   ├── your-story.csv    # Story structure with step coordinates
+│   └── story-1.csv       # Additional stories (optional)
 ├── images/
 │   ├── objects/          # Source images for IIIF processing
 │   └── additional/       # Other images used around the site
@@ -30,6 +31,9 @@ components/
     │       ├── step1-layer1.md
     │       ├── step1-layer2.md
     │       └── ...
+    ├── pages/            # Custom pages (about, credits, etc.)
+    │   ├── about.md
+    │   └── credits.md
     └── glossary/         # Glossary definitions (markdown)
         ├── term1.md
         └── ...
@@ -38,7 +42,7 @@ components/
 ### Key Principles
 
 - **CSV files** contain structural data (coordinates, file references)
-- **Markdown files** contain long-form narrative content
+- **Markdown files** contain extended narrative content
 - **Images** are processed into IIIF tiles automatically
 
 ## Project CSV Structure
@@ -46,19 +50,24 @@ components/
 The `project.csv` file defines your site's stories and their display order:
 
 ```csv
-order,title,subtitle,byline
-1,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith
-2,Trade Routes,Following the threads of commerce,based on [original research](https://example.com)
+order,story_id,title,subtitle,byline
+1,colonial-textiles,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith
+2,trade-routes,Trade Routes,Following the threads of commerce,based on [original research](https://example.com)
 ```
 
 ### Column Reference
 
-| Column | Description |
-|--------|-------------|
-| `order` | Display order on homepage (1, 2, 3...) |
-| `title` | Story title shown on homepage and story page |
-| `subtitle` | Brief description shown on story cards |
-| `byline` | Author attribution; supports markdown for links and formatting |
+| Column | Description | Required |
+|--------|-------------|----------|
+| `order` | Display order on homepage (1, 2, 3...) | Yes |
+| `story_id` | Semantic identifier (lowercase, hyphens, underscores only) | No |
+| `title` | Story title shown on homepage and story page | Yes |
+| `subtitle` | Brief description shown on story cards | Yes |
+| `byline` | Author attribution; supports markdown for links and formatting | No |
+
+{: .note }
+> **story_id Column (v0.6.0+)**
+> Use `story_id` for semantic story names like `colonial-textiles` instead of `story-1`. When provided, story CSVs and directories use this name. When omitted, Telar uses `story-{order}` as the identifier. Fully backward compatible.
 
 {: .tip }
 > **Markdown in Bylines**
@@ -82,9 +91,9 @@ step,question,answer,object,x,y,zoom,layer1_button,layer1_file,layer2_button,lay
 | `answer` | Brief answer text |
 | `object` | Object ID from objects.csv |
 | `x, y, zoom` | IIIF viewer coordinates (0-1 normalized) |
-| `layer1_button` | Custom button text (empty = "Learn more") |
+| `layer1_button` | Custom button text (empty = **Learn more**) |
 | `layer1_file` | Path to markdown file in `components/texts/stories/` |
-| `layer2_button` | Custom button text (empty = "Go deeper") |
+| `layer2_button` | Custom button text (empty = **Go deeper**) |
 | `layer2_file` | Path to markdown file in `components/texts/stories/` |
 
 {: .note }
@@ -364,6 +373,139 @@ credit: National Institute of Anthropology
 :::
 ```
 
+## Custom Pages
+
+Create standalone pages for content that doesn't fit the story structure.
+
+### Overview
+
+Custom pages appear in your site's navigation menu but aren't part of the story viewer. Perfect for credits, methodology, team information, bibliography, or contact pages.
+
+**Location**: `components/texts/pages/`
+
+**Features**:
+- Full markdown support
+- Widgets (accordion, tabs, carousel)
+- Glossary auto-linking
+- Responsive layout
+
+### Creating a Page
+
+Add a markdown file to `components/texts/pages/`:
+
+```markdown
+---
+---
+
+# About This Project
+
+This digital archive explores colonial trade networks...
+
+## Research Team
+
+- **Principal Investigator**: Dr. Jane Smith
+- **Graduate Researchers**: María González, John Davis
+
+:::accordion
+## Funding Sources
+
+- National Endowment for the Humanities
+- University Research Grant Program
+:::
+```
+
+The frontmatter (`---` lines) is required but can be empty.
+
+### File Naming
+
+File names become URLs:
+
+| File | URL |
+|------|-----|
+| `about.md` | `/about/` |
+| `credits.md` | `/credits/` |
+| `methodology.md` | `/methodology/` |
+
+Use lowercase with hyphens for spaces (`team-bios.md`, not `Team_Bios.md`).
+
+### Adding to Navigation
+
+Update `_data/navigation.yml` to include pages in your menu. See [Navigation Configuration](/docs/customization/navigation-menu/) for details.
+
+### Learn More
+
+See the complete [Custom Pages Guide](/docs/content-structure/custom-pages/) for full documentation.
+
+## Bilingual CSV Support
+
+Write CSV files in Spanish or include dual-language headers for bilingual projects.
+
+### Spanish Column Names
+
+All CSV columns accept Spanish names:
+
+**Project CSV:**
+```csv
+orden,id_historia,titulo,subtitulo,firma
+1,textiles-coloniales,Textiles Coloniales,Tradiciones textiles,por Dra. Jane Smith
+```
+
+**Objects CSV:**
+```csv
+objeto,titulo,descripcion,creador,periodo,credito
+obj-001,Textil Colonial,Un fragmento tejido...,Desconocido,circa 1650,Dominio Público
+```
+
+**Story CSV:**
+```csv
+paso,objeto,pregunta,respuesta,boton_capa1,archivo_capa1
+1,obj-001,¿Qué es esto?,Un textil colonial...,Aprende Más,historia1/paso1-capa1.md
+```
+
+### Dual Headers
+
+Include both English and Spanish headers for bilingual reference:
+
+```csv
+order,story_id,title,subtitle,byline
+orden,id_historia,titulo,subtitulo,firma
+1,colonial-textiles,Colonial Textiles,Weaving traditions,by Dr. Jane Smith
+2,textiles-coloniales,Textiles Coloniales,Tradiciones textiles,por Dra. Jane Smith
+```
+
+Telar automatically detects and skips the second header row.
+
+### Spanish File Names
+
+Use Spanish file names with automatic fallback:
+
+| English | Spanish |
+|---------|---------|
+| `project.csv` | `proyecto.csv` |
+| `objects.csv` | `objetos.csv` |
+
+Telar checks for Spanish filenames first, then falls back to English.
+
+### Column Name Mappings
+
+Spanish columns are automatically normalized:
+
+| Spanish | English |
+|---------|---------|
+| `paso` | `step` |
+| `objeto` | `object` |
+| `pregunta` | `question` |
+| `respuesta` | `answer` |
+| `orden` | `order` |
+| `titulo` | `title` |
+| `credito` | `credit` |
+
+See the complete [CSV Reference](/docs/reference/csv-reference/) for all column mappings.
+
+### Backward Compatibility
+
+English-only CSVs work exactly as before. Bilingual support is optional and fully compatible with existing sites.
+
 ## Jekyll Collections
 
 Auto-generated files live in `_jekyll-files/`:
@@ -385,4 +527,4 @@ When using Google Sheets (recommended):
 3. CSV files are processed into JSON for Jekyll
 4. No manual CSV editing needed!
 
-See [GitHub Actions](/docs/reference/github-actions/) for how this automation works.
+See [GitHub Actions](/docs/developers/github-actions/) for how this automation works.

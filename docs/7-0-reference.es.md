@@ -10,24 +10,18 @@ permalink: /guia/referencia/
 
 ## Referencia
 
-Referencia técnica para desarrolladores y usuarios avanzados.
+Materiales de referencia rápida para narradores.
 
-## GitHub Actions
+## Qué hay en esta sección
 
-Aprende cómo el flujo de trabajo de construcción automatizada de Telar procesa tu contenido y publica tu sitio.
+### [7.1 Sintaxis de Markdown](/guia/referencia/sintaxis-markdown/)
+Referencia completa para todo el formato markdown disponible en paneles y páginas de Telar.
 
-[Referencia de GitHub Actions](/guia/referencia/github-actions/)
+### [7.2 Referencia CSV](/guia/referencia/csv-reference/)
+Referencia completa de columnas para project.csv, objects.csv y CSVs de historias, incluyendo soporte bilingüe.
 
-## Desarrollo
+---
 
-Flujo de trabajo de desarrollo local, comandos de construcción y solución de problemas.
+## ¿Buscas documentación para desarrolladores?
 
-[Referencia de Desarrollo](/guia/referencia/desarrollo/)
-
-## Qué hay en esta Sección
-
-- **Flujos de trabajo automatizados**: Cómo GitHub Actions construye tu sitio
-- **Pipeline de construcción**: Conversión CSV, generación IIIF, compilación Jekyll
-- **Activadores manuales**: Cuándo y cómo activar construcciones manualmente
-- **Desarrollo local**: Comandos y flujos de trabajo para vista previa local
-- **Solución de problemas**: Problemas comunes y soluciones
+Si buscas pipelines de compilación, flujos de trabajo de GitHub Actions o arquitectura del framework, consulta [Sección 8: Para Desarrolladores](/guia/desarrolladores/).
