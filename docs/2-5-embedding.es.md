@@ -45,7 +45,7 @@ Antes de insertar:
 
 ## Cómo insertar una historia
 
-### Paso 1: Abre el panel de compartir e insertar
+### Paso 1: abre el panel de compartir e insertar
 
 **En una página de historia:**
 
@@ -57,12 +57,12 @@ Antes de insertar:
 1. Ve a la página de inicio de tu sitio Telar
 2. Haz clic en el botón **Share** en la barra de navegación (arriba a la derecha)
 
-### Paso 2: Cambia a la pestaña de código de inserción
+### Paso 2: cambia a la pestaña de código de inserción
 
 1. En el panel de compartir, haz clic en la pestaña **Embed Code**
 2. Lee el texto introductorio para obtener orientación específica de la plataforma
 
-### Paso 3: Selecciona una historia (solo desde la página de inicio)
+### Paso 3: selecciona una historia (solo desde la página de inicio)
 
 Si abriste el panel de compartir desde la página de inicio:
 
@@ -70,7 +70,7 @@ Si abriste el panel de compartir desde la página de inicio:
 2. Elige la historia que deseas insertar
 3. El código de inserción se actualizará automáticamente
 
-### Paso 4: Elige las dimensiones
+### Paso 4: elige las dimensiones
 
 Selecciona un tamaño predefinido que coincida con tu plataforma, o indica dimensiones personalizadas.
 
@@ -301,10 +301,22 @@ Si necesitas cambiar el ancho o alto:
 
 ## Solución de problemas
 
-Para problemas comunes de inserción y soluciones, consulta la sección [Problemas de inserción](/guia/referencia/desarrollo/#problemas-de-insercion) en la referencia de desarrollo.
+**iframe no se muestra:**
+- Verifica que el parámetro `?embed=true` esté incluido en la URL
+- Verifica que el sitio padre permita iframes
+- Revisa la consola del navegador en busca de errores
+
+**La navegación no funciona:**
+- Asegúrate de no estar bloqueando JavaScript
+- Verifica que el iframe tenga altura suficiente
+- Busca CSS conflictivo en la página padre
+
+**Contenido cortado:**
+- Aumenta la altura del iframe (recomendado: 800px mínimo)
+- Pon `width: 100%` para comportamiento responsivo
 
 ## Próximos pasos
 
 - **Enlaces para compartir**: Usa la pestaña Share Link para enlaces directos en lugar de insertar
 - **Personalización**: Aprende sobre [personalizar tu sitio Telar](/guia/personalizacion/)
-- **Características avanzadas**: Explora la [documentación de referencia para desarrolladores](/guia/referencia/insercion/) para detalles técnicos
+- **Detalles técnicos**: Consulta [Arquitectura del Sistema de Incrustación](/guia/desarrolladores/sistema-incrustacion/) para documentación de desarrolladores

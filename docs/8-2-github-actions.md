@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 7.1. GitHub Actions
-parent: 7. Reference
+title: 8.2. GitHub Actions & CI/CD
+parent: 8. For Developers
 grand_parent: Documentation
-nav_order: 1
+nav_order: 2
 lang: en
-permalink: /docs/reference/github-actions/
+permalink: /docs/developers/github-actions/
 ---
 
 # GitHub Actions Workflow

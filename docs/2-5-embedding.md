@@ -301,10 +301,22 @@ If you need to change the width or height:
 
 ## Troubleshooting
 
-For common embedding issues and solutions, see the [Embedding Issues](/docs/reference/development/#embedding-issues) section in the Development Reference.
+**iframe not displaying:**
+- Check that `?embed=true` parameter is included in URL
+- Verify parent site allows iframes
+- Check browser console for errors
+
+**Navigation not working:**
+- Ensure you're not blocking JavaScript
+- Verify iframe has sufficient height
+- Check for conflicting CSS on parent page
+
+**Content cut off:**
+- Increase iframe height (recommended: 800px minimum)
+- Set `width: 100%` for responsive behavior
 
 ## Next Steps
 
 - **Share Links**: Use the Share Link tab for direct links instead of embedding
 - **Customization**: Learn about [customizing your Telar site](/docs/customization/)
-- **Advanced Features**: Explore [developer reference documentation](/docs/reference/embedding/) for technical details
+- **Technical Details**: See [Embedding System Architecture](/docs/developers/embedding-system/) for developer documentation

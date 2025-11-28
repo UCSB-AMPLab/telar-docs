@@ -5,9 +5,8 @@ parent: Documentación
 nav_order: 3
 lang: es
 permalink: /guia/estructura-de-contenido/
----
 
-## Estructura de contenido
+# Estructura de contenido
 
 Telar usa una **arquitectura basada en componentes** que separa el contenido fuente de los archivos generados.
 
@@ -20,7 +19,8 @@ components/
 ├── structures/           # Archivos CSV con datos organizacionales
 │   ├── project.csv       # Configuración del sitio y lista de historias
 │   ├── objects.csv       # Metadatos del catálogo de objetos
-│   └── story-1.csv       # Estructura de historia con coordenadas de pasos
+│   ├── your-story.csv    # Estructura de historia con coordenadas de pasos
+│   └── story-1.csv       # Historias adicionales (opcional)
 ├── images/
 │   ├── objects/          # Imágenes fuente para procesamiento IIIF
 │   └── additional/       # Otras imágenes usadas en el sitio
@@ -30,6 +30,9 @@ components/
     │       ├── paso1-capa1.md
     │       ├── paso1-capa2.md
     │       └── ...
+    ├── pages/            # Páginas personalizadas (acerca de, créditos, etc.)
+    │   ├── about.md
+    │   └── credits.md
     └── glossary/         # Definiciones de glosario (markdown)
         ├── termino1.md
         └── ...
@@ -38,8 +41,36 @@ components/
 ### Principios clave
 
 - **Archivos CSV** contienen datos estructurales (coordenadas, referencias de archivos)
-- **Archivos Markdown** contienen contenido narrativo de formato largo
+- **Archivos Markdown** contienen contenido narrativo extenso
 - **Imágenes** se procesan automáticamente en teselas (*tiles*) IIIF
+
+## Estructura CSV de proyecto
+
+El archivo `project.csv` define las historias de tu sitio y su orden de visualización:
+
+```csv
+order,story_id,title,subtitle,byline
+1,textiles-coloniales,Textiles Coloniales,Tradiciones de tejido de las Américas,por Dra. María García
+2,rutas-comerciales,Rutas Comerciales,Siguiendo los hilos del comercio,basado en [investigación original](https://example.com)
+```
+
+### Referencia de columnas
+
+| Columna | Descripción | Requerido |
+|---------|-------------|-----------|
+| `order` | Orden de visualización en la página principal (1, 2, 3...) | Sí |
+| `story_id` | Identificador semántico (solo minúsculas, guiones, guiones bajos) | No |
+| `title` | Título de la historia mostrado en la página principal y en la historia | Sí |
+| `subtitle` | Breve descripción mostrada en las tarjetas de historia | Sí |
+| `byline` | Atribución de autoría; admite markdown para enlaces y formato | No |
+
+{: .note }
+> **Columna story_id (v0.6.0+)**
+> Usa `story_id` para nombres de historia semánticos como `textiles-coloniales` en lugar de `story-1`. Cuando se proporciona, los CSVs y directorios de historia usan este nombre. Cuando se omite, Telar usa `story-{orden}` como identificador. Totalmente compatible con versiones anteriores.
+
+{: .tip }
+> **Markdown en bylines**
+> El campo `byline` admite sintaxis markdown. Usa `[texto](url)` para enlaces, `*cursivas*` para énfasis, etc. En las tarjetas de la página principal, los enlaces se muestran como texto plano; en las páginas de historia, se renderizan como enlaces clicables.
 
 ## Estructura CSV de historia
 
@@ -59,9 +90,9 @@ step,question,answer,object,x,y,zoom,layer1_button,layer1_file,layer2_button,lay
 | `answer` | Texto de respuesta breve |
 | `object` | ID de objeto de objects.csv |
 | `x, y, zoom` | Coordenadas del visor IIIF (0-1 normalizadas) |
-| `layer1_button` | Texto de botón personalizado (vacío = "Learn more") |
+| `layer1_button` | Texto de botón personalizado (vacío = **Saber más**) |
 | `layer1_file` | Ruta a archivo markdown en `components/texts/stories/` |
-| `layer2_button` | Texto de botón personalizado (vacío = "Go deeper") |
+| `layer2_button` | Texto de botón personalizado (vacío = **Profundizar más**) |
 | `layer2_file` | Ruta a archivo markdown en `components/texts/stories/` |
 
 {: .note }
@@ -174,8 +205,8 @@ credit: Archivo General de Indias
 **Campos:**
 - `image` (obligatorio) - Ruta relativa a `assets/images/`
 - `alt` (recomendado) - Descripción para accesibilidad
-- `caption` (opcional) - Texto que se muestra debajo de la imagen
-- `credit` (opcional) - Línea de atribución
+- `caption` (opcional) - Texto que se muestra debajo de la imagen; admite markdown (ej., `*cursivas*`)
+- `credit` (opcional) - Línea de atribución; admite markdown
 
 **Imágenes externas:** Puedes usar URLs completas para imágenes alojadas en otros servidores:
 ```markdown
@@ -244,10 +275,9 @@ Las reformas borbónicas retaron las estructuras de poder existentes...
 
 Los widgets funcionan en todos los archivos markdown de los paneles de las historias:
 
-- **Paneles de la capa 1** - Contenido de "Learn more"
-- **Paneles de la capa 1** - Contenido de **Learn more**
-- **Paneles de la capa 2** - Contenido de **Go deeper**
-- **Paneles de la capa 3** - El nivel más profundo de detalle
+- **Paneles de la capa 1**: contenido de **Saber más**
+- **Paneles de la capa 2**: contenido de **Profundizar más**
+- **Paneles de la capa 3**: el nivel más profundo de detalle
 
 {: .tip }
 > **Contraste visual**
@@ -282,7 +312,7 @@ image: https://archive.org/download/item/photo.jpg
 
 ### Validación y errores
 
-Telar valida los widgets durante el proceso de *build*:
+Telar valida los widgets durante el proceso de compilación:
 
 **Errores que detienen la *build*:**
 - Falta el campo `image` obligatorio en el carrusel
@@ -330,17 +360,150 @@ Las excavaciones en el sitio revelaron...
 :::carousel
 image: before.jpg
 alt: Fotografía del sitio en 1920
-caption: La plaza antes de la restauración
+caption: La *Plaza Mayor* antes de la restauración
 credit: Archivo Municipal
 
 ---
 
 image: after.jpg
 alt: Fotografía del sitio en 2020
-caption: La plaza después de la restauración arqueológica
+caption: La *Plaza Mayor* después de la restauración arqueológica
 credit: Instituto Nacional de Antropología
 :::
 ```
+
+## Páginas Personalizadas
+
+Crea páginas independientes para contenido que no encaja en la estructura de historias.
+
+### Descripción General
+
+Las páginas personalizadas aparecen en el menú de navegación de tu sitio pero no son parte del visor de historias. Perfectas para créditos, metodología, información del equipo, bibliografía o páginas de contacto.
+
+**Ubicación**: `components/texts/pages/`
+
+**Funcionalidades**:
+- Soporte completo de markdown
+- Widgets (acordeón, pestañas, carrusel)
+- Autoenlaces del glosario
+- Diseño responsivo
+
+### Crear una Página
+
+Agrega un archivo markdown a `components/texts/pages/`:
+
+```markdown
+---
+---
+
+# Acerca de Este Proyecto
+
+Este archivo digital explora las redes comerciales coloniales...
+
+## Equipo de Investigación
+
+- **Investigadora Principal**: Dra. Jane Smith
+- **Investigadores de Posgrado**: María González, John Davis
+
+:::accordion
+## Fuentes de Financiamiento
+
+- National Endowment for the Humanities
+- Programa de Becas de Investigación Universitaria
+:::
+```
+
+El frontmatter (líneas `---`) es obligatorio pero puede estar vacío.
+
+### Nomenclatura de Archivos
+
+Los nombres de archivo se convierten en URLs:
+
+| Archivo | URL |
+|---------|-----|
+| `about.md` | `/about/` |
+| `credits.md` | `/credits/` |
+| `methodology.md` | `/methodology/` |
+
+Usa minúsculas con guiones para espacios (`team-bios.md`, no `Team_Bios.md`).
+
+### Agregar a la Navegación
+
+Actualiza `_data/navigation.yml` para incluir páginas en tu menú. Consulta [Configuración de Navegación](/guia/personalizacion/menu-navegacion/) para más detalles.
+
+### Más Información
+
+Consulta la [Guía Completa de Páginas Personalizadas](/guia/estructura-de-contenido/paginas-personalizadas/) para la documentación completa.
+
+## Soporte de CSV Bilingüe
+
+Escribe archivos CSV en español o incluye encabezados de doble idioma para proyectos bilingües.
+
+### Nombres de Columnas en Español
+
+Todas las columnas CSV aceptan nombres en español:
+
+**CSV de Proyecto:**
+```csv
+orden,id_historia,titulo,subtitulo,firma
+1,textiles-coloniales,Textiles Coloniales,Tradiciones textiles,por Dra. Jane Smith
+```
+
+**CSV de Objetos:**
+```csv
+objeto,titulo,descripcion,creador,periodo,credito
+obj-001,Textil Colonial,Un fragmento tejido...,Desconocido,circa 1650,Dominio Público
+```
+
+**CSV de Historia:**
+```csv
+paso,objeto,pregunta,respuesta,boton_capa1,archivo_capa1
+1,obj-001,¿Qué es esto?,Un textil colonial...,Aprende Más,historia1/paso1-capa1.md
+```
+
+### Encabezados Duales
+
+Incluye encabezados en inglés y español para referencia bilingüe:
+
+```csv
+order,story_id,title,subtitle,byline
+orden,id_historia,titulo,subtitulo,firma
+1,textiles-coloniales,Textiles Coloniales,Tradiciones textiles,por Dra. Jane Smith
+2,colonial-textiles,Colonial Textiles,Weaving traditions,by Dr. Jane Smith
+```
+
+Telar detecta automáticamente y omite la segunda fila de encabezado.
+
+### Nombres de Archivos en Español
+
+Usa nombres de archivos en español con respaldo automático:
+
+| Inglés | Español |
+|--------|---------|
+| `project.csv` | `proyecto.csv` |
+| `objects.csv` | `objetos.csv` |
+
+Telar verifica primero los nombres de archivos en español, luego recurre al inglés.
+
+### Mapeo de Nombres de Columnas
+
+Las columnas en español se normalizan automáticamente:
+
+| Español | Inglés |
+|---------|--------|
+| `paso` | `step` |
+| `objeto` | `object` |
+| `pregunta` | `question` |
+| `respuesta` | `answer` |
+| `orden` | `order` |
+| `titulo` | `title` |
+| `credito` | `credit` |
+
+Consulta la [Referencia Completa de CSV](/guia/referencia/csv-reference/) para todos los mapeos de columnas.
+
+### Compatibilidad con Versiones Anteriores
+
+Los CSVs solo en inglés funcionan exactamente como antes. El soporte bilingüe es opcional y completamente compatible con sitios existentes.
 
 ## Colecciones de Jekyll
 
@@ -363,4 +526,4 @@ Cuando uses Google Sheets (recomendado):
 3. Los archivos CSV se procesan en JSON para Jekyll
 4. ¡No se necesita edición manual de CSV!
 
-Consulta [GitHub Actions](/guia/referencia/github-actions/) para ver cómo funciona esta automatización.
+Consulta [GitHub Actions](/guia/desarrolladores/github-actions/) para ver cómo funciona esta automatización.

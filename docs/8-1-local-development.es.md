@@ -1,14 +1,13 @@
 ---
 layout: docs
-title: 7.2. Desarrollo
-parent: 7. Referencia
+title: 8.1. Desarrollo Local
+parent: 8. Para Desarrolladores
 grand_parent: Documentación
-nav_order: 2
+nav_order: 1
 lang: es
-permalink: /guia/referencia/desarrollo/
----
+permalink: /guia/desarrolladores/desarrollo-local/
 
-## Referencia de desarrollo
+# Desarrollo local
 
 Referencia completa para desarrollo local, comandos de construcción y solución de problemas.
 
@@ -432,6 +431,6 @@ git push origin main
 
 ## Próximos pasos
 
-- [Referencia de GitHub Actions](/guia/referencia/github-actions/)
+- [Referencia de GitHub Actions](/guia/desarrolladores/github-actions/)
 - [Guía de Personalización](/guia/personalizacion/)
 - [Referencia de Configuración](/guia/configuracion/)

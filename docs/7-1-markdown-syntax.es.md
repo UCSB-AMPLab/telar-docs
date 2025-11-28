@@ -1,14 +1,13 @@
 ---
 layout: docs
-title: 7.3. Sintaxis de Markdown
+title: 7.1. Sintaxis de Markdown
 parent: 7. Referencia
 grand_parent: Documentación
-nav_order: 3
+nav_order: 1
 lang: es
 permalink: /guia/referencia/sintaxis-markdown/
----
 
-## Referencia de sintaxis de Markdown
+# Referencia de sintaxis de Markdown
 
 Los paneles de contenido en Telar se deben escribir utilizando el formato Markdown. Esta guía de referencia cubre cómo funciona esta sintaxis para crear contenido narrativo claro y atractivo.
 
@@ -54,9 +53,9 @@ El título del front matter aparece en el encabezado del panel. El contenido del
 ### Encabezados
 
 ```markdown
-## Encabezado de Segundo Nivel
-### Encabezado de Tercer Nivel
-#### Encabezado de Cuarto Nivel
+## Encabezado de segundo nivel
+### Encabezado de tercer nivel
+#### Encabezado de cuarto nivel
 ```
 
 {: .note }
@@ -155,6 +154,28 @@ Telar proporciona sintaxis especial para controlar los tamaños de imagen en los
 
 {: .tip }
 > **Tamaño Predeterminado**: Las imágenes sin etiqueta de tamaño predeterminan a mediano (450px). Siempre incluye etiquetas de tamaño para claridad.
+
+### Pies de imagen
+
+Agrega un pie de imagen colocando texto en la línea inmediatamente después de la imagen:
+
+```markdown
+![Fragmento textil colonial](textile.jpg){lg}
+Detalle que muestra el patrón de *urdimbre entrelazada* típico del período.
+```
+
+El pie de imagen aparece centrado debajo de la imagen en una fuente de peso ligero.
+
+**Prefijo opcional**: Puedes usar `caption:` para hacer los pies más explícitos:
+
+```markdown
+![Mapa de la región](map.jpg){md}
+caption: Mapa de la *Recopilación de Leyes*, 1680.
+```
+
+El prefijo `caption:` se elimina del texto mostrado.
+
+**Markdown en pies de imagen**: Los pies de imagen admiten formato markdown como `*cursivas*`, `**negritas**` y `[enlaces](url)`.
 
 ---
 

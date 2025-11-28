@@ -11,32 +11,24 @@ permalink: /docs/configuration/
 
 Configure your Telar site through the `_config.yml` file in your repository root.
 
-## Basic Settings
+## Site Settings
+
+Basic site information and appearance:
 
 ```yaml
+# Site Settings
 title: Your Narrative Title
 description: A brief description of your narrative exhibition
 baseurl: "/repository-name"  # For GitHub Pages subdirectory
 url: "https://username.github.io"
 author: Your Name
 email: your-email@example.com
-logo: "/components/images/my-logo.png"  # Optional site logo
+telar_theme: "paisajes"  # Options: paisajes, neogranadina, santa-barbara, austin, or custom
+logo: ""  # Path to logo image (optional)
+telar_language: "en"  # Options: "en" (English), "es" (Español)
 ```
 
-### Site Logo
-
-Add a logo to replace the site title in the navigation header:
-
-```yaml
-logo: "/components/images/my-logo.png"
-```
-
-- Place your logo image in `components/images/`
-- Leave empty (`logo: ""`) to display the site title as text instead
-- Recommended dimensions: max 80px tall, 200-300px wide
-- Supports PNG, JPG, SVG formats
-
-### baseurl vs url
+### baseurl vs. url
 
 - **url**: Your site's base domain
 - **baseurl**: Path after domain (use `""` for root domain, or `/repo-name` for GitHub Pages)
@@ -54,39 +46,25 @@ baseurl: ""
 # Result: https://mysite.org
 ```
 
-## Google Sheets Integration
+### Site Logo
 
-Configure Google Sheets for content management:
+Add a logo to replace the site title in the navigation header:
 
 ```yaml
-google_sheets:
-  enabled: true
-  shared_url: "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID/edit?usp=sharing"
-  published_url: "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLISHED_ID/pub?output=csv"
+logo: "/components/images/my-logo.png"
 ```
 
-### Getting Your URLs
-
-**Shared URL:**
-1. Click **Share** button in Google Sheets
-2. Set to "Anyone with the link (Viewer)"
-3. Copy the URL
-
-**Published URL:**
-1. **File** → **Share** → **Publish to web**
-2. Click **Publish**
-3. Copy the URL
-
-{: .warning }
-> **Important**
-> Both URLs are required. The shared URL is for viewing, the published URL is for automated fetching.
+- Place your logo image in `components/images/`
+- Leave empty (`logo: ""`) to display the site title as text instead
+- Recommended dimensions: max 80px tall, 200-300px wide
+- Supports PNG, JPG, SVG formats
 
 ## Theme Selection
 
 Telar includes 4 preset themes:
 
 ```yaml
-telar_theme: "paisajes"  # Options: paisajes, neogranadina, santa-barbara, austin
+telar_theme: "paisajes"  # Options: paisajes, neogranadina, santa-barbara, austin, or custom
 ```
 
 ### Available Themes
@@ -100,11 +78,13 @@ See [Customization: Themes](/docs/customization/themes/) for details and creatin
 
 ## Multilingual Interface
 
-Telar v0.4.0+ supports multilingual user interfaces in English and Spanish. This controls the language of all interface elements, including navigation, buttons, labels, error messages, and instructions.
+Telar v0.4.0+ supports multilingual user interfaces in English and Spanish:
 
 ```yaml
 telar_language: "en"  # Options: "en" (English), "es" (Español)
 ```
+
+This controls the language of all interface elements, including navigation, buttons, labels, error messages, and instructions.
 
 ### What Gets Translated
 
@@ -129,27 +109,7 @@ The `telar_language` setting **does not** translate your content:
 - Site title and description
 
 {: .note }
-> **Note on Content Translation**
-> If you need a fully bilingual site with content in multiple languages, you'll need to create separate Telar sites for each language or wait for v0.5.0's multilingual content system.
-
-### Setting Your Language
-
-**New sites:** The language is set when you first configure your site in `_config.yml`.
-
-**Existing sites:** Add or update the setting in your `_config.yml`:
-
-```yaml
-# Site Settings
-title: My Exhibition
-description: A description of my site
-telar_language: "es"  # Change from "en" to "es" for Spanish
-```
-
-Then rebuild your site:
-
-```bash
-bundle exec jekyll build
-```
+> If you need a fully bilingual site with content in multiple languages, you'll need to create separate Telar sites for each language.
 
 ### IIIF Metadata Language Detection
 
@@ -160,18 +120,34 @@ When Telar auto-extracts metadata from IIIF manifests, it respects your `telar_l
 
 This ensures that object metadata appears in your preferred language when available from the source institution.
 
+## Google Sheets Integration
+
+Manage content via Google Sheets instead of editing CSV files directly:
+
+```yaml
+google_sheets:
+  enabled: true
+  shared_url: "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID/edit?usp=sharing"
+  published_url: "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLISHED_ID/pubhtml"
+```
+
+### Setup Steps
+
+1. **Get the template**: Duplicate the template at [bit.ly/telar-template](https://bit.ly/telar-template)
+2. **Share your sheet**: Set to "Anyone with the link (Viewer access)"
+3. **Publish your sheet**: **File** → **Share** → **Publish to web**
+4. Paste both URLs into `_config.yml`
+5. Set `enabled: true`
+6. Commit changes
+
+**Automated fetching:**
+- **GitHub Pages**: GitHub Actions automatically discovers tab GIDs and fetches CSVs
+- **Local development**: Run `python3 scripts/fetch_google_sheets.py` before building
+
 {: .warning }
-> **Spanish Google Sheets Template**
-> If you're creating a Spanish-language site with Google Sheets integration, use the Spanish template which includes translated column headers and instructions.
+> Both URLs are required. The shared URL is for viewing, the published URL is for automated fetching.
 
-### Language Files
-
-The interface translations are stored in:
-
-- `_data/lang/en.yml` - English strings
-- `_data/lang/es.yml` - Spanish strings
-
-These files are maintained by the Telar project and update automatically when you upgrade to new versions.
+See [Google Sheets Workflow](/docs/workflows/google-sheets/) for complete setup instructions.
 
 ## Story Interface Settings
 
@@ -180,7 +156,8 @@ Control how stories display and behave:
 ```yaml
 story_interface:
   show_story_steps: true  # Set to false to hide "Step X" overlay
-  include_demo_content: false  # v0.5.0 feature (not yet available)
+  include_demo_content: false  # Set to true to enable demo stories
+  show_object_credits: true  # Set to false to hide credits badge on objects
 ```
 
 ### show_story_steps
@@ -194,22 +171,44 @@ This is purely visual - users can still navigate through steps normally.
 
 ### include_demo_content
 
-Reserved for future use (v0.5.0). Will allow including demonstration stories and content from an external repository.
+Enable pre-built demonstration stories that showcase Telar's features:
 
-## Navigation
+- **`false` (default)**: Site contains only your content
+- **`true`**: Adds tutorial and example stories to your site
 
-Configure site navigation:
+Demo stories appear alongside your own content with a "Demo content" badge. They're automatically fetched during the build process and matched to your site's language.
 
-```yaml
-# Show/hide sections
-show_objects: true
-show_glossary: true
-show_about: true
-```
+**When to enable:**
+- Learning how to structure stories
+- Testing Telar features without creating content
+- Showing stakeholders what Telar can do
 
-## Collections
+**When to disable:**
+- Publishing your final production site
+- Testing only your own content
 
-Jekyll collections are pre-configured for stories, objects, and glossary:
+See [Demo Content](/docs/iiif/demo-content/) for complete details on available demos.
+
+### show_object_credits
+
+Controls the credit attribution badge on object pages:
+
+- **`true` (default)**: Shows credit badge on all objects with credit information
+- **`false`**: Hides the credit badge (credit info still accessible via metadata table)
+
+The credit badge displays in the top-right corner of object images, showing attribution from the `credit` field in your `objects.csv`.
+
+## Advanced Settings
+
+The following settings are pre-configured and typically don't need modification unless you're doing advanced customization.
+
+{: .warning }
+> **Do Not Edit**
+> The Telar `_config.yml` includes a line: "PLEASE DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING". The sections below this line are configured automatically and rarely need changes.
+
+### Collections
+
+Jekyll collections define content types:
 
 ```yaml
 collections:
@@ -222,13 +221,48 @@ collections:
   glossary:
     output: true
     permalink: /glossary/:name/
+  pages:
+    output: true
+    permalink: /:name/
+
+# Collections Directory
+collections_dir: _jekyll-files
 ```
 
 {: .note }
-> **Note**
 > You typically don't need to modify collection settings unless doing advanced customization.
 
-## Build Settings
+The `collections_dir` setting tells Jekyll where to find auto-generated working files.
+
+### Defaults
+
+Layout defaults for each collection:
+
+```yaml
+defaults:
+  - scope:
+      path: ""
+      type: "stories"
+    values:
+      layout: "story"
+  - scope:
+      path: ""
+      type: "objects"
+    values:
+      layout: "object"
+  - scope:
+      path: ""
+      type: "glossary"
+    values:
+      layout: "glossary"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "user-page"
+```
+
+### Build Settings
 
 Standard Jekyll build configuration:
 
@@ -238,46 +272,72 @@ permalink: pretty
 exclude:
   - Gemfile
   - Gemfile.lock
-  - scripts/
-  - components/
+  - node_modules
+  - vendor
+  - .github
   - README.md
+  - docs/
+  - scripts/
+
+# Tell Jekyll not to expect dates for collections
+future: true
+show_drafts: false
 ```
 
-## Plugins
+### Plugins
 
-Required plugins:
+Required plugin:
 
 ```yaml
 plugins:
   - jekyll-seo-tag
 ```
 
-These are automatically installed when you run `bundle install`.
+Installed automatically when you run `bundle install`.
+
+### Telar Version
+
+Version information (updated automatically during releases):
+
+```yaml
+telar:
+  version: "0.6.0-beta"
+  release_date: "2025-11-25"
+```
 
 ## Full Example
 
 Here's a complete `_config.yml` example:
 
 ```yaml
+# Site Settings
 title: Colonial Textiles
 description: An exhibition of colonial-era textiles from the Americas
 baseurl: "/colonial-textiles"
 url: "https://username.github.io"
 author: Jane Smith
 email: jane@example.com
-logo: ""  # Optional: path to logo image
-
 telar_theme: "paisajes"
+logo: ""
+telar_language: "en"
 
+# Story Interface Settings
+story_interface:
+  show_story_steps: true
+  show_object_credits: true
+  include_demo_content: false
+
+# Google Sheets Integration (optional)
 google_sheets:
   enabled: true
   shared_url: "https://docs.google.com/spreadsheets/d/ABC123/edit?usp=sharing"
-  published_url: "https://docs.google.com/spreadsheets/d/e/XYZ789/pub?output=csv"
+  published_url: "https://docs.google.com/spreadsheets/d/e/XYZ789/pubhtml"
 
-show_objects: true
-show_glossary: true
-show_about: true
+#
+# PLEASE DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING
+#
 
+# Collections
 collections:
   stories:
     output: true
@@ -288,24 +348,65 @@ collections:
   glossary:
     output: true
     permalink: /glossary/:name/
+  pages:
+    output: true
+    permalink: /:name/
 
+collections_dir: _jekyll-files
+
+# Build Settings
 markdown: kramdown
 permalink: pretty
-
-plugins:
-  - jekyll-seo-tag
-
 exclude:
   - Gemfile
   - Gemfile.lock
-  - scripts/
-  - components/
+  - node_modules
+  - vendor
+  - .github
   - README.md
+  - docs/
+  - scripts/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "stories"
+    values:
+      layout: "story"
+  - scope:
+      path: ""
+      type: "objects"
+    values:
+      layout: "object"
+  - scope:
+      path: ""
+      type: "glossary"
+    values:
+      layout: "glossary"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "user-page"
+
+future: true
+show_drafts: false
+
+# Telar Settings
+telar:
+  version: "0.6.0-beta"
+  release_date: "2025-11-25"
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
 ```
 
 ## Next Steps
 
 - [Customize Your Theme](/docs/customization/themes/)
 - [Customize Your Home Page](/docs/customization/home-page/)
-- [Learn about GitHub Actions](/docs/reference/github-actions/)
-- [Explore Advanced Styling](/docs/customization/styling/)
+- [Configure Navigation Menu](/docs/customization/navigation-menu/)
+- [Learn About Demo Content](/docs/iiif/demo-content/)
+- [Explore GitHub Actions](/docs/developers/github-actions/)
