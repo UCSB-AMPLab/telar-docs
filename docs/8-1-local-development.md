@@ -1,14 +1,13 @@
 ---
 layout: docs
-title: 7.2. Development
-parent: 7. Reference
+title: 8.1. Local Development
+parent: 8. For Developers
 grand_parent: Documentation
-nav_order: 2
+nav_order: 1
 lang: en
-permalink: /docs/reference/development/
----
+permalink: /docs/developers/local-development/
 
-# Development Reference
+# Local Development
 
 Complete reference for local development, build commands, and troubleshooting.
 
@@ -479,6 +478,6 @@ JEKYLL_ENV=production bundle exec jekyll build
 
 ## Next Steps
 
-- [GitHub Actions Reference](/docs/reference/github-actions/)
+- [GitHub Actions Reference](/docs/developers/github-actions/)
 - [Customization Guide](/docs/customization/)
 - [Configuration Reference](/docs/configuration/)

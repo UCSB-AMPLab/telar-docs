@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 7.4. Sistema de inserción (embedding)
-parent: 7. Referencia
+title: 8.4. Arquitectura del Sistema de Incrustación
+parent: 8. Para Desarrolladores
 grand_parent: Documentación
 nav_order: 4
 lang: es
-permalink: /guia/referencia/insercion/
+permalink: /guia/desarrolladores/sistema-incrustacion/
 ---
 
 # Referencia del sistema de inserción
@@ -608,5 +608,5 @@ Sobrescribe estilos del banner en `telar.scss`:
 ## Documentación relacionada
 
 - **Guía para educadores**: [Insertar en LMS y sitios web](/guia/flujos-de-trabajo/insercion/)
-- **Referencia de desarrollo**: [Desarrollo local](/guia/referencia/desarrollo/)
-- **GitHub Actions**: [Flujo de trabajo de *build* automatizado](/guia/referencia/github-actions/)
+- **Configuración de desarrollo**: [Desarrollo Local](/guia/desarrolladores/desarrollo-local/)
+- **GitHub Actions**: [Flujo de trabajo de *build* automatizado](/guia/desarrolladores/github-actions/)

@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 7.4. Embedding System
-parent: 7. Reference
+title: 8.4. Embedding System Architecture
+parent: 8. For Developers
 grand_parent: Documentation
 nav_order: 4
 lang: en
-permalink: /docs/reference/embedding/
+permalink: /docs/developers/embedding-system/
 ---
 
 # Embedding System Reference
@@ -608,5 +608,5 @@ Override banner styles in `telar.scss`:
 ## Related Documentation
 
 - **Educator Guide**: [Embedding in LMS & Websites](/docs/workflows/embedding/)
-- **Development Reference**: [Local Development](/docs/reference/development/)
-- **GitHub Actions**: [Automated Build Workflow](/docs/reference/github-actions/)
+- **Development Setup**: [Local Development](/docs/developers/local-development/)
+- **GitHub Actions**: [Automated Build Workflow](/docs/developers/github-actions/)

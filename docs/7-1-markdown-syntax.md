@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 7.3. Markdown Syntax
+title: 7.1. Markdown Syntax
 parent: 7. Reference
 grand_parent: Documentation
-nav_order: 3
+nav_order: 1
 lang: en
 permalink: /docs/reference/markdown-syntax/
 ---
