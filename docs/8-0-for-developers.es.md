@@ -1,11 +1,12 @@
 ---
 layout: docs
 title: 8. Para Desarrolladores
-parent: Documentation
+parent: Documentación
 nav_order: 8
 has_children: true
 lang: es
 permalink: /guia/desarrolladores/
+---
 
 # Para desarrolladores
 
