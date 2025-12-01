@@ -73,12 +73,12 @@ Throughout your workflow, you'll use these commands:
 python3 scripts/csv_to_json.py
 
 # Generate IIIF tiles (run after adding/updating images)
-python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
+python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
 # Serve with live reload
-bundle exec jekyll serve --livereload
+bundle exec jekyll serve --livereload --port 4001
 
-# View at http://localhost:4000
+# View at http://localhost:4001
 ```
 
 ## Step-by-Step Workflow
@@ -93,7 +93,7 @@ Choose one of two options:
 2. Name files to match object IDs (e.g., `textile-001.jpg`)
 3. Generate IIIF tiles:
    ```bash
-   python3 scripts/generate_iiif.py --base-url http://localhost:4000
+   python3 scripts/generate_iiif.py --base-url http://localhost:4001
    ```
 
 **Option B: Use External IIIF Manifests**
@@ -154,7 +154,7 @@ bundle exec jekyll serve --livereload
 ```
 
 Then:
-1. Visit `http://localhost:4000`
+1. Visit `http://localhost:4001`
 2. Click "Objects" in the navigation
 3. Verify all images appear with their metadata
 
@@ -162,7 +162,7 @@ Then:
 
 Use the coordinate identification tool:
 
-1. Navigate to an object page: `http://localhost:4000/objects/{object_id}`
+1. Navigate to an object page: `http://localhost:4001/objects/{object_id}`
 2. Click **Identify coordinates** button
 3. Pan and zoom to the area you want to feature
 4. Click **Copy entire row** for CSV template with coordinates
@@ -240,7 +240,7 @@ When working on your site:
 python3 scripts/csv_to_json.py
 
 # 3. Generate IIIF tiles (after adding/updating images)
-python3 scripts/generate_iiif.py --base-url http://localhost:4000
+python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
 # 4. Serve with live reload
 bundle exec jekyll serve --livereload

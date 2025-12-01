@@ -73,12 +73,12 @@ A lo largo de tu flujo de trabajo, usarás estos comandos:
 python3 scripts/csv_to_json.py
 
 # Genera teselas IIIF (ejecuta después de agregar/actualizar imágenes)
-python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
+python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
 # Sirve con recarga automática
-bundle exec jekyll serve --livereload
+bundle exec jekyll serve --livereload --port 4001
 
-# Ver en http://localhost:4000
+# Ver en http://localhost:4001
 ```
 
 ## Flujo de trabajo paso a paso
@@ -93,7 +93,7 @@ Elige una de dos opciones:
 2. Nombra archivos para que coincidan con IDs de objeto (ej., `textile-001.jpg`)
 3. Genera teselas IIIF:
    ```bash
-   python3 scripts/generate_iiif.py --base-url http://localhost:4000
+   python3 scripts/generate_iiif.py --base-url http://localhost:4001
    ```
 
 **Opción B: usa manifiestos IIIF externos**
@@ -154,7 +154,7 @@ bundle exec jekyll serve --livereload
 ```
 
 Luego:
-1. Visita `http://localhost:4000`
+1. Visita `http://localhost:4001`
 2. Haz clic en "Objects" en la navegación
 3. Verifica que todas las imágenes aparezcan con sus metadatos
 
@@ -162,7 +162,7 @@ Luego:
 
 Usa la herramienta de identificación de coordenadas:
 
-1. Navega a una página de objeto: `http://localhost:4000/objects/{object_id}`
+1. Navega a una página de objeto: `http://localhost:4001/objects/{object_id}`
 2. Haz clic en el botón **Identify coordinates**
 3. Desplaza y amplía al área que quieres destacar
 4. Haz clic en **Copy entire row** para plantilla CSV con coordenadas
@@ -240,7 +240,7 @@ Cuando trabajes en tu sitio:
 python3 scripts/csv_to_json.py
 
 # 3. Genera teselas IIIF (después de agregar/actualizar imágenes)
-python3 scripts/generate_iiif.py --base-url http://localhost:4000
+python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
 # 4. Sirve con recarga automática
 bundle exec jekyll serve --livereload

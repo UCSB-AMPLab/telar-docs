@@ -41,7 +41,7 @@ Sube tus propias imágenes y Telar generará automáticamente teselas (*tiles*) 
 1. Agrega imágenes de alta resolución a `components/images/`
 2. Genera teselas IIIF:
    ```bash
-   python3 scripts/generate_iiif.py --base-url http://localhost:4000
+   python3 scripts/generate_iiif.py --base-url http://localhost:4001
    ```
 
 {: .note }

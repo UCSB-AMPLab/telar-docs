@@ -41,7 +41,7 @@ Upload your images and Telar will automatically generate IIIF tiles.
 1. Add high-resolution images to `components/images/`
 2. Generate IIIF tiles:
    ```bash
-   python3 scripts/generate_iiif.py --base-url http://localhost:4000
+   python3 scripts/generate_iiif.py --base-url http://localhost:4001
    ```
 
 {: .note }

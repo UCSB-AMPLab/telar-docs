@@ -64,7 +64,7 @@ Edita `_config.yml` para desarrollo local:
 
 ```yaml
 baseurl: ""  # Vacío para desarrollo local
-url: "http://localhost:4000"
+url: "http://localhost:4001"
 ```
 
 ## Comandos de construcción
@@ -76,10 +76,10 @@ url: "http://localhost:4000"
 python3 scripts/csv_to_json.py
 
 # Genera teselas (*tiles*) IIIF
-python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
+python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
 # Inicia el servidor con recarga automática
-bundle exec jekyll serve --livereload
+bundle exec jekyll serve --livereload --port 4001
 
 # Solo construir (salida a _site/)
 bundle exec jekyll build

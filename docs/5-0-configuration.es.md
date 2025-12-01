@@ -301,8 +301,8 @@ Información de versión (actualizada automáticamente durante lanzamientos):
 
 ```yaml
 telar:
-  version: "0.6.0-beta"
-  release_date: "2025-11-25"
+  version: "0.6.1-beta"
+  release_date: "2025-11-28"
 ```
 
 ## Ejemplo completo
@@ -395,8 +395,8 @@ show_drafts: false
 
 # Telar Settings
 telar:
-  version: "0.6.0-beta"
-  release_date: "2025-11-25"
+  version: "0.6.1-beta"
+  release_date: "2025-11-28"
 
 # Plugins
 plugins:

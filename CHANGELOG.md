@@ -14,6 +14,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Column name consistency** - Updated remaining `iiif_manifest` references to `source_url` (v0.5.0 rename)
 - **Spanish index links** - Fixed broken relative paths in docs/index.es.md
 - **Version history redundancy** - Replaced incomplete version history in upgrading pages with link to main CHANGELOG
+- **Deprecated command flags** - Removed `--source-dir components/images/objects` from IIIF generation commands
+- **Port number standardization** - Changed all localhost examples from port 4000 to 4001 (avoids macOS Time Machine conflict)
+- **Version examples** - Updated config examples to show v0.6.1-beta
 
 ## [v0.6.0] - 2025-11-28
 
