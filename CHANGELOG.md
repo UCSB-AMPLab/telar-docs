@@ -4,7 +4,16 @@ All notable changes to Telar Documentation will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased]
+## [v0.6.1] - 2025-12-01
+
+### Fixed
+
+- **Outdated URLs** - Updated "Need Help?" links from ampl.clair.ucsb.edu/telar-docs to telar.org
+- **Broken internal links** - Removed non-existent `getting-started/planning/` and `/docs/developers/build-pipeline/` links
+- **Directory structure documentation** - Updated all references from `components/images/objects/` to `components/images/` (v0.5.0 flattening), added pdfs/, audio/, 3d-models/ placeholder directories
+- **Column name consistency** - Updated remaining `iiif_manifest` references to `source_url` (v0.5.0 rename)
+- **Spanish index links** - Fixed broken relative paths in docs/index.es.md
+- **Version history redundancy** - Replaced incomplete version history in upgrading pages with link to main CHANGELOG
 
 ## [v0.6.0] - 2025-11-28
 

@@ -19,7 +19,6 @@ Welcome to the Telar documentation. This guide will help you create visual narra
 New to Telar? Start here:
 
 - [Quick Start Guide](getting-started/) - Choose your workflow and build your first exhibition
-- [Narrative Planning](getting-started/planning/) - Learn how to structure your story
 
 ## Workflows
 

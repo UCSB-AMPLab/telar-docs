@@ -125,7 +125,7 @@ bundle exec jekyll serve --livereload
 # 2. Make changes to content
 # - Edit CSVs in components/structures/
 # - Edit markdown in components/texts/
-# - Add images to components/images/objects/
+# - Add images to components/images/
 
 # 3. Rebuild data (when CSVs change)
 python3 scripts/csv_to_json.py
@@ -188,7 +188,7 @@ your-telar-site/
 │   └── images/
 ├── components/              # SOURCE CONTENT (edit here!)
 │   ├── structures/          # CSV files
-│   ├── images/objects/      # Source images
+│   ├── images/              # Source images
 │   └── texts/               # Markdown files
 ├── iiif/                    # Generated IIIF tiles
 ├── scripts/                 # Build scripts
@@ -225,10 +225,10 @@ bundle exec jekyll serve --livereload
 pip install -r requirements.txt
 
 # Verify image files exist
-ls -la components/images/objects/
+ls -la components/images/
 
 # Check for error messages
-python3 scripts/generate_iiif.py --source-dir components/images/objects
+python3 scripts/generate_iiif.py
 ```
 
 **CSV to JSON conversion fails:**

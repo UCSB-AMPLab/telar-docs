@@ -86,7 +86,7 @@ bundle exec jekyll build
 
 `objects` tab (common fields)
 
-- object_id, title, description, iiif_manifest, creator, period, medium, dimensions, location, credit, thumbnail
+- object_id, title, description, source_url, creator, period, medium, dimensions, location, credit, thumbnail
 
 ![GitHub screenshot for editing sheet objects](/images/object-sheet.png)
 

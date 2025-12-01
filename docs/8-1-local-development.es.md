@@ -130,7 +130,7 @@ bundle exec jekyll serve --livereload
 # 2. Haz cambios al contenido
 # - Edita CSVs en components/structures/
 # - Edita markdown en components/texts/
-# - Agrega imágenes a components/images/objects/
+# - Agrega imágenes a components/images/
 
 # 3. Reconstruye los datos (cuando cambian los CSV)
 python3 scripts/csv_to_json.py
@@ -168,7 +168,7 @@ tu-sitio-telar/
 │   └── images/
 ├── components/              # CONTENIDO FUENTE (¡editar aquí!)
 │   ├── structures/          # Archivos CSV
-│   ├── images/objects/      # Imágenes fuente
+│   ├── images/              # Imágenes fuente
 │   └── texts/               # Archivos Markdown
 ├── iiif/                    # Teselas (*tiles*) IIIF generadas
 ├── scripts/                 # Scripts de construcción
@@ -208,10 +208,10 @@ bundle exec jekyll serve --livereload
 pip install -r requirements.txt
 
 # Verifica que existan archivos de imagen
-ls -la components/images/objects/
+ls -la components/images/
 
 # Verifica mensajes de error
-python3 scripts/generate_iiif.py --source-dir components/images/objects
+python3 scripts/generate_iiif.py
 ```
 
 **La conversión CSV a JSON falla:**

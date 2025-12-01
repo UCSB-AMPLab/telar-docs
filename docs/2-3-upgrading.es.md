@@ -212,41 +212,10 @@ El flujo de trabajo hará lo siguiente de forma automática:
 
 ## Historial de versiones
 
-### v0.3.4-beta (2025-10-31)
-- **Introdujo el sistema automatizado de actualización**
-- Agregó un flujo de trabajo de GitHub Actions para actualizaciones con un clic
-- Agregó un marco de migración en Python
-- Agregó migraciones v020_to_v030 y v033_to_v034
-- Agregó configuración de idioma (`telar_language`)
-
-### v0.3.3-beta (2025-10-28)
-- Corrigió problemas de despliegue de GitHub Actions
-
-### v0.3.2-beta (2025-10-28)
-- Agregó sintaxis de tamaño de imagen para markdown de paneles
-- Refactorizó página de índice para facilitar la personalización
-
-### v0.3.1-beta (2025-10-26)
-- Corrigió errores de carga de miniaturas
-
-### v0.3.0-beta (2025-10-25)
-- Agregó integración con Google Sheets
-- Agregó un sistema integral de mensajes de error
-- Agregó sistema de temas con 4 temas preconfigurados
-
-### v0.2.0-beta (2025-10-20)
-- Renovó el sistema de desplazamiento
-- Añadió soporte para múltiples objetos IIIF por historia
-
-### v0.1.1-beta (2025-10-16)
-- Corrigió la resolución de miniaturas IIIF
-- Corrigió el renderizado de markdown en paneles
-
-### v0.1.0-beta (2025-10-14)
-- Lanzamiento beta inicial
+Para ver la lista completa de cambios en cada versión, consulta el [Changelog](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) en el repositorio de Telar.
 
 ## ¿Necesitas ayuda?
 
-- **Documentación:** [ampl.clair.ucsb.edu/telar-docs](https://ampl.clair.ucsb.edu/telar-docs)
-- **Sitio de ejemplo:** [ampl.clair.ucsb.edu/telar](https://ampl.clair.ucsb.edu/telar)
+- **Documentación:** [telar.org/guia](https://telar.org/guia)
+- **Sitio de ejemplo:** [telar.org/demo](https://telar.org/demo)
 - **Reportar un problema:** [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues)

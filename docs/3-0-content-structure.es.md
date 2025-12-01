@@ -21,9 +21,10 @@ components/
 │   ├── objects.csv       # Metadatos del catálogo de objetos
 │   ├── your-story.csv    # Estructura de historia con coordenadas de pasos
 │   └── story-1.csv       # Historias adicionales (opcional)
-├── images/
-│   ├── objects/          # Imágenes fuente para procesamiento IIIF
-│   └── additional/       # Otras imágenes usadas en el sitio
+├── images/               # Todas las imágenes (fuente IIIF y adicionales)
+├── pdfs/                 # Documentos PDF (soporte futuro)
+├── audio/                # Archivos de audio (soporte futuro)
+├── 3d-models/            # Archivos de modelos 3D (soporte futuro)
 └── texts/
     ├── stories/          # Contenido de las capas de la historia (markdown)
     │   └── story1/       # Subcarpetas opcionales para organización
@@ -104,11 +105,11 @@ step,question,answer,object,x,y,zoom,layer1_button,layer1_file,layer2_button,lay
 El archivo `objects.csv` cataloga todos los objetos:
 
 ```csv
-object_id,title,description,creator,date,medium,dimensions,location,credit,thumbnail,iiif_manifest
+object_id,title,description,creator,date,medium,dimensions,location,credit,thumbnail,source_url
 textile-001,Textil Colonial,Un fragmento tejido...,Desconocido,circa 1650,Lana,45 x 60 cm,,,
 ```
 
-Para recursos IIIF externos, incluye la URL `iiif_manifest`.
+Para recursos IIIF externos, incluye la URL `source_url`.
 
 ## Archivos markdown
 

@@ -112,7 +112,7 @@ Telar soporta ambos formatos.
 Puedes usar imágenes IIIF locales y externas en el mismo proyecto:
 
 ```csv
-object_id,title,...,iiif_manifest
+object_id,title,...,source_url
 local-textile-001,Mi Textil,,,
 museum-textile-002,Textil de Museo,...,https://example.org/iiif/manifest.json
 local-ceramic-001,Mi Cerámica,,,

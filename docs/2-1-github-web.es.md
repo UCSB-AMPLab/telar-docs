@@ -59,7 +59,7 @@ Telar admite dos maneras de agregar imágenes:
 
 ### Opción A: sube tus propias imágenes
 
-1. Navega a `components/images/objects/` en tu repositorio de GitHub
+1. Navega a `components/images/` en tu repositorio de GitHub
 2. Haz clic en **Add file** → **Upload files**
 3. Arrastra imágenes al área de carga
 4. Nombra los archivos con IDs de objeto simples (ej., `textile-001.jpg`, `ceramic-002.jpg`)
@@ -89,7 +89,7 @@ Completa la pestaña **objects** de tu hoja de cálculo:
 - `title`: Nombre para mostrar
 - `description`: Descripción breve
 - `creator`, `date`, `medium`, `dimensions`, `location`, `credit`: Campos de metadatos
-- `iiif_manifest`: URL para recursos IIIF externos (dejar en blanco para imágenes subidas)
+- `source_url`: URL para recursos IIIF externos (dejar en blanco para imágenes subidas)
 
 ### Crea textos narrativos
 

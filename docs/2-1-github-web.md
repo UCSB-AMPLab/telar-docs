@@ -61,7 +61,7 @@ Telar supports two ways to add images:
 
 ### Option A: Upload Your Images
 
-1. Navigate to `components/images/objects/` in your GitHub repository
+1. Navigate to `components/images/` in your GitHub repository
 2. Click **Add file** → **Upload files**
 3. Drag images into upload area
 4. Name files with simple object IDs (e.g., `textile-001.jpg`, `ceramic-002.jpg`)
@@ -93,7 +93,7 @@ Fill in the objects tab of your spreadsheet:
 - `title`: Display name
 - `description`: Brief description
 - `creator`, `date`, `medium`, `dimensions`, `location`, `credit`: Metadata fields
-- `iiif_manifest`: URL for external IIIF resources (leave blank for uploaded images)
+- `source_url`: URL for external IIIF resources (leave blank for uploaded images)
 
 ### Create Narrative Texts
 

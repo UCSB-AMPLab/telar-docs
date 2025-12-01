@@ -18,28 +18,27 @@ Bienvenido a la documentación de Telar. Esta guía te ayudará a crear narrativ
 
 ¿Nuevo en Telar? Comienza aquí:
 
-- [Guía de inicio rápido](1-primeros-pasos/) - Elige tu flujo de trabajo y construye tu primera exposición
-- [Planificación narrativa](1-primeros-pasos/) - Aprende a estructurar tu historia
+- [Guía de inicio rápido](primeros-pasos/) - Elige tu flujo de trabajo y construye tu primera exposición
 
 ## Flujos de trabajo
 
 Telar ofrece dos flujos de trabajo según tus necesidades:
 
-- [Interfaz web de GitHub](2-flujos-de-trabajo/1-interfaz-web/) - ¡No tienes que instalar nada! (recomendado para narradores)
-- [Desarrollo local](2-flujos-de-trabajo/2-desarrollo-local/) - Para desarrolladores que quieren vista previa local
+- [Interfaz web de GitHub](flujos-de-trabajo/interfaz-web-github/) - ¡No tienes que instalar nada! (recomendado para narradores)
+- [Desarrollo local](flujos-de-trabajo/desarrollo-local/) - Para desarrolladores que quieren vista previa local
 
 ## Conceptos fundamentales
 
-- [Estructura de contenido](3-estructura-de-contenido/) - Cómo Telar organiza tu contenido
-- [Integración IIIF](4-integracion-iiif/) - Trabajando con imágenes
-- [Configuración](5-configuracion/) - Ajustes del sitio y opciones
+- [Estructura de contenido](estructura-de-contenido/) - Cómo Telar organiza tu contenido
+- [Integración IIIF](integracion-iiif/) - Trabajando con imágenes
+- [Configuración](configuracion/) - Ajustes del sitio y opciones
 
 ## Personalización
 
-- [Temas](6-personalizacion/1-temas/) - Elige o crea temas visuales
-- [Estilos avanzados](6-personalizacion/2-estilos/) - CSS personalizado y diseños
+- [Temas](personalizacion/temas/) - Elige o crea temas visuales
+- [Estilos avanzados](personalizacion/estilos/) - CSS personalizado y diseños
 
 ## Referencia
 
-- [GitHub Actions](7-referencia/1-github-actions/) - Flujo de trabajo de construcción automatizada
-- [Desarrollo](7-referencia/2-desarrollo/) - Flujo de trabajo de desarrollo local
+- [GitHub Actions](desarrolladores/github-actions/) - Flujo de trabajo de construcción automatizada
+- [Desarrollo](desarrolladores/desarrollo-local/) - Flujo de trabajo de desarrollo local

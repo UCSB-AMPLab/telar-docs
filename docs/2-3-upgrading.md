@@ -197,41 +197,10 @@ The workflow will automatically:
 
 ## Version History
 
-### v0.3.4-beta (2025-10-31)
-- **Introduced automated upgrade system**
-- Added GitHub Actions workflow for one-click upgrades
-- Added Python migration framework
-- Added v020_to_v030 and v033_to_v034 migrations
-- Added language configuration (`telar_language`)
-
-### v0.3.3-beta (2025-10-28)
-- Fixed GitHub Actions deployment issues
-
-### v0.3.2-beta (2025-10-28)
-- Added image sizing syntax for panel markdown
-- Refactored index page for easier customization
-
-### v0.3.1-beta (2025-10-26)
-- Fixed thumbnail loading bugs
-
-### v0.3.0-beta (2025-10-25)
-- Added Google Sheets integration
-- Added comprehensive error messaging system
-- Added theme system with 4 preset themes
-
-### v0.2.0-beta (2025-10-20)
-- Scrolling system overhaul
-- Support for multiple IIIF objects per story
-
-### v0.1.1-beta (2025-10-16)
-- Fixed IIIF thumbnail resolution
-- Fixed markdown rendering in panels
-
-### v0.1.0-beta (2025-10-14)
-- Initial beta release
+For a complete list of changes in each version, see the [Changelog](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) in the Telar repository.
 
 ## Need Help?
 
-- **Documentation**: [ampl.clair.ucsb.edu/telar-docs](https://ampl.clair.ucsb.edu/telar-docs)
-- **Example Site**: [ampl.clair.ucsb.edu/telar](https://ampl.clair.ucsb.edu/telar)
+- **Documentation**: [telar.org/docs](https://telar.org/docs)
+- **Example Site**: [telar.org/demo](https://telar.org/demo)
 - **Report Issues**: [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues)

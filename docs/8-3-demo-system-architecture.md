@@ -523,7 +523,6 @@ curl -I https://content.telar.org/
 
 - [Demo Content (User Guide)](/docs/iiif/demo-content/) - User-facing documentation
 - [GitHub Actions Reference](/docs/developers/github-actions/) - Build workflow details
-- [Build Pipeline](/docs/developers/build-pipeline/) - CSV to JSON processing
 
 ---
 

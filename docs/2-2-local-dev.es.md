@@ -89,11 +89,11 @@ Elige una de dos opciones:
 
 **Opción A: sube tus propias imágenes**
 
-1. Agrega imágenes de alta resolución al directorio `components/images/objects/`
+1. Agrega imágenes de alta resolución al directorio `components/images/`
 2. Nombra archivos para que coincidan con IDs de objeto (ej., `textile-001.jpg`)
 3. Genera teselas IIIF:
    ```bash
-   python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
+   python3 scripts/generate_iiif.py --base-url http://localhost:4000
    ```
 
 **Opción B: usa manifiestos IIIF externos**
@@ -234,13 +234,13 @@ Cuando trabajes en tu sitio:
 # 1. Edita contenido
 # - CSVs en components/structures/
 # - Markdown en components/texts/
-# - Imágenes en components/images/objects/
+# - Imágenes en components/images/
 
 # 2. Convierte CSVs a JSON (después de editar CSVs)
 python3 scripts/csv_to_json.py
 
 # 3. Genera teselas IIIF (después de agregar/actualizar imágenes)
-python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
+python3 scripts/generate_iiif.py --base-url http://localhost:4000
 
 # 4. Sirve con recarga automática
 bundle exec jekyll serve --livereload

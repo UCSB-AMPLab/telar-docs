@@ -89,11 +89,11 @@ Choose one of two options:
 
 **Option A: Upload Your Own Images**
 
-1. Add high-res images to `components/images/objects/` directory
+1. Add high-res images to `components/images/` directory
 2. Name files to match object IDs (e.g., `textile-001.jpg`)
 3. Generate IIIF tiles:
    ```bash
-   python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
+   python3 scripts/generate_iiif.py --base-url http://localhost:4000
    ```
 
 **Option B: Use External IIIF Manifests**
@@ -234,13 +234,13 @@ When working on your site:
 # 1. Edit content
 # - CSVs in components/structures/
 # - Markdown in components/texts/
-# - Images in components/images/objects/
+# - Images in components/images/
 
 # 2. Convert CSVs to JSON (after editing CSVs)
 python3 scripts/csv_to_json.py
 
 # 3. Generate IIIF tiles (after adding/updating images)
-python3 scripts/generate_iiif.py --source-dir components/images/objects --base-url http://localhost:4000
+python3 scripts/generate_iiif.py --base-url http://localhost:4000
 
 # 4. Serve with live reload
 bundle exec jekyll serve --livereload

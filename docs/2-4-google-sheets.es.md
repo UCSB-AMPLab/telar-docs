@@ -84,7 +84,7 @@ Pestaña `project`
 
 Pestaña `objects` (campos comunes)
 
-- object_id, title, description, iiif_manifest, creator, period, medium, dimensions, location, credit, thumbnail
+- object_id, title, description, source_url, creator, period, medium, dimensions, location, credit, thumbnail
 
 Pestañas `story-X`
 

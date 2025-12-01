@@ -22,9 +22,10 @@ components/
 │   ├── objects.csv       # Object catalog metadata
 │   ├── your-story.csv    # Story structure with step coordinates
 │   └── story-1.csv       # Additional stories (optional)
-├── images/
-│   ├── objects/          # Source images for IIIF processing
-│   └── additional/       # Other images used around the site
+├── images/               # All images (IIIF source and additional)
+├── pdfs/                 # PDF documents (future support)
+├── audio/                # Audio files (future support)
+├── 3d-models/            # 3D model files (future support)
 └── texts/
     ├── stories/          # Story layer content (markdown)
     │   └── story1/       # Optional subfolders for organization
