@@ -132,10 +132,10 @@ Telar provides special syntax for controlling image sizes in panels.
 ```
 → Loads `/components/images/textile-closeup.jpg`
 
-**Absolute paths** (starting with `/`) load from specified location:
+**Absolute paths** (starting with `/`) load from site root:
 
 ```markdown
-![Site logo](/assets/images/logo.png){sm}
+![Site logo](/components/images/logo.png){sm}
 ```
 
 **External URLs** work as expected:
@@ -302,11 +302,55 @@ Use descriptive, lowercase filenames with hyphens:
 
 ---
 
+## Quick Reference
+
+Copy-paste examples for the most common formatting tasks:
+
+### Add an image with caption
+```markdown
+![Colonial textile showing interlocking pattern](textile-detail.jpg){lg}
+Detail of the warp threads, circa 1650.
+```
+
+### Add a YouTube video
+```html
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 1.5rem 0;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          frameborder="0" allowfullscreen></iframe>
+</div>
+```
+
+### Add a citation with footnote
+```markdown
+Recent scholarship challenges this interpretation.[^1]
+
+[^1]: García, M. (2023). *Rethinking Colonial Textiles*. University Press.
+```
+
+### Link to a glossary term
+```markdown
+The [[encomienda]] system structured colonial tributary relations.
+```
+
+### Link to another object
+```markdown
+Compare with the [Lima textile](/objects/textile-lima/).
+```
+
+### Create a blockquote
+```markdown
+> "The patterns speak to a sophisticated understanding of geometry."
+> — Author
+```
+
+---
+
 ## Limitations
 
 - **No JavaScript**: Markdown is converted to static HTML
 - **No custom HTML attributes**: Use the provided size syntax instead of custom classes
-- **Image processing**: Images from `/components/images/` that are listed in the `objects` tab of your Google Sheet or `objects.csv` without external IIIF manifests will be converted into IIIF tiles automatically.
+- **Image processing**: Images from `components/images/` that are listed in your objects CSV without external IIIF sources will be converted into IIIF tiles automatically.
 
 ---
 

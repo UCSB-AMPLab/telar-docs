@@ -204,7 +204,7 @@ credit: Archivo General de Indias
 ```
 
 **Campos:**
-- `image` (obligatorio) - Ruta relativa a `assets/images/`
+- `image` (obligatorio) - Ruta relativa a `components/images/`
 - `alt` (recomendado) - Descripción para accesibilidad
 - `caption` (opcional) - Texto que se muestra debajo de la imagen; admite markdown (ej., `*cursivas*`)
 - `credit` (opcional) - Línea de atribución; admite markdown
@@ -287,20 +287,18 @@ Los widgets funcionan en todos los archivos markdown de los paneles de las histo
 ### Imágenes en widgets
 
 **Imágenes locales:**
-Coloca las imágenes en `assets/images/` y haz referencia a ellas de forma relativa a esa carpeta:
+Coloca las imágenes en `components/images/` y haz referencia a ellas por nombre de archivo:
 
 ```
-assets/images/
-├── story1/
-│   ├── map.jpg
-│   └── document.jpg
-└── story2/
-    └── artifact.jpg
+components/images/
+├── map.jpg
+├── document.jpg
+└── artifact.jpg
 ```
 
 ```markdown
-image: story1/map.jpg
-image: story2/artifact.jpg
+image: map.jpg
+image: document.jpg
 ```
 
 **Imágenes externas:**

@@ -205,7 +205,7 @@ credit: Archivo General de Indias
 ```
 
 **Fields:**
-- `image` (required) - Path relative to `assets/images/`
+- `image` (required) - Path relative to `components/images/`
 - `alt` (recommended) - Accessibility description
 - `caption` (optional) - Text displayed below image; supports markdown (e.g., `*italics*`)
 - `credit` (optional) - Attribution line; supports markdown
@@ -288,20 +288,18 @@ Widgets work in all story panel markdown files:
 ### Images in Widgets
 
 **Local images:**
-Place images in `assets/images/` and reference them relative to that folder:
+Place images in `components/images/` and reference them by filename:
 
 ```
-assets/images/
-├── story1/
-│   ├── map.jpg
-│   └── document.jpg
-└── story2/
-    └── artifact.jpg
+components/images/
+├── map.jpg
+├── document.jpg
+└── artifact.jpg
 ```
 
 ```markdown
-image: story1/map.jpg
-image: story2/artifact.jpg
+image: map.jpg
+image: document.jpg
 ```
 
 **External images:**

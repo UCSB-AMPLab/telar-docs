@@ -17,6 +17,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Deprecated command flags** - Removed `--source-dir components/images/objects` from IIIF generation commands
 - **Port number standardization** - Changed all localhost examples from port 4000 to 4001 (avoids macOS Time Machine conflict)
 - **Version examples** - Updated config examples to show v0.6.1-beta
+- **Image path consistency** - Fixed all `assets/images/` references to `components/images/` (widgets, carousels)
+
+### Added
+
+- **Quick Reference section** - Added copy-paste examples to markdown syntax reference (EN/ES)
 
 ## [v0.6.0] - 2025-11-28
 

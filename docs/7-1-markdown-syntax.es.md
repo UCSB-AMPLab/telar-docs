@@ -131,10 +131,10 @@ Telar proporciona sintaxis especial para controlar los tamaños de imagen en los
 ```
 → Carga `/components/images/textile-closeup.jpg`
 
-**Rutas absolutas** (comenzando con `/`) cargan desde la ubicación especificada:
+**Rutas absolutas** (comenzando con `/`) cargan desde la raíz del sitio:
 
 ```markdown
-![Logo del sitio](/assets/images/logo.png){sm}
+![Logo del sitio](/components/images/logo.png){sm}
 ```
 
 **URLs externas** funcionan como se espera:
@@ -301,11 +301,55 @@ Usa nombres de archivo descriptivos, en minúsculas con guiones:
 
 ---
 
+## Referencia rápida
+
+Ejemplos listos para copiar y pegar de las tareas de formato más comunes:
+
+### Agregar una imagen con pie de foto
+```markdown
+![Textil colonial con patrón entrelazado](textile-detail.jpg){lg}
+Detalle de los hilos de urdimbre, circa 1650.
+```
+
+### Agregar un video de YouTube
+```html
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 1.5rem 0;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          frameborder="0" allowfullscreen></iframe>
+</div>
+```
+
+### Agregar una cita con nota al pie
+```markdown
+Estudios recientes cuestionan esta interpretación.[^1]
+
+[^1]: García, M. (2023). *Repensando los textiles coloniales*. Editorial Universitaria.
+```
+
+### Enlazar a un término del glosario
+```markdown
+El sistema de [[encomienda]] estructuró las relaciones tributarias coloniales.
+```
+
+### Enlazar a otro objeto
+```markdown
+Compara con el [textil de Lima](/objects/textile-lima/).
+```
+
+### Crear una cita en bloque
+```markdown
+> "Los patrones revelan una comprensión sofisticada de la geometría."
+> — Autor
+```
+
+---
+
 ## Limitaciones
 
 - **Sin JavaScript**: Markdown se convierte a HTML estático
 - **Sin atributos HTML personalizados**: Usa la sintaxis de tamaño proporcionada en lugar de clases personalizadas
-- **Procesamiento de imágenes**: Las imágenes en `/components/images/` que aparecen en la pestaña `objects` de Google Sheets o en `objects.csv` se convertirán automáticamente en teselas (*tiles*) IIIF, a menos que hayas especificado un manifiesto IIIF externo.
+- **Procesamiento de imágenes**: Las imágenes en `components/images/` que aparecen en tu CSV de objetos sin fuentes IIIF externas se convertirán automáticamente en teselas (*tiles*) IIIF.
 
 ---
 
