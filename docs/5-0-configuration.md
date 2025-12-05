@@ -301,9 +301,66 @@ Version information (updated automatically during releases):
 
 ```yaml
 telar:
-  version: "0.6.1-beta"
-  release_date: "2025-11-28"
+  version: "0.6.2-beta"
+  release_date: "2025-12-03"
 ```
+
+### Development Features
+
+Options for development, testing, and special use cases (please do not edit these unless you know what you are doing):
+
+```yaml
+development-features:
+  christmas_tree_mode: false
+  viewer_preloading:
+    max_viewer_cards: 10
+    preload_steps: 6
+    loading_threshold: 5
+    min_ready_viewers: 3
+  hide_stories: false
+  hide_collections: false
+```
+
+#### christmas_tree_mode
+
+Displays all warning messages for testing multilingual support:
+
+- **`false` (default)**: Normal operation
+- **`true`**: Shows test objects with fake errors to verify all warning messages display correctly
+
+Use this only when testing translations or warning message styling.
+
+#### viewer_preloading
+
+Controls how story viewers are preloaded for smoother navigation:
+
+- **max_viewer_cards** (default: 10, max: 15): Maximum viewers kept in memory
+- **preload_steps** (default: 6): Steps to preload ahead of current position
+- **loading_threshold** (default: 5): Show loading shimmer on intro if story has this many or more viewers
+- **min_ready_viewers** (default: 3): Hide shimmer when this many viewers are ready
+
+Higher values = smoother scrolling but more memory usage. The defaults work well for most sites.
+
+#### hide_stories
+
+Build a site without stories, keeping only objects visible:
+
+- **`false` (default)**: Stories are generated and displayed normally
+- **`true`**: Skips story generation and hides the stories section from the index page
+
+Use this when you want to showcase objects without narrative stories, or when building a catalog-style site.
+
+#### hide_collections
+
+Build a site with only custom user pages (no objects or stories):
+
+- **`false` (default)**: Objects and stories are generated normally
+- **`true`**: Skips both object AND story generation, hides stories section and objects teaser from index, removes `/objects/` from navigation
+
+Use this when building a site with only custom pages (like an "About" or landing page) without any collections.
+
+{: .note }
+> When `hide_collections` is enabled, `hide_stories` is automatically implied.
 
 ## Full Example
 
@@ -395,12 +452,30 @@ show_drafts: false
 
 # Telar Settings
 telar:
-  version: "0.6.1-beta"
-  release_date: "2025-11-28"
+  version: "0.6.2-beta"
+  release_date: "2025-12-03"
 
 # Plugins
 plugins:
   - jekyll-seo-tag
+
+# WEBrick server configuration for development (enables CORS for IIIF)
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
+    Access-Control-Allow-Methods: "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers: "Content-Type"
+
+# Development & Testing
+development-features:
+  christmas_tree_mode: false
+  viewer_preloading:
+    max_viewer_cards: 10
+    preload_steps: 6
+    loading_threshold: 5
+    min_ready_viewers: 3
+  hide_stories: false
+  hide_collections: false
 ```
 
 ## Next Steps

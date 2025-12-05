@@ -56,19 +56,25 @@ google_sheets:
 
 ## Obtener datos (solo desarrollo local)
 
-Cuando desarrolles localmente, trae los CSV antes de construir:
+Cuando desarrolles localmente, la forma más sencilla es usar el script de construcción **todo-en-uno** del sitio, que descarga y procesa los datos automáticamente:
+
+```bash
+python3 scripts/build_local_site.py
+```
+
+O ejecuta el paso de descarga de manera independiente:
 
 ```bash
 python3 scripts/fetch_google_sheets.py
 ```
 
-Qué hace:
+Qué hace el script de descarga:
 
 - Detecta automáticamente los GID de las pestañas
 - Descarga CSV a `components/structures/`
 - Omite pestañas solo de instrucciones
 
-Luego ejecuta tu build normal:
+Luego ejecuta tu flujo de build habitual:
 
 ```bash
 python3 scripts/csv_to_json.py

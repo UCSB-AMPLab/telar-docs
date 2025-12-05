@@ -58,13 +58,19 @@ google_sheets:
 
 ## Fetching data (local dev only)
 
-When developing locally, fetch latest CSVs before building:
+When developing locally, use the build script which handles fetching automatically:
+
+```bash
+python3 scripts/build_local_site.py
+```
+
+Or run the fetch step manually:
 
 ```bash
 python3 scripts/fetch_google_sheets.py
 ```
 
-What it does:
+What the fetch script does:
 
 - Discovers tab GIDs automatically
 - Downloads CSVs to `components/structures/`

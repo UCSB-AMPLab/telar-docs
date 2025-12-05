@@ -69,22 +69,53 @@ url: "http://localhost:4001"
 
 ## Comandos de construcción
 
-### Comandos principales
+### Inicio rápido: script de construcción (recomendado)
+
+La forma más sencilla de construir y servir tu sitio Telar localmente es usando el script de construcción todo‑en‑uno:
 
 ```bash
-# Convierte CSVs a JSON
+# Construye y sirve en el puerto 4001 (predeterminado)
+python3 scripts/build_local_site.py
+
+# Solo construir, sin iniciar servidor
+python3 scripts/build_local_site.py --build-only
+
+# Usar un puerto diferente
+python3 scripts/build_local_site.py --port 4000
+
+# Omitir generación de teselas IIIF (reconstrucciones más rápidas cuando las imágenes no han cambiado)
+python3 scripts/build_local_site.py --skip-iiif
+
+# Omitir la descarga desde Google Sheets (usa los CSV existentes)
+python3 scripts/build_local_site.py --skip-fetch
+```
+
+Este script ejecuta en secuencia todos los pasos necesarios de construcción, imitando lo que hace GitHub Actions durante el despliegue. También detiene instancias de Jekyll que estén ejecutándose antes de iniciar una nueva.
+
+### Comandos principales (manuales)
+
+Si prefieres ejecutar los pasos por separado:
+
+```bash
+# 1. Trae datos desde Google Sheets (si está habilitado)
+python3 scripts/fetch_google_sheets.py
+
+# 2. Convierte CSVs a JSON
 python3 scripts/csv_to_json.py
 
-# Genera teselas (*tiles*) IIIF
+# 3. Genera archivos de colección de Jekyll
+python3 scripts/generate_collections.py
+
+# 4. Genera teselas (*tiles*) IIIF
 python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
-# Inicia el servidor con recarga automática
+# 5. Sirve con recarga automática
 bundle exec jekyll serve --livereload --port 4001
 
 # Solo construir (salida a _site/)
 bundle exec jekyll build
 
-# Limpia archivos de construcción
+# Limpiar artefactos de construcción
 bundle exec jekyll clean
 ```
 
@@ -172,7 +203,10 @@ tu-sitio-telar/
 │   └── texts/               # Archivos Markdown
 ├── iiif/                    # Teselas (*tiles*) IIIF generadas
 ├── scripts/                 # Scripts de construcción
+│   ├── build_local_site.py  # Build local todo‑en‑uno
+│   ├── fetch_google_sheets.py
 │   ├── csv_to_json.py
+│   ├── generate_collections.py
 │   └── generate_iiif.py
 └── _site/                   # Sitio construido (¡no editar!)
 ```

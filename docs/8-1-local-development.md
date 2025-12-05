@@ -66,16 +66,47 @@ url: "http://localhost:4001"
 
 ## Build Commands
 
-### Core Commands
+### Quick Start: Build Script (Recommended)
+
+The easiest way to build and serve your Telar site locally is with the all-in-one build script:
 
 ```bash
-# Convert CSVs to JSON
+# Build and serve on port 4001 (default)
+python3 scripts/build_local_site.py
+
+# Build only, don't start server
+python3 scripts/build_local_site.py --build-only
+
+# Use a different port
+python3 scripts/build_local_site.py --port 4000
+
+# Skip IIIF tile generation (faster rebuilds when images haven't changed)
+python3 scripts/build_local_site.py --skip-iiif
+
+# Skip Google Sheets fetch (use existing CSV files)
+python3 scripts/build_local_site.py --skip-fetch
+```
+
+This script runs all necessary build steps in sequence, mimicking what GitHub Actions does during deployment. It automatically kills any running Jekyll instances before starting.
+
+### Core Commands (Manual)
+
+If you prefer to run individual scripts:
+
+```bash
+# 1. Fetch data from Google Sheets (if enabled)
+python3 scripts/fetch_google_sheets.py
+
+# 2. Convert CSVs to JSON
 python3 scripts/csv_to_json.py
 
-# Generate IIIF tiles
+# 3. Generate Jekyll collection files
+python3 scripts/generate_collections.py
+
+# 4. Generate IIIF tiles
 python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
-# Serve with live reload
+# 5. Serve with live reload
 bundle exec jekyll serve --livereload --port 4001
 
 # Build only (output to _site/)
@@ -118,6 +149,21 @@ python3 scripts/generate_iiif.py --image textile-001.jpg
 
 ### Daily Workflow
 
+**Using the build script (recommended):**
+
+```bash
+# First time or after CSV/image changes: full build
+python3 scripts/build_local_site.py
+
+# Quick rebuild (no IIIF regeneration)
+python3 scripts/build_local_site.py --skip-iiif --skip-fetch
+
+# The script handles everything and starts the server
+# Make changes to content, then Ctrl+C and rerun to rebuild
+```
+
+**Manual workflow:**
+
 ```bash
 # 1. Start Jekyll server
 bundle exec jekyll serve --livereload
@@ -129,6 +175,7 @@ bundle exec jekyll serve --livereload
 
 # 3. Rebuild data (when CSVs change)
 python3 scripts/csv_to_json.py
+python3 scripts/generate_collections.py
 
 # 4. Regenerate tiles (when images change)
 python3 scripts/generate_iiif.py
@@ -141,7 +188,7 @@ python3 scripts/generate_iiif.py
 
 For local development with Google Sheets:
 
-1. Create `_config_local.yml`:
+1. Configure in `_config.yml`:
    ```yaml
    google_sheets:
      enabled: true
@@ -149,14 +196,16 @@ For local development with Google Sheets:
      published_url: "YOUR_PUBLISHED_URL"
    ```
 
-2. Fetch sheets manually:
+2. Use the build script (fetches automatically if enabled):
    ```bash
-   python3 scripts/fetch_google_sheets.py
+   python3 scripts/build_local_site.py
    ```
 
-3. Process as normal:
+   Or fetch manually:
    ```bash
+   python3 scripts/fetch_google_sheets.py
    python3 scripts/csv_to_json.py
+   python3 scripts/generate_collections.py
    bundle exec jekyll serve
    ```
 
@@ -192,7 +241,10 @@ your-telar-site/
 │   └── texts/               # Markdown files
 ├── iiif/                    # Generated IIIF tiles
 ├── scripts/                 # Build scripts
+│   ├── build_local_site.py  # All-in-one local build
+│   ├── fetch_google_sheets.py
 │   ├── csv_to_json.py
+│   ├── generate_collections.py
 │   └── generate_iiif.py
 └── _site/                   # Built site (don't edit!)
 ```

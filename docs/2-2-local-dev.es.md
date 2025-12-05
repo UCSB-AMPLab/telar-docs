@@ -228,7 +228,19 @@ Mejora tu narrativa con definiciones de términos:
 
 ## Flujo de trabajo de desarrollo diario
 
-Cuando trabajes en tu sitio:
+Cuando trabajes en tu sitio, puedes usar el script de construcción todo-en-uno o ejecutar los comandos uno por uno.
+
+**Usando el script de construcción (recomendado):**
+
+```bash
+# Reconstrucción completa y servidor local
+python3 scripts/build_local_site.py
+
+# Reconstrucción rápida (omite IIIF cuando las imágenes no han cambiado)
+python3 scripts/build_local_site.py --skip-iiif --skip-fetch
+```
+
+**Flujo de trabajo manual:**
 
 ```bash
 # 1. Edita contenido
@@ -239,10 +251,13 @@ Cuando trabajes en tu sitio:
 # 2. Convierte CSVs a JSON (después de editar CSVs)
 python3 scripts/csv_to_json.py
 
-# 3. Genera teselas IIIF (después de agregar/actualizar imágenes)
+# 3. Genera colecciones de Jekyll
+python3 scripts/generate_collections.py
+
+# 4. Genera teselas IIIF (después de agregar/actualizar imágenes)
 python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
-# 4. Sirve con recarga automática
+# 5. Sirve con recarga automática
 bundle exec jekyll serve --livereload
 
 # Comandos adicionales:

@@ -9,7 +9,7 @@ permalink: /guia/configuracion/
 
 # Configuración
 
-Configura tu sitio de Telar mediante el archivo `_config.yml` en la raíz de tu repositorio.
+Configura tu sitio Telar usando el archivo `_config.yml` en la raíz de tu repositorio.
 
 ## Ajustes del sitio
 
@@ -84,7 +84,7 @@ Telar v0.4.0+ admite interfaces en inglés y español:
 telar_language: "en"  # Opciones: "en" (English), "es" (Español)
 ```
 
-Esta opción controla el idioma de los elementos de interfaz, incluyendo navegación, botones, etiquetas, mensajes de error e instrucciones.
+Esta opción controla el idioma de los elementos de la interfaz, incluyendo navegación, botones, etiquetas, mensajes de error e instrucciones.
 
 ### Qué se traduce
 
@@ -92,7 +92,7 @@ El ajuste `telar_language` cambia el idioma de:
 
  - **Menú de navegación**: **Home**, **Objects**, **Stories**, **Glossary**, **About**
  - **Botones**: **Copy**, **Back**, **Learn More**, **Go Deeper**, etc.
-- **Campos de metadatos**: Creator, Period, Medium, Location, Credit, etc.
+- **Campos de metadatos**: *Creator*, *Period*, *Medium*, *Location*, *Credit*, etc.
 - **Mensajes de error**: Todas las advertencias IIIF, errores de validación y problemas de configuración
 - **Interfaz de historias**: Indicadores de paso, encabezados de panel, herramienta de coordenadas
 - **Páginas de objetos**: Etiquetas de manifiestos IIIF, instrucciones de coordenadas
@@ -131,7 +131,7 @@ google_sheets:
   published_url: "https://docs.google.com/spreadsheets/d/e/TU_ID_PUBLICADO/pubhtml"
 ```
 
-### Pasos de Configuración
+### Pasos de configuración
 
 1. **Obtén la plantilla**: Duplica la plantilla en [bit.ly/telar-template](https://bit.ly/telar-template)
 2. **Comparte tu hoja**: Establécela en "Anyone with the link (Viewer access)"
@@ -140,7 +140,7 @@ google_sheets:
 5. Pon `enabled: true`
 6. Confirma los cambios
 
-**Obtención automatizada:**
+**Descarga automatizada:**
 - **GitHub Pages**: GitHub Actions descubre automáticamente los GIDs de pestañas y obtiene los CSVs
 - **Desarrollo local**: Ejecuta `python3 scripts/fetch_google_sheets.py` antes de compilar
 
@@ -167,7 +167,7 @@ Controla si el indicador **Step X** aparece en la esquina superior izquierda del
 - **`true` (predeterminado)**: Muestra **Step 1**, **Step 2**, etc. en el visor
 - **`false`**: Oculta los indicadores para una experiencia más limpia e inmersiva
 
-Es un cambio visual; las personas siguen pudiendo navegar por los pasos normalmente.
+Es solo un cambio visual; las personas siguen pudiendo navegar por los pasos normalmente.
 
 ### include_demo_content
 
@@ -198,7 +198,7 @@ Controla la etiqueta de atribución de créditos en páginas de objetos:
 
 La etiqueta de créditos se muestra en la esquina superior derecha de las imágenes de objetos, mostrando la atribución del campo `credit` en tu `objects.csv`.
 
-## Ajustes Avanzados
+## Ajustes avanzados
 
 Los siguientes ajustes están pre-configurados y normalmente no necesitan modificación a menos que estés haciendo una personalización avanzada.
 
@@ -301,9 +301,66 @@ Información de versión (actualizada automáticamente durante lanzamientos):
 
 ```yaml
 telar:
-  version: "0.6.1-beta"
-  release_date: "2025-11-28"
+  version: "0.6.2-beta"
+  release_date: "2025-12-03"
 ```
+
+### Funciones de desarrollo
+
+Opciones para desarrollo, pruebas y situaciones especiales (por favor no edites estos ajustes a menos que sepas lo que estás haciendo):
+
+```yaml
+development-features:
+  christmas_tree_mode: false
+  viewer_preloading:
+    max_viewer_cards: 10
+    preload_steps: 6
+    loading_threshold: 5
+    min_ready_viewers: 3
+  hide_stories: false
+  hide_collections: false
+```
+
+#### christmas_tree_mode
+
+Muestra todos los mensajes de advertencia para probar el soporte multilingüe:
+
+- **`false` (predeterminado)**: Operación normal
+- **`true`**: Muestra objetos de prueba con errores falsos para verificar que los mensajes de advertencia se muestren correctamente
+
+Usa esto solo al probar traducciones o el estilo de mensajes de advertencia.
+
+#### viewer_preloading
+
+Controla cómo se precargan los visores de historias para una navegación más fluida:
+
+- **max_viewer_cards** (predeterminado: 10, máximo: 15): Cantidad máxima de visores en memoria
+- **preload_steps** (predeterminado: 6): Pasos a precargar por delante de la posición actual
+- **loading_threshold** (predeterminado: 5): Mostrar el efecto de carga en la introducción si la historia tiene este número o más de visores
+- **min_ready_viewers** (predeterminado: 3): Ocultar el efecto de carga cuando esté lista esta cantidad de visores
+
+Valores más altos = navegación más fluida pero mayor uso de memoria. Los valores predeterminados funcionan bien para la mayoría de los sitios.
+
+#### hide_stories
+
+Compila un sitio sin historias, manteniendo solo los objetos visibles:
+
+- **`false` (predeterminado)**: Las historias se generan y muestran normalmente
+- **`true`**: Omite la generación de historias y oculta la sección de historias de la página de inicio
+
+Usa esto cuando quieras mostrar objetos sin historias narrativas, o al construir un sitio estilo catálogo.
+
+#### hide_collections
+
+Compila un sitio con solo páginas personalizadas (sin objetos ni historias):
+
+- **`false` (predeterminado)**: Los objetos e historias se generan normalmente
+- **`true`**: Omite la generación de objetos e historias, oculta la sección de historias y el teaser de objetos de la página de inicio, elimina `/objects/` de la navegación
+
+Usa esto al construir un sitio con solo páginas personalizadas (como una página "Acerca de" o de inicio) sin ninguna colección.
+
+{: .note }
+> Cuando `hide_collections` está habilitado, `hide_stories` se activa automáticamente.
 
 ## Ejemplo completo
 
@@ -395,12 +452,30 @@ show_drafts: false
 
 # Telar Settings
 telar:
-  version: "0.6.1-beta"
-  release_date: "2025-11-28"
+  version: "0.6.2-beta"
+  release_date: "2025-12-03"
 
 # Plugins
 plugins:
   - jekyll-seo-tag
+
+# WEBrick server configuration for development (enables CORS for IIIF)
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
+    Access-Control-Allow-Methods: "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers: "Content-Type"
+
+# Development & Testing
+development-features:
+  christmas_tree_mode: false
+  viewer_preloading:
+    max_viewer_cards: 10
+    preload_steps: 6
+    loading_threshold: 5
+    min_ready_viewers: 3
+  hide_stories: false
+  hide_collections: false
 ```
 
 ## Próximos pasos

@@ -66,11 +66,25 @@ email: your-email@example.com
 
 ## Core Commands
 
-Throughout your workflow, you'll use these commands:
+**Quick start (recommended):**
+
+```bash
+# Build and serve everything with one command
+python3 scripts/build_local_site.py
+
+# View at http://localhost:4001
+```
+
+The build script handles all steps automatically. Use `--skip-iiif` for faster rebuilds when images haven't changed.
+
+**Manual commands** (if you prefer granular control):
 
 ```bash
 # Convert CSVs to JSON (run after editing CSVs)
 python3 scripts/csv_to_json.py
+
+# Generate Jekyll collections
+python3 scripts/generate_collections.py
 
 # Generate IIIF tiles (run after adding/updating images)
 python3 scripts/generate_iiif.py --base-url http://localhost:4001
@@ -230,6 +244,18 @@ Enhance your narrative with term definitions:
 
 When working on your site:
 
+**Using the build script (recommended):**
+
+```bash
+# Full rebuild and serve
+python3 scripts/build_local_site.py
+
+# Quick rebuild (skip IIIF when images haven't changed)
+python3 scripts/build_local_site.py --skip-iiif --skip-fetch
+```
+
+**Manual workflow:**
+
 ```bash
 # 1. Edit content
 # - CSVs in components/structures/
@@ -239,10 +265,13 @@ When working on your site:
 # 2. Convert CSVs to JSON (after editing CSVs)
 python3 scripts/csv_to_json.py
 
-# 3. Generate IIIF tiles (after adding/updating images)
+# 3. Generate Jekyll collections
+python3 scripts/generate_collections.py
+
+# 4. Generate IIIF tiles (after adding/updating images)
 python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
-# 4. Serve with live reload
+# 5. Serve with live reload
 bundle exec jekyll serve --livereload
 
 # Additional commands:
