@@ -198,27 +198,29 @@ Define navegación paso a paso y contenido de panel para cada historia.
 | `question` | `pregunta` | Sí | Encabezado mostrado en panel de historia |
 | `answer` | `respuesta` | Sí | Texto de respuesta breve |
 | `layer1_button` | `boton_capa1` | No | Texto de botón personalizado (vacío = "Saber más") |
-| `layer1_file` | `archivo_capa1` | Sí | Ruta a archivo markdown de capa 1 |
+| `layer1_content` | `contenido_capa1` | No | Contenido de panel: texto en línea o ruta a archivo .md |
 | `layer2_button` | `boton_capa2` | No | Texto de botón personalizado (vacío = "Profundizar más") |
-| `layer2_file` | `archivo_capa2` | No | Ruta a archivo markdown de capa 2 |
+| `layer2_content` | `contenido_capa2` | No | Contenido de panel: texto en línea o ruta a archivo .md |
 | `layer3_button` | `boton_capa3` | No | Texto de botón personalizado (vacío = predeterminado) |
-| `layer3_file` | `archivo_capa3` | No | Ruta a archivo markdown de capa 3 |
+| `layer3_content` | `contenido_capa3` | No | Contenido de panel: texto en línea o ruta a archivo .md |
 
 ### Ejemplo
 
-**Inglés:**
+**Inglés (con contenido en línea):**
 ```csv
-step,object,x,y,zoom,question,answer,layer1_button,layer1_file,layer2_button,layer2_file
-1,textile-001,0.5,0.5,1.0,What is this?,A colonial textile fragment,"",colonial-textiles/step1-layer1.md,"Learn More",colonial-textiles/step1-layer2.md
+step,object,x,y,zoom,question,answer,layer1_button,layer1_content,layer2_button,layer2_content
+1,textile-001,0.5,0.5,1.0,What is this?,A colonial textile fragment,"",This fragment shows **advanced weaving techniques** from the colonial period.,"Learn More",colonial-textiles/step1-layer2.md
 2,textile-001,0.3,0.7,0.5,What is this pattern?,An interlocking warp design,"",colonial-textiles/step2-layer1.md,"",colonial-textiles/step2-layer2.md
 ```
 
-**Español:**
+**Español (con contenido en línea):**
 ```csv
-paso,objeto,x,y,zoom,pregunta,respuesta,boton_capa1,archivo_capa1,boton_capa2,archivo_capa2
-1,textil-001,0.5,0.5,1.0,¿Qué es esto?,Un fragmento de textil colonial,"",textiles-coloniales/paso1-capa1.md,"Saber más",textiles-coloniales/paso1-capa2.md
+paso,objeto,x,y,zoom,pregunta,respuesta,boton_capa1,contenido_capa1,boton_capa2,contenido_capa2
+1,textil-001,0.5,0.5,1.0,¿Qué es esto?,Un fragmento de textil colonial,"",Este fragmento muestra **técnicas avanzadas de tejido** del período colonial.,"Saber más",textiles-coloniales/paso1-capa2.md
 2,textil-001,0.3,0.7,0.5,¿Qué es este patrón?,Un diseño de urdimbre entrelazada,"",textiles-coloniales/paso2-capa1.md,"",textiles-coloniales/paso2-capa2.md
 ```
+
+Nota: El paso 1 usa contenido en línea para la capa 1, mientras que el paso 2 usa una referencia de archivo. Ambas maneras de incluir contenido funcionan y pueden mezclarse libremente.
 
 ### Notas de campo
 
@@ -251,15 +253,49 @@ paso,objeto,x,y,zoom,pregunta,respuesta,boton_capa1,archivo_capa1,boton_capa2,ar
 #### layer buttons / botones de capa
 - Cadena vacía = texto de botón predeterminado
 - Texto personalizado: cualquier cadena (ej., "Ver detalles", "See details")
-- Si el archivo existe pero el botón está vacío: muestra texto predeterminado
-- Si el archivo está vacío: botón oculto
+- Si hay contenido pero el botón está vacío: muestra texto predeterminado
+- Si el contenido está vacío: botón oculto
 
-#### layer files / archivos de capa
-- Rutas relativas a `components/texts/stories/`
-- Extensión `.md` requerida
-- Puede usar subdirectorios para organización
-- Capa 1 requerida, capas 2-3 opcionales
-- Si el archivo no existe: botón oculto, muestra error en compilación
+#### Contenido de capa (`layer1_content` / `contenido_capa1`, etc.)
+
+El contenido de los paneles se puede introducir de tres maneras, dependiendo de la complejidad de tus necesidades y tu flujo de trabajo (CSV o Google Sheets):
+
+**Método 1: Introducir texto directamente**
+
+Escribe el texto del panel directamente en la celda de la hoja de cálculo. Esta es la manera más sencilla para paneles cortos.
+
+- En **Google Sheets**: Presiona `Option+Enter` (macOS) o `Ctrl+Enter` (Windows/Linux) para crear saltos de línea dentro de la celda
+- En **archivos CSV**: Encierra el contenido entre comillas dobles y usa saltos de línea literales
+
+**Método 2: Pegar texto markdown**
+
+Pega texto markdown (incluyendo frontmatter YAML) directamente en la celda. Esto te permite preparar tu contenido en un editor de texto y luego pegarlo.
+
+- Si tu contenido comienza con `---`, Telar extraerá el título del frontmatter YAML
+- Soporta sintaxis markdown completa, HTML y widgets
+- **Precaución**: No uses editores WYSIWYG (Word, Google Docs) ya que pueden introducir caracteres invisibles que rompen el formato
+
+**Método 3: Indicar un archivo de texto**
+
+Para contenido complejo o muy largo, indica la ruta a un archivo markdown separado:
+
+| contenido_capa1 |
+|-----------------|
+| tu-historia/paso1-capa1.md |
+
+Las rutas son relativas a `components/texts/stories/`. Usa archivos cuando:
+- El contenido es muy largo (múltiples pantallas)
+- Prefieres editar en un editor de texto dedicado
+
+**Detección automática**: Si el valor termina en `.md` Y el archivo existe → carga el archivo; de lo contrario → trata el valor como contenido directo.
+
+### Elegir el método adecuado
+
+| Método | Ideal para | Flujo de trabajo |
+|--------|------------|------------------|
+| **1. Texto directo** | Paneles cortos (1-3 párrafos), formato básico | CSV o Google Sheets |
+| **2. Markdown pegado** | Contenido más largo, títulos de panel personalizados | CSV o Google Sheets |
+| **3. Archivo de texto** | Contenido complejo, narrativas muy largas | CSV o Google Sheets |
 
 ## Nombres de columnas alternativos
 
@@ -304,11 +340,11 @@ Mapeos completos de todos los nombres de columna aceptados.
 | `question` | `question`, `pregunta`, `heading`, `encabezado` |
 | `answer` | `answer`, `respuesta`, `response` |
 | `layer1_button` | `layer1_button`, `boton_capa1`, `button1`, `btn1` |
-| `layer1_file` | `layer1_file`, `archivo_capa1`, `file1`, `layer1` |
+| `layer1_content` | `layer1_content`, `contenido_capa1`, `layer1_file`, `archivo_capa1`, `file1`, `layer1` |
 | `layer2_button` | `layer2_button`, `boton_capa2`, `button2`, `btn2` |
-| `layer2_file` | `layer2_file`, `archivo_capa2`, `file2`, `layer2` |
+| `layer2_content` | `layer2_content`, `contenido_capa2`, `layer2_file`, `archivo_capa2`, `file2`, `layer2` |
 | `layer3_button` | `layer3_button`, `boton_capa3`, `button3`, `btn3` |
-| `layer3_file` | `layer3_file`, `archivo_capa3`, `file3`, `layer3` |
+| `layer3_content` | `layer3_content`, `contenido_capa3`, `layer3_file`, `archivo_capa3`, `file3`, `layer3` |
 
 ## Mejores prácticas
 

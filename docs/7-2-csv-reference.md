@@ -198,27 +198,29 @@ Defines step-by-step navigation and panel content for each story.
 | `question` | `pregunta` | Yes | Heading displayed in story panel |
 | `answer` | `respuesta` | Yes | Brief answer text |
 | `layer1_button` | `boton_capa1` | No | Custom button text (empty = "Learn more") |
-| `layer1_file` | `archivo_capa1` | Yes | Path to layer 1 markdown file |
+| `layer1_content` | `contenido_capa1` | No | Panel content: inline text or path to .md file |
 | `layer2_button` | `boton_capa2` | No | Custom button text (empty = "Go deeper") |
-| `layer2_file` | `archivo_capa2` | No | Path to layer 2 markdown file |
+| `layer2_content` | `contenido_capa2` | No | Panel content: inline text or path to .md file |
 | `layer3_button` | `boton_capa3` | No | Custom button text (empty = default) |
-| `layer3_file` | `archivo_capa3` | No | Path to layer 3 markdown file |
+| `layer3_content` | `contenido_capa3` | No | Panel content: inline text or path to .md file |
 
 ### Example
 
-**English:**
+**English (with inline content):**
 ```csv
-step,object,x,y,zoom,question,answer,layer1_button,layer1_file,layer2_button,layer2_file
-1,textile-001,0.5,0.5,1.0,What is this?,A colonial textile fragment,"",colonial-textiles/step1-layer1.md,"Learn More",colonial-textiles/step1-layer2.md
+step,object,x,y,zoom,question,answer,layer1_button,layer1_content,layer2_button,layer2_content
+1,textile-001,0.5,0.5,1.0,What is this?,A colonial textile fragment,"",This fragment shows **advanced weaving techniques** from the colonial period.,"Learn More",colonial-textiles/step1-layer2.md
 2,textile-001,0.3,0.7,0.5,What is this pattern?,An interlocking warp design,"",colonial-textiles/step2-layer1.md,"",colonial-textiles/step2-layer2.md
 ```
 
-**Spanish:**
+**Spanish (with inline content):**
 ```csv
-paso,objeto,x,y,zoom,pregunta,respuesta,boton_capa1,archivo_capa1,boton_capa2,archivo_capa2
-1,textil-001,0.5,0.5,1.0,¿Qué es esto?,Un fragmento de textil colonial,"",textiles-coloniales/paso1-capa1.md,"Aprende Más",textiles-coloniales/paso1-capa2.md
+paso,objeto,x,y,zoom,pregunta,respuesta,boton_capa1,contenido_capa1,boton_capa2,contenido_capa2
+1,textil-001,0.5,0.5,1.0,¿Qué es esto?,Un fragmento de textil colonial,"",Este fragmento muestra **técnicas avanzadas de tejido** del período colonial.,"Aprende Más",textiles-coloniales/paso1-capa2.md
 2,textil-001,0.3,0.7,0.5,¿Qué es este patrón?,Un diseño de urdimbre entrelazada,"",textiles-coloniales/paso2-capa1.md,"",textiles-coloniales/paso2-capa2.md
 ```
+
+Note: Step 1 uses inline content for layer 1, while step 2 uses a file reference. Both approaches work and can be mixed freely.
 
 ### Field Notes
 
@@ -251,15 +253,67 @@ paso,objeto,x,y,zoom,pregunta,respuesta,boton_capa1,archivo_capa1,boton_capa2,ar
 #### layer buttons / botones de capa
 - Empty string = default button text
 - Custom text: any string (e.g., "See details", "Ver detalles")
-- If file exists but button empty: shows default text
-- If file empty: button hidden
+- If content exists but button empty: shows default text
+- If content empty: button hidden
 
-#### layer files / archivos de capa
-- Paths relative to `components/texts/stories/`
-- Extension `.md` required
-- Can use subdirectories for organization
-- Layer 1 required, layers 2-3 optional
-- If file doesn't exist: button hidden, shows error in build
+#### layer content / contenido de capa
+
+Panel content can be provided in three ways, depending on the complexity of your needs and your chosen workflow (CSV or Google Sheets).
+
+**Method 1: Entering text directly**
+
+Type your panel text directly in the spreadsheet cell. This is the simplest approach for short panels.
+
+| layer1_content |
+|----------------|
+| This textile shows **advanced weaving techniques** from the colonial period. |
+
+To create paragraph breaks within a cell:
+
+| Environment | How to create line breaks |
+|-------------|---------------------------|
+| Google Sheets | Press `Ctrl+Enter` (Windows/Linux) or `Option+Enter` (macOS) |
+| CSV files | Use actual newlines inside quoted text |
+| Alternative | Use HTML: `<br>` for line breaks, `<p>...</p>` for paragraphs |
+
+The panel title defaults to the button text (e.g., "Learn more"). You can use basic formatting: `**bold**`, `*italic*`, `[link text](url)`, and glossary links (`[[term-id]]`).
+
+**Method 2: Pasting markdown text**
+
+Paste text written in a plain text editor or markdown application. This method supports the full range of formatting features.
+
+You can include:
+- Headings (`## Section Title`)
+- Widgets (accordion, carousel, tabs)
+- Images with size controls
+- A custom panel title using YAML frontmatter at the top of your text
+
+{: .warning }
+> If you copy and paste from Microsoft Word, Google Docs, or similar applications, formatting will **not** be preserved. Bold, italics, colors, font sizes, and inserted images will all be lost. Write in markdown syntax instead — see the [Markdown Syntax Guide](/docs/reference/markdown-syntax/).
+
+**Method 3: Referencing a markdown file**
+
+Point to a markdown file saved in your site's repository. This is our recommended method for complex panels, especially those with widgets or content you want to reuse across multiple stories.
+
+| layer1_content |
+|----------------|
+| colonial-textiles/step1-layer1.md |
+
+**Where to save your files**: Save markdown files in the `components/texts/stories/` folder. In your spreadsheet, enter just the filename — or if you've organised files into subfolders, include the subfolder name (e.g., `my-story/step1-layer1.md`).
+
+**How Telar knows which method you're using**: If what you enter ends in `.md` and Telar finds that file, it loads the file. Otherwise, Telar treats what you entered as the panel content itself.
+
+**Empty cells**: If you leave a layer content cell empty, no button appears for that layer.
+
+### Choosing the Right Method
+
+| Scenario | Recommended method |
+|----------|-------------------|
+| Short explanation (1–2 paragraphs) | Method 1: Enter directly |
+| Panel with custom title | Method 2: Paste with frontmatter, or Method 3 |
+| Content with widgets (accordion, tabs, carousel) | Method 3: File reference |
+| Same content used in multiple places | Method 3: File reference |
+| Quick edits without leaving the spreadsheet | Method 1 or 2 |
 
 ## Alternative Column Names
 
@@ -304,11 +358,11 @@ Complete mappings of all accepted column names.
 | `question` | `question`, `pregunta`, `heading`, `encabezado` |
 | `answer` | `answer`, `respuesta`, `response` |
 | `layer1_button` | `layer1_button`, `boton_capa1`, `button1`, `btn1` |
-| `layer1_file` | `layer1_file`, `archivo_capa1`, `file1`, `layer1` |
+| `layer1_content` | `layer1_content`, `contenido_capa1`, `layer1_file`, `archivo_capa1`, `file1`, `layer1` |
 | `layer2_button` | `layer2_button`, `boton_capa2`, `button2`, `btn2` |
-| `layer2_file` | `layer2_file`, `archivo_capa2`, `file2`, `layer2` |
+| `layer2_content` | `layer2_content`, `contenido_capa2`, `layer2_file`, `archivo_capa2`, `file2`, `layer2` |
 | `layer3_button` | `layer3_button`, `boton_capa3`, `button3`, `btn3` |
-| `layer3_file` | `layer3_file`, `archivo_capa3`, `file3`, `layer3` |
+| `layer3_content` | `layer3_content`, `contenido_capa3`, `layer3_file`, `archivo_capa3`, `file3`, `layer3` |
 
 ## Best Practices
 
@@ -371,11 +425,10 @@ components/structures/
 - `byline`: Markdown for links/emphasis only
 - `question`, `answer`: Plain text only
 
-**File references**:
-- Always relative to `components/texts/stories/`
-- Use subdirectories for organization
-- Include `.md` extension
-- Check file exists before committing
+**Panel content**:
+- Inline text: write directly in the cell for simple panels
+- File references: path ending in `.md`, relative to `components/texts/stories/`
+- Use file references for complex content with widgets
 
 ## Validation
 

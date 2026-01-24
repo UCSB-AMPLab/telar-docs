@@ -98,7 +98,16 @@ bundle exec jekyll build
 
 `story-X` tabs
 
-- step, object, x, y, zoom, question, answer, layer1_button, layer1_file, layer2_button, layer2_file
+- step, object, x, y, zoom, question, answer
+- layer1_button, **layer1_content**, layer2_button, **layer2_content**
+
+Panel content can be:
+- Inline text (write directly in the cell)
+- File reference (path ending in `.md`)
+
+{: .tip }
+> **Inline vs File References**
+> For short panels (1–2 paragraphs), write content directly in the spreadsheet cell. Use file references for complex content with widgets or very long narratives. See the [CSV Reference](/docs/reference/csv-reference/#layer-content--contenido-de-capa) for details.
 
 ## Troubleshooting
 

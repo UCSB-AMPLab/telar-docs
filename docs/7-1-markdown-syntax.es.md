@@ -32,19 +32,54 @@ Telar usa el procesador [Python Markdown](https://python-markdown.github.io/) co
 
 ---
 
-## Estructura de paneles
+## Métodos de contenido de panel
 
-Los archivos de las capas de la historia (referenciados en las columnas `layer1_file` y `layer2_file`) usan Markdown con YAML front matter:
+Puedes proporcionar el contenido del panel de tres maneras. Para más detalles, consulta la [Referencia de CSV](/guia/referencia/csv-reference/#contenido-de-capa-layer1_content--contenido_capa1-etc).
+
+### Método 1: Introducir texto directamente
+
+Escribe el texto del panel directamente en la columna `contenido_capa1` de tu hoja de cálculo:
+
+| contenido_capa1 |
+|-----------------|
+| Este textil muestra **técnicas avanzadas de tejido** del período colonial. El patrón entrelazado indica una artesanía sofisticada. |
+
+Los saltos de línea en la celda de tu hoja de cálculo crean saltos de párrafo. El título del panel es el texto del botón de manera predeterminada.
+
+### Método 2: Pegar texto markdown
+
+Pega texto desde un editor de texto plano. Puedes incluir encabezados, widgets y un título de panel personalizado usando frontmatter YAML:
 
 ```markdown
 ---
-title: "Título de Tu Panel"
+title: "Técnicas de tejido"
 ---
 
-Tu contenido va aquí con soporte completo de Markdown.
+El patrón de urdimbre entrelazada visible aquí indica una técnica
+de tejido compleja que era común en el período colonial.
+
+## Detalles técnicos
+
+Estos patrones se creaban usando...
 ```
 
-El título del front matter aparece en el encabezado del panel. El contenido del cuerpo se convierte a HTML y se muestra en el panel.
+{: .warning }
+> Si copias y pegas desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe en sintaxis markdown.
+
+### Método 3: Indicar un archivo de texto
+
+Para contenido complejo, indica un archivo markdown guardado en `components/texts/stories/`:
+
+| contenido_capa1 |
+|-----------------|
+| textiles-coloniales/paso1-capa1.md |
+
+El archivo usa frontmatter para el título del panel y soporta todas las funcionalidades de markdown, incluyendo widgets.
+
+**Cuándo usar archivos de texto**:
+- Contenido con widgets (acordeón, pestañas, carrusel)
+- Contenido reutilizado en varias historias
+- Narrativas largas que se benefician de la edición en un editor de texto
 
 ---
 

@@ -27,8 +27,8 @@ components/
 ├── audio/                # Audio files (future support)
 ├── 3d-models/            # 3D model files (future support)
 └── texts/
-    ├── stories/          # Story layer content (markdown)
-    │   └── story1/       # Optional subfolders for organization
+    ├── stories/          # Only needed if using file references
+    │   └── story1/       # Optional subfolders for organisation
     │       ├── step1-layer1.md
     │       ├── step1-layer2.md
     │       └── ...
@@ -79,8 +79,8 @@ order,story_id,title,subtitle,byline
 Each story CSV (e.g., `story-1.csv`) contains step-by-step navigation data:
 
 ```csv
-step,question,answer,object,x,y,zoom,layer1_button,layer1_file,layer2_button,layer2_file
-1,"Question text","Brief answer","obj-001",0.5,0.5,1.0,"","story1/step1-layer1.md","","story1/step1-layer2.md"
+step,question,answer,object,x,y,zoom,layer1_button,layer1_content,layer2_button,layer2_content
+1,"Question text","Brief answer","obj-001",0.5,0.5,1.0,"","This object shows **important details**...","","story1/step1-layer2.md"
 ```
 
 ### Column Reference
@@ -93,13 +93,23 @@ step,question,answer,object,x,y,zoom,layer1_button,layer1_file,layer2_button,lay
 | `object` | Object ID from objects.csv |
 | `x, y, zoom` | IIIF viewer coordinates (0-1 normalized) |
 | `layer1_button` | Custom button text (empty = **Learn more**) |
-| `layer1_file` | Path to markdown file in `components/texts/stories/` |
+| `layer1_content` | Panel content: inline text or path to .md file |
 | `layer2_button` | Custom button text (empty = **Go deeper**) |
-| `layer2_file` | Path to markdown file in `components/texts/stories/` |
+| `layer2_content` | Panel content: inline text or path to .md file |
 
 {: .note }
 > **Button Behavior**
 > If button columns are empty, default text appears. If you provide text, it will be used instead.
+
+### Panel Content Options
+
+You can provide panel content in three ways. See the [CSV Reference](/docs/reference/csv-reference/#layer-content--contenido-de-capa) for full details.
+
+**Method 1: Entering text directly** — Type panel text directly in the spreadsheet cell. Best for short panels (1–2 paragraphs).
+
+**Method 2: Pasting markdown text** — Paste formatted text from a plain text editor. Supports headings, widgets, and custom panel titles via YAML frontmatter.
+
+**Method 3: Referencing a markdown file** — Point to a file saved in `components/texts/stories/`. Best for complex panels with widgets, or content reused across stories.
 
 ## Objects CSV Structure
 
@@ -457,8 +467,8 @@ obj-001,Textil Colonial,Un fragmento tejido...,Desconocido,circa 1650,Dominio P�
 
 **Story CSV:**
 ```csv
-paso,objeto,pregunta,respuesta,boton_capa1,archivo_capa1
-1,obj-001,¿Qué es esto?,Un textil colonial...,Aprende Más,historia1/paso1-capa1.md
+paso,objeto,pregunta,respuesta,boton_capa1,contenido_capa1
+1,obj-001,¿Qué es esto?,Un textil colonial...,Aprende Más,Este objeto muestra **detalles importantes**...
 ```
 
 ### Dual Headers

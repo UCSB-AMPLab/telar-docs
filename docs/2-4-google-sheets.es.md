@@ -94,7 +94,16 @@ Pestaña `objects` (campos comunes)
 
 Pestañas `story-X`
 
-- step, object, x, y, zoom, question, answer, layer1_button, layer1_file, layer2_button, layer2_file
+- step, object, x, y, zoom, question, answer
+- layer1_button, **layer1_content**, layer2_button, **layer2_content**
+
+El contenido del panel puede ser:
+- Texto en línea (escrito directamente en la celda)
+- Indicar un archivo de texto (ruta terminando en `.md`)
+
+{: .tip }
+> **Texto en línea vs archivos de texto**
+> Para paneles cortos (1–2 párrafos), escribe el contenido directamente en la celda de la hoja de cálculo. Usa archivos de texto para contenido complejo con widgets o narrativas muy largas. Consulta la [Referencia de CSV](/guia/referencia/csv-reference/#contenido-de-capa-layer1_content--contenido_capa1-etc) para más detalles.
 
 ## Solución de problemas
 

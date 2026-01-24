@@ -26,7 +26,7 @@ components/
 ├── audio/                # Archivos de audio (soporte futuro)
 ├── 3d-models/            # Archivos de modelos 3D (soporte futuro)
 └── texts/
-    ├── stories/          # Contenido de las capas de la historia (markdown)
+    ├── stories/          # Solo necesario si usas archivos de texto (markdown) aparte
     │   └── story1/       # Subcarpetas opcionales para organización
     │       ├── paso1-capa1.md
     │       ├── paso1-capa2.md
@@ -78,8 +78,8 @@ order,story_id,title,subtitle,byline
 Cada CSV de historia (ej., `story-1.csv`) contiene datos de navegación paso a paso:
 
 ```csv
-step,question,answer,object,x,y,zoom,layer1_button,layer1_file,layer2_button,layer2_file
-1,"Texto de pregunta","Respuesta breve","obj-001",0.5,0.5,1.0,"","story1/paso1-capa1.md","","story1/paso1-capa2.md"
+step,question,answer,object,x,y,zoom,layer1_button,layer1_content,layer2_button,layer2_content
+1,"Texto de pregunta","Respuesta breve","obj-001",0.5,0.5,1.0,"","Este objeto muestra **detalles importantes**...","","story1/paso1-capa2.md"
 ```
 
 ### Referencia de columnas
@@ -92,13 +92,23 @@ step,question,answer,object,x,y,zoom,layer1_button,layer1_file,layer2_button,lay
 | `object` | ID de objeto de objects.csv |
 | `x, y, zoom` | Coordenadas del visor IIIF (0-1 normalizadas) |
 | `layer1_button` | Texto de botón personalizado (vacío = **Saber más**) |
-| `layer1_file` | Ruta a archivo markdown en `components/texts/stories/` |
+| `layer1_content` | Contenido del panel: texto en línea o ruta a archivo .md |
 | `layer2_button` | Texto de botón personalizado (vacío = **Profundizar más**) |
-| `layer2_file` | Ruta a archivo markdown en `components/texts/stories/` |
+| `layer2_content` | Contenido del panel: texto en línea o ruta a archivo .md |
 
 {: .note }
 > **Comportamiento de botones**
 > Si las columnas de botones están vacías, aparece el texto predeterminado. Si proporcionas texto, se usará en su lugar.
+
+### Opciones de contenido de panel
+
+Puedes proporcionar el contenido del panel de tres maneras. Consulta la [Referencia de CSV](/guia/referencia/csv-reference/#contenido-de-capa-layer1_content--contenido_capa1-etc) para más detalles.
+
+**Método 1: Introducir texto directamente** — Escribe el texto del panel directamente en la celda de la hoja de cálculo. Ideal para paneles cortos (1–2 párrafos).
+
+**Método 2: Pegar texto markdown** — Pega texto formateado desde un editor de texto plano. Soporta encabezados, widgets y títulos de panel personalizados mediante frontmatter YAML.
+
+**Método 3: Indicar un archivo de texto** — Indica la ruta a un archivo guardado en `components/texts/stories/`. Ideal para paneles complejos con widgets, o contenido reutilizado en varias historias.
 
 ## Estructura CSV de objetos
 

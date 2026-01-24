@@ -33,19 +33,54 @@ In case you're wondering, Telar uses the [Python Markdown](https://python-markdo
 
 ---
 
-## Panel Structure
+## Panel Content Methods
 
-Story layer files (referenced in `layer1_file` and `layer2_file` columns) use markdown with frontmatter:
+You can provide panel content in three ways. For full details, see the [CSV Reference](/docs/reference/csv-reference/#layer-content--contenido-de-capa).
+
+### Method 1: Entering Text Directly
+
+Type panel text directly in your spreadsheet's `layer1_content` column:
+
+| layer1_content |
+|----------------|
+| This textile shows **advanced weaving techniques** from the colonial period. The interlocking pattern indicates sophisticated craftsmanship. |
+
+Line breaks in your spreadsheet cell create paragraph breaks. The panel title defaults to the button text.
+
+### Method 2: Pasting Markdown Text
+
+Paste text from a plain text editor. You can include headings, widgets, and a custom panel title using YAML frontmatter:
 
 ```markdown
 ---
-title: "Your Panel Title"
+title: "Weaving Techniques"
 ---
 
-Your content goes here with full markdown support.
+The interlocking warp pattern visible here indicates a complex
+weaving technique that was common in the colonial period.
+
+## Technical Details
+
+These patterns were created using...
 ```
 
-The title from frontmatter appears in the panel header. The body content is converted to HTML and displayed in the panel.
+{: .warning }
+> If you copy and paste from Microsoft Word, Google Docs, or similar applications, formatting will **not** be preserved. Write in markdown syntax instead.
+
+### Method 3: Referencing a Markdown File
+
+For complex content, reference a markdown file saved in `components/texts/stories/`:
+
+| layer1_content |
+|----------------|
+| colonial-textiles/step1-layer1.md |
+
+The file uses frontmatter for the panel title and supports all markdown features including widgets.
+
+**When to use file references**:
+- Content with widgets (accordion, tabs, carousel)
+- Content reused across multiple stories
+- Long narratives that benefit from editing in a text editor
 
 ---
 
