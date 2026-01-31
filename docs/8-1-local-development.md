@@ -18,25 +18,27 @@ Complete reference for local development, build commands, and troubleshooting.
 - **Ruby 3.0+**: Jekyll runtime
 - **Bundler**: Ruby dependency management
 - **Python 3.9+**: IIIF generation and CSV processing
+- **Node.js 18+**: JavaScript bundling (esbuild)
 - **Git**: Version control
 
 ### Installation Guides
 
 **macOS (Homebrew):**
 ```bash
-brew install ruby python git
+brew install ruby python node git
 gem install bundler
 ```
 
 **Ubuntu/Debian:**
 ```bash
-sudo apt-get install ruby-full python3 python3-pip git build-essential
+sudo apt-get install ruby-full python3 python3-pip nodejs npm git build-essential
 gem install bundler
 ```
 
 **Windows:**
 - Install [RubyInstaller](https://rubyinstaller.org/)
 - Install [Python](https://www.python.org/downloads/)
+- Install [Node.js](https://nodejs.org/) (LTS version recommended)
 - Install [Git for Windows](https://gitforwindows.org/)
 
 ## Project Setup
@@ -53,6 +55,9 @@ bundle install
 
 # Install Python dependencies
 pip install -r requirements.txt
+
+# Install Node.js dependencies
+npm install
 ```
 
 ### Configuration
@@ -478,6 +483,47 @@ bundle exec htmlproofer ./_site --disable-external
 # Check for broken links
 bundle exec jekyll doctor
 ```
+
+### Automated Tests
+
+Telar includes automated tests for Python scripts and JavaScript modules. Running tests is optional for storytellers but recommended for developers contributing to the framework.
+
+**Python Unit Tests:**
+
+```bash
+# Run all Python unit tests
+python3 -m pytest tests/unit/ -v
+
+# Run with coverage report
+python3 -m pytest tests/unit/ --cov=scripts/telar
+```
+
+**JavaScript Unit Tests:**
+
+```bash
+# Run JavaScript tests
+npm run test:js
+
+# Run in watch mode (re-runs on file changes)
+npm run test:js:watch
+```
+
+**End-to-End Tests (Playwright):**
+
+E2E tests require a running Jekyll server and Playwright browsers:
+
+```bash
+# Install Playwright browsers (one-time setup)
+playwright install chromium
+
+# Start Jekyll server in one terminal
+bundle exec jekyll serve --port 4001
+
+# Run E2E tests in another terminal
+python3 -m pytest tests/e2e/ -v
+```
+
+Tests run automatically on GitHub via the `telar-tests.yml` workflow whenever you push to main or open a pull request.
 
 ## Publishing
 

@@ -21,6 +21,7 @@ Este flujo de trabajo es mejor para desarrolladores y usuarios que quieren previ
 - Ruby 3.0+ (para Jekyll)
 - Bundler
 - Python 3.9+ (para generación IIIF)
+- Node.js 18+ (para empaquetado de JavaScript)
 
 ## Instalación
 
@@ -50,6 +51,9 @@ bundle install
 
 # Instala dependencias de Python (para generación IIIF)
 pip install -r requirements.txt
+
+# Instala dependencias de Node.js (para empaquetado de JavaScript)
+npm install
 ```
 
 ### Configura ajustes del sitio

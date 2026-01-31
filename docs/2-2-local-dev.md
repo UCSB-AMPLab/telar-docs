@@ -21,6 +21,7 @@ This workflow is best for developers and users who want to preview changes local
 - Ruby 3.0+ (for Jekyll)
 - Bundler
 - Python 3.9+ (for IIIF generation)
+- Node.js 18+ (for JavaScript bundling)
 
 ## Installation
 
@@ -50,6 +51,9 @@ bundle install
 
 # Install Python dependencies (for IIIF generation)
 pip install -r requirements.txt
+
+# Install Node.js dependencies (for JavaScript bundling)
+npm install
 ```
 
 ### Configure Site Settings

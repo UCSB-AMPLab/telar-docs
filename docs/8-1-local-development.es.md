@@ -18,6 +18,7 @@ Referencia completa para desarrollo local, comandos de construcción y solución
 - **Ruby 3.0+**: Runtime de Jekyll
 - **Bundler**: Gestión de dependencias de Ruby
 - **Python 3.9+**: Generación IIIF y procesamiento CSV
+- **Node.js 18+**: Empaquetado de JavaScript (esbuild)
 - **Git**: Control de versiones
 
 ### Guías de instalación
@@ -25,14 +26,14 @@ Referencia completa para desarrollo local, comandos de construcción y solución
 **macOS (Homebrew):**
 
 ```bash
-brew install ruby python git
+brew install ruby python node git
 gem install bundler
 ```
 
 **Ubuntu/Debian:**
 
 ```bash
-sudo apt-get install ruby-full python3 python3-pip git build-essential
+sudo apt-get install ruby-full python3 python3-pip nodejs npm git build-essential
 gem install bundler
 ```
 
@@ -40,6 +41,7 @@ gem install bundler
 
 - Instala [RubyInstaller](https://rubyinstaller.org/)
 - Instala [Python](https://www.python.org/downloads/)
+- Instala [Node.js](https://nodejs.org/) (se recomienda la versión LTS)
 - Instala [Git for Windows](https://gitforwindows.org/)
 
 ## Configuración del proyecto
@@ -56,6 +58,9 @@ bundle install
 
 # Instala dependencias de Python
 pip install -r requirements.txt
+
+# Instala dependencias de Node.js
+npm install
 ```
 
 ### Configuración
@@ -424,6 +429,47 @@ bundle exec htmlproofer ./_site --disable-external
 # Revisa enlaces rotos
 bundle exec jekyll doctor
 ```
+
+### Pruebas automatizadas
+
+Telar incluye pruebas automatizadas para los scripts de Python y los módulos de JavaScript. Ejecutar las pruebas es opcional para narradores, pero se recomienda para personas que contribuyen al desarrollo del marco.
+
+**Pruebas unitarias de Python:**
+
+```bash
+# Ejecuta todas las pruebas unitarias de Python
+python3 -m pytest tests/unit/ -v
+
+# Ejecuta con reporte de cobertura
+python3 -m pytest tests/unit/ --cov=scripts/telar
+```
+
+**Pruebas unitarias de JavaScript:**
+
+```bash
+# Ejecuta las pruebas de JavaScript
+npm run test:js
+
+# Ejecuta en modo *watch* (re-ejecuta al cambiar archivos)
+npm run test:js:watch
+```
+
+**Pruebas de extremo a extremo (Playwright):**
+
+Las pruebas E2E requieren un servidor Jekyll ejecutándose y los navegadores de Playwright:
+
+```bash
+# Instala navegadores de Playwright (configuración inicial, una sola vez)
+playwright install chromium
+
+# Inicia el servidor Jekyll en una terminal
+bundle exec jekyll serve --port 4001
+
+# Ejecuta las pruebas E2E en otra terminal
+python3 -m pytest tests/e2e/ -v
+```
+
+Las pruebas se ejecutan automáticamente en GitHub mediante el flujo de trabajo `telar-tests.yml` cada vez que haces push a main o abres un pull request.
 
 ## Publicación
 

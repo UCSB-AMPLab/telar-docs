@@ -59,6 +59,23 @@ The upgrade system:
 4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
 5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
+### v0.7.0 Upgrade Notes
+
+v0.7.0 adds Node.js as a requirement for local development builds:
+
+**New requirement for local development:**
+- **Node.js 18+** is now required to run `bundle exec jekyll build` or `bundle exec jekyll serve`
+- This enables JavaScript module bundling via esbuild during the build process
+- **GitHub-based workflows are not affected** — GitHub Actions already includes Node.js
+
+**If you develop locally:**
+1. Install Node.js 18+ ([nodejs.org](https://nodejs.org/))
+2. Run `npm install` in your repository to install JavaScript dependencies
+3. Then proceed with normal Jekyll commands
+
+**If you only use GitHub's web interface:**
+- No action required — your site will continue to build automatically
+
 ## Manual Setup for Earlier Versions
 
 If your site is running **v0.2.0 through v0.3.3**, you'll need to add the upgrade workflow files to your repository first. This is a **one-time setup**—after this, all future upgrades will be automated.

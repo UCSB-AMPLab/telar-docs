@@ -74,6 +74,23 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
+### Notas de actualización a v0.7.0
+
+v0.7.0 agrega Node.js como requisito para compilar el sitio localmente:
+
+**Nuevo requisito para desarrollo local:**
+- **Node.js 18+** ahora es necesario para ejecutar `bundle exec jekyll build` o `bundle exec jekyll serve`
+- Esto permite el empaquetado de módulos JavaScript mediante esbuild durante el proceso de compilación
+- **Los flujos de trabajo en GitHub no se ven afectados** — GitHub Actions ya incluye Node.js
+
+**Si desarrollas localmente:**
+1. Instala Node.js 18+ ([nodejs.org](https://nodejs.org/))
+2. Ejecuta `npm install` en tu repositorio para instalar las dependencias de JavaScript
+3. Luego procede con los comandos normales de Jekyll
+
+**Si solo usas la interfaz web de GitHub:**
+- No se requiere ninguna acción — tu sitio seguirá compilándose automáticamente
+
 ## Configuración manual para versiones anteriores
 
 Si tu sitio está en la versión **v0.2.0 hasta v0.3.3**, primero necesitas agregar el archivo del flujo de trabajo de actualización a tu repositorio. Esta configuración se hace **una sola vez**; después de eso, todas las actualizaciones futuras serán automatizadas.
