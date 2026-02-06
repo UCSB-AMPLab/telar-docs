@@ -10,253 +10,291 @@ permalink: /docs/workflows/github-web/
 
 # GitHub Web Interface Workflow
 
-**No installation required!** Build your narrative entirely through GitHub's web interface and Google Sheets.
+**No installation required.** Build your Telar exhibition entirely in your browser using GitHub and Google Sheets.
 
 ## Overview
 
-This workflow lets you create Telar exhibitions without installing any software. You'll manage content through GitHub's web interface and Google Sheets, with automatic builds handled by GitHub Actions.
+This is the simplest way to create a Telar site. You manage all your content — objects, stories, and text — in a Google Sheets spreadsheet. GitHub handles hosting your images and publishing your site automatically.
+
+You will need:
+
+- A [GitHub account](https://github.com/join) (free)
+- A [Google account](https://accounts.google.com/) for Google Sheets (free)
 
 {: .note }
 
-> **Quick Start Option**
-> If you're eager to experiment, skip to [Phase 2: Get Your Workspace Ready](#phase-2-get-your-workspace-ready) and then jump to [Phase 4: Structure Your Story](#phase-4-structure-your-story).
+> **Quick Start**
+> If you want to jump right in, skip to [Phase 2: Set Up Your Workspace](#phase-2-set-up-your-workspace) and come back to Phase 1 later.
 
-## Phase 1: Narrative Planning
+## Phase 1: Plan Your Story
 
-Before diving in, plan your story:
+Before you start, spend a few minutes thinking about your narrative:
 
 - Browse the [Telar example site](https://ampl.clair.ucsb.edu/telar) for inspiration
-- What story do you want to tell?
-- What are the key steps or moments in your story?
-- For each step, draft a **question** (heading) and **answer** (brief 1-2 sentence response)
-- What image or images can you use to anchor your story?
-- What details in these images matter most and when?
-- Sketch your narrative structure on paper before using tools
+- What story do you want to tell? What are the key moments?
+- For each moment, draft a **question** (heading) and a brief **answer** (1-2 sentences)
+- What images will anchor your story? What details matter most?
+- Sketch your narrative structure on paper — even a rough outline helps
 
-## Phase 2: Get Your Workspace Ready
+## Phase 2: Set Up Your Workspace
 
 ### Create Your Repository
 
-1. Visit the [Telar GitHub repository](https://github.com/UCSB-AMPLab/telar)
+A repository is your project's home on GitHub — it holds your images and configuration files.
+
+1. Visit the [Telar template](https://github.com/UCSB-AMPLab/telar)
 2. Click the green **Use this template** button
-3. Choose a repository name
-4. Click **Create repository**
-   ![GitHub screenshot for Use this template button](/images/use-this-template.png)
+3. Choose **Create a new repository**
+4. Give your repository a name (this becomes part of your site's web address)
+5. Click **Create repository**
 
-{: .note }
-
-> You'll need a GitHub account if you don't have one. Sign up at [github.com](https://github.com/join).
+![GitHub screenshot for Use this template button](/images/use-this-template.png)
 
 ### Duplicate the Google Sheets Template
 
+Your Google Sheets spreadsheet is where you manage all your content — objects, stories, and text.
+
 1. Go to [https://bit.ly/telar-template](https://bit.ly/telar-template)
 2. Click **File** → **Make a copy**
-3. Save to your Google Drive with a descriptive name
+3. Save to your Google Drive with a descriptive name (e.g., "My Telar Exhibition")
 
-You're ready! Now you have places to upload images and organize content.
+You now have your two workspaces ready: a GitHub repository for images and publishing, and a Google Sheet for content.
 
-## Phase 3: Gather Materials
+## Phase 3: Add Your Images
 
-Telar supports two ways to add images:
+Telar supports two ways to include images in your exhibition.
 
-### Option A: Upload Your Images
+### Option A: Upload Your Own Images
 
-1. Navigate to `components/images/` in your GitHub repository
+1. In your GitHub repository, navigate to `components/images/`
 2. Click **Add file** → **Upload files**
-3. Drag images into upload area
-4. Name files with simple object IDs (e.g., `textile-001.jpg`, `ceramic-002.jpg`)
-   - Avoid spaces in filenames
-5. Add the object ID (with or without file extension) to the "objects" tab of your spreadsheet
-6. Commit changes to save
+3. Drag your images into the upload area
+4. Give each file a simple name without spaces (e.g., `textile-001.jpg`, `ceramic-002.jpg`)
+5. Click **Commit changes** to save
+
+The filename (without the extension) becomes the image's `object_id` — you will use this to reference it in your spreadsheet.
 
 {: .warning }
 
 > **File Size Limits**
-> Individual images: Up to 100 MB
-> Total repository: Keep under 1 GB
+> Individual images: up to 100 MB. Total repository: keep under 1 GB.
 
 ![GitHub screenshot for uploading files](/images/add-files.png)
-![GitHub screenshot for uploading files](/images/commit-files.png)
+![GitHub screenshot for committing uploaded files](/images/commit-files.png)
 
-### Option B: Use IIIF Images
+### Option B: Use IIIF Images from Museums and Libraries
 
-1. Find IIIF resources from institutions ([IIIF Guide to Finding Resources](https://iiif.io/guides/finding_resources/))
+Many institutions provide high-resolution images through the IIIF standard (pronounced "triple-eye-eff"). You can use these images directly in Telar without downloading anything.
+
+1. Find IIIF resources from institutions like the Library of Congress, the British Library, or the Smithsonian ([IIIF Guide to Finding Resources](https://iiif.io/guides/finding_resources/))
 2. Copy the manifest URL (e.g., `https://iiif.io/api/cookbook/recipe/0001-mvm-image/manifest.json`)
-3. Add to the "objects" tab with a simple object_id (e.g., `museum-textile-001`)
-   ![GitHub screenshot for uploading files](/images/external-iiif-manifest.png)
+3. In your spreadsheet's "objects" tab, add a row with a simple `object_id` and paste the manifest URL into the `source_url` column
 
-### Add Object Details
+![Adding an external IIIF manifest](/images/external-iiif-manifest.png)
 
-Fill in the objects tab of your spreadsheet:
+## Phase 4: Build Your Story in Google Sheets
 
-- `object_id`: Simple identifier (matches filename for uploaded images)
-- `title`: Display name
-- `description`: Brief description
-- `creator`, `date`, `medium`, `dimensions`, `location`, `credit`: Metadata fields
-- `source_url`: URL for external IIIF resources (leave blank for uploaded images)
+All your content lives in the spreadsheet. It has three types of tabs:
 
-### Create Narrative Texts
+- **project** — your site's settings and a list of your stories
+- **objects** — the images used across your exhibition
+- **story-1**, **story-2**, etc. — the steps and content for each story
 
-Write markdown files for your story layer content:
+### Fill in the Objects Tab
 
-1. Navigate to `components/texts/stories/story1/` in your repository
-2. Click **Add file** → **Create new file**
-3. Name the file (e.g., `step1-layer1.md`, `weaving-techniques.md`)
-   - Avoid spaces (use hyphens or underscores)
-   - Use `.md` extension
-4. Add frontmatter and content:
+Add a row for each image in your exhibition:
 
-   ```markdown
-   ---
-   title: "Weaving Techniques"
-   ---
-
-   The interlocking warp pattern visible here indicates...
-   ```
-
-5. Commit the file
-6. Keep note of paths for Phase 4
-   ![GitHub screenshot for creating new layer](/images/create-new-layer.png)
-
-![GitHub screenshot for editing file](/images/edit-layer.png)
+- `object_id` — a simple identifier (matches the filename for uploaded images, or any name you choose for IIIF images)
+- `title` — the display name
+- `description` — a brief description
+- `source_url` — the IIIF manifest URL (leave blank for uploaded images)
+- `creator`, `date`, `medium`, `dimensions` — metadata fields (all optional)
 
 {: .tip }
 
-> **Markdown Formatting**
-> Panel content supports rich markdown including image sizing, videos, and more. See the [Markdown Syntax Guide](/docs/reference/markdown-syntax/) for complete reference.
+> **Ignoring Rows and Columns**
+> Prefix any row or column header with `#` to have Telar skip it. This is useful for notes, instructions, and TODOs (e.g., `# TODO: verify this date`).
 
-## Phase 4: Structure Your Story
+### Structure Your Story
 
-Connect everything in your Google Sheets story sheet:
+In each story tab (e.g., `story-1`), add a row for each step in your narrative:
 
-### Add Story Steps
+| Column | What it does |
+|--------|-------------|
+| `step` | Step number (1, 2, 3...) |
+| `object` | Which image to show (the `object_id` from the objects tab) |
+| `x`, `y`, `zoom` | Where to look in the image — use `0.5, 0.5, 1.0` as a starting point |
+| `question` | The heading for this step (e.g., "What is this textile?") |
+| `answer` | A brief 1-2 sentence response |
 
-For each step in your story, add a row with:
+This is enough to create a working story. Each step shows an image with a question and answer that guide the viewer through your narrative.
 
-- **Question**: The heading text (e.g., "What is this textile?")
-- **Answer**: A brief 1-2 sentence response
-- **Object ID**: The object to display (matching your objects sheet)
-- **Coordinates**: Use placeholders for now (0.5, 0.5, 1.0) - refine in Phase 6
+### Add Detail Panels
 
-### Connect Narrative Content
+For steps where you want to share more than a brief answer, add content to the panel columns. Type your text directly into the spreadsheet cell:
 
-Reference the markdown files you created:
+| Column | What it does |
+|--------|-------------|
+| `layer1_content` | "Learn more" panel — extra detail about this step |
+| `layer2_content` | "Go deeper" panel — even more depth |
+| `layer1_button` | Custom button text (leave blank for "Learn more") |
+| `layer2_button` | Custom button text (leave blank for "Go deeper") |
 
-- In `layer1_file` column: add path (e.g., `story1/step1-layer1.md`)
-- In `layer2_file` column: add path if you have a second layer
-- Leave blank if a step doesn't need a panel
-
-### Customize Panel Buttons (Optional)
-
-- Add custom button text in `layer1_button` and `layer2_button` columns
-- Leave blank to use defaults ("Learn more" and "Go deeper")
+Write your panel text directly in the cell. You can use basic markdown formatting: `**bold**`, `*italic*`, and headings with `##`.
 
 {: .tip }
 
-> **Ignoring Rows**
-> Add a `#` prefix to ignore rows or add notes:
->
-> - `# TODO: verify this date`
-> - The template includes an `# Instructions` column for guidance
+> **Keep it Simple**
+> For most stories, the question-and-answer columns plus one layer of detail panels is plenty. You can always add more depth later.
+
+### Register Your Stories
+
+In the **project** tab, list each story by its number and title. The template shows you the format — add a row below the `STORIES` marker for each story tab you have created.
+
+### Make a Story Private (Optional)
+
+{: .beta }
+
+> **New in v0.8.0**
+
+Private stories are useful for classroom settings — drafts, work in progress, or student projects that are not ready to share publicly. Visitors will see the story listed on your homepage, but they will need a key to view it.
+
+To make a story private:
+
+1. In the **project** tab, add `yes` to the `private` column for any story you want to restrict
+2. In your repository's `_config.yml` file, set a `story_key` — this is the password visitors will need to enter
+
+Anyone with the key can view the story. You can share the key with your class, or share a direct link that includes the key so students do not have to type it.
 
 ## Phase 5: Connect and Publish
 
 ### Enable GitHub Pages
 
-1. Go to repository **Settings** → **Pages**
-2. Source: **GitHub Actions**
+GitHub Pages turns your repository into a live website for free.
+
+1. In your repository, go to **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
 3. Click **Save**
-   ![GitHub screenshot for setting up github actions](/images/github-actions.gif)
 
-### Share Your Google Sheet
+![Setting up GitHub Pages with GitHub Actions](/images/github-actions.gif)
 
-1. Click **Share** button
-2. Set to "Anyone with the link (Viewer)"
+### Share and Publish Your Google Sheet
+
+Your spreadsheet needs two types of access so Telar can read it:
+
+**Share your sheet:**
+
+1. Click the **Share** button in Google Sheets
+2. Set access to "Anyone with the link" with **Viewer** permissions
 3. Copy the shared URL
 
-### Publish Your Google Sheet
+**Publish your sheet:**
 
-1. **File** → **Share** → **Publish to web**
+1. Go to **File** → **Share** → **Publish to web**
 2. Click **Publish**
 3. Copy the published URL
 
-### Configure `_config.yml`
+### Configure Your Site
 
-1. Navigate to `_config.yml` in your repository
-2. Click pencil icon to edit
+Edit the `_config.yml` file in your repository to connect everything:
 
-#### First, edit your site's basic settings
-3. Edit your site name, description, and include your name and details.
-4. Make sure to edit your site's URL and basename. 
-   1. The `URL` should be either the default GitHub pages URL for your account, for example, `https://yourgithubusername.github.io`, or a custom domain if you have configured one (e.g. `https://mywebsite.com`). 
-   2. the `basename` should match the name you gave your repository. 
-   3. the website's full address will be `url/basename`, e.g. `https://yourgithubusername.github.io/my-telar-site`.
-   ![GitHub screenshot for editing config file](/images/config_title.gif)
+1. Navigate to `_config.yml` and click the pencil icon to edit
 
-#### Add the details for your Google Sheet
-1. Scroll down in to find `google_sheets` section
-2. Ensure that the Google Sheets integration is on (it should say `enabled: true` - if it says `enabled: false` change it to `enabled: true`)
-3. Paste the shared URL into `shared_url`
-4. Paste the published URL into `published_url`
+2. **Site settings** — fill in your site's name, description, and your details:
 
-#### Optionally, choose a theme
-9.  (Optional) Choose your theme:
    ```yaml
-   telar_theme: "paisajes" # Options: paisajes, neogranadina, santa-barbara, austin
+   title: "My Exhibition"
+   description: "A visual narrative about..."
+   author:
+     name: "Your Name"
    ```
 
-#### Commit changes
-10. Click the green "Commit changes" button to save.  
-   ![GitHub screenshot for editing config file](/images/config_theme.gif)
+3. **Web address** — set your site's URL:
 
-### Wait for Build
+   ```yaml
+   url: "https://yourgithubusername.github.io"
+   baseurl: "/your-repository-name"
+   ```
 
-1. GitHub Actions will automatically build your site (2-5 minutes)
-2. View your site at `https://[username].github.io/[repository]/`
+   Your site will be available at `https://yourgithubusername.github.io/your-repository-name`.
+
+4. **Google Sheets** — paste in the URLs you copied:
+
+   ```yaml
+   google_sheets:
+     enabled: true
+     shared_url: "https://docs.google.com/..."
+     published_url: "https://docs.google.com/..."
+   ```
+
+5. **Theme** (optional) — choose a visual theme:
+
+   ```yaml
+   telar_theme: "paisajes"  # Options: paisajes, neogranadina, santa-barbara, austin
+   ```
+
+6. **Private story key** (only if you have private stories):
+
+   ```yaml
+   story_key: "your-secret-key"
+   ```
+
+7. Click **Commit changes** to save
+
+![Editing config: title and URL](/images/config_title.gif)
+![Editing config: Google Sheets and theme](/images/config_theme.gif)
+
+### Wait for Your Site to Build
+
+After committing, GitHub Actions will automatically build and publish your site. This takes 2-5 minutes.
+
+1. Click the **Actions** tab to watch the build progress
+2. When it finishes, visit your site at the URL you configured
 
 ## Phase 6: Refine
 
-Polish your narrative:
-
 ### Review Your Site
 
-1. Browse through pages and stories
-2. Check for warning messages on the home page
-3. Fix any configuration issues in Google Sheets
+Browse through your exhibition and check for:
 
-### Use Coordinate Identification Tool
+- Warning messages on the homepage (these point to configuration issues)
+- Correct images appearing for each story step
+- Text displaying as expected
 
-1. Navigate to any object page
-2. Click **Identify coordinates** button below viewer
+### Set Your Image Coordinates
+
+The placeholder coordinates (`0.5, 0.5, 1.0`) show the center of each image. To focus on specific details:
+
+1. Navigate to any object page on your site
+2. Click **Identify coordinates** below the image viewer
 3. Pan and zoom to find the perfect view for each story step
-4. Copy coordinates (X, Y, Zoom values)
-5. Paste into your story sheet
+4. Copy the X, Y, and Zoom values
+5. Paste them into your spreadsheet
 
-### Trigger Rebuild
+### Trigger a Rebuild
 
-After editing Google Sheets:
+After editing your Google Sheet, you need to tell GitHub to rebuild your site:
 
-1. Go to repository's **Actions** tab
+1. Go to your repository's **Actions** tab
 2. Click **Build and Deploy** workflow
-3. Click **Run workflow** button
-4. Select branch (usually `main`)
-5. Click green **Run workflow** button
-6. Wait 2-5 minutes
+3. Click **Run workflow** → select `main` → click the green **Run workflow** button
+4. Wait 2-5 minutes for the new version
 
-### Iterate
+### Keep Building
 
-1. Add additional content layers
-2. Add glossary terms
-3. Customize your homepage (edit `index.md` in the repository root)
-4. Polish until your story shines
+Once the basics are in place, you can:
 
-{: .tip }
+- Add more stories (create new story tabs in your spreadsheet)
+- Add a glossary of terms (use the glossary tab in your spreadsheet)
+- Customize your homepage (edit `index.md` in your repository)
+- Browse and search your objects collection (enabled by default in v0.8.0)
 
-> **Customize Your Homepage**
-> Edit `index.md` to change your welcome message, section headings, or remove the demo notice. See the [Home Page Customization Guide](/docs/customization/home-page/) for details.
+## Going Further: Markdown Files
+
+For steps that need complex panel content — such as embedded videos, image carousels, tabbed sections, or very long narratives — you can link to markdown files stored in your repository instead of writing directly in the spreadsheet. See the [Hybrid Workflow](/docs/workflows/hybrid/) for a guide to combining Google Sheets with markdown files.
 
 ## Next Steps
 
-- [Learn about Content Structure](/docs/content-structure/)
-- [Explore IIIF Integration](/docs/iiif-integration/)
-- [Customize Your Theme](/docs/customization/themes/)
+- [Content Structure](/docs/content-structure/) — how Telar organizes your materials
+- [IIIF Integration](/docs/iiif-integration/) — working with high-resolution images
+- [Themes](/docs/customization/themes/) — customizing your site's look and feel
