@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 2.4. Integración con Google Sheets
+title: 2.5. Integración con Google Sheets
 parent: 2. Flujos de Trabajo
 grand_parent: Documentación
-nav_order: 4
+nav_order: 5
 lang: es
 permalink: /guia/flujos-de-trabajo/google-sheets/
 ---

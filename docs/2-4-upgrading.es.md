@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 2.3. Actualizar Telar
+title: 2.4. Actualizar Telar
 parent: 2. Flujos de Trabajo
 grand_parent: Documentación
-nav_order: 3
+nav_order: 4
 lang: es
 permalink: /guia/flujos-de-trabajo/actualizacion/
 ---

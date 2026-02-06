@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 2.2. Desarrollo Local
+title: 2.3. Desarrollo Local
 parent: 2. Flujos de Trabajo
 grand_parent: Documentación
-nav_order: 2
+nav_order: 3
 lang: es
 permalink: /guia/flujos-de-trabajo/desarrollo-local/
 ---

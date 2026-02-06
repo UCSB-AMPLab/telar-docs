@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 2.5. Insertar en LMS y sitios web
+title: 2.6. Insertar en LMS y sitios web
 parent: 2. Flujos de trabajo
 grand_parent: Documentación
-nav_order: 5
+nav_order: 6
 lang: es
 permalink: /guia/flujos-de-trabajo/insercion/
 ---

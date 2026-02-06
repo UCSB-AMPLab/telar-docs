@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 2.4. Google Sheets Integration
+title: 2.5. Google Sheets Integration
 parent: 2. Workflows
 grand_parent: Documentation
-nav_order: 4
+nav_order: 5
 lang: en
 permalink: /docs/workflows/google-sheets/
 ---

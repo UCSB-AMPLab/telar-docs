@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 2.2. Local Development
+title: 2.3. Local Development
 parent: 2. Workflows
 grand_parent: Documentation
-nav_order: 2
+nav_order: 3
 lang: en
 permalink: /docs/workflows/local-dev/
 ---

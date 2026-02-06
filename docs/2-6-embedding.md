@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 2.5. Embedding in LMS & Websites
+title: 2.6. Embedding in LMS & Websites
 parent: 2. Workflows
 grand_parent: Documentation
-nav_order: 5
+nav_order: 6
 lang: en
 permalink: /docs/workflows/embedding/
 ---

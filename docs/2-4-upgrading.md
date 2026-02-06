@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 2.3. Upgrading Telar
+title: 2.4. Upgrading Telar
 parent: 2. Workflows
 grand_parent: Documentation
-nav_order: 3
+nav_order: 4
 lang: en
 permalink: /docs/workflows/upgrading/
 ---
