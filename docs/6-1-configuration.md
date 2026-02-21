@@ -156,10 +156,20 @@ Control how stories display and behave:
 
 ```yaml
 story_interface:
+  show_on_homepage: true  # Set to false to hide stories section from homepage
   show_story_steps: true  # Set to false to hide "Step X" overlay
-  include_demo_content: false  # Set to true to enable demo stories
   show_object_credits: true  # Set to false to hide credits badge on objects
+  include_demo_content: false  # Set to true to enable demo stories
 ```
+
+### show_on_homepage
+
+Controls whether the stories section appears on the homepage:
+
+- **`true` (default)**: Stories appear on the homepage as cards
+- **`false`**: Hides the stories section from the homepage (stories remain accessible via direct URL)
+
+Use this when you want objects on the homepage but prefer stories to be accessed through navigation or direct links rather than homepage cards.
 
 ### show_story_steps
 
@@ -189,6 +199,63 @@ Demo stories appear alongside your own content with a "Demo content" badge. They
 - Testing only your own content
 
 See [Demo Content](/docs/iiif/demo-content/) for complete details on available demos.
+
+## Collection Interface Settings
+
+Control how the objects gallery displays and behaves:
+
+```yaml
+collection_interface:
+  browse_and_search: true  # Set to false to disable filtering sidebar and search
+  show_link_on_homepage: true  # Set to false to hide "View the objects" link
+  show_sample_on_homepage: true  # Set to true to show sample objects on homepage
+  featured_count: 4  # Number of objects to show on homepage
+```
+
+### browse_and_search
+
+Controls the gallery's filtering sidebar and full-text search:
+
+- **`true` (default)**: Objects page shows a filter sidebar with facets (type, creator, period, subjects) and a search bar powered by Lunr.js
+- **`false`**: Objects page shows a simple grid without filtering or search
+
+### show_link_on_homepage
+
+Controls the "View the objects" link on the homepage:
+
+- **`true` (default)**: Shows a link to the objects gallery on the homepage
+- **`false`**: Hides the link (objects page still accessible via navigation)
+
+### show_sample_on_homepage
+
+Controls whether sample objects appear on the homepage:
+
+- **`true` (default)**: Shows a sample of objects on the homepage, drawn from those marked as `featured` in objects.csv (or random if none are featured)
+- **`false`**: No objects displayed on the homepage
+
+### featured_count
+
+Number of objects to display on the homepage when `show_sample_on_homepage` is true:
+
+- **Default**: `4`
+- Prioritizes objects marked `featured: yes` in objects.csv
+- If fewer featured objects exist than `featured_count`, fills remaining slots randomly
+
+## Story Protection
+
+Encrypt stories so that only viewers with the correct key can access them:
+
+```yaml
+story_key: "your-secret-key"
+```
+
+- Stories with `protected: yes` in project.csv will be encrypted during build
+- Viewers access protected stories via a URL parameter: `?key=your-secret-key`
+- Leave `story_key` empty or omit it to disable story protection
+- See [Private Stories](/docs/content-structure/private-stories/) for setup details
+
+{: .warning }
+> Story protection uses client-side encryption. It prevents casual access but is not suitable for highly sensitive content. For stronger security, use a private GitHub repository.
 
 ### show_object_credits
 
@@ -318,8 +385,8 @@ development-features:
     preload_steps: 6
     loading_threshold: 5
     min_ready_viewers: 3
-  hide_stories: false
-  hide_collections: false
+  skip_stories: false
+  skip_collections: false
 ```
 
 #### christmas_tree_mode
@@ -342,7 +409,7 @@ Controls how story viewers are preloaded for smoother navigation:
 
 Higher values = smoother scrolling but more memory usage. The defaults work well for most sites.
 
-#### hide_stories
+#### skip_stories
 
 Build a site without stories, keeping only objects visible:
 
@@ -351,7 +418,10 @@ Build a site without stories, keeping only objects visible:
 
 Use this when you want to showcase objects without narrative stories, or when building a catalog-style site.
 
-#### hide_collections
+{: .note }
+> Renamed from `hide_stories` in v0.8.0. The old name still works for backward compatibility.
+
+#### skip_collections
 
 Build a site with only custom user pages (no objects or stories):
 
@@ -361,7 +431,7 @@ Build a site with only custom user pages (no objects or stories):
 Use this when building a site with only custom pages (like an "About" or landing page) without any collections.
 
 {: .note }
-> When `hide_collections` is enabled, `hide_stories` is automatically implied.
+> When `skip_collections` is enabled, `skip_stories` is automatically implied. Renamed from `hide_collections` in v0.8.0 — the old name still works for backward compatibility.
 
 ## Full Example
 
@@ -381,9 +451,20 @@ telar_language: "en"
 
 # Story Interface Settings
 story_interface:
+  show_on_homepage: true
   show_story_steps: true
   show_object_credits: true
   include_demo_content: false
+
+# Collection Interface Settings
+collection_interface:
+  browse_and_search: true
+  show_link_on_homepage: true
+  show_sample_on_homepage: true
+  featured_count: 4
+
+# Story Protection (optional)
+# story_key: "your-secret-key"
 
 # Google Sheets Integration (optional)
 google_sheets:
@@ -453,8 +534,8 @@ show_drafts: false
 
 # Telar Settings
 telar:
-  version: "0.6.2-beta"
-  release_date: "2025-12-03"
+  version: "0.8.0-beta"
+  release_date: "2026-02-05"
 
 # Plugins
 plugins:
@@ -475,14 +556,16 @@ development-features:
     preload_steps: 6
     loading_threshold: 5
     min_ready_viewers: 3
-  hide_stories: false
-  hide_collections: false
+  skip_stories: false
+  skip_collections: false
 ```
 
-## Next Steps
+## See Also
 
 - [Customize Your Theme](/docs/customization/themes/)
 - [Customize Your Home Page](/docs/customization/home-page/)
 - [Configure Navigation Menu](/docs/customization/navigation-menu/)
-- [Learn About Demo Content](/docs/iiif/demo-content/)
-- [Explore GitHub Actions](/docs/developers/github-actions/)
+- [Demo Content](/docs/iiif/demo-content/)
+- [Private Stories](/docs/content-structure/private-stories/)
+- [CSV Reference: Project & Objects](/docs/reference/csv-project-objects/)
+- [GitHub Actions](/docs/developers/github-actions/)
