@@ -8,13 +8,17 @@ lang: en
 permalink: /docs/workflows/local-dev/
 ---
 
-# Local Development Workflow
+# Local Development
 
-Preview changes locally before publishing. Full control over the build process.
+Work entirely on your computer with CSV files and a local Jekyll server. No Google Sheets or GitHub required.
 
 ## Overview
 
-This workflow is best for developers and users who want to preview changes locally before deploying. You'll work with files directly on your computer and run Jekyll locally.
+This workflow gives you full control over the build process. You edit CSV and markdown files directly, preview changes instantly, and publish when ready. It is ideal for:
+
+- **Digital humanities courses** — teaching version control, static sites, and structured data alongside content creation
+- **Power users** — anyone who prefers text editors and the command line over spreadsheets
+- **Offline work** — build and preview without an internet connection
 
 ## Prerequisites
 
@@ -303,6 +307,7 @@ Once you're happy with your local site:
 
 ## Next Steps
 
-- [Understand Content Structure](/docs/content-structure/)
-- [Learn about IIIF Integration](/docs/iiif-integration/)
+- [Content Structure](/docs/content-structure/) — How Telar organizes files
+- [IIIF & Images](/docs/iiif-integration/) — Working with high-resolution images
+- [Configuration](/docs/reference/configuration/) — All `_config.yml` options
 - [Customize Your Theme](/docs/customization/themes/)

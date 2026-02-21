@@ -8,54 +8,42 @@ lang: en
 permalink: /docs/workflows/
 ---
 
-# Workflows
+# Set Up Your Site
 
-Telar offers two workflows for creating your exhibitions. Choose the one that best fits your needs and technical knowledge.
+Telar offers three ways to build your exhibition, depending on your needs and technical comfort.
 
-## GitHub Web Interface
+## Choose Your Path
 
-**No installation required!** Manage your entire project through GitHub's web interface and Google Sheets.
+### Quick Start — Google Sheets + GitHub
 
-**Best for:**
-- Storytellers and content creators
-- Teams collaborating on content
-- Quick prototyping
-- Users who prefer not to install software
+Build a complete exhibition in your browser. No software to install — just a Google account and a GitHub account.
 
-[Learn more about GitHub Web Interface workflow](/docs/workflows/github-web/)
+- Manage all content in a Google Sheets spreadsheet
+- Upload images to GitHub or use IIIF images from museums and libraries
+- GitHub Pages publishes your site automatically
 
-## Local Development
+This is the right starting point for most users.
 
-Preview changes locally before publishing. Full control over the build process.
+[Get started](/docs/workflows/github-web/){: .btn .btn-primary }
 
-**Best for:**
-- Developers
-- Advanced customization
-- Testing changes before deployment
-- Working offline
+### Going Further — Add Markdown Files
 
-[Learn more about Local Development workflow](/docs/workflows/local-dev/)
+Once your site is up and running, you can enhance story panels with richer content by adding markdown files to your repository. This builds on what you created in the Quick Start.
 
-## Upgrading Telar
+Add markdown files when you need widgets (carousels, tabs, accordions), longer narratives with headings, or content reused across stories. Everything else stays in your spreadsheet.
 
-Keep your site up to date with the latest Telar features and improvements.
+[Learn more](/docs/workflows/hybrid/)
 
-**Best for:**
-- Existing Telar sites
-- Getting new features and bug fixes
-- Maintaining compatibility
-- One-click automated updates (v0.3.4+)
+### Local Development — CSV + Jekyll
 
-[Learn more about Upgrading Telar](/docs/workflows/upgrading/)
+Work entirely on your computer with CSV files and a local Jekyll server. No Google Sheets, no GitHub — you control everything.
 
-## Content Management Options
+Best for digital humanities courses, power users, and anyone who wants to teach or learn version control, static sites, and structured data alongside building their exhibition.
 
-Both workflows support two content management approaches:
+[Set up locally](/docs/workflows/local-dev/)
 
-### Google Sheets (Recommended)
-Manage content through a familiar spreadsheet interface. Ideal for teams and most users.
+## Other Guides
 
-[See Google Sheets guide](/docs/workflows/google-sheets/)
-
-### CSV Files (Optional)
-Edit CSV files directly in your repository. Works entirely through GitHub without external services.
+- [Google Sheets Reference](/docs/workflows/google-sheets/) — Advanced spreadsheet setup, troubleshooting, and tab configuration
+- [Upgrading](/docs/workflows/upgrading/) — Keep your site up to date with the latest Telar features
+- [Embedding in Canvas](/docs/workflows/embedding/) — Embed your Telar site in a learning management system

@@ -8,13 +8,16 @@ lang: en
 permalink: /docs/workflows/hybrid/
 ---
 
-# Hybrid Workflow: Google Sheets + Markdown Files
+# Going Further: Adding Markdown Files
 
-**For richer panel content.** This workflow builds on the [GitHub Web Interface](/docs/workflows/github-web/) approach by adding markdown files for story panels that need more than a few paragraphs of text.
+Your site is running and your stories are in the spreadsheet. Now you want richer panels — this guide shows you how to add markdown files for story panels that need more than a few paragraphs of text.
 
-## When to Use This Workflow
+{: .note }
+> This guide builds on the [Quick Start](/docs/workflows/github-web/). Complete that first if you haven't already.
 
-The [Google Sheets-only workflow](/docs/workflows/github-web/) handles most Telar exhibitions well. Consider adding markdown files when you need:
+## When to Add Markdown Files
+
+The spreadsheet handles most Telar exhibitions well. Consider adding markdown files when you need:
 
 - **Longer narratives** — multi-section panels with headings and structure
 - **Interactive widgets** — accordions, tabbed panels, or image carousels
