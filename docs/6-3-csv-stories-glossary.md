@@ -169,7 +169,7 @@ Save markdown files in `components/texts/stories/`. In your spreadsheet, enter j
 
 ## Glossary CSV (glossary.csv)
 
-Defines glossary terms that can be linked from story panels using `[[term-id]]` syntax.
+Defines glossary terms that can be linked from story panels using `[[term_id]]` syntax.
 
 **Location**: `components/structures/glossary.csv`
 
@@ -206,7 +206,7 @@ encomienda,Encomienda,"Un sistema de trabajo en la América colonial española, 
 
 #### term_id / id_termino
 - Unique across all glossary terms
-- Used in inline link syntax: `[[term_id]]` or `[[display text|term_id]]`
+- Used in inline link syntax: `[[term_id]]` or `[[term_id|display text]]`
 - Format: lowercase, hyphens recommended
 - Terms prefixed with `demo-` are tagged as demo content
 
@@ -233,7 +233,7 @@ The [[loom]] was central to textile production.
 
 **With custom display text** — use a pipe separator:
 ```
-The [[weaving device|loom]] was central to textile production.
+The [[loom|weaving device]] was central to textile production.
 ```
 
 If the `term_id` is not found in the glossary, a warning icon and error message appear in the build output and in the story panel.

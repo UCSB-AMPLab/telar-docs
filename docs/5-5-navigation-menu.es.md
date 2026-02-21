@@ -332,7 +332,7 @@ Mantén menús enfocados (5-7 elementos es ideal). Para sitios más grandes, con
 ## Documentación Relacionada
 
 - [Páginas Personalizadas](/guia/estructura-contenido/paginas-personalizadas/) - Crear páginas para enlazar en la navegación
-- [Referencia de Configuración](/guia/configuracion/) - Opciones completas de `_config.yml` incluyendo `telar_language`
+- [Referencia de Configuración](/guia/referencia/configuracion/) - Opciones completas de `_config.yml` incluyendo `telar_language`
 - [Resumen de Personalización](/guia/personalizacion/) - Otras opciones de personalización
 
 ---

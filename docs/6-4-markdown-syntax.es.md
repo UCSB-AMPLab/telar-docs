@@ -35,7 +35,7 @@ Telar usa el procesador [Python Markdown](https://python-markdown.github.io/) co
 
 ## Métodos de contenido de panel
 
-Puedes proporcionar el contenido del panel de tres maneras. Para más detalles, consulta la [Referencia de CSV](/guia/referencia/csv-reference/#contenido-de-capa-layer1_content--contenido_capa1-etc).
+Puedes proporcionar el contenido del panel de tres maneras. Para más detalles, consulta la [Referencia CSV: Historias y Glosario](/guia/referencia/csv-historias-glosario/#contenido-de-capa).
 
 ### Método 1: Introducir texto directamente
 

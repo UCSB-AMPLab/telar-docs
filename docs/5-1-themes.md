@@ -297,5 +297,5 @@ If a custom theme file is missing or has errors, Telar automatically falls back 
 ## Next Steps
 
 - [Advanced Styling](/docs/customization/styling/) for deeper customization
-- [Configuration](/docs/configuration/) for other site settings
+- [Configuration](/docs/reference/configuration/) for other site settings
 - [View Example Themes](https://ampl.clair.ucsb.edu/telar) in action

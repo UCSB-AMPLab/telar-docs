@@ -145,4 +145,5 @@ GitHub también muestra una pestaña **Preview** para que puedas verificar el fo
 
 - [Referencia de sintaxis Markdown](/guia/referencia/sintaxis-markdown/) — guía completa de formato con widgets y medios
 - [Estructura de contenido](/guia/estructura-de-contenido/) — cómo Telar organiza los archivos
-- [Referencia CSV](/guia/referencia/referencia-csv/) — referencia completa de columnas para todas las pestañas de la hoja de cálculo
+- [Referencia CSV: Proyecto y Objetos](/guia/referencia/csv-proyecto-objetos/) — columnas de CSV de proyecto y objetos
+- [Referencia CSV: Historias y Glosario](/guia/referencia/csv-historias-glosario/) — columnas de CSV de historias y glosario

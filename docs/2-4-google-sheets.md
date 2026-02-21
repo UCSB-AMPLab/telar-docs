@@ -107,7 +107,7 @@ Panel content can be:
 
 {: .tip }
 > **Inline vs File References**
-> For short panels (1–2 paragraphs), write content directly in the spreadsheet cell. Use file references for complex content with widgets or very long narratives. See the [CSV Reference](/docs/reference/csv-reference/#layer-content--contenido-de-capa) for details.
+> For short panels (1–2 paragraphs), write content directly in the spreadsheet cell. Use file references for complex content with widgets or very long narratives. See the [CSV Reference: Stories & Glossary](/docs/reference/csv-stories-glossary/#layer-content) for details.
 
 ## Troubleshooting
 

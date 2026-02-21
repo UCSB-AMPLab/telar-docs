@@ -145,4 +145,5 @@ GitHub also shows a **Preview** tab so you can check your formatting before comm
 
 - [Markdown Syntax Reference](/docs/reference/markdown-syntax/) — full formatting guide with widgets and media
 - [Content Structure](/docs/content-structure/) — how Telar organizes files
-- [CSV Reference](/docs/reference/csv-reference/) — complete column reference for all spreadsheet tabs
+- [CSV Reference: Project & Objects](/docs/reference/csv-project-objects/) — project and objects CSV columns
+- [CSV Reference: Stories & Glossary](/docs/reference/csv-stories-glossary/) — story step and glossary CSV columns

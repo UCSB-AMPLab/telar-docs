@@ -201,7 +201,7 @@ Estamos agradecidos con las siguientes personas e instituciones:
 
 - Aprende cómo [configurar la navegación](/guia/personalizacion/menu-navegacion/) para agregar páginas a tu menú
 - Explora [sintaxis de widgets](/guia/referencia/sintaxis-markdown/) para acordeón, pestañas y carruseles
-- Consulta [configuración de glosario](/guia/estructura-contenido/#glosario) para configurar el enlace automático
+- Consulta [configuración de glosario](/guia/estructura-contenido/glosario/) para configurar el enlace automático
 
 ---
 

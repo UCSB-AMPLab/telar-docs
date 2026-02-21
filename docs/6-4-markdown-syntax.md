@@ -35,7 +35,7 @@ In case you're wondering, Telar uses the [Python Markdown](https://python-markdo
 
 ## Panel Content Methods
 
-You can provide panel content in three ways. For full details, see the [CSV Reference](/docs/reference/csv-reference/#layer-content--contenido-de-capa).
+You can provide panel content in three ways. For full details, see the [CSV Reference: Stories & Glossary](/docs/reference/csv-stories-glossary/#layer-content).
 
 ### Method 1: Entering Text Directly
 

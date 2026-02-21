@@ -332,7 +332,7 @@ Keep menus focused (5-7 items is ideal). For larger sites, consider grouping con
 ## Related Documentation
 
 - [Custom Pages](/docs/content-structure/custom-pages/) - Creating pages to link in navigation
-- [Configuration Reference](/docs/configuration/) - Complete `_config.yml` options including `telar_language`
+- [Configuration Reference](/docs/reference/configuration/) - Complete `_config.yml` options including `telar_language`
 - [Customization Overview](/docs/customization/) - Other customization options
 
 ---

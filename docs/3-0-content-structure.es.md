@@ -104,7 +104,7 @@ step,question,answer,object,x,y,zoom,layer1_button,layer1_content,layer2_button,
 
 ### Opciones de contenido de panel
 
-Puedes proporcionar el contenido del panel de tres maneras. Consulta la [Referencia de CSV](/guia/referencia/csv-reference/#contenido-de-capa-layer1_content--contenido_capa1-etc) para más detalles.
+Puedes proporcionar el contenido del panel de tres maneras. Consulta la [Referencia CSV: Historias y Glosario](/guia/referencia/csv-historias-glosario/#contenido-de-capa) para más detalles.
 
 **Método 1: Introducir texto directamente** — Escribe el texto del panel directamente en la celda de la hoja de cálculo. Ideal para paneles cortos (1–2 párrafos).
 
@@ -510,7 +510,7 @@ Las columnas en español se normalizan automáticamente:
 | `titulo` | `title` |
 | `credito` | `credit` |
 
-Consulta la [Referencia Completa de CSV](/guia/referencia/csv-reference/) para todos los mapeos de columnas.
+Consulta las páginas de referencia CSV para todos los mapeos de columnas: [Proyecto y Objetos](/guia/referencia/csv-proyecto-objetos/), [Historias y Glosario](/guia/referencia/csv-historias-glosario/).
 
 ### Compatibilidad con Versiones Anteriores
 

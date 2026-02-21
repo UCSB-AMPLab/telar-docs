@@ -201,7 +201,7 @@ We are grateful to the following individuals and institutions:
 
 - Learn how to [configure navigation](/docs/customization/navigation-menu/) to add pages to your menu
 - Explore [widget syntax](/docs/reference/markdown-syntax/) for accordion, tabs, and carousels
-- See [glossary configuration](/docs/content-structure/#glossary) for auto-linking setup
+- See [glossary configuration](/docs/content-structure/glossary/) for auto-linking setup
 
 ---
 

@@ -578,4 +578,4 @@ JEKYLL_ENV=production bundle exec jekyll build
 
 - [GitHub Actions Reference](/docs/developers/github-actions/)
 - [Customization Guide](/docs/customization/)
-- [Configuration Reference](/docs/configuration/)
+- [Configuration Reference](/docs/reference/configuration/)

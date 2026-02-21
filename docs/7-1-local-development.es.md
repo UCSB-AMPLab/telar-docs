@@ -514,4 +514,4 @@ git push origin main
 
 - [Referencia de GitHub Actions](/guia/desarrolladores/github-actions/)
 - [Guía de Personalización](/guia/personalizacion/)
-- [Referencia de Configuración](/guia/configuracion/)
+- [Referencia de Configuración](/guia/referencia/configuracion/)

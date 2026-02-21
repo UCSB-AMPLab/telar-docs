@@ -103,7 +103,7 @@ El contenido del panel puede ser:
 
 {: .tip }
 > **Texto en línea vs archivos de texto**
-> Para paneles cortos (1–2 párrafos), escribe el contenido directamente en la celda de la hoja de cálculo. Usa archivos de texto para contenido complejo con widgets o narrativas muy largas. Consulta la [Referencia de CSV](/guia/referencia/csv-reference/#contenido-de-capa-layer1_content--contenido_capa1-etc) para más detalles.
+> Para paneles cortos (1–2 párrafos), escribe el contenido directamente en la celda de la hoja de cálculo. Usa archivos de texto para contenido complejo con widgets o narrativas muy largas. Consulta la [Referencia CSV: Historias y Glosario](/guia/referencia/csv-historias-glosario/#contenido-de-capa) para más detalles.
 
 ## Solución de problemas
 

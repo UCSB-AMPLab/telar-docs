@@ -167,5 +167,5 @@ Tiempos de construcción típicos:
 ## Próximos pasos
 
 - [Referencia de Desarrollo Local](/guia/referencia/desarrollo/)
-- [Guía de Configuración](/guia/configuracion/)
+- [Guía de Configuración](/guia/referencia/configuracion/)
 - [Consejos de Solución de Problemas](https://github.com/UCSB-AMPLab/telar/issues)

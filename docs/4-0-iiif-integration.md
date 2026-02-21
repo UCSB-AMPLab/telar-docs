@@ -315,6 +315,6 @@ Use the built-in coordinate identification tool:
 
 ## Next Steps
 
-- [Configure Your Site](/docs/configuration/)
+- [Configure Your Site](/docs/reference/configuration/)
 - [Build Your Story](/docs/workflows/github-web/#phase-4-structure-your-story)
 - [Learn about Customization](/docs/customization/)
