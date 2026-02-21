@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 2.1. GitHub Web Interface
-parent: 2. Workflows
+title: 2.1. Quick Start
+parent: 2. Set Up Your Site
 grand_parent: Documentation
 nav_order: 1
 lang: en

@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 2.6. Embedding in LMS & Websites
-parent: 2. Workflows
+title: 2.6. Embedding in Canvas
+parent: 2. Set Up Your Site
 grand_parent: Documentation
 nav_order: 6
 lang: en

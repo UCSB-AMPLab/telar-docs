@@ -3,8 +3,10 @@ layout: docs
 title: 3. Estructura de Contenido
 parent: Documentación
 nav_order: 3
+has_children: true
 lang: es
 permalink: /guia/estructura-de-contenido/
+---
 
 # Estructura de contenido
 

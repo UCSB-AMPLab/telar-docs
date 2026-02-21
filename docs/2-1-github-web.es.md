@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 2.1. Interfaz Web de GitHub
-parent: 2. Flujos de Trabajo
+title: 2.1. Inicio Rápido
+parent: 2. Configura Tu Sitio
 grand_parent: Documentación
 nav_order: 1
 lang: es

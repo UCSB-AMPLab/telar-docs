@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 2. Workflows
+title: 2. Set Up Your Site
 parent: Documentation
 nav_order: 2
 has_children: true

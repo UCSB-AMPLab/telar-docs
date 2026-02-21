@@ -18,20 +18,22 @@ Welcome to the Telar documentation. This guide will help you create visual narra
 
 New to Telar? Start here:
 
-- [Quick Start Guide](getting-started/) - Choose your workflow and build your first exhibition
+- [Getting Started](getting-started/) - What is Telar, requirements, overview
 
-## Workflows
+## Set Up Your Site
 
-Telar offers two workflows depending on your needs:
+Three ways to work with Telar, from simplest to most advanced:
 
-- [GitHub Web Interface](workflows/github-web/) - No installation required (recommended for storytellers)
-- [Local Development](workflows/local-dev/) - For developers who want local preview
+- [Quick Start](workflows/github-web/) - Google Sheets + GitHub, no installation required
+- [Going Further](workflows/hybrid/) - Add markdown files for richer content
+- [Local Development](workflows/local-dev/) - CSV + Jekyll for full control
 
-## Core Concepts
+## Content Structure
 
 - [Content Structure](content-structure/) - How Telar organizes your content
-- [IIIF Integration](iiif-integration/) - Working with images
-- [Configuration](configuration/) - Site settings and options
+- [Objects & Gallery](content-structure/objects-gallery/) - Object metadata, browse, search, and filter
+- [Stories & Panels](content-structure/stories-panels/) - Story structure and panel content
+- [IIIF & Images](iiif-integration/) - Working with images
 
 ## Customization
 
@@ -40,5 +42,6 @@ Telar offers two workflows depending on your needs:
 
 ## Reference
 
-- [GitHub Actions](reference/github-actions/) - Automated build workflow
-- [Development](reference/development/) - Local development workflow
+- [Configuration](reference/configuration/) - Site settings and options
+- [CSV Reference](reference/csv-project-objects/) - Column documentation
+- [Markdown Syntax](reference/markdown-syntax/) - Formatting reference

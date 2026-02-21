@@ -1,8 +1,9 @@
 ---
 layout: docs
-title: 4. IIIF Integration
+title: 4. IIIF & Images
 parent: Documentation
 nav_order: 4
+has_children: true
 lang: en
 permalink: /docs/iiif-integration/
 ---

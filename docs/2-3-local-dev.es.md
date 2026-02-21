@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: 2.3. Desarrollo Local
-parent: 2. Flujos de Trabajo
+parent: 2. Configura Tu Sitio
 grand_parent: Documentación
 nav_order: 3
 lang: es

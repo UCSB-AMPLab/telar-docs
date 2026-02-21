@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: 2.3. Local Development
-parent: 2. Workflows
+parent: 2. Set Up Your Site
 grand_parent: Documentation
 nav_order: 3
 lang: en

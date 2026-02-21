@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 2.2. Hybrid Workflow
-parent: 2. Workflows
+title: 2.2. Going Further
+parent: 2. Set Up Your Site
 grand_parent: Documentation
 nav_order: 2
 lang: en

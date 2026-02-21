@@ -18,20 +18,22 @@ Bienvenido a la documentación de Telar. Esta guía te ayudará a crear narrativ
 
 ¿Nuevo en Telar? Comienza aquí:
 
-- [Guía de inicio rápido](primeros-pasos/) - Elige tu flujo de trabajo y construye tu primera exposición
+- [Primeros pasos](primeros-pasos/) - Qué es Telar, requisitos, resumen general
 
-## Flujos de trabajo
+## Configura tu sitio
 
-Telar ofrece dos flujos de trabajo según tus necesidades:
+Tres formas de trabajar con Telar, de la más simple a la más avanzada:
 
-- [Interfaz web de GitHub](flujos-de-trabajo/interfaz-web-github/) - ¡No tienes que instalar nada! (recomendado para narradores)
-- [Desarrollo local](flujos-de-trabajo/desarrollo-local/) - Para desarrolladores que quieren vista previa local
+- [Inicio rápido](flujos-de-trabajo/interfaz-web-github/) - Google Sheets + GitHub, no necesitas instalar nada
+- [Ir más allá](flujos-de-trabajo/hibrido/) - Agrega archivos markdown para contenido más rico
+- [Desarrollo local](flujos-de-trabajo/desarrollo-local/) - CSV + Jekyll para control total
 
-## Conceptos fundamentales
+## Estructura de contenido
 
 - [Estructura de contenido](estructura-de-contenido/) - Cómo Telar organiza tu contenido
-- [Integración IIIF](integracion-iiif/) - Trabajando con imágenes
-- [Configuración](configuracion/) - Ajustes del sitio y opciones
+- [Objetos y galería](estructura-de-contenido/objetos-galeria/) - Metadatos de objetos, navegación, búsqueda y filtros
+- [Historias y paneles](estructura-de-contenido/historias-paneles/) - Estructura de historias y contenido de paneles
+- [IIIF e imágenes](integracion-iiif/) - Trabajando con imágenes
 
 ## Personalización
 
@@ -40,5 +42,6 @@ Telar ofrece dos flujos de trabajo según tus necesidades:
 
 ## Referencia
 
-- [GitHub Actions](desarrolladores/github-actions/) - Flujo de trabajo de construcción automatizada
-- [Desarrollo](desarrolladores/desarrollo-local/) - Flujo de trabajo de desarrollo local
+- [Configuración](referencia/configuracion/) - Ajustes del sitio y opciones
+- [Referencia CSV](referencia/csv-proyecto-objetos/) - Documentación de columnas
+- [Sintaxis de Markdown](referencia/sintaxis-markdown/) - Referencia de formato
