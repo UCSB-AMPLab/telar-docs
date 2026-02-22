@@ -8,54 +8,42 @@ lang: es
 permalink: /guia/flujos-de-trabajo/
 ---
 
-## Flujos de trabajo
+# Configura tu sitio
 
-Telar ofrece dos flujos de trabajo para crear tus exposiciones. Elige el que mejor se adapte a tus necesidades y nivel de comodidad técnica.
+Telar ofrece tres formas de construir tu exposición, según tus necesidades y nivel de comodidad técnica.
 
-## Interfaz web de GitHub
+## Elige tu camino
 
-**¡No tienes que instalar nada!** Administra todo tu proyecto a través de la interfaz web de GitHub y Google Sheets.
+### Inicio rápido — Google Sheets + GitHub
 
-**Mejor para:**
-- Narradores y creadores de contenido
-- Equipos colaborando en contenido
-- Prototipado rápido
-- Usuarios que prefieren no instalar software
+Construye una exposición completa desde tu navegador. No necesitas instalar nada — solo una cuenta de Google y una cuenta de GitHub.
 
-[Conocer más sobre el flujo de trabajo con la interfaz web de GitHub](/guia/flujos-de-trabajo/interfaz-web-github/)
+- Administra todo el contenido en una hoja de cálculo de Google Sheets
+- Sube imágenes a GitHub o usa imágenes IIIF de museos y bibliotecas
+- GitHub Pages publica tu sitio automáticamente
 
-## Desarrollo local
+Este es el punto de partida adecuado para la mayoría de las personas.
 
-Previsualiza cambios localmente antes de publicar. Control total sobre el proceso de construcción.
+[Empezar](/guia/flujos-de-trabajo/interfaz-web-github/){: .btn .btn-primary }
 
-**Mejor para:**
-- Desarrolladores
-- Personalización avanzada
-- Probar cambios antes de la publicación
-- Trabajar sin conexión
+### Ir más allá — Agrega archivos markdown
 
-[Conocer más sobre el flujo de trabajo de Desarrollo Local](/guia/flujos-de-trabajo/desarrollo-local/)
+Una vez que tu sitio esté funcionando, puedes enriquecer los paneles de las historias con contenido más completo agregando archivos markdown a tu repositorio. Esto se construye sobre lo que creaste en el Inicio rápido.
 
-## Actualizar Telar
+Agrega archivos markdown cuando necesites widgets (carruseles, pestañas, acordeones), narrativas más extensas con encabezados, o contenido reutilizado en varias historias. Todo lo demás se queda en tu hoja de cálculo.
 
-Mantén tu sitio actualizado con las últimas funciones y mejoras de Telar.
+[Más información](/guia/flujos-de-trabajo/hibrido/)
 
-**Mejor para:**
-- Sitios de Telar existentes
-- Obtener nuevas funciones y correcciones de errores
-- Mantener compatibilidad
-- Actualizaciones automatizadas con un clic (v0.3.4+)
+### Desarrollo local — CSV + Jekyll
 
-[Conocer más sobre Actualizar Telar](/guia/flujos-de-trabajo/actualizacion/)
+Trabaja completamente en tu computadora con archivos CSV y un servidor Jekyll local. Sin Google Sheets, sin GitHub — tú controlas todo.
 
-## Opciones de Gestión de Contenido
+Ideal para cursos de humanidades digitales, personas con experiencia técnica, y cualquiera que quiera enseñar o aprender control de versiones, sitios estáticos y datos estructurados mientras construye su exposición.
 
-Ambos flujos de trabajo soportan dos enfoques de gestión de contenido:
+[Configurar localmente](/guia/flujos-de-trabajo/desarrollo-local/)
 
-### Google Sheets (Recomendado)
-Administra contenido a través de una interfaz familiar de hoja de cálculo. Ideal para equipos y la mayoría de usuarios.
+## Otras guías
 
-[Guía de Google Sheets](/guia/flujos-de-trabajo/google-sheets/)
-
-### Archivos CSV (Opcional)
-Edita archivos CSV directamente en tu repositorio. Funciona completamente a través de GitHub sin servicios externos.
+- [Referencia de Google Sheets](/guia/flujos-de-trabajo/google-sheets/) — Configuración avanzada de la hoja de cálculo, solución de problemas y pestañas
+- [Actualización](/guia/flujos-de-trabajo/actualizacion/) — Mantén tu sitio al día con las últimas funciones de Telar
+- [Incrustar en Canvas](/guia/flujos-de-trabajo/incrustacion/) — Incrusta tu sitio Telar en un sistema de gestión de aprendizaje

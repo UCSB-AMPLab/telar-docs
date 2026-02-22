@@ -8,13 +8,17 @@ lang: es
 permalink: /guia/flujos-de-trabajo/desarrollo-local/
 ---
 
-## Flujo de trabajo de desarrollo local
+# Desarrollo local
 
-Previsualiza cambios localmente antes de publicar. Control total sobre el proceso de construcción.
+Trabaja completamente en tu computadora con archivos CSV y un servidor Jekyll local. Sin Google Sheets ni GitHub.
 
 ## Descripción general
 
-Este flujo de trabajo es mejor para desarrolladores y usuarios que quieren previsualizar cambios localmente antes de publicar. Trabajarás con archivos directamente en tu computadora y ejecutarás Jekyll localmente.
+Este flujo de trabajo te da control total sobre el proceso de compilación. Editas archivos CSV y markdown directamente, previsualizas los cambios al instante y publicas cuando estés listo. Es ideal para:
+
+- **Cursos de humanidades digitales** — enseñar control de versiones, sitios estáticos y datos estructurados junto con la creación de contenido
+- **Personas con experiencia técnica** — cualquiera que prefiera editores de texto y la línea de comandos a hojas de cálculo
+- **Trabajo sin conexión** — compila y previsualiza sin necesidad de internet
 
 ## Requisitos previos
 
@@ -289,6 +293,7 @@ Una vez que estés satisfecho con tu sitio local:
 
 ## Próximos pasos
 
-- [Conoce la estructura de contenido](/guia/estructura-de-contenido/)
-- [Aprende sobre la integración IIIF](/guia/integracion-iiif/)
+- [Conoce la estructura de contenido](/guia/estructura-de-contenido/) — Cómo Telar organiza los archivos
+- [IIIF e Imágenes](/guia/integracion-iiif/) — Trabaja con imágenes de alta resolución
+- [Configuración](/guia/referencia/configuracion/) — Todas las opciones de `_config.yml`
 - [Personaliza tu tema](/guia/personalizacion/temas/)

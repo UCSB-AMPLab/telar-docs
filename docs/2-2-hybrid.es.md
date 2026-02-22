@@ -8,13 +8,16 @@ lang: es
 permalink: /guia/flujos-de-trabajo/hibrido/
 ---
 
-# Flujo de trabajo híbrido: Google Sheets + archivos Markdown
+# Ir más allá: agregar archivos markdown
 
-**Para paneles con contenido más rico.** Este flujo se basa en el de la [interfaz web de GitHub](/guia/flujos-de-trabajo/interfaz-web-github/) y agrega archivos Markdown para paneles de historia que necesiten más que unos pocos párrafos de texto.
+Tu sitio está funcionando y tus historias están en la hoja de cálculo. Ahora quieres paneles más ricos — esta guía te muestra cómo agregar archivos markdown para paneles de historias que necesiten más que unos pocos párrafos de texto.
 
-## Cuándo usar este flujo
+{: .note }
+> Esta guía se construye sobre el [Inicio rápido](/guia/flujos-de-trabajo/interfaz-web-github/). Complétalo primero si aún no lo has hecho.
 
-El [flujo de trabajo con Google Sheets](/guia/flujos-de-trabajo/interfaz-web-github/) es suficiente para la mayoría de las exposiciones con Telar. Considera agregar archivos Markdown cuando necesites:
+## Cuándo agregar archivos markdown
+
+La hoja de cálculo maneja bien la mayoría de las exposiciones en Telar. Considera agregar archivos markdown cuando necesites:
 
 - **Narrativas más extensas** — paneles con varias secciones, encabezados y estructura
 - **Widgets interactivos** — acordeones, paneles con pestañas o carruseles de imágenes
@@ -22,7 +25,7 @@ El [flujo de trabajo con Google Sheets](/guia/flujos-de-trabajo/interfaz-web-git
 - **Contenido reutilizable** — el mismo texto de panel referenciado desde varios pasos de historia
 - **Edición más cómoda** — un editor de texto es más práctico que una celda de hoja de cálculo para textos largos
 
-Si tus paneles son en su mayoría de 1-2 párrafos, probablemente no necesitas este flujo. Quédate con Google Sheets y regresa aquí si tus necesidades crecen.
+Si tus paneles son en su mayoría de 1-2 párrafos, probablemente no necesitas este flujo de trabajo. Quédate con Google Sheets y regresa aquí si tus necesidades crecen.
 
 ## Cómo funciona
 
