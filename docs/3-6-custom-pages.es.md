@@ -102,10 +102,10 @@ Consulta [Referencia de Sintaxis Markdown](/guia/referencia/sintaxis-markdown/) 
 El enlace automático del glosario funciona de la misma manera:
 
 ```markdown
-El sistema de [term:encomienda] fue una institución clave...
+El sistema de [[encomienda]] fue una institución clave...
 ```
 
-Cuando los usuarios hacen clic en el enlace, el panel de glosario se abre con la definición.
+Cuando las personas hacen clic en el enlace, el panel de glosario se abre con la definición.
 
 ## Diseño y estilo
 

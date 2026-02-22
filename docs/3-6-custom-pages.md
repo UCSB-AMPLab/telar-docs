@@ -102,7 +102,7 @@ See [Markdown Syntax Reference](/docs/reference/markdown-syntax/) for complete w
 Glossary auto-linking works the same way:
 
 ```markdown
-The [term:encomienda] system was a key institution...
+The [[encomienda]] system was a key institution...
 ```
 
 When users click the link, the glossary panel opens with the definition.
