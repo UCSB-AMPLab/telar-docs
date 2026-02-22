@@ -32,6 +32,8 @@ A repository is your project's home on GitHub — it holds your images and confi
 4. Give your repository a name (this becomes part of your site's web address)
 5. Click **Create repository**
 
+![GitHub screenshot: Use this template button](/images/use-this-template.png)
+
 ### Enable GitHub Pages
 
 GitHub Pages turns your repository into a live website for free.
@@ -39,6 +41,8 @@ GitHub Pages turns your repository into a live website for free.
 1. In your repository, go to **Settings** → **Pages**
 2. Under **Source**, select **GitHub Actions**
 3. Click **Save**
+
+![Setting up GitHub Pages with GitHub Actions](/images/github-actions.gif)
 
 ### Duplicate the Google Sheets Template
 
@@ -104,6 +108,10 @@ Edit the `_config.yml` file in your repository to connect everything:
 
 6. Click **Commit changes** to save
 
+<!-- TODO: recapture config GIFs — current ones show outdated _config.yml structure -->
+![Editing config: title and URL](/images/config_title.gif)
+![Editing config: theme](/images/config_theme.gif)
+
 ### Verify Your Setup
 
 After committing, GitHub Actions will automatically build and publish your site. This takes 2–5 minutes.
@@ -134,6 +142,9 @@ Telar supports two ways to include images:
 
 The filename (without the extension) becomes the image's `object_id` — you will use this in your spreadsheet.
 
+![Uploading files on GitHub](/images/add-files.png)
+![Committing uploaded files](/images/commit-files.png)
+
 {: .warning }
 > **File Size Limits**
 > Individual images: up to 100 MB. Total repository: keep under 1 GB.
@@ -145,6 +156,8 @@ Many institutions provide high-resolution images through the IIIF standard. You 
 1. Find IIIF resources from institutions like the Library of Congress, the British Library, or the Smithsonian ([IIIF Guide to Finding Resources](https://iiif.io/guides/finding_resources/))
 2. Copy the manifest URL (e.g., `https://example.org/iiif/manifest.json`)
 3. In your spreadsheet's objects tab, add a row and paste the URL into the `source_url` column
+
+![Finding a IIIF manifest URL](/images/external-iiif-manifest.png)
 
 ### Fill in the Objects Tab
 

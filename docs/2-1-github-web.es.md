@@ -32,6 +32,8 @@ Un repositorio es el espacio de tu proyecto en GitHub — almacena tus imágenes
 4. Escoge un nombre para tu repositorio (será parte de la dirección web de tu sitio)
 5. Haz clic en **Create repository**
 
+![Captura de pantalla de GitHub: botón Use this template](/images/use-this-template.png)
+
 ### Habilita GitHub Pages
 
 GitHub Pages convierte tu repositorio en un sitio web en vivo de forma gratuita.
@@ -39,6 +41,8 @@ GitHub Pages convierte tu repositorio en un sitio web en vivo de forma gratuita.
 1. En tu repositorio, ve a **Settings** → **Pages**
 2. En **Source**, selecciona **GitHub Actions**
 3. Haz clic en **Save**
+
+![Configuración de GitHub Pages con GitHub Actions](/images/github-actions.gif)
 
 ### Duplica la plantilla de Google Sheets
 
@@ -104,6 +108,10 @@ Edita el archivo `_config.yml` en tu repositorio para conectar todo:
 
 6. Haz clic en **Commit changes** para guardar
 
+<!-- TODO: recapturar GIFs de config — los actuales muestran una estructura de _config.yml desactualizada -->
+![Editando config: título y URL](/images/config_title.gif)
+![Editando config: tema](/images/config_theme.gif)
+
 ### Verifica tu configuración
 
 Después de hacer *commit*, GitHub Actions construirá y publicará tu sitio automáticamente. Esto toma de 2 a 5 minutos.
@@ -134,6 +142,9 @@ Telar admite dos formas de incluir imágenes:
 
 El nombre del archivo (sin la extensión) se convierte en el `object_id` de la imagen — lo usarás en tu hoja de cálculo.
 
+![Subiendo archivos en GitHub](/images/add-files.png)
+![Confirmando los archivos subidos](/images/commit-files.png)
+
 {: .warning }
 > **Límites de tamaño**
 > Imágenes individuales: hasta 100 MB. Repositorio total: procura mantenerlo por debajo de 1 GB.
@@ -145,6 +156,8 @@ Muchas instituciones ofrecen imágenes de alta resolución a través del estánd
 1. Encuentra recursos IIIF de instituciones como la Biblioteca del Congreso, la British Library o el Smithsonian ([Guía IIIF para encontrar recursos](https://iiif.io/guides/finding_resources/))
 2. Copia la URL del manifiesto (ej., `https://example.org/iiif/manifest.json`)
 3. En la pestaña de objetos de tu hoja de cálculo, agrega una fila y pega la URL en la columna `source_url`
+
+![Encontrando una URL de manifiesto IIIF](/images/external-iiif-manifest.png)
 
 ### Completa la pestaña de objetos
 
