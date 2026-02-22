@@ -60,7 +60,7 @@ logo: "/components/images/mi-logo.png"
 - Dimensiones recomendadas: máximo 80px de alto, 200-300px de ancho
 - Admite formatos PNG, JPG, SVG
 
-## Selección de Tema
+## Selección de tema
 
 Telar incluye 4 temas predefinidos:
 
@@ -91,8 +91,8 @@ Esta opción controla el idioma de los elementos de la interfaz, incluyendo nave
 
 El ajuste `telar_language` cambia el idioma de:
 
- - **Menú de navegación**: **Home**, **Objects**, **Stories**, **Glossary**, **About**
- - **Botones**: **Copy**, **Back**, **Learn More**, **Go Deeper**, etc.
+- **Menú de navegación**: **Home**, **Objects**, **Stories**, **Glossary**, **About**
+- **Botones**: **Copy**, **Back**, **Learn More**, **Go Deeper**, etc.
 - **Campos de metadatos**: *Creator*, *Period*, *Medium*, *Location*, *Credit*, etc.
 - **Mensajes de error**: Todas las advertencias IIIF, errores de validación y problemas de configuración
 - **Interfaz de historias**: Indicadores de paso, encabezados de panel, herramienta de coordenadas
@@ -142,7 +142,7 @@ google_sheets:
 6. Confirma los cambios
 
 **Descarga automatizada:**
-- **GitHub Pages**: GitHub Actions descubre automáticamente los GIDs de pestañas y obtiene los CSVs
+- **GitHub Pages**: GitHub Actions descubre automáticamente los GIDs de pestañas y obtiene los CSV
 - **Desarrollo local**: Ejecuta `python3 scripts/fetch_google_sheets.py` antes de compilar
 
 {: .warning }
@@ -156,10 +156,20 @@ Controla cómo se muestran y se comportan las historias:
 
 ```yaml
 story_interface:
+  show_on_homepage: true  # Ponlo en false para ocultar la sección de historias de la página principal
   show_story_steps: true  # Ponlo en false para ocultar la superposición "Step X"
-  include_demo_content: false  # Ponlo en true para habilitar historias de demostración
   show_object_credits: true  # Ponlo en false para ocultar la etiqueta de créditos en objetos
+  include_demo_content: false  # Ponlo en true para habilitar historias de demostración
 ```
+
+### show_on_homepage
+
+Controla si la sección de historias aparece en la página principal:
+
+- **`true` (predeterminado)**: Las historias aparecen en la página principal como tarjetas
+- **`false`**: Oculta la sección de historias de la página principal (las historias siguen accesibles por URL directa)
+
+Úsalo cuando quieras tener objetos en la página principal pero prefieras que las historias se accedan a través de la navegación o enlaces directos en lugar de las tarjetas de la página principal.
 
 ### show_story_steps
 
@@ -199,12 +209,69 @@ Controla la etiqueta de atribución de créditos en páginas de objetos:
 
 La etiqueta de créditos se muestra en la esquina superior derecha de las imágenes de objetos, mostrando la atribución del campo `credit` en tu `objects.csv`.
 
+## Ajustes de la interfaz de colección
+
+Controla cómo se muestra y se comporta la galería de objetos:
+
+```yaml
+collection_interface:
+  browse_and_search: true  # Ponlo en false para desactivar la barra lateral de filtros y la búsqueda
+  show_link_on_homepage: true  # Ponlo en false para ocultar el enlace "View the objects"
+  show_sample_on_homepage: true  # Ponlo en true para mostrar objetos de muestra en la página principal
+  featured_count: 4  # Cantidad de objetos a mostrar en la página principal
+```
+
+### browse_and_search
+
+Controla la barra lateral de filtrado y la búsqueda de texto completo de la galería:
+
+- **`true` (predeterminado)**: La página de objetos muestra una barra lateral de filtros con facetas (tipo, creador, periodo, temas) y una barra de búsqueda con Lunr.js
+- **`false`**: La página de objetos muestra una cuadrícula simple sin filtrado ni búsqueda
+
+### show_link_on_homepage
+
+Controla el enlace "View the objects" en la página principal:
+
+- **`true` (predeterminado)**: Muestra un enlace a la galería de objetos en la página principal
+- **`false`**: Oculta el enlace (la página de objetos sigue accesible a través de la navegación)
+
+### show_sample_on_homepage
+
+Controla si los objetos de muestra aparecen en la página principal:
+
+- **`true` (predeterminado)**: Muestra una muestra de objetos en la página principal, tomados de los marcados como `featured` en objects.csv (o aleatorios si ninguno está destacado)
+- **`false`**: No se muestran objetos en la página principal
+
+### featured_count
+
+Cantidad de objetos a mostrar en la página principal cuando `show_sample_on_homepage` es true:
+
+- **Predeterminado**: `4`
+- Prioriza objetos marcados `featured: yes` en objects.csv
+- Si hay menos objetos destacados que `featured_count`, llena los espacios restantes aleatoriamente
+
+## Protección de historias
+
+Encripta historias para que solo las personas con la clave correcta puedan acceder a ellas:
+
+```yaml
+story_key: "tu-clave-secreta"
+```
+
+- Las historias con `protected: yes` en project.csv se encriptan durante la compilación
+- Las personas acceden a historias protegidas mediante un parámetro de URL: `?key=tu-clave-secreta`
+- Deja `story_key` vacío u omítelo para desactivar la protección de historias
+- Consulta [Historias Privadas](/guia/estructura-de-contenido/historias-privadas/) para detalles de configuración
+
+{: .warning }
+> La protección de historias usa encriptación del lado del cliente. Previene el acceso casual pero no es adecuada para contenido altamente sensible. Para mayor seguridad, usa un repositorio privado de GitHub.
+
 ## Ajustes avanzados
 
 Los siguientes ajustes están pre-configurados y normalmente no necesitan modificación a menos que estés haciendo una personalización avanzada.
 
 {: .warning }
-> **No Editar**
+> **No editar**
 > El `_config.yml` de Telar incluye una línea: "PLEASE DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING". Las secciones debajo de esta línea están configuradas automáticamente y rara vez necesitan cambios.
 
 ### Colecciones
@@ -302,8 +369,8 @@ Información de versión (actualizada automáticamente durante lanzamientos):
 
 ```yaml
 telar:
-  version: "0.6.2-beta"
-  release_date: "2025-12-03"
+  version: "0.8.0-beta"
+  release_date: "2026-02-05"
 ```
 
 ### Funciones de desarrollo
@@ -318,8 +385,8 @@ development-features:
     preload_steps: 6
     loading_threshold: 5
     min_ready_viewers: 3
-  hide_stories: false
-  hide_collections: false
+  skip_stories: false
+  skip_collections: false
 ```
 
 #### christmas_tree_mode
@@ -342,7 +409,7 @@ Controla cómo se precargan los visores de historias para una navegación más f
 
 Valores más altos = navegación más fluida pero mayor uso de memoria. Los valores predeterminados funcionan bien para la mayoría de los sitios.
 
-#### hide_stories
+#### skip_stories
 
 Compila un sitio sin historias, manteniendo solo los objetos visibles:
 
@@ -351,17 +418,20 @@ Compila un sitio sin historias, manteniendo solo los objetos visibles:
 
 Usa esto cuando quieras mostrar objetos sin historias narrativas, o al construir un sitio estilo catálogo.
 
-#### hide_collections
+{: .note }
+> Renombrado desde `hide_stories` en v0.8.0. El nombre anterior sigue funcionando por compatibilidad.
+
+#### skip_collections
 
 Compila un sitio con solo páginas personalizadas (sin objetos ni historias):
 
 - **`false` (predeterminado)**: Los objetos e historias se generan normalmente
-- **`true`**: Omite la generación de objetos e historias, oculta la sección de historias y el teaser de objetos de la página de inicio, elimina `/objects/` de la navegación
+- **`true`**: Omite la generación de objetos e historias, oculta la sección de historias y la muestra de objetos de la página de inicio, elimina `/objects/` de la navegación
 
 Usa esto al construir un sitio con solo páginas personalizadas (como una página "Acerca de" o de inicio) sin ninguna colección.
 
 {: .note }
-> Cuando `hide_collections` está habilitado, `hide_stories` se activa automáticamente.
+> Cuando `skip_collections` está habilitado, `skip_stories` se activa automáticamente. Renombrado desde `hide_collections` en v0.8.0 — el nombre anterior sigue funcionando por compatibilidad.
 
 ## Ejemplo completo
 
@@ -381,9 +451,20 @@ telar_language: "es"
 
 # Story Interface Settings
 story_interface:
+  show_on_homepage: true
   show_story_steps: true
   show_object_credits: true
   include_demo_content: false
+
+# Collection Interface Settings
+collection_interface:
+  browse_and_search: true
+  show_link_on_homepage: true
+  show_sample_on_homepage: true
+  featured_count: 4
+
+# Story Protection (opcional)
+# story_key: "tu-clave-secreta"
 
 # Google Sheets Integration (opcional)
 google_sheets:
@@ -453,8 +534,8 @@ show_drafts: false
 
 # Telar Settings
 telar:
-  version: "0.6.2-beta"
-  release_date: "2025-12-03"
+  version: "0.8.0-beta"
+  release_date: "2026-02-05"
 
 # Plugins
 plugins:
@@ -475,14 +556,16 @@ development-features:
     preload_steps: 6
     loading_threshold: 5
     min_ready_viewers: 3
-  hide_stories: false
-  hide_collections: false
+  skip_stories: false
+  skip_collections: false
 ```
 
-## Próximos pasos
+## Véase también
 
 - [Personaliza tu Tema](/guia/personalizacion/temas/)
 - [Personaliza tu Página de Inicio](/guia/personalizacion/pagina-de-inicio/)
 - [Configura el Menú de Navegación](/guia/personalizacion/menu-navegacion/)
-- [Aprende Sobre Contenido de Demostración](/guia/iiif/contenido-demostracion/)
-- [Explora GitHub Actions](/guia/desarrolladores/github-actions/)
+- [Contenido de Demostración](/guia/iiif/contenido-demostracion/)
+- [Historias Privadas](/guia/estructura-de-contenido/historias-privadas/)
+- [Referencia CSV: Proyecto y Objetos](/guia/referencia/csv-proyecto-objetos/)
+- [GitHub Actions](/guia/desarrolladores/github-actions/)
