@@ -21,3 +21,8 @@ Gemfile.lock
 
 # Logs
 *.log
+
+# Screenshot automation
+screenshots/google-auth.json
+screenshots/gifs/_tmp_video/
+screenshots/gifs/_tmp_frames/
