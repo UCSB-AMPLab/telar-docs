@@ -5,7 +5,7 @@ parent: 3. Estructura de Contenido
 grand_parent: Documentación
 nav_order: 6
 lang: es
-permalink: /guia/estructura-contenido/paginas-personalizadas/
+permalink: /guia/estructura-de-contenido/paginas-personalizadas/
 ---
 
 # Páginas personalizadas
@@ -201,7 +201,7 @@ Estamos agradecidos con las siguientes personas e instituciones:
 
 - Aprende cómo [configurar la navegación](/guia/personalizacion/menu-navegacion/) para agregar páginas a tu menú
 - Explora [sintaxis de widgets](/guia/referencia/sintaxis-markdown/) para acordeón, pestañas y carruseles
-- Consulta [configuración de glosario](/guia/estructura-contenido/glosario/) para configurar el enlace automático
+- Consulta [configuración de glosario](/guia/estructura-de-contenido/glosario/) para configurar el enlace automático
 
 ---
 

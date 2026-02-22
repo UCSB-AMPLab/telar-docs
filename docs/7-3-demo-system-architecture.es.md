@@ -523,7 +523,6 @@ curl -I https://content.telar.org/
 
 - [Contenido de Demostración (Guía de Usuario)](/guia/iiif/contenido-demostracion/) - Documentación para usuarios
 - [Referencia de GitHub Actions](/guia/desarrolladores/github-actions/) - Detalles del flujo de trabajo de compilación
-- [Pipeline de Compilación](/guia/desarrolladores/pipeline-compilacion/) - Procesamiento de CSV a JSON
 
 ---
 

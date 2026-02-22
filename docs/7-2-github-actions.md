@@ -232,6 +232,6 @@ Typical build times:
 
 ## Next Steps
 
-- [Local Development Reference](/docs/reference/development/)
+- [Local Development Reference](/docs/developers/local-development/)
 - [Configuration Guide](/docs/reference/configuration/)
 - [Troubleshooting Tips](https://github.com/UCSB-AMPLab/telar/issues)
