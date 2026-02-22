@@ -16,11 +16,11 @@ Aprende de historias de ejemplo pre-construidas mientras desarrollas tu propio s
 
 El contenido de demostración consiste en historias de ejemplo completas que muestran las funcionalidades de Telar. Estas historias se agregan automáticamente a tu sitio cuando están habilitadas, dándote ejemplos funcionales para explorar y aprender.
 
-**Demos disponibles:**
+**Demostraciones disponibles:**
 - **Tutorial de Telar**: Un tutorial interactivo de 10 pasos que demuestra todas las funcionalidades de Telar
 - **Paisajes coloniales**: Un extracto de 5 pasos de un proyecto de investigación real sobre mapas coloniales
 
-Ambas demos incluyen:
+Ambas demostraciones incluyen:
 - Narrativas de historia con paneles de capa
 - Integración de imágenes IIIF
 - Definiciones de glosario
@@ -29,13 +29,13 @@ Ambas demos incluyen:
 
 ## Cuándo usar contenido de demostración
 
-### Habilita las demos cuando:
+### Habilita las demostraciones cuando:
 - **Aprendiendo Telar**: Explora cómo se estructuran y escriben las historias
 - **Desarrollo local**: Prueba funcionalidades sin crear contenido
 - **Demostraciones**: Muestra a las partes interesadas lo que Telar puede hacer
 - **Referencia**: Ve ejemplos funcionales de funcionalidades específicas
 
-### Deshabilita las demos cuando:
+### Deshabilita las demostraciones cuando:
 - **Sitios de producción**: Publicando tu proyecto final
 - **Pruebas limpias**: Probando solo tu propio contenido
 - **Despliegue público**: Compartiendo trabajo con audiencias
@@ -95,7 +95,7 @@ Los términos de glosario de demostración aparecen con tus términos, también 
 Un recorrido interactivo de las funcionalidades de Telar:
 
 1. **Introducción a IIIF**: Usando recursos IIIF externos
-2. **Imágenes Autoalojadas**: Generación de mosaicos IIIF
+2. **Imágenes Autoalojadas**: Generación de teselas IIIF
 3. **Formato Markdown**: Estilo de texto con widget de pestañas
 4. **Sistema de Coordenadas**: Entendiendo x, y, zoom
 5-7. **Pan y Zoom**: Demostrando secuencias de coordenadas
@@ -121,27 +121,27 @@ Un extracto de un proyecto de historia digital que explora la cartografía colon
 
 El contenido de demostración automáticamente coincide con el idioma de tu sitio:
 
-| Idioma de Tu Sitio | Demos que Obtienes |
+| Idioma de tu sitio | Demostraciones que obtienes |
 |-------------------|---------------|
-| `telar_language: en` | Demos en inglés |
-| `telar_language: es` | Demos en español |
+| `telar_language: en` | Demostraciones en inglés |
+| `telar_language: es` | Demostraciones en español |
 
-Establece `telar_language` en `_config.yml` para controlar en qué idioma aparecen las demos.
+Establece `telar_language` en `_config.yml` para controlar en qué idioma aparecen las demostraciones.
 
 ## Cómo funciona
 
 Cuando habilitas el contenido de demostración:
 
-1. **Obtener**: Durante la compilación, Telar descarga un paquete de demos de content.telar.org
-2. **Coincidencia de Versión**: El sistema selecciona demos compatibles con tu versión de Telar
+1. **Obtener**: Durante la compilación, Telar descarga un paquete de demostraciones de content.telar.org
+2. **Coincidencia de versión**: El sistema selecciona demostraciones compatibles con tu versión de Telar
 3. **Fusionar**: Las historias, objetos y términos de glosario de demostración se fusionan con tu contenido
-4. **Mostrar**: Las demos aparecen con etiquetas visuales para distinguirlas de tu trabajo
+4. **Mostrar**: Las demostraciones aparecen con etiquetas visuales para distinguirlas de tu trabajo
 
 Cuando deshabilitas el contenido de demostración:
 
 1. **Limpieza**: Telar elimina todos los archivos de demostración
 2. **Reconstruir**: El sitio se reconstruye solo con tu contenido
-3. **Sin rastros**: Las demos no dejan artefactos en tu repositorio
+3. **Sin rastros**: Las demostraciones no dejan artefactos en tu repositorio
 
 ## Deshabilitar contenido de demostración
 
@@ -152,7 +152,7 @@ Cambia `include_demo_content` a `false`:
 ```yaml
 story_interface:
   show_story_steps: true
-  include_demo_content: false    # Deshabilita demos
+  include_demo_content: false    # Deshabilita demostraciones
 ```
 
 ### Paso 2: reconstruye tu sitio
@@ -161,9 +161,9 @@ Confirma, envía y espera la reconstrucción (GitHub Pages) o ejecuta `bundle ex
 
 Todo el contenido de demostración se elimina automáticamente.
 
-## Usar las demos como plantillas
+## Usar las demostraciones como plantillas
 
-### Ver contenido fuente de demos
+### Ver contenido fuente de demostraciones
 
 El contenido de demostración está alojado en [content.telar.org](https://content.telar.org). Puedes ver:
 
@@ -173,9 +173,9 @@ El contenido de demostración está alojado en [content.telar.org](https://conte
 - Sintaxis de widgets
 - Patrones de integración de imágenes
 
-### Adaptar patrones de demos
+### Adaptar patrones de demostraciones
 
-Patrones comunes para adaptar de las demos:
+Patrones comunes para adaptar de las demostraciones:
 
 **Del Tutorial de Telar:**
 - Estructura narrativa Pregunta/Respuesta/Invitación
@@ -200,40 +200,40 @@ Patrones comunes para adaptar de las demos:
 | Persistencia | Permanente | Solo mientras esté habilitado |
 | Personalizable | Completamente | No editable |
 
-## Solución de Problemas
+## Solución de problemas
 
-### Las Demos No Aparecen
+### Las demostraciones no aparecen
 
-Si las demos no se muestran después de habilitar:
+Si las demostraciones no se muestran después de habilitar:
 
 1. **Verifica sintaxis de configuración**: Verifica `include_demo_content: true` (no `enabled` o `yes`)
 2. **Reconstrucción completada**: Espera a que termine GitHub Actions
 3. **Limpia caché del navegador**: Actualización forzada con Ctrl+Shift+R (Cmd+Shift+R en Mac)
 4. **Verifica log de compilación**: Busca errores en el flujo de trabajo de GitHub Actions
 
-### Demos en Idioma Incorrecto
+### Demostraciones en idioma incorrecto
 
-Si las demos aparecen en idioma inesperado:
+Si las demostraciones aparecen en idioma inesperado:
 
 1. Verifica la configuración de `telar_language` en `_config.yml`
 2. Reconstruye el sitio después de cambiar la configuración de idioma
 3. Limpia caché del navegador
 
-### Errores de Red
+### Errores de red
 
-Si la compilación falla con errores de obtención de demos:
+Si la compilación falla con errores de obtención de demostraciones:
 
-- Telar continúa compilando sin demos aunque falle la descarga
+- Telar continúa compilando sin demostraciones aunque falle la descarga
 - Tu propio contenido aún aparece
 - Verifica disponibilidad de content.telar.org
-- Deshabilita temporalmente las demos si la obtención falla consistentemente
+- Deshabilita temporalmente las demostraciones si la obtención falla consistentemente
 
-## Próximos Pasos
+## Próximos pasos
 
-- Explora la demo [Tutorial de Telar](/) para aprender funcionalidades principales
-- Revisa la demo [Paisajes Coloniales](/) para técnicas narrativas académicas
-- Crea tu primera historia usando patrones de las demos
-- Deshabilita las demos cuando estés listo para desplegar tu sitio de producción
+- Explora la demostración [Tutorial de Telar](/) para aprender funcionalidades principales
+- Revisa la demostración [Paisajes Coloniales](/) para técnicas narrativas académicas
+- Crea tu primera historia usando patrones de las demostraciones
+- Deshabilita las demostraciones cuando estés listo para desplegar tu sitio de producción
 
 ---
 

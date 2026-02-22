@@ -259,9 +259,9 @@ Si `_data/navigation.yml` no existe, Telar muestra un menú de respaldo codifica
 
 Esto asegura que tu sitio siempre tenga navegación básica, incluso sin configuración.
 
-## Solución de Problemas
+## Solución de problemas
 
-### El Menú No se Actualiza
+### El menú no se actualiza
 
 Si tus cambios de menú no aparecen:
 
@@ -270,7 +270,7 @@ Si tus cambios de menú no aparecen:
 3. **Limpia caché del navegador**: Usa Ctrl+Shift+R (Cmd+Shift+R en Mac) para actualizar forzadamente
 4. **Verifica ubicación del archivo**: El archivo debe estar en `_data/navigation.yml` (no `data/` o `_data/nav.yml`)
 
-### Se Muestra el Idioma Incorrecto
+### Se muestra el idioma incorrecto
 
 Si las etiquetas del menú aparecen en el idioma incorrecto:
 
@@ -278,7 +278,7 @@ Si las etiquetas del menú aparecen en el idioma incorrecto:
 2. Verifica que estés usando nombres de campo correctos (`title_en` y `titulo_es`, no `title` o `label`)
 3. Asegúrate de que ambas etiquetas de idioma estén presentes
 
-### El Enlace Externo No se Abre en Nueva Pestaña
+### El enlace externo no se abre en nueva pestaña
 
 Agrega el campo `external: true`:
 
@@ -289,9 +289,9 @@ Agrega el campo `external: true`:
   external: true    # Requerido para nueva pestaña
 ```
 
-## Mejores Prácticas
+## Mejores prácticas
 
-### Etiquetas Claras y Descriptivas
+### Etiquetas claras y descriptivas
 
 Usa etiquetas que describan claramente el destino:
 
@@ -307,7 +307,7 @@ Usa etiquetas que describan claramente el destino:
   titulo_es: "Info"
 ```
 
-### Ordenamiento Consistente
+### Ordenamiento consistente
 
 Mantén elementos relacionados juntos:
 
@@ -325,11 +325,11 @@ Mantén elementos relacionados juntos:
 - title_en: "Archive"
 ```
 
-### Limita la Longitud del Menú
+### Limita la longitud del menú
 
 Mantén menús enfocados (5-7 elementos es ideal). Para sitios más grandes, considera agrupar contenido de manera diferente o usar enlaces de pie de página para páginas secundarias.
 
-## Documentación Relacionada
+## Documentación relacionada
 
 - [Páginas Personalizadas](/guia/estructura-de-contenido/paginas-personalizadas/) - Crear páginas para enlazar en la navegación
 - [Referencia de Configuración](/guia/referencia/configuracion/) - Opciones completas de `_config.yml` incluyendo `telar_language`
