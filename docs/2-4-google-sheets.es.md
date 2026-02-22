@@ -111,7 +111,7 @@ El contenido del panel puede ser:
 - Falla al traer datos → verifica la configuración de compartir/publicar y las URLs en `_config.yml`
 - Coordenadas imprecisas → usa rangos válidos (x/y: 0.000–1.000; zoom: número positivo)
 
-## Ver también
+## Véase también
 
 - [Interfaz Web de GitHub](/guia/flujos-de-trabajo/interfaz-web-github/)
 - [Desarrollo local](/guia/flujos-de-trabajo/desarrollo-local/)

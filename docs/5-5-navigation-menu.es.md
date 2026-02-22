@@ -329,7 +329,7 @@ Mantén elementos relacionados juntos:
 
 Mantén menús enfocados (5-7 elementos es ideal). Para sitios más grandes, considera agrupar contenido de manera diferente o usar enlaces de pie de página para páginas secundarias.
 
-## Documentación relacionada
+## Véase también
 
 - [Páginas Personalizadas](/guia/estructura-de-contenido/paginas-personalizadas/) - Crear páginas para enlazar en la navegación
 - [Referencia de Configuración](/guia/referencia/configuracion/) - Opciones completas de `_config.yml` incluyendo `telar_language`
