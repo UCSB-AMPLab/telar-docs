@@ -19,7 +19,7 @@ aux_links:
     - "https://ampl.clair.ucsb.edu/telar"
 
 # Footer content
-footer_content: "Developed by Adelaida Ávila, Juan Cobo Betancourt, Santiago Muñoz, and students and scholars at the UCSB Archives, Memory, and Preservation Lab, the UT Archives, Mapping, and Preservation Lab, and Neogranadina"
+footer_content: "Developed by Adelaida Ávila, Juan Cobo Betancourt, Natalie Cobo, Santiago Muñoz, and students and scholars at the UCSB Archives, Memory, and Preservation Lab, the UT Archives, Mapping, and Preservation Lab, and Neogranadina"
 
 # Search
 search_enabled: true
