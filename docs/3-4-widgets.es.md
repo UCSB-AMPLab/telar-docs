@@ -10,7 +10,7 @@ permalink: /guia/estructura-de-contenido/widgets/
 
 # Widgets
 
-Telar incluye un sistema de widgets interactivos para contenido enriquecido en paneles de historias y páginas personalizadas. Los widgets te permiten incrustar carruseles de imágenes, contenido con pestañas y secciones plegables directamente en tu markdown.
+Telar incluye un sistema de widgets interactivos para contenido enriquecido en paneles de historias y páginas personalizadas. Los widgets te permiten insertar carruseles de imágenes, contenido con pestañas y secciones plegables directamente en tu markdown.
 
 **Disponible desde v0.4.0.**
 

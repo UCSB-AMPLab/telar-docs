@@ -319,4 +319,4 @@ Si necesitas cambiar el ancho o alto:
 
 - **Enlaces para compartir**: Usa la pestaña Share Link para enlaces directos en lugar de insertar
 - **Personalización**: Aprende sobre [personalizar tu sitio Telar](/guia/personalizacion/)
-- **Detalles técnicos**: Consulta [Arquitectura del Sistema de Incrustación](/guia/desarrolladores/sistema-incrustacion/) para documentación de desarrolladores
+- **Detalles técnicos**: Consulta [Arquitectura del sistema de inserción](/guia/desarrolladores/sistema-insercion/) para documentación de desarrolladores

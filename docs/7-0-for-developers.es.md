@@ -35,8 +35,8 @@ Entiende el flujo de trabajo automatizado de compilación de Telar y cómo perso
 ### [7.3 Arquitectura del sistema de demos](/guia/desarrolladores/sistema-demos/)
 Aprende cómo funciona el sistema de obtención de contenido de demostración, desde el emparejamiento de versiones hasta la integración de paquetes.
 
-### [7.4 Arquitectura del sistema de incrustación](/guia/desarrolladores/sistema-incrustacion/)
-Detalles técnicos del sistema de incrustación iframe de Telar y cómo maneja diferentes contextos.
+### [7.4 Arquitectura del sistema de inserción](/guia/desarrolladores/sistema-insercion/)
+Detalles técnicos del sistema de inserción iframe de Telar y cómo maneja diferentes contextos.
 
 ---
 

@@ -46,4 +46,4 @@ Ideal para cursos de humanidades digitales, personas con experiencia técnica, y
 
 - [Referencia de Google Sheets](/guia/flujos-de-trabajo/google-sheets/) — Configuración avanzada de la hoja de cálculo, solución de problemas y pestañas
 - [Actualización](/guia/flujos-de-trabajo/actualizacion/) — Mantén tu sitio al día con las últimas funciones de Telar
-- [Incrustar en Canvas](/guia/flujos-de-trabajo/insercion/) — Incrusta tu sitio Telar en un sistema de gestión de aprendizaje
+- [Insertar en Canvas](/guia/flujos-de-trabajo/insercion/) — Inserta tu sitio Telar en un sistema de gestión de aprendizaje

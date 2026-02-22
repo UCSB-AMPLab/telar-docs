@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 7.4. Arquitectura del sistema de incrustación
+title: 7.4. Arquitectura del sistema de inserción
 parent: 7. Para desarrolladores
 grand_parent: Documentación
 nav_order: 4
 lang: es
-permalink: /guia/desarrolladores/sistema-incrustacion/
+permalink: /guia/desarrolladores/sistema-insercion/
 ---
 
 # Referencia del sistema de inserción
