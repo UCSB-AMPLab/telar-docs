@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 7. Para Desarrolladores
+title: 7. Para desarrolladores
 parent: Documentación
 nav_order: 7
 has_children: true

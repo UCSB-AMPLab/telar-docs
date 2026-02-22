@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 1. Primeros Pasos
+title: 1. Primeros pasos
 parent: Documentación
 nav_order: 1
 lang: es

@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 5.2. Estilos Avanzados
+title: 5.2. Estilos avanzados
 parent: 5. Personalización
 grand_parent: Documentación
 nav_order: 2

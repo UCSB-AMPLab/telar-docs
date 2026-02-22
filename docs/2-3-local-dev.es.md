@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 2.3. Desarrollo Local
-parent: 2. Configura Tu Sitio
+title: 2.3. Desarrollo local
+parent: 2. Configura tu sitio
 grand_parent: Documentación
 nav_order: 3
 lang: es

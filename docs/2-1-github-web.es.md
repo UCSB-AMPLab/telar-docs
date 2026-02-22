@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 2.1. Inicio Rápido
-parent: 2. Configura Tu Sitio
+title: 2.1. Inicio rápido
+parent: 2. Configura tu sitio
 grand_parent: Documentación
 nav_order: 1
 lang: es

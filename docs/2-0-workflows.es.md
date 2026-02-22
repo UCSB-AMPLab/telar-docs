@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 2. Configura Tu Sitio
+title: 2. Configura tu sitio
 parent: Documentación
 nav_order: 2
 has_children: true

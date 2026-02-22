@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 2.2. Ir Más Allá
-parent: 2. Configura Tu Sitio
+title: 2.2. Ir más allá
+parent: 2. Configura tu sitio
 grand_parent: Documentación
 nav_order: 2
 lang: es

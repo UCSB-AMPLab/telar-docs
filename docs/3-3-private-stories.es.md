@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 3.3. Historias Privadas
-parent: 3. Estructura de Contenido
+title: 3.3. Historias privadas
+parent: 3. Estructura de contenido
 grand_parent: Documentación
 nav_order: 3
 lang: es

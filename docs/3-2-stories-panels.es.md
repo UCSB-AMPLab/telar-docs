@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 3.2. Historias y Paneles
-parent: 3. Estructura de Contenido
+title: 3.2. Historias y paneles
+parent: 3. Estructura de contenido
 grand_parent: Documentación
 nav_order: 2
 lang: es

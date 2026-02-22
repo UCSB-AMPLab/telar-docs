@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 5.3. Personalizar la Página de Inicio
+title: 5.3. Personalizar la página de inicio
 parent: 5. Personalización
 grand_parent: Documentación
 nav_order: 3

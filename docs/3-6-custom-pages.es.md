@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 3.6. Páginas Personalizadas
-parent: 3. Estructura de Contenido
+title: 3.6. Páginas personalizadas
+parent: 3. Estructura de contenido
 grand_parent: Documentación
 nav_order: 6
 lang: es

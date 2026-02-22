@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: 2.4. Referencia de Google Sheets
-parent: 2. Configura Tu Sitio
+parent: 2. Configura tu sitio
 grand_parent: Documentación
 nav_order: 4
 lang: es

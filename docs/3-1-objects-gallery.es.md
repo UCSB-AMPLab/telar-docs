@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 3.1. Objetos y Galería
-parent: 3. Estructura de Contenido
+title: 3.1. Objetos y galería
+parent: 3. Estructura de contenido
 grand_parent: Documentación
 nav_order: 1
 lang: es

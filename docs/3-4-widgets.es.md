@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: 3.4. Widgets
-parent: 3. Estructura de Contenido
+parent: 3. Estructura de contenido
 grand_parent: Documentación
 nav_order: 4
 lang: es

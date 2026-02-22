@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: 7.3. Arquitectura del sistema de demos
-parent: 7. Para Desarrolladores
+parent: 7. Para desarrolladores
 grand_parent: Documentación
 nav_order: 3
 lang: es

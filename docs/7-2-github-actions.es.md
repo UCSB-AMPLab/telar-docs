@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: 7.2. GitHub Actions
-parent: 7. Para Desarrolladores
+parent: 7. Para desarrolladores
 grand_parent: Documentación
 nav_order: 2
 lang: es

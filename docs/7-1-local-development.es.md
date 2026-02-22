@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: 7.1. Desarrollo Local
-parent: 7. Para Desarrolladores
+title: 7.1. Desarrollo local
+parent: 7. Para desarrolladores
 grand_parent: Documentación
 nav_order: 1
 lang: es

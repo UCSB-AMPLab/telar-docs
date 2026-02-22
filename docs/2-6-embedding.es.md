@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: 2.6. Insertar en Canvas
-parent: 2. Configura Tu Sitio
+parent: 2. Configura tu sitio
 grand_parent: Documentación
 nav_order: 6
 lang: es

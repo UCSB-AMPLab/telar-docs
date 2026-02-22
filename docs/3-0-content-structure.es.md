@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 3. Estructura de Contenido
+title: 3. Estructura de contenido
 parent: Documentación
 nav_order: 3
 has_children: true
