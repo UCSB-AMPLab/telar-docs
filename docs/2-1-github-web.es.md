@@ -108,7 +108,6 @@ Edita el archivo `_config.yml` en tu repositorio para conectar todo:
 
 6. Haz clic en **Commit changes** para guardar
 
-<!-- TODO: recapturar GIFs de config — los actuales muestran una estructura de _config.yml desactualizada -->
 ![Editando config: título y URL](/images/config_title.gif)
 ![Editando config: tema](/images/config_theme.gif)
 

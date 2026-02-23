@@ -54,7 +54,6 @@ google_sheets:
 - `shared_url` asegura que el *fetcher* pueda leer la hoja
 - `published_url` provee URLs CSV estables por pestaña
 
-<!-- TODO: recapturar — el GIF muestra una estructura de _config.yml desactualizada -->
 ![Captura de pantalla de GitHub: editando el archivo de configuración](/images/config_drive.gif)
 
 ## Obtener datos (solo desarrollo local)

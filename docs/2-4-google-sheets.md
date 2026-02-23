@@ -54,7 +54,6 @@ google_sheets:
 - The `shared_url` ensures the fetcher can read the spreadsheet
 - The `published_url` provides stable CSV endpoints for each sheet
 
-<!-- TODO: recapture — current GIF shows outdated _config.yml structure -->
 ![GitHub screenshot for editing config file](/images/config_drive.gif)
 
 ## Fetching data (local dev only)
@@ -95,7 +94,6 @@ bundle exec jekyll build
 
 - object_id, title, description, source_url, creator, period, medium, dimensions, location, credit, thumbnail
 
-<!-- TODO: recapture — shows old column names, missing v0.8.0 fields (year, object_type, subjects, featured) -->
 ![GitHub screenshot for editing sheet objects](/images/object-sheet.png)
 
 `story-X` tabs
