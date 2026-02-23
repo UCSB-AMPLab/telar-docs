@@ -52,10 +52,6 @@ Your Google Sheets spreadsheet is where you manage all your content — objects,
 2. Click **File** → **Make a copy**
 3. Save to your Google Drive with a descriptive name (e.g., "My Telar Exhibition")
 
-{: .warning }
-> UT Austin Students, [use this Google Sheet link](https://docs.google.com/spreadsheets/d/18dJWy9wkLD7Muokigg4wp85c3Vsjuphdrn0g51pwkGY/edit?gid=720245755#gid=720245755) instead.
-
-
 ### Share and Publish Your Sheet
 
 Your spreadsheet needs two types of access so Telar can read it during builds.
