@@ -20,6 +20,8 @@ The navigation menu appears in your site's header and provides links to:
 - Objects index (automatically included)
 - External resources (optional)
 
+![Navigation menu in the site header](/images/navigation-menu.png)
+
 ## How It Works
 
 Navigation is configured through `_data/navigation.yml`. This data-driven approach gives you complete control over menu structure and labels.

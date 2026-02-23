@@ -101,6 +101,8 @@ When a viewer clicks a glossary link:
 
 The viewer stays on the current story step throughout — glossary lookups don't interrupt the narrative flow.
 
+![Glossary page showing alphabetical term listing](/images/glossary-page.png)
+
 ## Tips
 
 - **Keep definitions concise** — Viewers are reading them mid-story. A sentence or two is ideal; save extended explanations for story panels.

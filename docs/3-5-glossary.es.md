@@ -101,6 +101,8 @@ Cuando alguien hace clic en un enlace de glosario:
 
 La persona permanece en el paso actual de la historia durante todo el proceso — las consultas al glosario no interrumpen el flujo narrativo.
 
+![Página del glosario mostrando listado alfabético de términos](/images/glossary-page.png)
+
 ## Consejos
 
 - **Mantén las definiciones concisas** — Las personas las leen en medio de una historia. Una o dos oraciones es lo ideal; guarda las explicaciones extensas para los paneles de las historias.

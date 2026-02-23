@@ -120,6 +120,8 @@ After committing, GitHub Actions will automatically build and publish your site.
 2. When it finishes, visit your site at the URL you configured
 3. You should see an empty Telar site with your title and theme
 
+![Telar homepage with title and navigation menu](/images/telar-homepage.png)
+
 If the build fails, double-check your Google Sheets URLs in `_config.yml`. Both the shared and published URLs are required. See [Google Sheets Reference](/docs/workflows/google-sheets/) for troubleshooting.
 
 ---
@@ -239,6 +241,8 @@ The placeholder coordinates (`0.5, 0.5, 1.0`) show the center of each image. To 
 4. Copy the X, Y, and Zoom values
 5. Paste them into your spreadsheet
 6. Trigger a rebuild to see the changes
+
+![Coordinate picker showing X, Y, and Zoom values below the image viewer](/images/coordinate-picker.png)
 
 ### Make Stories Private (Optional)
 

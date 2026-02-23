@@ -22,6 +22,8 @@ A story guides viewers through a sequence of **steps**. Each step:
 
 Viewers scroll through steps, and the image viewer animates to match each new position. The result is a guided, visual narrative — a "scrollytelling" experience.
 
+![Story viewer showing narrative panel and IIIF image viewer](/images/story-viewer.png)
+
 ## Registering Stories
 
 Before building a story's steps, register it in `project.csv`:
@@ -67,6 +69,8 @@ Coordinates tell the viewer where to focus for each step. All values are normali
 - **zoom** — Zoom level. 0 = zoomed out (full image visible), 1 = maximum zoom
 
 To find coordinates, use the **coordinate picker** on any object page: zoom and pan to the region you want, then click the **Copy** buttons to copy the x, y, and zoom values directly into your spreadsheet.
+
+![Coordinate picker showing X, Y, and Zoom values below the image viewer](/images/coordinate-picker.png)
 
 ## Panel Layers
 

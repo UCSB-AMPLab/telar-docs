@@ -25,6 +25,8 @@ When you mark a story as protected:
 
 The story's title and subtitle remain visible in the project listing. Only the step-by-step content is encrypted.
 
+![Protected story showing lock screen with key entry field](/images/private-story-locked.png)
+
 ## Setup
 
 Two things are needed: a key in your config and a flag on each story you want to protect.

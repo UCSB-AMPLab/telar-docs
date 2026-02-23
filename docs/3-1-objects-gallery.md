@@ -43,9 +43,13 @@ Each object gets its own page at `/objects/{object_id}/`. The page shows:
 - **Related stories** that reference the object
 - A **description** section if you provided one in the CSV
 
+![Object detail page with IIIF viewer and metadata](/images/object-detail.png)
+
 ### Coordinate Picker
 
 The coordinate picker is a development tool on each object page. Click or zoom on the image, then read the normalized coordinates (0–1 range) displayed below the viewer. Use the **Copy** buttons to copy coordinates directly into your story CSV.
+
+![Coordinate picker showing X, Y, and Zoom values below the image viewer](/images/coordinate-picker.png)
 
 ## Gallery Page
 
@@ -54,6 +58,8 @@ The gallery page at `/objects/` displays all objects in a grid. There are two mo
 ### Browse and Search Mode
 
 When `browse_and_search` is `true` (the default), the gallery includes a **filter sidebar** and a **search bar** for exploring your collection.
+
+![Objects gallery with search bar, sort options, and filter sidebar](/images/gallery-browse.png)
 
 **Search** uses full-text indexing powered by Lunr.js. It searches across title, creator, description, period, subjects, and object type — with title matches weighted most heavily. Type a few characters and results update instantly.
 

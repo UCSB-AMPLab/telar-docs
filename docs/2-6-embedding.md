@@ -52,6 +52,8 @@ Before embedding:
 1. Navigate to the story you want to embed
 2. Click the **Share** button (appears on the right side of the narrative panel)
 
+![Share and Embed panel with link and embed code options](/images/embed-panel.png)
+
 **On your site homepage:**
 
 1. Go to your Telar site homepage

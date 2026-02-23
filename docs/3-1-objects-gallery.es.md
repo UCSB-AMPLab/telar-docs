@@ -43,9 +43,13 @@ Cada objeto tiene su propia página en `/objects/{object_id}/`. La página muest
 - Las **historias relacionadas** que hacen referencia al objeto
 - Una sección de **descripción**, si proporcionaste una en el CSV
 
+![Página de detalle de objeto con visor IIIF y metadatos](/images/object-detail.png)
+
 ### Selector de coordenadas
 
 El selector de coordenadas es una herramienta de desarrollo en cada página de objeto. Haz clic o aplica zoom en la imagen y luego lee las coordenadas normalizadas (rango de 0 a 1) que aparecen debajo del visor. Usa los botones **Copy** para copiar las coordenadas directamente en el CSV de tu historia.
+
+![Selector de coordenadas mostrando valores X, Y y Zoom debajo del visor de imágenes](/images/coordinate-picker.png)
 
 ## Página de la galería
 
@@ -54,6 +58,8 @@ La página de la galería en `/objects/` muestra todos los objetos en una cuadr�
 ### Modo de exploración y búsqueda
 
 Cuando `browse_and_search` es `true` (el valor predeterminado), la galería incluye una **barra lateral de filtros** y una **barra de búsqueda** para explorar tu colección.
+
+![Galería de objetos con barra de búsqueda, opciones de orden y barra lateral de filtros](/images/gallery-browse.png)
 
 **La búsqueda** usa indexación de texto completo con Lunr.js. Busca en título, creador, descripción, periodo, temas y tipo de objeto — con mayor peso para las coincidencias en el título. Escribe unos pocos caracteres y los resultados se actualizan al instante.
 

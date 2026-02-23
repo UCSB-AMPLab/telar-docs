@@ -20,6 +20,8 @@ El menú de navegación aparece en el encabezado de tu sitio y proporciona enlac
 - Índice de objetos (incluido automáticamente)
 - Recursos externos (opcional)
 
+![Menú de navegación en el encabezado del sitio](/images/navigation-menu.png)
+
 ## Cómo funciona
 
 La navegación se configura a través de `_data/navigation.yml`. Este enfoque basado en datos te da control completo sobre la estructura y etiquetas del menú.

@@ -22,6 +22,8 @@ Una historia guía a las personas a través de una secuencia de **pasos**. Cada 
 
 Las personas se desplazan por los pasos y el visor de imagen se anima para coincidir con cada nueva posición. El resultado es una narrativa visual guiada — una experiencia de *scrollytelling*.
 
+![Visor de historia mostrando panel narrativo y visor de imágenes IIIF](/images/story-viewer.png)
+
 ## Registrar historias
 
 Antes de construir los pasos de una historia, regístrala en `project.csv`:
@@ -67,6 +69,8 @@ Las coordenadas indican al visor dónde enfocar en cada paso. Todos los valores 
 - **zoom** — Nivel de zoom. 0 = alejado (imagen completa visible), 1 = zoom máximo
 
 Para encontrar coordenadas, usa el **selector de coordenadas** en cualquier página de objeto: haz zoom y desplázate hasta la región que deseas, luego haz clic en los botones **Copy** para copiar los valores x, y y zoom directamente a tu hoja de cálculo.
+
+![Selector de coordenadas mostrando valores X, Y y Zoom debajo del visor de imágenes](/images/coordinate-picker.png)
 
 ## Capas de los paneles
 

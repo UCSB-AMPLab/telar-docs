@@ -25,6 +25,8 @@ Cuando marcas una historia como protegida:
 
 El título y subtítulo de la historia permanecen visibles en el listado del proyecto. Solo el contenido paso a paso se encripta.
 
+![Historia protegida mostrando pantalla de bloqueo con campo para ingresar la clave](/images/private-story-locked.png)
+
 ## Configuración
 
 Se necesitan dos cosas: una clave en tu configuración y una marca en cada historia que desees proteger.

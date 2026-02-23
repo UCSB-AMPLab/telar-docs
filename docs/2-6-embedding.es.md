@@ -52,6 +52,8 @@ Antes de insertar:
 1. Navega a la historia que deseas insertar
 2. Haz clic en el botón **Share** (aparece en el lado derecho del panel narrativo)
 
+![Panel de compartir e insertar con opciones de enlace y código de inserción](/images/embed-panel.png)
+
 **En la página de inicio de tu sitio:**
 
 1. Ve a la página de inicio de tu sitio Telar

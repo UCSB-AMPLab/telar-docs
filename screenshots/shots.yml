@@ -1,12 +1,10 @@
 # Static screenshots for Telar documentation
 #
 # Usage:
-#   Start the local Jekyll server first:
-#     python3 scripts/generate_iiif.py --base-url http://127.0.0.1:4001/telar
-#     bundle exec jekyll serve --port 4001
+#   shot-scraper multi screenshots/shots.yml
 #
-#   Then run:
-#     shot-scraper multi screenshots/shots.yml
+# Base URL: change to http://127.0.0.1:4001/telar for local server captures
+# (start Jekyll first: bundle exec jekyll serve --port 4001)
 #
 # For Google Sheets screenshots, authenticate first:
 #   shot-scraper auth https://docs.google.com/ screenshots/google-auth.json
@@ -44,32 +42,21 @@
 #   retina: true
 #   auth: screenshots/google-auth.json
 
-# 2-1 Quick Start: Telar site features (local server)
+# 2-1 Quick Start: Telar site features
 
-- url: http://127.0.0.1:4001/telar/
+- url: https://ampl.clair.ucsb.edu/telar/
   output: images/telar-homepage.png
   width: 1233
   height: 713
   retina: true
   wait: 3000
 
-- url: http://127.0.0.1:4001/telar/stories/story-1/
+- url: https://ampl.clair.ucsb.edu/telar/stories/telar-tutorial/
   output: images/story-viewer.png
   width: 1233
   height: 713
   retina: true
-  wait: 3000
-
-# 2-6 Embedding: Share/embed panel
-# NOTE: The share panel opens via JS — needs interaction
-# - url: http://127.0.0.1:4001/telar/stories/story-1/
-#   output: images/embed-panel.png
-#   width: 1233
-#   height: 713
-#   retina: true
-#   javascript: |
-#     document.querySelector('.share-button')?.click();
-#     await new Promise(r => setTimeout(r, 500));
+  wait: 5000
 
 # ============================================================
 # Section 3: Content Structure
@@ -77,31 +64,30 @@
 
 # 3-1 Objects & Gallery
 
-- url: http://127.0.0.1:4001/telar/objects/
+- url: https://ampl.clair.ucsb.edu/telar/objects/
   output: images/gallery-browse.png
   width: 1233
   height: 713
   retina: true
   wait: 3000
 
-# 3-2 Stories & Panels: Coordinate picker
-# NOTE: Requires clicking "Identify coordinates" button on an object page
-# - url: http://127.0.0.1:4001/telar/objects/textile-001/
-#   output: images/coordinate-picker.png
-#   width: 1233
-#   height: 713
-#   retina: true
-#   javascript: |
-#     document.querySelector('.identify-coords-btn')?.click();
-#     await new Promise(r => setTimeout(r, 1000));
+# 3-1 Objects & Gallery: individual object page
 
-# 3-3 Private Stories
-# NOTE: Requires a protected story in the test instance
-# - url: http://127.0.0.1:4001/telar/stories/story-1/
-#   output: images/private-story-locked.png
-#   width: 1233
-#   height: 713
-#   retina: true
+- url: https://ampl.clair.ucsb.edu/telar/objects/atlas-allegory/
+  output: images/object-detail.png
+  width: 1233
+  height: 713
+  retina: true
+  wait: 3000
+
+# 3-5 Glossary
+
+- url: https://ampl.clair.ucsb.edu/telar/glossary/
+  output: images/glossary-page.png
+  width: 1233
+  height: 713
+  retina: true
+  wait: 3000
 
 # ============================================================
 # Section 5: Customization
@@ -112,7 +98,7 @@
 
 # 5-5 Navigation Menu
 
-- url: http://127.0.0.1:4001/telar/
+- url: https://ampl.clair.ucsb.edu/telar/
   output: images/navigation-menu.png
   width: 1233
   height: 80
@@ -120,3 +106,34 @@
   selector: "header nav"
   padding: 10
   wait: 2000
+
+# ============================================================
+# Interactive captures (require JS or Playwright)
+# ============================================================
+
+# Coordinate picker — requires clicking button on object page
+# - url: https://ampl.clair.ucsb.edu/telar/objects/atlas-allegory/
+#   output: images/coordinate-picker.png
+#   width: 1233
+#   height: 713
+#   retina: true
+#   javascript: |
+#     document.querySelector('.identify-coords-btn')?.click();
+#     await new Promise(r => setTimeout(r, 1000));
+
+# Embed panel — requires clicking share button
+# - url: https://ampl.clair.ucsb.edu/telar/stories/telar-tutorial/
+#   output: images/embed-panel.png
+#   width: 1233
+#   height: 713
+#   retina: true
+#   javascript: |
+#     document.querySelector('.share-button')?.click();
+#     await new Promise(r => setTimeout(r, 500));
+
+# Private story lock screen
+# - url: https://ampl.clair.ucsb.edu/telar/stories/your-story/
+#   output: images/private-story-locked.png
+#   width: 1233
+#   height: 713
+#   retina: true

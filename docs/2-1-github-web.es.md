@@ -120,6 +120,8 @@ Después de hacer *commit*, GitHub Actions construirá y publicará tu sitio aut
 2. Cuando termine, visita tu sitio en la URL que configuraste
 3. Deberías ver un sitio vacío de Telar con tu título y tema
 
+![Página de inicio de Telar con título y menú de navegación](/images/telar-homepage.png)
+
 Si la *build* falla, revisa las URLs de Google Sheets en `_config.yml`. Tanto la URL compartida como la publicada son necesarias. Consulta la [Referencia de Google Sheets](/guia/flujos-de-trabajo/google-sheets/) para solución de problemas.
 
 ---
@@ -239,6 +241,8 @@ Las coordenadas iniciales (`0.5, 0.5, 1.0`) muestran el centro de cada imagen. P
 4. Copia los valores de X, Y y Zoom
 5. Pégalos en tu hoja de cálculo
 6. Activa una reconstrucción para ver los cambios
+
+![Selector de coordenadas mostrando valores X, Y y Zoom debajo del visor de imágenes](/images/coordinate-picker.png)
 
 ### Haz historias privadas (opcional)
 
