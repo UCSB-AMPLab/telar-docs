@@ -18,9 +18,9 @@ You will need:
 
 ---
 
-## Part 1: Set Up Everything
+## Part 1: Set Up All the Technical Bits
 
-This part handles all the technical plumbing. Once it's done, everything else is creative work in your spreadsheet.
+This part might feel daunting, but you only have to do it once. Once everything is set up, you won't need to come back here — everything else is creative work in your spreadsheet.
 
 ### Create Your Repository
 
@@ -91,6 +91,9 @@ Edit the `_config.yml` file in your repository to connect everything:
 
    Your site will be available at `https://yourgithubusername.github.io/your-repository-name`.
 
+   {: .warning }
+   > It is very important that your baseurl matches the name of your repository exactly. Baseurl must be in all lowercase, so if you gave your repository a name with capitals please go and change it now.
+
 4. **Google Sheets** — paste in the URLs you copied:
 
    ```yaml
@@ -121,7 +124,15 @@ After committing, GitHub Actions will automatically build and publish your site.
 
 ![Telar homepage with title and navigation menu](/images/telar-homepage.png)
 
-If the build fails, double-check your Google Sheets URLs in `_config.yml`. Both the shared and published URLs are required. See [Google Sheets Reference](/docs/workflows/google-sheets/) for troubleshooting.
+{: .warning }
+> If the build fails or your site doesn't look right, double-check your `_config.yml` carefully. Common mistakes:
+> - **Unclosed quotes** — every `"` needs a matching `"`
+> - **Missing space after colon** — write `title: "My Site"`, not `title:"My Site"`
+> - **Wrong indentation** — nested settings like `shared_url` must be indented with spaces, not tabs
+> - **Mismatched baseurl** — must match your repository name exactly, in all lowercase
+> - **Only one Google Sheets URL** — you need both the shared URL and the published URL; they are different
+>
+> See the [Configuration Reference](/docs/reference/configuration/) for the full list of settings. As a last resort, paste your `_config.yml` into a [YAML validator](https://www.yamllint.com/) to find syntax errors.
 
 ---
 

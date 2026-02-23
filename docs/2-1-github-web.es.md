@@ -18,9 +18,9 @@ Vas a necesitar:
 
 ---
 
-## Parte 1: Configura todo
+## Parte 1: Configura la parte técnica
 
-Esta parte se encarga de toda la parte técnica. Una vez terminada, todo lo demás es trabajo creativo en tu hoja de cálculo.
+Esta parte puede parecer intimidante, pero solo tienes que hacerla una vez. Una vez que todo esté configurado, no tendrás que volver aquí — todo lo demás es trabajo creativo en tu hoja de cálculo.
 
 ### Crea tu repositorio
 
@@ -85,11 +85,14 @@ Edita el archivo `_config.yml` en tu repositorio para conectar todo:
 3. **Dirección web** — establece la URL de tu sitio:
 
    ```yaml
-   url: "https://tugithubusuario.github.io"
+   url: "https://tuusuariogithub.github.io"
    baseurl: "/nombre-de-tu-repositorio"
    ```
 
-   Tu sitio estará disponible en `https://tugithubusuario.github.io/nombre-de-tu-repositorio`.
+   Tu sitio estará disponible en `https://tuusuariogithub.github.io/nombre-de-tu-repositorio`.
+
+   {: .warning }
+   > Es muy importante que tu baseurl coincida exactamente con el nombre de tu repositorio. Baseurl debe estar completamente en minúsculas, así que si le pusiste mayúsculas al nombre de tu repositorio, ve y cámbialo ahora.
 
 4. **Google Sheets** — pega las URLs que copiaste:
 
@@ -121,7 +124,15 @@ Después de hacer *commit*, GitHub Actions construirá y publicará tu sitio aut
 
 ![Página de inicio de Telar con título y menú de navegación](/images/telar-homepage.png)
 
-Si la *build* falla, revisa las URLs de Google Sheets en `_config.yml`. Tanto la URL compartida como la publicada son necesarias. Consulta la [Referencia de Google Sheets](/guia/flujos-de-trabajo/google-sheets/) para solución de problemas.
+{: .warning }
+> Si la compilación falla o tu sitio no se ve bien, revisa tu `_config.yml` con cuidado. Errores comunes:
+> - **Comillas sin cerrar** — cada `"` necesita su par
+> - **Falta espacio después de los dos puntos** — escribe `title: "Mi sitio"`, no `title:"Mi sitio"`
+> - **Indentación incorrecta** — las opciones anidadas como `shared_url` deben indentarse con espacios, no tabulaciones
+> - **baseurl no coincide** — debe coincidir exactamente con el nombre de tu repositorio, todo en minúsculas
+> - **Solo una URL de Google Sheets** — necesitas tanto la URL compartida como la URL publicada; son diferentes
+>
+> Consulta la [Referencia de configuración](/guia/referencia/configuracion/) para la lista completa de opciones. Como último recurso, pega tu `_config.yml` en un [validador de YAML](https://www.yamllint.com/) para encontrar errores de sintaxis.
 
 ---
 
