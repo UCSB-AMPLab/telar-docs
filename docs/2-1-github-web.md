@@ -29,7 +29,7 @@ A repository is your project's home on GitHub — it holds your images and confi
 1. Visit the [Telar template](https://github.com/UCSB-AMPLab/telar)
 2. Click the green **Use this template** button
 3. Choose **Create a new repository**
-4. Give your repository a name (this becomes part of your site's web address)
+4. Give your repository a name — **use all lowercase letters and avoid spaces (hyphens are fine)** — this will be part of your site's web address
 5. Click **Create repository**
 
 ![GitHub screenshot: Use this template button](/images/use-this-template.png)
