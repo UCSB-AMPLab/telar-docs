@@ -562,6 +562,7 @@ development-features:
 
 ## Véase también
 
+- [Validador de Configuración](/guia/referencia/validador-de-configuracion/) — Revisa tu `_config.yml` en busca de errores comunes
 - [Personaliza tu Tema](/guia/personalizacion/temas/)
 - [Personaliza tu Página de Inicio](/guia/personalizacion/pagina-de-inicio/)
 - [Configura el Menú de Navegación](/guia/personalizacion/menu-navegacion/)

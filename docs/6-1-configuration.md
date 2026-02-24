@@ -562,6 +562,7 @@ development-features:
 
 ## See Also
 
+- [Config Validator](/docs/reference/config-validator/) — Check your `_config.yml` for common errors
 - [Customize Your Theme](/docs/customization/themes/)
 - [Customize Your Home Page](/docs/customization/home-page/)
 - [Configure Navigation Menu](/docs/customization/navigation-menu/)

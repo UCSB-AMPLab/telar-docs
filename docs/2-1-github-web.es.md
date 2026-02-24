@@ -132,7 +132,7 @@ Después de hacer *commit*, GitHub Actions construirá y publicará tu sitio aut
 > - **baseurl no coincide** — debe coincidir exactamente con el nombre de tu repositorio, todo en minúsculas
 > - **Solo una URL de Google Sheets** — necesitas tanto la URL compartida como la URL publicada; son diferentes
 >
-> Consulta la [Referencia de configuración](/guia/referencia/configuracion/) para la lista completa de opciones. Como último recurso, pega tu `_config.yml` en un [validador de YAML](https://www.yamllint.com/) para encontrar errores de sintaxis.
+> Consulta la [Referencia de configuración](/guia/referencia/configuracion/) para la lista completa de opciones. También puedes pegar tu `_config.yml` en el [Validador de Configuración de Telar](/guia/referencia/validador-de-configuracion/) para buscar errores.
 
 ---
 
