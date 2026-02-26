@@ -1,0 +1,253 @@
+// Config Generator (docs/6-6-config-generator.md)
+
+.cg-container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.cg-section {
+  margin-bottom: 2rem;
+}
+
+.cg-section h3 {
+  color: var(--paisajes-purple, #3d2645);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cg-section-desc {
+  color: var(--text-medium, #555);
+  font-size: 0.92rem;
+  text-transform: none !important;
+}
+
+.cg-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cg-label {
+  width: 140px;
+  flex-shrink: 0;
+  padding-top: 6px;
+  font-size: 0.93rem;
+  color: var(--text-dark, #2c3e50);
+  text-transform: none !important;
+}
+
+.cg-optional {
+  font-size: 0.78rem;
+  color: var(--text-light, #888);
+  text-transform: none !important;
+}
+
+.cg-field {
+  flex: 1;
+}
+
+.cg-hint {
+  font-size: 0.8rem;
+  color: var(--text-light, #888);
+  text-transform: none !important;
+}
+
+.cg-input,
+.cg-textarea-input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #d0d5db;
+  border-radius: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.80rem;
+  box-sizing: border-box;
+}
+
+.cg-select {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #d0d5db;
+  border-radius: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.80rem;
+  box-sizing: border-box;
+}
+
+.cg-input:focus,
+.cg-select:focus,
+.cg-textarea-input:focus {
+  border-color: var(--paisajes-purple, #3d2645);
+  box-shadow: 0 0 0 3px rgba(61, 38, 69, 0.1);
+  outline: none;
+}
+
+.cg-input--number {
+  width: 70px;
+  text-align: center;
+}
+
+.cg-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.cg-toggle {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.cg-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.cg-toggle .cg-track {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cg-toggle .cg-track::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.15s;
+}
+
+.cg-toggle input:checked + .cg-track {
+  background: var(--paisajes-purple, #3d2645);
+}
+
+.cg-toggle input:checked + .cg-track::after {
+  transform: translateX(16px);
+}
+
+.cg-toggle-label {
+  font-size: 0.93rem;
+  cursor: pointer;
+  text-transform: none !important;
+}
+
+.cg-toggle-hint {
+  font-size: 0.8rem;
+  text-transform: none !important;
+}
+
+.cg-toggle-info {
+  flex: 1;
+}
+
+.cg-optional-fields {
+  display: none;
+  padding-left: 1rem;
+  border-left: 2px solid #e0e0e0;
+}
+
+.cg-optional-fields.cg-visible {
+  display: block;
+}
+
+.cg-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  align-items: center;
+}
+
+.cg-button {
+  display: inline-block;
+  padding: 10px 28px;
+  background: var(--paisajes-purple, #3d2645);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cg-button:hover {
+  background: var(--paisajes-slate, #2c3e50);
+}
+
+.cg-copied {
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-transform: none !important;
+}
+
+.cg-copied.cg-show {
+  opacity: 1;
+}
+
+.cg-error-msg,
+.cg-warn-msg {
+  font-size: 0.78rem;
+  margin-top: 3px;
+  display: none;
+  text-transform: none !important;
+}
+
+.cg-error-msg.cg-visible { display: block; }
+.cg-warn-msg.cg-visible  { display: block; }
+.cg-error-msg { color: #c0392b; }
+.cg-warn-msg  { color: #b7621a; }
+
+.cg-input--error,
+.cg-textarea-input--error {
+  border-color: #c0392b !important;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1) !important;
+}
+
+.cg-input--warn,
+.cg-textarea-input--warn {
+  border-color: #e67e22 !important;
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.08) !important;
+}
+
+.cg-output-wrapper {
+  display: none;
+}
+
+.cg-output-wrapper.cg-visible {
+  display: block;
+}
+
+.cg-output-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Output area — fixed-height overrides for the generator
+.cg-output-wrapper .cv-lines {
+  height: 400px;
+  padding: 16px 10px 16px 12px;
+  box-sizing: border-box;
+}
+
+.cg-output-wrapper .cv-textarea {
+  height: 400px;
+  resize: none;
+  white-space: pre;
+  overflow: auto;
+  box-sizing: border-box;
+}

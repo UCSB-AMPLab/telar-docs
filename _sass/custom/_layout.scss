@@ -1,0 +1,51 @@
+// Layout: footer, last-modified timestamp, responsive breakpoints
+
+// Footer - clean spacing
+.site-footer {
+  margin-top: 1rem;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  border-top: none !important;
+}
+
+// Last Modified Timestamp
+.page-last-modified {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.875rem;
+  color: #666666;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  .last-modified-label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+
+  time {
+    color: #999999;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .btn, .site-button {
+    font-size: 0.875rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .language-switcher {
+    font-size: 0.8rem;
+  }
+
+  .lang-switcher {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .page-last-modified {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+  }
+}

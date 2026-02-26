@@ -1,0 +1,119 @@
+// Navigation: sidebar, nav lists, language switcher, breadcrumbs
+
+// Navigation uses sans-serif
+.site-header,
+.site-nav,
+.nav-list,
+.nav-list-item,
+.nav-list .nav-list-item > a,
+.aux-nav {
+  font-family: 'Source Sans Pro', -apple-system, sans-serif !important;
+}
+
+// Logo at top of navigation menu
+.nav-logo {
+  padding: 1rem 0;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  a {
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    max-height: 12rem;
+  }
+}
+
+// Navigation - clean
+.nav-list {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+}
+
+.nav-list .nav-list-item .nav-list-link {
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+  line-height: 0.75rem;
+}
+
+.nav-list-item {
+  margin-bottom: 0;
+}
+
+// Language Switcher Styling - Minimal
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.language-switcher a {
+  color: #666666;
+  text-decoration: none;
+}
+
+.language-switcher a:hover {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+.language-switcher a.active {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.language-switcher .separator {
+  color: #cccccc;
+}
+
+// Page header bar with language switcher
+.page-header-bar {
+  margin-bottom: 1rem !important;
+  text-align: right !important;
+}
+
+// Language Switcher
+.page-header-bar .lang-switcher {
+  font-family: 'Source Sans Pro', sans-serif;
+
+  .lang-link {
+    color: #666666;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    &:hover {
+      color: #1a1a1a;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Breadcrumbs wrapper
+.breadcrumb-nav-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+// Language Section Headers in Navigation
+.nav-lang-header {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0 !important;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333333;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}

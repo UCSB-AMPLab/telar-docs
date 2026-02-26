@@ -1,0 +1,14 @@
+// Site header and top bar
+
+// Style the top bar - keep it minimal
+.site-header,
+.main-header,
+#main-header {
+  background: transparent !important;
+  border-bottom: none !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.site-nav {
+  padding-top: 0rem;
+}

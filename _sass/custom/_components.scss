@@ -1,0 +1,104 @@
+// Shared components: buttons, callouts, code blocks
+
+// Button Styling - Telar Rounded Style (only for actual buttons)
+.main-content .btn,
+.btn.btn-primary,
+button[type="submit"] {
+  border-radius: 20px !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid var(--btn-primary-color, #2c3e50);
+}
+
+// Default button (outline style)
+.main-content .btn {
+  background-color: transparent;
+  color: var(--btn-primary-color, #2c3e50);
+}
+
+.main-content .btn:hover {
+  background-color: var(--btn-primary-color, #2c3e50);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+// Primary buttons (filled)
+.btn-primary,
+button[type="submit"] {
+  background-color: var(--btn-primary-color, #2c3e50) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover {
+  background-color: #1a2a3a !important;
+  text-decoration: none;
+}
+
+// Callouts - Extremely Minimal (keep left border)
+.label,
+.label-blue,
+.label-green,
+.label-yellow,
+.label-red {
+  border-radius: 0;
+  padding: 1rem;
+  border: none !important;
+  border-left: 2px solid #d0d0d0 !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  background-color: #fafafa;
+}
+
+// Note callout
+.label-blue,
+div[class*="note"] {
+  background-color: transparent;
+  border-left-color: #d0d0d0;
+  color: #333333;
+}
+
+// Warning callout
+.label-yellow,
+div[class*="warning"] {
+  background-color: transparent;
+  border-left-color: #d0d0d0;
+  color: #333333;
+}
+
+// Tip callout
+.label-green,
+div[class*="tip"] {
+  background-color: transparent;
+  border-left-color: #d0d0d0;
+  color: #333333;
+}
+
+// Beta callout
+.label-red,
+div[class*="beta"] {
+  background-color: transparent;
+  border-left-color: #d0d0d0;
+  color: #333333;
+}
+
+// Code blocks - minimal (keep their borders)
+code {
+  border-radius: 0;
+  font-size: 0.9em;
+  background-color: #fafafa;
+  border: none !important;
+}
+
+pre {
+  border-radius: 0;
+  border: none !important;
+  border-left: 1px solid #e0e0e0 !important;
+  background-color: #fafafa;
+}

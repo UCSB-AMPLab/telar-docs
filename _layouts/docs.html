@@ -30,6 +30,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="{{ '/pagefind/pagefind-ui.css' | relative_url }}" rel="stylesheet">
   <script src="{{ '/pagefind/pagefind-ui.js' | relative_url }}"></script>
+  {% for css in page.extra_css %}
+  <link href="{{ '/assets/css/' | append: css | append: '.css' | relative_url }}" rel="stylesheet">
+  {% endfor %}
   {% seo %}
 
   <style>

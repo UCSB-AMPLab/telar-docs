@@ -1,0 +1,50 @@
+// Base resets and foundational styles
+
+// FORCE REMOVE ALL GRADIENTS
+* {
+  background-image: none !important;
+}
+
+// Override any theme gradients
+.site-header,
+.site-footer,
+.main-content,
+.sidebar,
+.search,
+.nav-list,
+body,
+html {
+  background-image: none !important;
+  background: transparent !important;
+}
+
+// Links - no effects
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+// Remove ALL dividing lines/borders (except search input)
+.site-header,
+.site-footer,
+.main-content,
+.sidebar,
+.side-bar,
+.nav-list,
+.nav-list-item,
+.search,
+.main-content-wrap {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+// Remove any horizontal rules
+hr {
+  display: none !important;
+}
