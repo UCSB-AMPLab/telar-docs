@@ -563,6 +563,7 @@ development-features:
 ## See Also
 
 - [Config Validator](/docs/reference/config-validator/) — Check your `_config.yml` for common errors
+- [Config Generator](/docs/reference/config-generator/) — Generate a ready-to-use `_config.yml` file
 - [Customize Your Theme](/docs/customization/themes/)
 - [Customize Your Home Page](/docs/customization/home-page/)
 - [Configure Navigation Menu](/docs/customization/navigation-menu/)

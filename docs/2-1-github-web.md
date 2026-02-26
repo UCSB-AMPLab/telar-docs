@@ -132,7 +132,7 @@ After committing, GitHub Actions will automatically build and publish your site.
 > - **Mismatched baseurl** — must match your repository name exactly, in all lowercase
 > - **Only one Google Sheets URL** — you need both the shared URL and the published URL; they are different
 >
-> See the [Configuration Reference](/docs/reference/configuration/) for the full list of settings. You can also paste your `_config.yml` into the [Telar Config Validator](/docs/reference/config-validator/) to check for errors.
+> See the [Configuration Reference](/docs/reference/configuration/) for the full list of settings. You can also paste your `_config.yml` into the [Telar Config Validator](/docs/reference/config-validator/) to check for errors, or use the [Config Generator](/docs/reference/config-generator/) to build one from scratch.
 
 ---
 

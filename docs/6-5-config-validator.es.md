@@ -6,6 +6,8 @@ grand_parent: Documentación
 nav_order: 5
 lang: es
 permalink: /guia/referencia/validador-de-configuracion/
+extra_css:
+  - config-tools
 ---
 
 # Validador de Configuración
@@ -14,153 +16,6 @@ Pega tu `_config.yml` de Telar a continuación para verificar errores comunes de
 
 Tu configuración nunca se envía a ningún servidor — todo se ejecuta en tu navegador.
 
-<style>
-.cv-container {
-  margin: 1.5rem 0;
-}
-
-.cv-editor {
-  display: flex;
-  border: 1px solid #d0d5db;
-  border-radius: 4px;
-  background: var(--bg-light, #f8f9fa);
-  overflow: hidden;
-}
-
-.cv-editor:focus-within {
-  border-color: var(--paisajes-purple, #3d2645);
-  box-shadow: 0 0 0 3px rgba(61, 38, 69, 0.1);
-}
-
-.cv-lines {
-  padding: 16px 10px 16px 12px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: var(--text-light, #AEB3BB);
-  text-align: right;
-  user-select: none;
-  border-right: 1px solid #e9ecef;
-  overflow: hidden;
-  min-width: 44px;
-  background: var(--bg-sidebar, #fafafa);
-  white-space: pre;
-}
-
-.cv-textarea {
-  flex: 1;
-  min-height: 320px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  padding: 16px;
-  border: none;
-  background: transparent;
-  resize: vertical;
-  tab-size: 2;
-  color: var(--text-dark, #2c3e50);
-  outline: none;
-}
-
-.cv-actions {
-  margin-top: 12px;
-}
-
-.cv-button {
-  display: inline-block;
-  padding: 10px 28px;
-  background: var(--paisajes-purple, #3d2645);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.cv-button:hover {
-  background: var(--paisajes-slate, #2c3e50);
-}
-
-.cv-results {
-  margin-top: 20px;
-}
-
-.cv-summary {
-  margin-bottom: 12px;
-  color: var(--text-medium, #6C7A89);
-  font-size: 14px;
-}
-
-.cv-issue {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px 14px;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.cv-issue--error {
-  background: #fef2f2;
-  border-left: 3px solid #dc2626;
-}
-
-.cv-issue--warning {
-  background: #fffbeb;
-  border-left: 3px solid #d97706;
-}
-
-.cv-issue--info {
-  background: #eff6ff;
-  border-left: 3px solid #2563eb;
-}
-
-.cv-issue--success {
-  background: #f0fdf4;
-  border-left: 3px solid #16a34a;
-}
-
-.cv-badge {
-  display: inline-block;
-  padding: 1px 8px;
-  border-radius: 3px;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.cv-badge--error { background: #dc2626; color: white; }
-.cv-badge--warning { background: #d97706; color: white; }
-.cv-badge--info { background: #2563eb; color: white; }
-.cv-badge--success { background: #16a34a; color: white; }
-
-.cv-badge {
-  border-radius: 20px;
-}
-
-.cv-line {
-  color: var(--text-medium, #6C7A89);
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-.cv-detail {
-  display: block;
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--text-medium, #6C7A89);
-  font-family: 'IBM Plex Mono', monospace;
-}
-</style>
 
 <div class="cv-container">
   <div class="cv-editor">
@@ -614,4 +469,5 @@ Tu configuración nunca se envía a ningún servidor — todo se ejecuta en tu n
 ## Véase también
 
 - [Referencia de Configuración](/guia/referencia/configuracion/) — Lista completa de todos los ajustes de `_config.yml`
+- [Generador de Configuración](/guia/referencia/generador-de-configuracion/) — Genera un archivo `_config.yml` listo para usar
 - [Inicio rápido](/guia/flujos-de-trabajo/interfaz-web-github/) — Guía paso a paso de configuración
