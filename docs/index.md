@@ -9,8 +9,8 @@ permalink: /docs/
 
 # Documentation
 
-> **Current Version: v0.8.0-beta** (February 2026)
-> This documentation covers Telar v0.8.0-beta. See the [Telar CHANGELOG](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) for release notes.
+> **Current Version: v0.8.1-beta** (February 2026)
+> This documentation covers Telar v0.8.1-beta. See the [Telar CHANGELOG](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) for release notes.
 
 Welcome to the Telar documentation. This guide will help you create visual narrative exhibitions using IIIF images and scrollytelling.
 
