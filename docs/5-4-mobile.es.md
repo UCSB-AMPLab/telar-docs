@@ -168,7 +168,7 @@ Procura probar en hardware real cuando sea posible:
 **Contenido de los paneles:**
 - Prioriza la información esencial en la capa 1
 - Mueve los detalles complementarios a la capa 2
-- Considera que las personas usuarias móviles pueden no explorar todas las capas
+- Ten en cuenta que quienes leen desde el móvil pueden no explorar todas las capas
 
 ### Uso de widgets
 
