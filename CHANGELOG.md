@@ -11,6 +11,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Config Generator load feature** - Load and edit existing _config.yml files; renamed to "Config Generator and Editor" (EN/ES)
 - **New visual identity** - Updated site branding with terracotta/lavender/gold palette and Space Grotesk/Roboto Condensed fonts
 
+### Getting Started tutorial
+- Restructured Getting Started as a 4-step tutorial with prev/next navigation buttons
+- New pages: Add Your Content (1-3), Review and Refine (1-4), extracted from Manual Setup
+- Renamed "How Telar Works" to "Plan Your Narrative" with redirects for old URLs
+- Tutorial nav: pill-style buttons (terracotta) at top and bottom of each page
+- Rewrote Quick Start intro to eliminate redundancy (consolidated "What you'll build" and "Setup" sections)
+- Slimmed Manual Setup to setup-only content
+
 ### Navigation restructure
 - Reorganized documentation from 7 sections to 8, grouped by user activity
 - New sections: Configure Your Site (3), Your Data (5), Site Features (6)
