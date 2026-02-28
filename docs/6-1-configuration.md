@@ -148,7 +148,7 @@ google_sheets:
 {: .warning }
 > Both URLs are required. The shared URL is for viewing, the published URL is for automated fetching.
 
-See [Google Sheets Workflow](/docs/workflows/google-sheets/) for complete setup instructions.
+See [Google Sheets Reference](/docs/reference/google-sheets/) for complete setup instructions.
 
 ## Story Interface Settings
 

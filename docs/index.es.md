@@ -18,21 +18,21 @@ Bienvenido a la documentación de Telar. Esta guía te ayudará a crear narrativ
 
 ¿Nuevo en Telar? Comienza aquí:
 
-- [Primeros pasos](primeros-pasos/) - Qué es Telar, requisitos, resumen general
+- [Inicio rápido](primeros-pasos/inicio-rapido/) - Crea tu primera exposición paso a paso
+- [Cómo funciona Telar](primeros-pasos/como-funciona-telar/) - Entiende el modelo narrativo
 
 ## Configura tu sitio
 
-Tres formas de trabajar con Telar, de la más simple a la más avanzada:
+- [Configuración manual](configuracion/configuracion-manual/) - Google Sheets + GitHub, no necesitas instalar nada
+- [Desarrollo local](configuracion/desarrollo-local/) - CSV + Jekyll para control total
+- [Actualización](configuracion/actualizacion/) - Mantén tu sitio al día
 
-- [Inicio rápido](flujos-de-trabajo/interfaz-web-github/) - Google Sheets + GitHub, no necesitas instalar nada
-- [Ir más allá](flujos-de-trabajo/hibrido/) - Agrega archivos markdown para contenido más rico
-- [Desarrollo local](flujos-de-trabajo/desarrollo-local/) - CSV + Jekyll para control total
+## Contenido y funciones
 
-## Estructura de contenido
-
-- [Estructura de contenido](estructura-de-contenido/) - Cómo Telar organiza tu contenido
+- [Contenido y funciones](estructura-de-contenido/) - Cómo Telar organiza tu contenido
 - [Objetos y galería](estructura-de-contenido/objetos-galeria/) - Metadatos de objetos, navegación, búsqueda y filtros
 - [Historias y paneles](estructura-de-contenido/historias-paneles/) - Estructura de historias y contenido de paneles
+- [Contenido enriquecido](estructura-de-contenido/contenido-enriquecido/) - Agrega archivos markdown para paneles más ricos
 - [IIIF e imágenes](integracion-iiif/) - Trabajando con imágenes
 
 ## Personalización
@@ -45,3 +45,5 @@ Tres formas de trabajar con Telar, de la más simple a la más avanzada:
 - [Configuración](referencia/configuracion/) - Ajustes del sitio y opciones
 - [Referencia CSV](referencia/csv-proyecto-objetos/) - Documentación de columnas
 - [Sintaxis de Markdown](referencia/sintaxis-markdown/) - Referencia de formato
+- [Google Sheets](referencia/google-sheets/) - Configuración de hojas de cálculo y solución de problemas
+- [Insertar en Canvas](referencia/insercion/) - Insertar en Canvas y otros LMS

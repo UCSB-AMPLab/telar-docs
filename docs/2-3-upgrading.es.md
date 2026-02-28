@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 2.5. Actualizar Telar
+title: 2.3. Actualizar Telar
 parent: 2. Configura tu sitio
 grand_parent: Documentación
-nav_order: 5
+nav_order: 3
 lang: es
-permalink: /guia/flujos-de-trabajo/actualizacion/
+permalink: /guia/configuracion/actualizacion/
 ---
 
 # Actualizar Telar

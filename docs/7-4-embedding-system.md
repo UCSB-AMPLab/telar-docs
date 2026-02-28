@@ -607,6 +607,6 @@ Override banner styles in `telar.scss`:
 
 ## Related Documentation
 
-- **Educator Guide**: [Embedding in LMS & Websites](/docs/workflows/embedding/)
+- **Educator Guide**: [Embedding in LMS & Websites](/docs/reference/embedding/)
 - **Development Setup**: [Local Development](/docs/developers/local-development/)
 - **GitHub Actions**: [Automated Build Workflow](/docs/developers/github-actions/)

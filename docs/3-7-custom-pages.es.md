@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 3.6. Páginas personalizadas
-parent: 3. Estructura de contenido
+title: 3.7. Páginas personalizadas
+parent: 3. Contenido y funciones
 grand_parent: Documentación
-nav_order: 6
+nav_order: 7
 lang: es
 permalink: /guia/estructura-de-contenido/paginas-personalizadas/
 ---

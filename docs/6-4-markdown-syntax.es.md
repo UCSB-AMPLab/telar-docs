@@ -392,5 +392,5 @@ Compara con el [textil de Lima](/objects/textile-lima/).
 ## Próximos pasos
 
 - [Guía de estructura de contenido](/guia/estructura-de-contenido/) - Aprende a organizar tus archivos Markdown
-- [Flujo de trabajo web de GitHub](/guia/flujos-de-trabajo/interfaz-web-github/) - Crea y edita archivos Markdown
+- [Contenido enriquecido con Markdown](/guia/estructura-de-contenido/contenido-enriquecido/) - Crea y edita archivos Markdown
 - [Estilos avanzados](/guia/personalizacion/estilos/) - Personaliza la apariencia de los paneles

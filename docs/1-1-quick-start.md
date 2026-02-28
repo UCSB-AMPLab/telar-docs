@@ -1,16 +1,28 @@
 ---
 layout: docs
-title: 2.1b. Guided Quick Start
-parent: 2. Set Up Your Site
+title: 1.1. Quick Start
+parent: 1. Getting Started
 grand_parent: Documentation
-nav_order: 1.5
+nav_order: 1
 lang: en
-permalink: /docs/workflows/guided-quickstart/
+permalink: /docs/getting-started/quick-start/
 extra_css:
   - config-tools
 ---
 
-# Getting Started
+# Quick Start
+
+Telar is a minimal-computing framework for creating interactive visual narrative exhibitions. It weaves together high-resolution images, narrative text, and layered contextual information into scrollytelling experiences — hosted for free on GitHub Pages.
+
+## What you'll build
+
+A Telar exhibition is made up of **stories** — step-by-step visual narratives built around high-resolution images. Each story unfolds through a series of **steps**. Every step zooms into a region of an image and presents a question with a brief answer. Viewers who want more can open **layer panels** — expandable sections with longer text, embedded media, or interactive widgets.
+
+You define your stories and objects in a Google Sheets spreadsheet. This guide sets that up and gets your first exhibition live.
+
+For a deeper look at this structure, see [How Telar Works](/docs/getting-started/how-telar-works/).
+
+## Setup
 
 This guide walks you through setting up your first Telar exhibition, step by step. As you follow along, you will fill in a few details — your GitHub username, your Google Sheets link, a title for your site. At the end, this page puts it all together into a configuration file that you can download or copy and paste into your repository.
 
@@ -19,7 +31,7 @@ You will need:
 - A [Google account](https://accounts.google.com/) for Google Sheets (free)
 
 {: .tip }
-> **Already familiar with GitHub Pages and YAML?** You can configure everything manually with the [Basic Setup guide](/docs/workflows/github-web/).
+> **Already familiar with GitHub Pages and YAML?** You can configure everything manually with the [Manual Setup guide](/docs/setup/manual/).
 
 The setup might feel like a lot of steps, but you only have to do it once. After that, everything happens in your Google Sheets spreadsheet.
 
@@ -203,9 +215,9 @@ After committing, GitHub Actions will automatically build and publish your site.
 
 Your Telar site is up and running. Now it is time to add your own content.
 
-- **[Add your content](/docs/workflows/github-web/#part-2-add-your-content)** — Upload images, fill in your spreadsheet, and create your first story
-- **[Set image coordinates](/docs/workflows/github-web/#set-your-image-coordinates)** — Focus on specific details in your images
-- **[Going further](/docs/workflows/hybrid/)** — Enhance panels with markdown files and interactive widgets
+- **[Add your content](/docs/setup/manual/#part-2-add-your-content)** — Upload images, fill in your spreadsheet, and create your first story
+- **[Set image coordinates](/docs/setup/manual/#set-your-image-coordinates)** — Focus on specific details in your images
+- **[Rich content](/docs/content-structure/rich-content/)** — Enhance panels with markdown files and interactive widgets
 - **[Themes](/docs/customization/themes/)** — Customize your site's look and feel
 
 <script>
@@ -454,7 +466,7 @@ logo: ""
 telar_language: "en"
 
 # Google Sheets Integration
-# See https://telar.org/docs/workflows/google-sheets/ for detailed setup instructions.
+# See https://telar.org/docs/reference/google-sheets/ for detailed setup instructions.
 google_sheets:
   enabled: true
   shared_url: __GSHEETS_SHARED__

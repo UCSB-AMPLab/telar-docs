@@ -18,21 +18,21 @@ Welcome to the Telar documentation. This guide will help you create visual narra
 
 New to Telar? Start here:
 
-- [Getting Started](getting-started/) - What is Telar, requirements, overview
+- [Quick Start](getting-started/quick-start/) - Build your first exhibition step by step
+- [How Telar Works](getting-started/how-telar-works/) - Understand the narrative model
 
 ## Set Up Your Site
 
-Three ways to work with Telar, from simplest to most advanced:
+- [Manual Setup](setup/manual/) - Google Sheets + GitHub, no installation required
+- [Local Development](setup/local-dev/) - CSV + Jekyll for full control
+- [Upgrading](setup/upgrading/) - Keep your site up to date
 
-- [Quick Start](workflows/github-web/) - Google Sheets + GitHub, no installation required
-- [Going Further](workflows/hybrid/) - Add markdown files for richer content
-- [Local Development](workflows/local-dev/) - CSV + Jekyll for full control
+## Content & Features
 
-## Content Structure
-
-- [Content Structure](content-structure/) - How Telar organizes your content
+- [Content & Features](content-structure/) - How Telar organizes your content
 - [Objects & Gallery](content-structure/objects-gallery/) - Object metadata, browse, search, and filter
 - [Stories & Panels](content-structure/stories-panels/) - Story structure and panel content
+- [Rich Content](content-structure/rich-content/) - Add markdown files for richer panels
 - [IIIF & Images](iiif-integration/) - Working with images
 
 ## Customization
@@ -45,3 +45,5 @@ Three ways to work with Telar, from simplest to most advanced:
 - [Configuration](reference/configuration/) - Site settings and options
 - [CSV Reference](reference/csv-project-objects/) - Column documentation
 - [Markdown Syntax](reference/markdown-syntax/) - Formatting reference
+- [Google Sheets](reference/google-sheets/) - Spreadsheet setup and troubleshooting
+- [Embedding](reference/embedding/) - Embed in Canvas and other LMS

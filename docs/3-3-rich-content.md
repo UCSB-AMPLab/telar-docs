@@ -1,19 +1,19 @@
 ---
 layout: docs
-title: 2.2. Going Further
-parent: 2. Set Up Your Site
+title: 3.3. Rich Content with Markdown
+parent: 3. Content & Features
 grand_parent: Documentation
-nav_order: 2
+nav_order: 3
 lang: en
-permalink: /docs/workflows/hybrid/
+permalink: /docs/content-structure/rich-content/
 ---
 
-# Going Further: Adding Markdown Files
+# Rich Content with Markdown
 
 Your site is running and your stories are in the spreadsheet. Now you want richer panels — this guide shows you how to add markdown files for story panels that need more than a few paragraphs of text.
 
 {: .note }
-> This guide builds on the [Quick Start](/docs/workflows/github-web/). Complete that first if you haven't already.
+> This guide builds on the setup guides. Complete the [Quick Start](/docs/getting-started/quick-start/) or [Manual Setup](/docs/setup/manual/) first if you haven't already.
 
 ## When to Add Markdown Files
 

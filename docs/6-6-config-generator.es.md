@@ -381,7 +381,7 @@ telar_language: __LANGUAGE__ # Options: "en" (English), "es" (Español)
 
 # Google Sheets Integration (optional)
 # Manage content via Google Sheets instead of editing CSV files directly.
-# See https://telar.org/docs/workflows/google-sheets/ for detailed setup instructions.
+# See https://telar.org/docs/reference/google-sheets/ for detailed setup instructions.
 #
 # Setup:
 # 1. Get the template: Duplicate our template at https://bit.ly/telar-template

@@ -466,4 +466,4 @@ Your configuration is never sent to any server — everything runs in your brows
 
 - [Configuration Reference](/docs/reference/configuration/) — Full list of all `_config.yml` settings
 - [Config Generator](/docs/reference/config-generator/) — Generate a ready-to-use `_config.yml` file
-- [Quick Start](/docs/workflows/github-web/) — Step-by-step setup guide
+- [Quick Start](/docs/getting-started/quick-start/) — Step-by-step setup guide

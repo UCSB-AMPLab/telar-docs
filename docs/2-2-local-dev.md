@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 2.3. Local Development
+title: 2.2. Local Development
 parent: 2. Set Up Your Site
 grand_parent: Documentation
-nav_order: 3
+nav_order: 2
 lang: en
-permalink: /docs/workflows/local-dev/
+permalink: /docs/setup/local-dev/
 ---
 
 # Local Development

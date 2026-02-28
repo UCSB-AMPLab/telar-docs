@@ -1,19 +1,19 @@
 ---
 layout: docs
-title: 2.2. Ir más allá
-parent: 2. Configura tu sitio
+title: 3.3. Contenido enriquecido con Markdown
+parent: 3. Contenido y funciones
 grand_parent: Documentación
-nav_order: 2
+nav_order: 3
 lang: es
-permalink: /guia/flujos-de-trabajo/hibrido/
+permalink: /guia/estructura-de-contenido/contenido-enriquecido/
 ---
 
-# Ir más allá: agregar archivos markdown
+# Contenido enriquecido con Markdown
 
 Tu sitio está funcionando y tus historias están en la hoja de cálculo. Ahora quieres paneles más ricos — esta guía te muestra cómo agregar archivos markdown para paneles de historias que necesiten más que unos pocos párrafos de texto.
 
 {: .note }
-> Esta guía se construye sobre el [Inicio rápido](/guia/flujos-de-trabajo/interfaz-web-github/). Complétalo primero si aún no lo has hecho.
+> Esta guía se construye sobre las guías de configuración. Completa el [Inicio rápido](/guia/primeros-pasos/inicio-rapido/) o la [Configuración manual](/guia/configuracion/configuracion-manual/) primero si aún no lo has hecho.
 
 ## Cuándo agregar archivos markdown
 

@@ -316,5 +316,5 @@ Usa la herramienta de identificación de coordenadas integrada:
 ## Próximos pasos
 
 - [Configura tu sitio](/guia/referencia/configuracion/)
-- [Estructura tu historia](/guia/flujos-de-trabajo/interfaz-web-github/#estructura-tu-historia)
+- [Estructura tu historia](/guia/configuracion/configuracion-manual/#estructura-tu-historia)
 - [Aprende sobre personalización](/guia/personalizacion/)

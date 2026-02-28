@@ -1,16 +1,18 @@
 ---
 layout: docs
-title: 2.1b. Inicio rápido guiado
-parent: 2. Configura tu sitio
+title: 1.1. Inicio rápido
+parent: 1. Primeros pasos
 grand_parent: Documentación
-nav_order: 1.5
+nav_order: 1
 lang: es
-permalink: /guia/flujos-de-trabajo/inicio-rapido-guiado/
+permalink: /guia/primeros-pasos/inicio-rapido/
 extra_css:
   - config-tools
 ---
 
-# Primeros pasos
+# Inicio rápido
+
+Telar es un marco de computación mínima para crear narrativas visuales interactivas. Entreteje imágenes de alta resolución, texto narrativo e información contextual en capas para crear experiencias de scrollytelling, alojadas de forma gratuita en GitHub Pages.
 
 Esta guía te lleva paso a paso por la configuración de tu primera exhibición con Telar. A medida que avanzas, vas a ingresar algunos datos — tu nombre de usuario de GitHub, el enlace de tu hoja de cálculo de Google, un título para tu sitio. Al final, esta página reúne todo en un archivo de configuración que puedes descargar o copiar y pegar en tu repositorio.
 
@@ -19,9 +21,17 @@ Vas a necesitar:
 - Una [cuenta de Google](https://accounts.google.com/) para Google Sheets (gratis)
 
 {: .tip }
-> **¿Ya conoces GitHub Pages y YAML?** Puedes configurar todo manualmente con la [guía de inicio rápido](/guia/flujos-de-trabajo/interfaz-web-github/).
+> **¿Ya conoces GitHub Pages y YAML?** Puedes configurar todo manualmente con la [guía de configuración manual](/guia/configuracion/configuracion-manual/).
 
 La configuración puede parecer muchos pasos, pero solo tienes que hacerla una vez. Después de eso, todo se maneja desde tu hoja de cálculo de Google Sheets.
+
+## Lo que vas a crear
+
+Una exposición en Telar se compone de **historias** — narrativas visuales paso a paso construidas alrededor de imágenes de alta resolución. Cada historia se desarrolla a través de una serie de **pasos**. Cada paso hace zoom en una región de una imagen y presenta una pregunta con una respuesta breve. Quienes quieran más pueden abrir **paneles en capas** — secciones expandibles con texto más extenso, medios incrustados o widgets interactivos.
+
+Defines tus historias y objetos en una hoja de cálculo de Google Sheets. Esta guía configura eso y deja tu primera exposición en línea.
+
+Para una mirada más detallada a esta estructura, consulta [Cómo funciona Telar](/guia/primeros-pasos/como-funciona-telar/).
 
 ---
 
@@ -203,9 +213,9 @@ Después de guardar, GitHub Actions construirá y publicará tu sitio automátic
 
 Tu sitio Telar ya está funcionando. Ahora es momento de agregar tu propio contenido.
 
-- **[Agrega tu contenido](/guia/flujos-de-trabajo/interfaz-web-github/#parte-2-agrega-tu-contenido)** — Sube imágenes, llena tu hoja de cálculo y crea tu primera historia
-- **[Coordenadas de imagen](/guia/flujos-de-trabajo/interfaz-web-github/#ajusta-las-coordenadas-de-imagen)** — Enfoca detalles específicos en tus imágenes
-- **[Ir más allá](/guia/flujos-de-trabajo/hibrido/)** — Enriquece los paneles con archivos markdown y widgets interactivos
+- **[Agrega tu contenido](/guia/configuracion/configuracion-manual/#parte-2-agrega-tu-contenido)** — Sube imágenes, llena tu hoja de cálculo y crea tu primera historia
+- **[Coordenadas de imagen](/guia/configuracion/configuracion-manual/#ajusta-las-coordenadas-de-imagen)** — Enfoca detalles específicos en tus imágenes
+- **[Contenido enriquecido](/guia/estructura-de-contenido/contenido-enriquecido/)** — Enriquece los paneles con archivos markdown y widgets interactivos
 - **[Temas](/guia/personalizacion/temas/)** — Personaliza la apariencia de tu sitio
 
 <script>
@@ -454,7 +464,7 @@ logo: ""
 telar_language: "es"
 
 # Google Sheets Integration
-# See https://telar.org/docs/workflows/google-sheets/ for detailed setup instructions.
+# See https://telar.org/docs/reference/google-sheets/ for detailed setup instructions.
 google_sheets:
   enabled: true
   shared_url: __GSHEETS_SHARED__

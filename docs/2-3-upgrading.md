@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 2.5. Upgrading Telar
+title: 2.3. Upgrading Telar
 parent: 2. Set Up Your Site
 grand_parent: Documentation
-nav_order: 5
+nav_order: 3
 lang: en
-permalink: /docs/workflows/upgrading/
+permalink: /docs/setup/upgrading/
 ---
 
 # Upgrading Telar

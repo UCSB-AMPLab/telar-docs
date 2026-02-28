@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 3.6. Custom Pages
-parent: 3. Content Structure
+title: 3.7. Custom Pages
+parent: 3. Content & Features
 grand_parent: Documentation
-nav_order: 6
+nav_order: 7
 lang: en
 permalink: /docs/content-structure/custom-pages/
 ---

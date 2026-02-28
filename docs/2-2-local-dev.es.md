@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 2.3. Desarrollo local
+title: 2.2. Desarrollo local
 parent: 2. Configura tu sitio
 grand_parent: Documentación
-nav_order: 3
+nav_order: 2
 lang: es
-permalink: /guia/flujos-de-trabajo/desarrollo-local/
+permalink: /guia/configuracion/desarrollo-local/
 ---
 
 # Desarrollo local

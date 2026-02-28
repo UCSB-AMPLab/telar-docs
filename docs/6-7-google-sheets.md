@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 2.4. Google Sheets Reference
-parent: 2. Set Up Your Site
+title: 6.7. Google Sheets Reference
+parent: 6. Reference
 grand_parent: Documentation
-nav_order: 4
+nav_order: 7
 lang: en
-permalink: /docs/workflows/google-sheets/
+permalink: /docs/reference/google-sheets/
 ---
 
 ## Google Sheets Integration
@@ -117,6 +117,6 @@ Panel content can be:
 
 ## See also
 
-- [GitHub Web workflow](/docs/workflows/github-web/)
-- [Local Development workflow](/docs/workflows/local-dev/)
-- [Upgrading](/docs/workflows/upgrading/)
+- [Manual Setup](/docs/setup/manual/)
+- [Local Development](/docs/setup/local-dev/)
+- [Upgrading](/docs/setup/upgrading/)

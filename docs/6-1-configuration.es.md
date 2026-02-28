@@ -148,7 +148,7 @@ google_sheets:
 {: .warning }
 > Ambas URLs son necesarias. La URL compartida sirve para visualización; la URL publicada, para la obtención automatizada.
 
-Consulta [Flujo de trabajo con Google Sheets](/guia/flujos-de-trabajo/google-sheets/) para instrucciones completas de configuración.
+Consulta [Referencia de Google Sheets](/guia/referencia/google-sheets/) para instrucciones completas de configuración.
 
 ## Ajustes de la interfaz de historias
 

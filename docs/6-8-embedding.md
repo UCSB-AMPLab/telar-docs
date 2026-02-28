@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 2.6. Embedding in Canvas
-parent: 2. Set Up Your Site
+title: 6.8. Embedding in Canvas
+parent: 6. Reference
 grand_parent: Documentation
-nav_order: 6
+nav_order: 8
 lang: en
-permalink: /docs/workflows/embedding/
+permalink: /docs/reference/embedding/
 ---
 
 # Embedding Telar Stories in LMS & Websites

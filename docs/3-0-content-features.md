@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 3. Content Structure
+title: 3. Content & Features
 parent: Documentation
 nav_order: 3
 has_children: true
@@ -8,7 +8,7 @@ lang: en
 permalink: /docs/content-structure/
 ---
 
-# Content Structure
+# Content & Features
 
 Telar uses a **components-based architecture** that separates your source content from generated files.
 
@@ -57,7 +57,13 @@ Stories are step-by-step narratives built around your objects. Each step zooms i
 
 See [Stories & Panels](/docs/content-structure/stories-panels/).
 
-### Private Stories
+### Rich Content with Markdown
+
+Enhance story panels with markdown files when you need longer narratives, interactive widgets, embedded media, or reusable content across stories.
+
+See [Rich Content with Markdown](/docs/content-structure/rich-content/).
+
+### Widgets
 
 Stories can be encrypted so that only viewers with the correct key can access them. Useful for work-in-progress content, classroom materials, or restricted access.
 
@@ -108,4 +114,4 @@ During build, Telar generates working files in `_jekyll-files/`:
 
 ## Google Sheets Integration
 
-When using Google Sheets, your CSV data is managed in a spreadsheet and fetched automatically during build — no manual CSV editing needed. See [Google Sheets Reference](/docs/workflows/google-sheets/) for setup.
+When using Google Sheets, your CSV data is managed in a spreadsheet and fetched automatically during build — no manual CSV editing needed. See [Google Sheets Reference](/docs/reference/google-sheets/) for setup.

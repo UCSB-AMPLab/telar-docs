@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 3.3. Private Stories
-parent: 3. Content Structure
+title: 3.6. Private Stories
+parent: 3. Content & Features
 grand_parent: Documentation
-nav_order: 3
+nav_order: 6
 lang: en
 permalink: /docs/content-structure/private-stories/
 ---

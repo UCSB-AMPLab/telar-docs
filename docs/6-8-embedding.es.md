@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 2.6. Insertar en Canvas
-parent: 2. Configura tu sitio
+title: 6.8. Insertar en Canvas
+parent: 6. Referencia
 grand_parent: Documentación
-nav_order: 6
+nav_order: 8
 lang: es
-permalink: /guia/flujos-de-trabajo/insercion/
+permalink: /guia/referencia/insercion/
 ---
 
 # Insertar historias de Telar en LMS y sitios web

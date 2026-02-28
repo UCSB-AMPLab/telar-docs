@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 3.3. Historias privadas
-parent: 3. Estructura de contenido
+title: 3.6. Historias privadas
+parent: 3. Contenido y funciones
 grand_parent: Documentación
-nav_order: 3
+nav_order: 6
 lang: es
 permalink: /guia/estructura-de-contenido/historias-privadas/
 ---

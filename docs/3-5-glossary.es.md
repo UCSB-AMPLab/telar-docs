@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: 3.5. Glosario
-parent: 3. Estructura de contenido
+parent: 3. Contenido y funciones
 grand_parent: Documentación
 nav_order: 5
 lang: es

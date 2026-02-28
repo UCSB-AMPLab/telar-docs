@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 2.4. Referencia de Google Sheets
-parent: 2. Configura tu sitio
+title: 6.7. Referencia de Google Sheets
+parent: 6. Referencia
 grand_parent: Documentación
-nav_order: 4
+nav_order: 7
 lang: es
-permalink: /guia/flujos-de-trabajo/google-sheets/
+permalink: /guia/referencia/google-sheets/
 ---
 
 ## Integración con Google Sheets
@@ -115,6 +115,6 @@ El contenido del panel puede ser:
 
 ## Véase también
 
-- [Interfaz Web de GitHub](/guia/flujos-de-trabajo/interfaz-web-github/)
-- [Desarrollo local](/guia/flujos-de-trabajo/desarrollo-local/)
-- [Cómo actualizar](/guia/flujos-de-trabajo/actualizacion/)
+- [Configuración manual](/guia/configuracion/configuracion-manual/)
+- [Desarrollo local](/guia/configuracion/desarrollo-local/)
+- [Actualizar Telar](/guia/configuracion/actualizacion/)

@@ -26,6 +26,18 @@ Column reference for story CSVs and glossary.csv.
 ### [6.4 Markdown Syntax](/docs/reference/markdown-syntax/)
 Complete reference for all markdown formatting available in Telar panels and pages.
 
+### [6.5 Config Validator](/docs/reference/config-validator/)
+Paste your `_config.yml` to check for errors.
+
+### [6.6 Config Generator](/docs/reference/config-generator/)
+Build a `_config.yml` from scratch with a guided form.
+
+### [6.7 Google Sheets Reference](/docs/reference/google-sheets/)
+Advanced spreadsheet setup, troubleshooting, and tab configuration.
+
+### [6.8 Embedding in Canvas](/docs/reference/embedding/)
+Embed your Telar site in a learning management system.
+
 ---
 
 ## Looking for Developer Docs?

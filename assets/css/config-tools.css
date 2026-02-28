@@ -405,6 +405,7 @@
   border-radius: 25px;
   padding: 1.5rem 2rem;
   margin: 1.5rem 0;
+  border-left: 4px solid #8B9AD8;
 }
 
 .gqs-field-group .cg-row:last-child {
@@ -462,7 +463,7 @@
 
 .gqs-url-preview-value {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #555;
   word-break: break-all;
 }

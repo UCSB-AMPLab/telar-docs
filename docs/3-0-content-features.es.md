@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 3. Estructura de contenido
+title: 3. Contenido y funciones
 parent: Documentación
 nav_order: 3
 has_children: true
@@ -8,7 +8,7 @@ lang: es
 permalink: /guia/estructura-de-contenido/
 ---
 
-# Estructura de contenido
+# Contenido y funciones
 
 Telar usa una **arquitectura basada en componentes** que separa el contenido fuente de los archivos generados.
 
@@ -57,7 +57,13 @@ Las historias son narrativas paso a paso construidas alrededor de tus objetos. C
 
 Consulta [Historias y Paneles](/guia/estructura-de-contenido/historias-paneles/).
 
-### Historias privadas
+### Contenido enriquecido con Markdown
+
+Enriquece los paneles de tus historias con archivos markdown cuando necesites narrativas más extensas, widgets interactivos, medios incrustados o contenido reutilizable en varias historias.
+
+Consulta [Contenido enriquecido con Markdown](/guia/estructura-de-contenido/contenido-enriquecido/).
+
+### Widgets
 
 Las historias se pueden encriptar para que solo las personas con la clave correcta puedan acceder a ellas. Útil para contenido en desarrollo, materiales de clase o acceso restringido.
 
@@ -108,4 +114,4 @@ Durante la compilación, Telar genera archivos de trabajo en `_jekyll-files/`:
 
 ## Integración con Google Sheets
 
-Cuando uses Google Sheets, los datos CSV se gestionan en una hoja de cálculo y se obtienen automáticamente durante la compilación — no es necesario editar CSV manualmente. Consulta [Referencia de Google Sheets](/guia/flujos-de-trabajo/google-sheets/) para la configuración.
+Cuando uses Google Sheets, los datos CSV se gestionan en una hoja de cálculo y se obtienen automáticamente durante la compilación — no es necesario editar CSV manualmente. Consulta [Referencia de Google Sheets](/guia/referencia/google-sheets/) para la configuración.

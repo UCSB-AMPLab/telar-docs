@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: 3.1. Objects & Gallery
-parent: 3. Content Structure
+parent: 3. Content & Features
 grand_parent: Documentation
 nav_order: 1
 lang: en

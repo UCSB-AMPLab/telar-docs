@@ -392,5 +392,5 @@ Compare with the [Lima textile](/objects/textile-lima/).
 ## Next Steps
 
 - [Content Structure Guide](/docs/content-structure/) - Learn how to organize your markdown files
-- [GitHub Web Workflow](/docs/workflows/github-web/) - Create and edit markdown files
+- [Rich Content with Markdown](/docs/content-structure/rich-content/) - Create and edit markdown files
 - [Advanced Styling](/docs/customization/styling/) - Customize panel appearance

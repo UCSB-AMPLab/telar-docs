@@ -1,19 +1,16 @@
 ---
 layout: docs
-title: 2.1. Quick Start
+title: 2.1. Manual Setup
 parent: 2. Set Up Your Site
 grand_parent: Documentation
 nav_order: 1
 lang: en
-permalink: /docs/workflows/github-web/
+permalink: /docs/setup/manual/
 ---
 
-# Quick Start
+# Manual Setup
 
 Build a complete Telar exhibition in your browser using GitHub and Google Sheets. No software to install.
-
-{: .tip }
-> **New to GitHub and YAML?** Try the [Guided Quick Start](/docs/workflows/guided-quickstart/) instead — it walks you through setup step by step and generates your configuration file automatically.
 
 You will need:
 - A [GitHub account](https://github.com/join) (free)
@@ -281,11 +278,11 @@ Once the basics are in place, you can:
 - Customize your homepage (edit `index.md` in your repository)
 - Browse and search your objects collection (enabled by default)
 
-When your panels need more than a few paragraphs — widgets, rich formatting, or reusable content — see [Going Further](/docs/workflows/hybrid/) for how to add markdown files.
+When your panels need more than a few paragraphs — widgets, rich formatting, or reusable content — see [Rich Content](/docs/content-structure/rich-content/) for how to add markdown files.
 
 ## Next Steps
 
-- [Going Further](/docs/workflows/hybrid/) — Enhance panels with markdown files and widgets
+- [Rich Content](/docs/content-structure/rich-content/) — Enhance panels with markdown files and widgets
 - [Content Structure](/docs/content-structure/) — How Telar organizes your materials
 - [Themes](/docs/customization/themes/) — Customizing your site's look and feel
 - [IIIF & Images](/docs/iiif-integration/) — Working with high-resolution images

@@ -1,19 +1,16 @@
 ---
 layout: docs
-title: 2.1. Inicio rápido
+title: 2.1. Configuración manual
 parent: 2. Configura tu sitio
 grand_parent: Documentación
 nav_order: 1
 lang: es
-permalink: /guia/flujos-de-trabajo/interfaz-web-github/
+permalink: /guia/configuracion/configuracion-manual/
 ---
 
-# Inicio rápido
+# Configuración manual
 
 Construye una exposición completa de Telar desde tu navegador usando GitHub y Google Sheets. No necesitas instalar nada.
-
-{: .tip }
-> **Sin experiencia con GitHub y YAML?** Prueba el [Inicio rápido guiado](/guia/flujos-de-trabajo/inicio-rapido-guiado/) — te lleva paso a paso por la configuración y genera tu archivo de configuración automáticamente.
 
 Vas a necesitar:
 - Una [cuenta de GitHub](https://github.com/join) (gratis)
@@ -281,11 +278,11 @@ Una vez que tengas lo básico, puedes:
 - Personalizar tu página de inicio (edita `index.md` en tu repositorio)
 - Explorar y buscar en tu colección de objetos (habilitado por defecto)
 
-Cuando tus paneles necesiten más que unos pocos párrafos — widgets, formato enriquecido o contenido reutilizable — consulta [Ir más allá](/guia/flujos-de-trabajo/hibrido/) para aprender a agregar archivos markdown.
+Cuando tus paneles necesiten más que unos pocos párrafos — widgets, formato enriquecido o contenido reutilizable — consulta [Contenido enriquecido](/guia/estructura-de-contenido/contenido-enriquecido/) para aprender a agregar archivos markdown.
 
 ## Próximos pasos
 
-- [Ir más allá](/guia/flujos-de-trabajo/hibrido/) — Enriquece paneles con archivos markdown y widgets
+- [Contenido enriquecido](/guia/estructura-de-contenido/contenido-enriquecido/) — Enriquece paneles con archivos markdown y widgets
 - [Estructura de Contenido](/guia/estructura-de-contenido/) — Cómo Telar organiza tus materiales
 - [Temas](/guia/personalizacion/temas/) — Personaliza la apariencia de tu sitio
 - [IIIF e Imágenes](/guia/integracion-iiif/) — Trabaja con imágenes de alta resolución
