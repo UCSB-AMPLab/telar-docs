@@ -26,6 +26,8 @@ Este es el punto de partida adecuado para la mayoría de las personas.
 
 [Empezar](/guia/flujos-de-trabajo/interfaz-web-github/){: .btn .btn-primary }
 
+Si prefieres más orientación, el [Inicio rápido guiado](/guia/flujos-de-trabajo/inicio-rapido-guiado/) te lleva paso a paso por la configuración y genera tu archivo de configuración automáticamente — sin editar YAML.
+
 ### Ir más allá — Agrega archivos markdown
 
 Una vez que tu sitio esté funcionando, puedes enriquecer los paneles de las historias con contenido más completo agregando archivos markdown a tu repositorio. Esto se construye sobre lo que creaste en el Inicio rápido.

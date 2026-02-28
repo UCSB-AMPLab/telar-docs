@@ -9,18 +9,18 @@
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Mulish:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Paisajes colors */
-      --paisajes-brown: #8b4513;
-      --paisajes-slate: #2c3e50;
-      --paisajes-blue: #A8C5D4;
-      --paisajes-purple: #3d2645;
-      --paisajes-cream: #F5EDE1;
+      /* Telar identity colours */
+      --terracotta: #883C36;
+      --dark-grey: #333333;
+      --lavender: #C6D0F8;
+      --gold: #DAB95C;
+      --cream: #FFF6EF;
       /* Text colors */
-      --text-dark: #2c3e50;
+      --text-dark: #333333;
       --text-medium: #6C7A89;
       --text-light: #AEB3BB;
       --bg-white: #ffffff;
@@ -39,8 +39,8 @@
     }
 
     body {
-      font-family: 'IBM Plex Serif', serif;
-      font-weight: 300;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 400;
       line-height: 1.6;
       color: var(--text-dark);
       overflow-x: hidden;
@@ -69,24 +69,26 @@
 
     /* Hero Section */
     .hero {
-      background: var(--bg-white);
+      background: var(--terracotta);
       text-align: center;
       padding: 40px 30px 80px;
     }
 
     .hero__logo {
-      max-width: 300px;
-      width: 100%;
+      max-width: 420px;
+      width: 80%;
       height: auto;
-      margin-bottom: 8px;
+      margin: 0 auto 16px;
+      display: block;
     }
 
     .hero__title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(48px, 10vw, 72px);
-      font-weight: 600;
-      letter-spacing: -1.5px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(52px, 10vw, 80px);
+      font-weight: 700;
+      letter-spacing: -2px;
       margin-bottom: 8px;
+      color: var(--cream);
     }
 
     .hero__lang-toggle {
@@ -98,31 +100,33 @@
 
     .hero__lang-toggle button {
       padding: 6px 16px;
-      border: 1px solid var(--text-light);
+      border: 1px solid rgba(255,255,255,0.35);
       background: transparent;
+      color: rgba(255,255,255,0.8);
       cursor: pointer;
       border-radius: 50px;
-      font-family: 'Mulish', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;
       font-size: 14px;
       font-weight: 500;
       transition: all 0.2s;
     }
 
     .hero__lang-toggle button.active {
-      background: var(--paisajes-slate);
-      color: white;
-      border-color: var(--paisajes-slate);
+      background: var(--cream);
+      color: var(--terracotta);
+      border-color: var(--cream);
     }
 
     .hero__lang-toggle button:hover:not(.active) {
-      border-color: var(--text-medium);
+      border-color: rgba(255,255,255,0.6);
     }
 
     .hero__tagline {
-      font-size: clamp(18px, 3vw, 24px);
-      color: var(--text-medium);
+      font-size: clamp(18px, 3vw, 22px);
+      color: rgba(255,246,239,0.75);
       max-width: 700px;
-      margin: 0 auto 20px;
+      margin: 0 auto 24px;
+      font-weight: 300;
     }
 
     .hero__cta {
@@ -138,20 +142,41 @@
       padding: 12px 28px;
       border-radius: 50px;
       text-decoration: none;
-      font-family: 'Mulish', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;
       font-weight: 500;
       font-size: 15px;
       letter-spacing: 0.4px;
       transition: all 0.2s;
     }
 
+    .hero .btn--primary {
+      background: var(--cream);
+      color: var(--terracotta);
+    }
+
+    .hero .btn--primary:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    .hero .btn--secondary {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .hero .btn--secondary:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+    }
+
     .btn--primary {
-      background: var(--paisajes-slate);
+      background: var(--terracotta);
       color: white;
     }
 
     .btn--primary:hover {
-      background: #1a2a38;
+      background: var(--dark-grey);
       transform: translateY(-2px);
     }
 
@@ -161,7 +186,7 @@
     }
 
     .btn--secondary:hover {
-      background: #e8e9ea;
+      background: #e0e1e2;
       transform: translateY(-2px);
     }
 
@@ -176,7 +201,7 @@
     .hero__scroll svg {
       width: 32px;
       height: 32px;
-      stroke: var(--text-light);
+      stroke: rgba(255,255,255,0.35);
     }
 
     @keyframes bounce {
@@ -187,32 +212,32 @@
 
     /* Beta Notice */
     .beta-notice {
-      background: var(--paisajes-cream);
-      border-left: 4px solid var(--paisajes-brown);
+      background: var(--cream);
+      border-left: 4px solid var(--gold);
       padding: 12px 16px;
       margin: 0 auto 24px;
       max-width: 600px;
       text-align: left;
-      border-radius: 0 6px 6px 0;
+      border-radius: 12px;
       font-size: 14px;
     }
 
     .beta-notice strong {
-      color: var(--paisajes-brown);
+      color: var(--terracotta);
       font-family: 'Mulish', sans-serif;
       font-weight: 500;
     }
 
     /* About Section */
     .about {
-      background: var(--bg-light);
+      background: var(--bg-white);
     }
 
     .about h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(32px, 5vw, 48px);
-      font-weight: 600;
-      margin-bottom: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
       letter-spacing: -0.5px;
     }
 
@@ -220,6 +245,7 @@
       font-size: 18px;
       margin-bottom: 16px;
       color: var(--text-medium);
+      font-weight: 300;
     }
 
     .about__screenshot {
@@ -241,15 +267,15 @@
 
     /* Features Section */
     .features {
-      background: var(--bg-white);
+      background: rgba(198, 208, 248, 0.25);
       padding-top: 40px;
       padding-bottom: 80px;
     }
 
     .features h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(32px, 5vw, 48px);
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 32px;
       text-align: center;
       letter-spacing: -0.5px;
@@ -277,8 +303,8 @@
 
     .feature-card {
       padding: 24px;
-      background: var(--bg-light);
-      border-radius: 8px;
+      background: var(--bg-white);
+      border-radius: 12px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -288,20 +314,21 @@
     }
 
     .feature-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
       font-weight: 600;
       margin-bottom: 8px;
     }
 
     .feature-card p {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-medium);
+      font-weight: 300;
     }
 
     /* Sponsors Section */
     .sponsors-section {
-      background: var(--paisajes-purple);
+      background: var(--dark-grey);
       color: white;
       text-align: center;
     }
@@ -315,13 +342,13 @@
     }
 
     .sponsors-row h3 {
-      font-family: 'Mulish', sans-serif;
-      font-size: 24px;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 16px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 3px;
-      margin-bottom: 28px;
-      opacity: 0.8;
+      margin-bottom: 24px;
+      opacity: 0.7;
     }
 
     .sponsors-logos {
@@ -379,16 +406,16 @@
 
     /* CTA Section */
     .cta-section {
-      background: var(--bg-light);
+      background: var(--cream);
       text-align: center;
       min-height: auto;
-      padding: 60px 30px 40px;
+      padding: 80px 30px 40px;
     }
 
     .cta-section h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(32px, 5vw, 48px);
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 16px;
       letter-spacing: -0.5px;
     }
@@ -403,9 +430,11 @@
     .landing-footer {
       padding: 40px 30px;
       text-align: center;
-      background: var(--bg-light);
+      background: var(--cream);
+      border-top: 1px solid rgba(136,60,54,0.1);
       font-size: 14px;
       color: var(--text-medium);
+      font-weight: 300;
     }
 
     .landing-footer p {
@@ -414,7 +443,7 @@
     }
 
     .landing-footer a {
-      color: var(--paisajes-brown);
+      color: var(--terracotta);
     }
 
     /* Language content visibility */
@@ -441,7 +470,7 @@
       right: 30px;
       width: 48px;
       height: 48px;
-      background: var(--paisajes-slate);
+      background: var(--terracotta);
       color: white;
       border: none;
       border-radius: 50%;
@@ -462,7 +491,7 @@
     }
 
     .back-to-top:hover {
-      background: #1a2a38;
+      background: var(--dark-grey);
       transform: translateY(-3px);
     }
 

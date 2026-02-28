@@ -1,10 +1,10 @@
 // Shared components: buttons, callouts, code blocks
 
-// Button Styling - Telar Rounded Style (only for actual buttons)
+// Button Styling - Telar Pill Style
 .main-content .btn,
 .btn.btn-primary,
 button[type="submit"] {
-  border-radius: 20px !important;
+  border-radius: 50px !important;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.025em;
@@ -12,17 +12,17 @@ button[type="submit"] {
   font-size: 0.9rem;
   text-decoration: none;
   display: inline-block;
-  border: 1px solid var(--btn-primary-color, #2c3e50);
+  border: 1px solid var(--btn-primary-color, #883C36);
 }
 
 // Default button (outline style)
 .main-content .btn {
   background-color: transparent;
-  color: var(--btn-primary-color, #2c3e50);
+  color: var(--btn-primary-color, #883C36);
 }
 
 .main-content .btn:hover {
-  background-color: var(--btn-primary-color, #2c3e50);
+  background-color: var(--btn-primary-color, #883C36);
   color: #ffffff;
   text-decoration: none;
 }
@@ -30,75 +30,75 @@ button[type="submit"] {
 // Primary buttons (filled)
 .btn-primary,
 button[type="submit"] {
-  background-color: var(--btn-primary-color, #2c3e50) !important;
+  background-color: var(--btn-primary-color, #883C36) !important;
   color: #ffffff !important;
   border: none !important;
 }
 
 .btn-primary:hover,
 button[type="submit"]:hover {
-  background-color: #1a2a3a !important;
+  background-color: #333333 !important;
   text-decoration: none;
 }
 
-// Callouts - Extremely Minimal (keep left border)
+// Callouts - New identity (cream bg, rounded, gold/terracotta borders)
 .label,
 .label-blue,
 .label-green,
 .label-yellow,
 .label-red {
-  border-radius: 0;
+  border-radius: 12px;
   padding: 1rem;
   border: none !important;
-  border-left: 2px solid #d0d0d0 !important;
+  border-left: 4px solid #DAB95C !important;
   font-size: 0.95rem;
   line-height: 1.6;
-  background-color: #fafafa;
+  background-color: #FFF6EF;
 }
 
 // Note callout
 .label-blue,
 div[class*="note"] {
-  background-color: transparent;
-  border-left-color: #d0d0d0;
+  background-color: #FFF6EF;
+  border-left-color: #DAB95C !important;
   color: #333333;
 }
 
 // Warning callout
 .label-yellow,
 div[class*="warning"] {
-  background-color: transparent;
-  border-left-color: #d0d0d0;
+  background-color: #FFF6EF;
+  border-left-color: #883C36 !important;
   color: #333333;
 }
 
 // Tip callout
 .label-green,
 div[class*="tip"] {
-  background-color: transparent;
-  border-left-color: #d0d0d0;
+  background-color: #FFF6EF;
+  border-left-color: #DAB95C !important;
   color: #333333;
 }
 
 // Beta callout
 .label-red,
 div[class*="beta"] {
-  background-color: transparent;
-  border-left-color: #d0d0d0;
+  background-color: #FFF6EF;
+  border-left-color: #883C36 !important;
   color: #333333;
 }
 
-// Code blocks - minimal (keep their borders)
+// Code blocks - lavender-tinted
 code {
-  border-radius: 0;
+  border-radius: 3px;
   font-size: 0.9em;
-  background-color: #fafafa;
-  border: none !important;
+  background-color: rgba(198, 208, 248, 0.2);
+  border: 1px solid rgba(198, 208, 248, 0.4) !important;
 }
 
 pre {
   border-radius: 0;
   border: none !important;
-  border-left: 1px solid #e0e0e0 !important;
-  background-color: #fafafa;
+  border-left: 3px solid rgba(198, 208, 248, 0.5) !important;
+  background-color: #f8f9fa;
 }

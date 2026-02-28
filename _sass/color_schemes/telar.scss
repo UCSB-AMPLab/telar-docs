@@ -1,21 +1,21 @@
-// Telar Color Scheme - Ultra Minimal (Inspired by AMPL)
-// Maximum simplicity with generous whitespace
+// Telar Color Scheme - New Visual Identity
+// Terracotta, lavender, gold, cream, dark grey
 
-// Primary Colors - almost monochrome
-$telar-heading: #1a1a1a;        // Nearly black for headings
-$telar-link: #2c3e50;           // Dark blue-gray for links
-$telar-accent: #4a5a6a;         // Single accent color
+// Primary Colors
+$telar-heading: #333333;
+$telar-link: #883C36;           // Terracotta for links
+$telar-accent: #883C36;         // Terracotta accent
 
-// Body colors - pure and simple
+// Body colors
 $body-background-color: #ffffff;
 $body-text-color: #333333;
 $body-heading-color: $telar-heading;
 
-// Links - simple dark color
+// Links
 $link-color: $telar-link;
 $btn-primary-color: $telar-link;
 
-// Navigation - minimal
+// Navigation
 $nav-child-link-color: #666666;
 $sidebar-color: #ffffff;
 
@@ -23,34 +23,34 @@ $sidebar-color: #ffffff;
 $search-background-color: #fafafa;
 $search-result-preview-color: $body-text-color;
 
-// Code blocks - barely there
-$code-background-color: #fafafa;
+// Code blocks - lavender-tinted
+$code-background-color: rgba(198, 208, 248, 0.2);
 $code-snippet-color: $telar-accent;
 
-// Borders - almost invisible
-$border-color: #f0f0f0;
+// Borders
+$border-color: #C6D0F8;
 
-// Tables - clean
+// Tables
 $table-background-color: #ffffff;
 $table-header-background-color: #fafafa;
 
-// Callout colors - extremely subtle
-$blue-000: #f8fafb;
-$blue-100: #f0f4f7;
-$blue-200: #e8eef3;
-$blue-300: $telar-accent;
+// Callout colors - cream/gold/terracotta identity
+$blue-000: #FFF6EF;
+$blue-100: #FFF6EF;
+$blue-200: #FFF6EF;
+$blue-300: #DAB95C;
 
-$green-000: #f8faf8;
-$green-100: #f0f4f0;
-$green-200: #e8efe8;
-$green-300: #6a8a6a;
+$green-000: #FFF6EF;
+$green-100: #FFF6EF;
+$green-200: #FFF6EF;
+$green-300: #DAB95C;
 
-$yellow-000: #fffefa;
-$yellow-100: #fffcf5;
-$yellow-200: #fff9eb;
-$yellow-300: #b8a070;
+$yellow-000: #FFF6EF;
+$yellow-100: #FFF6EF;
+$yellow-200: #FFF6EF;
+$yellow-300: #883C36;
 
-$red-000: #fffafa;
-$red-100: #fef5f5;
-$red-200: #fcf0f0;
-$red-300: #a86060;
+$red-000: #FFF6EF;
+$red-100: #FFF6EF;
+$red-200: #FFF6EF;
+$red-300: #883C36;

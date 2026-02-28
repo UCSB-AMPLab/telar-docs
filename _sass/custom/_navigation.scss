@@ -1,13 +1,13 @@
 // Navigation: sidebar, nav lists, language switcher, breadcrumbs
 
-// Navigation uses sans-serif
+// Navigation uses Roboto Condensed
 .site-header,
 .site-nav,
 .nav-list,
 .nav-list-item,
 .nav-list .nav-list-item > a,
 .aux-nav {
-  font-family: 'Source Sans Pro', -apple-system, sans-serif !important;
+  font-family: 'Roboto Condensed', -apple-system, sans-serif !important;
 }
 
 // Logo at top of navigation menu
@@ -30,7 +30,7 @@
 
 // Navigation - clean
 .nav-list {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   line-height: 1.6;
 }
 
@@ -49,7 +49,7 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 0.875rem;
 }
@@ -81,7 +81,7 @@
 
 // Language Switcher
 .page-header-bar .lang-switcher {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 
   .lang-link {
     color: #666666;

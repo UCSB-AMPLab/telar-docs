@@ -12,6 +12,9 @@ permalink: /guia/flujos-de-trabajo/interfaz-web-github/
 
 Construye una exposición completa de Telar desde tu navegador usando GitHub y Google Sheets. No necesitas instalar nada.
 
+{: .tip }
+> **Sin experiencia con GitHub y YAML?** Prueba el [Inicio rápido guiado](/guia/flujos-de-trabajo/inicio-rapido-guiado/) — te lleva paso a paso por la configuración y genera tu archivo de configuración automáticamente.
+
 Vas a necesitar:
 - Una [cuenta de GitHub](https://github.com/join) (gratis)
 - Una [cuenta de Google](https://accounts.google.com/) para Google Sheets (gratis)

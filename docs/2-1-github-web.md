@@ -12,6 +12,9 @@ permalink: /docs/workflows/github-web/
 
 Build a complete Telar exhibition in your browser using GitHub and Google Sheets. No software to install.
 
+{: .tip }
+> **New to GitHub and YAML?** Try the [Guided Quick Start](/docs/workflows/guided-quickstart/) instead — it walks you through setup step by step and generates your configuration file automatically.
+
 You will need:
 - A [GitHub account](https://github.com/join) (free)
 - A [Google account](https://accounts.google.com/) for Google Sheets (free)

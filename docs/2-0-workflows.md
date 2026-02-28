@@ -26,6 +26,8 @@ This is the right starting point for most users.
 
 [Get started](/docs/workflows/github-web/){: .btn .btn-primary }
 
+Want even more guidance? The [Guided Quick Start](/docs/workflows/guided-quickstart/) walks you through setup step by step and generates your configuration file automatically — no YAML editing required.
+
 ### Going Further — Add Markdown Files
 
 Once your site is up and running, you can enhance story panels with richer content by adding markdown files to your repository. This builds on what you created in the Quick Start.

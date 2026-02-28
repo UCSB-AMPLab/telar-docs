@@ -27,7 +27,7 @@
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="{{ '/pagefind/pagefind-ui.css' | relative_url }}" rel="stylesheet">
   <script src="{{ '/pagefind/pagefind-ui.js' | relative_url }}"></script>
   {% for css in page.extra_css %}
@@ -37,15 +37,15 @@
 
   <style>
     :root {
-      /* Paisajes colors */
-      --paisajes-brown: #8b4513;
-      --paisajes-slate: #2c3e50;
-      --paisajes-blue: #A8C5D4;
-      --paisajes-purple: #3d2645;
-      --paisajes-cream: #F5EDE1;
+      /* Telar identity colours */
+      --terracotta: #883C36;
+      --dark-grey: #333333;
+      --lavender: #C6D0F8;
+      --gold: #DAB95C;
+      --cream: #FFF6EF;
 
       /* Text colors */
-      --text-dark: #2c3e50;
+      --text-dark: #333333;
       --text-medium: #6C7A89;
       --text-light: #AEB3BB;
 
@@ -66,7 +66,7 @@
     }
 
     body {
-      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 400;
       line-height: 1.6;
       color: var(--text-dark);
@@ -80,8 +80,8 @@
       left: 0;
       right: 0;
       height: var(--header-height);
-      background: var(--bg-white);
-      border-bottom: 1px solid #e9ecef;
+      background: var(--terracotta);
+      border-bottom: 2px solid transparent;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -96,8 +96,9 @@
     }
 
     .docs-header__logo {
-      height: 36px;
+      height: 32px;
       width: auto;
+      display: block;
     }
 
     .docs-header__brand {
@@ -108,10 +109,10 @@
     }
 
     .docs-header__title {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      font-weight: 500;
-      color: var(--text-dark);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--cream);
     }
 
     .docs-header__center {
@@ -134,26 +135,26 @@
 
     .lang-toggle button {
       padding: 6px 14px;
-      border: 1px solid var(--text-light);
+      border: 1px solid rgba(255,255,255,0.3);
       background: transparent;
       cursor: pointer;
       border-radius: 50px;
-      font-family: 'Source Sans Pro', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;
       font-size: 13px;
       font-weight: 500;
-      color: var(--text-medium);
+      color: rgba(255,255,255,0.7);
       transition: all 0.2s;
     }
 
     .lang-toggle button.active {
-      background: var(--paisajes-slate);
-      color: white;
-      border-color: var(--paisajes-slate);
+      background: var(--cream);
+      color: var(--terracotta);
+      border-color: var(--cream);
     }
 
     .lang-toggle button:hover:not(.active) {
-      border-color: var(--text-medium);
-      color: var(--text-dark);
+      border-color: rgba(255,255,255,0.6);
+      color: white;
     }
 
     /* Aux Links */
@@ -163,14 +164,14 @@
     }
 
     .aux-links a {
-      color: var(--text-medium);
+      color: rgba(255,255,255,0.8);
       text-decoration: none;
       font-size: 15px;
       font-weight: 500;
     }
 
     .aux-links a:hover {
-      color: var(--text-dark);
+      color: white;
     }
 
     /* Mobile Menu Button */
@@ -185,7 +186,7 @@
     .menu-button svg {
       width: 24px;
       height: 24px;
-      color: var(--text-dark);
+      color: var(--cream);
     }
 
     /* Sidebar */
@@ -195,8 +196,8 @@
       left: 0;
       bottom: 0;
       width: var(--sidebar-width);
-      background: var(--bg-sidebar);
-      border-right: 1px solid #e9ecef;
+      background: var(--cream);
+      border-right: 1px solid rgba(136,60,54,0.12);
       overflow-y: auto;
       padding: 24px 0;
       z-index: 50;
@@ -235,22 +236,21 @@
       color: var(--text-medium);
       text-decoration: none;
       font-size: 16px;
-      border-radius: 4px;
+      border-radius: 8px;
+      border-left: 4px solid transparent;
       transition: all 0.15s;
     }
 
     .nav-link:hover {
-      color: var(--text-dark);
+      color: var(--terracotta);
       background: rgba(0,0,0,0.04);
     }
 
     .nav-link.active {
-      color: var(--paisajes-purple);
-      background: rgba(61, 38, 69, 0.08);
+      color: var(--dark-grey);
+      background: rgba(218,185,92,0.3);
       font-weight: 600;
-      border-left: 3px solid var(--paisajes-purple);
-      margin-left: -3px;
-      padding-left: 12px;
+      border-left: 4px solid transparent;
     }
 
     /* .nav-link.expanded - no styling, parent items not highlighted */
@@ -275,19 +275,19 @@
     /* Search */
     .docs-search {
       padding: 16px;
-      border-bottom: 1px solid #e9ecef;
+      border-bottom: 1px solid var(--lavender);
     }
 
     /* Pagefind UI customization */
     .docs-search .pagefind-ui {
       --pagefind-ui-scale: 0.9;
-      --pagefind-ui-primary: var(--paisajes-purple);
+      --pagefind-ui-primary: var(--terracotta);
       --pagefind-ui-text: var(--text-dark);
       --pagefind-ui-background: var(--bg-white);
       --pagefind-ui-border: #d0d5db;
       --pagefind-ui-border-width: 1px;
       --pagefind-ui-border-radius: 24px;
-      --pagefind-ui-font: 'Source Sans Pro', sans-serif;
+      --pagefind-ui-font: 'Roboto Condensed', sans-serif;
     }
 
     .docs-search .pagefind-ui__search-input {
@@ -300,7 +300,7 @@
     }
 
     .docs-search .pagefind-ui__result-link {
-      color: var(--paisajes-purple);
+      color: var(--terracotta);
     }
 
     .docs-search .pagefind-ui__result-excerpt {
@@ -327,8 +327,8 @@
     .docs-content h4,
     .docs-content h5,
     .docs-content h6 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 400;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
       line-height: 1.3;
       color: var(--text-dark);
     }
@@ -343,7 +343,7 @@
       margin-top: 2.5rem;
       margin-bottom: 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid #e9ecef;
+      border-bottom: 1px solid var(--lavender);
     }
 
     .docs-content h3 {
@@ -373,14 +373,14 @@
     }
 
     .docs-content a {
-      color: var(--paisajes-slate);
+      color: var(--terracotta);
       text-decoration: underline;
-      text-decoration-color: rgba(44, 62, 80, 0.3);
+      text-decoration-color: rgba(136, 60, 54, 0.3);
       text-underline-offset: 2px;
     }
 
     .docs-content a:hover {
-      text-decoration-color: var(--paisajes-slate);
+      text-decoration-color: var(--terracotta);
     }
 
     /* Images - extend beyond text column on large screens */
@@ -430,14 +430,15 @@
     .docs-content code {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.875em;
-      background: #f4f5f6;
+      background: rgba(198, 208, 248, 0.2);
+      border: 1px solid rgba(198, 208, 248, 0.4);
       padding: 0.2em 0.4em;
       border-radius: 3px;
     }
 
     .docs-content pre {
       background: #f8f9fa;
-      border-left: 3px solid #e9ecef;
+      border-left: 3px solid rgba(198, 208, 248, 0.5);
       padding: 16px 20px;
       overflow-x: auto;
       margin-bottom: 1.5rem;
@@ -471,11 +472,16 @@
 
     /* Callouts */
     .docs-content blockquote {
-      border-left: 4px solid #e6b800;
+      border-left: 4px solid var(--gold);
       padding: 12px 20px;
       margin: 1.5rem 0;
-      background: #fffae6;
+      background: var(--cream);
       color: var(--text-dark);
+      border-radius: 12px;
+    }
+
+    .docs-content blockquote.warning {
+      border-left-color: var(--terracotta);
     }
 
     .docs-content blockquote > :last-child {
@@ -486,7 +492,7 @@
     .docs-footer {
       margin-top: 60px;
       padding-top: 24px;
-      border-top: 1px solid #e9ecef;
+      border-top: 1px solid var(--lavender);
       color: var(--text-light);
       font-size: 14px;
     }
@@ -644,9 +650,9 @@
         </svg>
       </button>
       <a href="{% if current_lang == 'es' %}{{ '/guia/' | relative_url }}{% else %}{{ '/docs/' | relative_url }}{% endif %}" class="docs-header__brand">
-        <img src="{{ '/images/telar.png' | relative_url }}" alt="Telar" class="docs-header__logo">
-        <span class="docs-header__title" data-lang="en">Telar: Docs</span>
-        <span class="docs-header__title" data-lang="es">Telar: Documentación</span>
+        <svg class="docs-header__logo" viewBox="0 0 764 435" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Telar"><path d="M242.595 20.0156H186.697V145.107H271.366V0H290.849V145.107H415.474L436.075 2.96484L436.241 2.98926V0H492.537V4.21582L514.997 145.107H588.656V9.76758H588.759V0H688.852L690.245 0.00195312L647.461 145.107H764V159.758H648.257L704.296 434.385H684.747L628.924 159.758H608.138L608.136 434.616H588.656V159.758H517.333L561.112 434.385H541.034L497.158 159.758H433.495L393.624 434.385H373.546L413.35 159.758H290.849V413.923H347.034V433.938H271.173V413.923H271.366V159.758H186.697V413.923H242.595V433.938H166.733V159.758H118.769V433.733H98.8047V159.758H0V145.107H98.8047V20.0225H30.6152V0H242.595V20.0156ZM118.769 145.107H166.733V20.0225H118.769V145.107ZM435.622 145.107H494.817L474.832 20.0156H453.782L435.622 145.107ZM608.138 145.107H626.642L663.476 20.0156H608.139L608.138 145.107Z" fill="#FFF1E6"/><mask id="mask0_docs" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="764" height="435"><path d="M242.595 20.0156H186.697V145.107H271.366V0H290.849V145.107H415.474L436.075 2.96484L436.241 2.98926V0H492.537V4.21582L514.997 145.107H588.656V9.76758H588.759V0H688.852L690.245 0.00195312L647.461 145.107H764V159.758H648.257L704.296 434.385H684.747L628.924 159.758H608.138L608.136 434.616H588.656V159.758H517.333L561.112 434.385H541.034L497.158 159.758H433.495L393.624 434.385H373.546L413.35 159.758H290.849V413.923H347.034V433.938H271.173V413.923H271.366V159.758H186.697V413.923H242.595V433.938H166.733V159.758H118.769V433.733H98.8047V159.758H0V145.107H98.8047V20.0225H30.6152V0H242.595V20.0156ZM118.769 145.107H166.733V20.0225H118.769V145.107ZM435.622 145.107H494.817L474.832 20.0156H453.782L435.622 145.107ZM608.138 145.107H626.642L663.476 20.0156H608.139L608.138 145.107Z" fill="#D9645A"/></mask><g mask="url(#mask0_docs)"><rect y="145" width="98.8" height="15" fill="#C6D0F8"/><mask id="path-4-outside-1_docs" maskUnits="userSpaceOnUse" x="118" y="145" width="154" height="15" fill="black"><rect fill="white" x="118" y="145" width="154" height="15"/><path d="M119 145H271.35V160H119V145Z"/></mask><path d="M119 145H271.35V160H119V145Z" fill="#C6D0F8"/><path d="M119 160H119.2V145H119H118.8V160H119Z" fill="#2D2598" mask="url(#path-4-outside-1_docs)"/><path d="M290.851 160H497.199L494.797 145H290.851V160Z" fill="#C6D0F8"/><path d="M626.621 145H515L517.363 159.945H628.949L626.621 145Z" fill="#C6D0F8"/><path d="M647.5 145H764V160H648.316L646.5 152.5L647.5 145Z" fill="#C6D0F8"/></g></svg>
+        <span class="docs-header__title" data-lang="en">Docs</span>
+        <span class="docs-header__title" data-lang="es">Documentación</span>
       </a>
     </div>
 
