@@ -356,7 +356,8 @@ Your Telar site is up and running. Now it is time to add your own content.
   function validateTitle() {
     clearField('gqs-title');
     if (!titleEl.value.trim()) {
-      showWarn('gqs-title', 'Your site title will appear blank \u2014 you can always add one later');
+      showError('gqs-title', 'Required \u2014 your site needs a title');
+      return true;
     }
     return false;
   }
@@ -381,8 +382,8 @@ Your Telar site is up and running. Now it is time to add your own content.
 
   // --- Generate ---
   generateBtn.addEventListener('click', function() {
-    validateTitle();
     var hasErrors = false;
+    if (validateTitle()) hasErrors = true;
     if (validateUsername()) hasErrors = true;
     if (validateRepo()) hasErrors = true;
     if (validateSharedUrl()) hasErrors = true;

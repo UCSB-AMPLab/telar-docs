@@ -429,8 +429,10 @@
   box-shadow: 0 0 0 3px rgba(136, 60, 54, 0.15);
 }
 
-.gqs-field-group .cg-hint {
-  color: #555;
+.gqs-field-group .cg-hint,
+.gqs-field-group .cg-optional,
+.gqs-field-group .cg-warn-msg {
+  color: #333333;
 }
 
 /* --- Panel title --- */

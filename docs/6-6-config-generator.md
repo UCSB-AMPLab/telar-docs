@@ -613,7 +613,8 @@ development-features:
   function validateTitle() {
     clearField('cg-title');
     if (!document.getElementById('cg-title').value.trim()) {
-      showWarn('cg-title', 'Your site title will appear blank — you can always add one later');
+      showError('cg-title', 'Required — your site needs a title');
+      return true;
     }
     return false;
   }
@@ -731,8 +732,8 @@ development-features:
   }
 
   function validateAll() {
-    validateTitle();
     var hasErrors = false;
+    if (validateTitle())         hasErrors = true;
     if (validateUsername())      hasErrors = true;
     if (validateRepo())          hasErrors = true;
     if (validateDomain())        hasErrors = true;

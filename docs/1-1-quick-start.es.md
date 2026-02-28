@@ -354,7 +354,8 @@ Tu sitio Telar ya está funcionando. Ahora es momento de agregar tu propio conte
   function validateTitle() {
     clearField('gqs-title');
     if (!titleEl.value.trim()) {
-      showWarn('gqs-title', 'El t\u00edtulo de tu sitio aparecer\u00e1 en blanco \u2014 siempre puedes a\u00f1adirlo despu\u00e9s');
+      showError('gqs-title', 'Obligatorio \u2014 tu sitio necesita un t\u00edtulo');
+      return true;
     }
     return false;
   }
@@ -379,8 +380,8 @@ Tu sitio Telar ya está funcionando. Ahora es momento de agregar tu propio conte
 
   // --- Generate ---
   generateBtn.addEventListener('click', function() {
-    validateTitle();
     var hasErrors = false;
+    if (validateTitle()) hasErrors = true;
     if (validateUsername()) hasErrors = true;
     if (validateRepo()) hasErrors = true;
     if (validateSharedUrl()) hasErrors = true;
