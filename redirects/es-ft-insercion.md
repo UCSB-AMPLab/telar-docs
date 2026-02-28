@@ -1,6 +1,6 @@
 ---
 layout: redirect
-permalink: /guia/referencia/insercion/
+permalink: /guia/flujos-de-trabajo/insercion/
 redirect_to: /guia/funciones/insercion/
 lang: es
 sitemap: false
