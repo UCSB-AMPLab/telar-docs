@@ -205,7 +205,7 @@ Después de guardar, GitHub Actions construirá y publicará tu sitio automátic
 3. Deberías ver un sitio Telar con tu título y el contenido de demostración predeterminado
 
 {: .warning }
-> **¿Problemas con la construcción?** Los errores más comunes son URLs de Google Sheets que no coinciden (necesitas tanto la URL compartida como la URL publicada — son diferentes). Si tu sitio no aparece, revisa la pestaña Actions para ver los detalles del error. También puedes pegar tu `_config.yml` en el [Validador de configuración de Telar](/guia/referencia/validador-de-configuracion/) para verificar errores.
+> **¿Problemas con la construcción?** Los errores más comunes son URLs de Google Sheets que no coinciden (necesitas tanto la URL compartida como la URL publicada — son diferentes). Si tu sitio no aparece, revisa la pestaña Actions para ver los detalles del error. También puedes pegar tu `_config.yml` en el [Validador de configuración de Telar](/guia/configurar/validador-de-configuracion/) para verificar errores.
 
 ---
 
@@ -215,7 +215,7 @@ Tu sitio Telar ya está funcionando. Ahora es momento de agregar tu propio conte
 
 - **[Agrega tu contenido](/guia/configuracion/configuracion-manual/#parte-2-agrega-tu-contenido)** — Sube imágenes, llena tu hoja de cálculo y crea tu primera historia
 - **[Coordenadas de imagen](/guia/configuracion/configuracion-manual/#ajusta-las-coordenadas-de-imagen)** — Enfoca detalles específicos en tus imágenes
-- **[Contenido enriquecido](/guia/estructura-de-contenido/contenido-enriquecido/)** — Enriquece los paneles con archivos markdown y widgets interactivos
+- **[Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/)** — Enriquece los paneles con archivos markdown y widgets interactivos
 - **[Temas](/guia/personalizacion/temas/)** — Personaliza la apariencia de tu sitio
 
 <script>
@@ -465,7 +465,7 @@ logo: ""
 telar_language: "es"
 
 # Google Sheets Integration
-# See https://telar.org/docs/reference/google-sheets/ for detailed setup instructions.
+# See https://telar.org/docs/your-data/google-sheets/ for detailed setup instructions.
 google_sheets:
   enabled: true
   shared_url: __GSHEETS_SHARED__

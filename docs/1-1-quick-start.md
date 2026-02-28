@@ -207,7 +207,7 @@ After committing, GitHub Actions will automatically build and publish your site.
 3. You should see a Telar site with your title and the default demo content
 
 {: .warning }
-> **Build problems?** The most common issues are mismatched Google Sheets URLs (you need both the shared URL and the published URL — they are different). If your site does not appear at all, check the Actions tab for error details. You can also paste your `_config.yml` into the [Telar Config Validator](/docs/reference/config-validator/) to check for errors.
+> **Build problems?** The most common issues are mismatched Google Sheets URLs (you need both the shared URL and the published URL — they are different). If your site does not appear at all, check the Actions tab for error details. You can also paste your `_config.yml` into the [Telar Config Validator](/docs/configure/config-validator/) to check for errors.
 
 ---
 
@@ -217,7 +217,7 @@ Your Telar site is up and running. Now it is time to add your own content.
 
 - **[Add your content](/docs/setup/manual/#part-2-add-your-content)** — Upload images, fill in your spreadsheet, and create your first story
 - **[Set image coordinates](/docs/setup/manual/#set-your-image-coordinates)** — Focus on specific details in your images
-- **[Rich content](/docs/content-structure/rich-content/)** — Enhance panels with markdown files and interactive widgets
+- **[Rich content](/docs/your-content/rich-content/)** — Enhance panels with markdown files and interactive widgets
 - **[Themes](/docs/customization/themes/)** — Customize your site's look and feel
 
 <script>
@@ -467,7 +467,7 @@ logo: ""
 telar_language: "en"
 
 # Google Sheets Integration
-# See https://telar.org/docs/reference/google-sheets/ for detailed setup instructions.
+# See https://telar.org/docs/your-data/google-sheets/ for detailed setup instructions.
 google_sheets:
   enabled: true
   shared_url: __GSHEETS_SHARED__

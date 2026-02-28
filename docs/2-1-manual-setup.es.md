@@ -132,7 +132,7 @@ Después de hacer *commit*, GitHub Actions construirá y publicará tu sitio aut
 > - **baseurl no coincide** — debe coincidir exactamente con el nombre de tu repositorio, todo en minúsculas
 > - **Solo una URL de Google Sheets** — necesitas tanto la URL compartida como la URL publicada; son diferentes
 >
-> Consulta la [Referencia de configuración](/guia/referencia/configuracion/) para la lista completa de opciones. También puedes pegar tu `_config.yml` en el [Validador de Configuración de Telar](/guia/referencia/validador-de-configuracion/) para buscar errores, o usar el [Generador y editor de configuración](/guia/referencia/generador-de-configuracion/) para crear uno desde cero.
+> Consulta la [Referencia de configuración](/guia/configurar/configuracion/) para la lista completa de opciones. También puedes pegar tu `_config.yml` en el [Validador de Configuración de Telar](/guia/configurar/validador-de-configuracion/) para buscar errores, o usar el [Generador y editor de configuración](/guia/configurar/generador-de-configuracion/) para crear uno desde cero.
 
 ---
 
@@ -267,7 +267,7 @@ Si quieres restringir el acceso a una historia — para uso en el aula, borrador
 
 3. Comparte la clave con tus lectores, o envíales un enlace con `?key=tu-clave-secreta` al final
 
-Consulta [Historias Privadas](/guia/estructura-de-contenido/historias-privadas/) para más detalles.
+Consulta [Historias Privadas](/guia/funciones/historias-privadas/) para más detalles.
 
 ### Sigue construyendo
 
@@ -278,11 +278,12 @@ Una vez que tengas lo básico, puedes:
 - Personalizar tu página de inicio (edita `index.md` en tu repositorio)
 - Explorar y buscar en tu colección de objetos (habilitado por defecto)
 
-Cuando tus paneles necesiten más que unos pocos párrafos — widgets, formato enriquecido o contenido reutilizable — consulta [Contenido enriquecido](/guia/estructura-de-contenido/contenido-enriquecido/) para aprender a agregar archivos markdown.
+Cuando tus paneles necesiten más que unos pocos párrafos — widgets, formato enriquecido o contenido reutilizable — consulta [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) para aprender a agregar archivos markdown.
 
 ## Próximos pasos
 
-- [Contenido enriquecido](/guia/estructura-de-contenido/contenido-enriquecido/) — Enriquece paneles con archivos markdown y widgets
-- [Estructura de Contenido](/guia/estructura-de-contenido/) — Cómo Telar organiza tus materiales
+- [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) — Enriquece paneles con archivos markdown y widgets
+- [Tu Contenido](/guia/tu-contenido/) — Cómo Telar organiza tus materiales
 - [Temas](/guia/personalizacion/temas/) — Personaliza la apariencia de tu sitio
-- [IIIF e Imágenes](/guia/integracion-iiif/) — Trabaja con imágenes de alta resolución
+- [Imágenes autoalojadas](/guia/tu-contenido/imagenes-autoalojadas/) — Sube y procesa tus propias imágenes
+- [Imágenes IIIF externas](/guia/tu-contenido/iiif-externo/) — Usa imágenes de museos y bibliotecas

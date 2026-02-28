@@ -293,7 +293,8 @@ Una vez que estés satisfecho con tu sitio local:
 
 ## Próximos pasos
 
-- [Conoce la estructura de contenido](/guia/estructura-de-contenido/) — Cómo Telar organiza los archivos
-- [IIIF e Imágenes](/guia/integracion-iiif/) — Trabaja con imágenes de alta resolución
-- [Configuración](/guia/referencia/configuracion/) — Todas las opciones de `_config.yml`
+- [Conoce tu contenido](/guia/tu-contenido/) — Cómo Telar organiza los archivos
+- [Imágenes autoalojadas](/guia/tu-contenido/imagenes-autoalojadas/) — Sube y procesa tus propias imágenes
+- [Imágenes IIIF externas](/guia/tu-contenido/iiif-externo/) — Usa imágenes de museos y bibliotecas
+- [Configuración](/guia/configurar/configuracion/) — Todas las opciones de `_config.yml`
 - [Personaliza tu tema](/guia/personalizacion/temas/)

@@ -132,7 +132,7 @@ After committing, GitHub Actions will automatically build and publish your site.
 > - **Mismatched baseurl** — must match your repository name exactly, in all lowercase
 > - **Only one Google Sheets URL** — you need both the shared URL and the published URL; they are different
 >
-> See the [Configuration Reference](/docs/reference/configuration/) for the full list of settings. You can also paste your `_config.yml` into the [Telar Config Validator](/docs/reference/config-validator/) to check for errors, or use the [Config Generator and Editor](/docs/reference/config-generator/) to build one from scratch.
+> See the [Configuration Reference](/docs/configure/configuration/) for the full list of settings. You can also paste your `_config.yml` into the [Telar Config Validator](/docs/configure/config-validator/) to check for errors, or use the [Config Generator and Editor](/docs/configure/config-generator/) to build one from scratch.
 
 ---
 
@@ -267,7 +267,7 @@ If you want to restrict access to a story — for classroom use, drafts, or work
 
 3. Share the key with your viewers, or send them a link with `?key=your-secret-key` appended
 
-See [Private Stories](/docs/content-structure/private-stories/) for details.
+See [Private Stories](/docs/site-features/private-stories/) for details.
 
 ### Keep Building
 
@@ -278,11 +278,12 @@ Once the basics are in place, you can:
 - Customize your homepage (edit `index.md` in your repository)
 - Browse and search your objects collection (enabled by default)
 
-When your panels need more than a few paragraphs — widgets, rich formatting, or reusable content — see [Rich Content](/docs/content-structure/rich-content/) for how to add markdown files.
+When your panels need more than a few paragraphs — widgets, rich formatting, or reusable content — see [Rich Content](/docs/your-content/rich-content/) for how to add markdown files.
 
 ## Next Steps
 
-- [Rich Content](/docs/content-structure/rich-content/) — Enhance panels with markdown files and widgets
-- [Content Structure](/docs/content-structure/) — How Telar organizes your materials
+- [Rich Content](/docs/your-content/rich-content/) — Enhance panels with markdown files and widgets
+- [Your Content](/docs/your-content/) — How Telar organizes your materials
 - [Themes](/docs/customization/themes/) — Customizing your site's look and feel
-- [IIIF & Images](/docs/iiif-integration/) — Working with high-resolution images
+- [Self-Hosted Images](/docs/your-content/self-hosted-images/) — Upload and process your own images
+- [External IIIF Images](/docs/your-content/external-iiif/) — Use images from museums and libraries

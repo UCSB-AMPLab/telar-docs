@@ -307,7 +307,8 @@ Once you're happy with your local site:
 
 ## Next Steps
 
-- [Content Structure](/docs/content-structure/) — How Telar organizes files
-- [IIIF & Images](/docs/iiif-integration/) — Working with high-resolution images
-- [Configuration](/docs/reference/configuration/) — All `_config.yml` options
+- [Your Content](/docs/your-content/) — How Telar organizes files
+- [Self-Hosted Images](/docs/your-content/self-hosted-images/) — Upload and process your own images
+- [External IIIF Images](/docs/your-content/external-iiif/) — Use images from museums and libraries
+- [Configuration](/docs/configure/configuration/) — All `_config.yml` options
 - [Customize Your Theme](/docs/customization/themes/)
