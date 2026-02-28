@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- **Guided Quick Start** - Interactive quick start page with form-based configuration (EN/ES)
+- **Config Generator load feature** - Load and edit existing _config.yml files; renamed to "Config Generator and Editor" (EN/ES)
+- **New visual identity** - Updated site branding with terracotta/lavender/gold palette and Space Grotesk/Roboto Condensed fonts
+
 ### Navigation restructure
 - Reorganized documentation from 7 sections to 8, grouped by user activity
 - New sections: Configure Your Site (3), Your Data (5), Site Features (6)
@@ -16,13 +21,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added redirect pages for all old URLs (EN + ES)
 - Updated all internal cross-references across all docs
 
-## [v0.8.1] - 2026-02-28
+## [v0.8.1] - 2026-02-26
 
 ### Added
-- **Guided Quick Start** - Interactive quick start page with form-based configuration (EN/ES)
-- **Config Generator and Editor** - Create new _config.yml files or load existing ones for editing (EN/ES)
+- **Config Generator** - Build a new _config.yml from a guided form (EN/ES)
 - **Config Validator** - Paste _config.yml to check for errors before committing (EN/ES)
-- **New visual identity** - Updated site branding and design
 - **Screenshot automation** - Infrastructure for capturing documentation screenshots
 
 ### Changed
