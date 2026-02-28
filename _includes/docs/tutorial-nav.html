@@ -1,0 +1,22 @@
+{% if page.tutorial_prev or page.tutorial_next %}
+<nav class="tutorial-nav" aria-label="Tutorial navigation">
+  {% if page.tutorial_prev %}
+  <a href="{{ page.tutorial_prev.url }}" class="tutorial-nav__btn tutorial-nav__btn--prev">
+    <span class="tutorial-nav__arrow">&larr;</span>
+    <span class="tutorial-nav__preface">Previous:</span>
+    <span class="tutorial-nav__label">{{ page.tutorial_prev.title }}</span>
+  </a>
+  {% else %}
+  <span class="tutorial-nav__spacer"></span>
+  {% endif %}
+  {% if page.tutorial_next %}
+  <a href="{{ page.tutorial_next.url }}" class="tutorial-nav__btn tutorial-nav__btn--next">
+    <span class="tutorial-nav__preface">Next:</span>
+    <span class="tutorial-nav__label">{{ page.tutorial_next.title }}</span>
+    <span class="tutorial-nav__arrow">&rarr;</span>
+  </a>
+  {% else %}
+  <span class="tutorial-nav__spacer"></span>
+  {% endif %}
+</nav>
+{% endif %}

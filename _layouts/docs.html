@@ -29,6 +29,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="{{ '/pagefind/pagefind-ui.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/assets/css/tutorial-nav.css' | relative_url }}" rel="stylesheet">
   <script src="{{ '/pagefind/pagefind-ui.js' | relative_url }}"></script>
   {% for css in page.extra_css %}
   <link href="{{ '/assets/css/' | append: css | append: '.css' | relative_url }}" rel="stylesheet">
@@ -691,7 +692,13 @@
   <!-- Main Content -->
   <main class="docs-main">
     <article class="docs-content" data-pagefind-body>
+      {% unless page.tutorial_hide_top %}
+        {% include docs/tutorial-nav.html %}
+      {% endunless %}
+
       {{ content }}
+
+      {% include docs/tutorial-nav.html %}
 
       <footer class="docs-footer">
         <p>{{ site.footer_content }}</p>

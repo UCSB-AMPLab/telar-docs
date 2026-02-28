@@ -8,23 +8,28 @@ lang: en
 permalink: /docs/getting-started/quick-start/
 extra_css:
   - config-tools
+tutorial_next:
+  title: "Plan Your Narrative"
+  url: /docs/getting-started/narrative-structure/
+tutorial_hide_top: true
 ---
 
 # Quick Start
 
 Telar is a minimal-computing framework for creating interactive visual narrative exhibitions. It weaves together high-resolution images, narrative text, and layered contextual information into scrollytelling experiences — hosted for free on GitHub Pages.
 
-## What you'll build
+This tutorial walks you through building your first exhibition in four steps:
 
-A Telar exhibition is made up of **stories** — step-by-step visual narratives built around high-resolution images. Each story unfolds through a series of **steps**. Every step zooms into a region of an image and presents a question with a brief answer. Viewers who want more can open **layer panels** — expandable sections with longer text, embedded media, or interactive widgets.
+1. **Set Up Your Site** — Set up your GitHub repository, Google Sheet, and configuration
+2. **[Plan Your Narrative](/docs/getting-started/narrative-structure/)** — Understand how stories, steps, and panels fit together
+3. **[Add Your Content](/docs/getting-started/add-content/)** — Upload images, fill in your spreadsheet, and create your first story
+4. **[Review and Refine](/docs/getting-started/review-refine/)** — Set image coordinates, review your site, and polish
 
-You define your stories and objects in a Google Sheets spreadsheet. This guide sets that up and gets your first exhibition live.
+A Telar exhibition is made up of **stories** — step-by-step visual narratives built around high-resolution images. Each story unfolds through a series of **steps**. Every step zooms into a region of an image and presents a question with a brief answer. Viewers who want more can open **layer panels** — expandable sections with longer text, embedded media, or interactive widgets. We will see this in more detail when we get to Step 2: [Plan Your Narrative](/docs/getting-started/narrative-structure/). But first, we need to set up the basics.
 
-For a deeper look at this structure, see [How Telar Works](/docs/getting-started/how-telar-works/).
+# Step 1: Set up your site
 
-## Setup
-
-This guide walks you through setting up your first Telar exhibition, step by step. As you follow along, you will fill in a few details — your GitHub username, your Google Sheets link, a title for your site. At the end, this page puts it all together into a configuration file that you can download or copy and paste into your repository.
+In this first step, you'll set up three things: a GitHub repository for your site, a Google Sheets spreadsheet for your content, and a configuration file to connect them. You'll enter a few details as you go — your GitHub username, your spreadsheet link, a title for your site. At the end of this page, you'll download a ready-to-use configuration file.
 
 You will need:
 - A [GitHub account](https://github.com/join) (free)
@@ -34,8 +39,6 @@ You will need:
 > **Already familiar with GitHub Pages and YAML?** You can configure everything manually with the [Manual Setup guide](/docs/setup/manual/).
 
 The setup might feel like a lot of steps, but you only have to do it once. After that, everything happens in your Google Sheets spreadsheet.
-
----
 
 ## Create Your Repository
 
@@ -47,6 +50,8 @@ A repository is your project's home on GitHub — it holds your configuration an
 4. Give your repository a name — **use lowercase letters and hyphens** (e.g., `my-exhibition`) — this will be part of your site's web address
 5. Make sure **Public** is selected
 6. Click **Create repository**
+
+![GitHub screenshot: Use this template button](/images/use-this-template.png)
 
 {: .warning }
 > **Keep your repository public.** Private repositories will not work with GitHub Pages unless you have a paid GitHub plan.
@@ -86,6 +91,8 @@ GitHub Pages turns your repository into a live website for free.
 1. In your repository, go to **Settings** → **Pages**
 2. Under **Source**, select **GitHub Actions**
 3. Click **Save**
+
+![Setting up GitHub Pages with GitHub Actions](/images/github-actions.gif)
 
 ## Duplicate the Google Sheets Template
 
@@ -206,6 +213,8 @@ After committing, GitHub Actions will automatically build and publish your site.
 2. When it finishes, visit your site at the URL shown in the preview above
 3. You should see a Telar site with your title and the default demo content
 
+![Telar homepage with title and navigation menu](/images/telar-homepage.png)
+
 {: .warning }
 > **Build problems?** The most common issues are mismatched Google Sheets URLs (you need both the shared URL and the published URL — they are different). If your site does not appear at all, check the Actions tab for error details. You can also paste your `_config.yml` into the [Telar Config Validator](/docs/configure/config-validator/) to check for errors.
 
@@ -213,12 +222,11 @@ After committing, GitHub Actions will automatically build and publish your site.
 
 ## Next Steps
 
-Your Telar site is up and running. Now it is time to add your own content.
+Your Telar site is up and running. Follow this tutorial to learn how Telar stories work and add your own content, or jump ahead to any section:
 
-- **[Add your content](/docs/setup/manual/#part-2-add-your-content)** — Upload images, fill in your spreadsheet, and create your first story
-- **[Set image coordinates](/docs/setup/manual/#set-your-image-coordinates)** — Focus on specific details in your images
-- **[Rich content](/docs/your-content/rich-content/)** — Enhance panels with markdown files and interactive widgets
-- **[Themes](/docs/customization/themes/)** — Customize your site's look and feel
+- **[Plan Your Narrative](/docs/getting-started/narrative-structure/)** — Understand how stories, steps, and panels fit together
+- **[Add Your Content](/docs/getting-started/add-content/)** — Upload images, fill in your spreadsheet, and create your first story
+- **[Review and Refine](/docs/getting-started/review-refine/)** — Set image coordinates, review your site, and polish
 
 <script>
 (function() {

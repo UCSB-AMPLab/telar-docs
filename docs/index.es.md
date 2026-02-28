@@ -19,7 +19,9 @@ Bienvenido a la documentación de Telar. Esta guía te ayudará a crear narrativ
 ¿Nuevo en Telar? Comienza aquí:
 
 - [Inicio rápido](/guia/primeros-pasos/inicio-rapido/) - Crea tu primera exhibición paso a paso
-- [Cómo funciona Telar](/guia/primeros-pasos/como-funciona-telar/) - Entiende el modelo narrativo
+- [Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/) - Conoce el modelo narrativo
+- [Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/) - Sube imágenes, crea historias
+- [Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/) - Dale los toques finales
 
 ## Configura tu sitio
 

@@ -1,0 +1,72 @@
+/* Tutorial navigation buttons (Getting Started 1-1 → 1-4)
+ * v0.8.2
+ */
+
+.tutorial-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.tutorial-nav__btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 50px;
+  text-decoration: none !important;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: all 0.2s;
+  border: 2px solid var(--terracotta);
+  color: var(--terracotta) !important;
+  background: transparent;
+}
+
+.tutorial-nav__btn:hover {
+  background: var(--terracotta);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  text-decoration: none !important;
+}
+
+.tutorial-nav__btn--next {
+  margin-left: auto;
+  background: var(--terracotta);
+  color: #ffffff !important;
+}
+
+.tutorial-nav__btn--next:hover {
+  background: var(--dark-grey);
+  border-color: var(--dark-grey);
+}
+
+.tutorial-nav__arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.tutorial-nav__preface {
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+.tutorial-nav__spacer {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .tutorial-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tutorial-nav__btn--next {
+    margin-left: 0;
+  }
+}

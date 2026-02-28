@@ -19,7 +19,9 @@ Welcome to the Telar documentation. This guide will help you create visual narra
 New to Telar? Start here:
 
 - [Quick Start](/docs/getting-started/quick-start/) - Build your first exhibition step by step
-- [How Telar Works](/docs/getting-started/how-telar-works/) - Understand the narrative model
+- [Plan Your Narrative](/docs/getting-started/narrative-structure/) - Understand the narrative model
+- [Add Your Content](/docs/getting-started/add-content/) - Upload images, create stories
+- [Review and Refine](/docs/getting-started/review-refine/) - Polish your exhibition
 
 ## Set Up Your Site
 

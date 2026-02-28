@@ -8,13 +8,28 @@ lang: es
 permalink: /guia/primeros-pasos/inicio-rapido/
 extra_css:
   - config-tools
+tutorial_next:
+  title: "Planea tu narrativa"
+  url: /guia/primeros-pasos/estructura-narrativa/
+tutorial_hide_top: true
 ---
 
 # Inicio rápido
 
 Telar es un marco de computación mínima para crear narrativas visuales interactivas. Entreteje imágenes de alta resolución, texto narrativo e información contextual en capas para crear experiencias de scrollytelling, alojadas de forma gratuita en GitHub Pages.
 
-Esta guía te lleva paso a paso por la configuración de tu primera exhibición con Telar. A medida que avanzas, vas a ingresar algunos datos — tu nombre de usuario de GitHub, el enlace de tu hoja de cálculo de Google, un título para tu sitio. Al final, esta página reúne todo en un archivo de configuración que puedes descargar o copiar y pegar en tu repositorio.
+Este tutorial te guía paso a paso por la creación de tu primera exhibición en cuatro pasos:
+
+1. **Configura tu sitio** — Configura tu repositorio en GitHub, hoja de cálculo de Google y archivo de configuración
+2. **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — Aprende cómo se conectan las historias, los pasos y los paneles
+3. **[Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/)** — Sube imágenes, llena tu hoja de cálculo y crea tu primera historia
+4. **[Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/)** — Establece las coordenadas de las imágenes, revisa tu sitio y dale los toques finales
+
+Una exhibición en Telar se compone de **historias** — narrativas visuales paso a paso construidas alrededor de imágenes de alta resolución. Cada historia se desarrolla a través de una serie de **pasos**. Cada paso hace zoom en una región de una imagen y presenta una pregunta con una respuesta breve. Quienes quieran más pueden abrir **paneles en capas** — secciones expandibles con texto más extenso, medios incrustados o widgets interactivos. Vamos a ver esto con más detalle cuando lleguemos al Paso 2: [Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/). Pero primero, necesitamos configurar lo básico.
+
+## Configura tu sitio
+
+En este primer paso vas a configurar tres cosas: un repositorio en GitHub para tu sitio, una hoja de cálculo en Google Sheets para tu contenido y un archivo de configuración para conectarlos. A medida que avanzas, vas a ingresar algunos datos — tu nombre de usuario de GitHub, el enlace de tu hoja de cálculo, un título para tu sitio. Al final de esta página, vas a descargar un archivo de configuración listo para usar.
 
 Vas a necesitar:
 - Una [cuenta de GitHub](https://github.com/join) (gratis)
@@ -24,16 +39,6 @@ Vas a necesitar:
 > **¿Ya conoces GitHub Pages y YAML?** Puedes configurar todo manualmente con la [guía de configuración manual](/guia/configuracion/configuracion-manual/).
 
 La configuración puede parecer muchos pasos, pero solo tienes que hacerla una vez. Después de eso, todo se maneja desde tu hoja de cálculo de Google Sheets.
-
-## Lo que vas a crear
-
-Una exposición en Telar se compone de **historias** — narrativas visuales paso a paso construidas alrededor de imágenes de alta resolución. Cada historia se desarrolla a través de una serie de **pasos**. Cada paso hace zoom en una región de una imagen y presenta una pregunta con una respuesta breve. Quienes quieran más pueden abrir **paneles en capas** — secciones expandibles con texto más extenso, medios incrustados o widgets interactivos.
-
-Defines tus historias y objetos en una hoja de cálculo de Google Sheets. Esta guía configura eso y deja tu primera exposición en línea.
-
-Para una mirada más detallada a esta estructura, consulta [Cómo funciona Telar](/guia/primeros-pasos/como-funciona-telar/).
-
----
 
 ## Crea tu repositorio
 
@@ -45,6 +50,8 @@ Un repositorio es el espacio de tu proyecto en GitHub — allí se guardan tu ar
 4. Dale un nombre a tu repositorio — **usa solo letras minúsculas y guiones** (ej., `mi-exhibicion`) — este nombre será parte de la dirección web de tu sitio
 5. Asegúrate de que **Public** esté seleccionado
 6. Haz clic en **Create repository**
+
+![Captura de GitHub: botón Use this template](/images/use-this-template.png)
 
 {: .warning }
 > **Mantén tu repositorio público.** Los repositorios privados no funcionan con GitHub Pages a menos que tengas un plan de pago en GitHub.
@@ -84,6 +91,8 @@ GitHub Pages convierte tu repositorio en un sitio web en vivo, de forma gratuita
 1. En tu repositorio, ve a **Settings** → **Pages**
 2. En **Source**, selecciona **GitHub Actions**
 3. Haz clic en **Save**
+
+![Configuración de GitHub Pages con GitHub Actions](/images/github-actions.gif)
 
 ## Duplica la plantilla de Google Sheets
 
@@ -204,6 +213,8 @@ Después de guardar, GitHub Actions construirá y publicará tu sitio automátic
 2. Cuando termine, visita tu sitio en la URL que aparece en la vista previa arriba
 3. Deberías ver un sitio Telar con tu título y el contenido de demostración predeterminado
 
+![Página de inicio de Telar con título y menú de navegación](/images/telar-homepage.png)
+
 {: .warning }
 > **¿Problemas con la construcción?** Los errores más comunes son URLs de Google Sheets que no coinciden (necesitas tanto la URL compartida como la URL publicada — son diferentes). Si tu sitio no aparece, revisa la pestaña Actions para ver los detalles del error. También puedes pegar tu `_config.yml` en el [Validador de configuración de Telar](/guia/configurar/validador-de-configuracion/) para verificar errores.
 
@@ -211,12 +222,11 @@ Después de guardar, GitHub Actions construirá y publicará tu sitio automátic
 
 ## Próximos pasos
 
-Tu sitio Telar ya está funcionando. Ahora es momento de agregar tu propio contenido.
+Tu sitio Telar ya está funcionando. Sigue este tutorial para aprender cómo funcionan las historias de Telar y agregar tu propio contenido, o salta a la sección que quieras:
 
-- **[Agrega tu contenido](/guia/configuracion/configuracion-manual/#parte-2-agrega-tu-contenido)** — Sube imágenes, llena tu hoja de cálculo y crea tu primera historia
-- **[Coordenadas de imagen](/guia/configuracion/configuracion-manual/#ajusta-las-coordenadas-de-imagen)** — Enfoca detalles específicos en tus imágenes
-- **[Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/)** — Enriquece los paneles con archivos markdown y widgets interactivos
-- **[Temas](/guia/personalizacion/temas/)** — Personaliza la apariencia de tu sitio
+- **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — Conoce cómo se articulan historias, pasos y paneles
+- **[Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/)** — Sube imágenes, llena tu hoja de cálculo y crea tu primera historia
+- **[Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/)** — Ajusta coordenadas de imagen, revisa tu sitio y dale los toques finales
 
 <script>
 (function() {

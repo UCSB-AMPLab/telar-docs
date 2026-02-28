@@ -1,22 +1,26 @@
 ---
 layout: docs
-title: 1.2. Cómo funciona Telar
+title: 1.2. Planea tu narrativa
 parent: 1. Primeros pasos
 grand_parent: Documentación
 nav_order: 2
 lang: es
-permalink: /guia/primeros-pasos/como-funciona-telar/
+permalink: /guia/primeros-pasos/estructura-narrativa/
+tutorial_prev:
+  title: "Configura tu sitio"
+  url: /guia/primeros-pasos/inicio-rapido/
+tutorial_next:
+  title: "Agrega tu contenido"
+  url: /guia/primeros-pasos/agrega-contenido/
 ---
 
-# Cómo funciona Telar
+# Paso 2: Planea tu narrativa
 
 Entender el modelo narrativo de Telar te ayudará a planificar tu contenido de manera efectiva.
 
-## La estructura narrativa
-
 Cada página en tu sitio Telar contiene una o más historias, que pueden ser narrativas independientes o capítulos de una pieza más larga. Las historias se desarrollan a través de pasos sucesivos que muestran una imagen (o un detalle de una imagen) junto con un texto breve.
 
-### El patrón pregunta/respuesta/invitación
+## El patrón pregunta/respuesta/invitación
 
 Cada paso sigue este patrón:
 
@@ -26,7 +30,7 @@ Cada paso sigue este patrón:
 
 Puedes proporcionar hasta dos paneles adicionales de contenido en cada paso, permitiendo a los espectadores que quieran obtener más detalle.
 
-### Paneles en capas
+## Paneles en capas
 
 Los paneles en capas son donde realmente puedes expandir tu narrativa. Están escritos en [formato markdown](https://www.markdownguide.org/getting-started/), permitiéndote incluir:
 
@@ -35,7 +39,7 @@ Los paneles en capas son donde realmente puedes expandir tu narrativa. Están es
 - Imágenes adicionales
 - Videos incrustados o modelos 3D
 
-### Planea tu historia
+## Planea tu historia
 
 Antes de comenzar a reunir materiales o construir tu sitio, toma tiempo para esbozar la estructura de tu historia:
 

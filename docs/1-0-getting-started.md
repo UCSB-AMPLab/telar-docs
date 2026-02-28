@@ -10,16 +10,13 @@ permalink: /docs/getting-started/
 
 # Getting Started
 
-Welcome to Telar! Choose a starting point based on what you need:
+Welcome to Telar! This tutorial walks you through building your first exhibition in four steps:
 
-### I want to build my first exhibition
+1. **[Quick Start](/docs/getting-started/quick-start/)** — Set up your repository, Google Sheet, and configuration
+2. **[Plan Your Narrative](/docs/getting-started/narrative-structure/)** — Understand how stories, steps, and panels fit together
+3. **[Add Your Content](/docs/getting-started/add-content/)** — Upload images, fill in your spreadsheet, and create your first story
+4. **[Review and Refine](/docs/getting-started/review-refine/)** — Set image coordinates, review your site, and polish
 
-The **[Quick Start](/docs/getting-started/quick-start/)** walks you through setup step by step — from creating your repository to publishing your first story. It generates your configuration file automatically.
+### I already know the basics
 
-### I want to understand Telar's narrative model
-
-**[How Telar Works](/docs/getting-started/how-telar-works/)** explains the layered storytelling structure — stories, steps, questions, and panels — so you can plan your content before building.
-
-### I want to set Telar up manually or on my local system
-
-If you already understand the basics and want to configure your site yourself, head to **[Set Up Your Site](/docs/setup/)**. Choose between [Manual Setup](/docs/setup/manual/) (GitHub web interface) or [Local Development](/docs/setup/local-dev/) (CSV + Jekyll on your computer).
+If you want to configure your site manually or work locally, head to **[Set Up Your Site](/docs/setup/)**. Choose between [Manual Setup](/docs/setup/manual/) (GitHub web interface) or [Local Development](/docs/setup/local-dev/) (CSV + Jekyll on your computer).
