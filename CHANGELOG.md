@@ -10,11 +10,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Reorganized documentation from 7 sections to 8, grouped by user activity
 - New sections: Configure Your Site (3), Your Data (5), Site Features (6)
 - Split Objects & Gallery page into separate Objects and Gallery pages
+- Split IIIF & Images page into Self-Hosted Images and External IIIF
 - Split CSV reference pages into individual column reference pages (Project, Objects, Stories, Glossary)
-- Added 52 redirect pages for all old URLs (EN + ES)
-- Updated 134 internal cross-references across all docs
+- Updated landing pages (EN + ES) with new 8-section structure
+- Added redirect pages for all old URLs (EN + ES)
+- Updated all internal cross-references across all docs
 
-## [v0.8.2] - 2026-02-28
+## [v0.8.1] - 2026-02-28
 
 ### Added
 - **Guided Quick Start** - Interactive quick start page with form-based configuration (EN/ES)
