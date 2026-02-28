@@ -4,6 +4,64 @@ All notable changes to Telar Documentation will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Unreleased]
+
+### Navigation restructure
+- Reorganized documentation from 7 sections to 8, grouped by user activity
+- New sections: Configure Your Site (3), Your Data (5), Site Features (6)
+- Split Objects & Gallery page into separate Objects and Gallery pages
+- Split CSV reference pages into individual column reference pages (Project, Objects, Stories, Glossary)
+- Added 52 redirect pages for all old URLs (EN + ES)
+- Updated 134 internal cross-references across all docs
+
+## [v0.8.2] - 2026-02-28
+
+### Added
+- **Guided Quick Start** - Interactive quick start page with form-based configuration (EN/ES)
+- **Config Generator and Editor** - Create new _config.yml files or load existing ones for editing (EN/ES)
+- **Config Validator** - Paste _config.yml to check for errors before committing (EN/ES)
+- **New visual identity** - Updated site branding and design
+- **Screenshot automation** - Infrastructure for capturing documentation screenshots
+
+### Changed
+- **Complete documentation restructure** - Rewrote and reorganized all sections for v0.8.1
+  - Section 2: Three-tier workflow progression (Quick Start, Hybrid, Local Dev)
+  - Section 3: Content pages with IIIF, stories, widgets, glossary, custom pages
+  - Section 6: Reference with config, CSV specs, markdown syntax, Google Sheets, embedding
+- **Full bilingual coverage** - Completed Spanish translations for all sections
+- **Spanish standardisation** - Sentence case titles, consistent terminology (insercion, teselas, demostraciones)
+- **Quick Start improvements** - Friendlier tone, config troubleshooting, lowercase repo advice
+- **Mobile optimization** - Updated guidelines for clarity on user behavior
+
+### Fixed
+- Broken cross-references found in final audit
+- Missing frontmatter delimiter in local development page
+- Stale links, glossary syntax, inclusive language issues
+
+## [v0.8.0] - 2026-02-06
+
+### Added
+- **Google Sheets workflow** - Dedicated page for Sheets-only workflow
+- **Hybrid workflow** - New page for Sheets + markdown files workflow
+- Spanish translations for new workflow pages
+
+### Changed
+- Renumbered Section 2 to accommodate new workflow pages
+
+## [v0.7.0] - 2026-01-31
+
+### Added
+- **Node.js requirement** - Documented new Node.js dependency
+- **Automated tests** - Documented new testing infrastructure
+
+### Changed
+- Updated version callouts to v0.7.0-beta
+
+## [v0.6.3] - 2026-01-24
+
+### Added
+- **Inline panel content** - Documentation for inline panel content feature
+
 ## [v0.6.2] - 2025-12-04
 
 ### Added
