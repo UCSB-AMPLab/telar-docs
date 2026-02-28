@@ -380,6 +380,82 @@
   letter-spacing: 0.05em;
 }
 
+/* --- Mode toggle (Create new / Edit existing) --- */
+
+.cg-mode-toggle {
+  display: inline-flex;
+  border: 2px solid var(--terracotta, #883C36);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.cg-mode-btn {
+  padding: 8px 22px;
+  background: transparent;
+  color: var(--terracotta, #883C36);
+  border: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cg-mode-btn:first-child {
+  border-right: 2px solid var(--terracotta, #883C36);
+}
+
+.cg-mode-btn.cg-active {
+  background: var(--terracotta, #883C36);
+  color: white;
+}
+
+.cg-mode-btn:not(.cg-active):hover {
+  background: rgba(136, 60, 54, 0.08);
+}
+
+/* --- Paste area (Edit existing mode) --- */
+
+.cg-paste-area {
+  display: none;
+  margin-bottom: 1.5rem;
+}
+
+.cg-paste-area.cg-visible {
+  display: block;
+}
+
+.cg-paste-area .cv-textarea {
+  min-height: 200px;
+}
+
+.cg-load-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.cg-load-feedback {
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-transform: none !important;
+}
+
+.cg-load-feedback.cg-show {
+  opacity: 1;
+}
+
+.cg-load-feedback.cg-load-success {
+  color: #16a34a;
+}
+
+.cg-load-feedback.cg-load-error {
+  color: #c0392b;
+}
+
 /* Output area — fixed-height overrides for the generator */
 .cg-output-wrapper .cv-lines {
   height: 400px;

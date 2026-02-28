@@ -29,8 +29,8 @@ Referencia completa para todo el formato markdown disponible en paneles y págin
 ### [6.5 Validador de Configuración](/guia/referencia/validador-de-configuracion/)
 Pega tu `_config.yml` para buscar errores.
 
-### [6.6 Generador de Configuración](/guia/referencia/generador-de-configuracion/)
-Crea un `_config.yml` desde cero con un formulario guiado.
+### [6.6 Generador y editor de configuración](/guia/referencia/generador-de-configuracion/)
+Crea un nuevo `_config.yml` o carga y edita uno existente.
 
 ### [6.7 Referencia de Google Sheets](/guia/referencia/google-sheets/)
 Configuración avanzada de la hoja de cálculo, solución de problemas y pestañas.

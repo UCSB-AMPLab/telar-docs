@@ -469,5 +469,5 @@ Tu configuración nunca se envía a ningún servidor — todo se ejecuta en tu n
 ## Véase también
 
 - [Referencia de Configuración](/guia/referencia/configuracion/) — Lista completa de todos los ajustes de `_config.yml`
-- [Generador de Configuración](/guia/referencia/generador-de-configuracion/) — Genera un archivo `_config.yml` listo para usar
+- [Generador y editor de configuración](/guia/referencia/generador-de-configuracion/) — Genera o edita un archivo `_config.yml`
 - [Inicio rápido](/guia/primeros-pasos/inicio-rapido/) — Guía paso a paso de configuración

@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 6.6. Config Generator
+title: 6.6. Config Generator and Editor
 parent: 6. Reference
 grand_parent: Documentation
 nav_order: 6
@@ -10,11 +10,31 @@ extra_css:
   - config-tools
 ---
 
-# Config Generator
+# Config Generator and Editor
 
 Fill in your site details to generate a ready-to-use `_config.yml` file for your Telar site. Your configuration is never sent to any server — everything runs in your browser.
 
 <div class="cg-container">
+
+  <!-- Mode toggle -->
+  <div class="cg-mode-toggle">
+    <button id="cg-mode-create" class="cg-mode-btn cg-active" type="button">Create new</button>
+    <button id="cg-mode-edit" class="cg-mode-btn" type="button">Edit existing</button>
+  </div>
+
+  <!-- Paste area (Edit existing mode) -->
+  <div id="cg-paste-area" class="cg-paste-area">
+    <p class="cg-section-desc">Paste your existing <code>_config.yml</code> below, then click Load to populate the form.</p>
+    <div class="cv-editor">
+      <div class="cv-lines" id="cg-load-lines" aria-hidden="true">1</div>
+      <textarea id="cg-load-input" class="cv-textarea" placeholder="Paste the full contents of your _config.yml here..."></textarea>
+    </div>
+    <div class="cg-load-actions">
+      <button id="cg-load-btn" class="cg-button" type="button">Load</button>
+      <span id="cg-load-feedback" class="cg-load-feedback"></span>
+    </div>
+    <div id="cg-load-results" class="cv-results"></div>
+  </div>
 
   <!-- 1. Site Settings -->
   <div class="cg-section">
@@ -527,6 +547,7 @@ development-features:
   skip_collections: false
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
 <script>
 (function() {
   'use strict';
@@ -539,6 +560,345 @@ development-features:
   var outputEl = document.getElementById('cg-output');
   var linesEl = document.getElementById('cg-lines');
   var templateEl = document.getElementById('cg-template');
+
+  // --- Load mode DOM references ---
+  var modeCreateBtn = document.getElementById('cg-mode-create');
+  var modeEditBtn = document.getElementById('cg-mode-edit');
+  var pasteArea = document.getElementById('cg-paste-area');
+  var loadInput = document.getElementById('cg-load-input');
+  var loadLines = document.getElementById('cg-load-lines');
+  var loadBtn = document.getElementById('cg-load-btn');
+  var loadFeedback = document.getElementById('cg-load-feedback');
+  var loadResults = document.getElementById('cg-load-results');
+
+  // --- Toggle visibility sync (used by loadConfig and resetForm) ---
+  function syncOneToggle(toggleId, fieldsId) {
+    var toggle = document.getElementById(toggleId);
+    var fields = document.getElementById(fieldsId);
+    if (!toggle || !fields) return;
+    if (toggle.checked) { fields.classList.add('cg-visible'); }
+    else { fields.classList.remove('cg-visible'); }
+  }
+
+  function syncAllToggles() {
+    syncOneToggle('cg-logo-toggle', 'cg-logo-fields');
+    syncOneToggle('cg-custom-domain', 'cg-custom-domain-fields');
+    syncOneToggle('cg-gsheets-toggle', 'cg-gsheets-fields');
+    syncOneToggle('cg-protection-toggle', 'cg-protection-fields');
+    // GitHub Pages toggle — inverted panel logic
+    var ghToggle = document.getElementById('cg-ghpages');
+    var ghFields = document.getElementById('cg-ghpages-fields');
+    var manFields = document.getElementById('cg-manual-fields');
+    if (ghToggle.checked) {
+      ghFields.classList.add('cg-visible');
+      manFields.classList.remove('cg-visible');
+    } else {
+      ghFields.classList.remove('cg-visible');
+      manFields.classList.add('cg-visible');
+    }
+  }
+
+  // --- Friendly YAML error messages (from config validator) ---
+  function friendlyYamlError(reason) {
+    if (!reason) return null;
+    var r = reason.toLowerCase();
+    if (r.indexOf('block mapping entry') !== -1 || r.indexOf('multiline key') !== -1) {
+      return 'There is likely a missing space after a colon (:), or an indentation problem near this line. Check that each setting has a space after the colon (e.g., title: "My Site") and that nested items are indented with spaces, not tabs.';
+    }
+    if (r.indexOf('bad indentation') !== -1) {
+      return 'The indentation is incorrect near this line. YAML uses spaces (not tabs) for nesting. Items like shared_url under google_sheets: need to be indented by exactly 2 spaces.';
+    }
+    if (r.indexOf('colon is missed') !== -1 || r.indexOf('mapping values are not allowed') !== -1) {
+      return 'A colon (:) seems to be missing or misplaced. Each setting needs a colon followed by a space between the name and its value (e.g., title: "My Site").';
+    }
+    if (r.indexOf('did not find expected') !== -1) {
+      return 'A closing character is missing. Check for unclosed quotes (\"), brackets, or braces near this line.';
+    }
+    if (r.indexOf('duplicated mapping key') !== -1) {
+      return 'This setting name appears more than once. Each setting should only be listed once in the file.';
+    }
+    if (r.indexOf('block end') !== -1) {
+      return 'The indentation does not match the expected structure. Make sure items at the same level have the same number of spaces.';
+    }
+    if (r.indexOf('flow collection') !== -1 || r.indexOf('expected \',\'') !== -1) {
+      return 'A bracket or brace was opened but never closed, or a comma is missing inside a list. Check for mismatched [ ] or { } characters.';
+    }
+    if (r.indexOf('unexpected end') !== -1) {
+      return 'The file ends unexpectedly. Check for unclosed quotes, brackets, or braces.';
+    }
+    return null;
+  }
+
+  function esc(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function showLoadError(msg, line, detail) {
+    var lineStr = line ? '<span class="cv-line">Line ' + line + ':</span> ' : '';
+    var detailStr = detail ? '<span class="cv-detail">Parser message: ' + esc(detail) + '</span>' : '';
+    loadResults.innerHTML = '<div class="cv-issue cv-issue--error">' +
+      '<span class="cv-badge cv-badge--error">ERROR</span>' +
+      '<span>' + lineStr + esc(msg) + detailStr + '</span></div>';
+  }
+
+  // --- Load config ---
+  function loadConfig() {
+    loadResults.innerHTML = '';
+    var raw = loadInput.value;
+    if (!raw || !raw.trim()) {
+      showLoadError('No configuration found. Paste your _config.yml above and click Load.');
+      return;
+    }
+
+    if (typeof jsyaml === 'undefined') {
+      showLoadError('Could not load the YAML parser. Check your internet connection and try refreshing the page.');
+      return;
+    }
+
+    var config;
+    try {
+      config = jsyaml.load(raw);
+    } catch (e) {
+      var friendly = friendlyYamlError(e.reason);
+      var line = e.mark ? e.mark.line + 1 : null;
+      showLoadError(
+        friendly || ('YAML syntax error: ' + e.reason),
+        line,
+        friendly ? e.reason : null
+      );
+      return;
+    }
+
+    if (typeof config !== 'object' || config === null) {
+      showLoadError('The config file should contain YAML key-value pairs, not a single value.');
+      return;
+    }
+
+    // --- Map parsed values to form fields ---
+
+    // Simple strings
+    if (config.title !== undefined) {
+      document.getElementById('cg-title').value = String(config.title);
+    }
+    if (config.description !== undefined) {
+      document.getElementById('cg-description').value = String(config.description);
+    }
+    if (config.author !== undefined) {
+      // Handle author as string or object
+      var authorVal = config.author;
+      if (typeof authorVal === 'object' && authorVal !== null) {
+        authorVal = authorVal.name || '';
+      }
+      document.getElementById('cg-author').value = String(authorVal);
+    }
+    if (config.email !== undefined) {
+      document.getElementById('cg-email').value = String(config.email);
+    }
+
+    // Selects
+    if (config.telar_theme !== undefined) {
+      document.getElementById('cg-theme').value = String(config.telar_theme);
+    }
+    if (config.telar_language !== undefined) {
+      document.getElementById('cg-language').value = String(config.telar_language);
+    }
+
+    // Logo
+    if (config.logo !== undefined && config.logo !== null && String(config.logo).trim() !== '') {
+      document.getElementById('cg-logo-toggle').checked = true;
+      document.getElementById('cg-logo-path').value = String(config.logo);
+    } else {
+      document.getElementById('cg-logo-toggle').checked = false;
+      document.getElementById('cg-logo-path').value = '';
+    }
+
+    // Hosting — reverse-map url/baseurl
+    var urlVal = config.url !== undefined ? String(config.url).replace(/\/+$/, '') : '';
+    var baseurlVal = config.baseurl !== undefined ? String(config.baseurl) : '';
+
+    if (/^https?:\/\/[\w-]+\.github\.io$/.test(urlVal)) {
+      // GitHub Pages mode
+      document.getElementById('cg-ghpages').checked = true;
+      var ghMatch = urlVal.match(/^https?:\/\/([\w-]+)\.github\.io$/);
+      document.getElementById('cg-gh-username').value = ghMatch ? ghMatch[1] : '';
+      document.getElementById('cg-gh-repo').value = baseurlVal.replace(/^\//, '');
+      document.getElementById('cg-custom-domain').checked = false;
+      document.getElementById('cg-domain-url').value = '';
+      document.getElementById('cg-root-domain').checked = false;
+      document.getElementById('cg-manual-url').value = '';
+      document.getElementById('cg-manual-baseurl').value = '';
+    } else {
+      // Manual hosting mode
+      document.getElementById('cg-ghpages').checked = false;
+      document.getElementById('cg-manual-url').value = urlVal;
+      document.getElementById('cg-manual-baseurl').value = baseurlVal;
+      document.getElementById('cg-gh-username').value = '';
+      document.getElementById('cg-gh-repo').value = '';
+      document.getElementById('cg-custom-domain').checked = false;
+      document.getElementById('cg-domain-url').value = '';
+      document.getElementById('cg-root-domain').checked = false;
+    }
+
+    // Google Sheets
+    var gs = config.google_sheets;
+    if (gs && typeof gs === 'object') {
+      document.getElementById('cg-gsheets-toggle').checked = !!gs.enabled;
+      if (gs.shared_url !== undefined) {
+        document.getElementById('cg-gsheets-shared').value = String(gs.shared_url);
+      }
+      if (gs.published_url !== undefined) {
+        document.getElementById('cg-gsheets-published').value = String(gs.published_url);
+      }
+    }
+
+    // Story interface
+    var si = config.story_interface;
+    if (si && typeof si === 'object') {
+      if (si.show_on_homepage !== undefined) {
+        document.getElementById('cg-show-on-homepage').checked = !!si.show_on_homepage;
+      }
+      if (si.show_story_steps !== undefined) {
+        document.getElementById('cg-show-story-steps').checked = !!si.show_story_steps;
+      }
+      if (si.show_object_credits !== undefined) {
+        document.getElementById('cg-show-object-credits').checked = !!si.show_object_credits;
+      }
+      if (si.include_demo_content !== undefined) {
+        document.getElementById('cg-include-demo-content').checked = !!si.include_demo_content;
+      }
+    }
+
+    // Collection interface
+    var ci = config.collection_interface;
+    if (ci && typeof ci === 'object') {
+      if (ci.browse_and_search !== undefined) {
+        document.getElementById('cg-browse-and-search').checked = !!ci.browse_and_search;
+      }
+      if (ci.show_link_on_homepage !== undefined) {
+        document.getElementById('cg-show-link-on-homepage').checked = !!ci.show_link_on_homepage;
+      }
+      if (ci.show_sample_on_homepage !== undefined) {
+        document.getElementById('cg-show-sample-on-homepage').checked = !!ci.show_sample_on_homepage;
+      }
+      if (ci.featured_count !== undefined) {
+        document.getElementById('cg-featured-count').value = ci.featured_count;
+      }
+    }
+
+    // Story key
+    if (config.story_key !== undefined && config.story_key !== null && String(config.story_key).trim() !== '') {
+      document.getElementById('cg-protection-toggle').checked = true;
+      document.getElementById('cg-secret-key').value = String(config.story_key);
+    } else {
+      document.getElementById('cg-protection-toggle').checked = false;
+      document.getElementById('cg-secret-key').value = '';
+    }
+
+    // Sync toggle visibility, clear validation, hide paste area
+    syncAllToggles();
+    clearAllValidation();
+    pasteArea.classList.remove('cg-visible');
+    modeCreateBtn.classList.add('cg-active');
+    modeEditBtn.classList.remove('cg-active');
+
+    // Reset generate button text and hide output
+    generateBtn.textContent = 'Generate';
+    copyBtn.style.display = 'none';
+    outputWrapper.classList.remove('cg-visible');
+
+    showLoadSuccess('Configuration loaded successfully');
+  }
+
+  // --- Reset form ---
+  function resetForm() {
+    // Text inputs and textareas
+    document.getElementById('cg-title').value = '';
+    document.getElementById('cg-description').value = '';
+    document.getElementById('cg-author').value = '';
+    document.getElementById('cg-email').value = '';
+    document.getElementById('cg-logo-path').value = '';
+    document.getElementById('cg-gh-username').value = '';
+    document.getElementById('cg-gh-repo').value = '';
+    document.getElementById('cg-domain-url').value = '';
+    document.getElementById('cg-manual-url').value = '';
+    document.getElementById('cg-manual-baseurl').value = '';
+    document.getElementById('cg-gsheets-shared').value = '';
+    document.getElementById('cg-gsheets-published').value = '';
+    document.getElementById('cg-secret-key').value = '';
+
+    // Selects
+    document.getElementById('cg-theme').value = 'paisajes';
+    document.getElementById('cg-language').value = 'en';
+
+    // Toggles — defaults
+    document.getElementById('cg-ghpages').checked = true;
+    document.getElementById('cg-logo-toggle').checked = false;
+    document.getElementById('cg-custom-domain').checked = false;
+    document.getElementById('cg-root-domain').checked = false;
+    document.getElementById('cg-gsheets-toggle').checked = true;
+    document.getElementById('cg-show-on-homepage').checked = true;
+    document.getElementById('cg-show-story-steps').checked = true;
+    document.getElementById('cg-show-object-credits').checked = true;
+    document.getElementById('cg-include-demo-content').checked = true;
+    document.getElementById('cg-browse-and-search').checked = true;
+    document.getElementById('cg-show-link-on-homepage').checked = true;
+    document.getElementById('cg-show-sample-on-homepage').checked = true;
+    document.getElementById('cg-protection-toggle').checked = false;
+
+    // Number input
+    document.getElementById('cg-featured-count').value = 4;
+
+    // Sync toggle visibility
+    syncAllToggles();
+
+    // Clear validation, hide output
+    clearAllValidation();
+    outputWrapper.classList.remove('cg-visible');
+    generateBtn.textContent = 'Generate';
+    copyBtn.style.display = 'none';
+
+    // Clear paste area
+    loadInput.value = '';
+    loadLines.textContent = '1';
+  }
+
+  // --- Load success feedback (brief fade) ---
+  function showLoadSuccess(msg) {
+    loadFeedback.textContent = msg;
+    loadFeedback.className = 'cg-load-feedback cg-load-success cg-show';
+    setTimeout(function() { loadFeedback.classList.remove('cg-show'); }, 2500);
+  }
+
+  // --- Mode switching ---
+  modeCreateBtn.addEventListener('click', function() {
+    modeCreateBtn.classList.add('cg-active');
+    modeEditBtn.classList.remove('cg-active');
+    pasteArea.classList.remove('cg-visible');
+    loadResults.innerHTML = '';
+    resetForm();
+  });
+
+  modeEditBtn.addEventListener('click', function() {
+    modeEditBtn.classList.add('cg-active');
+    modeCreateBtn.classList.remove('cg-active');
+    pasteArea.classList.add('cg-visible');
+    loadResults.innerHTML = '';
+    loadInput.focus();
+  });
+
+  // --- Paste area line numbers ---
+  loadInput.addEventListener('input', function() {
+    var count = (loadInput.value || '').split('\n').length;
+    var nums = '';
+    for (var i = 1; i <= count; i++) { nums += i + '\n'; }
+    loadLines.textContent = nums;
+  });
+  loadInput.addEventListener('scroll', function() {
+    loadLines.scrollTop = loadInput.scrollTop;
+  });
+
+  // --- Load button ---
+  loadBtn.addEventListener('click', loadConfig);
 
   // --- Toggle wiring ---
   function wireToggle(toggleId, fieldsId, invert) {

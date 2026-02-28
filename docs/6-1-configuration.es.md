@@ -563,7 +563,7 @@ development-features:
 ## Véase también
 
 - [Validador de Configuración](/guia/referencia/validador-de-configuracion/) — Revisa tu `_config.yml` en busca de errores comunes
-- [Generador de Configuración](/guia/referencia/generador-de-configuracion/) — Genera un archivo `_config.yml` listo para usar
+- [Generador y editor de configuración](/guia/referencia/generador-de-configuracion/) — Genera o edita un archivo `_config.yml`
 - [Personaliza tu Tema](/guia/personalizacion/temas/)
 - [Personaliza tu Página de Inicio](/guia/personalizacion/pagina-de-inicio/)
 - [Configura el Menú de Navegación](/guia/personalizacion/menu-navegacion/)

@@ -29,8 +29,8 @@ Complete reference for all markdown formatting available in Telar panels and pag
 ### [6.5 Config Validator](/docs/reference/config-validator/)
 Paste your `_config.yml` to check for errors.
 
-### [6.6 Config Generator](/docs/reference/config-generator/)
-Build a `_config.yml` from scratch with a guided form.
+### [6.6 Config Generator and Editor](/docs/reference/config-generator/)
+Build a new `_config.yml` or load and edit an existing one.
 
 ### [6.7 Google Sheets Reference](/docs/reference/google-sheets/)
 Advanced spreadsheet setup, troubleshooting, and tab configuration.

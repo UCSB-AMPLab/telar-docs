@@ -465,5 +465,5 @@ Your configuration is never sent to any server — everything runs in your brows
 ## See also
 
 - [Configuration Reference](/docs/reference/configuration/) — Full list of all `_config.yml` settings
-- [Config Generator](/docs/reference/config-generator/) — Generate a ready-to-use `_config.yml` file
+- [Config Generator and Editor](/docs/reference/config-generator/) — Generate or edit a `_config.yml` file
 - [Quick Start](/docs/getting-started/quick-start/) — Step-by-step setup guide
