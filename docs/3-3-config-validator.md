@@ -302,7 +302,7 @@ Your configuration is never sent to any server — everything runs in your brows
     if (gs.shared_url) {
       issues.push({
         s: 'info',
-        m: '"google_sheets.shared_url" is no longer needed (since v0.8.2). Only "published_url" is required — you can safely remove the shared_url line.'
+        m: '"google_sheets.shared_url" is no longer needed (since v0.9.0). Only "published_url" is required — you can safely remove the shared_url line.'
       });
     }
     if (!gs.published_url || (typeof gs.published_url === 'string' && !gs.published_url.trim())) {

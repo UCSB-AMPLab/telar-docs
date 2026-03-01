@@ -52,7 +52,7 @@ google_sheets:
 - The `published_url` provides stable CSV endpoints for each sheet
 
 {: .note }
-> **Simplified in v0.8.2.** You no longer need to share your sheet separately. Only the published URL is required. If your config still has a `shared_url` line, it is safely ignored.
+> **Simplified in v0.9.0.** You no longer need to share your sheet separately. Only the published URL is required. If your config still has a `shared_url` line, it is safely ignored.
 
 ![GitHub screenshot for editing config file](/images/config_drive.gif)
 

@@ -52,7 +52,7 @@ google_sheets:
 - `published_url` provee URLs CSV estables por pestaña
 
 {: .note }
-> **Simplificado en v0.8.2.** Ya no necesitas compartir tu hoja por separado. Solo se requiere la URL publicada. Si tu configuración todavía tiene una línea `shared_url`, se ignora sin problemas.
+> **Simplificado en v0.9.0.** Ya no necesitas compartir tu hoja por separado. Solo se requiere la URL publicada. Si tu configuración todavía tiene una línea `shared_url`, se ignora sin problemas.
 
 ![Captura de pantalla de GitHub: editando el archivo de configuración](/images/config_drive.gif)
 

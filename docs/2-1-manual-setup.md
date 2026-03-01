@@ -61,7 +61,7 @@ Your spreadsheet needs to be published so Telar can read it during builds.
 3. Copy the published URL
 
 {: .note }
-> **Simplified in v0.8.2.** Previous versions required both a shared URL and a published URL. From v0.8.2, only the published URL is needed. If your `_config.yml` still has a `shared_url` line, it is safely ignored.
+> **Simplified in v0.9.0.** Previous versions required both a shared URL and a published URL. From v0.9.0, only the published URL is needed. If your `_config.yml` still has a `shared_url` line, it is safely ignored.
 
 ### Configure Your Site
 

@@ -303,7 +303,7 @@ Tu configuración nunca se envía a ningún servidor — todo se ejecuta en tu n
     if (gs.shared_url) {
       issues.push({
         s: 'info',
-        m: '"google_sheets.shared_url" ya no es necesario (desde v0.8.2). Solo se requiere "published_url" — puedes eliminar la línea shared_url.'
+        m: '"google_sheets.shared_url" ya no es necesario (desde v0.9.0). Solo se requiere "published_url" — puedes eliminar la línea shared_url.'
       });
     }
     if (!gs.published_url || (typeof gs.published_url === 'string' && !gs.published_url.trim())) {

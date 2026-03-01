@@ -1197,11 +1197,11 @@ development-features:
     output = output.replace('%%FEATURED_COUNT%%', featuredCount);
     output = output.replace('%%STORY_KEY_LINE%%', storyKeyLine);
 
-    // Backward compat: preserve shared_url from loaded config (needed by pre-v0.8.2)
+    // Backward compat: preserve shared_url from loaded config (needed by pre-v0.9.0)
     if (_loadedSharedUrl) {
       output = output.replace(
         '  published_url:',
-        '  shared_url: ' + q(_loadedSharedUrl) + ' # No longer needed from v0.8.2 — kept for backward compatibility\n  published_url:'
+        '  shared_url: ' + q(_loadedSharedUrl) + ' # No longer needed from v0.9.0 — kept for backward compatibility\n  published_url:'
       );
     }
 

@@ -61,7 +61,7 @@ Tu hoja de cálculo necesita estar publicada para que Telar pueda leerla durante
 3. Copia la URL publicada
 
 {: .note }
-> **Simplificado en v0.8.2.** Las versiones anteriores requerían tanto una URL compartida como una URL publicada. Desde v0.8.2, solo se necesita la URL publicada. Si tu `_config.yml` todavía tiene una línea `shared_url`, se ignora sin problemas.
+> **Simplificado en v0.9.0.** Las versiones anteriores requerían tanto una URL compartida como una URL publicada. Desde v0.9.0, solo se necesita la URL publicada. Si tu `_config.yml` todavía tiene una línea `shared_url`, se ignora sin problemas.
 
 ### Configura tu sitio
 
