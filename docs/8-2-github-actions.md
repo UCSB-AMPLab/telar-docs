@@ -226,7 +226,7 @@ Typical build times:
 ### Google Sheets Not Updating
 
 1. Manually trigger workflow (see above)
-2. Verify both shared and published URLs in `_config.yml`
+2. Verify the published URL in `_config.yml`
 3. Check the sheet is published to web
 4. Review fetch logs in Actions tab
 

@@ -160,7 +160,7 @@ Tiempos de construcción típicos:
 ### Google Sheets no se actualiza
 
 1. Activa flujo de trabajo manualmente (ver arriba)
-2. Verifica ambas URLs compartida y publicada en `_config.yml`
+2. Verifica la URL publicada en `_config.yml`
 3. Verifica que la hoja esté publicada en la web
 4. Revisa los _logs_ de obtención en pestaña Actions
 

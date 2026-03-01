@@ -128,25 +128,23 @@ Manage content via Google Sheets instead of editing CSV files directly:
 ```yaml
 google_sheets:
   enabled: true
-  shared_url: "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID/edit?usp=sharing"
   published_url: "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLISHED_ID/pubhtml"
 ```
 
 ### Setup Steps
 
 1. **Get the template**: Duplicate the template at [bit.ly/telar-template](https://bit.ly/telar-template)
-2. **Share your sheet**: Set to "Anyone with the link (Viewer access)"
-3. **Publish your sheet**: **File** → **Share** → **Publish to web**
-4. Paste both URLs into `_config.yml`
-5. Set `enabled: true`
-6. Commit changes
+2. **Publish your sheet**: **File** → **Share** → **Publish to web**
+3. Paste the published URL into `_config.yml`
+4. Set `enabled: true`
+5. Commit changes
 
 **Automated fetching:**
 - **GitHub Pages**: GitHub Actions automatically discovers tab GIDs and fetches CSVs
 - **Local development**: Run `python3 scripts/fetch_google_sheets.py` before building
 
-{: .warning }
-> Both URLs are required. The shared URL is for viewing, the published URL is for automated fetching.
+{: .note }
+> Only the published URL is needed. If your config still has a `shared_url` line from an older version, it is safely ignored.
 
 See [Google Sheets Reference](/docs/your-data/google-sheets/) for complete setup instructions.
 
@@ -469,7 +467,6 @@ collection_interface:
 # Google Sheets Integration (optional)
 google_sheets:
   enabled: true
-  shared_url: "https://docs.google.com/spreadsheets/d/ABC123/edit?usp=sharing"
   published_url: "https://docs.google.com/spreadsheets/d/e/XYZ789/pubhtml"
 
 #

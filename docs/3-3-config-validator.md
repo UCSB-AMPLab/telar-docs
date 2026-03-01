@@ -58,7 +58,7 @@ Your configuration is never sent to any server — everything runs in your brows
       return 'There is likely a missing space after a colon (:), or an indentation problem near this line. Check that each setting has a space after the colon (e.g., title: "My Site") and that nested items are indented with spaces, not tabs.';
     }
     if (r.indexOf('bad indentation') !== -1) {
-      return 'The indentation is incorrect near this line. YAML uses spaces (not tabs) for nesting. Items like shared_url under google_sheets: need to be indented by exactly 2 spaces.';
+      return 'The indentation is incorrect near this line. YAML uses spaces (not tabs) for nesting. Items like published_url under google_sheets: need to be indented by exactly 2 spaces.';
     }
     if (r.indexOf('colon is missed') !== -1 || r.indexOf('mapping values are not allowed') !== -1) {
       return 'A colon (:) seems to be missing or misplaced. Each setting needs a colon followed by a space between the name and its value (e.g., title: "My Site").';
@@ -291,7 +291,7 @@ Your configuration is never sent to any server — everything runs in your brows
       return;
     }
     if (!gs.enabled) {
-      if (gs.shared_url || gs.published_url) {
+      if (gs.published_url) {
         issues.push({
           s: 'warning',
           m: '"google_sheets" has URLs but "enabled" is not set to true. Set "enabled: true" to use Google Sheets integration.'
@@ -299,22 +299,16 @@ Your configuration is never sent to any server — everything runs in your brows
       }
       return;
     }
-    if (!gs.shared_url || (typeof gs.shared_url === 'string' && !gs.shared_url.trim())) {
+    if (gs.shared_url) {
       issues.push({
-        s: 'error',
-        m: '"google_sheets.shared_url" is missing or empty. You need both the shared URL and the published URL.'
+        s: 'info',
+        m: '"google_sheets.shared_url" is no longer needed (since v0.8.2). Only "published_url" is required — you can safely remove the shared_url line.'
       });
     }
     if (!gs.published_url || (typeof gs.published_url === 'string' && !gs.published_url.trim())) {
       issues.push({
         s: 'error',
-        m: '"google_sheets.published_url" is missing or empty. You need both the shared URL and the published URL.'
-      });
-    }
-    if (gs.shared_url && gs.published_url && gs.shared_url === gs.published_url) {
-      issues.push({
-        s: 'error',
-        m: '"shared_url" and "published_url" are the same URL. These should be two different URLs — one for sharing, one for publishing.'
+        m: '"google_sheets.published_url" is missing or empty. This is the URL from File → Share → Publish to web in Google Sheets.'
       });
     }
   }

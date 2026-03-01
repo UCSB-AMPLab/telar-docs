@@ -52,21 +52,16 @@ Your Google Sheets spreadsheet is where you manage all your content — objects,
 2. Click **File** → **Make a copy**
 3. Save to your Google Drive with a descriptive name (e.g., "My Telar Exhibition")
 
-### Share and Publish Your Sheet
+### Publish Your Sheet
 
-Your spreadsheet needs two types of access so Telar can read it during builds.
-
-**Share your sheet:**
-
-1. Click the **Share** button in Google Sheets
-2. Set access to "Anyone with the link" with **Viewer** permissions
-3. Copy the shared URL
-
-**Publish your sheet:**
+Your spreadsheet needs to be published so Telar can read it during builds.
 
 1. Go to **File** → **Share** → **Publish to web**
 2. Click **Publish**
 3. Copy the published URL
+
+{: .note }
+> **Simplified in v0.8.2.** Previous versions required both a shared URL and a published URL. From v0.8.2, only the published URL is needed. If your `_config.yml` still has a `shared_url` line, it is safely ignored.
 
 ### Configure Your Site
 
@@ -94,12 +89,11 @@ Edit the `_config.yml` file in your repository to connect everything:
    {: .warning }
    > It is very important that your baseurl matches the name of your repository exactly. Baseurl must be in all lowercase, so if you gave your repository a name with capitals please go and change it now.
 
-4. **Google Sheets** — paste in the URLs you copied:
+4. **Google Sheets** — paste in the published URL you copied:
 
    ```yaml
    google_sheets:
      enabled: true
-     shared_url: "https://docs.google.com/..."
      published_url: "https://docs.google.com/..."
    ```
 
@@ -128,9 +122,9 @@ After committing, GitHub Actions will automatically build and publish your site.
 > If the build fails or your site doesn't look right, double-check your `_config.yml` carefully. Common mistakes:
 > - **Unclosed quotes** — every `"` needs a matching `"`
 > - **Missing space after colon** — write `title: "My Site"`, not `title:"My Site"`
-> - **Wrong indentation** — nested settings like `shared_url` must be indented with spaces, not tabs
+> - **Wrong indentation** — nested settings like `published_url` must be indented with spaces, not tabs
 > - **Mismatched baseurl** — must match your repository name exactly, in all lowercase
-> - **Only one Google Sheets URL** — you need both the shared URL and the published URL; they are different
+> - **Wrong Google Sheets URL** — make sure you use the published URL from File → Share → Publish to web
 >
 > See the [Configuration Reference](/docs/configure/configuration/) for the full list of settings. You can also paste your `_config.yml` into the [Telar Config Validator](/docs/configure/config-validator/) to check for errors, or use the [Config Generator and Editor](/docs/configure/config-generator/) to build one from scratch.
 

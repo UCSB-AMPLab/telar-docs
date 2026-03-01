@@ -52,21 +52,16 @@ Tu hoja de cálculo de Google Sheets es donde administras todo el contenido — 
 2. Haz clic en **File** → **Make a copy**
 3. Guárdala en tu Google Drive con un nombre descriptivo (ej., "Mi exposición Telar")
 
-### Comparte y publica tu hoja
+### Publica tu hoja
 
-Tu hoja de cálculo necesita dos tipos de acceso para que Telar pueda leerla durante la compilación.
-
-**Comparte tu hoja:**
-
-1. Haz clic en el botón **Share** en Google Sheets
-2. Establece el acceso a "Anyone with the link" con permisos de **Viewer**
-3. Copia la URL compartida
-
-**Publica tu hoja:**
+Tu hoja de cálculo necesita estar publicada para que Telar pueda leerla durante la compilación.
 
 1. Ve a **File** → **Share** → **Publish to web**
 2. Haz clic en **Publish**
 3. Copia la URL publicada
+
+{: .note }
+> **Simplificado en v0.8.2.** Las versiones anteriores requerían tanto una URL compartida como una URL publicada. Desde v0.8.2, solo se necesita la URL publicada. Si tu `_config.yml` todavía tiene una línea `shared_url`, se ignora sin problemas.
 
 ### Configura tu sitio
 
@@ -94,12 +89,11 @@ Edita el archivo `_config.yml` en tu repositorio para conectar todo:
    {: .warning }
    > Es muy importante que tu baseurl coincida exactamente con el nombre de tu repositorio. Baseurl debe estar completamente en minúsculas, así que si le pusiste mayúsculas al nombre de tu repositorio, ve y cámbialo ahora.
 
-4. **Google Sheets** — pega las URLs que copiaste:
+4. **Google Sheets** — pega la URL publicada que copiaste:
 
    ```yaml
    google_sheets:
      enabled: true
-     shared_url: "https://docs.google.com/..."
      published_url: "https://docs.google.com/..."
    ```
 
@@ -128,9 +122,9 @@ Después de hacer *commit*, GitHub Actions construirá y publicará tu sitio aut
 > Si la compilación falla o tu sitio no se ve bien, revisa tu `_config.yml` con cuidado. Errores comunes:
 > - **Comillas sin cerrar** — cada `"` necesita su par
 > - **Falta espacio después de los dos puntos** — escribe `title: "Mi sitio"`, no `title:"Mi sitio"`
-> - **Indentación incorrecta** — las opciones anidadas como `shared_url` deben indentarse con espacios, no tabulaciones
+> - **Indentación incorrecta** — las opciones anidadas como `published_url` deben indentarse con espacios, no tabulaciones
 > - **baseurl no coincide** — debe coincidir exactamente con el nombre de tu repositorio, todo en minúsculas
-> - **Solo una URL de Google Sheets** — necesitas tanto la URL compartida como la URL publicada; son diferentes
+> - **URL de Google Sheets incorrecta** — asegúrate de usar la URL publicada de Archivo → Compartir → Publicar en la Web
 >
 > Consulta la [Referencia de configuración](/guia/configurar/configuracion/) para la lista completa de opciones. También puedes pegar tu `_config.yml` en el [Validador de Configuración de Telar](/guia/configurar/validador-de-configuracion/) para buscar errores, o usar el [Generador y editor de configuración](/guia/configurar/generador-de-configuracion/) para crear uno desde cero.
 

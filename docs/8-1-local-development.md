@@ -198,7 +198,6 @@ For local development with Google Sheets:
    ```yaml
    google_sheets:
      enabled: true
-     shared_url: "YOUR_SHARED_URL"
      published_url: "YOUR_PUBLISHED_URL"
    ```
 

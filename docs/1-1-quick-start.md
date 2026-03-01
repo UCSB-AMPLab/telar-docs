@@ -102,40 +102,23 @@ Your Google Sheets spreadsheet is where you manage all your content — objects,
 2. Click **File** → **Make a copy**
 3. Save to your Google Drive with a name you will remember (e.g., "My Telar Exhibition")
 
-## Share and Publish Your Sheet
+## Publish Your Sheet
 
-Your spreadsheet needs two types of access so Telar can read your content.
-
-**Share your sheet:**
-
-1. Click the **Share** button in Google Sheets
-2. Set access to "Anyone with the link" with **Viewer** permissions
-3. Copy the shared URL and paste it below
-
-**Publish your sheet:**
+Your spreadsheet needs to be published so Telar can read your content during builds.
 
 1. Go to **File** → **Share** → **Publish to web**
 2. Click **Publish**
 3. Copy the published URL and paste it below
 
 <div class="gqs-field-group" id="gqs-sheets-group">
-  <div class="gqs-panel-title">Your Google Sheets URLs</div>
-  <div class="cg-row">
-    <label class="cg-label" for="gqs-shared-url">Shared URL</label>
-    <div class="cg-field">
-      <input type="text" id="gqs-shared-url" class="cg-input" placeholder="https://docs.google.com/spreadsheets/d/your-sheet-id/edit?usp=sharing">
-      <div class="cg-error-msg" id="gqs-shared-url-error"></div>
-      <div class="cg-warn-msg" id="gqs-shared-url-warn"></div>
-      <div class="cg-hint">The URL from the Share dialog (Viewer access)</div>
-    </div>
-  </div>
+  <div class="gqs-panel-title">Your Google Sheets URL</div>
   <div class="cg-row">
     <label class="cg-label" for="gqs-published-url">Published URL</label>
     <div class="cg-field">
       <input type="text" id="gqs-published-url" class="cg-input" placeholder="https://docs.google.com/spreadsheets/d/e/your-published-id/pubhtml">
       <div class="cg-error-msg" id="gqs-published-url-error"></div>
       <div class="cg-warn-msg" id="gqs-published-url-warn"></div>
-      <div class="cg-hint">From File → Share → Publish to web. This is a different URL from the one above.</div>
+      <div class="cg-hint">From File → Share → Publish to web</div>
     </div>
   </div>
 </div>
@@ -216,7 +199,7 @@ After committing, GitHub Actions will automatically build and publish your site.
 ![Telar homepage with title and navigation menu](/images/telar-homepage.png)
 
 {: .warning }
-> **Build problems?** The most common issues are mismatched Google Sheets URLs (you need both the shared URL and the published URL — they are different). If your site does not appear at all, check the Actions tab for error details. You can also paste your `_config.yml` into the [Telar Config Validator](/docs/configure/config-validator/) to check for errors.
+> **Build problems?** Check that your Google Sheets published URL is correct — it should come from File → Share → Publish to web. If your site does not appear at all, check the Actions tab for error details. You can also paste your `_config.yml` into the [Telar Config Validator](/docs/configure/config-validator/) to check for errors.
 
 ---
 
@@ -237,7 +220,6 @@ Your Telar site is up and running. Follow this tutorial to learn how Telar stori
   var repoEl = document.getElementById('gqs-repo');
   var urlPreview = document.getElementById('gqs-url-preview');
 
-  var sharedUrlEl = document.getElementById('gqs-shared-url');
   var publishedUrlEl = document.getElementById('gqs-published-url');
 
   var titleEl = document.getElementById('gqs-title');
@@ -325,24 +307,6 @@ Your Telar site is up and running. Follow this tutorial to learn how Telar stori
     return false;
   }
 
-  function validateSharedUrl() {
-    clearField('gqs-shared-url');
-    var val = sharedUrlEl.value.trim();
-    if (!val) { showError('gqs-shared-url', 'Enter your Google Sheets shared URL'); return true; }
-    if (!val.includes('docs.google.com/spreadsheets')) {
-      showWarn('gqs-shared-url', "This doesn't look like a Google Sheets URL");
-    } else if (/\/e\/.*\/pub/.test(val)) {
-      showError('gqs-shared-url', 'This looks like a published URL, not a shared URL. The shared URL comes from the Share button and contains /edit');
-      return true;
-    }
-    var pubVal = publishedUrlEl.value.trim();
-    if (val && pubVal && val === pubVal) {
-      showError('gqs-shared-url', 'This is the same as your published URL \u2014 the shared and published URLs are different');
-      return true;
-    }
-    return false;
-  }
-
   function validatePublishedUrl() {
     clearField('gqs-published-url');
     var val = publishedUrlEl.value.trim();
@@ -350,12 +314,7 @@ Your Telar site is up and running. Follow this tutorial to learn how Telar stori
     if (!val.includes('docs.google.com/spreadsheets')) {
       showWarn('gqs-published-url', "This doesn't look like a Google Sheets URL");
     } else if (val.includes('/edit')) {
-      showError('gqs-published-url', 'This looks like a shared/edit URL, not a published URL. Go to File \u2192 Share \u2192 Publish to web to get the published URL');
-      return true;
-    }
-    var sharedVal = sharedUrlEl.value.trim();
-    if (val && sharedVal && val === sharedVal) {
-      showError('gqs-published-url', 'This is the same as your shared URL \u2014 the published URL is different. Go to File \u2192 Share \u2192 Publish to web to get it');
+      showError('gqs-published-url', 'This looks like an edit URL, not a published URL. Go to File \u2192 Share \u2192 Publish to web to get the published URL');
       return true;
     }
     return false;
@@ -378,7 +337,6 @@ Your Telar site is up and running. Follow this tutorial to learn how Telar stori
 
   wireField(usernameEl, validateUsername);
   wireField(repoEl, validateRepo);
-  wireField(sharedUrlEl, validateSharedUrl);
   wireField(publishedUrlEl, validatePublishedUrl);
   wireField(titleEl, validateTitle);
 
@@ -394,7 +352,6 @@ Your Telar site is up and running. Follow this tutorial to learn how Telar stori
     if (validateTitle()) hasErrors = true;
     if (validateUsername()) hasErrors = true;
     if (validateRepo()) hasErrors = true;
-    if (validateSharedUrl()) hasErrors = true;
     if (validatePublishedUrl()) hasErrors = true;
 
     if (hasErrors) {
@@ -413,7 +370,6 @@ Your Telar site is up and running. Follow this tutorial to learn how Telar stori
     output = output.replace('__BASEURL__', q('/' + repo));
     output = output.replace('__AUTHOR__', q(authorEl.value.trim()));
     output = output.replace('__THEME__', q(themeEl.value));
-    output = output.replace('__GSHEETS_SHARED__', q(sharedUrlEl.value.trim()));
     output = output.replace('__GSHEETS_PUBLISHED__', q(publishedUrlEl.value.trim()));
     output = output.replace(/^\n/, '');
 
@@ -478,7 +434,6 @@ telar_language: "en"
 # See https://telar.org/docs/your-data/google-sheets/ for detailed setup instructions.
 google_sheets:
   enabled: true
-  shared_url: __GSHEETS_SHARED__
   published_url: __GSHEETS_PUBLISHED__
 
 # Story Interface Settings

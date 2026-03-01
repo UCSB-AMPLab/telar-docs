@@ -15,10 +15,9 @@ Use Google Sheets to manage your Telar content through a familiar, collaborative
 ## Quick start
 
 1. Duplicate the template: <https://bit.ly/telar-template> (File → Make a copy)
-2. Share: Anyone with the link (Viewer)
-3. Publish: File → Share → Publish to web
-4. Configure `_config.yml` → `google_sheets` block (shared_url, published_url)
-5. Build your site (GitHub Actions or local build)
+2. Publish: File → Share → Publish to web
+3. Configure `_config.yml` → `google_sheets` block (published_url)
+4. Build your site (GitHub Actions or local build)
 
 Optional: Import from Excel instead of duplicating the Google template
 
@@ -47,12 +46,13 @@ In your repository, set:
 ```yaml
 google_sheets:
   enabled: true
-  shared_url: "https://docs.google.com/..." # Share: Anyone with the link (Viewer)
   published_url: "https://docs.google.com/..." # File → Share → Publish to web
 ```
 
-- The `shared_url` ensures the fetcher can read the spreadsheet
 - The `published_url` provides stable CSV endpoints for each sheet
+
+{: .note }
+> **Simplified in v0.8.2.** You no longer need to share your sheet separately. Only the published URL is required. If your config still has a `shared_url` line, it is safely ignored.
 
 ![GitHub screenshot for editing config file](/images/config_drive.gif)
 

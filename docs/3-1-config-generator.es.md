@@ -220,21 +220,12 @@ Ingresa los datos de tu sitio para generar un archivo `_config.yml` listo para u
 
     <div id="cg-gsheets-fields" class="cg-optional-fields cg-visible">
       <div class="cg-row">
-        <label class="cg-label" for="cg-gsheets-shared">URL compartida</label>
-        <div class="cg-field">
-          <input type="text" id="cg-gsheets-shared" class="cg-input" placeholder="https://docs.google.com/spreadsheets/d/your-sheet-id/edit?usp=sharing">
-          <div class="cg-error-msg" id="cg-gsheets-shared-error"></div>
-          <div class="cg-warn-msg" id="cg-gsheets-shared-warn"></div>
-          <div class="cg-hint">Comparte tu hoja de Google con "Cualquier persona con el enlace" (acceso de Visor)</div>
-        </div>
-      </div>
-      <div class="cg-row">
         <label class="cg-label" for="cg-gsheets-published">URL publicada</label>
         <div class="cg-field">
           <input type="text" id="cg-gsheets-published" class="cg-input" placeholder="https://docs.google.com/spreadsheets/d/e/your-published-id/pubhtml">
           <div class="cg-error-msg" id="cg-gsheets-published-error"></div>
           <div class="cg-warn-msg" id="cg-gsheets-published-warn"></div>
-          <div class="cg-hint">Desde Archivo → Compartir → Publicar en la web. Se requieren ambas URLs.</div>
+          <div class="cg-hint">Desde Archivo → Compartir → Publicar en la web</div>
         </div>
       </div>
     </div>
@@ -405,16 +396,14 @@ telar_language: __LANGUAGE__ # Options: "en" (English), "es" (Español)
 #
 # Setup:
 # 1. Get the template: Duplicate our template at https://bit.ly/telar-template
-# 2. Share your sheet: Anyone with the link (Viewer access)
-# 3. Publish your sheet: File > Share > Publish to web
-# 4. Paste both URLs below
-# 5. Set enabled: true
-# 6. Commit changes
+# 2. Publish your sheet: File > Share > Publish to web
+# 3. Paste the published URL below
+# 4. Set enabled: true
+# 5. Commit changes
 #    - If using GitHub Pages: GitHub Actions will automatically discover tab GIDs and fetch CSVs
 #    - If running locally: Run `python3 scripts/fetch_google_sheets.py` before building
 google_sheets:
   enabled: %%GSHEETS_ENABLED%%
-  shared_url: __GSHEETS_SHARED__
   published_url: __GSHEETS_PUBLISHED__
 
 # Story Interface Settings
@@ -560,6 +549,7 @@ development-features:
   var outputEl = document.getElementById('cg-output');
   var linesEl = document.getElementById('cg-lines');
   var templateEl = document.getElementById('cg-template');
+  var _loadedSharedUrl = ''; // Stash shared_url from loaded configs (backward compat)
 
   // --- Load mode DOM references ---
   var modeCreateBtn = document.getElementById('cg-mode-create');
@@ -606,7 +596,7 @@ development-features:
       return 'Probablemente falta un espacio después de dos puntos (:), o hay un problema de indentación cerca de esta línea. Verifica que cada ajuste tenga un espacio después de los dos puntos (ej. title: "Mi Sitio") y que los elementos anidados estén indentados con espacios, no tabulaciones.';
     }
     if (r.indexOf('bad indentation') !== -1) {
-      return 'La indentación es incorrecta cerca de esta línea. YAML usa espacios (no tabulaciones) para anidar. Los elementos como shared_url bajo google_sheets: deben estar indentados con exactamente 2 espacios.';
+      return 'La indentación es incorrecta cerca de esta línea. YAML usa espacios (no tabulaciones) para anidar. Los elementos como published_url bajo google_sheets: deben estar indentados con exactamente 2 espacios.';
     }
     if (r.indexOf('colon is missed') !== -1 || r.indexOf('mapping values are not allowed') !== -1) {
       return 'Parece que falta o está mal ubicado un signo de dos puntos (:). Cada ajuste necesita dos puntos seguidos de un espacio entre el nombre y su valor (ej. title: "Mi Sitio").';
@@ -740,9 +730,7 @@ development-features:
     var gs = config.google_sheets;
     if (gs && typeof gs === 'object') {
       document.getElementById('cg-gsheets-toggle').checked = !!gs.enabled;
-      if (gs.shared_url !== undefined) {
-        document.getElementById('cg-gsheets-shared').value = String(gs.shared_url);
-      }
+      _loadedSharedUrl = (gs.shared_url !== undefined) ? String(gs.shared_url) : '';
       if (gs.published_url !== undefined) {
         document.getElementById('cg-gsheets-published').value = String(gs.published_url);
       }
@@ -819,8 +807,8 @@ development-features:
     document.getElementById('cg-domain-url').value = '';
     document.getElementById('cg-manual-url').value = '';
     document.getElementById('cg-manual-baseurl').value = '';
-    document.getElementById('cg-gsheets-shared').value = '';
     document.getElementById('cg-gsheets-published').value = '';
+    _loadedSharedUrl = '';
     document.getElementById('cg-secret-key').value = '';
 
     // Selects
@@ -1047,20 +1035,6 @@ development-features:
     return false;
   }
 
-  function validateSheetsShared() {
-    clearField('cg-gsheets-shared');
-    if (!document.getElementById('cg-gsheets-toggle').checked) return false;
-    var sharedUrl = document.getElementById('cg-gsheets-shared').value.trim();
-    if (!sharedUrl) {
-      showError('cg-gsheets-shared', 'Ingresa la URL compartida de Google Sheets');
-      return true;
-    }
-    if (!sharedUrl.includes('docs.google.com/spreadsheets')) {
-      showWarn('cg-gsheets-shared', 'Esta URL no parece ser de Google Sheets — asegúrate de compartir desde Google Sheets');
-    }
-    return false;
-  }
-
   function validateSheetsPublished() {
     clearField('cg-gsheets-published');
     if (!document.getElementById('cg-gsheets-toggle').checked) return false;
@@ -1096,7 +1070,6 @@ development-features:
     if (validateRepo())          hasErrors = true;
     if (validateDomain())        hasErrors = true;
     if (validateManualUrl())     hasErrors = true;
-    if (validateSheetsShared())  hasErrors = true;
     if (validateSheetsPublished()) hasErrors = true;
     if (validateSecretKey())     hasErrors = true;
     return hasErrors;
@@ -1115,7 +1088,6 @@ development-features:
   wireField('cg-gh-repo',           validateRepo);
   wireField('cg-domain-url',        validateDomain);
   wireField('cg-manual-url',        validateManualUrl);
-  wireField('cg-gsheets-shared',    validateSheetsShared);
   wireField('cg-gsheets-published', validateSheetsPublished);
   wireField('cg-secret-key',        validateSecretKey);
 
@@ -1171,7 +1143,6 @@ development-features:
     var logoPath = logoOn ? document.getElementById('cg-logo-path').value.trim() : '';
 
     var gsheetsOn = document.getElementById('cg-gsheets-toggle').checked;
-    var gsheetsShared = gsheetsOn ? document.getElementById('cg-gsheets-shared').value.trim() : '';
     var gsheetsPublished = gsheetsOn ? document.getElementById('cg-gsheets-published').value.trim() : '';
 
     var showOnHomepage = document.getElementById('cg-show-on-homepage').checked;
@@ -1210,7 +1181,6 @@ development-features:
     output = output.replace('__THEME__', q(theme));
     output = output.replace('__LOGO__', q(logoPath));
     output = output.replace('__LANGUAGE__', q(language));
-    output = output.replace('__GSHEETS_SHARED__', q(gsheetsShared));
     output = output.replace('__GSHEETS_PUBLISHED__', q(gsheetsPublished));
 
     // Boolean replacements
@@ -1224,6 +1194,14 @@ development-features:
     output = output.replace('%%SHOW_SAMPLE_ON_HOMEPAGE%%', showSampleOnHomepage ? 'true' : 'false');
     output = output.replace('%%FEATURED_COUNT%%', featuredCount);
     output = output.replace('%%STORY_KEY_LINE%%', storyKeyLine);
+
+    // Backward compat: preserve shared_url from loaded config (needed by pre-v0.8.2)
+    if (_loadedSharedUrl) {
+      output = output.replace(
+        '  published_url:',
+        '  shared_url: ' + q(_loadedSharedUrl) + ' # No longer needed from v0.8.2 — kept for backward compatibility\n  published_url:'
+      );
+    }
 
     // Remove leading newline from template
     output = output.replace(/^\n/, '');

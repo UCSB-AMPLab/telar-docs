@@ -15,10 +15,9 @@ Usa Google Sheets para gestionar el contenido de tu exposición con una interfaz
 ## Inicio rápido
 
 1. Duplica la plantilla: <https://bit.ly/telar-template> (Archivo → Hacer una copia · File → Make a copy)
-2. Comparte: Cualquiera con el enlace (Lector)
-3. Publica: Archivo → Compartir → Publicar en la Web · File → Share → Publish to the web
-4. Configura `_config.yml` → bloque `google_sheets` (shared_url, published_url)
-5. Construye tu sitio (GitHub Actions o build local)
+2. Publica: Archivo → Compartir → Publicar en la Web · File → Share → Publish to the web
+3. Configura `_config.yml` → bloque `google_sheets` (published_url)
+4. Construye tu sitio (GitHub Actions o build local)
 
 Opcional: Importar desde Excel en lugar de duplicar la plantilla de Google
 
@@ -47,12 +46,13 @@ En tu repositorio, define:
 ```yaml
 google_sheets:
   enabled: true
-  shared_url: "https://docs.google.com/..."      # Compartir: Cualquiera con el enlace (Lector)
   published_url: "https://docs.google.com/..."   # Archivo → Compartir → Publicar en la Web · File → Share → Publish to the web
 ```
 
-- `shared_url` asegura que el *fetcher* pueda leer la hoja
 - `published_url` provee URLs CSV estables por pestaña
+
+{: .note }
+> **Simplificado en v0.8.2.** Ya no necesitas compartir tu hoja por separado. Solo se requiere la URL publicada. Si tu configuración todavía tiene una línea `shared_url`, se ignora sin problemas.
 
 ![Captura de pantalla de GitHub: editando el archivo de configuración](/images/config_drive.gif)
 
