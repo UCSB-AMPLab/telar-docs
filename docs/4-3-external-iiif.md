@@ -55,6 +55,46 @@ museum-map,Museum Map,...,https://example.org/iiif/manifest.json
 my-ceramic,My Ceramic,,,
 ```
 
+## Multi-page documents
+
+Some IIIF manifests describe multi-page documents — digitized books, manuscripts, legal records, or maps with multiple sheets. These manifests contain multiple canvases, one per page.
+
+Telar handles multi-page manifests the same way as single-image manifests. Add the manifest URL to the `source_url` column in your objects spreadsheet:
+
+```csv
+object_id,title,source_url
+new-laws,Recopilación de leyes,https://example.org/iiif/presentation/3/new-laws/manifest.json
+```
+
+### Object pages
+
+On object pages, the viewer shows the full document with page navigation controls — forward/back arrows and a page selector — so visitors can browse through all pages.
+
+### Stories
+
+In stories, each step can reference a specific page using the `page` column:
+
+```csv
+step,object,x,y,zoom,page,question,answer
+1,new-laws,0.5,0.5,1,1,What is this document?,A key legal code of the colonial period.
+2,new-laws,0.4,0.15,2.5,10,A key provision,This page details the legal framework governing colonial administration.
+```
+
+The `page` column specifies which canvas (page) of the manifest to display. Page numbers start at 1.
+
+{: .tip }
+> **Finding coordinates for a specific page.** Navigate to the object page for your multi-page document. Use the page navigation controls to go to the page you want. Then use the coordinate picker — it automatically includes the current page number in the copied values.
+
+### Finding multi-page manifests
+
+Multi-page IIIF manifests are common at institutions that have digitized books and manuscripts:
+
+- **National libraries** — Bibliothèque nationale de France (Gallica), British Library, Library of Congress
+- **University libraries** — Many special collections departments publish IIIF manifests for their digitized holdings
+- **Digital repositories** — Internet Archive provides IIIF manifests for its digitized books
+
+Look for a "IIIF manifest" link on the item's page, or check the institution's IIIF documentation.
+
 ## Automatic metadata extraction
 
 When you provide a `source_url`, Telar can automatically fill in metadata from the IIIF manifest — title, description, creator, period, location, and credit. This saves you from typing information that the institution has already recorded.
@@ -170,5 +210,6 @@ Check your build logs for extraction status.
 ## See also
 
 - [Self-Hosted Images](/docs/your-content/self-hosted-images/) — Upload your own images instead of using external sources
+- [PDF Documents](/docs/your-content/pdf-documents/) — Self-hosting multi-page PDF documents
 - [Objects](/docs/your-content/objects/) — How to define objects in your spreadsheet
 - [Object Columns](/docs/your-data/csv-objects/) — Complete column reference for the objects spreadsheet

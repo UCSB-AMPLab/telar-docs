@@ -55,6 +55,46 @@ mapa-museo,Mapa del museo,...,https://example.org/iiif/manifest.json
 mi-ceramica,Mi cerámica,,,
 ```
 
+## Documentos de múltiples páginas
+
+Algunos manifiestos IIIF describen documentos de múltiples páginas — libros digitalizados, manuscritos, registros legales o mapas con varias hojas. Estos manifiestos contienen múltiples *canvases*, uno por página.
+
+Telar maneja los manifiestos de múltiples páginas de la misma manera que los de una sola imagen. Agrega la URL del manifiesto a la columna `source_url` en tu hoja de cálculo de objetos:
+
+```csv
+object_id,title,source_url
+leyes-nuevas,Recopilación de leyes,https://example.org/iiif/presentation/3/leyes-nuevas/manifest.json
+```
+
+### Páginas de objetos
+
+En las páginas de objetos, el visor muestra el documento completo con controles de navegación — flechas de avance y retroceso y un selector de página — para que quienes visitan puedan recorrer todas las páginas.
+
+### Historias
+
+En las historias, cada paso puede hacer referencia a una página específica usando la columna `pagina`:
+
+```csv
+paso,objeto,x,y,zoom,pagina,pregunta,respuesta
+1,leyes-nuevas,0.5,0.5,1,1,¿Qué es este documento?,Un código legal clave del periodo colonial.
+2,leyes-nuevas,0.4,0.15,2.5,10,Una disposición clave,Esta página detalla el marco legal que gobernaba la administración colonial.
+```
+
+La columna `pagina` indica qué *canvas* (página) del manifiesto mostrar. Los números de página comienzan en 1.
+
+{: .tip }
+> **Encontrar coordenadas para una página específica.** Navega a la página de objeto de tu documento de múltiples páginas. Usa los controles de navegación para ir a la página que deseas. Luego usa el selector de coordenadas — incluye automáticamente el número de página actual en los valores copiados.
+
+### Encontrar manifiestos de múltiples páginas
+
+Los manifiestos IIIF de múltiples páginas son comunes en instituciones que han digitalizado libros y manuscritos:
+
+- **Bibliotecas nacionales** — Bibliothèque nationale de France (Gallica), British Library, Library of Congress
+- **Bibliotecas universitarias** — Muchos departamentos de colecciones especiales publican manifiestos IIIF de sus fondos digitalizados
+- **Repositorios digitales** — Internet Archive ofrece manifiestos IIIF para sus libros digitalizados
+
+Busca un enlace de "manifiesto IIIF" en la página del objeto, o consulta la documentación IIIF de la institución.
+
 ## Extracción automática de metadatos
 
 Cuando proporcionas una `source_url`, Telar puede llenar automáticamente los metadatos a partir del manifiesto IIIF — título, descripción, creador, periodo, ubicación y crédito. Esto te ahorra escribir información que la institución ya tiene registrada.
@@ -170,5 +210,6 @@ Revisa los registros de la compilación para ver el estado de la extracción.
 ## Véase también
 
 - [Imágenes autoalojadas](/guia/tu-contenido/imagenes-autoalojadas/) — Sube tus propias imágenes en lugar de usar fuentes externas
+- [Documentos PDF](/guia/tu-contenido/documentos-pdf/) — Autoalojar documentos PDF de múltiples páginas
 - [Objetos](/guia/tu-contenido/objetos/) — Cómo definir objetos en tu hoja de cálculo
 - [Columnas de objetos](/guia/tus-datos/csv-objetos/) — Referencia completa de columnas de la hoja de cálculo de objetos
