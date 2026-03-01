@@ -92,7 +92,7 @@ Los manifiestos IIIF de múltiples páginas son comunes en instituciones que han
 - **Bibliotecas nacionales** — Bibliothèque nationale de France (Gallica), British Library, Library of Congress
 - **Bibliotecas universitarias** — Muchos departamentos de colecciones especiales publican manifiestos IIIF de sus fondos digitalizados
 - **Repositorios digitales** — Internet Archive ofrece manifiestos IIIF para sus libros digitalizados
-- **Plataformas archivísticas** — [Zasqua](https://zasqua.org) aloja miles de documentos históricos digitalizados de archivos latinoamericanos, todos disponibles a través de IIIF
+- **Plataformas archivísticas** — La plataforma [Zasqua](https://zasqua.org) de Neogranadina aloja miles de documentos históricos digitalizados de archivos latinoamericanos, todos disponibles a través de IIIF
 
 Busca un enlace de "manifiesto IIIF" en la página del objeto, o consulta la documentación IIIF de la institución.
 
