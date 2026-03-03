@@ -441,11 +441,11 @@ El modo *embed* de Telar funciona en todos los navegadores modernos:
 - Los *embeds* de Telar son de origen cruzado (dominio diferente al anfitrión)
 - Sin acceso a localStorage/sessionStorage entre orígenes
 - Sin acceso al marco padre (seguridad intencional)
-- El iframe anidado de UniversalViewer funciona correctamente
+- El iframe anidado de Tify funciona correctamente
 
 **Iframes anidados:**
 - Historia de Telar (iframe 1)
-  - UniversalViewer (iframe 2)
+  - Tify (iframe 2)
     - Teselas IIIF (fuentes de imagen)
 
 **Rendimiento:**

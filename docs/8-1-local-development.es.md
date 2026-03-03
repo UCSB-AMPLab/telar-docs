@@ -351,12 +351,12 @@ Si los botones no son visibles, verifica que la clase `body.embed-mode` esté ap
 
 **El visor IIIF no se muestra:**
 
-UniversalViewer no carga en el iframe:
+Tify no carga en el iframe:
 
-1. Verifica si los scripts de UniversalViewer se están cargando:
+1. Verifica si los scripts de Tify se están cargando:
    ```javascript
    // En la consola del navegador
-   typeof UV
+   typeof Tify
    ```
 2. Verifica que la URL del manifiesto IIIF sea accesible
 3. Verifica restricciones de Content Security Policy (CSP) en el sitio anfitrión

@@ -405,12 +405,12 @@ If buttons are not visible, check that `body.embed-mode` class is applied.
 
 **IIIF viewer not displaying:**
 
-UniversalViewer fails to load in iframe:
+Tify fails to load in iframe:
 
-1. Check if UniversalViewer scripts are loading:
+1. Check if Tify scripts are loading:
    ```javascript
    // In browser console
-   typeof UV
+   typeof Tify
    ```
 2. Verify IIIF manifest URL is accessible
 3. Check for Content Security Policy (CSP) restrictions in host site

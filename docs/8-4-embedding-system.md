@@ -441,11 +441,11 @@ Telar embed mode works in all modern browsers:
 - Telar embeds are cross-origin (different domain than host)
 - No localStorage/sessionStorage access across origins
 - No parent frame access (intentional security)
-- UniversalViewer nested iframe works correctly
+- Tify nested iframe works correctly
 
 **Nested iframes:**
 - Telar story (iframe 1)
-  - UniversalViewer (iframe 2)
+  - Tify (iframe 2)
     - IIIF tiles (image sources)
 
 **Performance:**

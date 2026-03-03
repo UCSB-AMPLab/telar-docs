@@ -81,9 +81,9 @@ We gratefully acknowledge the support of the [Caribbean Digital Scholarship Coll
 
 Telar is built with:
 - [Jekyll](https://jekyllrb.com/) - Static site generator
-- [UniversalViewer](https://universalviewer.io/) - IIIF viewer
+- [Tify](https://tify.rocks/) - IIIF viewer
 - [Bootstrap 5](https://getbootstrap.com/) - CSS framework
-- [iiif-static](https://github.com/bodleian/iiif-static-choices) - IIIF tile generator
+- [libvips](https://www.libvips.org/) - IIIF tile generator
 
 It is based on [Paisajes Coloniales](https://paisajescoloniales.com/), and inspired by:
 - [Wax](https://minicomp.github.io/wax/) - Minimal computing for digital exhibitions
