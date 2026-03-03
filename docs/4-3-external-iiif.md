@@ -92,7 +92,7 @@ Multi-page IIIF manifests are common at institutions that have digitized books a
 - **National libraries** — Bibliothèque nationale de France (Gallica), British Library, Library of Congress
 - **University libraries** — Many special collections departments publish IIIF manifests for their digitized holdings
 - **Digital repositories** — Internet Archive provides IIIF manifests for its digitized books
-- **Archival platforms** — [Zasqua](https://zasqua.org) hosts thousands of digitized historical documents from Latin American archives, all available through IIIF
+- **Archival platforms** — Neogranadina's [Zasqua](https://zasqua.org) platform hosts thousands of digitized historical documents from Latin American archives, all available through IIIF
 
 Look for a "IIIF manifest" link on the item's page, or check the institution's IIIF documentation.
 
