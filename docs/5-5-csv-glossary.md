@@ -16,9 +16,9 @@ Complete reference for `glossary.csv` columns with bilingual column name support
 
 Defines glossary terms that can be linked from story panels using `[[term_id]]` syntax.
 
-**Location**: `components/structures/glossary.csv`
+**Location**: `telar-content/spreadsheets/glossary.csv`
 
-**New in v0.8.0.** The CSV format is the preferred method for glossary terms. Legacy markdown files in `components/texts/glossary/` are still supported but CSV takes precedence if both exist.
+**New in v0.8.0.** The CSV format is the preferred method for glossary terms. Legacy markdown files in `telar-content/texts/glossary/` are still supported but CSV takes precedence if both exist.
 
 ### Columns
 
@@ -96,7 +96,7 @@ If the `term_id` is not found in the glossary, a warning icon and error message 
 
 | Aspect | CSV (preferred) | Markdown (legacy) |
 |--------|----------------|-------------------|
-| Location | `components/structures/glossary.csv` | `components/texts/glossary/*.md` |
+| Location | `telar-content/spreadsheets/glossary.csv` | `telar-content/texts/glossary/*.md` |
 | Format | Rows with columns | Individual files with YAML frontmatter |
 | Bilingual headers | Yes (via column aliases) | No |
 | Google Sheets | Yes (fetched like other CSVs) | No |

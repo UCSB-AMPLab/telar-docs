@@ -20,9 +20,9 @@ When you deploy via GitHub Pages, the build process is **fully automated**. No m
 
 Edit content directly on GitHub or push from local:
 
-1. **Edit the `objects` tab in your Google Sheet or `objects.csv`** in `components/structures/`
-2. **Edit markdown** in `components/texts/`
-3. **Add images** to `components/images/`
+1. **Edit the `objects` tab in your Google Sheet or `objects.csv`** in `telar-content/spreadsheets/`
+2. **Edit markdown** in `telar-content/texts/`
+3. **Add images** to `telar-content/objects/`
 4. **Commit and push** to main branch
 
 ### Automated Actions (GitHub)
@@ -32,18 +32,18 @@ The workflow (`.github/workflows/build.yml`) automatically:
 1. **Fetches Google Sheets** (if enabled)
    - Downloads content from your published Google Sheet
    - Converts to CSV format
-   - Saves to `components/structures/`
+   - Saves to `telar-content/spreadsheets/`
 
 2. **Converts CSVs to JSON**
    - Runs `scripts/csv_to_json.py`
-   - Reads CSVs from `components/structures/`
-   - Embeds markdown content from `components/texts/`
+   - Reads CSVs from `telar-content/spreadsheets/`
+   - Embeds markdown content from `telar-content/texts/`
    - Generates JSON files in `_data/` for Jekyll
 
 3. **Generates IIIF Tiles**
    - Runs `scripts/generate_iiif.py`
    - Processes only objects listed in `objects.csv` without external IIIF manifests
-   - Finds images in `components/images/` by object_id
+   - Finds images in `telar-content/objects/` by object_id
    - Creates tiled image pyramids in `iiif/objects/`
    - Generates manifest files
 
@@ -170,7 +170,7 @@ jobs:
 **Error:** `Failed to process image textile-001.jpg`
 
 **Solution:**
-- Verify image file exists in `components/images/`
+- Verify image file exists in `telar-content/objects/`
 - Ensure object is listed in the `objects` tab of your Google Sheet or `objects.csv` with blank `source_url`
 - Check image isn't corrupted
 - Ensure image format is supported (JPG, PNG, TIFF)

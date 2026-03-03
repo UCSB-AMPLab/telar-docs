@@ -204,7 +204,7 @@ menu:
 
 When you create a new custom page:
 
-1. Create the markdown file (`components/texts/pages/contact.md`)
+1. Create the markdown file (`telar-content/texts/pages/contact.md`)
 2. Add it to `navigation.yml`:
 
 ```yaml
@@ -231,7 +231,7 @@ To remove a page from the menu:
 
 2. Rebuild your site
 
-The page file can remain in `components/texts/pages/` but won't appear in navigation.
+The page file can remain in `telar-content/texts/pages/` but won't appear in navigation.
 
 ### Reordering Items
 

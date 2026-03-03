@@ -52,10 +52,10 @@ baseurl: ""
 Add a logo to replace the site title in the navigation header:
 
 ```yaml
-logo: "/components/images/my-logo.png"
+logo: "/telar-content/objects/my-logo.png"
 ```
 
-- Place your logo image in `components/images/`
+- Place your logo image in `telar-content/objects/`
 - Leave empty (`logo: ""`) to display the site title as text instead
 - Recommended dimensions: max 80px tall, 200-300px wide
 - Supports PNG, JPG, SVG formats

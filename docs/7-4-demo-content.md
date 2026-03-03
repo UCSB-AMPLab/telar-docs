@@ -193,7 +193,7 @@ Common patterns to adapt from demos:
 
 | Aspect | Your Content | Demo Content |
 |--------|--------------|--------------|
-| Location | `components/` directory | Downloaded during build |
+| Location | `telar-content/` directory | Downloaded during build |
 | Editable | Yes | No (view only) |
 | Badge | None | "Demo content" badge |
 | Tracked in git | Yes | No |

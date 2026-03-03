@@ -204,7 +204,7 @@ menu:
 
 Cuando creas una nueva página personalizada:
 
-1. Crea el archivo markdown (`components/texts/pages/contact.md`)
+1. Crea el archivo markdown (`telar-content/texts/pages/contact.md`)
 2. Agrégalo a `navigation.yml`:
 
 ```yaml
@@ -231,7 +231,7 @@ Para eliminar una página del menú:
 
 2. Reconstruye tu sitio
 
-El archivo de la página puede permanecer en `components/texts/pages/` pero no aparecerá en la navegación.
+El archivo de la página puede permanecer en `telar-content/texts/pages/` pero no aparecerá en la navegación.
 
 ### Reordenar elementos
 

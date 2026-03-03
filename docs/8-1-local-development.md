@@ -189,9 +189,9 @@ python3 scripts/build_local_site.py --skip-iiif --skip-fetch
 bundle exec jekyll serve --livereload
 
 # 2. Make changes to content
-# - Edit CSVs in components/structures/
-# - Edit markdown in components/texts/
-# - Add images to components/images/
+# - Edit CSVs in telar-content/spreadsheets/
+# - Edit markdown in telar-content/texts/
+# - Add images to telar-content/objects/
 
 # 3. Rebuild data (when CSVs change)
 python3 scripts/csv_to_json.py
@@ -254,7 +254,7 @@ your-telar-site/
 │   ├── css/
 │   ├── js/
 │   └── images/
-├── components/              # SOURCE CONTENT (edit here!)
+├── telar-content/           # SOURCE CONTENT (edit here!)
 │   ├── structures/          # CSV files
 │   ├── images/              # Source images
 │   └── texts/               # Markdown files
@@ -296,7 +296,7 @@ bundle exec jekyll serve --livereload
 pip install -r requirements.txt
 
 # Verify image files exist
-ls -la components/images/
+ls -la telar-content/objects/
 
 # Check for error messages
 python3 scripts/generate_iiif.py
@@ -305,10 +305,10 @@ python3 scripts/generate_iiif.py
 **CSV to JSON conversion fails:**
 ```bash
 # Check CSV syntax
-cat components/structures/story-1.csv
+cat telar-content/spreadsheets/story-1.csv
 
 # Verify markdown files exist
-ls -la components/texts/stories/
+ls -la telar-content/texts/stories/
 
 # Run with verbose output
 python3 scripts/csv_to_json.py --verbose

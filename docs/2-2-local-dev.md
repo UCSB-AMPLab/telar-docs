@@ -111,7 +111,7 @@ Choose one of two options:
 
 **Option A: Upload Your Own Images**
 
-1. Add high-res images to `components/images/` directory
+1. Add high-res images to `telar-content/objects/` directory
 2. Name files to match object IDs (e.g., `textile-001.jpg`)
 3. Generate IIIF tiles:
    ```bash
@@ -131,7 +131,7 @@ Create markdown files for your story layers:
 
 1. Create directory for your story:
    ```bash
-   mkdir -p components/texts/stories/story1
+   mkdir -p telar-content/texts/stories/story1
    ```
 
 2. Create markdown files (e.g., `step1-layer1.md`, `step1-layer2.md`)
@@ -149,7 +149,7 @@ Create markdown files for your story layers:
 
 Add metadata to the objects catalog:
 
-1. Edit `components/structures/objects.csv`
+1. Edit `telar-content/spreadsheets/objects.csv`
 2. Add a row for each object:
 
 **For uploaded images:**
@@ -193,7 +193,7 @@ Use the coordinate identification tool:
 
 Connect your narrative to your objects:
 
-1. Create CSV file in `components/structures/` (e.g., `story-1.csv`)
+1. Create CSV file in `telar-content/spreadsheets/` (e.g., `story-1.csv`)
 
 2. Add header row:
    ```csv
@@ -207,7 +207,7 @@ Connect your narrative to your objects:
    ```
 
 4. Add to project setup:
-   - Edit `components/structures/project.csv`
+   - Edit `telar-content/spreadsheets/project.csv`
    - Scroll to `STORIES` section
    - Add row: `1,Your Story Title`
 
@@ -225,7 +225,7 @@ Connect your narrative to your objects:
 
 Enhance your narrative with term definitions:
 
-1. Create markdown file in `components/texts/glossary/` (e.g., `colonial-period.md`)
+1. Create markdown file in `telar-content/texts/glossary/` (e.g., `colonial-period.md`)
 
 2. Add frontmatter and definition:
    ```markdown
@@ -266,9 +266,9 @@ python3 scripts/build_local_site.py --skip-iiif --skip-fetch
 
 ```bash
 # 1. Edit content
-# - CSVs in components/structures/
-# - Markdown in components/texts/
-# - Images in components/images/
+# - CSVs in telar-content/spreadsheets/
+# - Markdown in telar-content/texts/
+# - Images in telar-content/objects/
 
 # 2. Convert CSVs to JSON (after editing CSVs)
 python3 scripts/csv_to_json.py

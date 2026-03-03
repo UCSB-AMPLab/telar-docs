@@ -52,10 +52,10 @@ baseurl: ""
 Agrega un logo para reemplazar el título del sitio en la barra de navegación:
 
 ```yaml
-logo: "/components/images/mi-logo.png"
+logo: "/telar-content/objects/mi-logo.png"
 ```
 
-- Pon la imagen de tu logo en `components/images/`
+- Pon la imagen de tu logo en `telar-content/objects/`
 - Déjalo vacío (`logo: ""`) para mostrar el título del sitio como texto
 - Dimensiones recomendadas: máximo 80px de alto, 200-300px de ancho
 - Admite formatos PNG, JPG, SVG

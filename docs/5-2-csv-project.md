@@ -41,7 +41,7 @@ Telar automatically detects and skips the second header row.
 
 Defines stories and their display order on the homepage.
 
-**Location**: `components/structures/project.csv` or `components/structures/proyecto.csv`
+**Location**: `telar-content/spreadsheets/project.csv` or `telar-content/spreadsheets/proyecto.csv`
 
 ### Columns
 

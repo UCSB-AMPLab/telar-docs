@@ -271,7 +271,7 @@ def merge_stories(user_stories, demo_stories):
 **Glosario:**
 ```python
 def merge_glossary(demo_glossary):
-    # Escrito en _data/demo-glossary.json (no components/)
+    # Escrito en _data/demo-glossary.json (no telar-content/)
     write_json('_data/demo-glossary.json', demo_glossary)
 ```
 
@@ -330,7 +330,7 @@ _data/
 _demo_content/
 
 # Archivos de glosario de demos
-components/texts/glossary/_demo_*
+telar-content/texts/glossary/_demo_*
 _data/demo-glossary.json
 ```
 

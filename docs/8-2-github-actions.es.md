@@ -20,9 +20,9 @@ Cuando publicas vía GitHub Pages, el proceso de construcción es **completament
 
 Edita contenido directamente en GitHub o empuja desde local:
 
-1. **Edita la pestaña `objects` de tu Google Sheet o `objects.csv`** en `components/structures/`
-2. **Edita markdown** en `components/texts/`
-3. **Agrega imágenes** a `components/images/`
+1. **Edita la pestaña `objects` de tu Google Sheet o `objects.csv`** en `telar-content/spreadsheets/`
+2. **Edita markdown** en `telar-content/texts/`
+3. **Agrega imágenes** a `telar-content/objects/`
 4. **Haz *commit* y *push*** a la rama main
 
 ### Acciones automatizadas (GitHub)
@@ -32,18 +32,18 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
 1. **Obtiene Google Sheets** (si está habilitado)
    - Descarga contenido de tu Google Sheet publicado
    - Convierte a formato CSV
-   - Guarda en `components/structures/`
+   - Guarda en `telar-content/spreadsheets/`
 
 2. **Convierte CSVs a JSON**
    - Ejecuta `scripts/csv_to_json.py`
-   - Lee CSVs de `components/structures/`
-   - Incrusta contenido markdown de `components/texts/`
+   - Lee CSVs de `telar-content/spreadsheets/`
+   - Incrusta contenido markdown de `telar-content/texts/`
    - Genera archivos JSON en `_data/` para Jekyll
 
 3. **Genera teselas IIIF**
    - Ejecuta `scripts/generate_iiif.py`
    - Procesa solo los objetos listados en `objects.csv` que no tienen manifiestos IIIF externos
-   - Busca imágenes en `components/images/` según el `object_id`
+   - Busca imágenes en `telar-content/objects/` según el `object_id`
    - Crea pirámides de teselas en `iiif/objects/`
    - Genera archivos de manifiesto
 
@@ -102,7 +102,7 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 **Error:** `Failed to process image textile-001.jpg`
 
 **Solución:**
-- Verifica que el archivo de imagen exista en `components/images/`
+- Verifica que el archivo de imagen exista en `telar-content/objects/`
 - Asegúrate de que el objeto esté listado en la pestaña `objects` de tu Google Sheet o en `objects.csv` con la columna `source_url` vacía
 - Verifica que la imagen no esté dañada
 - Asegúrate de que el formato de imagen sea compatible (JPG, PNG, TIFF)

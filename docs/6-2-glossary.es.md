@@ -18,7 +18,7 @@ Hay dos formas de definir términos de glosario. El formato CSV (nuevo en v0.8.0
 
 ### Formato CSV (recomendado)
 
-Agrega un archivo `glossary.csv` a `components/structures/`:
+Agrega un archivo `glossary.csv` a `telar-content/spreadsheets/`:
 
 ```csv
 term_id,title,definition,related_terms
@@ -38,7 +38,7 @@ El formato CSV funciona con Google Sheets — la pestaña de glosario se obtiene
 
 ### Formato markdown (legado)
 
-Archivos markdown individuales en `components/texts/glossary/`:
+Archivos markdown individuales en `telar-content/texts/glossary/`:
 
 ```markdown
 ---

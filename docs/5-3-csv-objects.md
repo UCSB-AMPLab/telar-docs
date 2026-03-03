@@ -16,7 +16,7 @@ Complete reference for `objects.csv` columns with bilingual column name support.
 
 Catalogs all objects used in stories and displayed in the gallery.
 
-**Location**: `components/structures/objects.csv` or `components/structures/objetos.csv`
+**Location**: `telar-content/spreadsheets/objects.csv` or `telar-content/spreadsheets/objetos.csv`
 
 ### Columns
 
@@ -159,7 +159,7 @@ For the best gallery experience with browse, search, and filter:
 ## File Organization
 
 ```
-components/structures/
+telar-content/spreadsheets/
 ├── project.csv              # Story metadata
 ├── objects.csv              # Object catalog
 ├── colonial-textiles.csv    # Story steps (using story_id)

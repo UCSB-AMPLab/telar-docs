@@ -69,7 +69,7 @@ Estos patrones se creaban usando...
 
 ### Método 3: Indicar un archivo de texto
 
-Para contenido complejo, indica un archivo markdown guardado en `components/texts/stories/`:
+Para contenido complejo, indica un archivo markdown guardado en `telar-content/texts/stories/`:
 
 | contenido_capa1 |
 |-----------------|
@@ -160,17 +160,17 @@ Telar proporciona sintaxis especial para controlar los tamaños de imagen en los
 
 ### Rutas de imagen
 
-**Rutas relativas** (sin barra inicial) se cargan automáticamente desde `/components/images/`:
+**Rutas relativas** (sin barra inicial) se cargan automáticamente desde `/telar-content/objects/`:
 
 ```markdown
 ![Detalle de tejido](textile-closeup.jpg){md}
 ```
-→ Carga `/components/images/textile-closeup.jpg`
+→ Carga `/telar-content/objects/textile-closeup.jpg`
 
 **Rutas absolutas** (comenzando con `/`) cargan desde la raíz del sitio:
 
 ```markdown
-![Logo del sitio](/components/images/logo.png){sm}
+![Logo del sitio](/telar-content/objects/logo.png){sm}
 ```
 
 **URLs externas** funcionan como se espera:
@@ -309,10 +309,10 @@ Siempre proporciona texto alternativo descriptivo para las imágenes:
 
 ### Organización de imágenes
 
-Mantén las imágenes de los paneles en `/components/images/` para fácil referencia:
+Mantén las imágenes de los paneles en `/telar-content/objects/` para fácil referencia:
 
 ```
-components/images/
+telar-content/objects/
 ├── story1-context.jpg
 ├── story1-detail.jpg
 ├── story2-map.jpg
@@ -385,7 +385,7 @@ Compara con el [textil de Lima](/objects/textile-lima/).
 
 - **Sin JavaScript**: Markdown se convierte a HTML estático
 - **Sin atributos HTML personalizados**: Usa la sintaxis de tamaño proporcionada en lugar de clases personalizadas
-- **Procesamiento de imágenes**: Las imágenes en `components/images/` que aparecen en tu CSV de objetos sin fuentes IIIF externas se convertirán automáticamente en teselas (*tiles*) IIIF.
+- **Procesamiento de imágenes**: Las imágenes en `telar-content/objects/` que aparecen en tu CSV de objetos sin fuentes IIIF externas se convertirán automáticamente en teselas (*tiles*) IIIF.
 
 ---
 

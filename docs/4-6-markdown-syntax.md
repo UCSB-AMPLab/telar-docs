@@ -69,7 +69,7 @@ These patterns were created using...
 
 ### Method 3: Referencing a Markdown File
 
-For complex content, reference a markdown file saved in `components/texts/stories/`:
+For complex content, reference a markdown file saved in `telar-content/texts/stories/`:
 
 | layer1_content |
 |----------------|
@@ -160,17 +160,17 @@ Telar provides special syntax for controlling image sizes in panels.
 
 ### Image Paths
 
-**Relative paths** (no leading slash) automatically load from `/components/images/`:
+**Relative paths** (no leading slash) automatically load from `/telar-content/objects/`:
 
 ```markdown
 ![Weaving detail](textile-closeup.jpg){md}
 ```
-→ Loads `/components/images/textile-closeup.jpg`
+→ Loads `/telar-content/objects/textile-closeup.jpg`
 
 **Absolute paths** (starting with `/`) load from site root:
 
 ```markdown
-![Site logo](/components/images/logo.png){sm}
+![Site logo](/telar-content/objects/logo.png){sm}
 ```
 
 **External URLs** work as expected:
@@ -309,10 +309,10 @@ Always provide descriptive alt text for images:
 
 ### Image Organization
 
-Keep panel images in `/components/images/` for easy reference:
+Keep panel images in `/telar-content/objects/` for easy reference:
 
 ```
-components/images/
+telar-content/objects/
 ├── story1-context.jpg
 ├── story1-detail.jpg
 ├── story2-map.jpg
@@ -385,7 +385,7 @@ Compare with the [Lima textile](/objects/textile-lima/).
 
 - **No JavaScript**: Markdown is converted to static HTML
 - **No custom HTML attributes**: Use the provided size syntax instead of custom classes
-- **Image processing**: Images from `components/images/` that are listed in your objects CSV without external IIIF sources will be converted into IIIF tiles automatically.
+- **Image processing**: Images from `telar-content/objects/` that are listed in your objects CSV without external IIIF sources will be converted into IIIF tiles automatically.
 
 ---
 

@@ -14,7 +14,7 @@ Telar uses spreadsheet files to define the structure of your exhibition — what
 
 You can manage this data in two ways:
 - **Google Sheets** — edit a spreadsheet in your browser, and Telar fetches and converts it to CSV files automatically during each build
-- **CSV files** — edit the files directly in `components/structures/`
+- **CSV files** — edit the files directly in `telar-content/spreadsheets/`
 
 Both approaches produce the same result. Most users start with Google Sheets and never touch a CSV file.
 

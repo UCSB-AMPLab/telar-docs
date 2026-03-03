@@ -35,7 +35,7 @@ Telar detecta la diferencia automáticamente. Si el valor en una celda de `layer
 
 ## Paso 1: crea tu archivo Markdown
 
-1. En tu repositorio de GitHub, navega a `components/texts/stories/`
+1. En tu repositorio de GitHub, navega a `telar-content/texts/stories/`
 2. Si tu historia es `story-1`, crea una carpeta llamada `story-1/` (o el nombre que prefieras)
 3. Haz clic en **Add file** → **Create new file**
 4. Nombra tu archivo con extensión `.md` (ej., `paso1-tecnicas.md`)
@@ -54,7 +54,7 @@ Telar detecta la diferencia automáticamente. Si el valor en una celda de `layer
 > Un patrón común es una carpeta por historia, con archivos nombrados por paso y tema:
 >
 > ```
-> components/texts/stories/
+> telar-content/texts/stories/
 >   story-1/
 >     paso1-tecnicas.md
 >     paso2-materiales.md
@@ -67,7 +67,7 @@ Telar detecta la diferencia automáticamente. Si el valor en una celda de `layer
 
 ## Paso 2: vincula el archivo desde tu hoja de cálculo
 
-En tu Google Sheet, pon la ruta del archivo en la columna `layer1_content` o `layer2_content`. La ruta es relativa a `components/texts/stories/`:
+En tu Google Sheet, pon la ruta del archivo en la columna `layer1_content` o `layer2_content`. La ruta es relativa a `telar-content/texts/stories/`:
 
 | step | question | layer1_content |
 |------|----------|----------------|

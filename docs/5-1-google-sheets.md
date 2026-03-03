@@ -73,7 +73,7 @@ python3 scripts/fetch_google_sheets.py
 What the fetch script does:
 
 - Discovers tab GIDs automatically
-- Downloads CSVs to `components/structures/`
+- Downloads CSVs to `telar-content/spreadsheets/`
 - Skips instruction-only tabs
 
 Then run your normal build steps:

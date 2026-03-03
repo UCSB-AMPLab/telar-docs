@@ -16,7 +16,7 @@ Referencia completa de las columnas del CSV de historia con soporte bilingüe de
 
 Define la navegación paso a paso y el contenido de paneles para cada historia.
 
-**Ubicación**: `components/structures/{story_id}.csv`
+**Ubicación**: `telar-content/spreadsheets/{story_id}.csv`
 
 **Nomenclatura**:
 - Si `story_id` está especificado en project.csv: usa ese nombre (ej., `textiles-coloniales.csv`)
@@ -130,7 +130,7 @@ Indica la ruta a un archivo markdown en tu repositorio. Esto se recomienda para 
 |----------------|
 | textiles-coloniales/step1-layer1.md |
 
-Guarda los archivos markdown en `components/texts/stories/`. En tu hoja de cálculo, ingresa solo el nombre del archivo — o si organizaste los archivos en subcarpetas, incluye el nombre de la subcarpeta.
+Guarda los archivos markdown en `telar-content/texts/stories/`. En tu hoja de cálculo, ingresa solo el nombre del archivo — o si organizaste los archivos en subcarpetas, incluye el nombre de la subcarpeta.
 
 **Cómo decide Telar**: Si lo que ingresas termina en `.md` y el archivo existe, lo carga. De lo contrario, trata el valor como contenido.
 

@@ -16,7 +16,7 @@ Referencia completa de las columnas de `objects.csv` con soporte bilingüe de no
 
 Cataloga todos los objetos usados en las historias y mostrados en la galería.
 
-**Ubicación**: `components/structures/objects.csv` o `components/structures/objetos.csv`
+**Ubicación**: `telar-content/spreadsheets/objects.csv` o `telar-content/spreadsheets/objetos.csv`
 
 ### Columnas
 
@@ -168,7 +168,7 @@ orden,id_historia,titulo,subtitulo,firma
 ### Organización de archivos
 
 ```
-components/structures/
+telar-content/spreadsheets/
 ├── project.csv              # Metadatos de las historias
 ├── objects.csv              # Catálogo de objetos
 ├── textiles-coloniales.csv  # Pasos de la historia (usando story_id)

@@ -24,7 +24,7 @@ Telar supports two ways to include images:
 
 **Option A: Upload your own images**
 
-1. In your GitHub repository, navigate to `components/images/`
+1. In your GitHub repository, navigate to `telar-content/objects/`
 2. Click **Add file** → **Upload files**
 3. Drag your images into the upload area
 4. Give each file a simple name without spaces (e.g., `textile-001.jpg`, `map-lima.jpg`)

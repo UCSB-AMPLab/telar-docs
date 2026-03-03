@@ -193,7 +193,7 @@ Patrones comunes para adaptar de las demostraciones:
 
 | Aspecto | Tu Contenido | Contenido de Demostración |
 |--------|--------------|--------------|
-| Ubicación | Directorio `components/` | Descargado durante compilación |
+| Ubicación | Directorio `telar-content/` | Descargado durante compilación |
 | Editable | Sí | No (solo vista) |
 | Etiqueta | Ninguna | Etiqueta "Contenido de demostración" |
 | Rastreado en git | Sí | No |

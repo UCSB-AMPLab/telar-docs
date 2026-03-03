@@ -41,7 +41,7 @@ Telar detecta automáticamente y omite la segunda fila de encabezado.
 
 Define las historias y su orden de visualización en la página principal.
 
-**Ubicación**: `components/structures/project.csv` o `components/structures/proyecto.csv`
+**Ubicación**: `telar-content/spreadsheets/project.csv` o `telar-content/spreadsheets/proyecto.csv`
 
 ### Columnas
 

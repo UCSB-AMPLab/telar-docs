@@ -56,7 +56,7 @@ credit: Archivo General de Indias
 
 ### Campos
 
-- **`image`** (obligatorio) — Ruta relativa a `components/images/`, o una URL completa para imágenes externas
+- **`image`** (obligatorio) — Ruta relativa a `telar-content/objects/`, o una URL completa para imágenes externas
 - **`alt`** (recomendado) — Descripción para accesibilidad
 - **`caption`** (opcional) — Texto que se muestra debajo de la imagen; admite markdown (ej., `*cursivas*`)
 - **`credit`** (opcional) — Línea de atribución; admite markdown
@@ -134,7 +134,7 @@ Las reformas borbónicas retaron las estructuras de poder existentes...
 Los widgets se pueden usar en:
 
 - **Archivos markdown de paneles de historias** — Contenido de las capas 1, 2 y 3
-- **Páginas personalizadas** — Cualquier archivo markdown en `components/texts/pages/`
+- **Páginas personalizadas** — Cualquier archivo markdown en `telar-content/texts/pages/`
 
 Para los paneles de las historias, se recomienda guardar el contenido con widgets en un archivo markdown (Método 3: indicar un archivo) en lugar de ingresarlo directamente en una celda de la hoja de cálculo, ya que la sintaxis de triple dos puntos es difícil de manejar en línea.
 
@@ -145,10 +145,10 @@ Para los paneles de las historias, se recomienda guardar el contenido con widget
 
 ### Imágenes locales
 
-Pon las imágenes en `components/images/` y haz referencia a ellas por nombre de archivo:
+Pon las imágenes en `telar-content/objects/` y haz referencia a ellas por nombre de archivo:
 
 ```
-components/images/
+telar-content/objects/
 ├── map.jpg
 ├── document.jpg
 └── artifact.jpg
@@ -159,7 +159,7 @@ image: map.jpg
 image: document.jpg
 ```
 
-Si las imágenes están en subcarpetas, incluye la ruta relativa a `components/images/`:
+Si las imágenes están en subcarpetas, incluye la ruta relativa a `telar-content/objects/`:
 
 ```markdown
 image: story1/map.jpg

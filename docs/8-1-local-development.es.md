@@ -179,9 +179,9 @@ python3 scripts/generate_iiif.py --image textile-001.jpg
 bundle exec jekyll serve --livereload
 
 # 2. Haz cambios al contenido
-# - Edita CSVs en components/structures/
-# - Edita markdown en components/texts/
-# - Agrega imágenes a components/images/
+# - Edita CSVs en telar-content/spreadsheets/
+# - Edita markdown en telar-content/texts/
+# - Agrega imágenes a telar-content/objects/
 
 # 3. Reconstruye los datos (cuando cambian los CSV)
 python3 scripts/csv_to_json.py
@@ -217,7 +217,7 @@ tu-sitio-telar/
 │   ├── css/
 │   ├── js/
 │   └── images/
-├── components/              # CONTENIDO FUENTE (¡editar aquí!)
+├── telar-content/           # CONTENIDO FUENTE (¡editar aquí!)
 │   ├── structures/          # Archivos CSV
 │   ├── images/              # Imágenes fuente
 │   └── texts/               # Archivos Markdown
@@ -262,7 +262,7 @@ bundle exec jekyll serve --livereload
 pip install -r requirements.txt
 
 # Verifica que existan archivos de imagen
-ls -la components/images/
+ls -la telar-content/objects/
 
 # Verifica mensajes de error
 python3 scripts/generate_iiif.py
@@ -272,10 +272,10 @@ python3 scripts/generate_iiif.py
 
 ```bash
 # Verifica sintaxis CSV
-cat components/structures/story-1.csv
+cat telar-content/spreadsheets/story-1.csv
 
 # Verifica que existan archivos markdown
-ls -la components/texts/stories/
+ls -la telar-content/texts/stories/
 
 # Ejecuta con salida detallada
 python3 scripts/csv_to_json.py --verbose

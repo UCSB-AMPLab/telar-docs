@@ -56,7 +56,7 @@ credit: Archivo General de Indias
 
 ### Fields
 
-- **`image`** (required) — Path relative to `components/images/`, or a full URL for external images
+- **`image`** (required) — Path relative to `telar-content/objects/`, or a full URL for external images
 - **`alt`** (recommended) — Accessibility description
 - **`caption`** (optional) — Text displayed below the image; supports markdown (e.g., `*italics*`)
 - **`credit`** (optional) — Attribution line; supports markdown
@@ -134,7 +134,7 @@ Bourbon reforms challenged existing power structures...
 Widgets can be used in:
 
 - **Story panel markdown files** — Layer 1, 2, and 3 content
-- **Custom pages** — Any markdown file in `components/texts/pages/`
+- **Custom pages** — Any markdown file in `telar-content/texts/pages/`
 
 For story panels, the recommended approach is to save widget content in a markdown file (Method 3: file reference) rather than entering it directly in a spreadsheet cell, since the triple-colon syntax is difficult to manage inline.
 
@@ -145,10 +145,10 @@ For story panels, the recommended approach is to save widget content in a markdo
 
 ### Local Images
 
-Place images in `components/images/` and reference them by filename:
+Place images in `telar-content/objects/` and reference them by filename:
 
 ```
-components/images/
+telar-content/objects/
 ├── map.jpg
 ├── document.jpg
 └── artifact.jpg
@@ -159,7 +159,7 @@ image: map.jpg
 image: document.jpg
 ```
 
-If your images are in subfolders, include the path relative to `components/images/`:
+If your images are in subfolders, include the path relative to `telar-content/objects/`:
 
 ```markdown
 image: story1/map.jpg

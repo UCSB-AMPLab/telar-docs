@@ -27,10 +27,10 @@ Custom pages are standalone pages that appear in your site's navigation menu but
 
 ### Step 1: Create the Markdown File
 
-Add a new `.md` file in the `components/texts/pages/` directory:
+Add a new `.md` file in the `telar-content/texts/pages/` directory:
 
 ```
-components/texts/pages/
+telar-content/texts/pages/
 ├── about.md          # Default page (included in template)
 ├── credits.md        # Your custom credits page
 └── methodology.md    # Your custom methodology page
@@ -189,7 +189,7 @@ We are grateful to the following individuals and institutions:
 
 | Feature | Story Layers | Custom Pages |
 |---------|--------------|--------------|
-| Location | `components/texts/stories/` | `components/texts/pages/` |
+| Location | `telar-content/texts/stories/` | `telar-content/texts/pages/` |
 | Viewer integration | Yes (split-screen with IIIF) | No (full-width text) |
 | Step navigation | Yes (coordinated with viewer) | No (standalone page) |
 | Widgets | Yes | Yes |

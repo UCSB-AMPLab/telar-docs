@@ -33,7 +33,7 @@ order,story_id,title,subtitle,byline
 1,colonial-textiles,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith
 ```
 
-The `story_id` determines the filename for the story CSV and its URL. With `story_id: colonial-textiles`, Telar looks for `components/structures/colonial-textiles.csv` and serves the story at `/stories/colonial-textiles/`.
+The `story_id` determines the filename for the story CSV and its URL. With `story_id: colonial-textiles`, Telar looks for `telar-content/spreadsheets/colonial-textiles.csv` and serves the story at `/stories/colonial-textiles/`.
 
 If you omit `story_id`, Telar uses `story-{order}` (e.g., `story-1.csv` for order 1).
 
@@ -41,7 +41,7 @@ See the [CSV Reference: Project](/docs/your-data/csv-project/#project-csv-projec
 
 ## Building Story Steps
 
-Each story has its own CSV file in `components/structures/`. The file defines steps in sequence:
+Each story has its own CSV file in `telar-content/spreadsheets/`. The file defines steps in sequence:
 
 ```csv
 step,object,x,y,zoom,question,answer,layer1_content
@@ -125,7 +125,7 @@ layer1_content
 colonial-textiles/step1-layer1.md
 ```
 
-Save markdown files in `components/texts/stories/`. In your spreadsheet, enter just the filename — or if you've organized files into subfolders, include the subfolder name.
+Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, enter just the filename — or if you've organized files into subfolders, include the subfolder name.
 
 **How Telar decides**: If what you enter ends in `.md` and the file exists, it loads the file. Otherwise, it treats the value as content.
 
@@ -141,10 +141,10 @@ Save markdown files in `components/texts/stories/`. In your spreadsheet, enter j
 
 ## Story Markdown Files
 
-When using Method 3 (file references), your story markdown files live in `components/texts/stories/`:
+When using Method 3 (file references), your story markdown files live in `telar-content/texts/stories/`:
 
 ```
-components/texts/stories/
+telar-content/texts/stories/
 ├── colonial-textiles/
 │   ├── step1-layer1.md
 │   ├── step1-layer2.md

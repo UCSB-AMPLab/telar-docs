@@ -73,7 +73,7 @@ python3 scripts/fetch_google_sheets.py
 Qué hace el script de descarga:
 
 - Detecta automáticamente los GID de las pestañas
-- Descarga CSV a `components/structures/`
+- Descarga CSV a `telar-content/spreadsheets/`
 - Omite pestañas solo de instrucciones
 
 Luego ejecuta tu flujo de build habitual:

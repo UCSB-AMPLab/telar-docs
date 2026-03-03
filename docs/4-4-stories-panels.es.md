@@ -33,7 +33,7 @@ order,story_id,title,subtitle,byline
 1,textiles-coloniales,Textiles Coloniales,Tradiciones de tejido de las Américas,por Dra. María García
 ```
 
-El `story_id` determina el nombre del archivo CSV de la historia y su URL. Con `story_id: textiles-coloniales`, Telar busca `components/structures/textiles-coloniales.csv` y sirve la historia en `/stories/textiles-coloniales/`.
+El `story_id` determina el nombre del archivo CSV de la historia y su URL. Con `story_id: textiles-coloniales`, Telar busca `telar-content/spreadsheets/textiles-coloniales.csv` y sirve la historia en `/stories/textiles-coloniales/`.
 
 Si omites `story_id`, Telar usa `story-{order}` (ej., `story-1.csv` para order 1).
 
@@ -41,7 +41,7 @@ Consulta la [Referencia CSV: Proyecto y Objetos](/guia/tus-datos/csv-proyecto/#p
 
 ## Construir los pasos de la historia
 
-Cada historia tiene su propio archivo CSV en `components/structures/`. El archivo define los pasos en secuencia:
+Cada historia tiene su propio archivo CSV en `telar-content/spreadsheets/`. El archivo define los pasos en secuencia:
 
 ```csv
 step,object,x,y,zoom,question,answer,layer1_content
@@ -125,7 +125,7 @@ layer1_content
 textiles-coloniales/step1-layer1.md
 ```
 
-Guarda los archivos markdown en `components/texts/stories/`. En tu hoja de cálculo, ingresa solo el nombre del archivo — o si organizaste los archivos en subcarpetas, incluye el nombre de la subcarpeta.
+Guarda los archivos markdown en `telar-content/texts/stories/`. En tu hoja de cálculo, ingresa solo el nombre del archivo — o si organizaste los archivos en subcarpetas, incluye el nombre de la subcarpeta.
 
 **Cómo decide Telar**: Si lo que ingresas termina en `.md` y el archivo existe, lo carga. De lo contrario, trata el valor como contenido.
 
@@ -141,10 +141,10 @@ Guarda los archivos markdown en `components/texts/stories/`. En tu hoja de cálc
 
 ## Archivos markdown de las historias
 
-Al usar el Método 3 (archivos), los archivos markdown de las historias se ubican en `components/texts/stories/`:
+Al usar el Método 3 (archivos), los archivos markdown de las historias se ubican en `telar-content/texts/stories/`:
 
 ```
-components/texts/stories/
+telar-content/texts/stories/
 ├── textiles-coloniales/
 │   ├── step1-layer1.md
 │   ├── step1-layer2.md

@@ -22,7 +22,7 @@ Por ejemplo, si tu hoja de cálculo tiene un objeto con `object_id` = `textile-0
 
 **Desde la interfaz web de GitHub:**
 
-1. Navega a `components/images/` en tu repositorio
+1. Navega a `telar-content/objects/` en tu repositorio
 2. Haz clic en **Add file** > **Upload files**
 3. Arrastra tus imágenes al área de carga
 4. Asegúrate de que los nombres coincidan con tus object IDs
@@ -30,7 +30,7 @@ Por ejemplo, si tu hoja de cálculo tiene un objeto con `object_id` = `textile-0
 
 **En desarrollo local:**
 
-1. Coloca tus imágenes en `components/images/`
+1. Coloca tus imágenes en `telar-content/objects/`
 2. Genera las teselas IIIF:
    ```bash
    python3 scripts/generate_iiif.py --base-url http://localhost:4001
@@ -93,7 +93,7 @@ Cada página de objeto incluye un selector de coordenadas integrado:
 
 ### La imagen no carga
 
-- Verifica que el archivo exista en `components/images/`
+- Verifica que el archivo exista en `telar-content/objects/`
 - Asegúrate de que el nombre del archivo (sin extensión) coincida con el `object_id` en tu hoja de cálculo
 - Verifica que la columna `source_url` del objeto esté vacía (de lo contrario Telar espera una imagen externa)
 - Confirma que se hayan generado las teselas IIIF (revisa que exista `iiif/objects/{object-id}/`)

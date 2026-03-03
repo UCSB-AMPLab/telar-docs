@@ -22,7 +22,7 @@ For example, if your spreadsheet has an object with `object_id` = `textile-001`,
 
 **From the GitHub web interface:**
 
-1. Navigate to `components/images/` in your repository
+1. Navigate to `telar-content/objects/` in your repository
 2. Click **Add file** > **Upload files**
 3. Drag your images into the upload area
 4. Make sure filenames match your object IDs
@@ -30,7 +30,7 @@ For example, if your spreadsheet has an object with `object_id` = `textile-001`,
 
 **For local development:**
 
-1. Place your images in `components/images/`
+1. Place your images in `telar-content/objects/`
 2. Generate the IIIF tiles:
    ```bash
    python3 scripts/generate_iiif.py --base-url http://localhost:4001
@@ -93,7 +93,7 @@ Each object page includes a built-in coordinate picker:
 
 ### Image not loading
 
-- Check that the file exists in `components/images/`
+- Check that the file exists in `telar-content/objects/`
 - Make sure the filename (without extension) matches the `object_id` in your spreadsheet
 - Verify the object has a blank `source_url` column (otherwise Telar expects an external image)
 - Make sure IIIF tiles have been generated (check that `iiif/objects/{object-id}/` exists)

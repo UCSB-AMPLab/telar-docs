@@ -14,7 +14,7 @@ Los objetos son los elementos visuales en el centro de tu sitio Telar — imáge
 
 ## Definir objetos
 
-Cada objeto de tu sitio se define como una fila en tu hoja de cálculo de objetos — ya sea en la pestaña de objetos de tu Google Sheet, o en `objects.csv` (u `objetos.csv`) en `components/structures/`.
+Cada objeto de tu sitio se define como una fila en tu hoja de cálculo de objetos — ya sea en la pestaña de objetos de tu Google Sheet, o en `objects.csv` (u `objetos.csv`) en `telar-content/spreadsheets/`.
 
 Como mínimo, cada objeto necesita un `object_id` y un `title`:
 
@@ -28,7 +28,7 @@ map-lima,Mapa de Lima
 - **`title`** — El nombre visible
 
 Para las imágenes, tienes dos opciones:
-- **Autoalojadas**: Pon los archivos de imagen en `components/images/` con nombres que coincidan con el `object_id`. Telar genera las teselas (*tiles*) IIIF automáticamente.
+- **Autoalojadas**: Pon los archivos de imagen en `telar-content/objects/` con nombres que coincidan con el `object_id`. Telar genera las teselas (*tiles*) IIIF automáticamente.
 - **IIIF externas**: Agrega una columna `source_url` con la URL de la imagen IIIF (info.json o manifiesto).
 
 Puedes agregar metadatos más detallados para cada objeto — descripción, creador, periodo, año, medio, dimensiones, fuente, crédito y más. Consulta la referencia de [Columnas de objetos](/guia/tus-datos/csv-objetos/) para la lista completa de columnas.

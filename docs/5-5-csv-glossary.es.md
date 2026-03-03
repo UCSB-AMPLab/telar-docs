@@ -16,9 +16,9 @@ Referencia completa de las columnas de `glossary.csv` con soporte bilingüe de n
 
 Define términos de glosario que se pueden enlazar desde los paneles de las historias usando la sintaxis `[[term_id]]`.
 
-**Ubicación**: `components/structures/glossary.csv`
+**Ubicación**: `telar-content/spreadsheets/glossary.csv`
 
-**Nuevo en v0.8.0.** El formato CSV es el método preferido para los términos de glosario. Los archivos markdown heredados en `components/texts/glossary/` siguen siendo compatibles, pero el CSV tiene precedencia si ambos existen.
+**Nuevo en v0.8.0.** El formato CSV es el método preferido para los términos de glosario. Los archivos markdown heredados en `telar-content/texts/glossary/` siguen siendo compatibles, pero el CSV tiene precedencia si ambos existen.
 
 ### Columnas
 
@@ -96,7 +96,7 @@ Si el `term_id` no se encuentra en el glosario, un ícono de advertencia y un me
 
 | Aspecto | CSV (preferido) | Markdown (heredado) |
 |---------|----------------|-------------------|
-| Ubicación | `components/structures/glossary.csv` | `components/texts/glossary/*.md` |
+| Ubicación | `telar-content/spreadsheets/glossary.csv` | `telar-content/texts/glossary/*.md` |
 | Formato | Filas con columnas | Archivos individuales con frontmatter YAML |
 | Encabezados bilingües | Sí (mediante alias de columnas) | No |
 | Google Sheets | Sí (se obtiene como los demás CSV) | No |

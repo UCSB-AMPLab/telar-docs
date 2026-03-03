@@ -14,7 +14,7 @@ Objects are the visual items at the center of your Telar site — images, maps, 
 
 ## Defining Objects
 
-Every object in your site is defined as a row in your objects spreadsheet — either in the objects tab of your Google Sheet, or in `objects.csv` (or `objetos.csv`) in `components/structures/`.
+Every object in your site is defined as a row in your objects spreadsheet — either in the objects tab of your Google Sheet, or in `objects.csv` (or `objetos.csv`) in `telar-content/spreadsheets/`.
 
 At minimum, each object needs an `object_id` and a `title`:
 
@@ -28,7 +28,7 @@ map-lima,Map of Lima
 - **`title`** — The display name
 
 For images, you have two options:
-- **Self-hosted**: Place image files in `components/images/` with filenames matching the `object_id`. Telar generates IIIF tiles automatically.
+- **Self-hosted**: Place image files in `telar-content/objects/` with filenames matching the `object_id`. Telar generates IIIF tiles automatically.
 - **External IIIF**: Add a `source_url` column pointing to a IIIF image URL (info.json or manifest).
 
 You can add richer metadata for each object — description, creator, period, year, medium, dimensions, source, credit, and more. See the [Object Columns](/docs/your-data/csv-objects/) reference for the complete column list.

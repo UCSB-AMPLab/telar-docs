@@ -97,7 +97,7 @@ Elige una de dos opciones:
 
 **Opción A: sube tus propias imágenes**
 
-1. Agrega imágenes de alta resolución al directorio `components/images/`
+1. Agrega imágenes de alta resolución al directorio `telar-content/objects/`
 2. Nombra archivos para que coincidan con IDs de objeto (ej., `textile-001.jpg`)
 3. Genera teselas IIIF:
    ```bash
@@ -117,7 +117,7 @@ Crea archivos markdown para las capas de tu historia:
 
 1. Crea directorio para tu historia:
    ```bash
-   mkdir -p components/texts/stories/story1
+   mkdir -p telar-content/texts/stories/story1
    ```
 
 2. Crea archivos markdown (ej., `paso1-capa1.md`, `paso1-capa2.md`)
@@ -135,7 +135,7 @@ Crea archivos markdown para las capas de tu historia:
 
 Agrega metadatos al catálogo de objetos:
 
-1. Edita `components/structures/objects.csv`
+1. Edita `telar-content/spreadsheets/objects.csv`
 2. Agrega una fila para cada objeto:
 
 **Para imágenes subidas:**
@@ -179,7 +179,7 @@ Usa la herramienta de identificación de coordenadas:
 
 Conecta tu narrativa a tus objetos:
 
-1. Crea archivo CSV en `components/structures/` (ej., `story-1.csv`)
+1. Crea archivo CSV en `telar-content/spreadsheets/` (ej., `story-1.csv`)
 
 2. Agrega fila de encabezado:
    ```csv
@@ -193,7 +193,7 @@ Conecta tu narrativa a tus objetos:
    ```
 
 4. Agrega a configuración del proyecto:
-   - Edita `components/structures/project.csv`
+   - Edita `telar-content/spreadsheets/project.csv`
    - Desplázate a la sección `STORIES`
    - Agrega fila: `1,Título de tu Historia`
 
@@ -211,7 +211,7 @@ Conecta tu narrativa a tus objetos:
 
 Mejora tu narrativa con definiciones de términos:
 
-1. Crea archivo markdown en `components/texts/glossary/` (ej., `periodo-colonial.md`)
+1. Crea archivo markdown en `telar-content/texts/glossary/` (ej., `periodo-colonial.md`)
 
 2. Agrega frontmatter y definición:
    ```markdown
@@ -252,9 +252,9 @@ python3 scripts/build_local_site.py --skip-iiif --skip-fetch
 
 ```bash
 # 1. Edita contenido
-# - CSVs en components/structures/
-# - Markdown en components/texts/
-# - Imágenes en components/images/
+# - CSVs en telar-content/spreadsheets/
+# - Markdown en telar-content/texts/
+# - Imágenes en telar-content/objects/
 
 # 2. Convierte CSVs a JSON (después de editar CSVs)
 python3 scripts/csv_to_json.py

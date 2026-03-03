@@ -16,7 +16,7 @@ Complete reference for story CSV columns with bilingual column name support. For
 
 Defines step-by-step navigation and panel content for each story.
 
-**Location**: `components/structures/{story_id}.csv`
+**Location**: `telar-content/spreadsheets/{story_id}.csv`
 
 **Naming**:
 - If `story_id` specified in project.csv: use that name (e.g., `colonial-textiles.csv`)
@@ -130,7 +130,7 @@ Point to a markdown file in your repository. This is recommended for complex pan
 |----------------|
 | colonial-textiles/step1-layer1.md |
 
-Save markdown files in `components/texts/stories/`. In your spreadsheet, enter just the filename — or if you've organized files into subfolders, include the subfolder name.
+Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, enter just the filename — or if you've organized files into subfolders, include the subfolder name.
 
 **How Telar decides**: If what you enter ends in `.md` and the file exists, it loads the file. Otherwise, it treats the value as content.
 

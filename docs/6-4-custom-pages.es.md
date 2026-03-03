@@ -27,10 +27,10 @@ Las páginas personalizadas son páginas independientes que aparecen en el menú
 
 ### Paso 1: crea el archivo Markdown
 
-Agrega un nuevo archivo `.md` en el directorio `components/texts/pages/`:
+Agrega un nuevo archivo `.md` en el directorio `telar-content/texts/pages/`:
 
 ```
-components/texts/pages/
+telar-content/texts/pages/
 ├── about.md          # Página predeterminada (incluida en la plantilla)
 ├── credits.md        # Tu página de créditos personalizada
 └── methodology.md    # Tu página de metodología personalizada
@@ -189,7 +189,7 @@ Estamos agradecidos con las siguientes personas e instituciones:
 
 | Funcionalidad | Capas de Historia | Páginas Personalizadas |
 |---------|--------------|--------------|
-| Ubicación | `components/texts/stories/` | `components/texts/pages/` |
+| Ubicación | `telar-content/texts/stories/` | `telar-content/texts/pages/` |
 | Integración con visor | Sí (pantalla dividida con IIIF) | No (texto de ancho completo) |
 | Navegación por pasos | Sí (coordinado con visor) | No (página independiente) |
 | Widgets | Sí | Sí |

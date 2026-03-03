@@ -14,7 +14,7 @@ Telar usa archivos de hoja de cálculo para definir la estructura de tu exhibici
 
 Puedes administrar estos datos de dos maneras:
 - **Google Sheets** — edita una hoja de cálculo en tu navegador y Telar la obtiene y convierte a archivos CSV automáticamente durante cada compilación
-- **Archivos CSV** — edita los archivos directamente en `components/structures/`
+- **Archivos CSV** — edita los archivos directamente en `telar-content/spreadsheets/`
 
 Ambos enfoques producen el mismo resultado. La mayoría de las personas comienzan con Google Sheets y nunca tocan un archivo CSV.
 

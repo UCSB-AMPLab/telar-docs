@@ -35,7 +35,7 @@ Telar auto-detects the difference. If the value in a `layer1_content` or `layer2
 
 ## Step 1: Create Your Markdown File
 
-1. In your GitHub repository, navigate to `components/texts/stories/`
+1. In your GitHub repository, navigate to `telar-content/texts/stories/`
 2. If your story is `story-1`, create a folder called `story-1/` (or any name you like)
 3. Click **Add file** → **Create new file**
 4. Name your file with a `.md` extension (e.g., `step1-techniques.md`)
@@ -54,7 +54,7 @@ Telar auto-detects the difference. If the value in a `layer1_content` or `layer2
 > A common pattern is one folder per story, with files named by step and topic:
 >
 > ```
-> components/texts/stories/
+> telar-content/texts/stories/
 >   story-1/
 >     step1-techniques.md
 >     step2-materials.md
@@ -67,7 +67,7 @@ Telar auto-detects the difference. If the value in a `layer1_content` or `layer2
 
 ## Step 2: Link the File from Your Spreadsheet
 
-In your Google Sheet, put the file path in the `layer1_content` or `layer2_content` column. The path is relative to `components/texts/stories/`:
+In your Google Sheet, put the file path in the `layer1_content` or `layer2_content` column. The path is relative to `telar-content/texts/stories/`:
 
 | step | question | layer1_content |
 |------|----------|----------------|

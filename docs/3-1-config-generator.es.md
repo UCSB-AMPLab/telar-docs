@@ -99,8 +99,8 @@ Ingresa los datos de tu sitio para generar un archivo `_config.yml` listo para u
       <div class="cg-row">
         <label class="cg-label" for="cg-logo-path">Ruta del logo</label>
         <div class="cg-field">
-          <input type="text" id="cg-logo-path" class="cg-input" placeholder="components/images/logo.png">
-          <div class="cg-hint">Pon tu logo en <code>components/images/</code>. Recomendado: máx. 80px de alto, 200–300px de ancho, PNG/JPG/SVG</div>
+          <input type="text" id="cg-logo-path" class="cg-input" placeholder="telar-content/objects/logo.png">
+          <div class="cg-hint">Pon tu logo en <code>telar-content/objects/</code>. Recomendado: máx. 80px de alto, 200–300px de ancho, PNG/JPG/SVG</div>
         </div>
       </div>
     </div>
@@ -214,7 +214,7 @@ Ingresa los datos de tu sitio para generar un archivo `_config.yml` listo para u
       </label>
       <div class="cg-toggle-info">
         <label class="cg-toggle-label" for="cg-gsheets-toggle">Activar Google Sheets</label>
-        <div class="cg-toggle-hint cg-hint">Cuando está desactivado, Telar usa los archivos CSV de tu repositorio — asegúrate de tenerlos en <code>components/structures/</code></div>
+        <div class="cg-toggle-hint cg-hint">Cuando está desactivado, Telar usa los archivos CSV de tu repositorio — asegúrate de tenerlos en <code>telar-content/spreadsheets/</code></div>
       </div>
     </div>
 
