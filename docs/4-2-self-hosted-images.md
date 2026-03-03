@@ -63,6 +63,9 @@ When you add an image and build your site:
 
 This allows smooth zooming even on very large images.
 
+{: .note }
+> **Fast tile generation with libvips.** Telar uses [libvips](https://www.libvips.org/) for IIIF tile generation when available, which is roughly 28x faster than the pure-Python fallback. If libvips is not installed, Telar falls back to the Python `iiif` library automatically. See [Local Development](/docs/developers/local-development/) for installation instructions.
+
 ## Coordinate system
 
 Telar uses normalized coordinates (values from 0 to 1) to describe positions within an image:

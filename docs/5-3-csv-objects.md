@@ -38,6 +38,19 @@ Catalogs all objects used in stories and displayed in the gallery.
 | `subjects` | `temas` | No | Topical subjects, comma-separated (used for gallery filter) |
 | `featured` | `destacado` | No | Set to `yes` to feature on homepage |
 
+### Custom metadata columns
+
+Any columns you add beyond the 15 standard columns listed above are automatically displayed on object pages as additional metadata fields. The column name becomes the label and the cell value becomes the displayed text.
+
+For example, adding `material` and `technique` columns to your spreadsheet:
+
+```csv
+object_id,title,material,technique
+textile-001,Colonial Textile,Cotton and wool blend,Backstrap loom weaving
+```
+
+The values "Cotton and wool blend" and "Backstrap loom weaving" appear as extra metadata on the object page, labeled "material" and "technique" respectively.
+
 ### Example
 
 **English:**

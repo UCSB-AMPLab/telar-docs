@@ -10,11 +10,25 @@ permalink: /guia/personalizacion/temas/
 
 ## Temas
 
-Telar incluye 4 temas visuales predeterminados que pueden cambiarse fácilmente vía `_config.yml`.
+Telar incluye 5 temas visuales predeterminados que pueden cambiarse fácilmente vía `_config.yml`.
 
 ## Temas disponibles
 
-### Paisajes coloniales (predeterminado)
+### Trama (predeterminado)
+
+La identidad visual de Telar, diseñada por Adelaida Ávila. Paleta de terracota cálido y lavanda suave.
+
+**Colores:**
+- Encabezados: Gris oscuro `#333333`
+- Enlaces/botones: Terracota `#883C36`
+- Paneles: Lavanda `#C6D0F8`
+- Glosario: Crema `#FFF6EF`
+
+**Tipografía:** Space Grotesk para encabezados, Roboto Condensed para cuerpo.
+
+**Mejor para:** Un tema versátil, adecuado para la mayoría de exhibiciones.
+
+### Paisajes coloniales
 
 Tonos tierra inspirados en [Paisajes Coloniales](https://paisajescoloniales.com).
 
@@ -63,7 +77,7 @@ Atrevido y académico con naranja quemado.
 Edita `_config.yml` en tu repositorio:
 
 ```yaml
-telar_theme: "santa-barbara"  # Opciones: paisajes, neogranadina, santa-barbara, austin
+telar_theme: "santa-barbara"  # Opciones: trama, paisajes, neogranadina, santa-barbara, austin
 ```
 
 Confirma el cambio y GitHub Actions reconstruirá tu sitio automáticamente (2-5 minutos).
@@ -242,6 +256,10 @@ No se muestra atribución
 
 Todos los temas incluidos en Telar traen atribución por defecto:
 
+**Trama**
+- Creador: Telar
+- URL: https://telar.org
+
 **Paisajes Coloniales**
 - Creador: Neogranadina
 - URL: https://neogranadina.org
@@ -292,7 +310,7 @@ Usa herramientas como [WebAIM Contrast Checker](https://webaim.org/resources/con
 
 ## Respaldo del tema
 
-Si falta un archivo de tema personalizado o tiene errores, Telar automáticamente vuelve al tema Paisajes, asegurando que tu sitio nunca se rompa.
+Si falta un archivo de tema personalizado o tiene errores, Telar automáticamente vuelve al tema **Trama**, asegurando que tu sitio nunca se rompa.
 
 ## Próximos pasos
 

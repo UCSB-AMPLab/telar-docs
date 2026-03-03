@@ -45,6 +45,20 @@ gem install bundler
 - Instala [Node.js](https://nodejs.org/) (se recomienda la versión LTS)
 - Instala [Git for Windows](https://gitforwindows.org/)
 
+### Opcional (recomendado)
+
+- **libvips**: Procesamiento rápido de imágenes para la generación de teselas IIIF. Telar recurre a Python puro si no está instalado, pero libvips es aproximadamente 28 veces más rápido.
+
+**macOS:**
+```bash
+brew install vips
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get install libvips-dev
+```
+
 ## Configuración del proyecto
 
 ### Configuración inicial

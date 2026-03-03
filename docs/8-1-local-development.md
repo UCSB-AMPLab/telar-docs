@@ -42,6 +42,20 @@ gem install bundler
 - Install [Node.js](https://nodejs.org/) (LTS version recommended)
 - Install [Git for Windows](https://gitforwindows.org/)
 
+### Optional (Recommended)
+
+- **libvips**: Fast image processing for IIIF tile generation. Telar falls back to pure Python if not installed, but libvips is roughly 28x faster.
+
+**macOS:**
+```bash
+brew install vips
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get install libvips-dev
+```
+
 ## Project Setup
 
 ### Initial Setup

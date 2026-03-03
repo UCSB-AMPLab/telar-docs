@@ -38,6 +38,19 @@ Cataloga todos los objetos usados en las historias y mostrados en la galería.
 | `subjects` | `temas` | No | Temas, separados por comas (se usa para el filtro de la galería) |
 | `featured` | `destacado` | No | Pon `yes` para destacar en la página principal |
 
+### Columnas de metadatos personalizados
+
+Cualquier columna que agregues más allá de las 15 columnas estándar listadas arriba se muestra automáticamente en las páginas de objetos como campos de metadatos adicionales. El nombre de la columna se convierte en la etiqueta y el valor de la celda en el texto mostrado.
+
+Por ejemplo, si agregas columnas `material` y `technique` a tu hoja de cálculo:
+
+```csv
+object_id,title,material,technique
+textile-001,Textil Colonial,Mezcla de algodón y lana,Tejido en telar de cintura
+```
+
+Los valores "Mezcla de algodón y lana" y "Tejido en telar de cintura" aparecen como metadatos adicionales en la página del objeto, con las etiquetas "material" y "technique" respectivamente.
+
 ### Ejemplo
 
 **Inglés:**

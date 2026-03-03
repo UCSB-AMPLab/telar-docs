@@ -10,11 +10,25 @@ permalink: /docs/customization/themes/
 
 # Themes
 
-Telar includes 4 preset visual themes that can be easily switched via `_config.yml`.
+Telar includes 5 preset visual themes that can be easily switched via `_config.yml`.
 
 ## Available Themes
 
-### Paisajes Coloniales (Default)
+### Trama (Default)
+
+Telar's visual identity, designed by Adelaida Ávila. Warm terracotta and soft lavender palette.
+
+**Colors:**
+- Headings: Dark grey `#333333`
+- Links/buttons: Terracotta `#883C36`
+- Panels: Lavender `#C6D0F8`
+- Glossary: Cream `#FFF6EF`
+
+**Typography:** Space Grotesk headings, Roboto Condensed body.
+
+**Best for:** A versatile default suitable for most exhibitions.
+
+### Paisajes Coloniales
 
 Earthy tones, inspired by [Colonial Landscapes](https://colonial-landscapes.com)
 
@@ -63,7 +77,7 @@ Formal and subtle.
 Edit `_config.yml` in your repository:
 
 ```yaml
-telar_theme: "santa-barbara"  # Options: paisajes, neogranadina, santa-barbara, austin
+telar_theme: "santa-barbara"  # Options: trama, paisajes, neogranadina, santa-barbara, austin
 ```
 
 Commit the change and GitHub Actions will rebuild your site automatically (2-5 minutes).
@@ -242,6 +256,10 @@ No theme attribution shown
 
 All of Telar's preset themes include attribution:
 
+**Trama**
+- Creator: Telar
+- URL: https://telar.org
+
 **Paisajes Coloniales**
 - Creator: Neogranadina
 - URL: https://neogranadina.org
@@ -292,7 +310,7 @@ Use tools like [WebAIM Contrast Checker](https://webaim.org/resources/contrastch
 
 ## Theme Fallback
 
-If a custom theme file is missing or has errors, Telar automatically falls back to the Paisajes theme, ensuring your site never breaks.
+If a custom theme file is missing or has errors, Telar automatically falls back to the **Trama** theme, ensuring your site never breaks.
 
 ## Next Steps
 
