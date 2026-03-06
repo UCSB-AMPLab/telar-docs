@@ -7,6 +7,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- **LaTeX syntax documentation** - New "Math and Science Notation (LaTeX)" section in the Markdown Syntax guide with inline math, display math, environments, and chemical formulas (EN/ES)
+- **KaTeX rendering on docs pages** - Pages with `katex: true` frontmatter render LaTeX examples live using KaTeX 0.16.21
+- **Copy link buttons on headings** - Hovering over h2/h3/h4 headings reveals a link icon; clicking copies the direct URL to that section
+
+### Changed
+- Disabled kramdown math engine (`math_engine: null`) to prevent interference with KaTeX rendering
+- Updated version callout to v0.9.1-beta
+
+### Previously added
 - **Guided Quick Start** - Interactive quick start page with form-based configuration (EN/ES)
 - **Config Generator load feature** - Load and edit existing _config.yml files; renamed to "Config Generator and Editor" (EN/ES)
 - **New visual identity** - Updated site branding with terracotta/lavender/gold palette and Space Grotesk/Roboto Condensed fonts
