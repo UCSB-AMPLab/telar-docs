@@ -6,6 +6,7 @@ grand_parent: Documentación
 nav_order: 6
 lang: es
 permalink: /guia/tu-contenido/sintaxis-markdown/
+katex: true
 ---
 
 # Referencia de sintaxis de Markdown
@@ -296,6 +297,99 @@ Las notas al pie aparecen automáticamente al final del contenido del panel con 
 
 ---
 
+## Notación matemática y científica (LaTeX)
+
+Telar permite representar fórmulas matemáticas mediante [KaTeX](https://katex.org/). Puedes incluir fórmulas, ecuaciones químicas y notación científica en cualquier lugar donde se use markdown: paneles de historias, definiciones del glosario, descripciones de objetos y páginas personalizadas.
+
+### Cómo funciona
+
+Telar detecta automáticamente el LaTeX en el contenido durante la construcción del sitio. No necesitas configurar nada — si el texto contiene notación LaTeX, se representará como fórmula formateada.
+
+### Fórmulas en línea
+
+Encierra las expresiones entre signos de dólar simples para que aparezcan en línea con el texto:
+
+```markdown
+El coeficiente es $C = \frac{8}{35}$ y el polinomio es $P_4(x)$.
+```
+
+<p><strong>Se muestra así:</strong> El coeficiente es $C = \frac{8}{35}$ y el polinomio es $P_4(x)$.</p>
+
+{: .warning }
+> **Heurística del signo de dólar**: para evitar falsos positivos con monedas (ej., "$50"), Telar solo trata `$...$` como fórmula cuando el contenido incluye caracteres propios de LaTeX como `\`, `^`, `_` o `{`. Los signos dobles (`$$...$$`) siempre se tratan como fórmulas.
+
+### Fórmulas en bloque
+
+Encierra las expresiones entre signos de dólar dobles para obtener ecuaciones centradas e independientes:
+
+```markdown
+$$x^4 = \frac{8}{35}P_4(x) + \frac{4}{7}P_2(x) + \frac{1}{5}P_0(x)$$
+```
+
+<p><strong>Se muestra así:</strong></p>
+<p>$$x^4 = \frac{8}{35}P_4(x) + \frac{4}{7}P_2(x) + \frac{1}{5}P_0(x)$$</p>
+
+También puedes usar los delimitadores `\[...\]`:
+
+```markdown
+\[E = mc^2\]
+```
+
+### Ecuaciones de varias líneas
+
+Usa `\begin{align}...\end{align}` para ecuaciones alineadas en varias líneas. Marca los puntos de alineación con `&` y los saltos de línea con `\\`:
+
+```markdown
+$$\begin{align}
+P_0(x) &= 1\\
+P_1(x) &= x\\
+P_2(x) &= \frac{1}{2}(3x^2 - 1)
+\end{align}$$
+```
+
+<p><strong>Se muestra así:</strong></p>
+<p>$$\begin{align} P_0(x) &= 1\\ P_1(x) &= x\\ P_2(x) &= \frac{1}{2}(3x^2 - 1) \end{align}$$</p>
+
+### Entornos compatibles
+
+| Entorno | Propósito |
+|---------|-----------|
+| `align`, `align*` | Ecuaciones alineadas (con/sin numeración) |
+| `equation`, `equation*` | Ecuaciones individuales (con/sin numeración) |
+| `cases` | Funciones definidas por tramos |
+| `pmatrix` | Matrices con paréntesis |
+| `bmatrix` | Matrices con corchetes |
+
+### Fórmulas químicas
+
+Telar incluye la extensión [mhchem](https://mhchem.github.io/MathJax-mhchem/) para notación química:
+
+```markdown
+La reacción $\ce{2H2 + O2 -> 2H2O}$ produce agua.
+
+$$\ce{CO2 + C -> 2CO}$$
+```
+
+<p><strong>Se muestra así:</strong> La reacción $\ce{2H2 + O2 -> 2H2O}$ produce agua.</p>
+<p>$$\ce{CO2 + C -> 2CO}$$</p>
+
+### Dónde funciona LaTeX
+
+| Tipo de contenido | Cómo se carga |
+|-------------------|---------------|
+| Paneles de historias (capa 1 / capa 2) | Automático — se detecta al construir el sitio |
+| Texto de paso de historia | Automático — se detecta al construir el sitio |
+| Descripciones de objetos | Automático — se detecta al construir el sitio |
+| Definiciones del glosario | Automático — se detecta al construir el sitio |
+| Páginas personalizadas | Siempre disponible |
+| Historias cifradas | Se carga automáticamente tras descifrar |
+
+### Referencia completa de sintaxis
+
+Para la lista completa de comandos LaTeX compatibles, consulta la [tabla de funciones de KaTeX](https://katex.org/docs/supported).
+
+---
+
 ## Mejores prácticas
 
 ### Texto alternativo para accesibilidad
@@ -373,6 +467,13 @@ El sistema de [[encomienda]] estructuró las relaciones tributarias coloniales.
 Compara con el [textil de Lima](/objects/textile-lima/).
 ```
 
+### Agregar fórmulas en línea y en bloque
+```markdown
+El coeficiente es $C = \frac{8}{35}$ y el resultado es:
+
+$$x^4 = \frac{8}{35}P_4(x) + \frac{4}{7}P_2(x) + \frac{1}{5}P_0(x)$$
+```
+
 ### Crear una cita en bloque
 ```markdown
 > "Los patrones revelan una comprensión sofisticada de la geometría."
@@ -386,6 +487,7 @@ Compara con el [textil de Lima](/objects/textile-lima/).
 - **Sin JavaScript**: Markdown se convierte a HTML estático
 - **Sin atributos HTML personalizados**: Usa la sintaxis de tamaño proporcionada en lugar de clases personalizadas
 - **Procesamiento de imágenes**: Las imágenes en `telar-content/objects/` que aparecen en tu CSV de objetos sin fuentes IIIF externas se convertirán automáticamente en teselas (*tiles*) IIIF.
+- **LaTeX en el glosario entre páginas**: si una página de historia no contiene LaTeX pero un término del glosario sí, las fórmulas no se representarán en la ventana emergente del glosario (KaTeX no se carga en esa página). Es un caso muy poco frecuente.
 
 ---
 

@@ -67,6 +67,8 @@ callouts:
 
 # Build settings
 markdown: kramdown
+kramdown:
+  math_engine: null
 permalink: pretty
 
 # Plugins

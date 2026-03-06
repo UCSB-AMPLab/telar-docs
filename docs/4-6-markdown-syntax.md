@@ -6,6 +6,7 @@ grand_parent: Documentation
 nav_order: 6
 lang: en
 permalink: /docs/your-content/markdown-syntax/
+katex: true
 ---
 
 # Markdown Syntax Reference
@@ -296,6 +297,99 @@ Footnotes automatically appear at the bottom of panel content with proper stylin
 
 ---
 
+## Math and Science Notation (LaTeX)
+
+Telar supports LaTeX math rendering via [KaTeX](https://katex.org/). You can include mathematical formulas, chemical equations, and scientific notation anywhere markdown appears: story panels, glossary definitions, object descriptions, and custom pages.
+
+### How It Works
+
+Telar automatically detects LaTeX in your content at build time. No configuration is needed — if your text contains LaTeX notation, it will render as formatted math.
+
+### Inline Math
+
+Wrap expressions in single dollar signs to display math inline with surrounding text:
+
+```markdown
+The coefficient is $C = \frac{8}{35}$ and the polynomial is $P_4(x)$.
+```
+
+<p><strong>Renders as:</strong> The coefficient is $C = \frac{8}{35}$ and the polynomial is $P_4(x)$.</p>
+
+{: .warning }
+> **Dollar sign heuristic**: To avoid false positives with currency (e.g. "$50"), Telar only treats `$...$` as math when the content contains LaTeX-like characters such as `\`, `^`, `_`, or `{`. Double dollar signs (`$$...$$`) are always treated as math.
+
+### Display Math
+
+Wrap expressions in double dollar signs for centered, standalone equations:
+
+```markdown
+$$x^4 = \frac{8}{35}P_4(x) + \frac{4}{7}P_2(x) + \frac{1}{5}P_0(x)$$
+```
+
+<p><strong>Renders as:</strong></p>
+<p>$$x^4 = \frac{8}{35}P_4(x) + \frac{4}{7}P_2(x) + \frac{1}{5}P_0(x)$$</p>
+
+You can also use `\[...\]` delimiters:
+
+```markdown
+\[E = mc^2\]
+```
+
+### Multi-line Equations
+
+Use `\begin{align}...\end{align}` for aligned multi-line equations. Use `&` to mark alignment points and `\\` for line breaks:
+
+```markdown
+$$\begin{align}
+P_0(x) &= 1\\
+P_1(x) &= x\\
+P_2(x) &= \frac{1}{2}(3x^2 - 1)
+\end{align}$$
+```
+
+<p><strong>Renders as:</strong></p>
+<p>$$\begin{align} P_0(x) &= 1\\ P_1(x) &= x\\ P_2(x) &= \frac{1}{2}(3x^2 - 1) \end{align}$$</p>
+
+### Supported Environments
+
+| Environment | Purpose |
+|------------|---------|
+| `align`, `align*` | Aligned equations (with/without numbering) |
+| `equation`, `equation*` | Single equations (with/without numbering) |
+| `cases` | Piecewise functions |
+| `pmatrix` | Parenthesized matrices |
+| `bmatrix` | Bracketed matrices |
+
+### Chemical Formulas
+
+Telar includes the [mhchem](https://mhchem.github.io/MathJax-mhchem/) extension for chemical notation:
+
+```markdown
+The reaction $\ce{2H2 + O2 -> 2H2O}$ produces water.
+
+$$\ce{CO2 + C -> 2CO}$$
+```
+
+<p><strong>Renders as:</strong> The reaction $\ce{2H2 + O2 -> 2H2O}$ produces water.</p>
+<p>$$\ce{CO2 + C -> 2CO}$$</p>
+
+### Where LaTeX Works
+
+| Content type | How it loads |
+|-------------|-------------|
+| Story panels (layer 1 / layer 2) | Automatic — detected at build time |
+| Story step text | Automatic — detected at build time |
+| Object descriptions | Automatic — detected at build time |
+| Glossary definitions | Automatic — detected at build time |
+| Custom pages | Always available |
+| Encrypted stories | Loaded automatically after decryption |
+
+### Full Syntax Reference
+
+For the complete list of supported LaTeX commands, see the [KaTeX function support table](https://katex.org/docs/supported).
+
+---
+
 ## Best Practices
 
 ### Alt Text for Accessibility
@@ -373,6 +467,13 @@ The [[encomienda]] system structured colonial tributary relations.
 Compare with the [Lima textile](/objects/textile-lima/).
 ```
 
+### Add inline and display math
+```markdown
+The coefficient is $C = \frac{8}{35}$ and the result is:
+
+$$x^4 = \frac{8}{35}P_4(x) + \frac{4}{7}P_2(x) + \frac{1}{5}P_0(x)$$
+```
+
 ### Create a blockquote
 ```markdown
 > "The patterns speak to a sophisticated understanding of geometry."
@@ -386,6 +487,7 @@ Compare with the [Lima textile](/objects/textile-lima/).
 - **No JavaScript**: Markdown is converted to static HTML
 - **No custom HTML attributes**: Use the provided size syntax instead of custom classes
 - **Image processing**: Images from `telar-content/objects/` that are listed in your objects CSV without external IIIF sources will be converted into IIIF tiles automatically.
+- **LaTeX cross-page glossary**: If a story page has no LaTeX but a fetched glossary term contains LaTeX, the math will not render in the glossary popup (KaTeX is not loaded on that page). This is a rare edge case.
 
 ---
 
