@@ -163,6 +163,16 @@ Completa los datos restantes y esta página creará tu archivo de configuración
       <div class="cg-hint">Controla la paleta de colores y el estilo visual de tu sitio</div>
     </div>
   </div>
+  <div class="cg-toggle-row">
+    <label class="cg-toggle">
+      <input type="checkbox" id="gqs-include-demo-content" checked>
+      <span class="cg-track"></span>
+    </label>
+    <div class="cg-toggle-info">
+      <label class="cg-toggle-label" for="gqs-include-demo-content">Incluir contenido de demostración</label>
+      <div class="cg-toggle-hint cg-hint">Obtiene historias de demostración del servidor de contenido de Telar. Muestran un distintivo "Demo" y ayudan a explorar la interfaz. Desactívalo en sitios en producción.</div>
+    </div>
+  </div>
 </div>
 
 <div class="gqs-actions">
@@ -372,6 +382,7 @@ Tu sitio Telar ya está funcionando. Sigue este tutorial para aprender cómo fun
     output = output.replace('__AUTHOR__', q(authorEl.value.trim()));
     output = output.replace('__THEME__', q(themeEl.value));
     output = output.replace('__GSHEETS_PUBLISHED__', q(publishedUrlEl.value.trim()));
+    output = output.replace('%%INCLUDE_DEMO_CONTENT%%', document.getElementById('gqs-include-demo-content').checked ? 'true' : 'false');
     output = output.replace(/^\n/, '');
 
     outputEl.value = output;
@@ -442,7 +453,7 @@ story_interface:
   show_on_homepage: true
   show_story_steps: true
   show_object_credits: true
-  include_demo_content: true # Turn off for production sites
+  include_demo_content: %%INCLUDE_DEMO_CONTENT%% # Fetch demo stories from content.telar.org. Switch this off to hide demo stories and their content.
 
 # Collection Interface Settings
 collection_interface:

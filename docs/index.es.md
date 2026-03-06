@@ -9,7 +9,7 @@ permalink: /guia/
 
 # Documentación
 
-{% assign _m = site.telar_release_date | date: "%m" %}{% assign _months_es = "enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre" | split: "," %}{% assign _month_es = _months_es[_m | minus: 1] %}
+{% assign _m = site.telar_release_date | date: "%m" | minus: 1 %}{% assign _months_es = "enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre" | split: "," %}{% assign _month_es = _months_es[_m] %}
 > **Versión actual: v{{ site.telar_version }}** ({{ _month_es }} {{ site.telar_release_date | date: "%Y" }})
 > Esta documentación corresponde a Telar v{{ site.telar_version }}. Consulta el [CHANGELOG de Telar](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) para notas de la versión.
 

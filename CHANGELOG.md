@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **LaTeX syntax documentation** - New "Math and Science Notation (LaTeX)" section in the Markdown Syntax guide with inline math, display math, environments, and chemical formulas (EN/ES)
 - **KaTeX rendering on docs pages** - Pages with `katex: true` frontmatter render LaTeX examples live using KaTeX 0.16.21
 - **Copy link buttons on headings** - Hovering over h2/h3/h4 headings reveals a link icon; clicking copies the direct URL to that section
+- **Quick start demo content toggle** - Added toggle to include/exclude demo content in the quick start config generator (EN/ES)
 
 ### Changed
 - Disabled kramdown math engine (`math_engine: null`) to prevent interference with KaTeX rendering
