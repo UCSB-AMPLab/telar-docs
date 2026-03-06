@@ -154,7 +154,8 @@ Fill in the remaining details and this page will create your configuration file.
     <label class="cg-label" for="gqs-theme">Theme</label>
     <div class="cg-field">
       <select id="gqs-theme" class="cg-select">
-        <option value="paisajes" selected>paisajes</option>
+        <option value="trama" selected>trama</option>
+        <option value="paisajes">paisajes</option>
         <option value="neogranadina">neogranadina</option>
         <option value="santa-barbara">santa-barbara</option>
         <option value="austin">austin</option>
@@ -426,7 +427,7 @@ description: __DESCRIPTION__
 url: __URL__
 baseurl: __BASEURL__
 author: __AUTHOR__
-telar_theme: __THEME__ # Options: paisajes, neogranadina, santa-barbara, austin, or custom
+telar_theme: __THEME__ # Options: paisajes, neogranadina, santa-barbara, austin, trama, or custom
 logo: ""
 telar_language: "en"
 

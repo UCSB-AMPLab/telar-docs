@@ -76,7 +76,8 @@ Ingresa los datos de tu sitio para generar un archivo `_config.yml` listo para u
       <label class="cg-label" for="cg-theme">Tema</label>
       <div class="cg-field">
         <select id="cg-theme" class="cg-select">
-          <option value="paisajes" selected>paisajes</option>
+          <option value="trama" selected>trama</option>
+          <option value="paisajes">paisajes</option>
           <option value="neogranadina">neogranadina</option>
           <option value="santa-barbara">santa-barbara</option>
           <option value="austin">austin</option>
@@ -386,7 +387,7 @@ url: __URL__
 baseurl: __BASEURL__
 author: __AUTHOR__
 email: __EMAIL__
-telar_theme: __THEME__ # Options: paisajes, neogranadina, santa-barbara, austin, or custom
+telar_theme: __THEME__ # Options: paisajes, neogranadina, santa-barbara, austin, trama, or custom
 logo: __LOGO__ # Path to logo image (optional, max 80px tall, 200-300px wide recommended)
 telar_language: __LANGUAGE__ # Options: "en" (English), "es" (Español)
 
@@ -812,7 +813,7 @@ development-features:
     document.getElementById('cg-secret-key').value = '';
 
     // Selects
-    document.getElementById('cg-theme').value = 'paisajes';
+    document.getElementById('cg-theme').value = 'trama';
     document.getElementById('cg-language').value = 'es';
 
     // Toggles — defaults
