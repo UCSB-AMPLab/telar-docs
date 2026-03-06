@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Changed
+- Updated version to v0.9.2-beta (centralised variables in _config.yml)
+
+### Previously released
+
 ### Added
 - **LaTeX syntax documentation** - New "Math and Science Notation (LaTeX)" section in the Markdown Syntax guide with inline math, display math, environments, and chemical formulas (EN/ES)
 - **KaTeX rendering on docs pages** - Pages with `katex: true` frontmatter render LaTeX examples live using KaTeX 0.16.21
