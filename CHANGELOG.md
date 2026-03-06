@@ -14,10 +14,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 - Disabled kramdown math engine (`math_engine: null`) to prevent interference with KaTeX rendering
 - Updated version callout to v0.9.1-beta
+- **Centralised version variables** - Added `telar_version` and `telar_release_date` to `_config.yml`; version now propagates automatically to index callouts, config generators, quick start, and configuration reference (EN/ES)
+- **Config editor version notice** - When loading an older config, shows a warning with the loaded version, a link to the upgrade guide, and an opt-in checkbox to update the version in the generated output (EN/ES)
 
 ### Fixed
 - Added missing `trama` theme to config generators and quick start pages (EN/ES)
 - Changed default theme from `paisajes` to `trama` in config generators and quick start pages
+- Fixed stale hardcoded version numbers (0.8.0-beta, 0.6.2-beta) across config generators, quick start, and configuration reference pages
 
 ### Previously added
 - **Guided Quick Start** - Interactive quick start page with form-based configuration (EN/ES)

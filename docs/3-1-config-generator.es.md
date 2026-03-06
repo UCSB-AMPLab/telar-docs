@@ -14,7 +14,7 @@ extra_css:
 
 Ingresa los datos de tu sitio para generar un archivo `_config.yml` listo para usar en tu sitio Telar. Tu configuración nunca se envía a ningún servidor — todo se ejecuta en tu navegador.
 
-<div class="cg-container">
+<div class="cg-container" data-telar-version="{{ site.telar_version }}" data-telar-release-date="{{ site.telar_release_date }}">
 
   <!-- Selector de modo -->
   <div class="cg-mode-toggle">
@@ -494,8 +494,8 @@ show_drafts: false
 
 # Telar Settings (version information)
 telar:
-  version: "0.8.0-beta"
-  release_date: "2026-02-05"
+  version: "__TELAR_VERSION__"
+  release_date: "__TELAR_RELEASE_DATE__"
 
 # Plugins
 plugins:
@@ -551,6 +551,13 @@ development-features:
   var linesEl = document.getElementById('cg-lines');
   var templateEl = document.getElementById('cg-template');
   var _loadedSharedUrl = ''; // Stash shared_url from loaded configs (backward compat)
+  var _loadedVersion = '';   // Stash version from loaded configs
+  var _loadedReleaseDate = '';
+
+  // Latest version from docs site config
+  var container = document.querySelector('.cg-container');
+  var LATEST_VERSION = container.getAttribute('data-telar-version');
+  var LATEST_RELEASE_DATE = container.getAttribute('data-telar-release-date');
 
   // --- Load mode DOM references ---
   var modeCreateBtn = document.getElementById('cg-mode-create');
@@ -693,6 +700,18 @@ development-features:
       document.getElementById('cg-language').value = String(config.telar_language);
     }
 
+    // Version detection
+    _loadedVersion = '';
+    _loadedReleaseDate = '';
+    if (config.telar && typeof config.telar === 'object') {
+      if (config.telar.version !== undefined) {
+        _loadedVersion = String(config.telar.version);
+      }
+      if (config.telar.release_date !== undefined) {
+        _loadedReleaseDate = String(config.telar.release_date);
+      }
+    }
+
     // Logo
     if (config.logo !== undefined && config.logo !== null && String(config.logo).trim() !== '') {
       document.getElementById('cg-logo-toggle').checked = true;
@@ -793,6 +812,28 @@ development-features:
     outputWrapper.classList.remove('cg-visible');
 
     showLoadSuccess('Configuración cargada');
+
+    // Version notice
+    if (_loadedVersion && _loadedVersion !== LATEST_VERSION) {
+      loadResults.innerHTML = '<div class="cv-issue cv-issue--warning">' +
+        '<span class="cv-badge cv-badge--warning">VERSIÓN</span>' +
+        '<span>Tu configuración usa <strong>v' + esc(_loadedVersion) + '</strong>. ' +
+        'La versión más reciente es <strong>v' + esc(LATEST_VERSION) + '</strong>. ' +
+        '<a href="/docs/setup/upgrading/" target="_blank">Cómo actualizar</a></span>' +
+        '<label style="display:block;margin-top:0.5em;cursor:pointer;">' +
+        '<input type="checkbox" id="cg-update-version" checked> ' +
+        'Actualizar versión a v' + esc(LATEST_VERSION) + ' en la configuración generada</label>' +
+        '</div>';
+    } else if (!_loadedVersion) {
+      loadResults.innerHTML = '<div class="cv-issue cv-issue--warning">' +
+        '<span class="cv-badge cv-badge--warning">VERSIÓN</span>' +
+        '<span>No se detectó versión en tu configuración. La configuración generada usará ' +
+        '<strong>v' + esc(LATEST_VERSION) + '</strong>. ' +
+        '<a href="/docs/setup/upgrading/" target="_blank">Cómo actualizar</a></span>' +
+        '</div>';
+    } else {
+      loadResults.innerHTML = '';
+    }
   }
 
   // --- Reset form ---
@@ -810,6 +851,9 @@ development-features:
     document.getElementById('cg-manual-baseurl').value = '';
     document.getElementById('cg-gsheets-published').value = '';
     _loadedSharedUrl = '';
+    _loadedVersion = '';
+    _loadedReleaseDate = '';
+    loadResults.innerHTML = '';
     document.getElementById('cg-secret-key').value = '';
 
     // Selects
@@ -1183,6 +1227,12 @@ development-features:
     output = output.replace('__LOGO__', q(logoPath));
     output = output.replace('__LANGUAGE__', q(language));
     output = output.replace('__GSHEETS_PUBLISHED__', q(gsheetsPublished));
+
+    // Version: use latest unless user loaded an older version and unchecked the update box
+    var updateVersionEl = document.getElementById('cg-update-version');
+    var useLatest = !_loadedVersion || !updateVersionEl || updateVersionEl.checked;
+    output = output.replace('__TELAR_VERSION__', q(useLatest ? LATEST_VERSION : _loadedVersion));
+    output = output.replace('__TELAR_RELEASE_DATE__', q(useLatest ? LATEST_RELEASE_DATE : (_loadedReleaseDate || LATEST_RELEASE_DATE)));
 
     // Boolean replacements
     output = output.replace('%%GSHEETS_ENABLED%%', gsheetsOn ? 'true' : 'false');

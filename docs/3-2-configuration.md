@@ -367,8 +367,8 @@ Version information (updated automatically during releases):
 
 ```yaml
 telar:
-  version: "0.6.2-beta"
-  release_date: "2025-12-03"
+  version: "{{ site.telar_version }}"
+  release_date: "{{ site.telar_release_date }}"
 ```
 
 ### Development Features
@@ -531,8 +531,8 @@ show_drafts: false
 
 # Telar Settings
 telar:
-  version: "0.8.0-beta"
-  release_date: "2026-02-05"
+  version: "{{ site.telar_version }}"
+  release_date: "{{ site.telar_release_date }}"
 
 # Plugins
 plugins:

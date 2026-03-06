@@ -65,6 +65,10 @@ callouts:
     title: Beta Release
     color: yellow
 
+# Telar framework version (used across the docs site)
+telar_version: "0.9.1-beta"
+telar_release_date: "2026-03-05"
+
 # Build settings
 markdown: kramdown
 kramdown:

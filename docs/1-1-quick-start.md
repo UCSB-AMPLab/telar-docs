@@ -522,8 +522,8 @@ show_drafts: false
 
 # Telar Settings (version information)
 telar:
-  version: "0.8.0-beta"
-  release_date: "2026-02-05"
+  version: "{{ site.telar_version }}"
+  release_date: "{{ site.telar_release_date }}"
 
 # Plugins
 plugins:

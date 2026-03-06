@@ -9,8 +9,9 @@ permalink: /guia/
 
 # Documentación
 
-> **Versión actual: v0.9.1-beta** (marzo 2026)
-> Esta documentación corresponde a Telar v0.9.1-beta. Consulta el [CHANGELOG de Telar](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) para notas de la versión.
+{% assign _m = site.telar_release_date | date: "%m" %}{% assign _months_es = "enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre" | split: "," %}{% assign _month_es = _months_es[_m | minus: 1] %}
+> **Versión actual: v{{ site.telar_version }}** ({{ _month_es }} {{ site.telar_release_date | date: "%Y" }})
+> Esta documentación corresponde a Telar v{{ site.telar_version }}. Consulta el [CHANGELOG de Telar](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) para notas de la versión.
 
 Bienvenido a la documentación de Telar. Esta guía te ayudará a crear narrativas visuales usando imágenes IIIF y scrollytelling.
 
