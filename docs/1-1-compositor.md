@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 1.1. Option A: Use the Compositor
+title: "1.1. Option A: Use the Compositor"
 parent: 1. Getting Started
 grand_parent: Documentation
 nav_order: 1

@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 1.3. Opción C: Desarrollo local
+title: "1.3. Opción C: Desarrollo local"
 parent: 1. Primeros pasos
 grand_parent: Documentación
 nav_order: 3

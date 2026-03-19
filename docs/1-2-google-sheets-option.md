@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 1.2. Option B: Set Up with Google Sheets
+title: "1.2. Option B: Set Up with Google Sheets"
 parent: 1. Getting Started
 grand_parent: Documentation
 nav_order: 2

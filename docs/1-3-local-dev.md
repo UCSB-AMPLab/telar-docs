@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 1.3. Option C: Local Development
+title: "1.3. Option C: Local Development"
 parent: 1. Getting Started
 grand_parent: Documentation
 nav_order: 3
