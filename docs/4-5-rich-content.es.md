@@ -13,7 +13,7 @@ permalink: /guia/tu-contenido/contenido-enriquecido/
 Tu sitio está funcionando y tus historias están en la hoja de cálculo. Ahora quieres paneles más ricos — esta guía te muestra cómo agregar archivos markdown para paneles de historias que necesiten más que unos pocos párrafos de texto.
 
 {: .note }
-> Esta guía se construye sobre las guías de configuración. Completa el [Inicio rápido](/guia/primeros-pasos/inicio-rapido/) o la [Configuración manual](/guia/configuracion/configuracion-manual/) primero si aún no lo has hecho.
+> Esta guía se construye sobre las guías de configuración. Completa una de las opciones de [Primeros pasos](/guia/primeros-pasos/) primero si aún no lo has hecho.
 
 ## Cuándo agregar archivos markdown
 

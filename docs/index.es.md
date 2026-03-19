@@ -19,7 +19,10 @@ Bienvenido a la documentación de Telar. Esta guía te ayudará a crear narrativ
 
 ¿Nuevo en Telar? Comienza aquí:
 
-- [Inicio rápido](/guia/primeros-pasos/inicio-rapido/) - Crea tu primera exhibición paso a paso
+- [Primeros pasos](/guia/primeros-pasos/) - Elige tu método de configuración
+- [Usa el Compositor](/guia/primeros-pasos/compositor/) - Configuración visual, sin necesidad de programar
+- [Configura con Google Sheets](/guia/primeros-pasos/google-sheets/) - Configuración guiada con herramientas interactivas
+- [Desarrollo local](/guia/primeros-pasos/desarrollo-local/) - CSV + Jekyll para control total
 - [Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/) - Conoce el modelo narrativo
 - [Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/) - Sube imágenes, crea historias
 - [Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/) - Dale los toques finales
@@ -27,7 +30,6 @@ Bienvenido a la documentación de Telar. Esta guía te ayudará a crear narrativ
 ## Configura tu sitio
 
 - [Configuración manual](/guia/configuracion/configuracion-manual/) - Google Sheets + GitHub, no necesitas instalar nada
-- [Desarrollo local](/guia/configuracion/desarrollo-local/) - CSV + Jekyll para control total
 - [Actualización](/guia/configuracion/actualizacion/) - Mantén tu sitio al día
 
 ## Configura tu proyecto

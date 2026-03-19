@@ -1,14 +1,14 @@
 ---
 layout: docs
-title: 1.2. Planea tu narrativa
+title: 1.4. Planea tu narrativa
 parent: 1. Primeros pasos
 grand_parent: Documentación
-nav_order: 2
+nav_order: 4
 lang: es
 permalink: /guia/primeros-pasos/estructura-narrativa/
 tutorial_prev:
-  title: "Configura tu sitio"
-  url: /guia/primeros-pasos/inicio-rapido/
+  title: "Primeros pasos"
+  url: /guia/primeros-pasos/
 tutorial_next:
   title: "Agrega tu contenido"
   url: /guia/primeros-pasos/agrega-contenido/

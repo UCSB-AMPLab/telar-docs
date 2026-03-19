@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 1.3. Add Your Content
+title: 1.5. Add Your Content
 parent: 1. Getting Started
 grand_parent: Documentation
-nav_order: 3
+nav_order: 5
 lang: en
 permalink: /docs/getting-started/add-content/
 tutorial_prev:
@@ -14,9 +14,9 @@ tutorial_next:
   url: /docs/getting-started/review-refine/
 ---
 
-# Step 3: Add Your Content
+# Add Your Content
 
-Setup is done. From here, everything happens in your Google Sheets spreadsheet.
+Your site is set up. Now it's time to add your images and build your stories. How you enter your content depends on which setup method you chose — but the structure is the same regardless.
 
 ## Add Your Images
 
@@ -49,9 +49,9 @@ Many institutions provide high-resolution images through the IIIF standard. You 
 
 ![Finding a IIIF manifest URL](/images/external-iiif-manifest.png)
 
-## Fill in the Objects Tab
+## Register Your Objects
 
-In your Google Sheet, go to the **objects** tab and add a row for each image:
+Once your images are in the repository, register them as objects so Telar knows about them. Each object needs:
 
 - **`object_id`** — a simple identifier (matches the filename for uploaded images, or any name for IIIF images)
 - **`title`** — the display name
@@ -59,13 +59,18 @@ In your Google Sheet, go to the **objects** tab and add a row for each image:
 - **`source_url`** — the IIIF manifest URL (leave blank for uploaded images)
 - **`creator`**, **`year`**, **`object_type`**, **`subjects`** — metadata for gallery filtering (all optional)
 
+Where you enter this depends on your setup method:
+- **Compositor** — add objects in the Objects tab
+- **Google Sheets** — add rows in the **objects** tab of your spreadsheet
+- **CSV** — add rows to `objects.csv`
+
 {: .tip }
 > **Ignoring Rows and Columns**
 > Prefix any row or column header with `#` to have Telar skip it. Useful for notes and TODOs.
 
 ## Structure Your Story
 
-In each story tab (e.g., **story-1**), add a row for each step in your narrative:
+Each story is a sequence of steps. Whether you're adding rows in a spreadsheet, editing a CSV, or using the Compositor's visual editor, each step needs:
 
 | Column | What it does |
 |--------|-------------|
@@ -96,13 +101,14 @@ Write your panel text directly in the cell. You can use basic markdown formattin
 
 ## Register Your Stories
 
-In the **project** tab, list each story with its title and subtitle. The template shows you the format — add a row for each story tab you have created.
+In your project data, list each story with its title and subtitle.
 
-## Trigger a Rebuild
+## Build Your Site
 
-After editing your Google Sheet, tell GitHub to rebuild your site:
+After making changes to your content:
 
-1. Go to your repository's **Actions** tab
-2. Click **Build and Deploy** workflow
-3. Click **Run workflow** → select `main` → click the green **Run workflow** button
-4. Wait 2-5 minutes for the new version
+- **Compositor** — export and push your updated site to GitHub
+- **Google Sheets** — go to your repository's **Actions** tab, click **Build and Deploy**, then **Run workflow**
+- **Local development** — build locally with Jekyll, then push to GitHub
+
+Wait 2–5 minutes for GitHub Pages to publish the new version.

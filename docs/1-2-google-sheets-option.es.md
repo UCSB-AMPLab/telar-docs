@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 1.1. Inicio rápido
+title: 1.2. Opción B: Configura con Google Sheets
 parent: 1. Primeros pasos
 grand_parent: Documentación
-nav_order: 1
+nav_order: 2
 lang: es
-permalink: /guia/primeros-pasos/inicio-rapido/
+permalink: /guia/primeros-pasos/google-sheets/
 extra_css:
   - config-tools
 tutorial_next:
@@ -14,18 +14,11 @@ tutorial_next:
 tutorial_hide_top: true
 ---
 
-# Inicio rápido
+# Configura con Google Sheets
 
-Telar es un marco de computación mínima para crear narrativas visuales interactivas. Entreteje imágenes de alta resolución, texto narrativo e información contextual en capas para crear experiencias de scrollytelling, alojadas de forma gratuita en GitHub Pages.
+Esta guía te lleva paso a paso por la configuración de una exposición en Telar usando Google Sheets para gestionar tu contenido. Las herramientas interactivas en esta página generan tu archivo de configuración automáticamente.
 
-Este tutorial te guía paso a paso por la creación de tu primera exhibición en cuatro pasos:
-
-1. **Configura tu sitio** — Configura tu repositorio en GitHub, hoja de cálculo de Google y archivo de configuración
-2. **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — Aprende cómo se conectan las historias, los pasos y los paneles
-3. **[Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/)** — Sube imágenes, llena tu hoja de cálculo y crea tu primera historia
-4. **[Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/)** — Establece las coordenadas de las imágenes, revisa tu sitio y dale los toques finales
-
-Una exhibición en Telar se compone de **historias** — narrativas visuales paso a paso construidas alrededor de imágenes de alta resolución. Cada historia se desarrolla a través de una serie de **pasos**. Cada paso hace zoom en una región de una imagen y presenta una pregunta con una respuesta breve. Quienes quieran más pueden abrir **paneles en capas** — secciones expandibles con texto más extenso, medios incrustados o widgets interactivos. Vamos a ver esto con más detalle cuando lleguemos al Paso 2: [Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/). Pero primero, necesitamos configurar lo básico.
+Vas a configurar tres cosas: un repositorio en GitHub para tu sitio, una hoja de cálculo de Google Sheets para tu contenido y un archivo de configuración para conectarlos. Irás ingresando algunos datos a medida que avanzas — tu nombre de usuario de GitHub, el enlace de tu hoja de cálculo, un título para tu sitio. Al final de esta página, descargarás un archivo de configuración listo para usar.
 
 ## Configura tu sitio
 

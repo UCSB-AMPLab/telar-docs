@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 1.3. Agrega tu contenido
+title: 1.5. Agrega tu contenido
 parent: 1. Primeros pasos
 grand_parent: Documentación
-nav_order: 3
+nav_order: 5
 lang: es
 permalink: /guia/primeros-pasos/agrega-contenido/
 tutorial_prev:
@@ -16,7 +16,7 @@ tutorial_next:
 
 # Agrega tu contenido
 
-La configuración está lista. De aquí en adelante, todo sucede en tu hoja de cálculo de Google Sheets.
+Tu sitio está configurado. Ahora es momento de agregar tus imágenes y construir tus historias. La forma de ingresar tu contenido depende del método de configuración que elegiste, pero la estructura es la misma en todos los casos.
 
 ## Agrega tus imágenes
 
@@ -49,9 +49,9 @@ Muchas instituciones ofrecen imágenes de alta resolución a través del estánd
 
 ![Encontrando una URL de manifiesto IIIF](/images/external-iiif-manifest.png)
 
-## Completa la pestaña de objetos
+## Registra tus objetos
 
-En tu Google Sheet, ve a la pestaña **objects** y agrega una fila por cada imagen:
+Una vez que tus imágenes estén en el repositorio, regístralas como objetos para que Telar las reconozca. Cada objeto necesita:
 
 - **`object_id`** — un identificador sencillo (coincide con el nombre del archivo para imágenes subidas, o cualquier nombre para imágenes IIIF)
 - **`title`** — el nombre visible
@@ -59,13 +59,18 @@ En tu Google Sheet, ve a la pestaña **objects** y agrega una fila por cada imag
 - **`source_url`** — la URL del manifiesto IIIF (deja en blanco para imágenes subidas)
 - **`creator`**, **`year`**, **`object_type`**, **`subjects`** — metadatos para el filtrado de la galería (todos opcionales)
 
+Dónde ingresas estos datos depende de tu método de configuración:
+- **Compositor** — agrega objetos en la pestaña de Objetos
+- **Google Sheets** — agrega filas en la pestaña **objects** de tu hoja de cálculo
+- **CSV** — agrega filas a `objects.csv`
+
 {: .tip }
 > **Omitir filas y columnas**
 > Agrega un `#` al inicio de cualquier fila o encabezado de columna para que Telar lo ignore. Útil para notas y pendientes.
 
 ## Estructura tu historia
 
-En cada pestaña de historia (ej., **story-1**), agrega una fila por cada paso de tu narrativa:
+Cada historia es una secuencia de pasos. Ya sea que estés agregando filas en una hoja de cálculo, editando un CSV, o usando el editor visual del Compositor, cada paso necesita:
 
 | Columna | Qué hace |
 |---------|----------|
@@ -96,13 +101,14 @@ Escribe tu texto directamente en la celda. Puedes usar formato básico de markdo
 
 ## Registra tus historias
 
-En la pestaña **project**, lista cada historia con su título y subtítulo. La plantilla muestra el formato — agrega una fila por cada pestaña de historia que hayas creado.
+En los datos de tu proyecto, lista cada historia con su título y subtítulo.
 
-## Activa una reconstrucción
+## Construye tu sitio
 
-Después de editar tu Google Sheet, indica a GitHub que reconstruya tu sitio:
+Después de hacer cambios en tu contenido:
 
-1. Ve a la pestaña **Actions** de tu repositorio
-2. Haz clic en el *workflow* **Build and Deploy**
-3. Haz clic en **Run workflow** → selecciona `main` → haz clic en el botón verde **Run workflow**
-4. Espera de 2 a 5 minutos para la nueva versión
+- **Compositor** — exporta y sube tu sitio actualizado a GitHub
+- **Google Sheets** — ve a la pestaña **Actions** de tu repositorio, haz clic en **Build and Deploy** y luego en **Run workflow**
+- **Desarrollo local** — construye localmente con Jekyll y luego sube a GitHub
+
+Espera de 2 a 5 minutos para que GitHub Pages publique la nueva versión.

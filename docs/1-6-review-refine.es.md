@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 1.4. Revisa y perfecciona
+title: 1.6. Revisa y perfecciona
 parent: 1. Primeros pasos
 grand_parent: Documentación
-nav_order: 4
+nav_order: 6
 lang: es
 permalink: /guia/primeros-pasos/revisa-y-perfecciona/
 tutorial_prev:
@@ -51,8 +51,8 @@ Consulta [Historias Privadas](/guia/funciones/historias-privadas/) para más det
 
 Una vez que tengas lo básico, puedes:
 
-- Agregar más historias (crea nuevas pestañas de historia en tu hoja de cálculo)
-- Agregar un glosario de términos (usa la pestaña de glosario en tu hoja de cálculo)
+- Agregar más historias
+- Agregar un glosario de términos
 - Personalizar tu página de inicio (edita `index.md` en tu repositorio)
 - Explorar y buscar en tu colección de objetos (habilitado por defecto)
 

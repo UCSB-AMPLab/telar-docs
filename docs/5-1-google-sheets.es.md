@@ -116,5 +116,5 @@ El contenido del panel puede ser:
 ## Véase también
 
 - [Configuración manual](/guia/configuracion/configuracion-manual/)
-- [Desarrollo local](/guia/configuracion/desarrollo-local/)
+- [Desarrollo local](/guia/primeros-pasos/desarrollo-local/)
 - [Actualizar Telar](/guia/configuracion/actualizacion/)

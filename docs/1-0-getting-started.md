@@ -10,13 +10,30 @@ permalink: /docs/getting-started/
 
 # Getting Started
 
-Welcome to Telar! This tutorial walks you through building your first exhibition in four steps:
+Welcome to Telar! Choose the setup method that works best for you.
 
-1. **[Quick Start](/docs/getting-started/quick-start/)** — Set up your repository, Google Sheet, and configuration
-2. **[Plan Your Narrative](/docs/getting-started/narrative-structure/)** — Understand how stories, steps, and panels fit together
-3. **[Add Your Content](/docs/getting-started/add-content/)** — Upload images, fill in your spreadsheet, and create your first story
-4. **[Review and Refine](/docs/getting-started/review-refine/)** — Set image coordinates, review your site, and polish
+<div class="getting-started-cards">
+  <a href="/docs/getting-started/compositor/" class="gs-card">
+    <h3>Use the Compositor</h3>
+    <p>Build your exhibition visually — no coding or configuration files required. The easiest way to get started.</p>
+    <span class="gs-card__cta">Open Compositor Guide</span>
+  </a>
+  <a href="/docs/getting-started/google-sheets/" class="gs-card">
+    <h3>Set Up with Google Sheets</h3>
+    <p>A guided setup that uses Google Sheets to manage your content. Interactive tools generate your configuration automatically.</p>
+    <span class="gs-card__cta">Google Sheets Guide</span>
+  </a>
+  <a href="/docs/getting-started/local-dev/" class="gs-card">
+    <h3>Local Development</h3>
+    <p>Work locally with CSV files and Jekyll. Full control over your content and build process.</p>
+    <span class="gs-card__cta">Local Dev Guide</span>
+  </a>
+</div>
 
-### I already know the basics
+### After setup
 
-If you want to configure your site manually or work locally, head to **[Set Up Your Site](/docs/setup/)**. Choose between [Manual Setup](/docs/setup/manual/) (GitHub web interface) or [Local Development](/docs/setup/local-dev/) (CSV + Jekyll on your computer).
+Once your site is running, continue with the tutorial:
+
+1. **[Plan Your Narrative](/docs/getting-started/narrative-structure/)** — Understand how stories, steps, and panels fit together
+2. **[Add Your Content](/docs/getting-started/add-content/)** — Upload images, register objects, and create your first story
+3. **[Review and Refine](/docs/getting-started/review-refine/)** — Set image coordinates, review your site, and polish

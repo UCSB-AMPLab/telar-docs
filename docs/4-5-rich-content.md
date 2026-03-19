@@ -13,7 +13,7 @@ permalink: /docs/your-content/rich-content/
 Your site is running and your stories are in the spreadsheet. Now you want richer panels — this guide shows you how to add markdown files for story panels that need more than a few paragraphs of text.
 
 {: .note }
-> This guide builds on the setup guides. Complete the [Quick Start](/docs/getting-started/quick-start/) or [Manual Setup](/docs/setup/manual/) first if you haven't already.
+> This guide builds on the setup guides. Complete one of the [Getting Started](/docs/getting-started/) setup options first if you haven't already.
 
 ## When to Add Markdown Files
 

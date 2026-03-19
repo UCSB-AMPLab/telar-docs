@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: 1.4. Review and Refine
+title: 1.6. Review and Refine
 parent: 1. Getting Started
 grand_parent: Documentation
-nav_order: 4
+nav_order: 6
 lang: en
 permalink: /docs/getting-started/review-refine/
 tutorial_prev:
@@ -11,7 +11,7 @@ tutorial_prev:
   url: /docs/getting-started/add-content/
 ---
 
-# Step 4: Review and Refine
+# Review and Refine
 
 Browse through your exhibition and check for:
 
@@ -51,8 +51,8 @@ See [Private Stories](/docs/site-features/private-stories/) for details.
 
 Once the basics are in place, you can:
 
-- Add more stories (create new story tabs in your spreadsheet)
-- Add a glossary of terms (use the glossary tab in your spreadsheet)
+- Add more stories
+- Add a glossary of terms
 - Customize your homepage (edit `index.md` in your repository)
 - Browse and search your objects collection (enabled by default)
 

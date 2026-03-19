@@ -10,13 +10,30 @@ permalink: /guia/primeros-pasos/
 
 # Primeros pasos
 
-Bienvenido a Telar. Este tutorial te lleva paso a paso por la creación de tu primera exposición:
+Bienvenido a Telar. Elige el método de configuración que mejor funcione para ti.
 
-1. **[Inicio rápido](/guia/primeros-pasos/inicio-rapido/)** — Configura tu repositorio, hoja de Google y archivo de configuración
-2. **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — Conoce cómo se articulan historias, pasos y paneles
-3. **[Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/)** — Sube imágenes, llena tu hoja de cálculo y crea tu primera historia
-4. **[Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/)** — Ajusta coordenadas de imagen, revisa tu sitio y dale los toques finales
+<div class="getting-started-cards">
+  <a href="/guia/primeros-pasos/compositor/" class="gs-card">
+    <h3>Usa el Compositor</h3>
+    <p>Construye tu exposición de forma visual, sin necesidad de código ni archivos de configuración. La forma más fácil de empezar.</p>
+    <span class="gs-card__cta">Guía del Compositor</span>
+  </a>
+  <a href="/guia/primeros-pasos/google-sheets/" class="gs-card">
+    <h3>Configura con Google Sheets</h3>
+    <p>Una configuración guiada que usa Google Sheets para gestionar tu contenido. Las herramientas interactivas generan tu configuración automáticamente.</p>
+    <span class="gs-card__cta">Guía de Google Sheets</span>
+  </a>
+  <a href="/guia/primeros-pasos/desarrollo-local/" class="gs-card">
+    <h3>Desarrollo local</h3>
+    <p>Trabaja localmente con archivos CSV y Jekyll. Control total sobre tu contenido y proceso de construcción.</p>
+    <span class="gs-card__cta">Guía de desarrollo local</span>
+  </a>
+</div>
 
-### Ya conozco lo básico
+### Después de la configuración
 
-Si quieres configurar tu sitio manualmente o trabajar de forma local, ve a **[Configura tu sitio](/guia/configuracion/)**. Elige entre [Configuración manual](/guia/configuracion/configuracion-manual/) (interfaz web de GitHub) o [Desarrollo local](/guia/configuracion/desarrollo-local/) (CSV + Jekyll en tu computadora).
+Una vez que tu sitio esté funcionando, continúa con el tutorial:
+
+1. **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — Conoce cómo se articulan historias, pasos y paneles
+2. **[Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/)** — Sube imágenes, registra objetos y crea tu primera historia
+3. **[Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/)** — Ajusta coordenadas de imagen, revisa tu sitio y dale los toques finales

@@ -118,5 +118,5 @@ Panel content can be:
 ## See also
 
 - [Manual Setup](/docs/setup/manual/)
-- [Local Development](/docs/setup/local-dev/)
+- [Local Development](/docs/getting-started/local-dev/)
 - [Upgrading](/docs/setup/upgrading/)

@@ -88,6 +88,61 @@ div[class*="beta"] {
   color: #333333;
 }
 
+// Getting Started Cards
+.getting-started-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.gs-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background-color: rgba(198, 208, 248, 0.2);
+  border: 1px solid rgba(198, 208, 248, 0.5);
+  text-decoration: none;
+  color: #333333;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    border-color: #C6D0F8;
+    box-shadow: 0 2px 8px rgba(198, 208, 248, 0.4);
+    text-decoration: none;
+    color: #333333;
+  }
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.05rem;
+    color: #333333;
+  }
+
+  p {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    color: #555555;
+  }
+}
+
+.gs-card__cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--btn-primary-color, #883C36);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+@media (max-width: 768px) {
+  .getting-started-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 // Code blocks - lavender-tinted
 code {
   border-radius: 3px;

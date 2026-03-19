@@ -12,7 +12,7 @@ has_children: true
 
 Telar's behavior is controlled through `_config.yml`, a YAML file in the root of your repository. It sets your site's title, theme, language, Google Sheets connection, and feature toggles.
 
-If you used the [Quick Start](/docs/getting-started/quick-start/), you already have a working `_config.yml`. This section helps you understand what's in it and how to change it.
+If you used the [Google Sheets setup](/docs/getting-started/google-sheets/), you already have a working `_config.yml`. This section helps you understand what's in it and how to change it.
 
 ## In This Section
 

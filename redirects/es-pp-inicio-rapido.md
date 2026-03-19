@@ -1,6 +1,6 @@
 ---
 layout: redirect
-permalink: /guia/flujos-de-trabajo/inicio-rapido-guiado/
+permalink: /guia/primeros-pasos/inicio-rapido/
 redirect_to: /guia/primeros-pasos/google-sheets/
 lang: es
 sitemap: false

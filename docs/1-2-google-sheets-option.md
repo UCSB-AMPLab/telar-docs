@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 1.1. Quick Start
+title: 1.2. Option B: Set Up with Google Sheets
 parent: 1. Getting Started
 grand_parent: Documentation
-nav_order: 1
+nav_order: 2
 lang: en
-permalink: /docs/getting-started/quick-start/
+permalink: /docs/getting-started/google-sheets/
 extra_css:
   - config-tools
 tutorial_next:
@@ -14,22 +14,11 @@ tutorial_next:
 tutorial_hide_top: true
 ---
 
-# Quick Start
+# Set Up with Google Sheets
 
-Telar is a minimal-computing framework for creating interactive visual narrative exhibitions. It weaves together high-resolution images, narrative text, and layered contextual information into scrollytelling experiences — hosted for free on GitHub Pages.
+This guide walks you through setting up a Telar exhibition using Google Sheets to manage your content. Interactive tools on this page generate your configuration file automatically.
 
-This tutorial walks you through building your first exhibition in four steps:
-
-1. **Set Up Your Site** — Set up your GitHub repository, Google Sheet, and configuration
-2. **[Plan Your Narrative](/docs/getting-started/narrative-structure/)** — Understand how stories, steps, and panels fit together
-3. **[Add Your Content](/docs/getting-started/add-content/)** — Upload images, fill in your spreadsheet, and create your first story
-4. **[Review and Refine](/docs/getting-started/review-refine/)** — Set image coordinates, review your site, and polish
-
-A Telar exhibition is made up of **stories** — step-by-step visual narratives built around high-resolution images. Each story unfolds through a series of **steps**. Every step zooms into a region of an image and presents a question with a brief answer. Viewers who want more can open **layer panels** — expandable sections with longer text, embedded media, or interactive widgets. We will see this in more detail when we get to Step 2: [Plan Your Narrative](/docs/getting-started/narrative-structure/). But first, we need to set up the basics.
-
-# Step 1: Set up your site
-
-In this first step, you'll set up three things: a GitHub repository for your site, a Google Sheets spreadsheet for your content, and a configuration file to connect them. You'll enter a few details as you go — your GitHub username, your spreadsheet link, a title for your site. At the end of this page, you'll download a ready-to-use configuration file.
+You'll set up three things: a GitHub repository for your site, a Google Sheets spreadsheet for your content, and a configuration file to connect them. You'll enter a few details as you go — your GitHub username, your spreadsheet link, a title for your site. At the end of this page, you'll download a ready-to-use configuration file.
 
 You will need:
 - A [GitHub account](https://github.com/join) (free)

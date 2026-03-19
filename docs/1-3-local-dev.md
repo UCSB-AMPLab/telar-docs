@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 2.2. Local Development
-parent: 2. Set Up Your Site
+title: 1.3. Option C: Local Development
+parent: 1. Getting Started
 grand_parent: Documentation
-nav_order: 2
+nav_order: 3
 lang: en
-permalink: /docs/setup/local-dev/
+permalink: /docs/getting-started/local-dev/
 ---
 
 # Local Development

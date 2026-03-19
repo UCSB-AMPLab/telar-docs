@@ -1,20 +1,20 @@
 ---
 layout: docs
-title: 1.2. Plan Your Narrative
+title: 1.4. Plan Your Narrative
 parent: 1. Getting Started
 grand_parent: Documentation
-nav_order: 2
+nav_order: 4
 lang: en
 permalink: /docs/getting-started/narrative-structure/
 tutorial_prev:
-  title: "Set Up Your Site"
-  url: /docs/getting-started/quick-start/
+  title: "Getting Started"
+  url: /docs/getting-started/
 tutorial_next:
   title: "Add Your Content"
   url: /docs/getting-started/add-content/
 ---
 
-# Step 2: Plan Your Narrative
+# Plan Your Narrative
 
 Understanding Telar's narrative model will help you plan your content effectively.
 

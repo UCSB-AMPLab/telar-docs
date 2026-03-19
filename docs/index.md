@@ -18,7 +18,10 @@ Welcome to the Telar documentation. This guide will help you create visual narra
 
 New to Telar? Start here:
 
-- [Quick Start](/docs/getting-started/quick-start/) - Build your first exhibition step by step
+- [Getting Started](/docs/getting-started/) - Choose your setup method
+- [Use the Compositor](/docs/getting-started/compositor/) - Visual setup, no coding required
+- [Set Up with Google Sheets](/docs/getting-started/google-sheets/) - Guided setup with interactive tools
+- [Local Development](/docs/getting-started/local-dev/) - CSV + Jekyll for full control
 - [Plan Your Narrative](/docs/getting-started/narrative-structure/) - Understand the narrative model
 - [Add Your Content](/docs/getting-started/add-content/) - Upload images, create stories
 - [Review and Refine](/docs/getting-started/review-refine/) - Polish your exhibition
@@ -26,7 +29,6 @@ New to Telar? Start here:
 ## Set Up Your Site
 
 - [Manual Setup](/docs/setup/manual/) - Google Sheets + GitHub, no installation required
-- [Local Development](/docs/setup/local-dev/) - CSV + Jekyll for full control
 - [Upgrading](/docs/setup/upgrading/) - Keep your site up to date
 
 ## Configure Your Site

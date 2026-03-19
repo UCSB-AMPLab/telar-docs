@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: 2.2. Desarrollo local
-parent: 2. Configura tu sitio
+title: 1.3. Opción C: Desarrollo local
+parent: 1. Primeros pasos
 grand_parent: Documentación
-nav_order: 2
+nav_order: 3
 lang: es
-permalink: /guia/configuracion/desarrollo-local/
+permalink: /guia/primeros-pasos/desarrollo-local/
 ---
 
 # Desarrollo local
