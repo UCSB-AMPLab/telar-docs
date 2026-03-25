@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Changed
+- Updated version to v1.0.0-beta
 - Updated version to v0.9.2-beta (centralised variables in _config.yml)
 
 ### Previously released
