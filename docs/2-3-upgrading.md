@@ -59,6 +59,40 @@ The upgrade system:
 4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
 5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
+### v1.0.0-beta Upgrade Notes
+
+v1.0.0-beta adds multimedia support (video and audio objects), an updated build pipeline, and renames the `object_type` CSV column to `medium`.
+
+**Manual step — update the build workflow:**
+
+The `build.yml` workflow has new steps for audio processing, Node.js setup, and JavaScript bundling. Copy the latest version from the Telar repository:
+
+1. Open [build.yml on GitHub](https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml)
+2. Click **Copy raw contents**
+3. In your repository, navigate to `.github/workflows/build.yml` and click **Edit**
+4. Select all and replace with the copied contents
+5. Commit the change
+
+**Manual step — install Node.js dependencies (local development only):**
+
+If you develop locally, run `npm install` in your repository after upgrading. This installs the JavaScript dependencies required by the new build pipeline (lenis, @vimeo/player, esbuild, vitest).
+
+**Optional — audio support:**
+
+If your site includes audio objects, install `ffmpeg` and `audiowaveform` for clip extraction and waveform peak data:
+
+- **macOS:** `brew install ffmpeg audiowaveform`
+- **Ubuntu:** `sudo apt install ffmpeg audiowaveform`
+
+Sites without audio objects do not need these tools. GitHub Actions installs them automatically when audio files are detected.
+
+**Column rename — `object_type` to `medium`:**
+
+The `object_type` column in `objects.csv` has been renamed to `medium`. This change is backward compatible — the old column name is still accepted.
+
+**If you only use GitHub's web interface:**
+- Copy the updated `build.yml` as described above. No other manual steps are required.
+
 ### v0.7.0 Upgrade Notes
 
 v0.7.0 adds Node.js as a requirement for local development builds:

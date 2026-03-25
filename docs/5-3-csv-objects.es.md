@@ -18,6 +18,9 @@ Cataloga todos los objetos usados en las historias y mostrados en la galería.
 
 **Ubicación**: `telar-content/spreadsheets/objects.csv` o `telar-content/spreadsheets/objetos.csv`
 
+{: .tip }
+> Si usas el [Compositor](/guia/el-compositor/objetos/), este gestiona `objects.csv` visualmente — no es necesario editar el archivo directamente.
+
 ### Columnas
 
 | Inglés | Español | Requerido | Descripción |
@@ -29,18 +32,19 @@ Cataloga todos los objetos usados en las historias y mostrados en la galería.
 | `creator` | `creador` | No | Nombre del creador o artista |
 | `period` | `periodo` | No | Periodo histórico |
 | `year` | `año` | No | Año de creación o datación (se usa para ordenar en la galería) |
-| `medium` | `medio` | No | Material o medio |
+| `medium` | `medio_genero` | No | Género o medio del objeto (ej., "Fotografía", "Óleo sobre lienzo") |
 | `dimensions` | `dimensiones` | No | Dimensiones físicas |
 | `source` | `fuente` | No | Ubicación o repositorio (renombrado desde `location` en v0.8.0) |
 | `credit` | `credito` | No | Línea de atribución o crédito |
 | `thumbnail` | `miniatura` | No | Ruta a la imagen en miniatura |
+| `alt_text` | `texto_alt` | No | Texto alternativo para accesibilidad (usa `title` si se deja vacío) |
 | `object_type` | `tipo_objeto` | No | Clasificación del objeto (se usa para el filtro de la galería) |
 | `subjects` | `temas` | No | Temas, separados por comas (se usa para el filtro de la galería) |
 | `featured` | `destacado` | No | Pon `yes` para destacar en la página principal |
 
 ### Columnas de metadatos personalizados
 
-Cualquier columna que agregues más allá de las 15 columnas estándar listadas arriba se muestra automáticamente en las páginas de objetos como campos de metadatos adicionales. El nombre de la columna se convierte en la etiqueta y el valor de la celda en el texto mostrado.
+Cualquier columna que agregues más allá de las 16 columnas estándar listadas arriba se muestra automáticamente en las páginas de objetos como campos de metadatos adicionales. El nombre de la columna se convierte en la etiqueta y el valor de la celda en el texto mostrado.
 
 Por ejemplo, si agregas columnas `material` y `technique` a tu hoja de cálculo:
 
@@ -97,8 +101,23 @@ mapa-lima,Mapa de Lima,Mapa colonial temprano...,Juan de Cuellar,1685,mapa,"cart
 - Ubicación actual o repositorio que lo alberga
 - El nombre antiguo `location` (y los alias en español `ubicacion`, `locacion`) sigue funcionando por compatibilidad
 
+#### medium / medio_genero
+- **Renombrado en v1.0.0** desde `object_type` / `tipo_objeto`
+- Describe el género o medio del objeto — no el tipo de medio (imagen, video, audio), que ahora se detecta automáticamente desde la fuente del objeto
+- Ejemplos: `Fotografía`, `Óleo sobre lienzo`, `Textil`, `Mapa`
+- Se usa como faceta en la barra lateral de filtros de la galería cuando `browse_and_search: true`
+- El nombre antiguo `object_type` (y el alias en español `tipo_objeto`) sigue funcionando por compatibilidad
+- También acepta `medium_genre` como alias en inglés
+
+#### alt_text / texto_alt
+- **Nuevo en v1.0.0**
+- Texto alternativo para la imagen del objeto, usado para accesibilidad
+- Usa el `title` del objeto si se deja vacío
+- Se muestra en el atributo `alt` de las imágenes del objeto en todo el sitio
+
 #### object_type / tipo_objeto
-- **Nuevo en v0.8.0**
+- **Obsoleto en v1.0.0** — usa `medium` / `medio_genero` en su lugar
+- Sigue funcionando como alias de `medium` por compatibilidad
 - Clasificación del objeto usada como faceta en la barra lateral de filtros de la galería
 - Ejemplos: `mapa`, `textil`, `fotografía`, `pintura`
 - Aparece como categoría de filtro cuando `browse_and_search: true`
@@ -135,12 +154,12 @@ mapa-lima,Mapa de Lima,Mapa colonial temprano...,Juan de Cuellar,1685,mapa,"cart
 | `creator` | `creator`, `creador` |
 | `period` | `period`, `periodo` |
 | `year` | `year`, `año`, `ano` |
-| `medium` | `medium`, `medio` |
+| `medium` | `medium`, `medio`, `medio_genero`, `medium_genre`, `object_type`, `tipo_objeto` |
 | `dimensions` | `dimensions`, `dimensiones` |
 | `source` | `source`, `fuente`, `location`, `ubicacion` |
 | `credit` | `credit`, `credito` |
 | `thumbnail` | `thumbnail`, `miniatura` |
-| `object_type` | `object_type`, `tipo_objeto` |
+| `alt_text` | `alt_text`, `texto_alt` |
 | `subjects` | `subjects`, `temas`, `materias`, `materia` |
 | `featured` | `featured`, `destacado` |
 | `source_url` | `source_url`, `url_fuente` |
@@ -180,7 +199,7 @@ telar-content/spreadsheets/
 
 Para la mejor experiencia de galería con exploración, búsqueda y filtrado:
 
-1. **Completa `object_type`** para cada objeto — alimenta el filtro de tipo
+1. **Completa `medium`** para cada objeto — alimenta el filtro de tipo
 2. **Agrega `subjects`** con 2-4 términos separados por comas — alimenta el filtro de temas
 3. **Incluye `year`** para ordenación cronológica
 4. **Marca 4-6 objetos como `featured: yes`** para la muestra de la página principal

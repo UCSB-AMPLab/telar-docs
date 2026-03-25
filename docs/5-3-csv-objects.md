@@ -18,6 +18,9 @@ Catalogs all objects used in stories and displayed in the gallery.
 
 **Location**: `telar-content/spreadsheets/objects.csv` or `telar-content/spreadsheets/objetos.csv`
 
+{: .tip }
+> If you use the [Compositor](/docs/the-compositor/objects/), it manages `objects.csv` visually — you don't need to edit this file directly.
+
 ### Columns
 
 | English | Spanish | Required | Description |
@@ -29,18 +32,19 @@ Catalogs all objects used in stories and displayed in the gallery.
 | `creator` | `creador` | No | Creator or artist name |
 | `period` | `periodo` | No | Historical period |
 | `year` | `año` | No | Year created or dated (used for gallery sorting) |
-| `medium` | `medio` | No | Material or medium |
+| `medium` | `medio_genero` | No | Genre or medium of the object (e.g., "Photograph", "Oil painting") |
 | `dimensions` | `dimensiones` | No | Physical dimensions |
 | `source` | `fuente` | No | Location or repository (renamed from `location` in v0.8.0) |
 | `credit` | `credito` | No | Attribution or credit line |
 | `thumbnail` | `miniatura` | No | Path to thumbnail image |
+| `alt_text` | `texto_alt` | No | Alt text for accessibility (falls back to `title` if empty) |
 | `object_type` | `tipo_objeto` | No | Object classification (used for gallery filter) |
 | `subjects` | `temas` | No | Topical subjects, comma-separated (used for gallery filter) |
 | `featured` | `destacado` | No | Set to `yes` to feature on homepage |
 
 ### Custom metadata columns
 
-Any columns you add beyond the 15 standard columns listed above are automatically displayed on object pages as additional metadata fields. The column name becomes the label and the cell value becomes the displayed text.
+Any columns you add beyond the 16 standard columns listed above are automatically displayed on object pages as additional metadata fields. The column name becomes the label and the cell value becomes the displayed text.
 
 For example, adding `material` and `technique` columns to your spreadsheet:
 
@@ -97,8 +101,23 @@ mapa-lima,Mapa de Lima,Mapa colonial temprano...,Juan de Cuellar,1685,mapa,"cart
 - Current location or holding repository
 - The old column name `location` (and Spanish aliases `ubicacion`, `locacion`) still works for backward compatibility
 
+#### medium / medio_genero
+- **Renamed in v1.0.0** from `object_type` / `tipo_objeto`
+- Describes the genre or medium of the object — not the media type (Image, Video, Audio), which is now auto-detected from the object's source
+- Examples: `Photograph`, `Oil painting`, `Textile`, `Map`
+- Used as a facet in the gallery filter sidebar when `browse_and_search: true`
+- The old column name `object_type` (and Spanish alias `tipo_objeto`) still works for backward compatibility
+- Also accepts `medium_genre` as an English alias
+
+#### alt_text / texto_alt
+- **New in v1.0.0**
+- Alt text for the object image, used for accessibility
+- Falls back to the object's `title` if left empty
+- Displayed in the `alt` attribute of object images across the site
+
 #### object_type / tipo_objeto
-- **New in v0.8.0**
+- **Deprecated in v1.0.0** — use `medium` / `medio_genero` instead
+- Still works as a backward-compatible alias for `medium`
 - Object classification used as a facet in the gallery filter sidebar
 - Examples: `map`, `textile`, `photograph`, `painting`
 - Appears as a filter category when `browse_and_search: true`
@@ -135,12 +154,12 @@ mapa-lima,Mapa de Lima,Mapa colonial temprano...,Juan de Cuellar,1685,mapa,"cart
 | `creator` | `creator`, `creador` |
 | `period` | `period`, `periodo` |
 | `year` | `year`, `año`, `ano` |
-| `medium` | `medium`, `medio` |
+| `medium` | `medium`, `medio`, `medio_genero`, `medium_genre`, `object_type`, `tipo_objeto` |
 | `dimensions` | `dimensions`, `dimensiones` |
 | `source` | `source`, `fuente`, `location`, `ubicacion` |
 | `credit` | `credit`, `credito` |
 | `thumbnail` | `thumbnail`, `miniatura` |
-| `object_type` | `object_type`, `tipo_objeto` |
+| `alt_text` | `alt_text`, `texto_alt` |
 | `subjects` | `subjects`, `temas`, `materias`, `materia` |
 | `featured` | `featured`, `destacado` |
 | `source_url` | `source_url`, `url_fuente` |
@@ -150,7 +169,7 @@ mapa-lima,Mapa de Lima,Mapa colonial temprano...,Juan de Cuellar,1685,mapa,"cart
 
 For the best gallery experience with browse, search, and filter:
 
-1. **Fill in `object_type`** for every object — this powers the type filter
+1. **Fill in `medium`** for every object — this powers the type filter
 2. **Add `subjects`** with 2-4 comma-separated terms — this powers the subjects filter
 3. **Include `year`** for chronological sorting
 4. **Mark 4-6 objects as `featured: yes`** for the homepage sample

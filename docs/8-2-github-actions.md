@@ -47,12 +47,23 @@ The workflow (`.github/workflows/build.yml`) automatically:
    - Creates tiled image pyramids in `iiif/objects/`
    - Generates manifest files
 
-4. **Builds Jekyll Site**
+4. **Processes Audio** (conditional)
+   - Runs only when audio files are detected in `telar-content/objects/`
+   - Installs `ffmpeg` and `audiowaveform` on the runner
+   - Extracts audio clips and generates waveform peak data
+   - Uses a content-hash cache key so unchanged audio is not reprocessed
+
+5. **Builds JavaScript Bundle**
+   - Sets up Node.js and runs `npm install`
+   - Bundles JavaScript modules with esbuild in IIFE format
+   - Outputs `assets/js/telar-story.js` with source map
+
+6. **Builds Jekyll Site**
    - Runs `bundle exec jekyll build`
    - Compiles templates with data
    - Outputs to `_site/` directory
 
-5. **Deploys to GitHub Pages**
+7. **Deploys to GitHub Pages**
    - Publishes `_site/` directory
    - Site goes live at your GitHub Pages URL
 
@@ -87,7 +98,7 @@ Sometimes you need to rebuild without making code changes (e.g., after editing G
 
 ## Workflow File
 
-The workflow is defined in `.github/workflows/build.yml`:
+The workflow is defined in `.github/workflows/build.yml`. The following is a simplified outline — the actual file contains caching logic and conditional steps:
 
 ```yaml
 name: Build and Deploy
@@ -95,7 +106,12 @@ name: Build and Deploy
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # Enables manual trigger
+  workflow_dispatch:
+    inputs:
+      force_audio:
+        description: "Force audio reprocessing"
+        type: boolean
+        default: false
 
 jobs:
   build-and-deploy:
@@ -114,10 +130,16 @@ jobs:
         with:
           python-version: 3.9
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
       - name: Install dependencies
         run: |
           bundle install
           pip install -r requirements.txt
+          npm install
 
       - name: Fetch Google Sheets (if enabled)
         run: python3 scripts/fetch_google_sheets.py
@@ -128,6 +150,14 @@ jobs:
       - name: Generate IIIF tiles
         run: python3 scripts/generate_iiif.py
 
+      - name: Process audio (conditional)
+        run: python3 scripts/process_audio.py
+        # Installs ffmpeg/audiowaveform and processes audio
+        # only when audio files are detected or force_audio is true
+
+      - name: Build JavaScript bundle
+        run: npm run build:js
+
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
@@ -137,6 +167,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
 ```
+
+The `force_audio` input lets you reprocess audio files even when the cache is current. Select it in the **Run workflow** dropdown when you need to regenerate waveform data or re-extract clips.
 
 ## Build Status
 

@@ -15,7 +15,7 @@ Welcome to Telar! Choose the setup method that works best for you.
 <div class="getting-started-cards">
   <a href="/docs/getting-started/compositor/" class="gs-card">
     <h3>Use the Compositor</h3>
-    <p>Build your exhibition visually — no coding or configuration files required. The easiest way to get started.</p>
+    <p>Build your exhibition visually — upload images, add video and audio, and publish with one click. No coding or configuration files required.</p>
     <span class="gs-card__cta">Open Compositor Guide</span>
   </a>
   <a href="/docs/getting-started/google-sheets/" class="gs-card">
@@ -35,5 +35,5 @@ Welcome to Telar! Choose the setup method that works best for you.
 Once your site is running, continue with the tutorial:
 
 1. **[Plan Your Narrative](/docs/getting-started/narrative-structure/)** — Understand how stories, steps, and panels fit together
-2. **[Add Your Content](/docs/getting-started/add-content/)** — Upload images, register objects, and create your first story
+2. **[Add Your Content](/docs/getting-started/add-content/)** — Upload images, video, and audio, register objects, and create your first story
 3. **[Review and Refine](/docs/getting-started/review-refine/)** — Set image coordinates, review your site, and polish

@@ -16,11 +16,11 @@ tutorial_next:
 
 # Add Your Content
 
-Your site is set up. Now it's time to add your images and build your stories. How you enter your content depends on which setup method you chose — but the structure is the same regardless.
+Your site is set up. Now it's time to add your images, videos, and audio files and build your stories. How you enter your content depends on which setup method you chose — but the structure is the same regardless.
 
-## Add Your Images
+## Add Your Media
 
-Telar supports two ways to include images:
+Objects in Telar can be images, videos, or audio files. Telar supports two ways to include them:
 
 **Option A: Upload your own images**
 
@@ -30,7 +30,7 @@ Telar supports two ways to include images:
 4. Give each file a simple name without spaces (e.g., `textile-001.jpg`, `map-lima.jpg`)
 5. Click **Commit changes** to save
 
-The filename (without the extension) becomes the image's `object_id` — you will use this in your spreadsheet.
+The filename (without the extension) becomes the object's `object_id` — you will use this in your spreadsheet.
 
 ![Uploading files on GitHub](/images/add-files.png)
 ![Committing uploaded files](/images/commit-files.png)
@@ -51,7 +51,7 @@ Many institutions provide high-resolution images through the IIIF standard. You 
 
 ## Register Your Objects
 
-Once your images are in the repository, register them as objects so Telar knows about them. Each object needs:
+Once your files are in the repository, register them as objects so Telar knows about them. Each object needs:
 
 - **`object_id`** — a simple identifier (matches the filename for uploaded images, or any name for IIIF images)
 - **`title`** — the display name
@@ -75,12 +75,13 @@ Each story is a sequence of steps. Whether you're adding rows in a spreadsheet, 
 | Column | What it does |
 |--------|-------------|
 | `step` | Step number (1, 2, 3...) |
-| `object` | Which image to show (the `object_id` from the objects tab) |
+| `object` | Which object to show (the `object_id` from the objects tab) |
 | `x`, `y`, `zoom` | Where to look in the image — use `0.5, 0.5, 1.0` as a starting point |
+| `clip` | Start and end times for video/audio clips (e.g., `00:30-01:15`) |
 | `question` | The heading for this step (e.g., "What is this textile?") |
 | `answer` | A brief 1-2 sentence response |
 
-This is enough to create a working story. Each step shows an image with a question and answer that guide the viewer through your narrative.
+This is enough to create a working story. Each step shows an image (or plays a video/audio clip) with a question and answer that guide the viewer through your narrative.
 
 ## Add Detail Panels
 

@@ -12,7 +12,9 @@ permalink: /docs/your-content/self-hosted-images/
 
 If you have your own images — photographs, scans of documents, maps — you can upload them directly to your Telar site. Telar automatically converts them into zoomable, high-resolution tiles so viewers can explore every detail.
 
-This process uses a technology called [IIIF](https://iiif.io/) (International Image Interoperability Framework) behind the scenes, but you don't need to understand IIIF to use self-hosted images. Just upload your files and Telar handles the rest.
+You can also host audio files (MP3, OGG, M4A) in the same directory. Telar auto-detects the file type and displays the appropriate player.
+
+This process uses a technology called [IIIF](https://iiif.io/) (International Image Interoperability Framework) behind the scenes for images, but you don't need to understand IIIF to use self-hosted files. Just upload your files and Telar handles the rest.
 
 ## Adding images
 
@@ -42,6 +44,7 @@ For example, if your spreadsheet has an object with `object_id` = `textile-001`,
 ## Supported file formats
 
 - **JPG, PNG, HEIC, WebP, TIFF** — all common image formats work
+- **MP3, OGG, M4A** — audio files are also placed in `telar-content/objects/`
 - Case doesn't matter: `.JPG`, `.png`, `.Tiff` are all fine
 - **Resolution**: Higher is better — at least 2000px on the longest side is recommended for good zoom quality
 - **Size limits**: Individual images up to 100 MB; keep the total repository under 1 GB for GitHub

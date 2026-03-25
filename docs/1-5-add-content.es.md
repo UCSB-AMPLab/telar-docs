@@ -16,11 +16,11 @@ tutorial_next:
 
 # Agrega tu contenido
 
-Tu sitio está configurado. Ahora es momento de agregar tus imágenes y construir tus historias. La forma de ingresar tu contenido depende del método de configuración que elegiste, pero la estructura es la misma en todos los casos.
+Tu sitio está configurado. Ahora es momento de agregar tus imágenes, videos y archivos de audio, y construir tus historias. La forma de ingresar tu contenido depende del método de configuración que elegiste, pero la estructura es la misma en todos los casos.
 
-## Agrega tus imágenes
+## Agrega tus archivos multimedia
 
-Telar admite dos formas de incluir imágenes:
+Los objetos en Telar pueden ser imágenes, videos o archivos de audio. Telar admite dos formas de incluirlos:
 
 **Opción A: Sube tus propias imágenes**
 
@@ -30,7 +30,7 @@ Telar admite dos formas de incluir imágenes:
 4. Nombra cada archivo de forma sencilla, sin espacios (ej., `textile-001.jpg`, `map-lima.jpg`)
 5. Haz clic en **Commit changes** para guardar
 
-El nombre del archivo (sin la extensión) se convierte en el `object_id` de la imagen — lo usarás en tu hoja de cálculo.
+El nombre del archivo (sin la extensión) se convierte en el `object_id` del objeto — lo usarás en tu hoja de cálculo.
 
 ![Subiendo archivos en GitHub](/images/add-files.png)
 ![Confirmando los archivos subidos](/images/commit-files.png)
@@ -51,7 +51,7 @@ Muchas instituciones ofrecen imágenes de alta resolución a través del estánd
 
 ## Registra tus objetos
 
-Una vez que tus imágenes estén en el repositorio, regístralas como objetos para que Telar las reconozca. Cada objeto necesita:
+Una vez que tus archivos estén en el repositorio, regístralos como objetos para que Telar los reconozca. Cada objeto necesita:
 
 - **`object_id`** — un identificador sencillo (coincide con el nombre del archivo para imágenes subidas, o cualquier nombre para imágenes IIIF)
 - **`title`** — el nombre visible
@@ -75,12 +75,13 @@ Cada historia es una secuencia de pasos. Ya sea que estés agregando filas en un
 | Columna | Qué hace |
 |---------|----------|
 | `step` | Número del paso (1, 2, 3...) |
-| `object` | Qué imagen mostrar (el `object_id` de la pestaña de objetos) |
+| `object` | Qué objeto mostrar (el `object_id` de la pestaña de objetos) |
 | `x`, `y`, `zoom` | Dónde enfocar en la imagen — usa `0.5, 0.5, 1.0` como punto de partida |
+| `clip` | Tiempos de inicio y fin para *clips* de video/audio (ej., `00:30-01:15`) |
 | `question` | El encabezado de este paso (ej., "¿Qué es este textil?") |
 | `answer` | Una respuesta breve de 1-2 oraciones |
 
-Esto es suficiente para crear una historia funcional. Cada paso muestra una imagen con una pregunta y respuesta que guían a quien la ve a través de tu narrativa.
+Esto es suficiente para crear una historia funcional. Cada paso muestra una imagen (o reproduce un *clip* de video/audio) con una pregunta y respuesta que guían a quien la ve a través de tu narrativa.
 
 ## Agrega paneles de detalle
 

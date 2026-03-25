@@ -22,18 +22,31 @@ When `browse_and_search` is `true` (the default), the gallery includes a **filte
 
 ![Objects gallery with search bar, sort options, and filter sidebar](/images/gallery-browse.png)
 
-**Search** uses full-text indexing powered by Lunr.js. It searches across title, creator, description, period, subjects, and object type — with title matches weighted most heavily. Type a few characters and results update instantly.
+**Search** uses full-text indexing powered by Lunr.js. It searches across title, creator, description, period, subjects, and medium — with title matches weighted most heavily. Type a few characters and results update instantly.
 
-**Filters** let you narrow the gallery by four facets:
+**Filters** let you narrow the gallery by five facets across two sections:
+
+**Type** filters by the auto-detected media type of each object:
+
+| Value | Description |
+|-------|-------------|
+| Image | Self-hosted or IIIF images |
+| Video | YouTube, Vimeo, or Google Drive videos |
+| Audio | Self-hosted audio files (MP3, OGG, M4A) |
+
+**Medium/Genre** filters by the `medium` column in your `objects.csv` (previously called `object_type`). Values are user-defined — for example, map, textile, photograph, or painting.
+
+The remaining facets work as before:
 
 | Facet | CSV column | Example values |
 |-------|-----------|---------------|
-| Type | `object_type` | map, textile, photograph, painting |
 | Creator | `creator` | Unknown, Juan de Cuellar |
 | Period | `period` | Colonial, 18th century |
 | Subjects | `subjects` | weaving, cartography, Lima |
 
 Each facet shows the number of matching objects in parentheses. Select multiple values within a facet to broaden results (OR logic), or combine facets to narrow them (AND logic).
+
+Video and audio objects display icon placeholder thumbnails in the gallery grid instead of blank spaces. Each gallery item also carries `data-media-type` and `data-medium` attributes for styling or scripting purposes.
 
 **Sorting** offers two options:
 - **Title** — Alphabetical (A–Z or Z–A)
@@ -49,13 +62,16 @@ When `browse_and_search` is `false`, the gallery shows a plain grid of object ca
 
 For the best gallery experience, fill in these columns in your `objects.csv`:
 
-1. **`object_type`** for every object — powers the Type filter
+1. **`medium`** for every object — powers the Medium/Genre filter (the column was previously called `object_type`; both names are accepted)
 2. **`subjects`** with 2–4 comma-separated terms — powers the Subjects filter
 3. **`year`** — enables chronological sorting
 4. **`description`** — indexed for full-text search
 5. **`creator`** and **`period`** — power their respective filters
 
 Without these columns, the gallery still works but filtering and sorting options are limited.
+
+{: .note }
+> Objects added or uploaded via the Compositor appear in the gallery after publishing.
 
 ## Featured Objects on the Homepage
 

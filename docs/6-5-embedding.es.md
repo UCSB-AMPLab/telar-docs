@@ -204,10 +204,11 @@ Consulta la documentación de tu plataforma para instrucciones sobre cómo agreg
 Cuando una historia está insertada, las personas experimentan:
 
 **Navegación:**
-- Botones de flecha (arriba/abajo) para moverse entre pasos
+- Navegación por botones (arriba/abajo) para moverse entre pasos — las historias insertadas usan botones en lugar de desplazamiento
 - Los botones aparecen en todos los tamaños de pantalla (incluyendo escritorio)
 - Navegación por teclado (teclas de flecha, Re Pág/Av Pág, Espacio)
 - Transiciones suaves entre pasos
+- Los íconos son SVG de Lucide integrados en línea
 
 **Visor:**
 - Visor de imágenes IIIF completo con zoom y paneo

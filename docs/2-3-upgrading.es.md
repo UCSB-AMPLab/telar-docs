@@ -74,6 +74,40 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
+### Notas de actualización a v1.0.0-beta
+
+v1.0.0-beta agrega soporte multimedia (objetos de video y audio), un pipeline de construcción actualizado y renombra la columna CSV `object_type` a `medium`.
+
+**Paso manual — actualizar el flujo de trabajo de *build*:**
+
+El archivo `build.yml` tiene nuevos pasos para el procesamiento de audio, la configuración de Node.js y el empaquetado de JavaScript. Copia la versión más reciente desde el repositorio de Telar:
+
+1. Abre [build.yml en GitHub](https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml)
+2. Haz clic en **Copy raw contents**
+3. En tu repositorio, navega a `.github/workflows/build.yml` y haz clic en **Edit**
+4. Selecciona todo y reemplaza con el contenido copiado
+5. Confirma el cambio
+
+**Paso manual — instalar dependencias de Node.js (solo desarrollo local):**
+
+Si desarrollas localmente, ejecuta `npm install` en el repositorio después de actualizar. Esto instala las dependencias de JavaScript requeridas por el nuevo pipeline de construcción (lenis, @vimeo/player, esbuild, vitest).
+
+**Opcional — soporte de audio:**
+
+Si el sitio incluye objetos de audio, instala `ffmpeg` y `audiowaveform` para la extracción de *clips* y los datos de picos de forma de onda:
+
+- **macOS:** `brew install ffmpeg audiowaveform`
+- **Ubuntu:** `sudo apt install ffmpeg audiowaveform`
+
+Los sitios sin objetos de audio no necesitan estas herramientas. GitHub Actions las instala automáticamente cuando se detectan archivos de audio.
+
+**Cambio de columna — `object_type` a `medium`:**
+
+La columna `object_type` en `objects.csv` se renombró a `medium`. Este cambio es retrocompatible — el nombre anterior se sigue aceptando.
+
+**Si solo usas la interfaz web de GitHub:**
+- Copia el `build.yml` actualizado como se describe arriba. No se requieren otros pasos manuales.
+
 ### Notas de actualización a v0.7.0
 
 v0.7.0 agrega Node.js como requisito para compilar el sitio localmente:

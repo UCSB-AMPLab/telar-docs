@@ -47,14 +47,25 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
    - Crea pirámides de teselas en `iiif/objects/`
    - Genera archivos de manifiesto
 
-4. **Hace el _build_ del sitio Jekyll**
+4. **Procesa audio** (condicional)
+   - Se ejecuta solo cuando se detectan archivos de audio en `telar-content/objects/`
+   - Instala `ffmpeg` y `audiowaveform` en el ejecutor
+   - Extrae *clips* de audio y genera datos de picos para la forma de onda
+   - Usa una clave de caché basada en el hash del contenido para no reprocesar audio sin cambios
+
+5. **Construye el paquete de JavaScript**
+   - Configura Node.js y ejecuta `npm install`
+   - Empaqueta los módulos de JavaScript con esbuild en formato IIFE
+   - Genera `assets/js/telar-story.js` con mapa de origen
+
+6. **Hace el *build* del sitio Jekyll**
    - Ejecuta `bundle exec jekyll build`
    - Compila plantillas con datos
    - Salida al directorio `_site/`
 
-5. **Publica en GitHub Pages**
+7. **Publica en GitHub Pages**
    - Publica directorio `_site/`
-   - El sitio queda en vivo en tu URL de GitHub Pages
+   - El sitio queda en vivo en la URL de GitHub Pages
 
 ## Activadores de construcción
 
@@ -84,6 +95,9 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 - Después de agregar objetos o pasos de historia en Google Sheets
 - Para reconstruir sin cambios de código
 - Para forzar una construcción limpia
+
+{: .tip }
+> Al activar el flujo de trabajo manualmente, la opción **force_audio** permite reprocesar los archivos de audio aunque el caché esté vigente. Esto es útil para regenerar datos de forma de onda o volver a extraer *clips*.
 
 ## Errores comunes de construcción
 

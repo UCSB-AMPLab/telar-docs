@@ -17,7 +17,7 @@ When you're ready, the Compositor exports a complete Telar site that you publish
 ## What you'll need
 
 - A [GitHub account](https://github.com/join) (free)
-- Images for your exhibition
+- Images, videos, or audio files for your exhibition
 
 ## Create Your Repository
 
@@ -47,9 +47,16 @@ GitHub Pages turns your repository into a live website for free.
 
 ## Open the Compositor
 
-1. Go to [compositor.telar.org](https://compositor.telar.org)
-2. Follow the on-screen instructions to create your exhibition
-3. When you're done, export your site and publish it to GitHub Pages
+The Compositor is a full-featured visual editor for building Telar exhibitions. With it you can:
+
+- **Edit stories visually** — add steps, write text, set image coordinates, and preview your narrative in real time
+- **Upload images** — drag and drop images directly; IIIF tiles are generated automatically
+- **Add video and audio** — embed YouTube, Vimeo, or Google Drive videos and self-hosted audio files with clip controls
+- **Publish in one click** — review your changes, commit to GitHub, and track the build without leaving the editor
+
+Go to [compositor.telar.org](https://compositor.telar.org), sign in with your GitHub account, and connect your repository to get started.
+
+For the full guide, see [The Compositor](/docs/the-compositor/).
 
 ## Next steps
 

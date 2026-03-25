@@ -60,7 +60,7 @@ El marcador de posición `{count}` se reemplaza automáticamente con el número 
 Cualquier contenido Markdown que agregues debajo del front matter aparecerá sobre la sección de historias. Esto es ideal para:
 
 - Mensajes de bienvenida
-- Descripciones generales de la exposición
+- Descripciones generales de la exhibición
 - Avisos importantes
 - Llamados a la acción personalizados
 
@@ -78,7 +78,7 @@ objects_intro: "Browse {count} objects featured in the stories."
 
 ## Bienvenido al Proyecto de Textiles Coloniales
 
-Esta exposición digital explora las historias ocultas tejidas en los
+Esta exhibición digital explora las historias ocultas tejidas en los
 textiles coloniales de la región andina.
 
 Navega a través de las historias a continuación para descubrir las técnicas y significados culturales de estos artefactos.
@@ -101,7 +101,7 @@ objects_intro: "Browse {count} objects featured in the stories."
 {: .alert .alert-warning}
 > **🚧 Exposición en desarrollo**
 >
-> Esta exposición se está desarrollando activamente. Estamos agregando nuevas historias
+> Esta exhibición se está desarrollando activamente. Estamos agregando nuevas historias
 > y objetos regularmente. ¡Vuelve pronto para ver cómo nos queda!
 ```
 
@@ -132,7 +132,7 @@ objects_intro: "Browse {count} objects featured in the stories."
 ---
 ```
 
-Sin contenido personalizado: solo muestra historias y objetos.
+Sin contenido personalizado: solo muestra historias y objetos. Las tarjetas de historias muestran miniaturas según el tipo de medio: las historias de video y audio muestran un ícono como marcador de posición cuando no hay un objeto de imagen disponible.
 
 ### Con texto introductorio
 
@@ -146,7 +146,7 @@ objects_heading: "See the objects behind the stories"
 objects_intro: "Browse {count} objects featured in the stories."
 ---
 
-## Acerca de esta exposición
+## Acerca de esta exhibición
 
 {: .lead}
 El **Proyecto Textiles Coloniales** utiliza ...
@@ -157,7 +157,7 @@ El **Proyecto Textiles Coloniales** utiliza ...
 - Mantén el contenido de la página de inicio conciso para que los visitantes entren a tus historias.
 - Usa `##` (segundo nivel) o `###` (tercer nivel) para crear encabezados.
 - Prueba tu página de inicio en distintos tamaños de pantalla para cerciorarte de que se vea bien.
-- Actualiza los avisos y textos introductorios a medida que tu exposición evolucione.
+- Actualiza los avisos y textos introductorios a medida que tu exhibición evolucione.
 
 ## Notas técnicas
 

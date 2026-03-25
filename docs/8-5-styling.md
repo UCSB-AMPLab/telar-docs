@@ -169,14 +169,11 @@ Override breakpoints and responsive behavior:
 
 ```scss
 // Mobile
+// Note: Story layout uses a full-viewport card-stack, not a split-column layout.
+// These overrides target non-story containers.
 @media (max-width: 768px) {
   .story-container {
     flex-direction: column;
-  }
-
-  .story-viewer {
-    position: static;
-    height: 400px;
   }
 }
 

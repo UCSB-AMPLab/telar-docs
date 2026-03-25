@@ -521,7 +521,7 @@ development-features:
   # Lower values = less memory but may show loading shimmer during navigation.
   # These defaults work well for most sites. Only adjust if experiencing issues.
   viewer_preloading:
-    max_viewer_cards: 10    # Max viewers in memory. Higher = smoother, more memory. (default: 10, max: 15)
+    max_viewer_cards: 8     # Per-scene pool cap. Higher = smoother, more memory. (default: 8, max: 15)
     preload_steps: 6        # Steps to preload ahead. Higher = smoother, more memory. (default: 6)
     loading_threshold: 5    # Show shimmer on intro if story has >= N viewers. (default: 5)
     min_ready_viewers: 3    # Hide shimmer when N viewers ready. (default: 3)

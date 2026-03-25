@@ -39,6 +39,10 @@ Defines step-by-step navigation and panel content for each story.
 | `layer2_content` | `contenido_capa2` | No | Panel content: inline text or path to .md file |
 | `layer3_button` | `boton_capa3` | No | Custom button text (empty = default) |
 | `layer3_content` | `contenido_capa3` | No | Panel content: inline text or path to .md file |
+| `clip_start` | `inicio_clip` | No | Clip start time in seconds (e.g., `12.5`) |
+| `clip_end` | `fin_clip` | No | Clip end time in seconds |
+| `loop` | `bucle` | No | Loop playback (`true`, `false`, `yes`, `no`). Defaults to false |
+| `alt_text` | `texto_alt` | No | Per-step alt text for accessibility |
 
 ### Example
 
@@ -134,6 +138,26 @@ Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, ente
 
 **How Telar decides**: If what you enter ends in `.md` and the file exists, it loads the file. Otherwise, it treats the value as content.
 
+#### clip_start, clip_end / inicio_clip, fin_clip
+- **New in v1.0.0**
+- Start and end times in seconds for video and audio objects (e.g., `12.5`, `65`)
+- Ignored for image objects
+- Leave both empty to play the full media file
+- You can set clip values visually using the [Compositor's clip capture interface](/docs/the-compositor/video-audio/)
+
+#### loop / bucle
+- **New in v1.0.0**
+- Controls whether video or audio playback loops
+- Accepts `true`, `false`, `yes`, `no`, `sí`
+- Defaults to `false` if left empty
+- Ignored for image objects
+
+#### alt_text / texto_alt
+- **New in v1.0.0**
+- Per-step alt text for accessibility
+- Falls back to the object's alt text (from `objects.csv`), then to the object's `title`
+- Use this to provide context specific to what the step is showing — e.g., a zoomed-in detail that differs from the object's general description
+
 ### Choosing the Right Method
 
 | Scenario | Recommended method |
@@ -161,6 +185,10 @@ Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, ente
 | `layer2_content` | `layer2_content`, `contenido_capa2`, `layer2_file`, `archivo_capa2` |
 | `layer3_button` | `layer3_button`, `boton_capa3` |
 | `layer3_content` | `layer3_content`, `contenido_capa3`, `layer3_file`, `archivo_capa3` |
+| `clip_start` | `clip_start`, `inicio_clip` |
+| `clip_end` | `clip_end`, `fin_clip` |
+| `loop` | `loop`, `bucle` |
+| `alt_text` | `alt_text`, `texto_alt` |
 
 {: .note }
 > The `layer_file` / `archivo_capa` column names are backward-compatible aliases from before v0.6.3. The preferred names are `layer_content` / `contenido_capa`.

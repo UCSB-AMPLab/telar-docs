@@ -169,14 +169,11 @@ Ajusta los breakpoints y el comportamiento adaptable:
 
 ```scss
 // Móvil
+// Nota: Las historias usan un diseño de tarjetas apiladas a pantalla completa,
+// no una disposición en columnas. Estos ajustes aplican a otros contenedores.
 @media (max-width: 768px) {
   .story-container {
     flex-direction: column;
-  }
-
-  .story-viewer {
-    position: static;
-    height: 400px;
   }
 }
 

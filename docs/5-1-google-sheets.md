@@ -19,6 +19,9 @@ Use Google Sheets to manage your Telar content through a familiar, collaborative
 3. Configure `_config.yml` → `google_sheets` block (published_url)
 4. Build your site (GitHub Actions or local build)
 
+{: .tip }
+> **Compositor onboarding.** The Compositor can import directly from your Google Sheet during onboarding. After your first publish via the Compositor, you can disable Google Sheets integration if you prefer to manage content entirely through the Compositor.
+
 Optional: Import from Excel instead of duplicating the Google template
 
 - Download the Excel template (raw file):
@@ -98,7 +101,7 @@ bundle exec jekyll build
 
 `story-X` tabs
 
-- step, object, x, y, zoom, question, answer
+- step, object, x, y, zoom, clip, question, answer, alt_text
 - layer1_button, **layer1_content**, layer2_button, **layer2_content**
 
 Panel content can be:

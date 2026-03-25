@@ -56,6 +56,23 @@ brew install vips
 sudo apt-get install libvips-dev
 ```
 
+### Optional (Audio Objects Only)
+
+If your site includes audio objects, two additional tools enable clip extraction and waveform peak data generation. Sites without audio objects do not need these tools.
+
+- **ffmpeg**: Audio clip extraction
+- **audiowaveform**: Waveform peak data for the WaveSurfer player
+
+**macOS:**
+```bash
+brew install ffmpeg audiowaveform
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt install ffmpeg audiowaveform
+```
+
 ## Project Setup
 
 ### Initial Setup
@@ -105,6 +122,9 @@ python3 scripts/build_local_site.py --skip-iiif
 
 # Skip Google Sheets fetch (use existing CSV files)
 python3 scripts/build_local_site.py --skip-fetch
+
+# Skip audio processing (faster rebuilds when audio hasn't changed)
+python3 scripts/build_local_site.py --skip-audio
 ```
 
 This script runs all necessary build steps in sequence, mimicking what GitHub Actions does during deployment. It automatically kills any running Jekyll instances before starting.
@@ -123,10 +143,17 @@ python3 scripts/csv_to_json.py
 # 3. Generate Jekyll collection files
 python3 scripts/generate_collections.py
 
-# 4. Generate IIIF tiles
+# 4. Process audio files (if any — requires ffmpeg and audiowaveform)
+python3 scripts/process_audio.py
+
+# 5. Generate IIIF tiles
 python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
-# 5. Serve with live reload
+# 6. Build JavaScript bundle
+npm run build:js
+# Or: npx esbuild assets/js/telar-story/main.js --bundle --outfile=assets/js/telar-story.js --sourcemap --format=iife
+
+# 7. Serve with live reload
 bundle exec jekyll serve --livereload --port 4001
 
 # Build only (output to _site/)
@@ -264,6 +291,7 @@ your-telar-site/
 │   ├── fetch_google_sheets.py
 │   ├── csv_to_json.py
 │   ├── generate_collections.py
+│   ├── process_audio.py     # Audio clip and peak data
 │   └── generate_iiif.py
 └── _site/                   # Built site (don't edit!)
 ```

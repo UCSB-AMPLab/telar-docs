@@ -204,10 +204,11 @@ Consult your platform's documentation for instructions on adding custom HTML or 
 When a story is embedded, users experience:
 
 **Navigation:**
-- Arrow buttons (up/down) for moving between steps
+- Button navigation (up/down) for moving between steps — embedded stories use buttons instead of scroll
 - Buttons appear on all screen sizes (including desktop)
 - Keyboard navigation (arrow keys, Page Up/Down, Space)
 - Smooth transitions between steps
+- Icons are inline Lucide SVGs
 
 **Viewer:**
 - Full IIIF image viewer with zoom and pan

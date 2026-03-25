@@ -12,7 +12,9 @@ permalink: /guia/tu-contenido/imagenes-autoalojadas/
 
 Si tienes tus propias imágenes — fotografías, escaneos de documentos, mapas — puedes subirlas directamente a tu sitio Telar. Telar las convierte automáticamente en teselas ampliables de alta resolución para que el público pueda explorar cada detalle.
 
-Este proceso usa una tecnología llamada [IIIF](https://iiif.io/) (Marco Internacional de Interoperabilidad de Imágenes), pero no necesitas entender IIIF para usar imágenes autoalojadas. Solo sube tus archivos y Telar se encarga del resto.
+También puedes alojar archivos de audio (MP3, OGG, M4A) en el mismo directorio. Telar detecta automáticamente el tipo de archivo y muestra el reproductor adecuado.
+
+Este proceso usa una tecnología llamada [IIIF](https://iiif.io/) (Marco Internacional de Interoperabilidad de Imágenes) para las imágenes, pero no necesitas entender IIIF para usar archivos autoalojados. Solo sube tus archivos y Telar se encarga del resto.
 
 ## Agregar imágenes
 
@@ -42,6 +44,7 @@ Por ejemplo, si tu hoja de cálculo tiene un objeto con `object_id` = `textile-0
 ## Formatos compatibles
 
 - **JPG, PNG, HEIC, WebP, TIFF** — todos los formatos de imagen comunes funcionan
+- **MP3, OGG, M4A** — los archivos de audio también se ponen en `telar-content/objects/`
 - No importan mayúsculas o minúsculas: `.JPG`, `.png`, `.Tiff` funcionan
 - **Resolución**: Mientras más alta, mejor — se recomienda al menos 2000px en el lado más largo para buena calidad de zoom
 - **Límites de tamaño**: Imágenes individuales hasta 100 MB; mantén el repositorio total bajo 1 GB en GitHub

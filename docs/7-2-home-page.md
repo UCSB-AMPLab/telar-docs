@@ -133,7 +133,7 @@ objects_intro: "Browse {count} objects featured in the stories."
 ---
 ```
 
-No custom content - just displays stories and objects.
+No custom content — just displays stories and objects. Story cards show media-type-aware thumbnails: video and audio stories display an icon placeholder when no image object is available.
 
 ### With Introductory Text
 

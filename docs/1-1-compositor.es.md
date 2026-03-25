@@ -10,14 +10,14 @@ permalink: /guia/primeros-pasos/compositor/
 
 # Usa el Compositor
 
-El Compositor de Telar es una herramienta visual para construir exposiciones. Puedes agregar objetos, escribir historias, organizar pasos y previsualizar tu sitio — todo en tu navegador, sin necesidad de programar.
+El Compositor de Telar es una herramienta visual para construir exhibiciones. Puedes agregar objetos, escribir historias, organizar pasos y previsualizar tu sitio — todo en el navegador, sin necesidad de programar.
 
-Cuando estés listo, el Compositor exporta un sitio Telar completo que puedes publicar en GitHub Pages.
+Cuando estés listo, el Compositor publica un sitio Telar completo en GitHub Pages.
 
 ## Lo que necesitas
 
 - Una [cuenta de GitHub](https://github.com/join) (gratis)
-- Imágenes para tu exposición
+- Imágenes, videos o archivos de audio para la exhibición
 
 ## Crea tu repositorio
 
@@ -26,7 +26,7 @@ Un repositorio es el hogar de tu proyecto en GitHub — contiene tu configuraci�
 1. Visita la [plantilla de Telar](https://github.com/UCSB-AMPLab/telar)
 2. Haz clic en el botón verde **Use this template**
 3. Elige **Create a new repository**
-4. Dale un nombre a tu repositorio — **usa letras minúsculas y guiones** (ej., `mi-exposicion`) — esto será parte de la dirección web de tu sitio
+4. Dale un nombre a tu repositorio — **usa letras minúsculas y guiones** (ej., `mi-exhibicion`) — esto será parte de la dirección web de tu sitio
 5. Asegúrate de que **Public** esté seleccionado
 6. Haz clic en **Create repository**
 
@@ -47,13 +47,20 @@ GitHub Pages convierte tu repositorio en un sitio web en vivo de forma gratuita.
 
 ## Abre el Compositor
 
-1. Ve a [compositor.telar.org](https://compositor.telar.org)
-2. Sigue las instrucciones en pantalla para crear tu exposición
-3. Cuando termines, exporta tu sitio y publícalo en GitHub Pages
+El Compositor es un editor visual completo para construir exhibiciones con Telar. Con él puedes:
+
+- **Editar historias visualmente** — agregar pasos, escribir texto, ajustar coordenadas de imagen y previsualizar la narrativa en tiempo real
+- **Subir imágenes** — arrastra y suelta imágenes directamente; las teselas IIIF se generan de forma automática
+- **Agregar video y audio** — inserta videos de YouTube, Vimeo o Google Drive, y archivos de audio autoalojados con controles de *clip*
+- **Publicar con un clic** — revisa los cambios, haz *commit* a GitHub y sigue el estado del *build* sin salir del editor
+
+Ve a [compositor.telar.org](https://compositor.telar.org), inicia sesión con la cuenta de GitHub y conecta el repositorio para comenzar.
+
+Para la guía completa, véase [El Compositor](/guia/el-compositor/).
 
 ## Siguientes pasos
 
-Una vez que tu sitio esté en línea, continúa con el tutorial para aprender más sobre el modelo narrativo de Telar y cómo perfeccionar tu exposición:
+Una vez que el sitio esté en línea, continúa con el tutorial para aprender más sobre el modelo narrativo de Telar y cómo perfeccionar la exhibición:
 
-- **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — Conoce cómo se articulan historias, pasos y paneles
-- **[Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/)** — Ajusta coordenadas de imagen, revisa tu sitio y dale los toques finales
+- **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — conoce cómo se articulan historias, pasos y paneles
+- **[Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/)** — ajusta coordenadas de imagen, revisa el sitio y dale los toques finales

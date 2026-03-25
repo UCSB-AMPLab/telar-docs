@@ -379,7 +379,7 @@ Options for development, testing, and special use cases (please do not edit thes
 development-features:
   christmas_tree_mode: false
   viewer_preloading:
-    max_viewer_cards: 10
+    max_viewer_cards: 8
     preload_steps: 6
     loading_threshold: 5
     min_ready_viewers: 3
@@ -400,7 +400,7 @@ Use this only when testing translations or warning message styling.
 
 Controls how story viewers are preloaded for smoother navigation:
 
-- **max_viewer_cards** (default: 10, max: 15): Maximum viewers kept in memory
+- **max_viewer_cards** (default: 8, max: 15): Per-scene pool cap — maximum viewers kept in memory
 - **preload_steps** (default: 6): Steps to preload ahead of current position
 - **loading_threshold** (default: 5): Show loading shimmer on intro if story has this many or more viewers
 - **min_ready_viewers** (default: 3): Hide shimmer when this many viewers are ready
@@ -549,7 +549,7 @@ webrick:
 development-features:
   christmas_tree_mode: false
   viewer_preloading:
-    max_viewer_cards: 10
+    max_viewer_cards: 8
     preload_steps: 6
     loading_threshold: 5
     min_ready_viewers: 3

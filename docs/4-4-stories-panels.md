@@ -10,21 +10,28 @@ permalink: /docs/your-content/stories-panels/
 
 # Stories & Panels
 
-Stories are scrollable, step-by-step narratives built around your objects. Each step zooms into a specific region of an image and presents a question-and-answer pair with expandable detail panels.
+Stories are scrollable narratives built around your objects. Each story guides your audience through a sequence of steps — focusing on specific regions of images, moments in videos, or segments of audio recordings — with question-and-answer pairs and expandable detail panels.
 
-## How Stories Work
+{: .tip }
+> The [Compositor's story editor](/docs/the-compositor/story-editor/) provides a visual alternative to editing story spreadsheets directly. You can build and reorder steps, set coordinates, and preview your story without leaving your browser.
 
-A story guides viewers through a sequence of **steps**. Each step:
+## How the scroll experience works
 
-1. Zooms the IIIF viewer to a specific region of an object (using x, y, and zoom coordinates)
-2. Displays a **question** and a brief **answer** in the story panel
+A story fills the viewport with a **card-stack layout**. The object — whether an image in the IIIF viewer, a video player, or an audio player — fills the entire background. Text cards are layered on top, and as you scroll, each new card slides over the previous one.
+
+The scroll is **continuous with magnetic waypoints**. Rather than jumping discretely from step to step, viewers scroll naturally through the story. The view snaps magnetically to each step, ensuring the text card and object position stay in sync.
+
+On mobile, text cards are anchored to the bottom of the screen with a frosted glass effect, overlaying the lower portion of the viewer.
+
+![Story viewer showing card-stack layout with text card over the IIIF viewer](/images/story-viewer.png)
+
+Each step:
+
+1. Focuses the viewer on a specific region of an object (using x, y, and zoom coordinates for images, or clip times for video and audio)
+2. Displays a **question** and a brief **answer** in the text card
 3. Optionally offers up to three layers of additional detail via expandable buttons
 
-Viewers scroll through steps, and the image viewer animates to match each new position. The result is a guided, visual narrative — a "scrollytelling" experience.
-
-![Story viewer showing narrative panel and IIIF image viewer](/images/story-viewer.png)
-
-## Registering Stories
+## Registering stories
 
 Before building a story's steps, register it in `project.csv`:
 
@@ -39,7 +46,7 @@ If you omit `story_id`, Telar uses `story-{order}` (e.g., `story-1.csv` for orde
 
 See the [CSV Reference: Project](/docs/your-data/csv-project/#project-csv-projectcsv--proyectocsv) for all project.csv columns.
 
-## Building Story Steps
+## Building story steps
 
 Each story has its own CSV file in `telar-content/spreadsheets/`. The file defines steps in sequence:
 
@@ -50,14 +57,14 @@ step,object,x,y,zoom,question,answer,layer1_content
 3,map-lima,0.5,0.5,1.0,Where were these textiles found?,In the historic center of Lima,Archaeological excavations in the 1990s...
 ```
 
-### Required Fields
+### Required fields
 
 Every step needs:
 
 - **`step`** — Sequential number (1, 2, 3...) with no gaps
-- **`object`** — An `object_id` from your objects.csv
+- **`object`** — An `object_id` from your objects spreadsheet
 - **`x`**, **`y`**, **`zoom`** — Viewer coordinates (see below)
-- **`question`** — The heading displayed in the panel
+- **`question`** — The heading displayed in the text card
 - **`answer`** — A brief answer shown below the question
 
 ### Coordinates
@@ -72,9 +79,9 @@ To find coordinates, use the **coordinate picker** on any object page: zoom and 
 
 ![Coordinate picker showing X, Y, and Zoom values below the image viewer](/images/coordinate-picker.png)
 
-## Panel Layers
+## Layer panels
 
-Each step can have up to three layers of detail, revealed by buttons in the story panel:
+Each step can have up to three layers of detail, following the QAI pattern (question, answer, invitation). The question and answer appear in the text card itself. Layers expand from the text card when the viewer clicks the invitation buttons:
 
 | Layer | Default button text | Purpose |
 |-------|-------------------|---------|
@@ -89,11 +96,11 @@ For each layer, you can customize two things:
 
 If a layer has no content, its button is hidden automatically.
 
-## Writing Panel Content
+## Writing panel content
 
 You can provide panel content in three ways. Choose based on complexity:
 
-### Method 1: Enter Text Directly
+### Method 1: Enter text directly
 
 Type your text directly in the spreadsheet cell. Best for short panels (1–2 paragraphs).
 
@@ -109,14 +116,14 @@ For line breaks within a cell:
 - **CSV files**: Use actual newlines inside quoted text
 - **Alternative**: Use HTML `<br>` tags
 
-### Method 2: Paste Markdown Text
+### Method 2: Paste markdown text
 
 Paste text written in a plain text editor. This supports the full range of markdown features including headings, widgets (accordion, carousel, tabs), images with size controls, and a custom panel title using YAML frontmatter.
 
 {: .warning }
 > If you copy and paste from Microsoft Word, Google Docs, or similar applications, formatting will **not** be preserved. Write in markdown syntax instead — see the [Markdown Syntax Guide](/docs/your-content/markdown-syntax/).
 
-### Method 3: Reference a Markdown File
+### Method 3: Reference a markdown file
 
 Point to a markdown file in your repository. Best for complex panels — especially those with widgets or content you want to reuse across steps.
 
@@ -129,7 +136,7 @@ Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, ente
 
 **How Telar decides**: If what you enter ends in `.md` and the file exists, it loads the file. Otherwise, it treats the value as content.
 
-### Choosing the Right Method
+### Choosing the right method
 
 | Scenario | Recommended method |
 |----------|-------------------|
@@ -139,7 +146,7 @@ Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, ente
 | Same content used in multiple places | Method 3: File reference |
 | Quick edits without leaving the spreadsheet | Method 1 or 2 |
 
-## Story Markdown Files
+## Story markdown files
 
 When using Method 3 (file references), your story markdown files live in `telar-content/texts/stories/`:
 
@@ -157,7 +164,7 @@ telar-content/texts/stories/
 
 Organizing files into subfolders by story keeps things manageable as your site grows.
 
-### Panel Title
+### Panel title
 
 Add a custom panel title using YAML frontmatter:
 
@@ -172,7 +179,7 @@ weaving technique that was common in the colonial period.
 
 If you omit the frontmatter, the panel has no title — the content starts immediately.
 
-### What You Can Use in Panels
+### What you can use in panels
 
 Story panels support:
 
@@ -181,9 +188,57 @@ Story panels support:
 - [Glossary auto-links](/docs/site-features/glossary/) (`[[term-id]]`)
 - Images with size controls (see [Markdown Syntax Guide](/docs/your-content/markdown-syntax/))
 
-## Controlling Story Display
+## Multimedia steps
 
-### Hiding Stories from the Homepage
+Story steps can reference any object type — not just images. When a step references a video or audio object, the viewer area switches automatically to the appropriate player.
+
+- **Video objects** — The video player fills the viewer area with standard playback controls. See [Video Objects](/docs/your-content/video-objects/) for supported platforms and setup.
+- **Audio objects** — The audio player fills the viewer area with waveform visualization. See [Audio Objects](/docs/your-content/audio-objects/) for supported formats and setup.
+
+No additional configuration is needed. Telar detects the object type from your objects spreadsheet and loads the correct player.
+
+## Clip control
+
+For video and audio steps, you can specify a start time, end time, and loop setting. Add these columns to your story spreadsheet:
+
+| Column (English) | Column (Spanish) | Description |
+|---|---|---|
+| `clip_start` | `inicio_clip` | Start time in seconds (e.g. `12.5`) |
+| `clip_end` | `fin_clip` | End time in seconds |
+| `loop` | `bucle` | Loop the clip (`true`, `yes`, or `sí`) |
+
+All three columns are optional. If omitted, the media plays from the beginning without looping.
+
+```csv
+step,object,clip_start,clip_end,loop,question,answer
+1,interview-01,45,78,false,What does she describe?,The weaving technique used in her community.
+2,field-recording,0,30,true,What sounds surround the workshop?,The rhythmic clatter of the loom fills the space.
+```
+
+{: .tip }
+> You can also set clip times visually using the Compositor's clip capture interface. See [Video and Audio in the Compositor](/docs/the-compositor/video-audio/) for details.
+
+See the [CSV Reference: Stories](/docs/your-data/csv-stories/) for the full column reference including clip columns.
+
+## Alt text
+
+Each step can include an `alt_text` column with a description of what is visible or audible at that point in the story. This text is used by screen readers and other assistive technologies.
+
+```csv
+step,object,x,y,zoom,alt_text,question,answer
+1,textile-001,0.5,0.3,0.8,Close-up of interlocking warp threads in red and gold,What is this textile?,A colonial fragment showing complex weaving patterns.
+```
+
+{: .tip }
+> Alt text for each step can also be set in the [Compositor's step editor](/docs/the-compositor/story-editor/).
+
+## Keyboard navigation
+
+Stories support keyboard navigation. Arrow keys, Space, and Page Up/Down scroll through the story, and the magnetic waypoints ensure each keypress lands on the next or previous step.
+
+## Controlling story display
+
+### Hiding stories from the homepage
 
 If you want objects on the homepage but prefer stories to be accessed through navigation or direct links:
 
@@ -194,7 +249,7 @@ story_interface:
 
 Stories remain accessible at their URLs — only the homepage cards are hidden.
 
-### Hiding Step Indicators
+### Hiding step indicators
 
 The "Step 1", "Step 2" indicators in the top-left corner of the story viewer can be hidden for a cleaner experience:
 
@@ -203,12 +258,14 @@ story_interface:
   show_story_steps: false
 ```
 
-Users can still navigate through steps normally.
+Viewers can still navigate through steps normally.
 
-## See Also
+## See also
 
-- [CSV Reference: Stories](/docs/your-data/csv-stories/) — Complete column reference for story CSVs
+- [CSV Reference: Stories](/docs/your-data/csv-stories/) — Complete column reference for story spreadsheets
 - [Objects](/docs/your-content/objects/) — Defining the objects used in stories
+- [Video Objects](/docs/your-content/video-objects/) — Adding video objects from YouTube, Vimeo, and Google Drive
+- [Audio Objects](/docs/your-content/audio-objects/) — Adding self-hosted audio files
 - [Widgets](/docs/your-content/widgets/) — Carousel, tabs, and accordion in story panels
 - [Private Stories](/docs/site-features/private-stories/) — Restricting access to stories
 - [Configuration](/docs/configure/configuration/) — Story interface settings

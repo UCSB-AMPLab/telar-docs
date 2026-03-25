@@ -27,13 +27,16 @@ La experiencia del visor de historias está especialmente optimizada para dispos
 
 ### Adaptaciones de diseño
 
-**División visor/panel:**
-- **Escritorio**: Disposición en paralelo con el visor a la derecha y la narración a la izquierda
-- **Móvil**: Diseño apilado con transiciones suaves entre el visor y el contenido
+**Tarjetas apiladas a pantalla completa:**
+- **Escritorio**: Tarjetas a pantalla completa con la narración superpuesta sobre el visor
+- **Móvil**: Las tarjetas de texto se anclan en la parte inferior con un efecto de vidrio esmerilado para facilitar la lectura
 
 **Navegación:**
 - **Escritorio**: Botones estándar **Previous**/**Next**
-- **Móvil**: Botones más grandes y colocados de forma ergonómica (objetivos táctiles mínimos de 45px)
+- **Móvil**: Navegación por botones a través del motor de desplazamiento — no mediante controladores táctiles independientes. Botones más grandes y colocados de forma ergonómica (objetivos táctiles mínimos de 45px)
+
+**Rotación de tarjetas:**
+La rotación de tarjetas (el efecto de ligero "desorden") se reduce a la mitad en pantallas pequeñas para mejorar la legibilidad.
 
 ### Funciones específicas para móviles
 

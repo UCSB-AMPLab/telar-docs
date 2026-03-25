@@ -10,7 +10,7 @@ permalink: /guia/tus-datos/google-sheets/
 
 ## Integración con Google Sheets
 
-Usa Google Sheets para gestionar el contenido de tu exposición con una interfaz familiar y colaborativa. Funciona tanto con el flujo de trabajo de Interfaz Web de GitHub como con Desarrollo Local.
+Usa Google Sheets para gestionar el contenido de tu exhibición con una interfaz familiar y colaborativa. Funciona tanto con el flujo de trabajo de Interfaz Web de GitHub como con Desarrollo Local.
 
 ## Inicio rápido
 
@@ -18,6 +18,9 @@ Usa Google Sheets para gestionar el contenido de tu exposición con una interfaz
 2. Publica: Archivo → Compartir → Publicar en la Web · File → Share → Publish to the web
 3. Configura `_config.yml` → bloque `google_sheets` (published_url)
 4. Construye tu sitio (GitHub Actions o build local)
+
+{: .tip }
+> **Integración con el Compositor.** El Compositor puede importar directamente desde tu Google Sheet durante la configuración inicial. Después de la primera publicación con el Compositor, puedes desactivar la integración con Google Sheets si prefieres gestionar el contenido solo desde el Compositor.
 
 Opcional: Importar desde Excel en lugar de duplicar la plantilla de Google
 
@@ -96,7 +99,7 @@ Pestaña `objects` (campos comunes)
 
 Pestañas `story-X`
 
-- step, object, x, y, zoom, question, answer
+- step, object, x, y, zoom, clip, question, answer, alt_text
 - layer1_button, **layer1_content**, layer2_button, **layer2_content**
 
 El contenido del panel puede ser:

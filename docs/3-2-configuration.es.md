@@ -19,7 +19,7 @@ Información básica y apariencia del sitio:
 ```yaml
 # Site Settings
 title: Título de tu Narrativa
-description: Una breve descripción de tu exposición narrativa
+description: Una breve descripción de tu exhibición narrativa
 baseurl: "/nombre-repositorio"  # Para un subdirectorio en GitHub Pages
 url: "https://usuario.github.io"
 author: Tu Nombre
@@ -379,7 +379,7 @@ Opciones para desarrollo, pruebas y situaciones especiales (por favor no edites 
 development-features:
   christmas_tree_mode: false
   viewer_preloading:
-    max_viewer_cards: 10
+    max_viewer_cards: 8
     preload_steps: 6
     loading_threshold: 5
     min_ready_viewers: 3
@@ -400,7 +400,7 @@ Usa esto solo al probar traducciones o el estilo de mensajes de advertencia.
 
 Controla cómo se precargan los visores de historias para una navegación más fluida:
 
-- **max_viewer_cards** (predeterminado: 10, máximo: 15): Cantidad máxima de visores en memoria
+- **max_viewer_cards** (predeterminado: 8, máximo: 15): Tope del grupo de visores por escena — cantidad máxima de visores en memoria
 - **preload_steps** (predeterminado: 6): Pasos a precargar por delante de la posición actual
 - **loading_threshold** (predeterminado: 5): Mostrar el efecto de carga en la introducción si la historia tiene este número o más de visores
 - **min_ready_viewers** (predeterminado: 3): Ocultar el efecto de carga cuando esté lista esta cantidad de visores
@@ -438,7 +438,7 @@ Aquí hay un ejemplo completo de `_config.yml`:
 ```yaml
 # Site Settings
 title: Textiles Coloniales
-description: Una exposición de textiles de la era colonial de las Américas
+description: Una exhibición de textiles de la era colonial de las Américas
 baseurl: "/textiles-coloniales"
 url: "https://usuario.github.io"
 author: Jane Smith
@@ -549,7 +549,7 @@ webrick:
 development-features:
   christmas_tree_mode: false
   viewer_preloading:
-    max_viewer_cards: 10
+    max_viewer_cards: 8
     preload_steps: 6
     loading_threshold: 5
     min_ready_viewers: 3

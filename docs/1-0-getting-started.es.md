@@ -15,7 +15,7 @@ Bienvenido a Telar. Elige el método de configuración que mejor funcione para t
 <div class="getting-started-cards">
   <a href="/guia/primeros-pasos/compositor/" class="gs-card">
     <h3>Usa el Compositor</h3>
-    <p>Construye tu exposición de forma visual, sin necesidad de código ni archivos de configuración. La forma más fácil de empezar.</p>
+    <p>Construye tu exhibición de forma visual — sube imágenes, agrega video y audio, y publica con un clic. Sin necesidad de código ni archivos de configuración.</p>
     <span class="gs-card__cta">Guía del Compositor</span>
   </a>
   <a href="/guia/primeros-pasos/google-sheets/" class="gs-card">
@@ -35,5 +35,5 @@ Bienvenido a Telar. Elige el método de configuración que mejor funcione para t
 Una vez que tu sitio esté funcionando, continúa con el tutorial:
 
 1. **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — Conoce cómo se articulan historias, pasos y paneles
-2. **[Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/)** — Sube imágenes, registra objetos y crea tu primera historia
+2. **[Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/)** — Sube imágenes, video y audio, registra objetos y crea tu primera historia
 3. **[Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/)** — Ajusta coordenadas de imagen, revisa tu sitio y dale los toques finales

@@ -211,12 +211,12 @@ function createNavigationButtons() {
   const upBtn = document.createElement('button');
   upBtn.className = 'arrow-nav-up';
   upBtn.setAttribute('aria-label', 'Previous step');
-  upBtn.innerHTML = '<span class="material-symbols-outlined">arrow_upward</span>';
+  upBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>';
 
   const downBtn = document.createElement('button');
   downBtn.className = 'arrow-nav-down';
   downBtn.setAttribute('aria-label', 'Next step');
-  downBtn.innerHTML = '<span class="material-symbols-outlined">arrow_downward</span>';
+  downBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
 
   // Adjuntar detectores de eventos
   upBtn.addEventListener('click', () => navigateSteps('previous'));

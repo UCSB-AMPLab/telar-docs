@@ -22,18 +22,31 @@ Cuando `browse_and_search` es `true` (el valor predeterminado), la galería incl
 
 ![Galería de objetos con barra de búsqueda, opciones de orden y barra lateral de filtros](/images/gallery-browse.png)
 
-**La búsqueda** usa indexación de texto completo con Lunr.js. Busca en título, creador, descripción, periodo, temas y tipo de objeto — con mayor peso para las coincidencias en el título. Escribe unos pocos caracteres y los resultados se actualizan al instante.
+**La búsqueda** usa indexación de texto completo con Lunr.js. Busca en título, creador, descripción, periodo, temas y medio — con mayor peso para las coincidencias en el título. Escribe unos pocos caracteres y los resultados se actualizan al instante.
 
-**Los filtros** permiten acotar la galería con cuatro facetas:
+**Los filtros** permiten acotar la galería con cinco facetas organizadas en dos secciones:
+
+**Tipo** filtra por el tipo de medio detectado automáticamente para cada objeto:
+
+| Valor | Descripción |
+|-------|-------------|
+| Image | Imágenes autoalojadas o IIIF |
+| Video | Videos de YouTube, Vimeo o Google Drive |
+| Audio | Archivos de audio autoalojados (MP3, OGG, M4A) |
+
+**Medium/Genre** filtra por la columna `medium` del `objects.csv` (antes llamada `object_type`). Los valores los define cada proyecto — por ejemplo, mapa, textil, fotografía o pintura.
+
+Las facetas restantes funcionan como antes:
 
 | Faceta | Columna CSV | Valores de ejemplo |
 |--------|-------------|-------------------|
-| Tipo | `object_type` | mapa, textil, fotografía, pintura |
 | Creador | `creator` | Desconocido, Juan de Cuéllar |
 | Periodo | `period` | Colonial, siglo XVIII |
 | Temas | `subjects` | tejido, cartografía, Lima |
 
 Cada faceta muestra la cantidad de objetos coincidentes entre paréntesis. Selecciona varios valores dentro de una faceta para ampliar los resultados (lógica OR), o combina facetas para acotarlos (lógica AND).
+
+Los objetos de video y audio muestran miniaturas con iconos de marcador de posición en la cuadrícula de la galería en lugar de espacios en blanco. Cada elemento de la galería también incluye los atributos `data-media-type` y `data-medium` para personalización con estilos o scripts.
 
 **La ordenación** ofrece dos opciones:
 - **Título** — Alfabético (A–Z o Z–A)
@@ -49,13 +62,16 @@ Cuando `browse_and_search` es `false`, la galería muestra una cuadrícula senci
 
 Para la mejor experiencia en la galería, completa estas columnas en tu `objects.csv`:
 
-1. **`object_type`** para cada objeto — alimenta el filtro de Tipo
+1. **`medium`** para cada objeto — alimenta el filtro de Medium/Genre (la columna antes se llamaba `object_type`; ambos nombres se aceptan)
 2. **`subjects`** con 2–4 términos separados por comas — alimenta el filtro de Temas
 3. **`year`** — habilita la ordenación cronológica
 4. **`description`** — se indexa para la búsqueda de texto completo
 5. **`creator`** y **`period`** — alimentan sus filtros respectivos
 
 Sin estas columnas, la galería sigue funcionando, pero las opciones de filtrado y ordenación son limitadas.
+
+{: .note }
+> Los objetos agregados o subidos a través del Compositor aparecen en la galería después de publicar.
 
 ## Objetos destacados en la página principal
 

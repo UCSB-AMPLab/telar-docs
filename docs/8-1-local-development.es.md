@@ -59,6 +59,23 @@ brew install vips
 sudo apt-get install libvips-dev
 ```
 
+### Opcional (solo para objetos de audio)
+
+Si el sitio incluye objetos de audio, dos herramientas adicionales permiten la extracción de *clips* y la generación de datos de forma de onda. Los sitios sin objetos de audio no necesitan estas herramientas.
+
+- **ffmpeg**: Extracción de *clips* de audio
+- **audiowaveform**: Datos de picos para el reproductor WaveSurfer
+
+**macOS:**
+```bash
+brew install ffmpeg audiowaveform
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt install ffmpeg audiowaveform
+```
+
 ## Configuración del proyecto
 
 ### Configuración inicial
@@ -108,6 +125,9 @@ python3 scripts/build_local_site.py --skip-iiif
 
 # Omitir la descarga desde Google Sheets (usa los CSV existentes)
 python3 scripts/build_local_site.py --skip-fetch
+
+# Omitir procesamiento de audio (reconstrucciones más rápidas cuando el audio no ha cambiado)
+python3 scripts/build_local_site.py --skip-audio
 ```
 
 Este script ejecuta en secuencia todos los pasos necesarios de construcción, imitando lo que hace GitHub Actions durante el despliegue. También detiene instancias de Jekyll que estén ejecutándose antes de iniciar una nueva.
@@ -126,10 +146,17 @@ python3 scripts/csv_to_json.py
 # 3. Genera archivos de colección de Jekyll
 python3 scripts/generate_collections.py
 
-# 4. Genera teselas (*tiles*) IIIF
+# 4. Procesa archivos de audio (si los hay — requiere ffmpeg y audiowaveform)
+python3 scripts/process_audio.py
+
+# 5. Genera teselas (*tiles*) IIIF
 python3 scripts/generate_iiif.py --base-url http://localhost:4001
 
-# 5. Sirve con recarga automática
+# 6. Construye el paquete de JavaScript
+npm run build:js
+# O: npx esbuild assets/js/telar-story/main.js --bundle --outfile=assets/js/telar-story.js --sourcemap --format=iife
+
+# 7. Sirve con recarga automática
 bundle exec jekyll serve --livereload --port 4001
 
 # Solo construir (salida a _site/)
@@ -227,6 +254,7 @@ tu-sitio-telar/
 │   ├── fetch_google_sheets.py
 │   ├── csv_to_json.py
 │   ├── generate_collections.py
+│   ├── process_audio.py     # *Clips* de audio y datos de picos
 │   └── generate_iiif.py
 └── _site/                   # Sitio construido (¡no editar!)
 ```

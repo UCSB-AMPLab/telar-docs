@@ -27,13 +27,16 @@ The story viewing experience is specially optimized for mobile devices:
 
 ### Layout Adaptations
 
-**Viewer/Panel Split:**
-- **Desktop**: Side-by-side viewer (right) and narrative (left)
-- **Mobile**: Stacked layout with smooth transitions between viewer and content
+**Full-Viewport Card Stack:**
+- **Desktop**: Full-viewport cards with narrative overlaid on the viewer
+- **Mobile**: Text cards are bottom-anchored with frosted glass styling for readability
 
 **Navigation:**
 - **Desktop**: Standard Previous/Next buttons
-- **Mobile**: Optimized button placement and size (45px minimum touch targets)
+- **Mobile**: Button navigation via the scroll engine — not separate touch handlers. Optimized button placement and size (45px minimum touch targets)
+
+**Card Rotation:**
+Card rotation (the slight "messiness" effect) is halved on smaller screens for better readability.
 
 ### Mobile-Specific Features
 
