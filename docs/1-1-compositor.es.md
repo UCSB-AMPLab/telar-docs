@@ -19,25 +19,38 @@ Cuando estés listo, el Compositor publica un sitio Telar completo en GitHub Pag
 - Una [cuenta de GitHub](https://github.com/join) (gratis)
 - Imágenes, videos o archivos de audio para la exhibición
 
-## Crea tu repositorio
+## Empieza aquí
 
-Un repositorio es el hogar de tu proyecto en GitHub — contiene tu configuración y archivos de imagen.
+Ve a [compositor.telar.org](https://compositor.telar.org) e inicia sesión con tu cuenta de GitHub. El Compositor te pedirá instalar la aplicación Telar Compositor en GitHub — esto le da permiso para crear y administrar repositorios en tu nombre.
+
+Una vez que hayas iniciado sesión, tienes dos opciones:
+
+### Crea un sitio nuevo
+
+Haz clic en **Crear un sitio nuevo**, escribe un nombre para el repositorio — **usa letras minúsculas y guiones** (ej., `mi-exhibicion`) — y el Compositor se encarga del resto: crea el repositorio a partir de la plantilla de Telar, configura GitHub Pages y deja tu sitio listo para editar.
+
+{: .warning }
+> **El repositorio será público.** GitHub Pages requiere un repositorio público a menos que tengas un plan pago de GitHub.
+
+### Conecta un repositorio existente
+
+Si ya creaste un repositorio a partir de la [plantilla de Telar](https://github.com/UCSB-AMPLab/telar) o tienes un sitio Telar existente, selecciónalo de la lista y el Compositor importará tu contenido.
+
+<details>
+<summary><strong>Configuración manual: crea un repositorio en GitHub primero</strong></summary>
+
+Si prefieres crear el repositorio tú mismo antes de conectarlo:
 
 1. Visita la [plantilla de Telar](https://github.com/UCSB-AMPLab/telar)
 2. Haz clic en el botón verde **Use this template**
 3. Elige **Create a new repository**
-4. Dale un nombre a tu repositorio — **usa letras minúsculas y guiones** (ej., `mi-exhibicion`) — esto será parte de la dirección web de tu sitio
+4. Dale un nombre a tu repositorio — **usa letras minúsculas y guiones** (ej., `mi-exhibicion`)
 5. Asegúrate de que **Public** esté seleccionado
 6. Haz clic en **Create repository**
 
 ![Captura de GitHub: botón Use this template](/images/use-this-template.png)
 
-{: .warning }
-> **Mantén tu repositorio público.** Los repositorios privados no funcionarán con GitHub Pages a menos que tengas un plan pago de GitHub.
-
-## Habilita GitHub Pages
-
-GitHub Pages convierte tu repositorio en un sitio web en vivo de forma gratuita.
+Luego habilita GitHub Pages:
 
 1. En tu repositorio, ve a **Settings** → **Pages**
 2. En **Source**, selecciona **GitHub Actions**
@@ -45,16 +58,16 @@ GitHub Pages convierte tu repositorio en un sitio web en vivo de forma gratuita.
 
 ![Configurando GitHub Pages con GitHub Actions](/images/github-actions.gif)
 
-## Abre el Compositor
+Una vez hecho, vuelve a [compositor.telar.org](https://compositor.telar.org) y conecta el repositorio.
 
-El Compositor es un editor visual completo para construir exhibiciones con Telar. Con él puedes:
+</details>
+
+## Qué puedes hacer con el Compositor
 
 - **Editar historias visualmente** — agregar pasos, escribir texto, ajustar coordenadas de imagen y previsualizar la narrativa en tiempo real
 - **Subir imágenes** — arrastra y suelta imágenes directamente; las teselas IIIF se generan de forma automática
 - **Agregar video y audio** — inserta videos de YouTube, Vimeo o Google Drive, y archivos de audio autoalojados con controles de *clip*
 - **Publicar con un clic** — revisa los cambios, haz *commit* a GitHub y sigue el estado del *build* sin salir del editor
-
-Ve a [compositor.telar.org](https://compositor.telar.org), inicia sesión con la cuenta de GitHub y conecta el repositorio para comenzar.
 
 Para la guía completa, véase [El Compositor](/guia/el-compositor/).
 

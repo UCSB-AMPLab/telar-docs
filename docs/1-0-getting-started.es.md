@@ -14,17 +14,17 @@ Bienvenido a Telar. Elige el método de configuración que mejor funcione para t
 
 <div class="getting-started-cards">
   <a href="/guia/primeros-pasos/compositor/" class="gs-card">
-    <h3>Usa el Compositor</h3>
+    <h3>Opción A: Usa el Compositor</h3>
     <p>Construye tu exhibición de forma visual — sube imágenes, agrega video y audio, y publica con un clic. Sin necesidad de código ni archivos de configuración.</p>
     <span class="gs-card__cta">Guía del Compositor</span>
   </a>
   <a href="/guia/primeros-pasos/google-sheets/" class="gs-card">
-    <h3>Configura con Google Sheets</h3>
+    <h3>Opción B: Configura con Google Sheets</h3>
     <p>Una configuración guiada que usa Google Sheets para gestionar tu contenido. Las herramientas interactivas generan tu configuración automáticamente.</p>
     <span class="gs-card__cta">Guía de Google Sheets</span>
   </a>
   <a href="/guia/primeros-pasos/desarrollo-local/" class="gs-card">
-    <h3>Desarrollo local</h3>
+    <h3>Opción C: Desarrollo local</h3>
     <p>Trabaja localmente con archivos CSV y Jekyll. Control total sobre tu contenido y proceso de construcción.</p>
     <span class="gs-card__cta">Guía de desarrollo local</span>
   </a>

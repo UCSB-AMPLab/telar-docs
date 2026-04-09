@@ -14,17 +14,17 @@ Welcome to Telar! Choose the setup method that works best for you.
 
 <div class="getting-started-cards">
   <a href="/docs/getting-started/compositor/" class="gs-card">
-    <h3>Use the Compositor</h3>
+    <h3>Option A: Use the Compositor</h3>
     <p>Build your exhibition visually — upload images, add video and audio, and publish with one click. No coding or configuration files required.</p>
     <span class="gs-card__cta">Open Compositor Guide</span>
   </a>
   <a href="/docs/getting-started/google-sheets/" class="gs-card">
-    <h3>Set Up with Google Sheets</h3>
+    <h3>Option B: Set Up with Google Sheets</h3>
     <p>A guided setup that uses Google Sheets to manage your content. Interactive tools generate your configuration automatically.</p>
     <span class="gs-card__cta">Google Sheets Guide</span>
   </a>
   <a href="/docs/getting-started/local-dev/" class="gs-card">
-    <h3>Local Development</h3>
+    <h3>Option C: Local Development</h3>
     <p>Work locally with CSV files and Jekyll. Full control over your content and build process.</p>
     <span class="gs-card__cta">Local Dev Guide</span>
   </a>
