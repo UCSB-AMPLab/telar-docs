@@ -147,6 +147,9 @@ python3 scripts/csv_to_json.py
 python3 scripts/generate_collections.py
 
 # 4. Procesa archivos de audio (si los hay — requiere ffmpeg y audiowaveform)
+#    Nota: la detección básica de audio funciona sin este paso (csv_to_json.py
+#    genera el manifiesto de audio automáticamente). Este script solo se
+#    necesita para los datos de forma de onda y la extracción de clips.
 python3 scripts/process_audio.py
 
 # 5. Genera teselas (*tiles*) IIIF

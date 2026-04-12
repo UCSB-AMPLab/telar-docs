@@ -144,6 +144,9 @@ python3 scripts/csv_to_json.py
 python3 scripts/generate_collections.py
 
 # 4. Process audio files (if any — requires ffmpeg and audiowaveform)
+#    Note: basic audio detection works without this step (csv_to_json.py
+#    generates the audio manifest automatically). This script is only
+#    needed for waveform peak data and clip extraction.
 python3 scripts/process_audio.py
 
 # 5. Generate IIIF tiles
