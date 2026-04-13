@@ -21,6 +21,7 @@ Telar incluye un sistema de widgets interactivos para contenido enriquecido en p
 | **Carrusel** | Presentación de imágenes con leyendas y créditos |
 | **Pestañas** | Paneles conmutables para múltiples perspectivas |
 | **Acordeón** | Secciones plegables para contenido secuencial o jerárquico |
+| **Bibliografía** | Citas académicas con sangría francesa |
 
 ## Sintaxis de widgets
 
@@ -128,6 +129,31 @@ Las reformas borbónicas retaron las estructuras de poder existentes...
 - Todos los paneles empiezan colapsados
 - Se admite la sintaxis estándar de markdown dentro de los paneles
 - Mínimo 2 paneles, máximo 6 paneles
+
+## Bibliografía
+
+Presenta citas académicas con sangría francesa estándar. Cada cita se separa con una línea en blanco.
+
+**Disponible desde v1.1.0.**
+
+### Sintaxis
+
+```markdown
+:::bibliography
+Cobo Betancourt, J. F. (2024). *The Coming of the Kingdom: The Muisca, Catholic Reform, and Spanish Colonialism in the New Kingdom of Granada*. Cambridge University Press.
+
+Cobo, N. (2021). Creating authority and promoting normative behaviour. En T. Duve, J. L. Egío y C. Birr (Eds.), *The School of Salamanca: A Case of Global Knowledge Production* (pp. 210–244). Brill.
+
+Muñoz-Arbeláez, S. (2025). *The New Kingdom of Granada: The Making and Unmaking of Spain's Atlantic Empire*. Duke University Press.
+:::
+```
+
+### Estructura
+
+- Cada cita se separa con una línea en blanco (doble salto de línea)
+- La sintaxis estándar de markdown funciona dentro de las entradas (`*cursivas*` para títulos, `**negrita**`, enlaces)
+- Se muestra con sangría francesa — la primera línea queda al margen izquierdo, las líneas siguientes se indentan
+- Un bloque de bibliografía vacío produce una advertencia durante la *build*
 
 ## Dónde funcionan los widgets
 
@@ -238,6 +264,16 @@ image: after.jpg
 alt: Fotografía del sitio en 2020
 caption: La *Plaza Mayor* después de la restauración arqueológica
 credit: Instituto Nacional de Antropología
+:::
+```
+
+### Citas académicas
+
+```markdown
+:::bibliography
+Cobo Betancourt, J. F. (2024). *The Coming of the Kingdom*. Cambridge University Press.
+
+Muñoz-Arbeláez, S. (2025). *The New Kingdom of Granada*. Duke University Press.
 :::
 ```
 
