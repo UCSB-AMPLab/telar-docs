@@ -127,6 +127,9 @@ El código de inserción se ve así:
 </iframe>
 ```
 
+{: .tip }
+> Para iniciar una historia incrustada en un paso específico, agrega un fragmento de enlace profundo a la URL de inserción — por ejemplo, `?embed=true#s3` abre en el paso 3. Consulta [Compartir y enlaces profundos](/guia/tu-contenido/historias-paneles/#compartir-y-enlaces-profundos) para el formato del fragmento.
+
 ## Instrucciones específicas de plataforma
 
 ### Canvas LMS

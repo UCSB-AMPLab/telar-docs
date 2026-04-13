@@ -62,8 +62,8 @@ step,object,x,y,zoom,question,answer,layer1_content
 Every step needs:
 
 - **`step`** — Sequential number (1, 2, 3...) with no gaps
-- **`object`** — An `object_id` from your objects spreadsheet
-- **`x`**, **`y`**, **`zoom`** — Viewer coordinates (see below)
+- **`object`** — An `object_id` from your objects spreadsheet. Leave empty to create a [title card](#title-cards)
+- **`x`**, **`y`**, **`zoom`** — Viewer coordinates (see below). Ignored for title cards
 - **`question`** — The heading displayed in the text card
 - **`answer`** — A brief answer shown below the question
 
@@ -78,6 +78,21 @@ Coordinates tell the viewer where to focus for each step. All values are normali
 To find coordinates, use the **coordinate picker** on any object page: zoom and pan to the region you want, then click the **Copy** buttons to copy the x, y, and zoom values directly into your spreadsheet.
 
 ![Coordinate picker showing X, Y, and Zoom values below the image viewer](/images/coordinate-picker.png)
+
+## Title cards
+
+Title cards are text-only steps with no associated object. They work well as chapter headings, section breaks, or thematic transitions within a story.
+
+To create a title card, leave the `object` column empty. The `x`, `y`, and `zoom` columns are ignored. The `question` field becomes the card heading and `answer` becomes the subtitle.
+
+```csv
+step,object,x,y,zoom,question,answer
+1,textile-001,0.5,0.3,0.8,What is this textile?,A colonial fragment showing complex weaving patterns.
+2,,,,,Chapter 2: Trade Routes,The movement of textiles across the Americas.
+3,map-lima,0.5,0.5,1.0,Where were these found?,In the historic center of Lima.
+```
+
+Title cards participate fully in navigation — scroll, keyboard, and [deep linking](#sharing-and-deep-linking) all work as expected. They can also have layer panels, just like any other step.
 
 ## Layer panels
 
@@ -235,6 +250,24 @@ step,object,x,y,zoom,alt_text,question,answer
 ## Keyboard navigation
 
 Stories support keyboard navigation. Arrow keys, Space, and Page Up/Down scroll through the story, and the magnetic waypoints ensure each keypress lands on the next or previous step.
+
+When a panel is open, keyboard behavior changes: Arrow Up/Down and Page Up/Down scroll the panel content instead of navigating between steps. Space scrolls the panel forward, and Shift+Space scrolls it backward.
+
+## Sharing and deep linking
+
+Telar automatically updates the URL in the browser address bar as viewers scroll through a story. The URL encodes the current step and any open panel layer, so you can copy it and share a link that opens directly to a specific point in the story.
+
+The URL fragment uses a compact format:
+
+| Fragment | Meaning |
+|----------|---------|
+| `#s3` | Step 3 |
+| `#s3l1` | Step 3 with the first detail panel open |
+
+When someone opens a deep link, the story jumps directly to the encoded step and opens the panel if one is specified. This works with both desktop scroll navigation and mobile button navigation.
+
+{: .note }
+> The browser back button returns to the previous page — not the previous step. Deep links are designed for sharing positions, not for navigating within a story.
 
 ## Controlling story display
 

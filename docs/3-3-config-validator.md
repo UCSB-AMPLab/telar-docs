@@ -190,6 +190,7 @@ Your configuration is never sent to any server — everything runs in your brows
 
     // --- Tier 4: Helpful warnings ---
 
+    checkBooleanFields(config, '', ['collection_mode'], issues);
     checkInterfaces(config, issues);
     checkDevelopmentFeatures(config, issues);
     checkBuildSettings(config, issues);

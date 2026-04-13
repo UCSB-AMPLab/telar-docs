@@ -71,6 +71,7 @@ El paso 1 usa contenido en línea para la capa 1, mientras que el paso 2 usa una
 
 #### object / objeto
 - Debe coincidir con un `object_id` del objects.csv
+- Dejar vacío para crear una **tarjeta de título** — un paso de solo texto sin objeto asociado. Consulta [Historias y paneles](/guia/tu-contenido/historias-paneles/#tarjetas-de-título). **Actualizado en v1.1.0**
 - Varios pasos pueden hacer referencia al mismo objeto
 
 #### x, y, zoom

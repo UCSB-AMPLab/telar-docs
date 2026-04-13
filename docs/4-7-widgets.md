@@ -21,6 +21,7 @@ Telar includes an interactive widget system for rich content in story panels and
 | **Carousel** | Image slideshow with captions and credits |
 | **Tabs** | Switchable content panels for multiple perspectives |
 | **Accordion** | Collapsible sections for sequential or hierarchical content |
+| **Bibliography** | Scholarly citations with hanging-indent formatting |
 
 ## Widget Syntax
 
@@ -128,6 +129,31 @@ Bourbon reforms challenged existing power structures...
 - All panels start collapsed
 - Standard markdown formatting supported within panels
 - Minimum 2 panels, maximum 6 panels
+
+## Bibliography
+
+Format scholarly citations with standard hanging-indent styling. Each citation is separated by a blank line.
+
+**Available since v1.1.0.**
+
+### Syntax
+
+```markdown
+:::bibliography
+Cobo Betancourt, J. F. (2024). *The Coming of the Kingdom: The Muisca, Catholic Reform, and Spanish Colonialism in the New Kingdom of Granada*. Cambridge University Press.
+
+Cobo, N. (2021). Creating authority and promoting normative behaviour. In T. Duve, J. L. Egío, & C. Birr (Eds.), *The School of Salamanca: A Case of Global Knowledge Production* (pp. 210–244). Brill.
+
+Muñoz-Arbeláez, S. (2025). *The New Kingdom of Granada: The Making and Unmaking of Spain's Atlantic Empire*. Duke University Press.
+:::
+```
+
+### Structure
+
+- Each citation is separated by a blank line (double newline)
+- Standard markdown formatting works within entries (`*italics*` for titles, `**bold**`, links)
+- Renders with hanging-indent styling — the first line is flush left, continuation lines are indented
+- An empty bibliography block produces a build warning
 
 ## Where Widgets Work
 
@@ -238,6 +264,16 @@ image: after.jpg
 alt: Site photograph from 2020
 caption: The *Plaza Mayor* after archaeological restoration
 credit: National Institute of Anthropology
+:::
+```
+
+### Scholarly Citations
+
+```markdown
+:::bibliography
+Cobo Betancourt, J. F. (2024). *The Coming of the Kingdom*. Cambridge University Press.
+
+Muñoz-Arbeláez, S. (2025). *The New Kingdom of Granada*. Duke University Press.
 :::
 ```
 

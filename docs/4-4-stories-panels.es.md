@@ -62,8 +62,8 @@ step,object,x,y,zoom,question,answer,layer1_content
 Cada paso necesita:
 
 - **`step`** — Número secuencial (1, 2, 3...) sin saltos
-- **`object`** — Un `object_id` de la hoja de cálculo de objetos
-- **`x`**, **`y`**, **`zoom`** — Coordenadas del visor (ver abajo)
+- **`object`** — Un `object_id` de la hoja de cálculo de objetos. Dejar vacío para crear una [tarjeta de título](#tarjetas-de-título)
+- **`x`**, **`y`**, **`zoom`** — Coordenadas del visor (ver abajo). Se ignoran en tarjetas de título
 - **`question`** — El encabezado que se muestra en la tarjeta de texto
 - **`answer`** — Una respuesta breve debajo de la pregunta
 
@@ -78,6 +78,21 @@ Las coordenadas indican al visor dónde enfocar en cada paso. Todos los valores 
 Para encontrar coordenadas, usa el **selector de coordenadas** en cualquier página de objeto: amplía y desplázate hasta la región que deseas, luego haz clic en los botones **Copy** para copiar los valores x, y y zoom directamente a tu hoja de cálculo.
 
 ![Selector de coordenadas mostrando valores X, Y y Zoom debajo del visor de imágenes](/images/coordinate-picker.png)
+
+## Tarjetas de título
+
+Las tarjetas de título son pasos de solo texto, sin objeto asociado. Funcionan bien como encabezados de capítulo, separadores de sección o transiciones temáticas dentro de una historia.
+
+Para crear una tarjeta de título, deja vacía la columna `objeto`. Las columnas `x`, `y` y `zoom` se ignoran. El campo `pregunta` se convierte en el encabezado de la tarjeta y `respuesta` en el subtítulo.
+
+```csv
+paso,objeto,x,y,zoom,pregunta,respuesta
+1,textile-001,0.5,0.3,0.8,¿Qué es este textil?,Un fragmento colonial con patrones complejos de tejido.
+2,,,,,Capítulo 2: Rutas comerciales,El movimiento de textiles a través de las Américas.
+3,map-lima,0.5,0.5,1.0,¿Dónde se encontraron?,En el centro histórico de Lima.
+```
+
+Las tarjetas de título participan plenamente en la navegación — el desplazamiento, el teclado y los [enlaces profundos](#compartir-y-enlaces-profundos) funcionan como se espera. También pueden tener capas de paneles, igual que cualquier otro paso.
 
 ## Capas de los paneles
 
@@ -235,6 +250,24 @@ step,object,x,y,zoom,alt_text,question,answer
 ## Navegación por teclado
 
 Las historias admiten navegación por teclado. Las teclas de flecha, la barra espaciadora y Page Up/Page Down desplazan la historia, y los puntos de anclaje magnético aseguran que cada pulsación llegue al paso siguiente o anterior.
+
+Cuando un panel está abierto, el comportamiento del teclado cambia: Flecha Arriba/Abajo y Page Up/Page Down desplazan el contenido del panel en lugar de navegar entre pasos. La barra espaciadora desplaza el panel hacia adelante y Shift+Espacio lo desplaza hacia atrás.
+
+## Compartir y enlaces profundos
+
+Telar actualiza automáticamente la URL en la barra de direcciones del navegador a medida que se avanza por la historia. La URL codifica el paso actual y cualquier capa de panel abierta, de modo que se puede copiar y compartir un enlace que abra directamente un punto específico de la historia.
+
+El fragmento de la URL usa un formato compacto:
+
+| Fragmento | Significado |
+|-----------|-------------|
+| `#s3` | Paso 3 |
+| `#s3l1` | Paso 3 con el primer panel de detalle abierto |
+
+Al abrir un enlace profundo, la historia salta directamente al paso codificado y abre el panel si se especificó uno. Esto funciona tanto con la navegación por desplazamiento en escritorio como con la navegación por botones en dispositivos móviles.
+
+{: .note }
+> El botón de retroceso del navegador regresa a la página anterior — no al paso anterior. Los enlaces profundos están diseñados para compartir posiciones, no para navegar dentro de una historia.
 
 ## Controlar la visualización de las historias
 

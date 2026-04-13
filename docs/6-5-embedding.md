@@ -127,6 +127,9 @@ The embed code looks like this:
 </iframe>
 ```
 
+{: .tip }
+> To start an embedded story at a specific step, append a deep link fragment to the embed URL — for example, `?embed=true#s3` opens at step 3. See [Sharing and deep linking](/docs/your-content/stories-panels/#sharing-and-deep-linking) for the fragment format.
+
 ## Platform-Specific Instructions
 
 ### Canvas LMS

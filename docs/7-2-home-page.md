@@ -33,6 +33,28 @@ objects_intro: "Browse {count} objects featured in the stories."
 Your custom content goes here...
 ```
 
+## Collection mode
+
+By default, the homepage shows stories first with a sample of objects below. Collection mode reverses this — objects appear first in a large grid, with stories in a smaller grid below.
+
+Enable it in `_config.yml`:
+
+```yaml
+collection_mode: true
+```
+
+When collection mode is active:
+
+- **Objects grid**: Up to 8 objects displayed in a 4-column grid (2 columns on tablet, 1 on mobile). Objects are drawn from those marked as `featured` in `objects.csv`. If no objects are marked as featured, the first 8 objects are used
+- **Video and audio objects** show icon placeholders; image objects show IIIF thumbnails
+- A **View all objects** button links to the full gallery
+- **Stories grid**: All stories appear below in a smaller grid. The `show_on_homepage` setting in `story_interface` is ignored in collection mode — all stories are shown
+- The section heading — "Explore the collection" — comes from your site's language files, not from `index.md` frontmatter
+
+Collection mode works well for sites with a large number of objects and fewer stories, or for collection-first exhibitions where browsing objects is the primary entry point.
+
+**New in v1.1.0.** See [Configuration Reference](/docs/configure/configuration/#collection_mode) for the setting details.
+
 ## Frontmatter Options
 
 ### stories_heading

@@ -33,6 +33,28 @@ objects_intro: "Browse {count} objects featured in the stories."
 Tu contenido personalizado va aquí...
 ```
 
+## Modo colección
+
+De manera predeterminada, la página principal muestra las historias primero con una muestra de objetos debajo. El modo colección invierte este orden — los objetos aparecen primero en una cuadrícula grande, con las historias en una cuadrícula más pequeña debajo.
+
+Se activa en `_config.yml`:
+
+```yaml
+collection_mode: true
+```
+
+Cuando el modo colección está activo:
+
+- **Cuadrícula de objetos**: Hasta 8 objetos en una cuadrícula de 4 columnas (2 columnas en tableta, 1 en dispositivos móviles). Los objetos provienen de los marcados como `featured` en `objects.csv`. Si no hay objetos destacados, se usan los primeros 8
+- Los **objetos de video y audio** muestran íconos como marcadores de posición; los objetos de imagen muestran miniaturas IIIF
+- Un botón **View all objects** enlaza a la galería completa
+- **Cuadrícula de historias**: Todas las historias aparecen debajo en una cuadrícula más pequeña. El ajuste `show_on_homepage` en `story_interface` se ignora en modo colección — se muestran todas las historias
+- El encabezado de la sección — "Explora la colección" — proviene de los archivos de idioma del sitio, no del *frontmatter* de `index.md`
+
+El modo colección funciona bien para sitios con una gran cantidad de objetos y pocas historias, o para exhibiciones centradas en colecciones donde explorar objetos es el punto de entrada principal.
+
+**Nuevo en v1.1.0.** Consulta la [Referencia de configuración](/guia/configurar/configuracion/#collection_mode) para los detalles del ajuste.
+
 ## Opciones de front matter
 
 ### stories_heading

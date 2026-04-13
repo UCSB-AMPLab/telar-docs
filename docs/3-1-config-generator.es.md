@@ -116,6 +116,16 @@ Ingresa los datos de tu sitio para generar un archivo `_config.yml` listo para u
         <div class="cg-hint">Controla todos los elementos de la interfaz: navegación, botones, etiquetas, mensajes de error. Tu contenido permanece en el idioma en que lo escribas.</div>
       </div>
     </div>
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-collection-mode">
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-collection-mode">Modo colección</label>
+        <div class="cg-toggle-hint cg-hint">Cuando se activa, la página principal muestra los objetos primero en una cuadrícula grande, con las historias debajo. Cuando está desactivado (predeterminado), las historias aparecen primero.</div>
+      </div>
+    </div>
   </div>
 
   <!-- 2. Alojamiento -->
@@ -390,6 +400,7 @@ email: __EMAIL__
 telar_theme: __THEME__ # Options: paisajes, neogranadina, santa-barbara, austin, trama, or custom
 logo: __LOGO__ # Path to logo image (optional, max 80px tall, 200-300px wide recommended)
 telar_language: __LANGUAGE__ # Options: "en" (English), "es" (Español)
+collection_mode: %%COLLECTION_MODE%% # Set to true for objects-first homepage layout
 
 # Google Sheets Integration (optional)
 # Manage content via Google Sheets instead of editing CSV files directly.
@@ -754,6 +765,11 @@ development-features:
       if (gs.published_url !== undefined) {
         document.getElementById('cg-gsheets-published').value = String(gs.published_url);
       }
+    }
+
+    // Collection mode
+    if (config.collection_mode !== undefined) {
+      document.getElementById('cg-collection-mode').checked = !!config.collection_mode;
     }
 
     // Story interface
@@ -1184,6 +1200,8 @@ development-features:
     var theme = document.getElementById('cg-theme').value;
     var language = document.getElementById('cg-language').value;
 
+    var collectionMode = document.getElementById('cg-collection-mode').checked;
+
     var logoOn = document.getElementById('cg-logo-toggle').checked;
     var logoPath = logoOn ? document.getElementById('cg-logo-path').value.trim() : '';
 
@@ -1236,6 +1254,7 @@ development-features:
 
     // Boolean replacements
     output = output.replace('%%GSHEETS_ENABLED%%', gsheetsOn ? 'true' : 'false');
+    output = output.replace('%%COLLECTION_MODE%%', collectionMode ? 'true' : 'false');
     output = output.replace('%%SHOW_ON_HOMEPAGE%%', showOnHomepage ? 'true' : 'false');
     output = output.replace('%%SHOW_STORY_STEPS%%', showStorySteps ? 'true' : 'false');
     output = output.replace('%%SHOW_OBJECT_CREDITS%%', showObjectCredits ? 'true' : 'false');
