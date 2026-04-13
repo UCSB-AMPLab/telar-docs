@@ -71,6 +71,7 @@ Step 1 uses inline content for layer 1, while step 2 uses a file reference. Both
 
 #### object / objeto
 - Must match an `object_id` from objects.csv
+- Leave empty to create a **title card** — a text-only step with no associated object. See [Stories & Panels](/docs/your-content/stories-panels/#title-cards). **Updated in v1.1.0**
 - Multiple steps can reference the same object
 
 #### x, y, zoom
