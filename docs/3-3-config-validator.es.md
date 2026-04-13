@@ -191,6 +191,7 @@ Tu configuración nunca se envía a ningún servidor — todo se ejecuta en tu n
 
     // --- Nivel 4: Advertencias útiles ---
 
+    checkBooleanFields(config, '', ['collection_mode'], issues);
     checkInterfaces(config, issues);
     checkDevelopmentFeatures(config, issues);
     checkBuildSettings(config, issues);
