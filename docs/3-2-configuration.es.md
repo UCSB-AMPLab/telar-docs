@@ -27,7 +27,19 @@ email: tu-email@ejemplo.com
 telar_theme: "paisajes"  # Opciones: paisajes, neogranadina, santa-barbara, austin, o custom
 logo: ""  # Ruta a imagen de logo (opcional)
 telar_language: "en"  # Opciones: "en" (English), "es" (Español)
+collection_mode: false  # Ponlo en true para una página principal centrada en objetos
 ```
+
+### collection_mode
+
+Cambia el diseño de la página principal de historias primero (predeterminado) a objetos primero:
+
+- **`false` (predeterminado)**: Las historias aparecen primero en la página principal, con una muestra de objetos debajo
+- **`true`**: Los objetos aparecen primero en una cuadrícula grande (hasta 8), con las historias en una cuadrícula más pequeña debajo
+
+Este es un ajuste de nivel superior — no está anidado dentro de `collection_interface:`. Consulta [Personalizar la página de inicio](/guia/personalizacion/pagina-de-inicio/#modo-colección) para detalles del diseño.
+
+**Nuevo en v1.1.0.**
 
 ### baseurl vs. url
 
@@ -446,6 +458,7 @@ email: jane@ejemplo.com
 telar_theme: "paisajes"
 logo: ""
 telar_language: "es"
+collection_mode: false
 
 # Story Interface Settings
 story_interface:

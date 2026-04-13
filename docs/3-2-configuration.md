@@ -27,7 +27,19 @@ email: your-email@example.com
 telar_theme: "paisajes"  # Options: paisajes, neogranadina, santa-barbara, austin, or custom
 logo: ""  # Path to logo image (optional)
 telar_language: "en"  # Options: "en" (English), "es" (Español)
+collection_mode: false  # Set to true for objects-first homepage layout
 ```
+
+### collection_mode
+
+Switches the homepage layout from stories-first (default) to objects-first:
+
+- **`false` (default)**: Stories appear first on the homepage, with a sample of objects below
+- **`true`**: Objects appear first in a large grid (up to 8), with stories in a smaller grid below
+
+This is a top-level setting — not nested inside `collection_interface:`. See [Customizing the Home Page](/docs/customization/home-page/#collection-mode) for layout details.
+
+**New in v1.1.0.**
 
 ### baseurl vs. url
 
@@ -446,6 +458,7 @@ email: jane@example.com
 telar_theme: "paisajes"
 logo: ""
 telar_language: "en"
+collection_mode: false
 
 # Story Interface Settings
 story_interface:
