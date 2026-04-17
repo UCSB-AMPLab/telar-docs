@@ -53,21 +53,22 @@ Define las historias y su orden de visualización en la página principal.
 | `subtitle` | `subtitulo` | Sí | Descripción breve mostrada en las tarjetas de historia |
 | `byline` | `firma` | No | Atribución de autoría; admite markdown para enlaces y formato |
 | `protected` | `protegida` | No | Pon `yes` para encriptar esta historia (requiere `story_key` en la configuración) |
+| `show_sections` | `mostrar_secciones` | No | Pon `si` para mostrar una tabla de contenidos en la tarjeta de inicio de la historia. Consulta [Historias y paneles: Tabla de contenidos de secciones](/guia/tu-contenido/historias-paneles/#tabla-de-contenidos-de-secciones). **Nuevo en v1.2.0** |
 
 ### Ejemplo
 
 **Inglés:**
 ```csv
-order,story_id,title,subtitle,byline,protected
-1,colonial-textiles,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith,
-2,trade-routes,Trade Routes,Following the threads of commerce,based on [original research](https://example.com),yes
+order,story_id,title,subtitle,byline,protected,show_sections
+1,colonial-textiles,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith,,yes
+2,trade-routes,Trade Routes,Following the threads of commerce,based on [original research](https://example.com),yes,
 ```
 
 **Español:**
 ```csv
-orden,id_historia,titulo,subtitulo,firma,protegida
-1,textiles-coloniales,Textiles Coloniales,Tradiciones de tejido de las Américas,por Dra. María García,
-2,rutas-comerciales,Rutas Comerciales,Siguiendo los hilos del comercio,basado en [investigación original](https://ejemplo.com),si
+orden,id_historia,titulo,subtitulo,firma,protegida,mostrar_secciones
+1,textiles-coloniales,Textiles Coloniales,Tradiciones de tejido de las Américas,por Dra. María García,,si
+2,rutas-comerciales,Rutas Comerciales,Siguiendo los hilos del comercio,basado en [investigación original](https://ejemplo.com),si,
 ```
 
 ### Notas de los campos
@@ -114,6 +115,13 @@ orden,id_historia,titulo,subtitulo,firma,protegida
 - Déjalo vacío u omítelo para historias públicas
 - Consulta [Historias Privadas](/guia/funciones/historias-privadas/) para detalles
 
+#### show_sections
+- **Nuevo en v1.2.0**
+- Pon `si` para mostrar una tabla de contenidos navegable en la tarjeta de inicio
+- La tabla de contenidos genera enlaces automáticamente a cada tarjeta de título de la historia
+- Déjalo vacío u omítelo para mostrar la tarjeta de inicio sin tabla de contenidos
+- Consulta [Historias y paneles](/guia/tu-contenido/historias-paneles/#tabla-de-contenidos-de-secciones) para detalles
+
 ### Alias del CSV de proyecto
 
 | Normalizado | Acepta |
@@ -124,6 +132,7 @@ orden,id_historia,titulo,subtitulo,firma,protegida
 | `subtitle` | `subtitle`, `subtitulo` |
 | `byline` | `byline`, `firma` |
 | `protected` | `protected`, `protegida`, `private`, `privada` |
+| `show_sections` | `show_sections`, `mostrar_secciones` |
 
 ## Véase también
 
