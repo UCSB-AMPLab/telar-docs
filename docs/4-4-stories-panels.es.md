@@ -94,6 +94,23 @@ paso,objeto,x,y,zoom,pregunta,respuesta
 
 Las tarjetas de título participan plenamente en la navegación — el desplazamiento, el teclado y los [enlaces profundos](#compartir-y-enlaces-profundos) funcionan como se espera. También pueden tener capas de paneles, igual que cualquier otro paso.
 
+### Tabla de contenidos de secciones
+
+Si la historia usa tarjetas de título como encabezados de capítulo, se puede mostrar una tabla de contenidos navegable en la tarjeta de inicio. Actívala agregando `mostrar_secciones: si` (o `show_sections: yes`) en la fila de la historia en `project.csv`.
+
+Cuando está activada, la tarjeta de inicio recorre la historia en busca de tarjetas de título y las lista como enlaces clicables. Al hacer clic en un enlace se salta directamente a esa sección. La tarjeta de inicio también cambia a un fondo más oscuro (el color del panel de nivel 2) para distinguirla visualmente.
+
+{: .tip }
+> Si el primer capítulo comienza inmediatamente después de la tarjeta de inicio, crea también una tarjeta de título para ese capítulo. La tabla de contenidos solo lista las tarjetas de título que existan en el CSV de la historia — si el capítulo 1 no tiene tarjeta de título, no aparecerá en la tabla de contenidos.
+
+Consulta [Columnas del proyecto](/guia/tus-datos/csv-proyecto/) para la referencia de la columna `mostrar_secciones`.
+
+### Botón de volver al comienzo
+
+Cuando se avanza más allá de la tarjeta de inicio, el botón "Volver al inicio" en la esquina superior izquierda cambia a "Comienzo". Al hacer clic regresa a la tarjeta de inicio. En la tarjeta de inicio, el botón vuelve a mostrar "Volver al inicio" y enlaza a la página principal.
+
+Esto es automático — no requiere configuración.
+
 ## Capas de los paneles
 
 Cada paso puede tener hasta tres capas de detalle, siguiendo el patrón QAI (pregunta, respuesta, invitación). La pregunta y la respuesta aparecen en la tarjeta de texto. Las capas se expanden desde la tarjeta cuando se hace clic en los botones de invitación:
