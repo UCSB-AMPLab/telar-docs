@@ -94,6 +94,23 @@ step,object,x,y,zoom,question,answer
 
 Title cards participate fully in navigation — scroll, keyboard, and [deep linking](#sharing-and-deep-linking) all work as expected. They can also have layer panels, just like any other step.
 
+### Section table of contents
+
+If your story uses title cards as chapter headings, you can display a navigable table of contents on the intro card. Enable it by adding `show_sections: yes` (or `mostrar_secciones: si`) to the story's row in `project.csv`.
+
+When enabled, the intro card scans the story for title cards and lists each one as a clickable link. Clicking a link jumps directly to that section. The intro card also switches to a darker background (the layer 2 panel color) to visually distinguish it.
+
+{: .tip }
+> If your first chapter starts immediately after the intro, create a title card for it too. The TOC only lists title cards that exist in your story CSV — if chapter 1 has no title card, it won't appear in the table of contents.
+
+See [Project Columns](/docs/your-data/csv-project/) for the `show_sections` column reference.
+
+### Back to Start button
+
+When a reader scrolls past the intro card, the "Back to Home" button in the top-left corner switches to "Back to Start". Clicking it returns to the intro card. On the intro card, the button reverts to "Back to Home" and links to the homepage.
+
+This is automatic — no configuration needed.
+
 ## Layer panels
 
 Each step can have up to three layers of detail, following the QAI pattern (question, answer, invitation). The question and answer appear in the text card itself. Layers expand from the text card when the viewer clicks the invitation buttons:

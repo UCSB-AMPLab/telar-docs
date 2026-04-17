@@ -53,21 +53,22 @@ Defines stories and their display order on the homepage.
 | `subtitle` | `subtitulo` | Yes | Brief description shown on story cards |
 | `byline` | `firma` | No | Author attribution; supports markdown for links and formatting |
 | `protected` | `protegida` | No | Set to `yes` to encrypt this story (requires `story_key` in config) |
+| `show_sections` | `mostrar_secciones` | No | Set to `yes` to display a table of contents on the story's intro card. See [Stories & Panels: Section table of contents](/docs/your-content/stories-panels/#section-table-of-contents). **New in v1.2.0** |
 
 ### Example
 
 **English:**
 ```csv
-order,story_id,title,subtitle,byline,protected
-1,colonial-textiles,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith,
-2,trade-routes,Trade Routes,Following the threads of commerce,based on [original research](https://example.com),yes
+order,story_id,title,subtitle,byline,protected,show_sections
+1,colonial-textiles,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith,,yes
+2,trade-routes,Trade Routes,Following the threads of commerce,based on [original research](https://example.com),yes,
 ```
 
 **Spanish:**
 ```csv
-orden,id_historia,titulo,subtitulo,firma,protegida
-1,textiles-coloniales,Textiles Coloniales,Tradiciones de tejido de las Américas,por Dra. María García,
-2,rutas-comerciales,Rutas Comerciales,Siguiendo los hilos del comercio,basado en [investigación original](https://ejemplo.com),si
+orden,id_historia,titulo,subtitulo,firma,protegida,mostrar_secciones
+1,textiles-coloniales,Textiles Coloniales,Tradiciones de tejido de las Américas,por Dra. María García,,si
+2,rutas-comerciales,Rutas Comerciales,Siguiendo los hilos del comercio,basado en [investigación original](https://ejemplo.com),si,
 ```
 
 ### Field Notes
@@ -114,6 +115,13 @@ orden,id_historia,titulo,subtitulo,firma,protegida
 - Leave empty or omit for public stories
 - See [Private Stories](/docs/site-features/private-stories/) for details
 
+#### show_sections
+- **New in v1.2.0**
+- Set to `yes` to display a navigable table of contents on the intro card
+- The TOC auto-generates links to every title card in the story
+- Leave empty or omit to show the intro card without a TOC
+- See [Stories & Panels](/docs/your-content/stories-panels/#section-table-of-contents) for details
+
 ### Column Aliases
 
 | Normalized | Accepts |
@@ -124,6 +132,7 @@ orden,id_historia,titulo,subtitulo,firma,protegida
 | `subtitle` | `subtitle`, `subtitulo` |
 | `byline` | `byline`, `firma` |
 | `protected` | `protected`, `protegida`, `private`, `privada` |
+| `show_sections` | `show_sections`, `mostrar_secciones` |
 
 ## See Also
 
