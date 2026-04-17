@@ -66,8 +66,8 @@ callouts:
     color: yellow
 
 # Telar framework version (used across the docs site)
-telar_version: "1.1.0"
-telar_release_date: "2026-04-12"
+telar_version: "1.2.0"
+telar_release_date: "2026-04-16"
 
 # Build settings
 markdown: kramdown
