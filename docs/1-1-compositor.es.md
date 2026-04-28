@@ -36,7 +36,7 @@ Haz clic en **Crear un sitio nuevo**, escribe un nombre para el repositorio — 
 
 Si ya creaste un repositorio a partir de la [plantilla de Telar](https://github.com/UCSB-AMPLab/telar) o tienes un sitio Telar existente, selecciónalo de la lista y el Compositor importará tu contenido.
 
-<details>
+<details markdown="1">
 <summary><strong>Configuración manual: crea un repositorio en GitHub primero</strong></summary>
 
 Si prefieres crear el repositorio tú mismo antes de conectarlo:
