@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- `LICENSE` file (Creative Commons Attribution 4.0 International / CC BY 4.0) and `CITATION.cff` with author and ORCID metadata.
+- License section in README.
+
 ### Changed
 - Updated version to v1.0.0-beta
 - Updated version to v0.9.2-beta (centralised variables in _config.yml)

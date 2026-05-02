@@ -88,3 +88,7 @@ Telar is built with:
 It is based on [Paisajes Coloniales](https://paisajescoloniales.com/), and inspired by:
 - [Wax](https://minicomp.github.io/wax/) - Minimal computing for digital exhibitions
 - [CollectionBuilder](https://collectionbuilder.github.io/) - Static digital collections
+
+## License
+
+The Telar documentation site is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE). You are free to share and adapt the content, including for commercial use, as long as you give appropriate credit and indicate if changes were made.

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: Telar Documentation
+message: "If you cite or reuse this documentation, please use the metadata in this file."
+type: software
+authors:
+  - given-names: Adelaida
+    family-names: Ávila
+  - given-names: Juan
+    family-names: Cobo Betancourt
+    orcid: "https://orcid.org/0000-0003-4776-0261"
+  - given-names: Natalie
+    family-names: Cobo
+  - given-names: Santiago
+    family-names: Muñoz Arbeláez
+    orcid: "https://orcid.org/0000-0001-7203-3918"
+repository-code: "https://github.com/UCSB-AMPLab/telar-docs"
+url: "https://telar.org/docs"
+abstract: "Official documentation site for Telar, a minimal-computing framework for creating layered IIIF visual narratives."
+license: CC-BY-4.0
