@@ -10,7 +10,7 @@ permalink: /docs/developers/mobile/
 
 # Mobile Optimization
 
-Telar v0.4.0+ includes comprehensive mobile and tablet responsiveness, ensuring your narrative exhibitions work beautifully on all screen sizes.
+Telar includes comprehensive mobile and tablet responsiveness, ensuring your narrative exhibitions work beautifully on all screen sizes. The responsive system was rebuilt in v1.4.0 around CSS cascade layers, a single set of breakpoints, and dynamic viewport units for stable heights on iOS Safari.
 
 ## Responsive Design Overview
 
@@ -24,6 +24,10 @@ Telar uses a mobile-first responsive design approach with:
 ## Story Viewer on Mobile
 
 The story viewing experience is specially optimized for mobile devices:
+
+### When the vertical layout activates
+
+Telar switches from the desktop layout (narrative overlaid on the viewer) to the vertical, card-stack layout when the viewport is **narrower than 1024px** or has an **aspect ratio narrower than 3:4**. The aspect-ratio trigger means portrait tablets get the vertical layout even when they are wider than 1024px.
 
 ### Layout Adaptations
 
@@ -50,25 +54,16 @@ When navigating between story steps on mobile, a subtle shimmer animation appear
 **Faster Transitions:**
 Mobile uses fade-only transitions without slide animations for quicker navigation.
 
-### Height-Based Responsive Tiers
+### Compact layout for short viewports
 
-Telar uses a 4-tier system that adapts to both width and height:
+On short viewports — a height of 600px or less, which covers very small phones and most phones in landscape — Telar applies a single compact layout: reduced type sizes and tighter spacing across page content, the collection grid, panels, and navigation. This is triggered by viewport height alone, so it applies regardless of width.
 
-**Tier 1 (≤700px height)**
-- 10-15% typography reduction
-- Maintains full feature set
+### iOS Safari and notch support
 
-**Tier 2 (≤667px height - iPhone SE)**
-- 20-25% typography reduction
-- 55vh:45vh viewer-to-panel ratio
-- Optimized for smaller smartphones
-
-**Tier 3 (≤600px height)**
-- 30-35% typography reduction
-- Maximum compression for very small devices
-
-**Dual-Axis Detection:**
-These tiers only trigger on narrow screens (width < 768px) to avoid affecting short desktop windows.
+- **Stable heights on iOS Safari:** key layout heights use dynamic viewport units (`dvh`) with a `vh` fallback, so the layout no longer jumps when Safari's address bar appears or disappears on scroll.
+- **Notch safe areas:** the credits badge, mobile navigation buttons, and mobile text card clear the device notch and home indicator, verified on iPhone in both portrait and landscape.
+- **Touch-accurate hover:** hover styles apply only on devices with a fine pointer (`@media (hover: hover) and (pointer: fine)`), so hover effects no longer stick after a tap on touchscreens.
+- **Reduced motion:** when the operating system requests reduced motion, smooth scrolling and viewer pan/zoom animations are disabled.
 
 ## Panel Optimization
 
@@ -246,7 +241,6 @@ All themes maintain WCAG AA color contrast ratios on both desktop and mobile.
 ### Mobile Story Navigation
 
 - Very small screens (<360px width) may have cramped layouts
-- Landscape orientation on phones is not optimized
 - Complex IIIF coordinates may need adjustment for mobile viewing
 
 ### Browser Variations

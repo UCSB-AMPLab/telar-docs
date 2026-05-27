@@ -81,7 +81,7 @@ We gratefully acknowledge the support of the [Caribbean Digital Scholarship Coll
 
 Telar is built with:
 - [Jekyll](https://jekyllrb.com/) - Static site generator
-- [Tify](https://tify.rocks/) - IIIF viewer
+- [OpenSeadragon](https://openseadragon.github.io/) - IIIF viewer
 - [Bootstrap 5](https://getbootstrap.com/) - CSS framework
 - [libvips](https://www.libvips.org/) - IIIF tile generator
 

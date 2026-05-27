@@ -165,32 +165,37 @@ Edit reusable components in `_includes/`:
 
 ## Responsive Design
 
-Override breakpoints and responsive behavior:
+Telar's story layout switches to its vertical, card-stack layout when the viewport is narrower than 1024px or has an aspect ratio narrower than 3:4 (see [Mobile Optimization](/docs/developers/mobile/) for details). When you add responsive rules to your own components, match those breakpoints so your styles change in step with the layout:
 
 ```scss
-// Mobile
-// Note: Story layout uses a full-viewport card-stack, not a split-column layout.
-// These overrides target non-story containers.
-@media (max-width: 768px) {
-  .story-container {
+// Vertical (card-stack) layout: narrow width OR portrait-ish aspect ratio.
+// Note: the story layout itself is a full-viewport card-stack, not a
+// split-column layout — these overrides target your own containers.
+@media (max-width: 1024px), (max-aspect-ratio: 3 / 4) {
+  .my-block {
     flex-direction: column;
   }
 }
 
-// Tablet
-@media (min-width: 769px) and (max-width: 1024px) {
-  .story-step {
-    padding: 2rem;
-  }
-}
-
-// Desktop
+// Wide (desktop) layout
 @media (min-width: 1025px) {
-  .story-step {
+  .my-block {
     max-width: 600px;
   }
 }
 ```
+
+## Cascade Layers
+
+As of v1.4.0, Telar's styles are organized into CSS cascade layers, declared in this order:
+
+```
+reset, third-party, telar-base, telar-bootstrap-overrides, telar-components, telar-overrides
+```
+
+Bootstrap loads into the `third-party` layer and Telar's own styles load into the later layers, so Telar reliably overrides Bootstrap without needing `!important`.
+
+This also helps your own customizations: **unlayered CSS always wins over layered CSS**, regardless of selector specificity. Any plain CSS rule you add outside of these layers takes precedence over Telar's styles, so you can usually override appearance without reaching for `!important`. If a custom rule unexpectedly fails to apply, check that it isn't being pulled into one of Telar's layers.
 
 ## JavaScript Customization
 

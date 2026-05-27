@@ -450,12 +450,12 @@ If buttons are not visible, check that `body.embed-mode` class is applied.
 
 **IIIF viewer not displaying:**
 
-Tify fails to load in iframe:
+The image viewer fails to load in the iframe:
 
-1. Check if Tify scripts are loading:
+1. Check if OpenSeadragon loaded:
    ```javascript
    // In browser console
-   typeof Tify
+   typeof OpenSeadragon
    ```
 2. Verify IIIF manifest URL is accessible
 3. Check for Content Security Policy (CSP) restrictions in host site
