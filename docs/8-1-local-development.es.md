@@ -396,12 +396,12 @@ Si los botones no son visibles, verifica que la clase `body.embed-mode` esté ap
 
 **El visor IIIF no se muestra:**
 
-Tify no carga en el iframe:
+El visor de imágenes no carga en el iframe:
 
-1. Verifica si los scripts de Tify se están cargando:
+1. Verifica si OpenSeadragon se cargó:
    ```javascript
    // En la consola del navegador
-   typeof Tify
+   typeof OpenSeadragon
    ```
 2. Verifica que la URL del manifiesto IIIF sea accesible
 3. Verifica restricciones de Content Security Policy (CSP) en el sitio anfitrión

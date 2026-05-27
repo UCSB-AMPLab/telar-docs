@@ -165,32 +165,37 @@ Edita componentes reutilizables en `_includes/`:
 
 ## Diseño adaptable
 
-Ajusta los breakpoints y el comportamiento adaptable:
+El diseño de historias de Telar cambia a su disposición vertical de tarjetas apiladas cuando la ventana mide menos de 1024px de ancho o tiene una relación de aspecto menor que 3:4 (consulta [Optimización móvil](/guia/desarrolladores/moviles/) para más detalles). Cuando agregues reglas adaptables a tus propios componentes, usa esos mismos puntos de quiebre (*breakpoints*) para que tus estilos cambien al mismo tiempo que el diseño:
 
 ```scss
-// Móvil
-// Nota: Las historias usan un diseño de tarjetas apiladas a pantalla completa,
-// no una disposición en columnas. Estos ajustes aplican a otros contenedores.
-@media (max-width: 768px) {
-  .story-container {
+// Disposición vertical (tarjetas apiladas): ancho reducido O relación de aspecto vertical.
+// Nota: las historias usan un diseño de tarjetas apiladas a pantalla completa,
+// no una disposición en columnas — estos ajustes aplican a tus propios contenedores.
+@media (max-width: 1024px), (max-aspect-ratio: 3 / 4) {
+  .my-block {
     flex-direction: column;
   }
 }
 
-// Tablet
-@media (min-width: 769px) and (max-width: 1024px) {
-  .story-step {
-    padding: 2rem;
-  }
-}
-
-// Escritorio
+// Disposición amplia (escritorio)
 @media (min-width: 1025px) {
-  .story-step {
+  .my-block {
     max-width: 600px;
   }
 }
 ```
+
+## Capas de cascada
+
+Desde la v1.4.0, los estilos de Telar se organizan en capas de cascada CSS, declaradas en este orden:
+
+```
+reset, third-party, telar-base, telar-bootstrap-overrides, telar-components, telar-overrides
+```
+
+Bootstrap se carga en la capa `third-party` y los estilos propios de Telar se cargan en las capas posteriores, así que los estilos de Telar prevalecen sobre Bootstrap de manera confiable, sin necesidad de `!important`.
+
+Esto también facilita tus personalizaciones: **el CSS sin capa siempre prevalece sobre el CSS con capa**, sin importar la especificidad del selector. Cualquier regla de CSS común que agregues por fuera de estas capas tiene prioridad sobre los estilos de Telar, así que casi siempre puedes cambiar la apariencia sin recurrir a `!important`. Si una regla personalizada no se aplica como esperas, revisa que no haya quedado dentro de alguna de las capas de Telar.
 
 ## Personalización de JavaScript
 

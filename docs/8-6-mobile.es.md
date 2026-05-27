@@ -10,7 +10,7 @@ permalink: /guia/desarrolladores/moviles/
 
 # Optimización móvil
 
-Telar v0.4.0+ incluye una adaptación completa para móviles y tabletas, para que las exposiciones narrativas funcionen bien en cualquier tamaño de pantalla.
+Telar incluye una adaptación completa para móviles y tabletas, para que las exhibiciones narrativas funcionen bien en cualquier tamaño de pantalla. En la v1.4.0 reconstruimos el sistema adaptable: ahora se apoya en capas de cascada CSS, un único conjunto de puntos de quiebre y unidades dinámicas de viewport para mantener alturas estables en Safari de iOS.
 
 ## Panorama del diseño adaptable
 
@@ -24,6 +24,10 @@ Telar aplica un enfoque de diseño centrado primero en móviles con:
 ## Visor de historias en móviles
 
 La experiencia del visor de historias está especialmente optimizada para dispositivos móviles:
+
+### Cuándo se activa el diseño vertical
+
+Telar pasa del diseño de escritorio (con la narración superpuesta sobre el visor) al diseño vertical de tarjetas apiladas cuando la ventana mide menos de 1024px de ancho o tiene una relación de aspecto menor que 3:4. Gracias a la condición de relación de aspecto, las tabletas en orientación vertical adoptan el diseño vertical incluso cuando superan los 1024px de ancho.
 
 ### Adaptaciones de diseño
 
@@ -48,24 +52,16 @@ La rotación de tarjetas (el efecto de ligero "desorden") se reduce a la mitad e
 
 **Transiciones más rápidas:** En móviles se usan transiciones solo con fundidos, sin animaciones de deslizamiento, para acelerar la navegación.
 
-### Niveles adaptativos basados en altura
+### Diseño compacto para ventanas de poca altura
 
-Telar usa un sistema de cuatro niveles que se adapta tanto al ancho como a la altura de la pantalla:
+En ventanas de poca altura —600px o menos, lo que cubre los teléfonos muy pequeños y la mayoría de los teléfonos en orientación horizontal— Telar aplica un único diseño compacto: reduce los tamaños de letra y ajusta el espaciado en el contenido de la página, la cuadrícula de la colección, los paneles y la navegación. Lo activa únicamente la altura de la ventana, así que se aplica sin importar el ancho.
 
-**Nivel 1 (≤700px de alto)**
-- Reducción de tipografía del 10-15%
-- Mantiene todas las funciones activas
+### Safari de iOS y áreas seguras
 
-**Nivel 2 (≤667px de alto - iPhone SE)**
-- Reducción de tipografía del 20-25%
-- Relación visor-panel de 55vh:45vh
-- Optimizado para teléfonos pequeños
-
-**Nivel 3 (≤600px de alto)**
-- Reducción de tipografía del 30-35%
-- Compresión máxima para dispositivos muy pequeños
-
-**Detección de doble eje:** Estos niveles solo se activan en pantallas estrechas (ancho < 768px) para evitar afectar ventanas bajas en escritorio.
+- **Alturas estables en Safari de iOS:** las alturas principales del diseño usan unidades dinámicas de viewport (`dvh`), con `vh` como alternativa, de modo que el diseño ya no salta cuando la barra de direcciones de Safari aparece o se oculta al desplazarse.
+- **Áreas seguras para la muesca:** la insignia de créditos, los botones de navegación en móvil y la tarjeta de texto en móvil dejan libre la muesca y el indicador de inicio del dispositivo; lo verificamos en iPhone en orientación vertical y horizontal.
+- **Hover según el tipo de puntero:** los estilos *hover* se aplican solo en dispositivos con puntero de precisión (`@media (hover: hover) and (pointer: fine)`), de modo que ya no quedan activos después de tocar una pantalla táctil.
+- **Movimiento reducido:** cuando el sistema operativo solicita movimiento reducido, Telar desactiva el desplazamiento suave y las animaciones de panorámica y zoom del visor.
 
 ## Optimización de paneles
 
@@ -243,7 +239,6 @@ Todos los temas mantienen relaciones de contraste WCAG AA tanto en escritorio co
 ### Navegación de historias en móviles
 
 - Pantallas muy pequeñas (<360px de ancho) pueden sentirse saturadas
-- La orientación horizontal en teléfonos no está optimizada
 - Algunas coordenadas IIIF complejas pueden requerir ajustes para móviles
 
 ### Variaciones entre navegadores

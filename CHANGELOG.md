@@ -4,6 +4,18 @@ All notable changes to Telar Documentation will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.4.0] - 2026-05-26
+
+### Changed
+- Updated documented version to v1.4.0.
+- Replaced Tify references with OpenSeadragon across the docs (credits, local-development troubleshooting, embedding system).
+- Rewrote the mobile responsive documentation for the v1.4.0 layout system: the vertical layout now activates below 1024px width or below a 3:4 aspect ratio, and the former four-tier height system is now a single compact layout for short viewports.
+- Updated the styling guide's responsive breakpoint guidance.
+
+### Added
+- "Cascade Layers" section in the styling guide.
+- Documentation of iOS Safari stability (`dvh` heights), notch safe-area support, pointer-aware hover, and reduced-motion behavior.
+
 ## [Unreleased]
 
 ### Added
