@@ -29,7 +29,7 @@ Each step:
 
 1. Focuses the viewer on a specific region of an object (using x, y, and zoom coordinates for images, or clip times for video and audio)
 2. Displays a **question** and a brief **answer** in the text card
-3. Optionally offers up to three layers of additional detail via expandable buttons
+3. Optionally offers up to two layers of additional detail via expandable buttons
 
 ## Registering stories
 
@@ -113,20 +113,19 @@ This is automatic — no configuration needed.
 
 ## Layer panels
 
-Each step can have up to three layers of detail, following the QAI pattern (question, answer, invitation). The question and answer appear in the text card itself. Layers expand from the text card when the viewer clicks the invitation buttons:
+Each step can carry up to two layers of additional detail, following the QAI pattern (question, answer, invitation). The question and answer appear in the text card itself. The invitation is the set of panel trigger buttons that let viewers open expandable panels for deeper content:
 
 | Layer | Default button text | Purpose |
 |-------|-------------------|---------|
-| Layer 1 | "Learn more" | Primary detail |
-| Layer 2 | "Go deeper" | Extended analysis |
-| Layer 3 | (default) | Deepest level |
+| Layer 1 | "Learn more" | Primary detail panel |
+| Layer 2 | "Go deeper" | Secondary detail panel, stacked on top of Layer 1 |
 
-For each layer, you can customize two things:
+For each layer, add two columns to your story spreadsheet:
 
-- **Button text** (`layer1_button`) — Leave empty for the default, or provide custom text like "See the technique" or "Read the source"
-- **Content** (`layer1_content`) — The panel content itself
+- **Button text** (`layer1_button`, `layer2_button`) — Leave empty for the default, or provide custom text such as "See the technique" or "Read the source"
+- **Content** (`layer1_content`, `layer2_content`) — The panel content itself
 
-If a layer has no content, its button is hidden automatically.
+If a layer has no content, its button is hidden automatically. Layer 2 is accessed from inside Layer 1 — its trigger button is rendered at the bottom of the Layer 1 panel, not on the main text card.
 
 ## Writing panel content
 

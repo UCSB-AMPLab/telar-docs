@@ -209,19 +209,19 @@ Add these to your objects.csv if you want gallery filtering and sorting:
 
 ## Validation
 
-Telar validates object CSV data during build:
+Telar checks object CSV data during build and prints messages to the build log.
 
-**Errors (build fails)**:
-- Missing required columns (`object_id`, `title`)
-- Duplicate `object_id` values
+**What the build checks**:
+- Rows with an empty `object_id` are silently dropped.
+- Each object must have either a `source_url` pointing to a valid IIIF manifest, or a matching local image file in `telar-content/objects/`. Missing or unreachable sources produce a warning; the object is still written to the output.
+- Thumbnail values that are not image paths (for example, "n/a" or "none") are cleared with a warning.
+- Object IDs that contain spaces produce a warning, as spaces may cause issues with file paths.
 
-**Warnings (build succeeds)**:
-- Missing optional columns
-- Empty descriptions
-- Unrecognized column names (ignored)
-- Missing thumbnails
+**What the build does not enforce**:
+- Missing or duplicate `object_id` values do not stop the build. Rows with no `object_id` are dropped without a message; duplicate IDs are not detected, and the last row wins when collection files are generated.
+- A missing or empty `title` does not stop the build; the object is output with a blank title.
 
-Check build output for validation messages.
+All warnings appear in the build log. Review the output for messages marked `[WARN]` to catch data problems before publishing.
 
 ## See Also
 

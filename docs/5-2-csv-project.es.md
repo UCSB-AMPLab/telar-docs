@@ -50,7 +50,7 @@ Define las historias y su orden de visualización en la página principal.
 | `order` | `orden` | Sí | Orden de visualización en la página principal (1, 2, 3...) |
 | `story_id` | `id_historia` | No | Identificador semántico (ej., `textiles-coloniales`). Si se omite, usa `story-{order}` |
 | `title` | `titulo` | Sí | Título de la historia mostrado en la página principal y en la historia |
-| `subtitle` | `subtitulo` | Sí | Descripción breve mostrada en las tarjetas de historia |
+| `subtitle` | `subtitulo` | No | Descripción breve mostrada en las tarjetas de historia |
 | `byline` | `firma` | No | Atribución de autoría; admite markdown para enlaces y formato |
 | `protected` | `protegida` | No | Pon `yes` para encriptar esta historia (requiere `story_key` en la configuración) |
 | `show_sections` | `mostrar_secciones` | No | Pon `si` para mostrar una tabla de contenidos en la tarjeta de inicio de la historia. Consulta [Historias y paneles: Tabla de contenidos de secciones](/guia/tu-contenido/historias-paneles/#tabla-de-contenidos-de-secciones). **Nuevo en v1.2.0** |

@@ -27,7 +27,7 @@ If your site is already running Telar v0.3.4 or later, upgrading is fully automa
 
 The upgrade system:
 1. Detects your current Telar version from `_config.yml`
-2. Applies all necessary migrations incrementally (e.g., v0.3.4 → v0.3.5 → v0.3.6)
+2. Applies all necessary migrations incrementally (e.g., v0.3.4 → v0.3.5 → v0.3.6). Note: there is a known gap in the migration chain at v0.4.2-beta — sites pinned at that exact version may not upgrade cleanly. A fix is in progress; if you are affected, [open an issue](https://github.com/UCSB-AMPLab/telar/issues).
 3. Updates framework files and configurations
 4. Creates an upgrade branch and issue with detailed summary
 5. Highlights any manual steps you need to complete
@@ -58,6 +58,66 @@ The upgrade system:
 3. If you have custom themes or modifications, test them thoroughly
 4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
 5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
+
+### v1.4.0 Upgrade Notes
+
+v1.4.0 is a runtime-only upgrade. Existing stories, objects, and configuration continue to work unchanged — no CSV edits, no config changes, and no workflow updates are required.
+
+**Viewer change — Tify replaced by OpenSeadragon:**
+
+The IIIF image viewer has changed from Tify (loaded from a CDN) to a custom OpenSeadragon wrapper (vendored locally). For most sites this is invisible: IIIF images continue to display and zoom. If your site has a customized `_sass/_viewer.scss` that overrode Tify styles, those overrides are now inert and can be removed, but they will not break the build.
+
+**Language pack — six new `object.viewer.*` keys:**
+
+Six new keys are added to the built-in language files (`en.yml` and `es.yml`): `object.viewer.prev_page`, `object.viewer.next_page`, `object.viewer.page_input_label`, `object.viewer.page_input_aria`, `object.viewer.image_unavailable_title`, and `object.viewer.image_unavailable_detail`. These drive the multi-page pagination chrome and the error fallback UI in the new viewer.
+
+If you have a customized language file (a copy of `en.yml` or `es.yml` with your own translations), you will need to add these six keys manually after upgrading, or the viewer pagination and error messages will fall back to the built-in English strings. Copy the values from the updated `_data/languages/en.yml` (or `es.yml`) in the Telar repository and translate as needed.
+
+**If you only use GitHub's web interface:**
+
+No manual steps are required. The upgrade handles all file replacements automatically.
+
+### v1.3.0 Upgrade Notes
+
+v1.3.0 fixes i18n coverage across the site and introduces a sister-file convention for localizing user pages. No CSV changes are required.
+
+**Automated content migration — hash-gated page rewrites:**
+
+The upgrade migration rewrites four user-content files (`index.md`, `pages/glossary.md`, `pages/objects.md`, `telar-content/texts/pages/about.md`) to use the new lang-key templates — but only if each file is byte-for-byte identical to the v1.2.1 default. Any customized content is preserved untouched. For Spanish-language sites whose `about.md` is unchanged from the v1.2.1 default, the migration also creates `telar-content/texts/pages/acerca.md` automatically.
+
+**New language keys — `lang.index_page.welcome` and `lang.pages.glossary_intro`:**
+
+Two new keys are added to the built-in language files. If you have a customized language file, you do not need to add them immediately — the layouts use fallback guards — but adding them gives you control over the homepage welcome text and glossary intro sentence in the site's active language.
+
+**If you only use GitHub's web interface:**
+
+No manual steps are required beyond reviewing the automatically created upgrade issue for any files flagged as not matching the default (meaning your customizations were detected and preserved).
+
+### v1.2.1 Upgrade Notes
+
+v1.2.1 is a patch release. No manual steps are required.
+
+The upgrade fixes a silent failure in the demo content fetch script that affected sites whose `_config.yml` carried a v-prefixed version string (e.g. `version: "v1.2.0"`). If your site showed no demo content after a previous upgrade, this patch resolves it. No config edits are needed; the fix is in the build script.
+
+### v1.2.0 Upgrade Notes
+
+v1.2.0 adds a section table of contents, a Back to Start button, and in-story navigation. No manual steps are required.
+
+All new features activate automatically. The section TOC is opt-in per story: add `show_sections: yes` to a story's row in `project.csv` (or `mostrar_secciones: si` for Spanish-language sites) to display it. Sites without this column continue to work without any CSV changes.
+
+**If you only use GitHub's web interface:**
+
+No action required.
+
+### v1.1.0 Upgrade Notes
+
+v1.1.0 adds deep linking, title cards, collection mode, bibliography styling, and a share panel position tab. No manual steps are required.
+
+Deep linking and the updated share panel activate automatically. Collection mode is opt-in: set `collection_mode: true` in `_config.yml` to switch the homepage layout. The default is `false`, so existing sites are unaffected. Title cards use existing CSV rows with an empty object field — no new columns required. Bibliography styling is a new markdown widget (`:::bibliography`) available in panel content.
+
+**If you only use GitHub's web interface:**
+
+No action required.
 
 ### v1.0.0-beta Upgrade Notes
 

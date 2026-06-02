@@ -27,7 +27,7 @@ Si tu sitio ya está en Telar v0.3.4 o posterior, el proceso de actualización e
 
 El sistema de actualización:
 1. Detecta tu versión actual de Telar desde `_config.yml`
-2. Aplica todas las migraciones necesarias de manera incremental (ej., v0.3.4 → v0.3.5 → v0.3.6)
+2. Aplica todas las migraciones necesarias de manera incremental (ej., v0.3.4 → v0.3.5 → v0.3.6). Nota: existe una falla conocida en la cadena de migraciones en la v0.4.2-beta; los sitios fijados exactamente en esa versión podrían no actualizarse de forma limpia. Hay una corrección en curso; si te afecta, [abre un *issue*](https://github.com/UCSB-AMPLab/telar/issues).
 3. Actualiza los archivos del marco y la configuración
 4. Crea una rama de actualización y un *issue* con resumen detallado
 5. Destaca cualquier paso manual que necesites completar
@@ -73,6 +73,66 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 5. Confirma el cambio
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
+
+### Notas de actualización a v1.4.0
+
+v1.4.0 es una actualización que solo afecta el código de ejecución del sitio. Las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios: no hace falta editar los CSV, ni cambiar la configuración, ni actualizar los flujos de trabajo.
+
+**Cambio de visor: OpenSeadragon reemplaza a Tify.**
+
+El visor de imágenes IIIF pasó de Tify (que se cargaba desde un CDN) a un visor propio basado en OpenSeadragon, alojado localmente. Para la mayoría de los sitios esto es imperceptible: las imágenes IIIF se siguen mostrando y ampliando. Si tu sitio tiene un `_sass/_viewer.scss` personalizado que sobrescribía los estilos de Tify, esas reglas quedan sin efecto y puedes eliminarlas, aunque no romperán la *build* si las dejas.
+
+**Archivo de idioma: seis claves nuevas `object.viewer.*`.**
+
+Se agregan seis claves nuevas a los archivos de idioma incluidos (`en.yml` y `es.yml`): `object.viewer.prev_page`, `object.viewer.next_page`, `object.viewer.page_input_label`, `object.viewer.page_input_aria`, `object.viewer.image_unavailable_title` y `object.viewer.image_unavailable_detail`. Estas claves se usan en los controles de paginación para objetos de varias páginas y en la interfaz de error del nuevo visor.
+
+Si tienes un archivo de idioma personalizado (una copia de `en.yml` o `es.yml` con tus propias traducciones), tendrás que agregar estas seis claves a mano después de actualizar; de lo contrario, la paginación y los mensajes de error del visor recurrirán a los textos en inglés incluidos por defecto. Copia los valores del `_data/languages/en.yml` (o `es.yml`) actualizado en el repositorio de Telar y tradúcelos según lo necesites.
+
+**Si solo usas la interfaz web de GitHub:**
+
+No tienes que hacer nada a mano. La actualización se encarga de reemplazar todos los archivos automáticamente.
+
+### Notas de actualización a v1.3.0
+
+v1.3.0 mejora la cobertura de internacionalización (i18n) en todo el sitio e introduce una convención de archivos hermanos para traducir las páginas de contenido. No requiere cambios en los CSV.
+
+**Migración de contenido automática (reescritura de páginas con verificación previa).**
+
+La migración reescribe cuatro archivos de contenido (`index.md`, `pages/glossary.md`, `pages/objects.md` y `telar-content/texts/pages/about.md`) para que usen las nuevas plantillas basadas en claves de idioma, pero solo si el archivo es exactamente igual, byte por byte, al predeterminado de la v1.2.1. Cualquier contenido que hayas personalizado se conserva intacto. En los sitios en español cuyo `about.md` no se ha modificado respecto al predeterminado de la v1.2.1, la migración también crea `telar-content/texts/pages/acerca.md` automáticamente.
+
+**Claves de idioma nuevas: `lang.index_page.welcome` y `lang.pages.glossary_intro`.**
+
+Se agregan dos claves nuevas a los archivos de idioma incluidos. Si tienes un archivo de idioma personalizado, no necesitas agregarlas de inmediato (los *layouts* recurren a valores de respaldo), pero agregarlas te da control sobre el texto de bienvenida de la página de inicio y la frase de introducción del glosario en el idioma activo del sitio.
+
+**Si solo usas la interfaz web de GitHub:**
+
+No tienes que hacer nada a mano, más allá de revisar el *issue* de actualización que se crea automáticamente, por si marca algún archivo como distinto del predeterminado (lo que significa que se detectaron y conservaron tus personalizaciones).
+
+### Notas de actualización a v1.2.1
+
+v1.2.1 es una versión de corrección. No requiere pasos manuales.
+
+La actualización corrige una falla silenciosa en el script que descarga el contenido de demostración, que afectaba a los sitios cuyo `_config.yml` tenía una versión con la "v" delante (por ejemplo, `version: "v1.2.0"`). Si tu sitio quedó sin contenido de demostración después de una actualización anterior, este parche lo soluciona. No hay que editar la configuración; la corrección está en el propio script.
+
+### Notas de actualización a v1.2.0
+
+v1.2.0 agrega una tabla de contenido por secciones, un botón de "Volver al inicio" y navegación dentro de la historia. No requiere pasos manuales.
+
+Todas las funciones nuevas se activan automáticamente. La tabla de contenido por secciones es opcional en cada historia: agrega `show_sections: yes` a la fila de la historia en `project.csv` (o `mostrar_secciones: si` en los sitios en español) para mostrarla. Los sitios que no tengan esa columna siguen funcionando sin necesidad de cambiar los CSV.
+
+**Si solo usas la interfaz web de GitHub:**
+
+No tienes que hacer nada.
+
+### Notas de actualización a v1.1.0
+
+v1.1.0 agrega enlaces profundos (*deep linking*), tarjetas de título, modo colección, estilo para bibliografías y una pestaña de posición para el panel de compartir. No requiere pasos manuales.
+
+Los enlaces profundos y el panel de compartir actualizado se activan automáticamente. El modo colección es opcional: pon `collection_mode: true` en `_config.yml` para cambiar la disposición de la página de inicio. El valor predeterminado es `false`, así que los sitios existentes no se ven afectados. Las tarjetas de título usan filas de CSV ya existentes con el campo de objeto vacío: no requieren columnas nuevas. El estilo para bibliografías es un nuevo *widget* de Markdown (`:::bibliography`) disponible en el contenido de los paneles.
+
+**Si solo usas la interfaz web de GitHub:**
+
+No tienes que hacer nada.
 
 ### Notas de actualización a v1.0.0-beta
 

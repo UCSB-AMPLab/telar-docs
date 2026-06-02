@@ -18,7 +18,7 @@ Private stories are encrypted during build so that only viewers with the correct
 
 When you mark a story as protected:
 
-1. **During build**, Telar encrypts the story's step data (questions, answers, panel content, coordinates) using AES-256-GCM encryption
+1. **During build**, Telar encrypts the story's step data (questions, answers, panel content, coordinates) so it cannot be read at a glance in the page source
 2. **On the published site**, the story page loads with a locked overlay — the story content is not visible
 3. **Viewers enter the key** (or use a link that includes it), and the story decrypts in their browser
 4. **Once unlocked**, the story works normally and stays unlocked for the rest of the browser session
@@ -82,19 +82,20 @@ Once a viewer unlocks a story, it stays unlocked for the rest of their browser s
 
 ## Security Considerations
 
-Story protection uses client-side encryption. It is designed for **casual access control**, not for securing highly sensitive content.
+Story protection is a **weak privacy guard**, not a security measure. It deters casual access — visitors cannot simply open browser DevTools and read the story content. It does not protect content from a determined person.
 
 **What it provides:**
-- Encrypted story data that cannot be read without the key
-- Strong encryption (AES-256-GCM with PBKDF2 key derivation)
+- Story step data is encrypted in the page source — not readable at a glance in DevTools
+- A key entry gate that stops casual viewers who do not have the key
 - No server-side infrastructure needed
 
-**What it does not provide:**
-- Per-user access control — everyone uses the same key
-- Protection against determined attackers with access to your repository source
-- Hidden story metadata — titles and subtitles are still visible in the project listing
+**What it does not provide — important limitations:**
+- **Confidentiality on a public site.** The source CSV (`telar-content/spreadsheets/{story_id}.csv`) is copied verbatim into the published site and is publicly accessible at a predictable URL on any public GitHub Pages deployment. A determined person can read the full story content from that file without a key.
+- **Resistance to offline attack.** The salt, IV, and ciphertext are all embedded in the page HTML. Anyone who views source has everything needed to run an offline brute-force or dictionary attack against the key.
+- **Per-user access control.** Everyone who has the key has the same access; there is no way to revoke access for one person without changing the key for everyone.
+- **Hidden story metadata.** Titles and subtitles remain visible in the project listing regardless of protection status.
 
-**For stronger security**, use a private GitHub repository. This prevents anyone without repository access from viewing the site at all.
+**For real confidentiality**, use a private GitHub repository. On a private repository, neither the site nor its files are publicly reachable, so only people you have granted repository access can view anything at all. Story protection alone is not a substitute for a private repository when the content genuinely must not be read by unauthorized people.
 
 ## Configuration Reference
 

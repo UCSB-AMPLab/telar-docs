@@ -29,7 +29,7 @@ Cada paso:
 
 1. Enfoca el visor en una región específica de un objeto (usando coordenadas x, y y zoom para imágenes, o tiempos de *clip* para video y audio)
 2. Muestra una **pregunta** y una breve **respuesta** en la tarjeta de texto
-3. Opcionalmente ofrece hasta tres capas adicionales de detalle mediante botones expandibles
+3. Opcionalmente ofrece hasta dos capas adicionales de detalle mediante botones expandibles
 
 ## Registrar historias
 
@@ -113,20 +113,19 @@ Esto es automático — no requiere configuración.
 
 ## Capas de los paneles
 
-Cada paso puede tener hasta tres capas de detalle, siguiendo el patrón QAI (pregunta, respuesta, invitación). La pregunta y la respuesta aparecen en la tarjeta de texto. Las capas se expanden desde la tarjeta cuando se hace clic en los botones de invitación:
+Cada paso puede tener hasta dos capas de detalle adicional, siguiendo el patrón QAI (pregunta, respuesta, invitación). La pregunta y la respuesta aparecen en la tarjeta de texto. La invitación es el conjunto de botones que abren paneles expandibles con contenido más profundo:
 
 | Capa | Texto predeterminado del botón | Propósito |
 |------|-------------------------------|-----------|
-| Capa 1 | "Saber más" | Detalle principal |
-| Capa 2 | "Profundizar más" | Análisis extendido |
-| Capa 3 | (predeterminado) | Nivel más profundo |
+| Capa 1 | "Saber más" | Panel de detalle principal |
+| Capa 2 | "Profundizar más" | Panel de detalle secundario, que se abre sobre la Capa 1 |
 
-Para cada capa se pueden personalizar dos cosas:
+Para cada capa, agrega dos columnas a la hoja de cálculo de tu historia:
 
-- **Texto del botón** (`layer1_button`) — Dejar vacío para el texto predeterminado, o proporcionar texto personalizado como "Ver la técnica" o "Leer la fuente"
-- **Contenido** (`layer1_content`) — El contenido del panel en sí
+- **Texto del botón** (`layer1_button`, `layer2_button`) — Déjalo vacío para usar el texto predeterminado, o escribe un texto propio como "Ver la técnica" o "Leer la fuente"
+- **Contenido** (`layer1_content`, `layer2_content`) — El contenido del panel
 
-Si una capa no tiene contenido, su botón se oculta automáticamente.
+Si una capa no tiene contenido, su botón se oculta automáticamente. A la Capa 2 se accede desde dentro de la Capa 1: su botón aparece al final del panel de la Capa 1, no en la tarjeta de texto principal.
 
 ## Escribir contenido para los paneles
 

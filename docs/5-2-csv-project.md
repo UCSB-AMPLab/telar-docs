@@ -50,7 +50,7 @@ Defines stories and their display order on the homepage.
 | `order` | `orden` | Yes | Display order on homepage (1, 2, 3...) |
 | `story_id` | `id_historia` | No | Semantic identifier (e.g., `colonial-textiles`). If omitted, uses `story-{order}` |
 | `title` | `titulo` | Yes | Story title shown on homepage and story page |
-| `subtitle` | `subtitulo` | Yes | Brief description shown on story cards |
+| `subtitle` | `subtitulo` | No | Brief description shown on story cards |
 | `byline` | `firma` | No | Author attribution; supports markdown for links and formatting |
 | `protected` | `protegida` | No | Set to `yes` to encrypt this story (requires `story_key` in config) |
 | `show_sections` | `mostrar_secciones` | No | Set to `yes` to display a table of contents on the story's intro card. See [Stories & Panels: Section table of contents](/docs/your-content/stories-panels/#section-table-of-contents). **New in v1.2.0** |

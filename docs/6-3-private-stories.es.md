@@ -18,7 +18,7 @@ Las historias privadas se encriptan durante la compilación para que solo las pe
 
 Cuando marcas una historia como protegida:
 
-1. **Durante la compilación**, Telar encripta los datos de la historia (preguntas, respuestas, contenido de paneles, coordenadas) usando encriptación AES-256-GCM
+1. **Durante la compilación**, Telar encripta los datos de la historia (preguntas, respuestas, contenido de paneles, coordenadas) para que no se puedan leer de un vistazo en el código fuente de la página
 2. **En el sitio publicado**, la página de la historia se carga con una capa de bloqueo — el contenido de la historia no es visible
 3. **Las personas ingresan la clave** (o usan un enlace que la incluye), y la historia se desencripta en su navegador
 4. **Una vez desbloqueada**, la historia funciona normalmente y permanece desbloqueada durante el resto de la sesión del navegador
@@ -82,19 +82,20 @@ Una vez que alguien desbloquea una historia, permanece desbloqueada durante el r
 
 ## Consideraciones de seguridad
 
-La protección de historias usa encriptación del lado del cliente. Está diseñada para **control de acceso casual**, no para proteger contenido altamente sensible.
+La protección de historias es apenas una barrera de privacidad superficial, no una medida de seguridad. Disuade el acceso casual: quienes visitan el sitio no pueden abrir las herramientas de desarrollo del navegador y leer el contenido sin más. No protege el contenido frente a alguien decidido a obtenerlo.
 
 **Lo que ofrece:**
-- Datos de la historia encriptados que no se pueden leer sin la clave
-- Encriptación robusta (AES-256-GCM con derivación de clave PBKDF2)
+- Los datos de la historia quedan encriptados en el código fuente de la página: no se leen de un vistazo en las herramientas de desarrollo
+- Una pantalla de ingreso de clave que detiene a quienes no la tienen
 - No requiere infraestructura del lado del servidor
 
-**Lo que no ofrece:**
-- Control de acceso por persona — todas las personas usan la misma clave
-- Protección contra atacantes determinados con acceso al código fuente de tu repositorio
-- Metadatos ocultos de la historia — los títulos y subtítulos siguen visibles en el listado del proyecto
+**Lo que no ofrece (limitaciones importantes):**
+- **Confidencialidad en un sitio público.** El CSV de origen (`telar-content/spreadsheets/{story_id}.csv`) se copia tal cual al sitio publicado y queda accesible públicamente en una URL predecible en cualquier despliegue público de GitHub Pages. Alguien decidido a hacerlo puede leer todo el contenido de la historia desde ese archivo, sin clave.
+- **Resistencia a ataques sin conexión.** La sal, el IV y el texto cifrado van todos incrustados en el HTML de la página. Quien vea el código fuente tiene todo lo necesario para ejecutar, sin conexión, un ataque de fuerza bruta o de diccionario contra la clave.
+- **Control de acceso por persona.** Todas las personas que tienen la clave tienen el mismo acceso; no hay forma de revocarle el acceso a una sola persona sin cambiarle la clave a todas.
+- **Metadatos ocultos.** Los títulos y subtítulos siguen visibles en el listado del proyecto, sin importar si la historia está protegida.
 
-**Para mayor seguridad**, usa un repositorio privado de GitHub. Esto impide que cualquier persona sin acceso al repositorio pueda ver el sitio.
+**Para una confidencialidad real**, usa un repositorio privado de GitHub. En un repositorio privado ni el sitio ni sus archivos quedan al alcance del público, así que solo pueden ver algo las personas a quienes les diste acceso al repositorio. La protección de historias, por sí sola, no sustituye a un repositorio privado cuando el contenido de verdad no debe ser leído por personas no autorizadas.
 
 ## Referencia de configuración
 
