@@ -74,6 +74,30 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
+### Notas de actualización a v1.5.0
+
+v1.5.0 es una versión centrada en la robustez y la seguridad. Solo afecta el motor y las herramientas: las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios, sin editar los CSV ni cambiar la configuración. La actualización automática reemplaza todos los archivos del marco; los dos pasos manuales opcionales se describen abajo.
+
+**Recomendado: actualiza tus archivos de flujo de trabajo de GitHub Actions:**
+
+Por seguridad, GitHub no permite que la actualización automática modifique los archivos de flujo de trabajo, así que dos mejoras de seguridad de v1.5.0 no se aplican solas:
+
+- `.github/workflows/upgrade.yml`: el proceso de actualización ahora descarga sus herramientas como un recurso verificado con su suma de control y las ejecuta de forma aislada.
+- `.github/workflows/build.yml`: la acción `ruby/setup-ruby` queda fijada a un commit específico para mayor seguridad en la cadena de suministro, y la construcción ahora instala las dependencias de Node con `npm ci`.
+
+Para aplicarlos, usa los pasos de copiar desde «Raw» de la sección "Configuración manual para versiones anteriores" más abajo, una vez por cada archivo. Si te saltas este paso, tu sitio se sigue construyendo y publicando con normalidad; estos cambios solo refuerzan tus flujos de trabajo.
+
+{: .warning }
+> **Si actualizas `build.yml`, agrega también `package-lock.json`.** El nuevo `build.yml` instala las dependencias de Node con `npm ci`, que necesita un `package-lock.json` incluido en el repositorio. Cópialo desde el repositorio de Telar (abre [package-lock.json](https://github.com/UCSB-AMPLab/telar/blob/main/package-lock.json) y haz clic en **Copy raw contents**) en la raíz de tu repositorio, o la construcción fallará. Los sitios nuevos creados a partir de la plantilla ya lo incluyen.
+
+**Paquetes de idioma: nuevas claves para compartir historias protegidas:**
+
+Esta versión agrega claves a los archivos de idioma incluidos (`en.yml` y `es.yml`) para los avisos al compartir historias protegidas: los mensajes que aparecen cuando un enlace o un código de inserción lleva la clave de acceso. Si tienes un archivo de idioma personalizado, vuelve a aplicar tus cambios después de actualizar, copiando las claves nuevas desde el archivo actualizado `_data/languages/en.yml` (o `es.yml`) del repositorio de Telar.
+
+**Si solo usas la interfaz web de GitHub:**
+
+La actualización automática reemplaza todos los archivos del marco. Las actualizaciones de los flujos de trabajo de arriba son refuerzos opcionales; si aplicas la actualización de `build.yml`, recuerda la nota sobre `package-lock.json`.
+
 ### Notas de actualización a v1.4.0
 
 v1.4.0 es una actualización que solo afecta el código de ejecución del sitio. Las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios: no hace falta editar los CSV, ni cambiar la configuración, ni actualizar los flujos de trabajo.

@@ -59,6 +59,30 @@ The upgrade system:
 4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
 5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
+### v1.5.0 Upgrade Notes
+
+v1.5.0 is a robustness and security release. It is runtime and tooling only — existing stories, objects, and configuration continue to work unchanged, with no CSV edits and no config changes. The automated upgrade handles all framework file replacements; two optional manual steps are described below.
+
+**Recommended — update your GitHub Actions workflow files:**
+
+For security, GitHub does not allow the automated upgrade to modify workflow files, so two v1.5.0 hardening improvements are not applied for you:
+
+- `.github/workflows/upgrade.yml` — the upgrade process now downloads its tooling as a checksum-verified release asset and runs it in isolation.
+- `.github/workflows/build.yml` — the `ruby/setup-ruby` action is pinned to a specific commit for supply-chain safety, and the build now installs Node dependencies with `npm ci`.
+
+To apply them, use the copy-from-Raw steps in the "Manual Setup for Earlier Versions" section below, once for each file. If you skip this, your site keeps building and deploying normally — these changes only harden your workflows.
+
+{: .warning }
+> **If you update `build.yml`, also add `package-lock.json`.** The new `build.yml` installs Node dependencies with `npm ci`, which requires a committed `package-lock.json`. Copy it from the Telar repository (open [package-lock.json](https://github.com/UCSB-AMPLab/telar/blob/main/package-lock.json), click **Copy raw contents**) into your repository's root, or the build will fail. New sites created from the template already include it.
+
+**Language pack — new protected-story sharing keys:**
+
+This release adds keys to the built-in language files (`en.yml` and `es.yml`) for the protected-story sharing warnings — the messages shown when a share link or embed code includes the access key. If you have a customized language file, re-apply your changes after upgrading by copying the new keys from the updated `_data/languages/en.yml` (or `es.yml`) in the Telar repository.
+
+**If you only use GitHub's web interface:**
+
+The automated upgrade handles all framework file replacements. The workflow updates above are optional hardening; if you apply the `build.yml` update, remember the `package-lock.json` note.
+
 ### v1.4.0 Upgrade Notes
 
 v1.4.0 is a runtime-only upgrade. Existing stories, objects, and configuration continue to work unchanged — no CSV edits, no config changes, and no workflow updates are required.

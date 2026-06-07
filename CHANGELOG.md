@@ -4,6 +4,14 @@ All notable changes to Telar Documentation will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.5.0] - 2026-06-06
+
+### Added
+- "v1.5.0 Upgrade Notes" (English and Spanish) covering the optional GitHub Actions workflow hardening and the new requirement to commit `package-lock.json` when adopting the `npm ci` build workflow.
+
+### Changed
+- Updated documented version to v1.5.0.
+
 ## [1.4.0] - 2026-05-26
 
 ### Changed
