@@ -12,6 +12,9 @@ permalink: /docs/setup/upgrading/
 
 Keep your Telar site up to date with the latest features, bug fixes, and improvements.
 
+{: .note }
+> **Using the Telar Compositor?** If you manage your site through the [Telar Compositor](https://compositor.telar.org), you can upgrade with one click from its Upgrade screen — the manual steps below aren't needed. If it asks you to approve updated GitHub permissions first, accept them and retry. The instructions below are for upgrading directly on GitHub instead.
+
 ## Overview
 
 Telar v0.3.4 introduced an automated upgrade system that makes updating your site simple and safe. The upgrade process depends on which version you're currently running:
@@ -27,7 +30,7 @@ If your site is already running Telar v0.3.4 or later, upgrading is fully automa
 
 The upgrade system:
 1. Detects your current Telar version from `_config.yml`
-2. Applies all necessary migrations incrementally (e.g., v0.3.4 → v0.3.5 → v0.3.6). Note: there is a known gap in the migration chain at v0.4.2-beta — sites pinned at that exact version may not upgrade cleanly. A fix is in progress; if you are affected, [open an issue](https://github.com/UCSB-AMPLab/telar/issues).
+2. Applies all necessary migrations incrementally (e.g., v0.3.4 → v0.3.5 → v0.3.6)
 3. Updates framework files and configurations
 4. Creates an upgrade branch and issue with detailed summary
 5. Highlights any manual steps you need to complete
@@ -62,6 +65,8 @@ The upgrade system:
 ### v1.5.0 Upgrade Notes
 
 v1.5.0 is a robustness and security release. It is runtime and tooling only — existing stories, objects, and configuration continue to work unchanged, with no CSV edits and no config changes. The automated upgrade handles all framework file replacements; two optional manual steps are described below.
+
+**What's included:** author content is now escaped at every render point; TLS certificate verification is enforced on all Google Sheets and IIIF fetches; protected stories are hardened (the build stops rather than ship unencrypted, stronger key derivation, and no byline, description, or SEO leak); the upgrade workflow runs checksum-verified tooling in isolation; and all remote reads are capped with path-traversal guards. WaveSurfer is vendored so audio works offline, framework files install atomically, and several viewer, video, audio, and story-ordering bugs are fixed. None of this needs any action from you — see the [CHANGELOG](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) for the full list.
 
 **Recommended — update your GitHub Actions workflow files:**
 

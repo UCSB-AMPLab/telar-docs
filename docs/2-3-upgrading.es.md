@@ -12,6 +12,9 @@ permalink: /guia/configuracion/actualizacion/
 
 Mantén tu sitio Telar al día con las últimas funciones, correcciones de errores y mejoras.
 
+{: .note }
+> **¿Usas el Compositor de Telar?** Si administras tu sitio desde el [Compositor de Telar](https://compositor.telar.org), puedes actualizarlo con un clic desde su pantalla de actualización y no necesitas seguir los pasos manuales de abajo. Si primero te pide que apruebes los permisos actualizados en GitHub, acéptalos y vuelve a intentarlo. Los pasos de abajo son para actualizar directamente en GitHub.
+
 ## Descripción general
 
 Telar v0.3.4 introdujo un sistema automatizado de actualización que facilita mantener tu sitio al día de forma sencilla y segura. El proceso de actualización depende de la versión que estés usando en este momento:
@@ -27,7 +30,7 @@ Si tu sitio ya está en Telar v0.3.4 o posterior, el proceso de actualización e
 
 El sistema de actualización:
 1. Detecta tu versión actual de Telar desde `_config.yml`
-2. Aplica todas las migraciones necesarias de manera incremental (ej., v0.3.4 → v0.3.5 → v0.3.6). Nota: existe una falla conocida en la cadena de migraciones en la v0.4.2-beta; los sitios fijados exactamente en esa versión podrían no actualizarse de forma limpia. Hay una corrección en curso; si te afecta, [abre un *issue*](https://github.com/UCSB-AMPLab/telar/issues).
+2. Aplica todas las migraciones necesarias de manera incremental (ej., v0.3.4 → v0.3.5 → v0.3.6)
 3. Actualiza los archivos del marco y la configuración
 4. Crea una rama de actualización y un *issue* con resumen detallado
 5. Destaca cualquier paso manual que necesites completar
@@ -77,6 +80,8 @@ Esta actualización elimina funciones obsoletas (la programación con cron y el 
 ### Notas de actualización a v1.5.0
 
 v1.5.0 es una versión centrada en la robustez y la seguridad. Solo afecta el motor y las herramientas: las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios, sin editar los CSV ni cambiar la configuración. La actualización automática reemplaza todos los archivos del marco; los dos pasos manuales opcionales se describen abajo.
+
+**Qué incluye:** el contenido que escribes en tu sitio ahora se escapa en cada punto de salida; se verifica el certificado TLS en todas las descargas de Google Sheets e IIIF; las historias protegidas quedan más seguras (la construcción se detiene en vez de publicarlas sin cifrar, el cifrado es más fuerte y ya no se filtran autoría, descripción ni metadatos de SEO); el flujo de actualización descarga sus herramientas verificadas con su suma de control y las ejecuta de forma aislada; y todas las lecturas remotas tienen límites y barreras contra el *path traversal*. WaveSurfer va incluido en el sitio para que el audio funcione sin conexión, los archivos del marco se instalan de forma atómica y se corrigieron varios errores del visor, los videos, el audio y el orden de los pasos. No tienes que hacer nada para recibir estos cambios; consulta el [CHANGELOG](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) para ver la lista completa.
 
 **Recomendado: actualiza tus archivos de flujo de trabajo de GitHub Actions:**
 
