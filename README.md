@@ -1,6 +1,6 @@
 # Telar Documentation
 
-Official documentation site for [Telar](https://github.com/UCSB-AMPLab/telar), a minimal-computing framework for creating layered IIIF visual narratives for digital scholarship, public exhibitions, community storytelling, and classroom projects.
+Official documentation site for [Telar](https://github.com/UCSB-AMPLab/telar), a minimal-computing framework that weaves together IIIF images, audio, video, and texts to create layered visual narratives for digital scholarship, public exhibitions, community storytelling, and classroom projects.
 
 ## About
 
