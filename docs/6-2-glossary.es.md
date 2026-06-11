@@ -58,7 +58,7 @@ Cada archivo define un término. El cuerpo del archivo es la definición.
 
 ## Enlazar a términos del glosario
 
-Enlaza a términos del glosario desde los paneles de las historias usando sintaxis de doble corchete:
+Enlaza a términos del glosario desde el texto y los paneles de tus historias usando sintaxis de doble corchete:
 
 ### Forma abreviada
 
@@ -84,10 +84,16 @@ Se renderiza como: El <u>dispositivo de tejido</u> era central para la producci�
 
 Los autoenlaces de glosario funcionan en:
 
+- Texto del paso — la **respuesta** de un paso (el texto principal que se desplaza)
 - Contenido de paneles de historias (los tres métodos: texto directo, markdown pegado, archivos)
 - Páginas personalizadas
 
+La **pregunta** del paso es un encabezado, así que los enlaces de glosario ahí se dejan como texto plano a propósito.
+
 Si un `term_id` no se encuentra en el glosario, un ícono de advertencia y un mensaje de error aparecen en la salida de la *build* y en el panel de la historia.
+
+{: .note }
+> Los términos se reconocen sin distinción de mayúsculas. `[[loom]]`, `[[Loom]]` y `[[LOOM]]` resuelven a la misma entrada, así que puedes escribir un término como mejor se lea —por ejemplo, una sigla como `[[IIIF]]`.
 
 ## Experiencia de visualización
 

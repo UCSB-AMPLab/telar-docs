@@ -4,6 +4,12 @@ All notable changes to Telar Documentation will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.5.1] - 2026-06-10
+
+### Changed
+- Documented that glossary `[[term]]` links work in a story step's answer text, not only in layer panels, and that term matching is case-insensitive.
+- Updated documented version to v1.5.1.
+
 ## [1.5.0] - 2026-06-06
 
 ### Added
