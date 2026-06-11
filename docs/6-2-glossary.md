@@ -58,7 +58,7 @@ Each file defines one term. The body of the file is the definition.
 
 ## Linking to Glossary Terms
 
-Link to glossary terms from story panels using double-bracket syntax:
+Link to glossary terms from your story text and panels using double-bracket syntax:
 
 ### Shorthand
 
@@ -84,10 +84,16 @@ Renders as: The <u>weaving device</u> was central to textile production.
 
 Glossary auto-links work in:
 
+- Story step text — the **answer** of a story step (the main scrolling prose)
 - Story panel content (all three methods: direct text, pasted markdown, file references)
 - Custom pages
 
+The step **question** is a heading, so glossary links there are intentionally left as plain text.
+
 If a `term_id` is not found in the glossary, a warning icon and error message appear in the build output and in the story panel.
+
+{: .note }
+> Term matching is case-insensitive. `[[loom]]`, `[[Loom]]`, and `[[LOOM]]` all resolve to the same entry, so you can write a term however reads best — for example an acronym as `[[IIIF]]`.
 
 ## Viewer Experience
 
