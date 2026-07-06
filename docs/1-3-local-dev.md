@@ -103,6 +103,16 @@ bundle exec jekyll serve --livereload --port 4001
 # View at http://localhost:4001
 ```
 
+{: .note }
+> **Private stories preview as plaintext here.** `bundle exec jekyll serve` and
+> `build_local_site.py`'s default serve mode never run the encryption step — Jekyll keeps
+> regenerating `_site` while serving, and encryption only runs once, after a build finishes. If
+> your site has a story marked `private: yes`, you will see its content in plain view while
+> previewing locally this way; this is expected. To preview the locked behavior a visitor would
+> see, run `python3 scripts/build_local_site.py --build-only`, then serve the resulting `_site/`
+> directory with a static file server. See [Private Stories](/docs/site-features/private-stories/)
+> for details.
+
 ## Step-by-Step Workflow
 
 ### Step 1: Gather Your Images

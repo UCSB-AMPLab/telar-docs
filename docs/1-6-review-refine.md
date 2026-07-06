@@ -36,7 +36,7 @@ The placeholder coordinates (`0.5, 0.5, 1.0`) show the center of each image. To 
 
 If you want to restrict access to a story — for classroom use, drafts, or work in progress:
 
-1. In the **project** tab, set the `protected` column to `yes` for that story
+1. In the **project** tab, set the `private` column to `yes` for that story
 2. In your repository's `_config.yml`, add a `story_key`:
 
    ```yaml
@@ -45,7 +45,9 @@ If you want to restrict access to a story — for classroom use, drafts, or work
 
 3. Share the key with your viewers, or send them a link with `?key=your-secret-key` appended
 
-See [Private Stories](/docs/site-features/private-stories/) for details.
+A private story renders like any other story during the build — markdown, glossary links, and
+images all work once a viewer unlocks it. See [Private
+Stories](/docs/site-features/private-stories/) for details, including how to preview one locally.
 
 ## Keep Building
 
