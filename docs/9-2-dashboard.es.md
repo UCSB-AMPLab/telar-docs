@@ -65,7 +65,7 @@ Para eliminar una historia de tu exhibición:
 Cada historia tiene dos controles de visibilidad:
 
 - **Draft** — Las historias en borrador se excluyen completamente del sitio publicado. Usa esta opción para historias en las que aún estás trabajando.
-- **Private** — Las historias privadas se publican pero se ocultan de la navegación principal. Quienes visitan solo pueden acceder a ellas con un enlace directo. Consulta [Historias privadas](/guia/funciones-del-sitio/historias-privadas/) para más detalles.
+- **Private** — Las historias privadas siguen apareciendo en la lista de historias del sitio, con su título y subtítulo visibles, pero su contenido queda bloqueado. Para leerlas se necesita la clave de historia, que se ingresa en la página misma o va incluida en un enlace compartido. Consulta [Historias privadas](/guia/funciones-del-sitio/historias-privadas/) para más detalles.
 
 ## Cambiar de proyecto
 

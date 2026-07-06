@@ -65,7 +65,7 @@ To remove a story from your exhibition:
 Each story has two visibility toggles:
 
 - **Draft** — Draft stories are excluded from your published site entirely. Use this for stories you are still working on.
-- **Private** — Private stories are published but hidden from the main navigation. Visitors can only access them with a direct link. See [Private Stories](/docs/site-features/private-stories/) for details.
+- **Private** — Private stories remain listed on your site, with their title and subtitle visible, but their content is locked. Visitors need the story key to read them, entered on the story page or included in a shared link. See [Private Stories](/docs/site-features/private-stories/) for details.
 
 ## Project switching
 
