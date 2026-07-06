@@ -77,6 +77,33 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
+### Notas de actualización a v1.6.0
+
+v1.6.0 cambia la forma en que se construyen las historias privadas. Las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios — pero **si tu sitio tiene alguna historia marcada `private: yes` (o `protected: yes`), tienes que actualizar tu flujo de construcción a mano, o la construcción fallará.**
+
+**Qué incluye:** las historias privadas ahora se generan con las mismas plantillas que las historias abiertas durante la construcción con Jekyll — el markdown, los enlaces de glosario, el LaTeX, los clips de audio y el texto alternativo funcionan al desbloquear una historia privada, igual que en una abierta. El cifrado ahora ocurre como un paso aparte cuando la construcción termina, y no durante ella. La construcción se niega a publicar una historia privada sin cifrar: se detiene temprano si existe una historia privada sin `story_key`, y se detiene de nuevo al final si algo está mal configurado y el flujo de trabajo no ejecuta el nuevo paso de cifrado.
+
+**Paso manual obligatorio — actualiza tu flujo de construcción de GitHub Actions:**
+
+Por seguridad, GitHub no permite que la actualización automática modifique los archivos de flujo de trabajo. Si tu sitio tiene (o podría tener algún día) una historia privada, tienes que agregar el nuevo paso de cifrado a `.github/workflows/build.yml` tú mismo:
+
+1. Abre [build.yml en GitHub](https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml)
+2. Haz clic en **Copy raw contents**
+3. En tu repositorio, ve a `.github/workflows/build.yml` y haz clic en **Edit**
+4. Selecciona todo y reemplázalo con el contenido copiado
+5. Confirma el cambio
+
+{: .warning }
+> Si te saltas este paso y marcas una historia con `private: yes`, la construcción fallará en el paso "Convert CSVs to JSON" con un error que dice que el flujo de trabajo no ejecuta el script de cifrado. Es intencional: sin el paso nuevo, tu sitio publicaría la historia "privada" en texto plano.
+>
+> Si tu sitio no tiene historias privadas, no se rompe nada si te saltas este paso — pero no podrás agregar una más adelante sin aplicar antes esta actualización.
+
+**Pruebas locales:** ni `bundle exec jekyll serve` ni el modo de servir por defecto de `scripts/build_local_site.py` cifran nada — con ambos, las historias privadas se previsualizan en texto plano. Para probar el comportamiento bloqueado, ejecuta `python3 scripts/build_local_site.py --build-only` y sirve el directorio `_site/` resultante con un servidor de archivos estáticos. Consulta [Historias privadas: Probar localmente](/guia/funciones/historias-privadas/#probar-localmente).
+
+**Si solo usas la interfaz web de GitHub:**
+
+La actualización automática se encarga de reemplazar todos los demás archivos del marco. Si tienes (o planeas agregar) alguna historia privada, igual tienes que copiar el `build.yml` actualizado como se describe arriba — este paso no es opcional.
+
 ### Notas de actualización a v1.5.0
 
 v1.5.0 es una versión centrada en la robustez y la seguridad. Solo afecta el motor y las herramientas: las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios, sin editar los CSV ni cambiar la configuración. La actualización automática reemplaza todos los archivos del marco; los dos pasos manuales opcionales se describen abajo.

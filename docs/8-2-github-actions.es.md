@@ -63,7 +63,12 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
    - Compila plantillas con datos
    - Salida al directorio `_site/`
 
-7. **Publica en GitHub Pages**
+7. **Cifra las historias privadas**
+   - Ejecuta `scripts/encrypt_protected_stories.py`, siempre, justo antes de publicar
+   - Cifra en el propio `_site/` cualquier historia marcada `private: yes` (o `protected: yes`)
+   - Hace fallar la construcción si algo quedara por publicarse en texto plano
+
+8. **Publica en GitHub Pages**
    - Publica directorio `_site/`
    - El sitio queda en vivo en la URL de GitHub Pages
 
@@ -141,6 +146,23 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 - Asegura que la hoja esté publicada en la web (no solo compartida)
 - Verifica que la hoja tenga permisos apropiados
 
+### Fallo de construcción por historia privada
+
+**Error:** `story/stories are marked protected but no story_key is set` (falla en el paso "Convert CSVs to JSON")
+
+**Solución:**
+- Agrega `story_key: tuclave` a `_config.yml`, o quítale `private: yes` a la historia
+
+**Error:** `story/stories are marked protected, but .github/workflows/build.yml does not run scripts/encrypt_protected_stories.py` (falla en el paso "Convert CSVs to JSON")
+
+**Solución:**
+- Tu flujo de construcción es anterior al paso de cifrado de historias privadas de v1.6.0. Consulta [Actualizar Telar: notas de v1.6.0](/guia/configuracion/actualizacion/#notas-de-actualización-a-v160) para actualizar `build.yml`.
+
+**Error:** el propio paso "Encrypt protected stories" falla (cerca del final de la construcción, justo antes de "Upload artifact")
+
+**Solución:**
+- Significa que el sitio generado todavía contiene un rastro del contenido de una historia privada que debió quedar cifrado. Es un error del programa, no de configuración — [repórtalo](https://github.com/UCSB-AMPLab/telar/issues) con el enlace a la ejecución del flujo de trabajo.
+
 ## Rendimiento de construcción
 
 Tiempos de construcción típicos:
@@ -161,7 +183,7 @@ Tiempos de construcción típicos:
 
 1. Verifica confirmaciones recientes para errores
 2. Revisa los _logs_ de construcción para mensajes de error específicos
-3. Prueba localmente primero (`bundle exec jekyll serve`)
+3. Prueba localmente primero (`bundle exec jekyll serve`) — ten en cuenta que este comando nunca ejecuta el paso de cifrado de historias privadas, así que no reproduce un fallo de construcción por historia privada. Para eso, usa `python3 scripts/build_local_site.py --build-only` (consulta la [Referencia de Desarrollo Local](/guia/desarrolladores/desarrollo-local/))
 4. Revierte a la última confirmación funcional si es necesario
 
 ### La construcción tiene éxito pero el sitio no se actualiza

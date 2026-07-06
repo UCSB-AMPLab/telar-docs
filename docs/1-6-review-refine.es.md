@@ -36,7 +36,7 @@ Las coordenadas iniciales (`0.5, 0.5, 1.0`) muestran el centro de cada imagen. P
 
 Si quieres restringir el acceso a una historia — para uso en el aula, borradores o trabajos en progreso:
 
-1. En la pestaña **project**, establece la columna `protected` en `yes` para esa historia
+1. En la pestaña **project**, establece la columna `private` en `yes` para esa historia
 2. En el archivo `_config.yml` de tu repositorio, agrega un `story_key`:
 
    ```yaml
@@ -45,7 +45,7 @@ Si quieres restringir el acceso a una historia — para uso en el aula, borrador
 
 3. Comparte la clave con tus lectores, o envíales un enlace con `?key=tu-clave-secreta` al final
 
-Consulta [Historias Privadas](/guia/funciones/historias-privadas/) para más detalles.
+Una historia privada se genera como cualquier otra durante la compilación — el markdown, los enlaces de glosario y las imágenes funcionan una vez que la persona la desbloquea. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles, incluido cómo previsualizarla localmente.
 
 ## Sigue construyendo
 
