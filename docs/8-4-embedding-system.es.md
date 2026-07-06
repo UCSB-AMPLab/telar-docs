@@ -114,52 +114,33 @@ body.embed-mode {
 }
 ```
 
-**Visibilidad forzada:**
+**Visibilidad y ubicación de los botones:**
 ```scss
 body.embed-mode {
-  // Siempre mostrar sugerencias de navegación móvil
-  .nav-hint {
-    display: block;
-  }
-
-  // Forzar botones de navegación en todos los tamaños de pantalla
-  .arrow-nav-up,
-  .arrow-nav-down {
-    display: flex !important;
+  // Los botones de navegación se muestran en cualquier ancho en modo embed,
+  // centrados sobre la columna narrativa con ancho intrínseco
+  .mobile-nav {
+    position: fixed;
+    left: 20%;
+    right: auto;
+    bottom: max(8%, 1.5rem);
+    transform: translateX(-50%);
   }
 }
 ```
 
-**Personalización de flechas en escritorio para *embed*:**
+***Embeds* angostos (en el límite del diseño vertical o por debajo):**
 ```scss
-body.embed-mode {
-  @media (min-width: 768px) {
-    .arrow-nav-up,
-    .arrow-nav-down {
-      // Diseño horizontal en la parte inferior
-      left: 20%;
-      bottom: max(8%, 1.5rem);
-
-      // Efectos al pasar el cursor
-      &:hover {
-        transform: scale(1.1) translateY(-2px); // Flecha arriba
-        box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-      }
-    }
-  }
-}
-```
-
-***Embeds* de tamaño móvil (<768px):**
-```scss
-// Media query a nivel raíz para especificidad apropiada
-@media (max-width: 767px) {
-  body.embed-mode .arrow-nav-up,
-  body.embed-mode .arrow-nav-down {
-    // Pila vertical en el lado derecho
+// El mismo límite del diseño vertical de todo el sitio
+// (_responsive.scss $telar-vertical-min-width, 1024px)
+@media (max-width: $telar-vertical-min-width) {
+  body.embed-mode .mobile-nav {
+    // Apilados en el borde derecho
     right: 1rem;
+    left: auto;
     bottom: 50%;
     transform: translateY(50%);
+    flex-direction: column;
   }
 }
 ```
@@ -168,64 +149,22 @@ body.embed-mode {
 
 ### Navegación en modo *embed*
 
-**Archivo:** `assets/js/story.js`
+**Archivo:** `assets/js/telar-story/main.js`
 
-```javascript
-function initializeNavigation() {
-  const isMobileViewport = window.innerWidth < 768;
-  const isEmbedMode = window.telarEmbed?.enabled || false;
-
-  if (isMobileViewport || isEmbedMode) {
-    // Móvil o embed: Navegación por botones
-    initializeEmbedNavigation();
-  } else {
-    // Escritorio: Acumulación de desplazamiento
-    initializeDesktopNavigation();
-  }
-}
-```
+Las historias insertadas usan siempre la navegación por botones, en cualquier ancho: los eventos de desplazamiento no se propagan de manera confiable dentro de un iframe, así que el motor de desplazamiento nunca se activa en un *embed*. Fuera de los *embeds*, el modo de navegación sigue el modo de diseño: el diseño horizontal usa el motor de desplazamiento (basado en Lenis) y el diseño vertical (pantallas de 1024px de ancho o menos, o más angostas que 3:4) usa los mismos botones de anterior/siguiente. El límite se declara una sola vez en `_sass/_responsive.scss` (`$telar-vertical-min-width`) y `layout-mode.js` lo lee en tiempo de ejecución.
 
 ### Modos de navegación
 
-**Escritorio (no *embed*):**
-- Evento de rueda con acumulación de desplazamiento
-- Umbral: 50vh (50% de la altura del viewport)
-- Tiempo de espera: 600ms
-- Límite máximo de delta de desplazamiento: 200px
-
-**Móvil (<768px):**
-- Solo navegación por botones
-- Tiempo de espera de navegación de 400ms
-- Pila vertical en el lado derecho
-
-**Modo *embed* (todos los tamaños de pantalla):**
-- Navegación por botones (igual que móvil)
-- Escritorio: Diseño horizontal en la parte inferior
-- Móvil: Pila vertical a la derecha
-- Navegación por teclado preservada
+- ***Embeds* (todos los anchos):** navegación por botones; los *embeds* anchos centran los botones sobre la columna narrativa y los angostos los apilan en el borde derecho
+- **Sin *embed*, diseño horizontal:** motor de desplazamiento basado en Lenis
+- **Sin *embed*, diseño vertical:** la misma navegación por botones
+- **La navegación por teclado** funciona en todos los modos
 
 ### Creación de botones
 
-```javascript
-function createNavigationButtons() {
-  const upBtn = document.createElement('button');
-  upBtn.className = 'arrow-nav-up';
-  upBtn.setAttribute('aria-label', 'Previous step');
-  upBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>';
+**Archivo:** `assets/js/telar-story/navigation.js`
 
-  const downBtn = document.createElement('button');
-  downBtn.className = 'arrow-nav-down';
-  downBtn.setAttribute('aria-label', 'Next step');
-  downBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
-
-  // Adjuntar detectores de eventos
-  upBtn.addEventListener('click', () => navigateSteps('previous'));
-  downBtn.addEventListener('click', () => navigateSteps('next'));
-
-  document.body.appendChild(upBtn);
-  document.body.appendChild(downBtn);
-}
-```
+`initializeButtonNavigation()` construye el contenedor `.mobile-nav` con sus botones `.mobile-prev` y `.mobile-next` y los conecta a la navegación por pasos; termina sin hacer nada si el contenedor ya existe.
 
 ## Banner "View Full Site"
 

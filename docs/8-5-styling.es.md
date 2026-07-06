@@ -201,21 +201,13 @@ Esto también facilita tus personalizaciones: **el CSS sin capa siempre prevalec
 
 ### Modificar el comportamiento de la historia
 
-Edita `assets/js/story.js` para personalizar el comportamiento del desplazamiento:
+El código fuente del motor de historias vive en `assets/js/telar-story/` (un módulo por función — motor de desplazamiento, navegación, tarjetas, paneles) y se empaqueta en `assets/js/telar-story.js`, que es el archivo que las páginas cargan. Para cambiar el comportamiento de las historias, edita los módulos y vuelve a generar el paquete:
 
-```javascript
-// Ajusta el desplazamiento
-const scrollOffset = 100;  // píxeles desde la parte superior
-
-// Personaliza la velocidad de zoom del visor
-const zoomDuration = 500;  // milisegundos
-
-// Agrega transiciones personalizadas por paso
-function onStepEnter(step) {
-  console.log('Entrando al paso:', step);
-  // Tu lógica personalizada
-}
+```bash
+npm run build:js
 ```
+
+Nunca edites `assets/js/telar-story.js` directamente: es un archivo generado y la próxima compilación lo sobrescribe. El mapa del directorio en `assets/js/README.md` describe qué hace cada módulo y dónde conviene hacer cada tipo de cambio.
 
 ### Agregar interacciones personalizadas
 

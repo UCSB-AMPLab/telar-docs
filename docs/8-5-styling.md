@@ -201,21 +201,13 @@ This also helps your own customizations: **unlayered CSS always wins over layere
 
 ### Modify Story Behavior
 
-Edit `assets/js/story.js` to customize scrolling behavior:
+The story engine's source lives in `assets/js/telar-story/` (one module per concern — scroll engine, navigation, card pool, panels) and is bundled into `assets/js/telar-story.js`, which is the file pages actually load. To change story behavior, edit the modules and rebuild the bundle:
 
-```javascript
-// Adjust scroll offset
-const scrollOffset = 100;  // pixels from top
-
-// Customize viewer zoom speed
-const zoomDuration = 500;  // milliseconds
-
-// Add custom step transitions
-function onStepEnter(step) {
-  console.log('Entering step:', step);
-  // Your custom logic
-}
+```bash
+npm run build:js
 ```
+
+Never edit `assets/js/telar-story.js` directly — it is generated, and the next rebuild overwrites it. The directory map in `assets/js/README.md` describes what each module does and where to make which kind of change.
 
 ### Add Custom Interactions
 
