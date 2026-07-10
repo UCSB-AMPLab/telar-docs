@@ -63,7 +63,12 @@ The workflow (`.github/workflows/build.yml`) automatically:
    - Compiles templates with data
    - Outputs to `_site/` directory
 
-7. **Deploys to GitHub Pages**
+7. **Encrypts Private Stories**
+   - Runs `scripts/encrypt_protected_stories.py`, unconditionally, immediately before deploy
+   - Encrypts any story marked `private: yes` (or `protected: yes`) in place in `_site/`
+   - Fails the build if anything would otherwise ship as plaintext
+
+8. **Deploys to GitHub Pages**
    - Publishes `_site/` directory
    - Site goes live at your GitHub Pages URL
 
@@ -161,6 +166,9 @@ jobs:
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
+      - name: Encrypt protected stories
+        run: python3 scripts/encrypt_protected_stories.py
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -225,6 +233,29 @@ The `force_audio` input lets you reprocess audio files even when the cache is cu
 - Ensure sheet is published to web (not just shared)
 - Check sheet has proper permissions
 
+### Private Story Build Failure
+
+**Error:** `story/stories are marked protected but no story_key is set` (fails at the "Convert CSVs
+to JSON" step)
+
+**Solution:**
+- Add `story_key: yourkey` to `_config.yml`, or remove `private: yes` from the story
+
+**Error:** `story/stories are marked protected, but .github/workflows/build.yml does not run
+scripts/encrypt_protected_stories.py` (fails at the "Convert CSVs to JSON" step)
+
+**Solution:**
+- Your build workflow predates v1.6.0's private-story encryption step. See [Upgrading Telar: v1.6.0
+  Upgrade Notes](/docs/setup/upgrading/#v160-upgrade-notes) to update `build.yml`.
+
+**Error:** the "Encrypt protected stories" step itself fails (near the end of the build, just
+before "Upload artifact")
+
+**Solution:**
+- This means the rendered site still contains a trace of a private story's content that should
+  have been encrypted away. This is a bug, not a configuration issue — [report
+  it](https://github.com/UCSB-AMPLab/telar/issues) with the workflow run link.
+
 ## Build Performance
 
 Typical build times:
@@ -245,7 +276,10 @@ Typical build times:
 
 1. Check recent commits for errors
 2. Review build logs for specific error messages
-3. Test locally first (`bundle exec jekyll serve`)
+3. Test locally first (`bundle exec jekyll serve`) — note that this never runs the private-story
+   encryption step, so it won't reproduce a private-story build failure. For that, use
+   `python3 scripts/build_local_site.py --build-only` instead (see [Local Development
+   Reference](/docs/developers/local-development/))
 4. Revert to last working commit if needed
 
 ### Build Succeeds But Site Not Updating

@@ -114,52 +114,33 @@ body.embed-mode {
 }
 ```
 
-**Forced visibility:**
+**Button visibility and placement:**
 ```scss
 body.embed-mode {
-  // Always show mobile navigation hints
-  .nav-hint {
-    display: block;
-  }
-
-  // Force navigation buttons on all viewports
-  .arrow-nav-up,
-  .arrow-nav-down {
-    display: flex !important;
+  // Navigation buttons render at every width in embed mode,
+  // centred over the narrative column with intrinsic width
+  .mobile-nav {
+    position: fixed;
+    left: 20%;
+    right: auto;
+    bottom: max(8%, 1.5rem);
+    transform: translateX(-50%);
   }
 }
 ```
 
-**Desktop embed arrow customization:**
+**Narrow embeds (at or below the vertical-layout boundary):**
 ```scss
-body.embed-mode {
-  @media (min-width: 768px) {
-    .arrow-nav-up,
-    .arrow-nav-down {
-      // Horizontal layout at bottom
-      left: 20%;
-      bottom: max(8%, 1.5rem);
-
-      // Hover effects
-      &:hover {
-        transform: scale(1.1) translateY(-2px); // Up arrow
-        box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-      }
-    }
-  }
-}
-```
-
-**Mobile-sized embeds (<768px):**
-```scss
-// Root-level media query for proper specificity
-@media (max-width: 767px) {
-  body.embed-mode .arrow-nav-up,
-  body.embed-mode .arrow-nav-down {
-    // Vertical stack on right side
+// Same boundary as the site-wide vertical layout
+// (_responsive.scss $telar-vertical-min-width, 1024px)
+@media (max-width: $telar-vertical-min-width) {
+  body.embed-mode .mobile-nav {
+    // Right-edge vertical stack
     right: 1rem;
+    left: auto;
     bottom: 50%;
     transform: translateY(50%);
+    flex-direction: column;
   }
 }
 ```
@@ -168,64 +149,22 @@ body.embed-mode {
 
 ### Embed Mode Navigation
 
-**File:** `assets/js/story.js`
+**File:** `assets/js/telar-story/main.js`
 
-```javascript
-function initializeNavigation() {
-  const isMobileViewport = window.innerWidth < 768;
-  const isEmbedMode = window.telarEmbed?.enabled || false;
-
-  if (isMobileViewport || isEmbedMode) {
-    // Mobile or embed: Button navigation
-    initializeEmbedNavigation();
-  } else {
-    // Desktop: Scroll accumulation
-    initializeDesktopNavigation();
-  }
-}
-```
+Embedded stories always use button navigation, at every width — iframe scroll events do not propagate reliably, so the scroll engine is never engaged inside an embed. Outside embeds, navigation mode follows the layout mode: horizontal layout uses the Lenis-driven scroll engine, and vertical layout (viewports at or below 1024px wide, or narrower than 3:4) uses the same prev/next buttons. The boundary is declared once in `_sass/_responsive.scss` (`$telar-vertical-min-width`) and read at runtime by `layout-mode.js`.
 
 ### Navigation Modes
 
-**Desktop (non-embed):**
-- Wheel event with scroll accumulation
-- Threshold: 50vh (50% of viewport height)
-- Cooldown: 600ms
-- Max scroll delta cap: 200px
-
-**Mobile (<768px):**
-- Button navigation only
-- 400ms navigation cooldown
-- Vertical stack on right side
-
-**Embed mode (all viewports):**
-- Button navigation (same as mobile)
-- Desktop: Horizontal layout at bottom
-- Mobile: Vertical stack on right
-- Keyboard navigation preserved
+- **Embeds (all widths):** button navigation; wide embeds center the buttons over the narrative column, narrow embeds stack them on the right edge
+- **Non-embed, horizontal layout:** Lenis-driven scroll engine
+- **Non-embed, vertical layout:** the same button navigation
+- **Keyboard navigation** works in every mode
 
 ### Button Creation
 
-```javascript
-function createNavigationButtons() {
-  const upBtn = document.createElement('button');
-  upBtn.className = 'arrow-nav-up';
-  upBtn.setAttribute('aria-label', 'Previous step');
-  upBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>';
+**File:** `assets/js/telar-story/navigation.js`
 
-  const downBtn = document.createElement('button');
-  downBtn.className = 'arrow-nav-down';
-  downBtn.setAttribute('aria-label', 'Next step');
-  downBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
-
-  // Attach event listeners
-  upBtn.addEventListener('click', () => navigateSteps('previous'));
-  downBtn.addEventListener('click', () => navigateSteps('next'));
-
-  document.body.appendChild(upBtn);
-  document.body.appendChild(downBtn);
-}
-```
+`initializeButtonNavigation()` builds the `.mobile-nav` container with its `.mobile-prev` and `.mobile-next` buttons and wires them to step navigation; it returns early if the container already exists.
 
 ## "View Full Site" Banner
 

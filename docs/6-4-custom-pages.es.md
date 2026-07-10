@@ -116,6 +116,8 @@ Las páginas personalizadas usan el layout `user-page`, que proporciona:
 - **Procesamiento de widgets**: Soporte para acordeón, pestañas y carrusel
 - **Integración de glosario**: Enlace automático y visualización de panel
 
+También está disponible el layout convencional de Jekyll, `layout: page`, si agregas tus propios archivos markdown con front matter: una columna de texto centrada y mínima, con el encabezado y el pie de página del sitio, pero sin procesamiento de widgets ni integración con el glosario.
+
 ## Nombres de archivo
 
 Los nombres de archivo determinan la URL de la página:

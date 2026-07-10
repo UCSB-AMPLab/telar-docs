@@ -92,7 +92,7 @@ paso,objeto,x,y,zoom,pregunta,respuesta
 3,map-lima,0.5,0.5,1.0,¿Dónde se encontraron?,En el centro histórico de Lima.
 ```
 
-Las tarjetas de título participan plenamente en la navegación — el desplazamiento, el teclado y los [enlaces profundos](#compartir-y-enlaces-profundos) funcionan como se espera. También pueden tener capas de paneles, igual que cualquier otro paso.
+Las tarjetas de título participan plenamente en la navegación — el desplazamiento, el teclado y los [enlaces profundos](#compartir-y-enlaces-profundos) funcionan como se espera. Los paneles de capas no están disponibles en las tarjetas de título — las columnas `layer` se ignoran, igual que `x`, `y` y `zoom`.
 
 ### Tabla de contenidos de secciones
 

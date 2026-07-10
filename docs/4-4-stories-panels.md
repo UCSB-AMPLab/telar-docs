@@ -92,7 +92,7 @@ step,object,x,y,zoom,question,answer
 3,map-lima,0.5,0.5,1.0,Where were these found?,In the historic center of Lima.
 ```
 
-Title cards participate fully in navigation — scroll, keyboard, and [deep linking](#sharing-and-deep-linking) all work as expected. They can also have layer panels, just like any other step.
+Title cards participate fully in navigation — scroll, keyboard, and [deep linking](#sharing-and-deep-linking) all work as expected. Layer panels are not available on title cards — the `layer` columns are ignored, like `x`, `y`, and `zoom`.
 
 ### Section table of contents
 

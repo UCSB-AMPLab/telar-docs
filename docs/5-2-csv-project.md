@@ -52,21 +52,21 @@ Defines stories and their display order on the homepage.
 | `title` | `titulo` | Yes | Story title shown on homepage and story page |
 | `subtitle` | `subtitulo` | No | Brief description shown on story cards |
 | `byline` | `firma` | No | Author attribution; supports markdown for links and formatting |
-| `protected` | `protegida` | No | Set to `yes` to encrypt this story (requires `story_key` in config) |
+| `private` | `privada` | No | Set to `yes` to encrypt this story (requires `story_key` in config); `protected`/`protegida` also accepted |
 | `show_sections` | `mostrar_secciones` | No | Set to `yes` to display a table of contents on the story's intro card. See [Stories & Panels: Section table of contents](/docs/your-content/stories-panels/#section-table-of-contents). **New in v1.2.0** |
 
 ### Example
 
 **English:**
 ```csv
-order,story_id,title,subtitle,byline,protected,show_sections
+order,story_id,title,subtitle,byline,private,show_sections
 1,colonial-textiles,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith,,yes
 2,trade-routes,Trade Routes,Following the threads of commerce,based on [original research](https://example.com),yes,
 ```
 
 **Spanish:**
 ```csv
-orden,id_historia,titulo,subtitulo,firma,protegida,mostrar_secciones
+orden,id_historia,titulo,subtitulo,firma,privada,mostrar_secciones
 1,textiles-coloniales,Textiles Coloniales,Tradiciones de tejido de las Américas,por Dra. María García,,si
 2,rutas-comerciales,Rutas Comerciales,Siguiendo los hilos del comercio,basado en [investigación original](https://ejemplo.com),si,
 ```
@@ -107,12 +107,16 @@ orden,id_historia,titulo,subtitulo,firma,protegida,mostrar_secciones
   - `based on [original research](https://example.com)`
   - `curated by *Digital Archive Project*`
 
-#### protected
+#### private
 - **New in v0.8.0**
-- Set to `yes` to encrypt the story during build
-- Requires `story_key` in `_config.yml`
-- Viewers access protected stories via `?key=your-key` URL parameter
+- Set to `yes` to encrypt the story after the build finishes (the story renders normally during
+  the Jekyll build itself; encryption is a separate step that runs afterward)
+- Requires `story_key` in `_config.yml` — the build fails rather than publish the story as
+  plaintext if the key is missing
+- Viewers access private stories via `?key=your-key` URL parameter
 - Leave empty or omit for public stories
+- Local preview (`bundle exec jekyll serve`) does not encrypt anything — see [Private Stories:
+  Testing Locally](/docs/site-features/private-stories/#testing-locally)
 - See [Private Stories](/docs/site-features/private-stories/) for details
 
 #### show_sections
@@ -131,7 +135,7 @@ orden,id_historia,titulo,subtitulo,firma,protegida,mostrar_secciones
 | `title` | `title`, `titulo` |
 | `subtitle` | `subtitle`, `subtitulo` |
 | `byline` | `byline`, `firma` |
-| `protected` | `protected`, `protegida`, `private`, `privada` |
+| `private` | `private`, `privada`, `protected`, `protegida` |
 | `show_sections` | `show_sections`, `mostrar_secciones` |
 
 ## See Also

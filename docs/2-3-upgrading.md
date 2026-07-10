@@ -62,6 +62,53 @@ The upgrade system:
 4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
 5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
+### v1.6.0 Upgrade Notes
+
+v1.6.0 changes how private stories are built. Existing stories, objects, and general configuration
+continue to work unchanged — but **if your site has any story marked `private: yes` (or
+`protected: yes`), you must update your build workflow by hand, or your build will fail.**
+
+**What's included:** private stories now render through the same templates as open stories during
+the Jekyll build — markdown, glossary links, LaTeX, audio clips, and alt text all work once a
+viewer unlocks a private story, the same as on an open one. Encryption itself now happens as a
+separate step after the build finishes, rather than during it. The build refuses to publish a
+private story as plaintext: it fails early if a private story exists without a `story_key`, and it
+fails again after the build if anything is misconfigured so that the workflow doesn't run the new
+encryption step.
+
+**Required manual step — update your GitHub Actions build workflow:**
+
+For security, GitHub does not allow the automated upgrade to modify workflow files. If your site
+has (or might ever have) a private story, you must add the new encryption step to
+`.github/workflows/build.yml` yourself:
+
+1. Open [build.yml on GitHub](https://github.com/UCSB-AMPLab/telar/blob/main/.github/workflows/build.yml)
+2. Click **Copy raw contents**
+3. In your repository, navigate to `.github/workflows/build.yml` and click **Edit**
+4. Select all and replace with the copied contents
+5. Commit the change
+
+{: .warning }
+> If you skip this step and mark a story `private: yes`, your build will fail at the "Convert CSVs
+> to JSON" step with an error telling you the workflow doesn't run the encryption script. This is
+> intentional — without the new step, your site would otherwise publish the "private" story as
+> plaintext.
+>
+> If your site has no private stories, nothing breaks if you skip this step — but you won't be
+> able to add one later without applying this update first.
+
+**Testing locally:** neither `bundle exec jekyll serve` nor `scripts/build_local_site.py`'s default
+serve mode encrypts anything — private stories preview as plaintext under both. To test the
+locked behavior, run `python3 scripts/build_local_site.py --build-only` and serve the resulting
+`_site/` with a static file server. See [Private Stories: Testing
+Locally](/docs/site-features/private-stories/#testing-locally).
+
+**If you only use GitHub's web interface:**
+
+The automated upgrade handles all other framework file replacements. If you have (or plan to add)
+any private story, you must still copy the updated `build.yml` as described above — this one is
+not optional.
+
 ### v1.5.0 Upgrade Notes
 
 v1.5.0 is a robustness and security release. It is runtime and tooling only — existing stories, objects, and configuration continue to work unchanged, with no CSV edits and no config changes. The automated upgrade handles all framework file replacements; two optional manual steps are described below.

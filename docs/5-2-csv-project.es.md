@@ -52,21 +52,21 @@ Define las historias y su orden de visualización en la página principal.
 | `title` | `titulo` | Sí | Título de la historia mostrado en la página principal y en la historia |
 | `subtitle` | `subtitulo` | No | Descripción breve mostrada en las tarjetas de historia |
 | `byline` | `firma` | No | Atribución de autoría; admite markdown para enlaces y formato |
-| `protected` | `protegida` | No | Pon `yes` para encriptar esta historia (requiere `story_key` en la configuración) |
+| `private` | `privada` | No | Pon `yes` para encriptar esta historia (requiere `story_key` en la configuración); también se aceptan `protected`/`protegida` |
 | `show_sections` | `mostrar_secciones` | No | Pon `si` para mostrar una tabla de contenidos en la tarjeta de inicio de la historia. Consulta [Historias y paneles: Tabla de contenidos de secciones](/guia/tu-contenido/historias-paneles/#tabla-de-contenidos-de-secciones). **Nuevo en v1.2.0** |
 
 ### Ejemplo
 
 **Inglés:**
 ```csv
-order,story_id,title,subtitle,byline,protected,show_sections
+order,story_id,title,subtitle,byline,private,show_sections
 1,colonial-textiles,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith,,yes
 2,trade-routes,Trade Routes,Following the threads of commerce,based on [original research](https://example.com),yes,
 ```
 
 **Español:**
 ```csv
-orden,id_historia,titulo,subtitulo,firma,protegida,mostrar_secciones
+orden,id_historia,titulo,subtitulo,firma,privada,mostrar_secciones
 1,textiles-coloniales,Textiles Coloniales,Tradiciones de tejido de las Américas,por Dra. María García,,si
 2,rutas-comerciales,Rutas Comerciales,Siguiendo los hilos del comercio,basado en [investigación original](https://ejemplo.com),si,
 ```
@@ -107,11 +107,12 @@ orden,id_historia,titulo,subtitulo,firma,protegida,mostrar_secciones
   - `basado en [investigación original](https://example.com)`
   - `curado por *Proyecto de Archivo Digital*`
 
-#### protected
+#### private
 - **Nuevo en v0.8.0**
-- Pon `yes` para encriptar la historia durante la compilación
-- Requiere `story_key` en `_config.yml`
-- Las personas acceden a historias protegidas mediante el parámetro de URL `?key=tu-clave`
+- Pon `yes` para encriptar la historia cuando la compilación termina (durante la compilación de Jekyll la historia se genera normalmente; la encriptación es un paso aparte que corre después)
+- Requiere `story_key` en `_config.yml` — si falta la clave, la compilación falla en lugar de publicar la historia en texto plano
+- Las personas acceden a historias privadas mediante el parámetro de URL `?key=tu-clave`
+- La previsualización local (`bundle exec jekyll serve`) no encripta nada — consulta [Historias privadas: Probar localmente](/guia/funciones/historias-privadas/#probar-localmente)
 - Déjalo vacío u omítelo para historias públicas
 - Consulta [Historias Privadas](/guia/funciones/historias-privadas/) para detalles
 
@@ -131,7 +132,7 @@ orden,id_historia,titulo,subtitulo,firma,protegida,mostrar_secciones
 | `title` | `title`, `titulo` |
 | `subtitle` | `subtitle`, `subtitulo` |
 | `byline` | `byline`, `firma` |
-| `protected` | `protected`, `protegida`, `private`, `privada` |
+| `private` | `private`, `privada`, `protected`, `protegida` |
 | `show_sections` | `show_sections`, `mostrar_secciones` |
 
 ## Véase también

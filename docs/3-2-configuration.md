@@ -259,10 +259,15 @@ Encrypt stories so that only viewers with the correct key can access them:
 story_key: "your-secret-key"
 ```
 
-- Stories with `protected: yes` in project.csv will be encrypted during build
-- Viewers access protected stories via a URL parameter: `?key=your-secret-key`
+- Stories with `private: yes` in project.csv will be encrypted after the build (`protected` also
+  accepted as a column name)
+- Viewers access private stories via a URL parameter: `?key=your-secret-key`
 - Leave `story_key` empty or omit it to disable story protection
-- See [Private Stories](/docs/site-features/private-stories/) for setup details
+- If any story is marked `private: yes`, the build fails rather than publish it as plaintext —
+  either because `story_key` is missing, or because the build workflow doesn't run the encryption
+  step (sites upgraded from before v1.6.0 need this added by hand)
+- See [Private Stories](/docs/site-features/private-stories/) for setup, local-testing, and
+  build-failure details
 
 {: .warning }
 > Story protection uses client-side encryption. It prevents casual access but is not suitable for highly sensitive content. For stronger security, use a private GitHub repository.

@@ -19,7 +19,7 @@ aux_links:
     - "https://ampl.clair.ucsb.edu/telar"
 
 # Footer content
-footer_content: "Developed by Adelaida Ávila, Juan Cobo Betancourt, Natalie Cobo, Santiago Muñoz, and students and scholars at the UCSB Archives, Memory, and Preservation Lab, the UT Archives, Mapping, and Pedagogy Lab, and Neogranadina"
+footer_content: "Developed by Adelaida Ávila, Ana María Cárdenas Gasca, Juan Cobo Betancourt, Natalie Cobo, Santiago Muñoz, and students and scholars at the UCSB Archives, Memory, and Preservation Lab, the UT Archives, Mapping, and Pedagogy Lab, and Neogranadina"
 
 # Search
 search_enabled: true
@@ -66,8 +66,8 @@ callouts:
     color: yellow
 
 # Telar framework version (used across the docs site)
-telar_version: "1.5.4"
-telar_release_date: "2026-06-29"
+telar_version: "1.6.0"
+telar_release_date: "2026-07-10"
 
 # Build settings
 markdown: kramdown

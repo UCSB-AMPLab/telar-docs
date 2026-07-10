@@ -89,6 +89,9 @@ bundle exec jekyll serve --livereload --port 4001
 # Ver en http://localhost:4001
 ```
 
+{: .note }
+> **Aquí las historias privadas se previsualizan en texto plano.** Ni `bundle exec jekyll serve` ni el modo de servir por defecto de `build_local_site.py` ejecutan el paso de encriptación — Jekyll regenera `_site` continuamente mientras sirve el sitio, y la encriptación corre una sola vez, cuando una compilación termina. Si tu sitio tiene una historia marcada `private: yes`, verás su contenido a la vista al previsualizar así; es el comportamiento esperado. Para previsualizar el comportamiento bloqueado que vería una persona visitante, ejecuta `python3 scripts/build_local_site.py --build-only` y sirve el `_site/` resultante con un servidor de archivos estáticos. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles.
+
 ## Flujo de trabajo paso a paso
 
 ### Paso 1: reúne tus imágenes

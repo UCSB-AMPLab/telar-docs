@@ -540,7 +540,7 @@ webrick:
 development-features:
   christmas_tree_mode: false
   viewer_preloading:
-    max_viewer_cards: 10
+    max_viewer_cards: 8
     preload_steps: 6
     loading_threshold: 5
     min_ready_viewers: 3

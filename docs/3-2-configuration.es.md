@@ -268,10 +268,11 @@ Encripta historias para que solo las personas con la clave correcta puedan acced
 story_key: "tu-clave-secreta"
 ```
 
-- Las historias con `protected: yes` en project.csv se encriptan durante la compilación
-- Las personas acceden a historias protegidas mediante un parámetro de URL: `?key=tu-clave-secreta`
+- Las historias con `private: yes` en project.csv se encriptan cuando la compilación termina (también se acepta `protected` como nombre de columna)
+- Las personas acceden a historias privadas mediante un parámetro de URL: `?key=tu-clave-secreta`
 - Deja `story_key` vacío u omítelo para desactivar la protección de historias
-- Consulta [Historias Privadas](/guia/funciones/historias-privadas/) para detalles de configuración
+- Si alguna historia está marcada `private: yes`, la compilación falla en lugar de publicarla en texto plano — ya sea porque falta `story_key`, o porque el flujo de compilación no ejecuta el paso de encriptación (los sitios actualizados desde antes de v1.6.0 necesitan agregarlo a mano)
+- Consulta [Historias privadas](/guia/funciones/historias-privadas/) para la configuración, las pruebas locales y los detalles de los fallos de compilación
 
 {: .warning }
 > La protección de historias usa encriptación del lado del cliente. Previene el acceso casual pero no es adecuada para contenido altamente sensible. Para mayor seguridad, usa un repositorio privado de GitHub.

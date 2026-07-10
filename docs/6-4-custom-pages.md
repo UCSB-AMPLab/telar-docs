@@ -116,6 +116,8 @@ Custom pages use the `user-page` layout, which provides:
 - **Widget processing**: Accordion, tabs, and carousel support
 - **Glossary integration**: Auto-linking and panel display
 
+Jekyll's conventional `layout: page` is also available if you add your own markdown files with front matter: a minimal centered prose column with the site header and footer, without widget processing or glossary integration.
+
 ## File Naming
 
 File names determine the page URL:
