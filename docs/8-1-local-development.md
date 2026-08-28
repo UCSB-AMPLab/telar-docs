@@ -16,11 +16,16 @@ Complete reference for local development, build commands, and troubleshooting.
 
 ### Required Software
 
-- **Ruby 3.0+**: Jekyll runtime
+- **Ruby 3.2+**: Jekyll runtime
 - **Bundler**: Ruby dependency management
 - **Python 3.9+**: IIIF generation and CSV processing
 - **Node.js 18+**: JavaScript bundling (esbuild)
 - **Git**: Version control
+
+The repository includes a `.ruby-version` file naming the exact interpreter the
+site is built with, so version managers such as rbenv, chruby and asdf pick it
+up on their own. On an older Ruby, `bundle install` stops and says which version
+it expected, rather than continuing with a different set of gems.
 
 ### Installation Guides
 
