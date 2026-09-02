@@ -77,6 +77,21 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
+### Notas de actualización a v1.7.0
+
+**Actualizar en GitHub no cambia.** Si usas el flujo de trabajo **"Upgrade Telar"**, ejecútalo como siempre: no hay nada nuevo que hacer.
+
+**Si actualizas desde tu computador, esta versión cambia la manera de hacerlo.** Hasta ahora, el archivo `scripts/upgrade.py` de tu sitio hacía la actualización él mismo. Esa copia solo conoce las versiones que existían cuando se instaló, así que un sitio creado en la v1.4.0 le pregunta a su propia herramienta, que le responde que la v1.4.0 es la más reciente, y se queda tres versiones atrás sin avisar. Desde la v1.7.0, `scripts/upgrade.py` le pregunta a GitHub cuál es la versión más reciente, descarga las herramientas de actualización de esa versión, revisa que su suma de comprobación coincida con la publicada, y las ejecuta. De ahí en adelante tu sitio se mantiene al día por su cuenta.
+
+**Se necesita conexión a internet.** Actualizar siempre la ha necesitado para descargar los archivos del marco. Ahora hace falta desde el comienzo, para descargar las herramientas. Sin conexión, la actualización se detiene y te lo dice, en vez de terminar como si todo hubiera salido bien.
+
+**Los sitios que solo se actualizan localmente necesitan un paso manual, una sola vez.** Si tu sitio nunca ha ejecutado el flujo de trabajo "Upgrade Telar" en GitHub, su `scripts/upgrade.py` sigue siendo el antiguo y te dirá que el sitio ya está al día. No alcanza a ver la v1.7.0, porque solo conoce las versiones que existían cuando se instaló. Haz una de estas dos cosas, una sola vez:
+
+- **Ejecuta el flujo de trabajo "Upgrade Telar" en GitHub** (**Actions** → **Upgrade Telar** → **Run workflow**). Eso actualiza el sitio e instala el nuevo lanzador.
+- **O hazlo a mano**: en la página de la versión v1.7.0 descarga `telar-scripts-v1.7.0.tar.gz`, descomprímelo y, desde la carpeta de tu sitio, ejecuta `python3 /ruta/donde/lo/descomprimiste/scripts/telar_upgrade.py`.
+
+Después de cualquiera de las dos, el `scripts/upgrade.py` de tu sitio es el nuevo lanzador y no vuelve a hacer falta ningún paso manual.
+
 ### Notas de actualización a v1.6.0
 
 v1.6.0 cambia la forma en que se construyen las historias privadas. Las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios — pero **si tu sitio tiene alguna historia marcada `private: yes` (o `protected: yes`), tienes que actualizar tu flujo de construcción a mano, o la construcción fallará.**
