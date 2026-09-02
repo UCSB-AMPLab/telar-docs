@@ -61,6 +61,7 @@ credit: Archivo General de Indias
 - **`alt`** (recomendado) — Descripción para accesibilidad
 - **`caption`** (opcional) — Texto que se muestra debajo de la imagen; admite markdown (ej., `*cursivas*`)
 - **`credit`** (opcional) — Línea de atribución; admite markdown
+- **`width`** (ancho) y **`height`** (alto), opcionales — Las dimensiones de la imagen en píxeles. Si indicas las dos, Telar define el tamaño del carrusel con esos valores y no necesita abrir la imagen. De lo contrario, cada imagen se abre al generar el sitio para medirla, y si está alojada en otro servidor, se descarga completa cada vez.
 
 Separa los elementos del carrusel con `---`.
 
@@ -71,6 +72,8 @@ Puedes usar URLs completas para imágenes alojadas en otros servidores:
 ```markdown
 image: https://example.org/images/photo.jpg
 ```
+
+Si las imágenes están alojadas en otros servidores, indica `width` (ancho) y `height` (alto) para que no haya que descargar cada una solo para medirla al generar el sitio.
 
 ## Pestañas
 
