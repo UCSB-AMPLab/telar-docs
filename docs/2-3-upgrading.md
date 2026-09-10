@@ -62,6 +62,21 @@ The upgrade system:
 4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
 5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
+### v1.7.0 Upgrade Notes
+
+**Upgrading on GitHub is unchanged.** If you use the **Upgrade Telar** workflow, run it as usual — there is nothing new to do.
+
+**If you upgrade from your own computer, this release changes how that works.** Until now, `scripts/upgrade.py` in your site did the upgrading itself. That copy only knows the releases that existed when that copy was installed, so a site set up at v1.4.0 asks its own tooling, is told v1.4.0 is current, and quietly stays three releases behind. From v1.7.0, `scripts/upgrade.py` asks GitHub which release is newest, downloads that release's upgrade tooling, checks that its checksum matches the one published with it, and runs that. Your site then keeps itself current from then on.
+
+**It needs an internet connection.** Upgrading has always needed one to fetch framework files. Now the connection is needed before anything starts, to fetch the tooling itself. Without one the upgrade stops and says so, rather than finishing as though everything had worked.
+
+**Local-only sites need one manual step, once.** If your site has never run the Upgrade Telar workflow on GitHub, its `scripts/upgrade.py` is still the older kind and will tell you the site is already up to date. It cannot see v1.7.0, because it only knows the releases that existed when that copy was installed. Do either of these once:
+
+- **Run the Upgrade Telar workflow on GitHub** (**Actions** → **Upgrade Telar** → **Run workflow**). This upgrades the site and installs the new launcher.
+- **Or do it by hand**: from the v1.7.0 release page download `telar-scripts-v1.7.0.tar.gz`, extract it, and from your site's folder run `python3 /path/where/you/extracted/scripts/telar_upgrade.py`.
+
+After either, your site's `scripts/upgrade.py` is the new launcher and no manual step is needed again.
+
 ### v1.6.0 Upgrade Notes
 
 v1.6.0 changes how private stories are built. Existing stories, objects, and general configuration

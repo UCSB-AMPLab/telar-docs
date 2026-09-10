@@ -61,6 +61,7 @@ credit: Archivo General de Indias
 - **`alt`** (recommended) — Accessibility description
 - **`caption`** (optional) — Text displayed below the image; supports markdown (e.g., `*italics*`)
 - **`credit`** (optional) — Attribution line; supports markdown
+- **`width`** and **`height`** (optional) — The image's dimensions in pixels. Declare both and Telar sizes the carousel from them without opening the image. Without them, each image is opened during the build to measure it, and an image hosted elsewhere is downloaded every time.
 
 Separate carousel items with `---`.
 
@@ -71,6 +72,8 @@ You can use full URLs for images hosted elsewhere:
 ```markdown
 image: https://example.org/images/photo.jpg
 ```
+
+When images are hosted elsewhere, declare `width` and `height` so the build does not download each one just to measure it.
 
 ## Tabs
 
