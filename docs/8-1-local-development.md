@@ -22,10 +22,11 @@ Complete reference for local development, build commands, and troubleshooting.
 - **Node.js 18+**: JavaScript bundling (esbuild)
 - **Git**: Version control
 
-The repository includes a `.ruby-version` file naming the exact interpreter the
-site is built with, so version managers such as rbenv, chruby and asdf pick it
-up on their own. On an older Ruby, `bundle install` stops and says which version
-it expected, rather than continuing with a different set of gems.
+Telar needs Ruby 3.2 or newer, and continuous integration builds with 3.2.11.
+The Telar template carries a `.ruby-version` file naming that version, so
+version managers such as rbenv, chruby and asdf pick it up on their own. On an
+older Ruby, `bundle install` stops and says which version it expected, rather
+than continuing with a different set of gems.
 
 ### Installation Guides
 

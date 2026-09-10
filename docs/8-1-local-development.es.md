@@ -22,10 +22,11 @@ Referencia completa para desarrollo local, comandos de construcción y solución
 - **Node.js 18+**: Empaquetado de JavaScript (esbuild)
 - **Git**: Control de versiones
 
-El repositorio incluye un archivo `.ruby-version` con la versión exacta con la
-que se compila el sitio, de modo que gestores como rbenv, chruby o asdf la
-reconocen por su cuenta. Con una versión anterior, `bundle install` se detiene e
-indica cuál esperaba, en vez de continuar con otro conjunto de gemas.
+Telar necesita Ruby 3.2 o una versión más nueva, y la integración continua
+construye el sitio con la 3.2.11. La plantilla de Telar trae un archivo
+`.ruby-version` con esa versión, de modo que gestores de versiones como rbenv, chruby o asdf
+la reconocen por su cuenta. Con una versión anterior, `bundle install` se
+detiene e indica cuál esperaba, en vez de seguir con un conjunto distinto de gemas.
 
 ### Guías de instalación
 
