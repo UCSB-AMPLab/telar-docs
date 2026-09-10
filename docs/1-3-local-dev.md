@@ -22,7 +22,7 @@ This workflow gives you full control over the build process. You edit CSV and ma
 
 ## Prerequisites
 
-- Ruby 3.0+ (for Jekyll)
+- Ruby 3.2+ (for Jekyll)
 - Bundler
 - Python 3.9+ (for IIIF generation)
 - Node.js 18+ (for JavaScript bundling)
@@ -42,6 +42,9 @@ gem install bundler
 sudo apt-get install ruby-full build-essential
 gem install bundler
 ```
+
+If your distribution's package installs an older Ruby, check with `ruby -v` and
+install 3.2 or newer with a version manager instead.
 
 ### Clone and Setup
 

@@ -22,7 +22,7 @@ Este flujo de trabajo te da control total sobre el proceso de compilación. Edit
 
 ## Requisitos previos
 
-- Ruby 3.0+ (para Jekyll)
+- Ruby 3.2+ (para Jekyll)
 - Bundler
 - Python 3.9+ (para generación IIIF)
 - Node.js 18+ (para empaquetado de JavaScript)
@@ -42,6 +42,9 @@ gem install bundler
 sudo apt-get install ruby-full build-essential
 gem install bundler
 ```
+
+Si el paquete de tu distribución instala una versión anterior, verifícalo con
+`ruby -v` e instala Ruby 3.2 o superior con un gestor de versiones.
 
 ### Clona y configura
 

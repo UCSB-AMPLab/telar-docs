@@ -16,11 +16,16 @@ Referencia completa para desarrollo local, comandos de construcción y solución
 
 ### Software requerido
 
-- **Ruby 3.0+**: Runtime de Jekyll
+- **Ruby 3.2+**: Runtime de Jekyll
 - **Bundler**: Gestión de dependencias de Ruby
 - **Python 3.9+**: Generación IIIF y procesamiento CSV
 - **Node.js 18+**: Empaquetado de JavaScript (esbuild)
 - **Git**: Control de versiones
+
+El repositorio incluye un archivo `.ruby-version` con la versión exacta con la
+que se compila el sitio, de modo que gestores como rbenv, chruby o asdf la
+reconocen por su cuenta. Con una versión anterior, `bundle install` se detiene e
+indica cuál esperaba, en vez de continuar con otro conjunto de gemas.
 
 ### Guías de instalación
 
