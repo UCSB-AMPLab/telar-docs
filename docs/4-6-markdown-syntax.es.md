@@ -38,6 +38,9 @@ Telar usa el procesador [Python Markdown](https://python-markdown.github.io/) co
 
 Puedes proporcionar el contenido del panel de tres maneras. Para más detalles, consulta la [Referencia CSV: Historias](/guia/tus-datos/csv-historias/#contenido-de-capa).
 
+{: .note }
+> Los tres métodos que siguen son para quien trabaja en una hoja de cálculo. En el Compositor, el título del panel tiene su propio campo, y todo lo que pegues en el campo **Contenido** —incluido un bloque `---`— se publica como parte del texto del panel, no como título.
+
 ### Método 1: Introducir texto directamente
 
 Escribe el texto del panel directamente en la columna `contenido_capa1` de tu hoja de cálculo:
@@ -96,7 +99,7 @@ El archivo usa frontmatter para el título del panel y soporta todas las funcion
 ```
 
 {: .note }
-> **Consejo**: No uses `# Primer nivel` en paneles; el panel ya tiene un título definido en el front matter.
+> **Consejo**: No uses `# Primer nivel` en los paneles; cada panel ya tiene su título.
 
 ### Estilos de texto
 

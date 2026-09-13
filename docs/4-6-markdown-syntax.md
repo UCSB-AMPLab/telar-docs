@@ -38,6 +38,9 @@ In case you're wondering, Telar uses the [Python Markdown](https://python-markdo
 
 You can provide panel content in three ways. For full details, see the [CSV Reference: Stories](/docs/your-data/csv-stories/#layer-content).
 
+{: .note }
+> The three methods that follow describe authoring in a spreadsheet. In the Compositor, the panel title has its own field, and anything pasted into the **Content** field — a `---` block included — is published as part of the panel's text, not read as a title.
+
 ### Method 1: Entering Text Directly
 
 Type panel text directly in your spreadsheet's `layer1_content` column:
@@ -96,7 +99,7 @@ The file uses frontmatter for the panel title and supports all markdown features
 ```
 
 {: .note }
-> **Tip**: Don't use `# First Level` in panels - the panel already has a title from frontmatter.
+> **Tip**: Don't use `# First Level` in panels — each panel already has a title.
 
 ### Text Styling
 

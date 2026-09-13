@@ -131,6 +131,9 @@ Si una capa no tiene contenido, su botón se oculta automáticamente. A la Capa 
 
 El contenido de los paneles se puede proporcionar de tres maneras. La elección depende de la complejidad:
 
+{: .note }
+> Los tres métodos que siguen son para quien trabaja en una hoja de cálculo. En el Compositor, el título del panel tiene su propio campo, y todo lo que pegues en el campo **Contenido** —incluido un bloque `---`— se publica como parte del texto del panel, no como título.
+
 ### Método 1: introducir texto directamente
 
 Escribe el texto directamente en la celda de la hoja de cálculo. Ideal para paneles cortos (1–2 párrafos).
@@ -209,6 +212,9 @@ de tejido compleja que era común en el periodo colonial.
 ```
 
 Si se omite el *frontmatter*, el panel no tiene título — el contenido comienza de inmediato.
+
+{: .note }
+> Esto vale para los paneles que se escriben en una hoja de cálculo o en un archivo markdown. En el Compositor, el título del panel tiene su propio campo, y un bloque `---` que pegues en el campo **Contenido** se publica como parte del texto del panel, no como título.
 
 ### Qué se puede usar en los paneles
 

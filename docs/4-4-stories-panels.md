@@ -131,6 +131,9 @@ If a layer has no content, its button is hidden automatically. Layer 2 is access
 
 You can provide panel content in three ways. Choose based on complexity:
 
+{: .note }
+> The three methods that follow describe authoring in a spreadsheet. In the Compositor, the panel title has its own field, and anything pasted into the **Content** field — a `---` block included — is published as part of the panel's text, not read as a title.
+
 ### Method 1: Enter text directly
 
 Type your text directly in the spreadsheet cell. Best for short panels (1–2 paragraphs).
@@ -209,6 +212,9 @@ weaving technique that was common in the colonial period.
 ```
 
 If you omit the frontmatter, the panel has no title — the content starts immediately.
+
+{: .note }
+> This applies to panels written in a spreadsheet or a markdown file. In the Compositor, the panel title has its own field, and a `---` block pasted into the **Content** field is published as part of the panel's text, not read as a title.
 
 ### What you can use in panels
 
