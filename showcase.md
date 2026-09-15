@@ -91,6 +91,8 @@ extra_css:
 
     var tags = el('div', 'sc-card__tags');
     tags.appendChild(el('span', 'sc-chip', CONTEXT_LABELS[p.context] || CONTEXT_LABELS.other));
+    if (p.authorship === 'individual') tags.appendChild(el('span', 'sc-chip', 'Individual'));
+    else if (p.authorship === 'group') tags.appendChild(el('span', 'sc-chip', 'Group'));
     body.appendChild(tags);
 
     var footer = el('div', 'sc-card__footer');

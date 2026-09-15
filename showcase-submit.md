@@ -18,19 +18,6 @@ extra_css:
 
 <form id="sc-form" class="sc-form" novalidate>
 
-  <div class="sc-q" data-field="name">
-    <label class="sc-label" for="sc-name">Your name</label>
-    <input class="sc-input" id="sc-name" name="name" type="text" autocomplete="name" maxlength="200">
-    <p class="sc-error" hidden></p>
-  </div>
-
-  <div class="sc-q" data-field="email">
-    <label class="sc-label" for="sc-email">Email</label>
-    <p class="sc-help">So we can get in touch if we have a question about your project. We won't publish it.</p>
-    <input class="sc-input" id="sc-email" name="email" type="email" autocomplete="email" maxlength="320">
-    <p class="sc-error" hidden></p>
-  </div>
-
   <div class="sc-q" data-field="title">
     <label class="sc-label" for="sc-title">Project title</label>
     <input class="sc-input" id="sc-title" name="title" type="text" maxlength="200">
@@ -69,10 +56,43 @@ extra_css:
     </div>
   </fieldset>
 
+  <fieldset class="sc-q" data-field="authorship">
+    <legend class="sc-label">Was this an individual or a group project?</legend>
+    <div class="sc-radio-group">
+      <label class="sc-radio"><input type="radio" name="authorship" value="individual"> Individual</label>
+      <label class="sc-radio"><input type="radio" name="authorship" value="group"> Group</label>
+    </div>
+    <p class="sc-error" hidden></p>
+  </fieldset>
+
+  <fieldset class="sc-q" data-field="method">
+    <legend class="sc-label">How did you build the site?</legend>
+    <div class="sc-radio-group">
+      <label class="sc-radio"><input type="radio" name="method" value="compositor"> With the Compositor</label>
+      <label class="sc-radio"><input type="radio" name="method" value="sheets"> With Google Sheets</label>
+      <label class="sc-radio"><input type="radio" name="method" value="local"> Locally, with CSV files</label>
+      <label class="sc-radio"><input type="radio" name="method" value="unsure"> I'm not sure</label>
+    </div>
+    <p class="sc-error" hidden></p>
+  </fieldset>
+
   <div class="sc-q" data-field="feedback">
     <label class="sc-label" for="sc-feedback">What worked well, and what didn't? <span class="sc-optional">(optional)</span></label>
     <p class="sc-help">Anything from the building process: what Telar made easy, where you got stuck, what you'd want to see changed. Honest answers help us improve the tool.</p>
     <textarea class="sc-textarea" id="sc-feedback" name="feedback" maxlength="3000"></textarea>
+    <p class="sc-error" hidden></p>
+  </div>
+
+  <div class="sc-q" data-field="name">
+    <label class="sc-label" for="sc-name">Your name</label>
+    <input class="sc-input" id="sc-name" name="name" type="text" autocomplete="name" maxlength="200">
+    <p class="sc-error" hidden></p>
+  </div>
+
+  <div class="sc-q" data-field="email">
+    <label class="sc-label" for="sc-email">Email</label>
+    <p class="sc-help">So we can get in touch if we have a question about your project. We won't publish it.</p>
+    <input class="sc-input" id="sc-email" name="email" type="email" autocomplete="email" maxlength="320">
     <p class="sc-error" hidden></p>
   </div>
 
@@ -125,6 +145,8 @@ extra_css:
     email: 'Enter a full email address, like name@example.org.',
     url: 'Enter the public link to your site.',
     context: 'Choose one option.',
+    authorship: 'Choose one option.',
+    method: 'Choose one option.',
     consent: 'Choose one option.',
     other: 'This field is required.'
   };
@@ -132,7 +154,7 @@ extra_css:
   var FAILURE = 'We couldn\'t send your answers.';
   var FAILURE_BODY = 'Your text is still here. Please try again in a moment, or email us if it keeps happening.';
 
-  var ALLOWED_FIELDS = ['name', 'email', 'title', 'url', 'description', 'context', 'contextDetail', 'feedback', 'consent'];
+  var ALLOWED_FIELDS = ['title', 'url', 'description', 'context', 'contextDetail', 'authorship', 'method', 'feedback', 'name', 'email', 'consent'];
 
   function value(name) {
     var el = form.elements[name];
@@ -164,6 +186,8 @@ extra_css:
       description: value('description'),
       context: context,
       contextDetail: context === 'class' ? value('contextDetail') : '',
+      authorship: value('authorship'),
+      method: value('method'),
       feedback: value('feedback'),
       consent: value('consent'),
       website: value('website'),
@@ -179,12 +203,14 @@ extra_css:
 
   function validate(v) {
     var fields = [];
-    if (!v.name) fields.push('name');
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) fields.push('email');
     if (!v.title) fields.push('title');
     if (!v.url || !normaliseUrl(v.url)) fields.push('url');
     if (!v.description) fields.push('description');
     if (!v.context) fields.push('context');
+    if (!v.authorship) fields.push('authorship');
+    if (!v.method) fields.push('method');
+    if (!v.name) fields.push('name');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) fields.push('email');
     if (!v.consent) fields.push('consent');
     return fields;
   }
