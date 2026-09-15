@@ -199,6 +199,18 @@ extra_css:
     var isClass = value('context') === 'class';
     followup.hidden = !isClass;
     followup.style.display = isClass ? 'flex' : 'none';
+    if (!isClass) {
+      var detail = document.getElementById('sc-context-detail');
+      if (detail) detail.removeAttribute('aria-invalid');
+      var contextBlock = form.querySelector('.sc-q[data-field="context"]');
+      if (contextBlock) {
+        contextBlock.classList.remove('is-invalid');
+        var err = contextBlock.querySelector('.sc-error');
+        if (err) { err.textContent = ''; err.hidden = true; }
+        var radios = contextBlock.querySelectorAll('.sc-radio-group input[aria-invalid]');
+        for (var i = 0; i < radios.length; i++) radios[i].removeAttribute('aria-invalid');
+      }
+    }
   }
 
   function validate(v) {
