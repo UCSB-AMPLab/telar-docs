@@ -129,6 +129,8 @@ extra_css:
   var FAILURE = 'We couldn\'t send your answers.';
   var FAILURE_BODY = 'Your text is still here. Please try again in a moment, or email us if it keeps happening.';
 
+  var ALLOWED_FIELDS = ['name', 'email', 'title', 'url', 'description', 'context', 'contextDetail', 'feedback', 'consent'];
+
   function value(name) {
     var el = form.elements[name];
     if (!el) return '';
@@ -184,8 +186,26 @@ extra_css:
       var err = blocks[i].querySelector('.sc-error');
       if (err) { err.textContent = ''; err.hidden = true; }
     }
+    var invalidEls = form.querySelectorAll('[aria-invalid]');
+    for (var j = 0; j < invalidEls.length; j++) invalidEls[j].removeAttribute('aria-invalid');
     alertEl.hidden = true;
     alertEl.textContent = '';
+  }
+
+  function markInvalid(fieldName, block) {
+    block.classList.add('is-invalid');
+    if (fieldName === 'contextDetail') {
+      var detail = document.getElementById('sc-context-detail');
+      if (detail) detail.setAttribute('aria-invalid', 'true');
+      return;
+    }
+    var radios = block.querySelectorAll('.sc-radio-group input');
+    if (radios.length) {
+      for (var i = 0; i < radios.length; i++) radios[i].setAttribute('aria-invalid', 'true');
+      return;
+    }
+    var field = block.querySelector('input, textarea');
+    if (field) field.setAttribute('aria-invalid', 'true');
   }
 
   function showAlert(heading, body) {
@@ -199,21 +219,27 @@ extra_css:
   }
 
   function showErrors(fields) {
+    var filtered = [];
+    for (var i = 0; i < fields.length; i++) {
+      if (ALLOWED_FIELDS.indexOf(fields[i]) !== -1) filtered.push(fields[i]);
+    }
+    if (!filtered.length) { showFailure(); return; }
     clearErrors();
     var first = null;
-    for (var i = 0; i < fields.length; i++) {
-      var fieldName = fields[i] === 'contextDetail' ? 'context' : fields[i];
+    for (var i = 0; i < filtered.length; i++) {
+      var name = filtered[i];
+      var fieldName = name === 'contextDetail' ? 'context' : name;
       var block = form.querySelector('.sc-q[data-field="' + fieldName + '"]');
       if (!block) continue;
-      block.classList.add('is-invalid');
+      markInvalid(name, block);
       var err = block.querySelector('.sc-error');
       if (err) {
-        err.textContent = MESSAGES[fields[i]] || MESSAGES.other;
+        err.textContent = MESSAGES[name] || MESSAGES.other;
         err.hidden = false;
       }
-      if (!first) first = block.querySelector('input, textarea');
+      if (!first) first = name === 'contextDetail' ? document.getElementById('sc-context-detail') : block.querySelector('input, textarea');
     }
-    var n = fields.length;
+    var n = filtered.length;
     showAlert('Please check ' + n + (n === 1 ? ' field' : ' fields') + ' below.', 'Nothing has been sent yet.');
     if (first) first.focus();
   }
@@ -266,17 +292,30 @@ extra_css:
       body: JSON.stringify(v),
       signal: controller.signal
     }).then(function (res) {
-      clearTimeout(timeout);
-      if (res.status === 201) { showSuccess(); return; }
+      if (res.status === 201) {
+        clearTimeout(timeout);
+        showSuccess();
+        return;
+      }
       if (res.status === 400) {
         return res.json().then(function (data) {
-          if (window.turnstile) window.turnstile.reset();
-          setSending(false);
-          button.textContent = 'Send';
-          note.textContent = 'About five minutes. We\'ll check with you before publishing.';
-          showErrors((data && data.fields && data.fields.length) ? data.fields : ['url']);
+          clearTimeout(timeout);
+          var hasStringField = Array.isArray(data && data.fields) && data.fields.some(function (f) { return typeof f === 'string'; });
+          if (data && data.error === 'validation' && hasStringField) {
+            if (window.turnstile) window.turnstile.reset();
+            setSending(false);
+            button.textContent = 'Send';
+            note.textContent = 'About five minutes. We\'ll check with you before publishing.';
+            showErrors(data.fields);
+          } else {
+            showFailure();
+          }
+        }, function () {
+          clearTimeout(timeout);
+          showFailure();
         });
       }
+      clearTimeout(timeout);
       showFailure();
     }).catch(function () {
       clearTimeout(timeout);

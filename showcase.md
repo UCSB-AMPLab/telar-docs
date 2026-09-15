@@ -13,6 +13,8 @@ extra_css:
 
 <p class="sc-lede">A sample of exhibitions, class projects and research made using Telar that users have shared with us. Each card links to the published site.</p>
 
+<p id="sc-announce" class="sc-hp" aria-live="polite"></p>
+
 <div id="sc-loading">
   <p class="sc-status" aria-live="polite"><span class="sc-spinner" aria-hidden="true"></span>Loading projects…</p>
   <ul class="sc-grid" aria-hidden="true">
@@ -101,11 +103,14 @@ extra_css:
     return li;
   }
 
+  var announce = document.getElementById('sc-announce');
+
   function showEmpty(heading, body) {
     if (heading) document.getElementById('sc-empty-heading').textContent = heading;
     if (body) document.getElementById('sc-empty-body').textContent = body;
     loading.hidden = true;
     empty.hidden = false;
+    announce.textContent = heading ? 'Projects could not be loaded.' : 'No projects yet.';
   }
 
   function render(projects) {
@@ -118,17 +123,27 @@ extra_css:
     if (!appended) { showEmpty(); return; }
     loading.hidden = true;
     populated.hidden = false;
+    announce.textContent = 'Projects loaded.';
   }
 
   var controller = new AbortController();
   var timeout = setTimeout(function () { controller.abort(); }, 20000);
 
   fetch(API + '/projects', { signal: controller.signal }).then(function (res) {
-    clearTimeout(timeout);
-    if (!res.ok) throw new Error('status ' + res.status);
-    return res.json();
+    if (!res.ok) {
+      clearTimeout(timeout);
+      throw new Error('status ' + res.status);
+    }
+    return res.json().then(function (data) {
+      clearTimeout(timeout);
+      return data;
+    }, function (err) {
+      clearTimeout(timeout);
+      throw err;
+    });
   }).then(function (data) {
-    render((data && data.projects) || []);
+    if (!data || !Array.isArray(data.projects)) throw new Error('bad envelope');
+    render(data.projects);
   }).catch(function () {
     clearTimeout(timeout);
     showEmpty('We couldn\'t load the projects.', 'Please try again in a moment.');
