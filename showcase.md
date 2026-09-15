@@ -1,10 +1,11 @@
 ---
-layout: docs
+layout: section
 title: "Projects built with Telar"
 description: "Exhibitions, class projects and research made with Telar."
 lang: en
 permalink: /showcase/
 nav_exclude: true
+section_title: Showcase
 extra_css:
   - showcase
 ---

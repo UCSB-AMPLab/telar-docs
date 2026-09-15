@@ -1,10 +1,11 @@
 ---
-layout: docs
+layout: section
 title: "Share your Telar project"
 description: "Tell us about a site you built with Telar so we can feature it in the showcase."
 lang: en
 permalink: /showcase/submit/
 nav_exclude: true
+section_title: Showcase
 extra_css:
   - showcase
 ---
