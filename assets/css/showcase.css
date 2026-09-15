@@ -391,6 +391,78 @@
   color: #883C36;
 }
 
+/* Filtering hides cards, the grid, rows and the whole block with [hidden]; their display rules would otherwise win. */
+.section-content .sc-filters[hidden],
+.section-content .sc-filter-row[hidden],
+.section-content .sc-grid[hidden],
+.section-content .sc-card[hidden] {
+  display: none !important;
+}
+
+.section-content .sc-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+}
+
+.section-content .sc-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.section-content .sc-filter-label {
+  font-size: 0.875rem;
+  color: #4B5563;
+  min-width: 5rem;
+}
+
+.section-content .sc-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.section-content .sc-filter {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: 0;
+  min-height: 2.25rem;
+  padding: 0.25rem 0.875rem;
+  border: 1px solid #C6D0F8;
+  border-radius: 50px;
+  background: #ffffff;
+  color: #333333;
+  box-shadow: none;
+  cursor: pointer;
+  transition: box-shadow 120ms ease-out, border-color 120ms ease-out;
+}
+
+.section-content .sc-filter:hover {
+  border-color: #333333;
+}
+
+.section-content .sc-filter[aria-pressed="true"] {
+  background: #883C36;
+  border-color: #883C36;
+  color: #ffffff;
+  cursor: default;
+}
+
+.section-content .sc-filter:focus {
+  outline: 0;
+}
+
+.section-content .sc-filter:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(198, 208, 248, 0.5);
+}
+
 .section-content .sc-skeleton .sc-bar {
   height: 0.75rem;
   background: #F5EDE0;
@@ -403,6 +475,13 @@
 
 .section-content .sc-after {
   margin-top: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .section-content .sc-filter-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 768px) {
