@@ -19,12 +19,12 @@ extra_css:
 <div id="sc-loading">
   <p class="sc-status" aria-live="polite"><span class="sc-spinner" aria-hidden="true"></span>Loading projects…</p>
   <ul class="sc-grid" aria-hidden="true">
-    <li class="sc-card sc-skeleton"><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
-    <li class="sc-card sc-skeleton"><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
-    <li class="sc-card sc-skeleton"><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
-    <li class="sc-card sc-skeleton"><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
-    <li class="sc-card sc-skeleton"><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
-    <li class="sc-card sc-skeleton"><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
+    <li class="sc-card sc-skeleton"><div class="sc-thumb"></div><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
+    <li class="sc-card sc-skeleton"><div class="sc-thumb"></div><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
+    <li class="sc-card sc-skeleton"><div class="sc-thumb"></div><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
+    <li class="sc-card sc-skeleton"><div class="sc-thumb"></div><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
+    <li class="sc-card sc-skeleton"><div class="sc-thumb"></div><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
+    <li class="sc-card sc-skeleton"><div class="sc-thumb"></div><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
   </ul>
 </div>
 
@@ -120,6 +120,7 @@ extra_css:
     var language = LANGUAGE_CHIPS[p.language] ? p.language : '';
     li.setAttribute('data-context', context);
     li.setAttribute('data-language', language);
+    li.appendChild(el('div', 'sc-thumb', ''));
 
     var body = el('div', 'sc-card__body');
     var title = el('h3', 'sc-card__title');
