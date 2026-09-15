@@ -38,6 +38,20 @@ extra_css:
     <p class="sc-error" hidden></p>
   </div>
 
+  <fieldset class="sc-q" data-field="language">
+    <legend class="sc-label">¿En qué idioma está el sitio?</legend>
+    <div class="sc-radio-group">
+      <label class="sc-radio"><input type="radio" name="language" value="es" checked> Español</label>
+      <label class="sc-radio"><input type="radio" name="language" value="en"> Inglés</label>
+      <label class="sc-radio"><input type="radio" name="language" value="other"> Otro</label>
+    </div>
+    <p class="sc-error" hidden></p>
+    <div class="sc-followup" hidden>
+      <label class="sc-label sc-label--sub" for="sc-language-other">¿Qué idioma?</label>
+      <input class="sc-input" id="sc-language-other" name="languageOther" type="text" maxlength="100">
+    </div>
+  </fieldset>
+
   <fieldset class="sc-q" data-field="context">
     <legend class="sc-label">¿En qué contexto lo hiciste?</legend>
     <div class="sc-radio-group">
@@ -139,8 +153,10 @@ extra_css:
   var successEl = document.getElementById('sc-success');
   var button = document.getElementById('sc-submit');
   var note = document.getElementById('sc-note');
-  var followup = document.querySelector('.sc-followup');
+  var followup = form.querySelector('.sc-q[data-field="context"] .sc-followup');
+  var languageFollowup = form.querySelector('.sc-q[data-field="language"] .sc-followup');
   var contextRadios = form.querySelectorAll('input[name="context"]');
+  var languageRadios = form.querySelectorAll('input[name="language"]');
   var authorshipRadios = form.querySelectorAll('input[name="authorship"]');
   var nameLabel = form.querySelector('.sc-q[data-field="name"] .sc-label');
   var nameHelp = document.getElementById('sc-name-help');
@@ -173,6 +189,7 @@ extra_css:
   var MESSAGES = {
     email: 'Escribe tu correo completo, como nombre@ejemplo.org.',
     url: 'Escribe el enlace público de tu sitio.',
+    language: 'Elige una opción.',
     context: 'Elige una opción.',
     authorship: 'Elige una opción.',
     method: 'Elige una opción.',
@@ -183,7 +200,11 @@ extra_css:
   var FAILURE = 'No pudimos enviar tus respuestas.';
   var FAILURE_BODY = 'Tu texto sigue aquí. Inténtalo de nuevo en un momento o escríbenos si el problema continúa.';
 
-  var ALLOWED_FIELDS = ['title', 'url', 'description', 'context', 'contextDetail', 'authorship', 'method', 'feedback', 'name', 'email', 'consent'];
+  var ALLOWED_FIELDS = ['title', 'url', 'description', 'language', 'languageOther', 'context', 'contextDetail', 'authorship', 'method', 'feedback', 'name', 'email', 'consent'];
+
+  // A follow-up answer is reported under its own name but shown on its parent question.
+  var FOLLOWUP_PARENT = { contextDetail: 'context', languageOther: 'language' };
+  var FOLLOWUP_INPUT = { contextDetail: 'sc-context-detail', languageOther: 'sc-language-other' };
 
   function value(name) {
     var el = form.elements[name];
@@ -206,6 +227,7 @@ extra_css:
 
   function collect() {
     var turnstile = form.querySelector('[name="cf-turnstile-response"]');
+    var language = value('language');
     var context = value('context');
     return {
       name: value('name'),
@@ -213,6 +235,8 @@ extra_css:
       title: value('title'),
       url: value('url'),
       description: value('description'),
+      language: language,
+      languageOther: language === 'other' ? value('languageOther') : '',
       context: context,
       contextDetail: context === 'class' ? value('contextDetail') : '',
       authorship: value('authorship'),
@@ -224,22 +248,29 @@ extra_css:
     };
   }
 
-  function syncFollowup() {
-    var isClass = value('context') === 'class';
-    followup.hidden = !isClass;
-    followup.style.display = isClass ? 'flex' : 'none';
-    if (!isClass) {
-      var detail = document.getElementById('sc-context-detail');
+  function toggleFollowup(detailName, box, show) {
+    box.hidden = !show;
+    box.style.display = show ? 'flex' : 'none';
+    if (!show) {
+      var detail = document.getElementById(FOLLOWUP_INPUT[detailName]);
       if (detail) detail.removeAttribute('aria-invalid');
-      var contextBlock = form.querySelector('.sc-q[data-field="context"]');
-      if (contextBlock) {
-        contextBlock.classList.remove('is-invalid');
-        var err = contextBlock.querySelector('.sc-error');
+      var parentBlock = form.querySelector('.sc-q[data-field="' + FOLLOWUP_PARENT[detailName] + '"]');
+      if (parentBlock) {
+        parentBlock.classList.remove('is-invalid');
+        var err = parentBlock.querySelector('.sc-error');
         if (err) { err.textContent = ''; err.hidden = true; }
-        var radios = contextBlock.querySelectorAll('.sc-radio-group input[aria-invalid]');
+        var radios = parentBlock.querySelectorAll('.sc-radio-group input[aria-invalid]');
         for (var i = 0; i < radios.length; i++) radios[i].removeAttribute('aria-invalid');
       }
     }
+  }
+
+  function syncFollowup() {
+    toggleFollowup('contextDetail', followup, value('context') === 'class');
+  }
+
+  function syncLanguageFollowup() {
+    toggleFollowup('languageOther', languageFollowup, value('language') === 'other');
   }
 
   function validate(v) {
@@ -247,6 +278,7 @@ extra_css:
     if (!v.title) fields.push('title');
     if (!v.url || !normaliseUrl(v.url)) fields.push('url');
     if (!v.description) fields.push('description');
+    if (!v.language) fields.push('language');
     if (!v.context) fields.push('context');
     if (!v.authorship) fields.push('authorship');
     if (!v.method) fields.push('method');
@@ -271,8 +303,8 @@ extra_css:
 
   function markInvalid(fieldName, block) {
     block.classList.add('is-invalid');
-    if (fieldName === 'contextDetail') {
-      var detail = document.getElementById('sc-context-detail');
+    if (FOLLOWUP_INPUT[fieldName]) {
+      var detail = document.getElementById(FOLLOWUP_INPUT[fieldName]);
       if (detail) detail.setAttribute('aria-invalid', 'true');
       return;
     }
@@ -305,7 +337,7 @@ extra_css:
     var first = null;
     for (var i = 0; i < filtered.length; i++) {
       var name = filtered[i];
-      var fieldName = name === 'contextDetail' ? 'context' : name;
+      var fieldName = FOLLOWUP_PARENT[name] || name;
       var block = form.querySelector('.sc-q[data-field="' + fieldName + '"]');
       if (!block) continue;
       markInvalid(name, block);
@@ -314,7 +346,7 @@ extra_css:
         err.textContent = MESSAGES[name] || MESSAGES.other;
         err.hidden = false;
       }
-      if (!first) first = name === 'contextDetail' ? document.getElementById('sc-context-detail') : block.querySelector('input, textarea');
+      if (!first) first = FOLLOWUP_INPUT[name] ? document.getElementById(FOLLOWUP_INPUT[name]) : block.querySelector('input, textarea');
     }
     var n = filtered.length;
     var heading = n === 1 ? 'Revisa un campo más abajo.' : 'Revisa {n} campos más abajo.'.replace('{n}', n);
@@ -434,12 +466,15 @@ extra_css:
 
   for (var i = 0; i < contextRadios.length; i++) contextRadios[i].addEventListener('change', syncFollowup);
   syncFollowup();
+  for (i = 0; i < languageRadios.length; i++) languageRadios[i].addEventListener('change', syncLanguageFollowup);
+  syncLanguageFollowup();
   for (i = 0; i < authorshipRadios.length; i++) authorshipRadios[i].addEventListener('change', applyAuthorshipWording);
   applyAuthorshipWording();
 
   window.addEventListener('pageshow', function (event) {
     if (event.persisted) return;
     syncFollowup();
+    syncLanguageFollowup();
     applyAuthorshipWording();
   });
 })();
