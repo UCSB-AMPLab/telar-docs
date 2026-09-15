@@ -98,7 +98,7 @@ extra_css:
 
   <div class="sc-actions">
     <button type="submit" class="sc-btn sc-btn--primary" id="sc-submit">Send</button>
-    <p class="sc-note" id="sc-note">About five minutes. We'll check with you before publishing.</p>
+    <p class="sc-note" id="sc-note"></p>
   </div>
 
 </form>
@@ -271,7 +271,7 @@ extra_css:
     if (window.turnstile) window.turnstile.reset();
     setSending(false);
     button.textContent = 'Try again';
-    note.textContent = 'About five minutes. We\'ll check with you before publishing.';
+    note.textContent = '';
     showAlert(FAILURE, FAILURE_BODY);
   }
 
@@ -306,7 +306,7 @@ extra_css:
             if (window.turnstile) window.turnstile.reset();
             setSending(false);
             button.textContent = 'Send';
-            note.textContent = 'About five minutes. We\'ll check with you before publishing.';
+            note.textContent = '';
             showErrors(data.fields);
           } else {
             showFailure();
