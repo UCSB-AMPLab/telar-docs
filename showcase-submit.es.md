@@ -85,8 +85,8 @@ extra_css:
 
   <div class="sc-q" data-field="name">
     <label class="sc-label" for="sc-name">Nombre completo</label>
-    <p class="sc-help" id="sc-name-help" hidden>Nombre completo de cada persona, tal como quiere que aparezca en telar.org.</p>
-    <input class="sc-input" id="sc-name" name="name" type="text" autocomplete="name" maxlength="200">
+    <p class="sc-help" id="sc-name-help" hidden></p>
+    <input class="sc-input" id="sc-name" name="name" type="text" autocomplete="name" maxlength="1000">
     <p class="sc-error" hidden></p>
   </div>
 
@@ -114,7 +114,7 @@ extra_css:
   </div>
 
   {% if site.showcase_turnstile_site_key and site.showcase_turnstile_site_key != "" %}
-  <div class="cf-turnstile" data-sitekey="{{ site.showcase_turnstile_site_key }}"></div>
+  <div class="cf-turnstile" data-sitekey="{{ site.showcase_turnstile_site_key }}" data-language="{{ page.lang }}"></div>
   {% endif %}
 
   <div class="sc-actions">
@@ -410,7 +410,12 @@ extra_css:
       nameHelp.hidden = !isGroup;
     }
     if (nameInput) {
-      if (isGroup) nameInput.setAttribute('aria-describedby', 'sc-name-help');
+      nameInput.setAttribute('autocomplete', isGroup ? 'off' : 'name');
+      var describedBy = (nameInput.getAttribute('aria-describedby') || '').split(/\s+/).filter(function (token) {
+        return token && token !== 'sc-name-help';
+      });
+      if (isGroup) describedBy.push('sc-name-help');
+      if (describedBy.length) nameInput.setAttribute('aria-describedby', describedBy.join(' '));
       else nameInput.removeAttribute('aria-describedby');
     }
     for (var i = 0; i < consentInputs.length; i++) {
@@ -431,5 +436,11 @@ extra_css:
   syncFollowup();
   for (i = 0; i < authorshipRadios.length; i++) authorshipRadios[i].addEventListener('change', applyAuthorshipWording);
   applyAuthorshipWording();
+
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) return;
+    syncFollowup();
+    applyAuthorshipWording();
+  });
 })();
 </script>
