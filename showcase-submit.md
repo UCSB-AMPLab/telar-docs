@@ -91,20 +91,20 @@ extra_css:
     <input id="sc-website" name="website" type="text" tabindex="-1" autocomplete="off">
   </div>
 
-  {% if site.showcase_turnstile_site_key != "" %}
+  {% if site.showcase_turnstile_site_key and site.showcase_turnstile_site_key != "" %}
   <div class="cf-turnstile" data-sitekey="{{ site.showcase_turnstile_site_key }}"></div>
   {% endif %}
 
   <div class="sc-actions">
-    <button type="submit" class="btn btn-primary" id="sc-submit">Send</button>
+    <button type="submit" class="sc-btn sc-btn--primary" id="sc-submit">Send</button>
     <p class="sc-note" id="sc-note">About five minutes. We'll check with you before publishing.</p>
   </div>
 
 </form>
 
-<div id="sc-success" class="sc-callout sc-callout--success" role="status" hidden>Thanks for sharing your project. We'll be in touch before anything goes live.</div>
+<div id="sc-success" class="sc-callout sc-callout--success" role="status" tabindex="-1" hidden>Thanks for sharing your project. We'll be in touch before anything goes live.</div>
 
-{% if site.showcase_turnstile_site_key != "" %}
+{% if site.showcase_turnstile_site_key and site.showcase_turnstile_site_key != "" %}
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 {% endif %}
 <script>
@@ -195,14 +195,15 @@ extra_css:
     alertEl.appendChild(strong);
     alertEl.appendChild(document.createTextNode(body));
     alertEl.hidden = false;
-    alertEl.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    alertEl.scrollIntoView({ block: 'start' });
   }
 
   function showErrors(fields) {
     clearErrors();
     var first = null;
     for (var i = 0; i < fields.length; i++) {
-      var block = form.querySelector('.sc-q[data-field="' + fields[i] + '"]');
+      var fieldName = fields[i] === 'contextDetail' ? 'context' : fields[i];
+      var block = form.querySelector('.sc-q[data-field="' + fieldName + '"]');
       if (!block) continue;
       block.classList.add('is-invalid');
       var err = block.querySelector('.sc-error');
@@ -236,9 +237,11 @@ extra_css:
     alertEl.hidden = true;
     successEl.hidden = false;
     successEl.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    successEl.focus();
   }
 
   function showFailure() {
+    if (window.turnstile) window.turnstile.reset();
     setSending(false);
     button.textContent = 'Try again';
     note.textContent = 'About five minutes. We\'ll check with you before publishing.';
@@ -254,14 +257,20 @@ extra_css:
     v.url = normaliseUrl(v.url);
     setSending(true);
 
+    var controller = new AbortController();
+    var timeout = setTimeout(function () { controller.abort(); }, 20000);
+
     fetch(API + '/submissions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(v)
+      body: JSON.stringify(v),
+      signal: controller.signal
     }).then(function (res) {
+      clearTimeout(timeout);
       if (res.status === 201) { showSuccess(); return; }
       if (res.status === 400) {
         return res.json().then(function (data) {
+          if (window.turnstile) window.turnstile.reset();
           setSending(false);
           button.textContent = 'Send';
           note.textContent = 'About five minutes. We\'ll check with you before publishing.';
@@ -269,7 +278,10 @@ extra_css:
         });
       }
       showFailure();
-    }).catch(showFailure);
+    }).catch(function () {
+      clearTimeout(timeout);
+      showFailure();
+    });
   });
 })();
 </script>

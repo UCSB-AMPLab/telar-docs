@@ -14,7 +14,7 @@ extra_css:
 <p class="sc-lede">A sample of exhibitions, class projects and research made using Telar that users have shared with us. Each card links to the published site.</p>
 
 <div id="sc-loading">
-  <p class="sc-status"><span class="sc-spinner" aria-hidden="true"></span>Loading projects…</p>
+  <p class="sc-status" aria-live="polite"><span class="sc-spinner" aria-hidden="true"></span>Loading projects…</p>
   <ul class="sc-grid" aria-hidden="true">
     <li class="sc-card sc-skeleton"><div class="sc-thumb"></div><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
     <li class="sc-card sc-skeleton"><div class="sc-thumb"></div><div class="sc-card__body"><div class="sc-bar sc-bar--title" style="width:70%"></div><div class="sc-bar" style="width:45%"></div><div class="sc-bar" style="width:100%"></div><div class="sc-bar" style="width:85%"></div></div></li>
@@ -27,12 +27,12 @@ extra_css:
 
 <div id="sc-empty" hidden>
   <div class="sc-callout"><strong id="sc-empty-heading">No projects yet.</strong><span id="sc-empty-body">If you've built something with Telar, we'd love to include it here.</span></div>
-  <a class="btn btn-primary" href="{{ '/showcase/submit/' | relative_url }}">Share your project</a>
+  <a class="sc-btn sc-btn--primary" href="{{ '/showcase/submit/' | relative_url }}">Share your project</a>
 </div>
 
 <div id="sc-populated" hidden>
   <ul class="sc-grid" id="sc-cards"></ul>
-  <p class="sc-after"><a class="btn" href="{{ '/showcase/submit/' | relative_url }}">Share your project</a></p>
+  <p class="sc-after"><a class="sc-btn" href="{{ '/showcase/submit/' | relative_url }}">Share your project</a></p>
 </div>
 
 <script>
@@ -62,6 +62,14 @@ extra_css:
   }
 
   function card(p) {
+    var safeUrl;
+    try {
+      safeUrl = new URL(p.url);
+    } catch (e) {
+      return null;
+    }
+    if (safeUrl.protocol !== 'http:' && safeUrl.protocol !== 'https:') return null;
+
     var li = el('li', 'sc-card');
     li.appendChild(el('div', 'sc-thumb', ''));
 
@@ -70,6 +78,7 @@ extra_css:
     var link = el('a', null, p.title);
     link.href = p.url;
     link.rel = 'noopener';
+    link.target = '_blank';
     title.appendChild(link);
     body.appendChild(title);
 
@@ -84,6 +93,7 @@ extra_css:
     var visit = el('a', 'sc-card__link', 'Visit site ↗');
     visit.href = p.url;
     visit.rel = 'noopener';
+    visit.target = '_blank';
     footer.appendChild(visit);
     body.appendChild(footer);
 
@@ -100,17 +110,27 @@ extra_css:
 
   function render(projects) {
     if (!projects.length) { showEmpty(); return; }
-    for (var i = 0; i < projects.length; i++) cards.appendChild(card(projects[i]));
+    var appended = 0;
+    for (var i = 0; i < projects.length; i++) {
+      var node = card(projects[i]);
+      if (node) { cards.appendChild(node); appended++; }
+    }
+    if (!appended) { showEmpty(); return; }
     loading.hidden = true;
     populated.hidden = false;
   }
 
-  fetch(API + '/projects').then(function (res) {
+  var controller = new AbortController();
+  var timeout = setTimeout(function () { controller.abort(); }, 20000);
+
+  fetch(API + '/projects', { signal: controller.signal }).then(function (res) {
+    clearTimeout(timeout);
     if (!res.ok) throw new Error('status ' + res.status);
     return res.json();
   }).then(function (data) {
     render((data && data.projects) || []);
   }).catch(function () {
+    clearTimeout(timeout);
     showEmpty('We couldn\'t load the projects.', 'Please try again in a moment.');
   });
 })();
