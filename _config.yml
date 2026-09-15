@@ -69,6 +69,10 @@ callouts:
 telar_version: "1.7.0"
 telar_release_date: "2026-09-09"
 
+# Showcase: form and gallery backed by the telar-showcase Worker
+showcase_api: "https://showcase.telar.org"
+showcase_turnstile_site_key: ""
+
 # Build settings
 markdown: kramdown
 kramdown:
