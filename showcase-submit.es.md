@@ -84,7 +84,8 @@ extra_css:
   </div>
 
   <div class="sc-q" data-field="name">
-    <label class="sc-label" for="sc-name">Nombre</label>
+    <label class="sc-label" for="sc-name">Nombre completo</label>
+    <p class="sc-help" id="sc-name-help" hidden>Nombre completo de cada persona, tal como quiere que aparezca en telar.org.</p>
     <input class="sc-input" id="sc-name" name="name" type="text" autocomplete="name" maxlength="200">
     <p class="sc-error" hidden></p>
   </div>
@@ -97,7 +98,7 @@ extra_css:
   </div>
 
   <fieldset class="sc-q" data-field="consent">
-    <legend class="sc-label">¿Podemos mostrar tu proyecto en telar.org?</legend>
+    <legend class="sc-label">¿Podemos mostrar el proyecto en telar.org?</legend>
     <div class="sc-radio-group">
       <label class="sc-radio"><input type="radio" name="consent" value="named"> Sí, con mi nombre</label>
       <label class="sc-radio"><input type="radio" name="consent" value="anonymous"> Sí, pero sin mi nombre</label>
@@ -140,6 +141,34 @@ extra_css:
   var note = document.getElementById('sc-note');
   var followup = document.querySelector('.sc-followup');
   var contextRadios = form.querySelectorAll('input[name="context"]');
+  var authorshipRadios = form.querySelectorAll('input[name="authorship"]');
+  var nameLabel = form.querySelector('.sc-q[data-field="name"] .sc-label');
+  var nameHelp = document.getElementById('sc-name-help');
+  var nameInput = document.getElementById('sc-name');
+  var consentInputs = form.querySelectorAll('.sc-q[data-field="consent"] input[name="consent"]');
+
+  var AUTHORSHIP_WORDING = {
+    individual: {
+      name: 'Nombre completo',
+      nameHelp: '',
+      consent: {
+        named: 'Sí, con mi nombre',
+        anonymous: 'Sí, pero sin mi nombre',
+        contact_first: 'Todavía no, escríbanme primero',
+        no: 'No'
+      }
+    },
+    group: {
+      name: 'Integrantes del grupo',
+      nameHelp: 'Nombre completo de cada persona, tal como quiere que aparezca en telar.org.',
+      consent: {
+        named: 'Sí, con nuestros nombres',
+        anonymous: 'Sí, pero sin nuestros nombres',
+        contact_first: 'Todavía no, escríbannos primero',
+        no: 'No'
+      }
+    }
+  };
 
   var MESSAGES = {
     email: 'Escribe tu correo completo, como nombre@ejemplo.org.',
@@ -372,7 +401,35 @@ extra_css:
     });
   });
 
+  function applyAuthorshipWording() {
+    var isGroup = value('authorship') === 'group';
+    var wording = AUTHORSHIP_WORDING[isGroup ? 'group' : 'individual'];
+    if (nameLabel) nameLabel.textContent = wording.name;
+    if (nameHelp) {
+      nameHelp.textContent = wording.nameHelp;
+      nameHelp.hidden = !isGroup;
+    }
+    if (nameInput) {
+      if (isGroup) nameInput.setAttribute('aria-describedby', 'sc-name-help');
+      else nameInput.removeAttribute('aria-describedby');
+    }
+    for (var i = 0; i < consentInputs.length; i++) {
+      var input = consentInputs[i];
+      var text = wording.consent[input.value];
+      if (!text) continue;
+      var label = input.parentNode;
+      for (var j = 0; j < label.childNodes.length; j++) {
+        if (label.childNodes[j].nodeType === 3) {
+          label.childNodes[j].textContent = ' ' + text;
+          break;
+        }
+      }
+    }
+  }
+
   for (var i = 0; i < contextRadios.length; i++) contextRadios[i].addEventListener('change', syncFollowup);
   syncFollowup();
+  for (i = 0; i < authorshipRadios.length; i++) authorshipRadios[i].addEventListener('change', applyAuthorshipWording);
+  applyAuthorshipWording();
 })();
 </script>

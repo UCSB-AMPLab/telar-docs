@@ -85,6 +85,7 @@ extra_css:
 
   <div class="sc-q" data-field="name">
     <label class="sc-label" for="sc-name">Your name</label>
+    <p class="sc-help" id="sc-name-help" hidden>Each person's full name, as they'd like it to appear.</p>
     <input class="sc-input" id="sc-name" name="name" type="text" autocomplete="name" maxlength="200">
     <p class="sc-error" hidden></p>
   </div>
@@ -140,6 +141,34 @@ extra_css:
   var note = document.getElementById('sc-note');
   var followup = document.querySelector('.sc-followup');
   var contextRadios = form.querySelectorAll('input[name="context"]');
+  var authorshipRadios = form.querySelectorAll('input[name="authorship"]');
+  var nameLabel = form.querySelector('.sc-q[data-field="name"] .sc-label');
+  var nameHelp = document.getElementById('sc-name-help');
+  var nameInput = document.getElementById('sc-name');
+  var consentInputs = form.querySelectorAll('.sc-q[data-field="consent"] input[name="consent"]');
+
+  var AUTHORSHIP_WORDING = {
+    individual: {
+      name: 'Your name',
+      nameHelp: '',
+      consent: {
+        named: 'Yes, with my name',
+        anonymous: 'Yes, but without my name',
+        contact_first: 'Not yet, please contact me first',
+        no: 'No'
+      }
+    },
+    group: {
+      name: 'Group members',
+      nameHelp: "Each person's full name, as they'd like it to appear.",
+      consent: {
+        named: 'Yes, with our names',
+        anonymous: 'Yes, but without our names',
+        contact_first: 'Not yet, please contact us first',
+        no: 'No'
+      }
+    }
+  };
 
   var MESSAGES = {
     email: 'Enter a full email address, like name@example.org.',
@@ -371,7 +400,35 @@ extra_css:
     });
   });
 
+  function applyAuthorshipWording() {
+    var isGroup = value('authorship') === 'group';
+    var wording = AUTHORSHIP_WORDING[isGroup ? 'group' : 'individual'];
+    if (nameLabel) nameLabel.textContent = wording.name;
+    if (nameHelp) {
+      nameHelp.textContent = wording.nameHelp;
+      nameHelp.hidden = !isGroup;
+    }
+    if (nameInput) {
+      if (isGroup) nameInput.setAttribute('aria-describedby', 'sc-name-help');
+      else nameInput.removeAttribute('aria-describedby');
+    }
+    for (var i = 0; i < consentInputs.length; i++) {
+      var input = consentInputs[i];
+      var text = wording.consent[input.value];
+      if (!text) continue;
+      var label = input.parentNode;
+      for (var j = 0; j < label.childNodes.length; j++) {
+        if (label.childNodes[j].nodeType === 3) {
+          label.childNodes[j].textContent = ' ' + text;
+          break;
+        }
+      }
+    }
+  }
+
   for (var i = 0; i < contextRadios.length; i++) contextRadios[i].addEventListener('change', syncFollowup);
   syncFollowup();
+  for (i = 0; i < authorshipRadios.length; i++) authorshipRadios[i].addEventListener('change', applyAuthorshipWording);
+  applyAuthorshipWording();
 })();
 </script>
