@@ -21,21 +21,21 @@ extra_css:
   <div class="sc-q" data-field="title">
     <label class="sc-label" for="sc-title">Título del proyecto</label>
     <input class="sc-input" id="sc-title" name="title" type="text" maxlength="200">
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-title" hidden></p>
   </div>
 
   <div class="sc-q" data-field="url">
     <label class="sc-label" for="sc-url">Enlace del proyecto</label>
     <p class="sc-help">El enlace público a tu sitio.</p>
     <input class="sc-input" id="sc-url" name="url" type="text" inputmode="url" autocomplete="url" maxlength="500">
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-url" hidden></p>
   </div>
 
   <div class="sc-q" data-field="description">
     <label class="sc-label" for="sc-description">Cuéntanos del proyecto</label>
     <p class="sc-help">¿De qué trata y con qué fuentes u objetos trabajaste? Con dos o tres frases basta.</p>
     <textarea class="sc-textarea" id="sc-description" name="description" maxlength="3000"></textarea>
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-description" hidden></p>
   </div>
 
   <fieldset class="sc-q" data-field="language">
@@ -45,7 +45,7 @@ extra_css:
       <label class="sc-radio"><input type="radio" name="language" value="en"> Inglés</label>
       <label class="sc-radio"><input type="radio" name="language" value="other"> Otro</label>
     </div>
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-language" hidden></p>
     <div class="sc-followup" hidden>
       <label class="sc-label sc-label--sub" for="sc-language-other">¿Qué idioma?</label>
       <input class="sc-input" id="sc-language-other" name="languageOther" type="text" maxlength="100">
@@ -63,7 +63,7 @@ extra_css:
       <label class="sc-radio"><input type="radio" name="context" value="personal"> Un proyecto personal</label>
       <label class="sc-radio"><input type="radio" name="context" value="other"> Otro</label>
     </div>
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-context" hidden></p>
     <div class="sc-followup" hidden>
       <label class="sc-label sc-label--sub" for="sc-context-detail">¿Qué curso fue y en qué institución?</label>
       <input class="sc-input" id="sc-context-detail" name="contextDetail" type="text" maxlength="300">
@@ -76,7 +76,7 @@ extra_css:
       <label class="sc-radio"><input type="radio" name="authorship" value="individual"> Individual</label>
       <label class="sc-radio"><input type="radio" name="authorship" value="group"> Grupal</label>
     </div>
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-authorship" hidden></p>
   </fieldset>
 
   <fieldset class="sc-q" data-field="method">
@@ -87,28 +87,28 @@ extra_css:
       <label class="sc-radio"><input type="radio" name="method" value="local"> Con archivos CSV en mi computador</label>
       <label class="sc-radio"><input type="radio" name="method" value="unsure"> No lo sé</label>
     </div>
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-method" hidden></p>
   </fieldset>
 
   <div class="sc-q" data-field="feedback">
     <label class="sc-label" for="sc-feedback">¿Qué funcionó bien y qué no? <span class="sc-optional">(opcional)</span></label>
     <p class="sc-help">Cualquier cosa del proceso de armar el sitio: qué te facilitó Telar, dónde te enredaste, qué cambiarías. Las respuestas sinceras nos ayudan a mejorar Telar.</p>
     <textarea class="sc-textarea" id="sc-feedback" name="feedback" maxlength="3000"></textarea>
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-feedback" hidden></p>
   </div>
 
   <div class="sc-q" data-field="name">
     <label class="sc-label" for="sc-name">Nombre completo</label>
     <p class="sc-help" id="sc-name-help" hidden></p>
     <input class="sc-input" id="sc-name" name="name" type="text" autocomplete="name" maxlength="1000">
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-name" hidden></p>
   </div>
 
   <div class="sc-q" data-field="email">
     <label class="sc-label" for="sc-email">Correo electrónico</label>
     <p class="sc-help">Para escribirte si tenemos preguntas sobre el proyecto. No publicamos tu correo.</p>
     <input class="sc-input" id="sc-email" name="email" type="email" autocomplete="email" maxlength="320">
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-email" hidden></p>
   </div>
 
   <fieldset class="sc-q" data-field="consent">
@@ -119,7 +119,7 @@ extra_css:
       <label class="sc-radio"><input type="radio" name="consent" value="contact_first"> Todavía no, escríbanme primero</label>
       <label class="sc-radio"><input type="radio" name="consent" value="no"> No</label>
     </div>
-    <p class="sc-error" hidden></p>
+    <p class="sc-error" id="sc-error-consent" hidden></p>
   </fieldset>
 
   <div class="sc-hp" aria-hidden="true">
@@ -253,15 +253,22 @@ extra_css:
     box.style.display = show ? 'flex' : 'none';
     if (!show) {
       var detail = document.getElementById(FOLLOWUP_INPUT[detailName]);
-      if (detail) detail.removeAttribute('aria-invalid');
+      if (detail) {
+        detail.removeAttribute('aria-invalid');
+        removeErrorDescribedBy(detail);
+      }
       var parentBlock = form.querySelector('.sc-q[data-field="' + FOLLOWUP_PARENT[detailName] + '"]');
       if (parentBlock) {
         parentBlock.classList.remove('is-invalid');
         var err = parentBlock.querySelector('.sc-error');
         if (err) { err.textContent = ''; err.hidden = true; }
         var radios = parentBlock.querySelectorAll('.sc-radio-group input[aria-invalid]');
-        for (var i = 0; i < radios.length; i++) radios[i].removeAttribute('aria-invalid');
+        for (var i = 0; i < radios.length; i++) {
+          radios[i].removeAttribute('aria-invalid');
+          removeErrorDescribedBy(radios[i]);
+        }
       }
+      refreshAlertSummary();
     }
   }
 
@@ -288,6 +295,36 @@ extra_css:
     return fields;
   }
 
+  function addDescribedBy(el, id) {
+    var tokens = (el.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean);
+    if (tokens.indexOf(id) === -1) tokens.push(id);
+    el.setAttribute('aria-describedby', tokens.join(' '));
+  }
+
+  function removeErrorDescribedBy(el) {
+    var tokens = (el.getAttribute('aria-describedby') || '').split(/\s+/).filter(function (t) {
+      return t && t.indexOf('sc-error-') !== 0;
+    });
+    if (tokens.length) el.setAttribute('aria-describedby', tokens.join(' '));
+    else el.removeAttribute('aria-describedby');
+  }
+
+  function invalidCount() {
+    return form.querySelectorAll('.sc-q.is-invalid').length;
+  }
+
+  function alertHeading(n) {
+    return n === 1 ? 'Revisa un campo más abajo.' : 'Revisa {n} campos más abajo.'.replace('{n}', n);
+  }
+
+  function refreshAlertSummary() {
+    if (alertEl.hidden) return;
+    var n = invalidCount();
+    if (!n) { alertEl.hidden = true; alertEl.textContent = ''; return; }
+    var strong = alertEl.querySelector('strong');
+    if (strong) strong.textContent = alertHeading(n);
+  }
+
   function clearErrors() {
     var blocks = form.querySelectorAll('.sc-q');
     for (var i = 0; i < blocks.length; i++) {
@@ -296,25 +333,39 @@ extra_css:
       if (err) { err.textContent = ''; err.hidden = true; }
     }
     var invalidEls = form.querySelectorAll('[aria-invalid]');
-    for (var j = 0; j < invalidEls.length; j++) invalidEls[j].removeAttribute('aria-invalid');
+    for (var j = 0; j < invalidEls.length; j++) {
+      invalidEls[j].removeAttribute('aria-invalid');
+      removeErrorDescribedBy(invalidEls[j]);
+    }
     alertEl.hidden = true;
     alertEl.textContent = '';
   }
 
   function markInvalid(fieldName, block) {
     block.classList.add('is-invalid');
+    var err = block.querySelector('.sc-error');
+    var errId = err ? err.id : '';
     if (FOLLOWUP_INPUT[fieldName]) {
       var detail = document.getElementById(FOLLOWUP_INPUT[fieldName]);
-      if (detail) detail.setAttribute('aria-invalid', 'true');
+      if (detail) {
+        detail.setAttribute('aria-invalid', 'true');
+        if (errId) addDescribedBy(detail, errId);
+      }
       return;
     }
     var radios = block.querySelectorAll('.sc-radio-group input');
     if (radios.length) {
-      for (var i = 0; i < radios.length; i++) radios[i].setAttribute('aria-invalid', 'true');
+      for (var i = 0; i < radios.length; i++) {
+        radios[i].setAttribute('aria-invalid', 'true');
+        if (errId) addDescribedBy(radios[i], errId);
+      }
       return;
     }
     var field = block.querySelector('input, textarea');
-    if (field) field.setAttribute('aria-invalid', 'true');
+    if (field) {
+      field.setAttribute('aria-invalid', 'true');
+      if (errId) addDescribedBy(field, errId);
+    }
   }
 
   function showAlert(heading, body) {
@@ -349,8 +400,7 @@ extra_css:
       if (!first) first = FOLLOWUP_INPUT[name] ? document.getElementById(FOLLOWUP_INPUT[name]) : block.querySelector('input, textarea');
     }
     var n = filtered.length;
-    var heading = n === 1 ? 'Revisa un campo más abajo.' : 'Revisa {n} campos más abajo.'.replace('{n}', n);
-    showAlert(heading, 'Todavía no se ha enviado nada.');
+    showAlert(alertHeading(n), 'Todavía no se ha enviado nada.');
     if (first) first.focus();
   }
 

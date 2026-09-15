@@ -97,6 +97,7 @@ extra_css:
 
   var ANNOUNCE_ONE = 'Showing one project.';
   var ANNOUNCE_MANY = 'Showing {n} projects.';
+  var FILTER_NONE = 'No projects match these filters.';
 
   function el(tag, className, text) {
     var node = document.createElement(tag);
@@ -204,7 +205,9 @@ extra_css:
     }
     cards.hidden = !shown;
     noMatch.hidden = shown > 0;
-    announce.textContent = shown === 1 ? ANNOUNCE_ONE : ANNOUNCE_MANY.replace('{n}', shown);
+    var message = shown === 0 ? FILTER_NONE : (shown === 1 ? ANNOUNCE_ONE : ANNOUNCE_MANY.replace('{n}', shown));
+    announce.textContent = '';
+    requestAnimationFrame(function () { announce.textContent = message; });
   }
 
   function onFilterClick(event) {
