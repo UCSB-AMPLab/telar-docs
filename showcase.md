@@ -53,6 +53,7 @@ extra_css:
     thesis: 'Thesis',
     research: 'Research project',
     teaching: 'Teaching resource',
+    community: 'Community project',
     personal: 'Personal project',
     other: 'Other'
   };

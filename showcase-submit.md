@@ -20,7 +20,6 @@ extra_css:
 
   <div class="sc-q" data-field="name">
     <label class="sc-label" for="sc-name">Your name</label>
-    <p class="sc-help">As you'd like it to appear in the showcase.</p>
     <input class="sc-input" id="sc-name" name="name" type="text" autocomplete="name" maxlength="200">
     <p class="sc-error" hidden></p>
   </div>
@@ -59,11 +58,12 @@ extra_css:
       <label class="sc-radio"><input type="radio" name="context" value="thesis"> A thesis or capstone</label>
       <label class="sc-radio"><input type="radio" name="context" value="research"> A research project</label>
       <label class="sc-radio"><input type="radio" name="context" value="teaching"> A teaching resource</label>
+      <label class="sc-radio"><input type="radio" name="context" value="community"> A community project</label>
       <label class="sc-radio"><input type="radio" name="context" value="personal"> A personal project</label>
       <label class="sc-radio"><input type="radio" name="context" value="other"> Other</label>
     </div>
     <p class="sc-error" hidden></p>
-    <div class="sc-followup">
+    <div class="sc-followup" hidden>
       <label class="sc-label sc-label--sub" for="sc-context-detail">If it was for a class, which course, and where?</label>
       <input class="sc-input" id="sc-context-detail" name="contextDetail" type="text" maxlength="300">
     </div>
@@ -118,6 +118,8 @@ extra_css:
   var successEl = document.getElementById('sc-success');
   var button = document.getElementById('sc-submit');
   var note = document.getElementById('sc-note');
+  var followup = document.querySelector('.sc-followup');
+  var contextRadios = form.querySelectorAll('input[name="context"]');
 
   var MESSAGES = {
     email: 'Enter a full email address, like name@example.org.',
@@ -153,19 +155,26 @@ extra_css:
 
   function collect() {
     var turnstile = form.querySelector('[name="cf-turnstile-response"]');
+    var context = value('context');
     return {
       name: value('name'),
       email: value('email'),
       title: value('title'),
       url: value('url'),
       description: value('description'),
-      context: value('context'),
-      contextDetail: value('contextDetail'),
+      context: context,
+      contextDetail: context === 'class' ? value('contextDetail') : '',
       feedback: value('feedback'),
       consent: value('consent'),
       website: value('website'),
       turnstile: turnstile ? turnstile.value : ''
     };
+  }
+
+  function syncFollowup() {
+    var isClass = value('context') === 'class';
+    followup.hidden = !isClass;
+    followup.style.display = isClass ? 'flex' : 'none';
   }
 
   function validate(v) {
@@ -323,5 +332,8 @@ extra_css:
       showFailure();
     });
   });
+
+  for (var i = 0; i < contextRadios.length; i++) contextRadios[i].addEventListener('change', syncFollowup);
+  syncFollowup();
 })();
 </script>
