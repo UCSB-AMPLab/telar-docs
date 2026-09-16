@@ -20,6 +20,14 @@
   display: none !important;
 }
 
+.section-content .sc-mark {
+  display: block;
+  width: 80%;
+  max-width: 420px;
+  height: auto;
+  margin: 1.5rem auto 2.5rem;
+}
+
 .section-content .sc-lede {
   font-size: 1.125rem;
   line-height: 1.625;
