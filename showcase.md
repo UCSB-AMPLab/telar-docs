@@ -10,6 +10,8 @@ extra_css:
   - showcase
 ---
 
+<img class="sc-mark" src="{{ '/images/telar-icon.svg' | relative_url }}" alt="" aria-hidden="true" width="724" height="506">
+
 # Projects built with Telar
 
 <p class="sc-lede">A sample of exhibitions, class projects and research made using Telar that users have shared with us. Each card links to the published site.</p>
