@@ -4,6 +4,15 @@ All notable changes to Telar Documentation will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Unreleased]
+
+### Added
+- A showcase of projects built with Telar, in English at `/showcase/` and in Spanish at `/proyectos/`, with a form for sharing a project at `/showcase/submit/` and `/proyectos/compartir/`. Projects appear only after their authors agree and the submission has been reviewed.
+- A `section` layout for telar.org pages that sit outside the documentation, with the site header and footer but no docs navigation.
+
+### Fixed
+- Restored the accents in the contributor names and in "código" in the site footer.
+
 ## [1.5.1] - 2026-06-10
 
 ### Changed
