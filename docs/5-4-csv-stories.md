@@ -82,13 +82,15 @@ Step 1 uses inline content for layer 1, while step 2 uses a file reference. Both
 - Use the coordinate picker on object pages to find values
 
 #### question / pregunta
-- Displayed as panel heading
+- Displayed as the heading of the text card
+- No markdown processing (plain text only)
 - Brief question or statement
 - Recommended: 3-8 words
 
 #### answer / respuesta
-- Brief answer shown in panel
-- Teaser for layer 1 content
+- Brief answer shown in the text card, below the question
+- Plain prose only (see [Answers Are Plain Prose](#answers-are-plain-prose))
+- Cut above 200 words
 - Recommended: 1-2 sentences
 
 #### Layer buttons
@@ -194,13 +196,49 @@ Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, ente
 {: .note }
 > The `layer_file` / `archivo_capa` column names are backward-compatible aliases from before v0.6.3. The preferred names are `layer_content` / `contenido_capa`.
 
+## Answers Are Plain Prose
+
+The `answer` field appears in the text card beside your object, under the question. On desktop that card is a fixed size and does not scroll, so anything past its edge never reaches your readers.
+
+To keep answers readable, Telar reduces every answer to plain prose during the build, and reports each change it makes in the build log.
+
+These work in an answer and appear as you wrote them:
+
+- **Paragraph breaks**
+- **Bold and italics**
+- **Inline links**
+- **Glossary links**, written `[[term]]`
+- **Inline LaTeX**
+- **Code spans**
+
+Telar keeps the words of these but drops the formatting:
+
+- **Lists**, both bulleted and numbered
+- **Headings**
+- **Blockquotes**
+
+Telar removes these completely, along with any text inside them:
+
+- **Images and embeds**, both markdown image syntax and the `img`, `iframe`, `video`, `audio`, `embed` and `object` elements
+- **Footnotes**, the reference and the note alike
+- **Tables**
+- **Code blocks**
+- **Horizontal rules**
+
+### The 200-Word Limit
+
+Telar cuts any answer longer than 200 words and reports the cut in the build log. The cut falls on a word boundary, never inside a link, a glossary term, a code span or a LaTeX expression, so your markup never breaks. Text past the cut does not appear on your site.
+
+Aim for 1-2 sentences. When you need more room, move the detail into a layer panel: panels take the full markdown of the [Markdown Syntax Reference](/docs/your-content/markdown-syntax/), footnotes, tables, images and widgets included.
+
 ## Data Entry Tips
 
 **Coordinates**: Use the coordinate picker on object pages to find x, y, zoom values and copy them directly into your CSV.
 
 **Markdown in fields**:
 - `layer_content`: Full markdown supported
-- `question`, `answer`: Plain text only
+- `question`: No markdown processing (plain text only)
+- `answer`: plain prose, inline formatting only, cut above 200 words
 
 **Panel content**: Use file references (Method 3) for complex content with widgets. Use inline text (Method 1) for short panels.
 
@@ -217,6 +255,7 @@ Telar validates story CSV data during build:
 **Warnings (build succeeds)**:
 - Unrecognized column names (ignored)
 - Object ID not found in objects.csv
+- Formatting removed from a step's answer, or an answer cut at 200 words
 
 Check build output for validation messages.
 

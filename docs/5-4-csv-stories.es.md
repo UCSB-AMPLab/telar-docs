@@ -82,13 +82,15 @@ El paso 1 usa contenido en línea para la capa 1, mientras que el paso 2 usa una
 - Usa el selector de coordenadas en las páginas de objetos para encontrar los valores
 
 #### question / pregunta
-- Se muestra como encabezado del panel
+- Se muestra como encabezado de la tarjeta de texto
+- Solo texto plano, sin procesamiento markdown
 - Pregunta o afirmación breve
 - Recomendado: 3-8 palabras
 
 #### answer / respuesta
-- Respuesta breve mostrada en el panel
-- Anticipo del contenido de la capa 1
+- Respuesta breve que se muestra en la tarjeta de texto, debajo de la pregunta
+- Solo texto corrido. Consulta [Las respuestas son texto corrido](#las-respuestas-son-texto-corrido)
+- Se recorta si pasa de 200 palabras
 - Recomendado: 1-2 oraciones
 
 #### Botones de las capas
@@ -194,13 +196,49 @@ Guarda los archivos markdown en `telar-content/texts/stories/`. En tu hoja de c�
 {: .note }
 > Los nombres de columna `layer_file` / `archivo_capa` son alias heredados de antes de v0.6.3. Los nombres preferidos son `layer_content` / `contenido_capa`.
 
+## Las respuestas son texto corrido
+
+El campo `answer` aparece en la tarjeta de texto, debajo de la pregunta. En pantallas de escritorio esa tarjeta tiene un tamaño fijo y no se desplaza, así que lo que se salga del borde no le llega a quien lee.
+
+Por eso Telar deja las respuestas en texto corrido durante la construcción del sitio, y anota cada cambio en la salida de la *build*.
+
+Lo que se conserva tal como lo escribiste:
+
+- **Saltos de párrafo**
+- **Negrita y cursiva**
+- **Enlaces en línea**
+- **Enlaces de glosario**, con la sintaxis `[[term-id]]`
+- **Fórmulas LaTeX en línea**
+- **Código en línea**
+
+Lo que conserva las palabras y pierde el formato:
+
+- **Listas**, con viñetas o numeradas
+- **Títulos** (los encabezados de markdown)
+- **Citas en bloque**
+
+Lo que desaparece por completo, junto con el texto que lleve adentro:
+
+- **Imágenes y elementos incrustados**, tanto la sintaxis de imagen de markdown como las etiquetas `<img>`, `<iframe>`, `<video>`, `<audio>`, `<embed>` y `<object>`
+- **Notas al pie**, tanto el número como el texto de la nota
+- **Tablas**
+- **Bloques de código**
+- **Líneas divisorias**
+
+### El límite de 200 palabras
+
+Telar recorta toda respuesta de más de 200 palabras y lo anota en la salida de la *build*. El corte cae entre palabras y nunca parte un enlace, un término del glosario, un fragmento de código ni una fórmula LaTeX. El texto que sobra no aparece en la historia.
+
+Escribe una o dos oraciones. Cuando necesites más espacio, pasa el detalle a un panel: los paneles admiten todo lo que describe la [Referencia de sintaxis de Markdown](/guia/tu-contenido/sintaxis-markdown/), incluidas las notas al pie, las tablas, las imágenes y los widgets.
+
 ## Consejos para la entrada de datos
 
 **Coordenadas**: Usa el selector de coordenadas en las páginas de objetos para encontrar los valores x, y y zoom, y cópialos directamente a tu CSV.
 
 **Markdown en los campos**:
 - `layer_content`, `definition`: Admiten markdown completo
-- `question`, `answer`: Solo texto plano
+- `question`: Solo texto plano, sin procesamiento markdown
+- `answer`: Solo texto corrido y formato en línea; se recorta si pasa de 200 palabras
 
 **Contenido de paneles**: Usa referencias a archivos (Método 3) para contenido complejo con widgets. Usa texto en línea (Método 1) para paneles cortos.
 
@@ -217,6 +255,7 @@ Telar valida los datos CSV de historias durante la compilación:
 **Advertencias de historias (la *build* continúa)**:
 - Nombres de columnas no reconocidos (se ignoran)
 - ID de objeto no encontrado en objects.csv
+- Formato quitado de la respuesta de un paso, o respuesta recortada a 200 palabras
 
 ## Véase también
 

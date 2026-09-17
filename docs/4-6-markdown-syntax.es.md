@@ -13,6 +13,9 @@ katex: true
 
 Los paneles de contenido en Telar se deben escribir utilizando el formato Markdown. Esta guía de referencia cubre cómo funciona esta sintaxis para crear contenido narrativo claro y atractivo.
 
+{: .note }
+> **Esta referencia cubre el contenido de los paneles**: lo que sigue vale para `layer1_content` y `layer2_content`, y para los archivos markdown que indiquen esas columnas. Los campos `question` y `answer` de un paso funcionan de otra manera. La pregunta es un encabezado, así que va en texto plano, sin procesamiento markdown. Las respuestas quedan en texto corrido y Telar recorta las que pasan de 200 palabras. Consulta [Las respuestas son texto corrido](/guia/tus-datos/csv-historias/#las-respuestas-son-texto-corrido).
+
 ## ¿Qué es Markdown?
 
 Markdown es un lenguaje de marcado ligero que te permite formatear texto usando una sintaxis simple y legible. En lugar de etiquetas HTML complejas, escribes en texto plano con caracteres especiales como `*` para énfasis o `#` para encabezados. Markdown es:
@@ -297,6 +300,8 @@ El textil muestra técnicas avanzadas.[^1]
 ```
 
 Las notas al pie aparecen automáticamente al final del contenido del panel con estilo apropiado.
+
+Las notas al pie solo funcionan en el contenido de los paneles. Si pones una en la respuesta de un paso, Telar quita tanto el número como el texto de la nota, y lo anota en la salida de la *build*.
 
 ---
 
