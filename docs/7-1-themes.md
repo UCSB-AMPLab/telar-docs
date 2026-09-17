@@ -300,13 +300,41 @@ No attribution will appear in the footer.
 
 ## Color Accessibility
 
-When creating custom themes, ensure good contrast:
+Every theme pairs a text color with a background: `colors.text.panel_layer1` sits on `colors.background.panel_layer1`, and so on. When the two are too close in brightness, the text is hard to read.
 
-- **Text on background**: Minimum 4.5:1 contrast ratio
-- **Large text (18px+)**: Minimum 3:1 contrast ratio
-- **Interactive elements**: Must be distinguishable
+### How Telar Checks Your Colors
+
+During the build, Telar works out a text color that reaches a contrast ratio of 4.5:1 on each of four backgrounds: `button`, `panel_layer1`, `panel_layer2` and `panel_glossary`. That is the WCAG AA level for normal-size text.
+
+Your own color comes first. Telar keeps it whenever it reaches 4.5:1, so a theme whose colors all pass renders exactly as you wrote it. Only when your color falls short does Telar look further, in this order:
+
+1. Your `colors.text.heading` or `colors.text.button`, whichever has the higher contrast on that background
+2. White or black, whichever has the higher contrast
+
+### When Telar Replaces a Color
+
+Telar prints one line in the build log for each color it replaces:
+
+```
+Theme "santa-barbara": colors.text.button is #FFFFFF, a contrast ratio of 1.69:1 on its #FEBC11 background, below the 4.5:1 that text needs. Telar used #003660 instead, 7.32:1. To keep your own color, choose a lighter or darker colors.background.button.
+```
+
+A theme whose colors all pass prints nothing. To keep the color you wanted, change the background rather than the text.
+
+### What Telar Does Not Check
+
+These are still yours to get right:
+
+- **Body text on the page background**
+- **Link colors** (`colors.text.link`)
+- **Large text (18px+)**, which needs 3:1 rather than 4.5:1
+- **Interactive elements**, which must stay distinguishable
 
 Use tools like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) to verify.
+
+### Colors Telar Cannot Read
+
+Telar only reads hex colors, like `#FFFFFF` or `#FFF`. A named color like `white`, or an `rgb()` value, is left exactly as you wrote it and unchecked, and the build log says so.
 
 ## Theme Fallback
 

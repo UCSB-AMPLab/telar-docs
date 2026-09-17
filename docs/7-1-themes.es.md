@@ -300,13 +300,43 @@ No se mostrará ninguna atribución en el pie de página.
 
 ## Accesibilidad del color
 
-Al crear temas personalizados, asegura buen contraste:
+Cada tema empareja un color de texto con un fondo: `colors.text.panel_layer1` va sobre `colors.background.panel_layer1`, y así con los demás. Cuando los dos se parecen demasiado en brillo, cuesta leer el texto.
 
-- **Texto sobre fondo**: Proporción de contraste mínima 4.5:1
-- **Texto grande (18px+)**: Proporción de contraste mínima 3:1
-- **Elementos interactivos**: Deben ser distinguibles
+### Cómo revisa Telar tus colores
 
-Usa herramientas como [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) para verificar.
+Durante la construcción del sitio, Telar calcula un color de texto que alcance una relación de contraste de 4,5:1 sobre cada uno de los cuatro fondos: `button`, `panel_layer1`, `panel_layer2` y `panel_glossary`. Ese es el nivel AA de WCAG para texto de tamaño normal.
+
+Telar empieza por el color que escogiste y lo conserva siempre que llegue a 4,5:1, así que un tema cuyos colores cumplen se ve tal como lo escribiste. Solo cuando ese color no alcanza el nivel, Telar busca otro, en este orden:
+
+1. `colors.text.heading` o `colors.text.button`, el que tenga mayor contraste sobre ese fondo
+2. blanco o negro, el que tenga mayor contraste
+
+### Cuando Telar reemplaza un color
+
+Telar escribe una línea en la salida de la *build* por cada color que reemplaza:
+
+```
+Theme "santa-barbara": colors.text.button is #FFFFFF, a contrast ratio of 1.69:1 on its #FEBC11 background, below the 4.5:1 that text needs. Telar used #003660 instead, 7.32:1. To keep your own color, choose a lighter or darker colors.background.button.
+```
+
+El mensaje aparece en inglés.
+
+Si todos los colores del tema cumplen, no aparece ninguna línea. Para conservar el color que querías, cambia el fondo en vez del texto.
+
+### Lo que Telar no revisa
+
+De esto te encargas tú:
+
+- **El texto del cuerpo sobre el fondo de la página**
+- **Los colores de enlace** (`colors.text.link`)
+- **El texto grande (de 18 px o más)**, que necesita 3:1 y no 4,5:1
+- **Los elementos interactivos**, que deben seguir siendo distinguibles
+
+Para revisarlos, usa herramientas como el [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
+
+### Los colores que Telar no puede leer
+
+Telar solo lee colores hexadecimales, como `#FFFFFF` o `#FFF`. Un color con nombre como `white`, o un valor `rgb()`, queda tal como lo escribiste: Telar no lo revisa y lo anota en la salida de la *build*.
 
 ## Respaldo del tema
 
