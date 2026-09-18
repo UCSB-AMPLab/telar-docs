@@ -56,7 +56,7 @@ los colonizadores europeos a finales del siglo XV...
 Cada archivo define un término. El cuerpo del archivo es la definición. En estos archivos, `related_terms` se escribe como una lista YAML, no con el `|` que separa los valores en el CSV: Telar no reinterpreta el frontmatter de un archivo Markdown.
 
 {: .note }
-> Si existen tanto un glosario CSV como archivos Markdown de glosario, Telar usa el CSV e ignora los archivos Markdown (con una advertencia en la *build*).
+> Si existen tanto un glosario CSV como archivos Markdown de glosario, Telar usa el CSV e ignora los archivos Markdown (con una advertencia en el *build*).
 
 ## Enlazar a términos del glosario
 
@@ -92,7 +92,7 @@ Los autoenlaces de glosario funcionan en:
 
 La **pregunta** del paso es un encabezado, así que los enlaces de glosario ahí se dejan como texto plano a propósito.
 
-Si un `term_id` no se encuentra en el glosario, un ícono de advertencia y un mensaje de error aparecen en la salida de la *build* y en el panel de la historia.
+Si un `term_id` no se encuentra en el glosario, un ícono de advertencia y un mensaje de error aparecen en la salida del *build* y en el panel de la historia.
 
 {: .note }
 > Los términos se reconocen sin distinción de mayúsculas. `[[loom]]`, `[[Loom]]` y `[[LOOM]]` resuelven a la misma entrada, así que puedes escribir un término como mejor se lea —por ejemplo, una sigla como `[[IIIF]]`.
@@ -116,7 +116,7 @@ La persona permanece en el paso actual de la historia durante todo el proceso �
 - **Mantén las definiciones concisas** — Las personas las leen en medio de una historia. Una o dos oraciones es lo ideal; guarda las explicaciones extensas para los paneles de las historias.
 - **Usa términos relacionados** para construir una red de referencias cruzadas. Esto ayuda a las personas a explorar conceptos conectados.
 - **Prefija los términos de demostración** con `demo-` (ej., `demo-loom`) para etiquetarlos como contenido de demostración.
-- **Prueba tus enlaces** compilando el sitio y revisando las advertencias de glosario en la salida de la *build*.
+- **Prueba tus enlaces** compilando el sitio y revisando las advertencias de glosario en la salida del *build*.
 
 ## Véase también
 

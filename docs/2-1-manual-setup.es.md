@@ -112,7 +112,7 @@ Edita el archivo `_config.yml` en tu repositorio para conectar todo:
 
 Después de hacer *commit*, GitHub Actions construirá y publicará tu sitio automáticamente. Esto toma de 2 a 5 minutos.
 
-1. Haz clic en la pestaña **Actions** para ver el progreso de la *build*
+1. Haz clic en la pestaña **Actions** para ver el progreso del *build*
 2. Cuando termine, visita tu sitio en la URL que configuraste
 3. Deberías ver un sitio vacío de Telar con tu título y tema
 

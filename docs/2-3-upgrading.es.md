@@ -151,7 +151,7 @@ v1.4.0 es una actualización que solo afecta el código de ejecución del sitio.
 
 **Cambio de visor: OpenSeadragon reemplaza a Tify.**
 
-El visor de imágenes IIIF pasó de Tify (que se cargaba desde un CDN) a un visor propio basado en OpenSeadragon, alojado localmente. Para la mayoría de los sitios esto es imperceptible: las imágenes IIIF se siguen mostrando y ampliando. Si tu sitio tiene un `_sass/_viewer.scss` personalizado que sobrescribía los estilos de Tify, esas reglas quedan sin efecto y puedes eliminarlas, aunque no romperán la *build* si las dejas.
+El visor de imágenes IIIF pasó de Tify (que se cargaba desde un CDN) a un visor propio basado en OpenSeadragon, alojado localmente. Para la mayoría de los sitios esto es imperceptible: las imágenes IIIF se siguen mostrando y ampliando. Si tu sitio tiene un `_sass/_viewer.scss` personalizado que sobrescribía los estilos de Tify, esas reglas quedan sin efecto y puedes eliminarlas, aunque no romperán el *build* si las dejas.
 
 **Archivo de idioma: seis claves nuevas `object.viewer.*`.**
 

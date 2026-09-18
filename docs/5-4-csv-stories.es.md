@@ -200,7 +200,7 @@ Guarda los archivos Markdown en `telar-content/texts/stories/`. En tu hoja de c�
 
 El campo `answer` aparece en la tarjeta de texto, debajo de la pregunta. En pantallas de escritorio esa tarjeta tiene un tamaño fijo y no se desplaza, así que lo que se salga del borde no le llega a quien lee.
 
-Por eso Telar deja las respuestas en texto corrido durante la construcción del sitio, y anota cada cambio en la salida de la *build*.
+Por eso Telar deja las respuestas en texto corrido durante la construcción del sitio, y anota cada cambio en la salida del *build*.
 
 Lo que se conserva tal como lo escribiste:
 
@@ -227,7 +227,7 @@ Lo que desaparece por completo, junto con el texto que lleve adentro:
 
 ### El límite de 200 palabras
 
-Telar recorta toda respuesta de más de 200 palabras y lo anota en la salida de la *build*. El corte cae entre palabras y nunca parte un enlace, un término del glosario, un fragmento de código ni una fórmula LaTeX. El texto que sobra no aparece en la historia.
+Telar recorta toda respuesta de más de 200 palabras y lo anota en la salida del *build*. El corte cae entre palabras y nunca parte un enlace, un término del glosario, un fragmento de código ni una fórmula LaTeX. El texto que sobra no aparece en la historia.
 
 Escribe una o dos oraciones. Cuando necesites más espacio, pasa el detalle a un panel: los paneles admiten todo lo que describe la [Referencia de sintaxis de Markdown](/guia/tu-contenido/sintaxis-markdown/), incluidas las notas al pie, las tablas, las imágenes y los widgets.
 
@@ -246,13 +246,13 @@ Escribe una o dos oraciones. Cuando necesites más espacio, pasa el detalle a un
 
 Telar valida los datos CSV de historias durante la compilación:
 
-**Errores de historias (la *build* falla)**:
+**Errores de historias (el *build* falla)**:
 - Faltan columnas requeridas
 - Secuencia de `step` inválida (saltos, duplicados)
 - Archivos Markdown de capas faltantes
 - Valores de coordenadas inválidos (fuera del rango 0-1)
 
-**Advertencias de historias (la *build* continúa)**:
+**Advertencias de historias (el *build* continúa)**:
 - Nombres de columnas no reconocidos (se ignoran)
 - ID de objeto no encontrado en objects.csv
 - Formato quitado de la respuesta de un paso, o respuesta recortada a 200 palabras

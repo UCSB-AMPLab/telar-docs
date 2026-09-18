@@ -313,7 +313,7 @@ Telar empieza por el color que escogiste y lo conserva siempre que llegue a 4,5:
 
 ### Cuando Telar reemplaza un color
 
-Telar escribe una línea en la salida de la *build* por cada color que reemplaza:
+Telar escribe una línea en la salida del *build* por cada color que reemplaza:
 
 ```
 Theme "santa-barbara": colors.text.button is #FFFFFF, a contrast ratio of 1.69:1 on its #FEBC11 background, below the 4.5:1 that text needs. Telar used #003660 instead, 7.32:1. To keep your own color, choose a lighter or darker colors.background.button.
@@ -336,7 +336,7 @@ Para revisarlos, usa herramientas como el [WebAIM Contrast Checker](https://weba
 
 ### Los colores que Telar no puede leer
 
-Telar solo lee colores hexadecimales, como `#FFFFFF` o `#FFF`. Un color con nombre como `white`, o un valor `rgb()`, queda tal como lo escribiste: Telar no lo revisa y lo anota en la salida de la *build*.
+Telar solo lee colores hexadecimales, como `#FFFFFF` o `#FFF`. Un color con nombre como `white`, o un valor `rgb()`, queda tal como lo escribiste: Telar no lo revisa y lo anota en la salida del *build*.
 
 ## Respaldo del tema
 

@@ -156,7 +156,7 @@ Muñoz-Arbeláez, S. (2025). *The New Kingdom of Granada: The Making and Unmakin
 - Cada cita se separa con una línea en blanco (doble salto de línea)
 - La sintaxis estándar de Markdown funciona dentro de las entradas (`*cursivas*` para títulos, `**negrita**`, enlaces)
 - Se muestra con sangría francesa — la primera línea queda al margen izquierdo, las líneas siguientes se indentan
-- Un bloque de bibliografía vacío produce una advertencia durante la *build*
+- Un bloque de bibliografía vacío produce una advertencia durante el *build*
 
 ## Dónde funcionan los widgets
 
@@ -207,16 +207,16 @@ image: https://archive.org/download/item/photo.jpg
 
 Telar valida los widgets durante el proceso de compilación:
 
-**Errores (la *build* falla):**
+**Errores (el *build* falla):**
 - Falta el campo `image` obligatorio en el carrusel
 - Muy pocas o demasiadas pestañas/paneles de acordeón
 - Secciones de contenido vacías
 
-**Advertencias (la *build* continúa):**
+**Advertencias (el *build* continúa):**
 - Falta texto `alt` en imágenes del carrusel (impacta accesibilidad)
 - No se encuentran archivos de imagen en las rutas especificadas
 
-Revisa la salida de la *build* para ver mensajes de validación de widgets.
+Revisa la salida del *build* para ver mensajes de validación de widgets.
 
 ## Ejemplos
 

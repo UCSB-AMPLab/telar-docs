@@ -301,7 +301,7 @@ El textil muestra técnicas avanzadas.[^1]
 
 Las notas al pie aparecen automáticamente al final del contenido del panel con estilo apropiado.
 
-Las notas al pie solo funcionan en el contenido de los paneles. Si pones una en la respuesta de un paso, Telar quita tanto el número como el texto de la nota, y lo anota en la salida de la *build*.
+Las notas al pie solo funcionan en el contenido de los paneles. Si pones una en la respuesta de un paso, Telar quita tanto el número como el texto de la nota, y lo anota en la salida del *build*.
 
 ---
 

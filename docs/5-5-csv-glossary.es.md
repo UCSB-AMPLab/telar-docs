@@ -81,7 +81,7 @@ El [[loom]] era central para la producción textil.
 El [[loom|dispositivo de tejido]] era central para la producción textil.
 ```
 
-Si el `term_id` no se encuentra en el glosario, un ícono de advertencia y un mensaje de error aparecen en la salida de la *build* y en el panel de la historia.
+Si el `term_id` no se encuentra en el glosario, un ícono de advertencia y un mensaje de error aparecen en la salida del *build* y en el panel de la historia.
 
 ### Alias del CSV de glosario
 
@@ -101,7 +101,7 @@ Si el `term_id` no se encuentra en el glosario, un ícono de advertencia y un me
 | Encabezados bilingües | Sí (mediante alias de columnas) | No |
 | Google Sheets | Sí (se obtiene como los demás CSV) | No |
 
-Si existen tanto un CSV como un glosario en Markdown, se usa el CSV y se ignoran los archivos Markdown (con una advertencia en la *build*).
+Si existen tanto un CSV como un glosario en Markdown, se usa el CSV y se ignoran los archivos Markdown (con una advertencia en el *build*).
 
 ## Validación
 
