@@ -11,7 +11,7 @@ katex: true
 
 # Referencia de sintaxis de Markdown
 
-Los paneles de contenido en Telar se deben escribir utilizando el formato Markdown. Esta guía de referencia cubre cómo funciona esta sintaxis para crear contenido narrativo claro y atractivo.
+El contenido de los paneles de Telar admite formato Markdown enriquecido. Esta referencia recoge la sintaxis más útil para el texto narrativo.
 
 {: .note }
 > **Esta referencia cubre el contenido de los paneles**: lo que sigue vale para `layer1_content` y `layer2_content`, y para los archivos Markdown que indiquen esas columnas. Los campos `question` y `answer` de un paso funcionan de otra manera. La pregunta es un encabezado, así que va en texto plano, sin procesamiento Markdown. Las respuestas quedan en texto corrido y Telar recorta las que pasan de 200 palabras. Consulta [Las respuestas son texto corrido](/guia/tus-datos/csv-historias/#las-respuestas-son-texto-corrido).
@@ -20,26 +20,26 @@ Los paneles de contenido en Telar se deben escribir utilizando el formato Markdo
 
 Markdown es un lenguaje de marcado ligero que te permite formatear texto usando una sintaxis simple y legible. En lugar de etiquetas HTML complejas, escribes en texto plano con caracteres especiales como `*` para énfasis o `#` para encabezados. Markdown es:
 
-- **Fácil de leer**: Incluso en su forma cruda, Markdown es legible
-- **Fácil de escribir**: Sintaxis simple que es más rápida que HTML
-- **Portátil**: Los archivos de texto plano funcionan en cualquier lugar
-- **Convertible**: Se convierte automáticamente a HTML para su visualización
+- **Fácil de leer**: Markdown se lee bien incluso sin procesar
+- **Fácil de escribir**: sintaxis simple, más rápida que HTML
+- **Portátil**: los archivos de texto plano funcionan en cualquier parte
+- **Convertible**: se convierte automáticamente a HTML para mostrarse en el sitio
 
 ### Recursos de aprendizaje
 
-¿Nuevo en Markdown? Estos recursos te ayudarán:
+¿Estás empezando con Markdown? Estos recursos te ayudarán:
 
-- [Guía de Markdown](https://www.markdownguide.org/es/) - Guía completa para empezar
-- [Tutorial de CommonMark](https://commonmark.org/help/) - Tutorial interactivo de 10 minutos
-- [Hoja de Referencia de Markdown](https://www.markdownguide.org/cheat-sheet/) - Referencia rápida
+- [Guía de Markdown](https://www.markdownguide.org/es/) — Guía completa para empezar
+- [Tutorial de CommonMark](https://commonmark.org/help/) — Tutorial interactivo de 10 minutos
+- [Hoja de referencia de Markdown](https://www.markdownguide.org/cheat-sheet/) — Referencia rápida
 
 Telar usa el procesador [Python Markdown](https://python-markdown.github.io/) con las extensiones `extra` y `nl2br`.
 
 ---
 
-## Métodos de contenido de panel
+## Cómo escribir el contenido de los paneles
 
-Puedes proporcionar el contenido del panel de tres maneras. Para más detalles, consulta la [Referencia CSV: Historias](/guia/tus-datos/csv-historias/#contenido-de-capa).
+Puedes escribir el contenido de los paneles de tres maneras. Para más detalles, consulta la [Referencia CSV: Historias](/guia/tus-datos/csv-historias/#contenido-de-capa).
 
 {: .note }
 > Los tres métodos que siguen son para quien trabaja en una hoja de cálculo. En el Compositor, el título del panel tiene su propio campo, y todo lo que pegues en el campo **Contenido** —incluido un bloque `---`— se publica como parte del texto del panel, no como título.
@@ -52,7 +52,7 @@ Escribe el texto del panel directamente en la columna `contenido_capa1` de tu ho
 |-----------------|
 | Este textil muestra **técnicas avanzadas de tejido** del período colonial. El patrón entrelazado indica una artesanía sofisticada. |
 
-Los saltos de línea en la celda de tu hoja de cálculo crean saltos de párrafo. El título del panel es el texto del botón de manera predeterminada.
+Los saltos de línea en la celda de tu hoja de cálculo crean saltos de párrafo. Si no indicas otro, el título del panel es el texto del botón.
 
 ### Método 2: Pegar texto Markdown
 
@@ -72,7 +72,7 @@ Estos patrones se creaban usando...
 ```
 
 {: .warning }
-> Si copias y pegas desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe en sintaxis Markdown.
+> Si copias y pegas desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se conservará. Escribe en sintaxis Markdown.
 
 ### Método 3: Indicar un archivo de texto
 
@@ -82,7 +82,7 @@ Para contenido complejo, indica un archivo Markdown guardado en `telar-content/t
 |-----------------|
 | textiles-coloniales/paso1-capa1.md |
 
-El archivo usa frontmatter para el título del panel y soporta todas las funcionalidades de Markdown, incluyendo widgets.
+El archivo usa frontmatter para el título del panel y admite todas las funciones de Markdown, incluidos los *widgets*.
 
 **Cuándo usar archivos de texto**:
 - Contenido con widgets (acordeón, pestañas, carrusel)
@@ -160,9 +160,9 @@ Telar proporciona sintaxis especial para controlar los tamaños de imagen en los
 
 | Tamaño | Palabra clave | Ancho máx. | Caso de uso |
 |--------|---------------|-----------|-------------|
-| Pequeño | `{sm}` o `{small}` | 250px | Miniaturas, iconos, detalles pequeños |
-| Mediano | `{md}` o `{medium}` | 450px | Ilustraciones estándar (predeterminado) |
-| Grande | `{lg}` o `{large}` | 700px | Imágenes destacadas, vistas detalladas |
+| Pequeño | `{sm}` o `{small}` | 250 px | Miniaturas, iconos, detalles pequeños |
+| Mediano | `{md}` o `{medium}` | 450 px | Ilustraciones estándar (predeterminado) |
+| Grande | `{lg}` o `{large}` | 700 px | Imágenes destacadas, vistas detalladas |
 | Completo | `{full}` | 100% | Panoramas, visuales de ancho completo |
 
 ### Rutas de imagen
@@ -174,7 +174,7 @@ Telar proporciona sintaxis especial para controlar los tamaños de imagen en los
 ```
 → Carga `/telar-content/objects/textile-closeup.jpg`
 
-**Rutas absolutas** (comenzando con `/`) cargan desde la raíz del sitio:
+**Rutas absolutas** (las que empiezan por `/`) se cargan desde la raíz del sitio:
 
 ```markdown
 ![Logo del sitio](/telar-content/objects/logo.png){sm}
@@ -196,7 +196,7 @@ Telar proporciona sintaxis especial para controlar los tamaños de imagen en los
 ```
 
 {: .tip }
-> **Tamaño Predeterminado**: Las imágenes sin etiqueta de tamaño predeterminan a mediano (450px). Siempre incluye etiquetas de tamaño para claridad.
+> **Tamaño predeterminado**: las imágenes sin etiqueta de tamaño salen en mediano (450 px). Ponle la etiqueta a cada imagen para que el tamaño quede explícito.
 
 ### Pies de imagen
 
@@ -218,7 +218,7 @@ caption: Mapa de la *Recopilación de Leyes*, 1680.
 
 El prefijo `caption:` se elimina del texto mostrado.
 
-**Markdown en pies de imagen**: Los pies de imagen admiten formato Markdown como `*cursivas*`, `**negritas**` y `[enlaces](url)`.
+**Markdown en los pies de imagen**: admiten formato Markdown como `*cursivas*`, `**negritas**` y `[enlaces](url)`.
 
 ---
 
@@ -299,7 +299,7 @@ El textil muestra técnicas avanzadas.[^1]
 [^1]: Basado en el análisis de la Dra. Smith (2020).
 ```
 
-Las notas al pie aparecen automáticamente al final del contenido del panel con estilo apropiado.
+Las notas al pie aparecen automáticamente al final del panel, con el estilo que les corresponde.
 
 Las notas al pie solo funcionan en el contenido de los paneles. Si pones una en la respuesta de un paso, Telar quita tanto el número como el texto de la nota, y lo anota en la salida del *build*.
 
@@ -411,7 +411,7 @@ Siempre proporciona texto alternativo descriptivo para las imágenes:
 
 ### Organización de imágenes
 
-Mantén las imágenes de los paneles en `/telar-content/objects/` para fácil referencia:
+Guarda las imágenes de los paneles en `/telar-content/objects/` para encontrarlas fácilmente:
 
 ```
 telar-content/objects/
@@ -423,10 +423,10 @@ telar-content/objects/
 
 ### Longitud del contenido
 
-- **Capa 1**: 2-3 párrafos de contexto
+- **Capa 1**: 2–3 párrafos de contexto
 - **Capa 2**: Contenido académico más extenso, citas, análisis extendido
 
-Divide el texto largo con encabezados, listas e imágenes para mejor legibilidad.
+Divide los textos largos con encabezados, listas e imágenes para que se lean mejor.
 
 ### Nomenclatura de archivos
 
@@ -443,7 +443,7 @@ Usa nombres de archivo descriptivos, en minúsculas con guiones:
 
 Ejemplos listos para copiar y pegar de las tareas de formato más comunes:
 
-### Agregar una imagen con pie de foto
+### Agregar una imagen con pie
 ```markdown
 ![Textil colonial con patrón entrelazado](textile-detail.jpg){lg}
 Detalle de los hilos de urdimbre, circa 1650.
@@ -501,6 +501,6 @@ $$x^4 = \frac{8}{35}P_4(x) + \frac{4}{7}P_2(x) + \frac{1}{5}P_0(x)$$
 
 ## Próximos pasos
 
-- [Tu contenido](/guia/tu-contenido/) - Aprende a organizar tus archivos Markdown
-- [Contenido enriquecido con Markdown](/guia/tu-contenido/contenido-enriquecido/) - Crea y edita archivos Markdown
-- [Estilos avanzados](/guia/desarrolladores/estilos/) - Personaliza la apariencia de los paneles
+- [Tu contenido](/guia/tu-contenido/) — Aprende a organizar tus archivos Markdown
+- [Contenido enriquecido con Markdown](/guia/tu-contenido/contenido-enriquecido/) — Crea y edita archivos Markdown
+- [Estilos avanzados](/guia/desarrolladores/estilos/) — Personaliza la apariencia de los paneles
