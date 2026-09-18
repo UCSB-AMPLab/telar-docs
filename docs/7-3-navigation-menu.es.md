@@ -204,7 +204,7 @@ menu:
 
 Cuando creas una nueva página personalizada:
 
-1. Crea el archivo markdown (`telar-content/texts/pages/contact.md`)
+1. Crea el archivo Markdown (`telar-content/texts/pages/contact.md`)
 2. Agrégalo a `navigation.yml`:
 
 ```yaml

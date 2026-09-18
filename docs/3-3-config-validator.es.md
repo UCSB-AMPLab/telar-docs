@@ -397,8 +397,8 @@ Tu configuración nunca se envía a ningún servidor — todo se ejecuta en tu n
 
   function checkReadOnlySection(config, issues) {
     var warns = [];
-    if (config.markdown && config.markdown !== 'kramdown') {
-      warns.push('"markdown" está en "' + config.markdown + '" en lugar de "kramdown"');
+    if (config.Markdown && config.Markdown !== 'kramdown') {
+      warns.push('"Markdown" está en "' + config.Markdown + '" en lugar de "kramdown"');
     }
     if (config.permalink && config.permalink !== 'pretty') {
       warns.push('"permalink" está en "' + config.permalink + '" en lugar de "pretty"');

@@ -94,7 +94,7 @@ Para los pasos donde quieras compartir más que una respuesta breve, agrega cont
 | `layer1_button` | Texto personalizado del botón (deja en blanco para "Saber más") |
 | `layer2_button` | Texto personalizado del botón (deja en blanco para "Profundizar más") |
 
-Escribe tu texto directamente en la celda. Puedes usar formato básico de markdown: `**negrita**`, `*cursiva*` y encabezados con `##`.
+Escribe tu texto directamente en la celda. Puedes usar formato básico de Markdown: `**negrita**`, `*cursiva*` y encabezados con `##`.
 
 {: .tip }
 > **Mantenlo sencillo**

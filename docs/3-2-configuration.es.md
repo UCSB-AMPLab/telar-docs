@@ -115,7 +115,7 @@ El ajuste `telar_language` cambia el idioma de:
 
 El ajuste `telar_language` **no** traduce tu contenido:
 
-- Narrativas y texto de panel (archivos markdown que escribes)
+- Narrativas y texto de panel (archivos Markdown que escribes)
 - Descripciones de objetos y metadatos (datos de tu CSV)
 - Definiciones del glosario
 - Contenido de la página About

@@ -83,7 +83,7 @@ El paso 1 usa contenido en línea para la capa 1, mientras que el paso 2 usa una
 
 #### question / pregunta
 - Se muestra como encabezado de la tarjeta de texto
-- Solo texto plano, sin procesamiento markdown
+- Solo texto plano, sin procesamiento Markdown
 - Pregunta o afirmación breve
 - Recomendado: 3-8 palabras
 
@@ -122,22 +122,22 @@ Para crear saltos de párrafo dentro de una celda:
 
 Puedes usar formato básico: `**negrita**`, `*cursiva*`, `[texto del enlace](url)`, y enlaces de glosario (`[[term-id]]`).
 
-**Método 2: Pegar texto markdown**
+**Método 2: Pegar texto Markdown**
 
 Pega texto escrito en un editor de texto plano. Esto admite la gama completa de características de formato, incluyendo encabezados, widgets (acordeón, carrusel, pestañas), controles de tamaño de imagen y un título de panel personalizado usando frontmatter YAML.
 
 {: .warning }
-> Si copias y pegas desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe con sintaxis markdown en su lugar — consulta la [Guía de Sintaxis Markdown](/guia/tu-contenido/sintaxis-markdown/).
+> Si copias y pegas desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe con sintaxis Markdown en su lugar — consulta la [Guía de Sintaxis Markdown](/guia/tu-contenido/sintaxis-markdown/).
 
-**Método 3: Indicar un archivo markdown**
+**Método 3: Indicar un archivo Markdown**
 
-Indica la ruta a un archivo markdown en tu repositorio. Esto se recomienda para paneles complejos, especialmente aquellos con widgets o contenido que quieras reutilizar.
+Indica la ruta a un archivo Markdown en tu repositorio. Esto se recomienda para paneles complejos, especialmente aquellos con widgets o contenido que quieras reutilizar.
 
 | contenido_capa1 |
 |----------------|
 | textiles-coloniales/step1-layer1.md |
 
-Guarda los archivos markdown en `telar-content/texts/stories/`. En tu hoja de cálculo, ingresa solo el nombre del archivo — o si organizaste los archivos en subcarpetas, incluye el nombre de la subcarpeta.
+Guarda los archivos Markdown en `telar-content/texts/stories/`. En tu hoja de cálculo, ingresa solo el nombre del archivo — o si organizaste los archivos en subcarpetas, incluye el nombre de la subcarpeta.
 
 **Cómo decide Telar**: Si lo que ingresas termina en `.md` y el archivo existe, lo carga. De lo contrario, trata el valor como contenido.
 
@@ -214,12 +214,12 @@ Lo que se conserva tal como lo escribiste:
 Lo que conserva las palabras y pierde el formato:
 
 - **Listas**, con viñetas o numeradas
-- **Títulos** (los encabezados de markdown)
+- **Títulos** (los encabezados de Markdown)
 - **Citas en bloque**
 
 Lo que desaparece por completo, junto con el texto que lleve adentro:
 
-- **Imágenes y elementos incrustados**, tanto la sintaxis de imagen de markdown como las etiquetas `<img>`, `<iframe>`, `<video>`, `<audio>`, `<embed>` y `<object>`
+- **Imágenes y elementos incrustados**, tanto la sintaxis de imagen de Markdown como las etiquetas `<img>`, `<iframe>`, `<video>`, `<audio>`, `<embed>` y `<object>`
 - **Notas al pie**, tanto el número como el texto de la nota
 - **Tablas**
 - **Bloques de código**
@@ -236,8 +236,8 @@ Escribe una o dos oraciones. Cuando necesites más espacio, pasa el detalle a un
 **Coordenadas**: Usa el selector de coordenadas en las páginas de objetos para encontrar los valores x, y y zoom, y cópialos directamente a tu CSV.
 
 **Markdown en los campos**:
-- `layer_content`, `definition`: Admiten markdown completo
-- `question`: Solo texto plano, sin procesamiento markdown
+- `layer_content`, `definition`: Admiten Markdown completo
+- `question`: Solo texto plano, sin procesamiento Markdown
 - `answer`: Solo texto corrido y formato en línea; se recorta si pasa de 200 palabras
 
 **Contenido de paneles**: Usa referencias a archivos (Método 3) para contenido complejo con widgets. Usa texto en línea (Método 1) para paneles cortos.
@@ -249,7 +249,7 @@ Telar valida los datos CSV de historias durante la compilación:
 **Errores de historias (la *build* falla)**:
 - Faltan columnas requeridas
 - Secuencia de `step` inválida (saltos, duplicados)
-- Archivos markdown de capas faltantes
+- Archivos Markdown de capas faltantes
 - Valores de coordenadas inválidos (fuera del rango 0-1)
 
 **Advertencias de historias (la *build* continúa)**:

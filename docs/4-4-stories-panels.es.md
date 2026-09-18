@@ -150,23 +150,23 @@ Para saltos de línea dentro de una celda:
 - **Archivos CSV**: Usa saltos de línea reales dentro de texto entre comillas
 - **Alternativa**: Usa etiquetas HTML `<br>`
 
-### Método 2: pegar texto markdown
+### Método 2: pegar texto Markdown
 
-Pega texto escrito en un editor de texto plano. Esto admite la gama completa de características markdown, incluyendo encabezados, *widgets* (acordeón, carrusel, pestañas), controles de tamaño de imagen y un título de panel personalizado usando *frontmatter* YAML.
+Pega texto escrito en un editor de texto plano. Esto admite la gama completa de características Markdown, incluyendo encabezados, *widgets* (acordeón, carrusel, pestañas), controles de tamaño de imagen y un título de panel personalizado usando *frontmatter* YAML.
 
 {: .warning }
-> Si se copia y pega desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe con sintaxis markdown en su lugar — consulta la [Guía de sintaxis markdown](/guia/tu-contenido/sintaxis-markdown/).
+> Si se copia y pega desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe con sintaxis Markdown en su lugar — consulta la [Guía de sintaxis Markdown](/guia/tu-contenido/sintaxis-markdown/).
 
-### Método 3: indicar un archivo markdown
+### Método 3: indicar un archivo Markdown
 
-Indica la ruta a un archivo markdown en el repositorio. Ideal para paneles complejos — especialmente aquellos con *widgets* o contenido que se quiera reutilizar en varios pasos.
+Indica la ruta a un archivo Markdown en el repositorio. Ideal para paneles complejos — especialmente aquellos con *widgets* o contenido que se quiera reutilizar en varios pasos.
 
 ```csv
 layer1_content
 textiles-coloniales/step1-layer1.md
 ```
 
-Guarda los archivos markdown en `telar-content/texts/stories/`. En la hoja de cálculo, ingresa solo el nombre del archivo — o si los archivos están organizados en subcarpetas, incluye el nombre de la subcarpeta.
+Guarda los archivos Markdown en `telar-content/texts/stories/`. En la hoja de cálculo, ingresa solo el nombre del archivo — o si los archivos están organizados en subcarpetas, incluye el nombre de la subcarpeta.
 
 **Cómo decide Telar**: Si lo ingresado termina en `.md` y el archivo existe, se carga el archivo. De lo contrario, el valor se trata como contenido.
 
@@ -180,9 +180,9 @@ Guarda los archivos markdown en `telar-content/texts/stories/`. En la hoja de c�
 | Mismo contenido usado en varios lugares | Método 3: Archivo |
 | Ediciones rápidas sin salir de la hoja de cálculo | Método 1 o 2 |
 
-## Archivos markdown de las historias
+## Archivos Markdown de las historias
 
-Al usar el Método 3 (archivos), los archivos markdown de las historias se ubican en `telar-content/texts/stories/`:
+Al usar el Método 3 (archivos), los archivos Markdown de las historias se ubican en `telar-content/texts/stories/`:
 
 ```
 telar-content/texts/stories/
@@ -214,7 +214,7 @@ de tejido compleja que era común en el periodo colonial.
 Si se omite el *frontmatter*, el panel no tiene título — el contenido comienza de inmediato.
 
 {: .note }
-> Esto vale para los paneles que se escriben en una hoja de cálculo o en un archivo markdown. En el Compositor, el título del panel tiene su propio campo, y un bloque `---` que pegues en el campo **Contenido** se publica como parte del texto del panel, no como título.
+> Esto vale para los paneles que se escriben en una hoja de cálculo o en un archivo Markdown. En el Compositor, el título del panel tiene su propio campo, y un bloque `---` que pegues en el campo **Contenido** se publica como parte del texto del panel, no como título.
 
 ### Qué se puede usar en los paneles
 
@@ -223,7 +223,7 @@ Los paneles de las historias admiten:
 - Markdown estándar (encabezados, negrita, cursiva, enlaces, listas, imágenes)
 - [*Widgets*](/guia/tu-contenido/widgets/) (carrusel, pestañas, acordeón)
 - [Autoenlaces de glosario](/guia/funciones/glosario/) (`[[term-id]]`)
-- Imágenes con controles de tamaño (consulta la [Guía de sintaxis markdown](/guia/tu-contenido/sintaxis-markdown/))
+- Imágenes con controles de tamaño (consulta la [Guía de sintaxis Markdown](/guia/tu-contenido/sintaxis-markdown/))
 
 ## Pasos multimedia
 

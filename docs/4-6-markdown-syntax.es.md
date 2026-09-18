@@ -14,13 +14,13 @@ katex: true
 Los paneles de contenido en Telar se deben escribir utilizando el formato Markdown. Esta guía de referencia cubre cómo funciona esta sintaxis para crear contenido narrativo claro y atractivo.
 
 {: .note }
-> **Esta referencia cubre el contenido de los paneles**: lo que sigue vale para `layer1_content` y `layer2_content`, y para los archivos markdown que indiquen esas columnas. Los campos `question` y `answer` de un paso funcionan de otra manera. La pregunta es un encabezado, así que va en texto plano, sin procesamiento markdown. Las respuestas quedan en texto corrido y Telar recorta las que pasan de 200 palabras. Consulta [Las respuestas son texto corrido](/guia/tus-datos/csv-historias/#las-respuestas-son-texto-corrido).
+> **Esta referencia cubre el contenido de los paneles**: lo que sigue vale para `layer1_content` y `layer2_content`, y para los archivos Markdown que indiquen esas columnas. Los campos `question` y `answer` de un paso funcionan de otra manera. La pregunta es un encabezado, así que va en texto plano, sin procesamiento Markdown. Las respuestas quedan en texto corrido y Telar recorta las que pasan de 200 palabras. Consulta [Las respuestas son texto corrido](/guia/tus-datos/csv-historias/#las-respuestas-son-texto-corrido).
 
 ## ¿Qué es Markdown?
 
 Markdown es un lenguaje de marcado ligero que te permite formatear texto usando una sintaxis simple y legible. En lugar de etiquetas HTML complejas, escribes en texto plano con caracteres especiales como `*` para énfasis o `#` para encabezados. Markdown es:
 
-- **Fácil de leer**: Incluso en su forma cruda, markdown es legible
+- **Fácil de leer**: Incluso en su forma cruda, Markdown es legible
 - **Fácil de escribir**: Sintaxis simple que es más rápida que HTML
 - **Portátil**: Los archivos de texto plano funcionan en cualquier lugar
 - **Convertible**: Se convierte automáticamente a HTML para su visualización
@@ -54,7 +54,7 @@ Escribe el texto del panel directamente en la columna `contenido_capa1` de tu ho
 
 Los saltos de línea en la celda de tu hoja de cálculo crean saltos de párrafo. El título del panel es el texto del botón de manera predeterminada.
 
-### Método 2: Pegar texto markdown
+### Método 2: Pegar texto Markdown
 
 Pega texto desde un editor de texto plano. Puedes incluir encabezados, widgets y un título de panel personalizado usando frontmatter YAML:
 
@@ -72,17 +72,17 @@ Estos patrones se creaban usando...
 ```
 
 {: .warning }
-> Si copias y pegas desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe en sintaxis markdown.
+> Si copias y pegas desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe en sintaxis Markdown.
 
 ### Método 3: Indicar un archivo de texto
 
-Para contenido complejo, indica un archivo markdown guardado en `telar-content/texts/stories/`:
+Para contenido complejo, indica un archivo Markdown guardado en `telar-content/texts/stories/`:
 
 | contenido_capa1 |
 |-----------------|
 | textiles-coloniales/paso1-capa1.md |
 
-El archivo usa frontmatter para el título del panel y soporta todas las funcionalidades de markdown, incluyendo widgets.
+El archivo usa frontmatter para el título del panel y soporta todas las funcionalidades de Markdown, incluyendo widgets.
 
 **Cuándo usar archivos de texto**:
 - Contenido con widgets (acordeón, pestañas, carrusel)
@@ -218,7 +218,7 @@ caption: Mapa de la *Recopilación de Leyes*, 1680.
 
 El prefijo `caption:` se elimina del texto mostrado.
 
-**Markdown en pies de imagen**: Los pies de imagen admiten formato markdown como `*cursivas*`, `**negritas**` y `[enlaces](url)`.
+**Markdown en pies de imagen**: Los pies de imagen admiten formato Markdown como `*cursivas*`, `**negritas**` y `[enlaces](url)`.
 
 ---
 
@@ -307,7 +307,7 @@ Las notas al pie solo funcionan en el contenido de los paneles. Si pones una en 
 
 ## Notación matemática y científica (LaTeX)
 
-Telar permite representar fórmulas matemáticas mediante [KaTeX](https://katex.org/). Puedes incluir fórmulas, ecuaciones químicas y notación científica en cualquier lugar donde se use markdown: paneles de historias, definiciones del glosario, descripciones de objetos y páginas personalizadas.
+Telar permite representar fórmulas matemáticas mediante [KaTeX](https://katex.org/). Puedes incluir fórmulas, ecuaciones químicas y notación científica en cualquier lugar donde se use Markdown: paneles de historias, definiciones del glosario, descripciones de objetos y páginas personalizadas.
 
 ### Cómo funciona
 

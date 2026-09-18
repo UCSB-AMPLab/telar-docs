@@ -44,7 +44,7 @@ Bienvenido a la documentación de Telar. Esta guía te ayudará a crear narrativ
 - [Imágenes autoalojadas](/guia/tu-contenido/imagenes-autoalojadas/) - Sube imágenes y Telar genera teselas IIIF ampliables automáticamente
 - [Imágenes IIIF externas](/guia/tu-contenido/iiif-externo/) - Usa imágenes de museos, bibliotecas y otros proveedores IIIF
 - [Historias y paneles](/guia/tu-contenido/historias-paneles/) - Narrativas paso a paso con paneles de detalle
-- [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) - Archivos markdown para paneles más ricos
+- [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) - Archivos Markdown para paneles más ricos
 - [Sintaxis de Markdown](/guia/tu-contenido/sintaxis-markdown/) - Referencia de formato
 - [Widgets](/guia/tu-contenido/widgets/) - Carruseles, pestañas, acordeones
 

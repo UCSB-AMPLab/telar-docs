@@ -45,7 +45,7 @@ Si quieres restringir el acceso a una historia — para uso en el aula, borrador
 
 3. Comparte la clave con tus lectores, o envíales un enlace con `?key=tu-clave-secreta` al final
 
-Una historia privada se genera como cualquier otra durante la compilación — el markdown, los enlaces de glosario y las imágenes funcionan una vez que la persona la desbloquea. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles, incluido cómo previsualizarla localmente.
+Una historia privada se genera como cualquier otra durante la compilación — el Markdown, los enlaces de glosario y las imágenes funcionan una vez que la persona la desbloquea. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles, incluido cómo previsualizarla localmente.
 
 ## Sigue construyendo
 
@@ -56,11 +56,11 @@ Una vez que tengas lo básico, puedes:
 - Personalizar tu página de inicio (edita `index.md` en tu repositorio)
 - Explorar y buscar en tu colección de objetos (habilitado por defecto)
 
-Cuando tus paneles necesiten más que unos pocos párrafos — widgets, formato enriquecido o contenido reutilizable — consulta [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) para aprender a agregar archivos markdown.
+Cuando tus paneles necesiten más que unos pocos párrafos — widgets, formato enriquecido o contenido reutilizable — consulta [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) para aprender a agregar archivos Markdown.
 
 ## Próximos pasos
 
-- [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) — Enriquece paneles con archivos markdown y widgets
+- [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) — Enriquece paneles con archivos Markdown y widgets
 - [Tu Contenido](/guia/tu-contenido/) — Cómo Telar organiza tus materiales
 - [Temas](/guia/personalizacion/temas/) — Personaliza la apariencia de tu sitio
 - [Imágenes autoalojadas](/guia/tu-contenido/imagenes-autoalojadas/) — Sube y procesa tus propias imágenes

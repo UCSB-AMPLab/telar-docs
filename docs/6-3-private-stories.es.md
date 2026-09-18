@@ -18,7 +18,7 @@ Las historias privadas se encriptan para que solo las personas con la clave corr
 
 Telar construye todas las historias — privadas o no — con las mismas plantillas. Durante la compilación de Jekyll, una historia privada se genera exactamente igual que una abierta. Solo cuando la compilación termina, un paso aparte la encripta:
 
-1. **Durante la compilación de Jekyll**, los pasos de una historia privada se generan con las plantillas normales de historias: el mismo procesamiento de markdown, los mismos enlaces de glosario, LaTeX, clips de audio y texto alternativo que cualquier historia abierta.
+1. **Durante la compilación de Jekyll**, los pasos de una historia privada se generan con las plantillas normales de historias: el mismo procesamiento de Markdown, los mismos enlaces de glosario, LaTeX, clips de audio y texto alternativo que cualquier historia abierta.
 2. **Después de la compilación**, un paso posterior encripta el contenido ya generado de la historia (AES-256-GCM) y lo reemplaza con un marcador bloqueado. El título y el subtítulo siguen visibles en el listado del proyecto; solo se encripta el contenido paso a paso.
 3. **En el sitio publicado**, la página de la historia se carga con una capa de bloqueo en lugar de su contenido.
 4. **Las personas ingresan la clave** (o usan un enlace que la incluye), y la historia se desencripta en su navegador.

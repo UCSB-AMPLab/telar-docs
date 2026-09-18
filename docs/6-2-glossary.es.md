@@ -31,14 +31,14 @@ Cada fila define un término:
 
 - **`term_id`** — Identificador único usado en los enlaces (minúsculas, se recomiendan guiones)
 - **`title`** — Nombre visible en el panel del glosario
-- **`definition`** — El texto de la definición (admite markdown básico)
+- **`definition`** — El texto de la definición (admite Markdown básico)
 - **`related_terms`** — Otros valores `term_id`, separados por `|`, para referencias cruzadas
 
 El formato CSV funciona con Google Sheets — la pestaña de glosario se obtiene automáticamente como los demás CSV. Los nombres de columnas pueden estar en inglés o español (consulta [Referencia CSV: Glosario](/guia/tus-datos/csv-glosario/#glossary-csv-aliases) para los alias).
 
-### Formato markdown (legado)
+### Formato Markdown (legado)
 
-Archivos markdown individuales en `telar-content/texts/glossary/`:
+Archivos Markdown individuales en `telar-content/texts/glossary/`:
 
 ```markdown
 ---
@@ -53,10 +53,10 @@ El Periodo Colonial en las Américas comenzó con la llegada de
 los colonizadores europeos a finales del siglo XV...
 ```
 
-Cada archivo define un término. El cuerpo del archivo es la definición. En estos archivos, `related_terms` se escribe como una lista YAML, no con el `|` que separa los valores en el CSV: Telar no reinterpreta el frontmatter de un archivo markdown.
+Cada archivo define un término. El cuerpo del archivo es la definición. En estos archivos, `related_terms` se escribe como una lista YAML, no con el `|` que separa los valores en el CSV: Telar no reinterpreta el frontmatter de un archivo Markdown.
 
 {: .note }
-> Si existen tanto un glosario CSV como archivos markdown de glosario, Telar usa el CSV e ignora los archivos markdown (con una advertencia en la *build*).
+> Si existen tanto un glosario CSV como archivos Markdown de glosario, Telar usa el CSV e ignora los archivos Markdown (con una advertencia en la *build*).
 
 ## Enlazar a términos del glosario
 
@@ -87,7 +87,7 @@ Se renderiza como: El <u>dispositivo de tejido</u> era central para la producci�
 Los autoenlaces de glosario funcionan en:
 
 - Texto del paso — la **respuesta** de un paso (el texto principal que se desplaza)
-- Contenido de paneles de historias (los tres métodos: texto directo, markdown pegado, archivos)
+- Contenido de paneles de historias (los tres métodos: texto directo, Markdown pegado, archivos)
 - Páginas personalizadas
 
 La **pregunta** del paso es un encabezado, así que los enlaces de glosario ahí se dejan como texto plano a propósito.

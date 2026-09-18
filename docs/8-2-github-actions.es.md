@@ -21,7 +21,7 @@ Cuando publicas vía GitHub Pages, el proceso de construcción es **completament
 Edita contenido directamente en GitHub o empuja desde local:
 
 1. **Edita la pestaña `objects` de tu Google Sheet o `objects.csv`** en `telar-content/spreadsheets/`
-2. **Edita markdown** en `telar-content/texts/`
+2. **Edita Markdown** en `telar-content/texts/`
 3. **Agrega imágenes** a `telar-content/objects/`
 4. **Haz *commit* y *push*** a la rama main
 
@@ -37,7 +37,7 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
 2. **Convierte CSVs a JSON**
    - Ejecuta `scripts/csv_to_json.py`
    - Lee CSVs de `telar-content/spreadsheets/`
-   - Incrusta contenido markdown de `telar-content/texts/`
+   - Incrusta contenido Markdown de `telar-content/texts/`
    - Genera archivos JSON en `_data/` para Jekyll
 
 3. **Genera teselas IIIF**
@@ -77,7 +77,7 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
 El flujo de trabajo se ejecuta automáticamente cuando:
 
 - **Push a rama main**: Cualquier confirmación activa una construcción
-- **Cambios a CSV o markdown**: Las actualizaciones de contenido se publican inmediatamente
+- **Cambios a CSV o Markdown**: Las actualizaciones de contenido se publican inmediatamente
 - **Cambios a config**: Modificaciones a `_config.yml` reconstruyen el sitio
 
 ## Activador manual de construcción
@@ -132,7 +132,7 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 
 **Solución:**
 
-- Verifica archivos markdown para sintaxis inválida
+- Verifica archivos Markdown para sintaxis inválida
 - Verifica que el frontmatter esté correctamente formateado
 - Busca etiquetas o corchetes sin cerrar
 

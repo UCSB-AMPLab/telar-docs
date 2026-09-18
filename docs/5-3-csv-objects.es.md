@@ -27,7 +27,7 @@ Cataloga todos los objetos usados en las historias y mostrados en la galería.
 |--------|---------|-----------|-------------|
 | `object_id` | `id_objeto` | Sí | Identificador único (minúsculas, guiones, guiones bajos) |
 | `title` | `titulo` | Sí | Título del objeto |
-| `description` | `descripcion` | No | Descripción extensa (admite markdown) |
+| `description` | `descripcion` | No | Descripción extensa (admite Markdown) |
 | `source_url` | `url_fuente` | No | URL de la imagen IIIF info.json o manifiesto |
 | `creator` | `creador` | No | Nombre del creador o artista |
 | `period` | `periodo` | No | Periodo histórico |
@@ -80,7 +80,7 @@ mapa-lima,Mapa de Lima,Mapa colonial temprano...,Juan de Cuellar,1685,mapa,"cart
 - Formato: minúsculas, guiones, guiones bajos
 
 #### description / descripcion
-- Admite markdown
+- Admite Markdown
 - Se muestra en las páginas de objetos
 - Puede incluir encabezados, listas, enlaces, énfasis
 

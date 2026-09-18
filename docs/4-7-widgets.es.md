@@ -10,7 +10,7 @@ permalink: /guia/tu-contenido/widgets/
 
 # Widgets
 
-Telar incluye un sistema de widgets interactivos para contenido enriquecido en paneles de historias y páginas personalizadas. Los widgets te permiten insertar carruseles de imágenes, contenido con pestañas y secciones plegables directamente en tu markdown.
+Telar incluye un sistema de widgets interactivos para contenido enriquecido en paneles de historias y páginas personalizadas. Los widgets te permiten insertar carruseles de imágenes, contenido con pestañas y secciones plegables directamente en tu Markdown.
 
 **Disponible desde v0.4.0.**
 
@@ -59,8 +59,8 @@ credit: Archivo General de Indias
 
 - **`image`** (obligatorio) — Ruta relativa a `telar-content/objects/`, o una URL completa para imágenes externas
 - **`alt`** (recomendado) — Descripción para accesibilidad
-- **`caption`** (opcional) — Texto que se muestra debajo de la imagen; admite markdown (ej., `*cursivas*`)
-- **`credit`** (opcional) — Línea de atribución; admite markdown
+- **`caption`** (opcional) — Texto que se muestra debajo de la imagen; admite Markdown (ej., `*cursivas*`)
+- **`credit`** (opcional) — Línea de atribución; admite Markdown
 - **`width`** (ancho) y **`height`** (alto), opcionales — Las dimensiones de la imagen en píxeles. Si indicas las dos, Telar define el tamaño del carrusel con esos valores y no necesita abrir la imagen. De lo contrario, cada imagen se abre al generar el sitio para medirla, y si está alojada en otro servidor, se descarga completa cada vez.
 
 Separa los elementos del carrusel con `---`.
@@ -102,7 +102,7 @@ Hoy las personas historiadoras reconocen este evento como...
 
 - Cada `## Encabezado` crea una pestaña nueva
 - El contenido entre encabezados se convierte en el cuerpo de la pestaña
-- Se admite la sintaxis estándar de markdown dentro de las pestañas
+- Se admite la sintaxis estándar de Markdown dentro de las pestañas
 - Mínimo 2 pestañas, máximo 4 pestañas
 
 ## Acordeón
@@ -130,7 +130,7 @@ Las reformas borbónicas retaron las estructuras de poder existentes...
 
 - Cada `## Encabezado` crea un panel plegable
 - Todos los paneles empiezan colapsados
-- Se admite la sintaxis estándar de markdown dentro de los paneles
+- Se admite la sintaxis estándar de Markdown dentro de los paneles
 - Mínimo 2 paneles, máximo 6 paneles
 
 ## Bibliografía
@@ -154,7 +154,7 @@ Muñoz-Arbeláez, S. (2025). *The New Kingdom of Granada: The Making and Unmakin
 ### Estructura
 
 - Cada cita se separa con una línea en blanco (doble salto de línea)
-- La sintaxis estándar de markdown funciona dentro de las entradas (`*cursivas*` para títulos, `**negrita**`, enlaces)
+- La sintaxis estándar de Markdown funciona dentro de las entradas (`*cursivas*` para títulos, `**negrita**`, enlaces)
 - Se muestra con sangría francesa — la primera línea queda al margen izquierdo, las líneas siguientes se indentan
 - Un bloque de bibliografía vacío produce una advertencia durante la *build*
 
@@ -162,10 +162,10 @@ Muñoz-Arbeláez, S. (2025). *The New Kingdom of Granada: The Making and Unmakin
 
 Los widgets se pueden usar en:
 
-- **Archivos markdown de paneles de historias** — Contenido de las capas 1, 2 y 3
-- **Páginas personalizadas** — Cualquier archivo markdown en `telar-content/texts/pages/`
+- **Archivos Markdown de paneles de historias** — Contenido de las capas 1, 2 y 3
+- **Páginas personalizadas** — Cualquier archivo Markdown en `telar-content/texts/pages/`
 
-Para los paneles de las historias, se recomienda guardar el contenido con widgets en un archivo markdown (Método 3: indicar un archivo) en lugar de ingresarlo directamente en una celda de la hoja de cálculo, ya que la sintaxis de triple dos puntos es difícil de manejar en línea.
+Para los paneles de las historias, se recomienda guardar el contenido con widgets en un archivo Markdown (Método 3: indicar un archivo) en lugar de ingresarlo directamente en una celda de la hoja de cálculo, ya que la sintaxis de triple dos puntos es difícil de manejar en línea.
 
 {: .tip }
 > Los widgets usan automáticamente colores de panel contrastantes para distinción visual. Los widgets de la capa 1 aparecen con los colores de la capa 2 y viceversa.

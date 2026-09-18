@@ -32,7 +32,7 @@ Puedes proporcionar hasta dos paneles adicionales de contenido en cada paso, per
 
 ## Paneles en capas
 
-Los paneles en capas son donde realmente puedes expandir tu narrativa. Están escritos en [formato markdown](https://www.markdownguide.org/getting-started/), permitiéndote incluir:
+Los paneles en capas son donde realmente puedes expandir tu narrativa. Están escritos en [formato Markdown](https://www.markdownguide.org/getting-started/), permitiéndote incluir:
 
 - Encabezados, texto en negrita e itálica
 - Enlaces y listas
