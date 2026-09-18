@@ -146,7 +146,7 @@ Guarda los archivos Markdown en `telar-content/texts/stories/`. En tu hoja de c√
 - Tiempos de inicio y fin en segundos para objetos de video y audio (ej., `12.5`, `65`)
 - Se ignoran para objetos de imagen
 - Deja ambos vac√≠os para reproducir el archivo completo
-- Los valores de clip se pueden configurar visualmente con la [interfaz de captura de clips del Compositor](/guia/el-compositor/video-audio/)
+- Puedes fijar los valores del clip de forma visual en el [Compositor](/guia/el-compositor/video-y-audio/)
 
 #### loop / bucle
 - **Nuevo en v1.0.0**

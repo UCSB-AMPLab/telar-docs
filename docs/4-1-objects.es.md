@@ -43,7 +43,7 @@ Para las imágenes, tienes dos opciones:
 - **Autoalojadas**: Pon los archivos de imagen en `telar-content/objects/` con nombres que coincidan con el `object_id`. Telar genera las teselas (*tiles*) IIIF automáticamente.
 - **IIIF externas**: Agrega una columna `source_url` con la URL de la imagen IIIF (info.json o manifiesto).
 
-Para videos y audio, consulta [Objetos de video](/guia/tu-contenido/objetos-video/) y [Objetos de audio](/guia/tu-contenido/objetos-audio/).
+Para videos y audio, consulta [Objetos de video](/guia/tu-contenido/objetos-de-video/) y [Objetos de audio](/guia/tu-contenido/objetos-de-audio/).
 
 Puedes agregar metadatos más detallados para cada objeto — descripción, creador, periodo, año, `medium` (el género o medio del objeto, p. ej. "Fotografía", "Óleo", "Historia oral"), dimensiones, fuente, crédito y más. Consulta la referencia de [Columnas de objetos](/guia/tus-datos/csv-objetos/) para la lista completa de columnas.
 
@@ -74,6 +74,6 @@ El selector de coordenadas es una herramienta de desarrollo en cada página de o
 - [Columnas de objetos](/guia/tus-datos/csv-objetos/) — Referencia completa de columnas para objects.csv
 - [Imágenes autoalojadas](/guia/tu-contenido/imagenes-autoalojadas/) — Sube y procesa tus propias imágenes
 - [Imágenes IIIF externas](/guia/tu-contenido/iiif-externo/) — Usa imágenes de museos y bibliotecas
-- [Objetos de video](/guia/tu-contenido/objetos-video/) — Agregar videos de YouTube, Vimeo y Google Drive
-- [Objetos de audio](/guia/tu-contenido/objetos-audio/) — Agregar archivos de audio autoalojados
+- [Objetos de video](/guia/tu-contenido/objetos-de-video/) — Agregar videos de YouTube, Vimeo y Google Drive
+- [Objetos de audio](/guia/tu-contenido/objetos-de-audio/) — Agregar archivos de audio autoalojados
 - [Historias y paneles](/guia/tu-contenido/historias-paneles/) — Cómo se usan los objetos en las historias

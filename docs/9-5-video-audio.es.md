@@ -10,7 +10,7 @@ permalink: /guia/el-compositor/video-y-audio/
 
 # Video y audio
 
-El Compositor admite objetos de video y audio junto con imágenes. Cuando un paso de la historia hace referencia a un objeto de video o audio, la columna del visor muestra el reproductor de medios correspondiente — un reproductor de video insertado o un reproductor de audio con forma de onda — y ofrece herramientas para capturar tiempos de *clip* y configurar el comportamiento de bucle.
+El Compositor admite objetos de video y audio junto con imágenes. Cuando un paso de la historia hace referencia a un objeto de video o audio, la columna del visor muestra el reproductor de medios correspondiente — un reproductor de video insertado o un reproductor de audio con forma de onda — y ofrece herramientas para fijar los tiempos del clip y el comportamiento de bucle.
 
 Para más información sobre cómo funcionan los objetos de video y audio en Telar, consulta [Objetos de video](/guia/tu-contenido/objetos-de-video/) y [Objetos de audio](/guia/tu-contenido/objetos-de-audio/).
 
@@ -40,22 +40,35 @@ Los objetos de audio utilizan archivos autoalojados almacenados en tu repositori
 
 Cuando un paso hace referencia a un objeto de audio, la columna del visor muestra un reproductor de forma de onda WaveSurfer. La forma de onda ofrece una representación visual del audio e incluye controles de reproducción y pausa.
 
-## Captura de *clips*
+## Recortar el clip
 
-La captura de *clips* te permite definir qué segmento de un archivo de video o audio se reproduce durante un paso particular. En lugar de ingresar marcas de tiempo manualmente en una hoja de cálculo, las capturas visualmente mientras se reproduce el medio.
+Un clip es el segmento de un archivo de video o de audio que se reproduce durante un paso. Lo defines arrastrando en el visor, en vez de escribir marcas de tiempo en una hoja de cálculo.
 
-Para capturar tiempos de *clip* en un paso:
+### Video
 
-1. Selecciona el paso que deseas configurar
-2. Reproduce el video o audio en el visor
-3. Cuando el medio llegue al punto donde quieres que comience el *clip*, haz clic en **Capture start**
-4. Continúa la reproducción hasta que el medio llegue al punto final, luego haz clic en **Capture end**
-5. Los tiempos capturados aparecen en la configuración del paso, mostrados en formato dorado monoespaciado MM:SS
+Debajo del video hay una línea de tiempo que abarca el archivo completo: el clip aparece como una franja resaltada y una marca fina indica por dónde va la reproducción.
 
-Puedes recapturar cualquiera de los tiempos en cualquier momento haciendo clic en el botón correspondiente cuando el medio esté en una nueva posición.
+1. Selecciona el paso que quieres configurar
+2. Arrastra el extremo inicial o el final de la franja para mover ese borde del clip, o arrastra la franja entera para desplazar el clip sin cambiarle la duración
+3. Suelta para guardar
+
+Los tiempos de los dos extremos de la barra son el comienzo y el final del clip, y la cifra del medio es su duración. Cada vez que cambias el rango, esa cifra da paso por un momento a la confirmación **Clip saved**.
+
+### Audio
+
+El audio no tiene una línea de tiempo aparte: la región del clip va sobre la onda misma. Arrastra sus extremos para fijar el comienzo y el final.
+
+### Comprobar el clip
+
+Debajo del reproductor, el clip vigente se lee `clip 0:05 → 0:12`. Si el paso reproduce el archivo completo, ahí dice **Sin clip definido**.
+
+**Previsualizar fragmento** reproduce el clip solo, para que veas exactamente lo que le va a llegar al público sin tener que aguantar el resto del archivo.
+
+{: .note }
+> Los videos de Google Drive no se pueden recortar. En lugar de los tiempos del clip, el visor muestra **Google Drive no admite recorte de clips**.
 
 {: .tip }
-> La captura de *clips* en el Compositor establece los mismos valores de `clip_start` y `clip_end` descritos en [Objetos de video](/guia/tu-contenido/objetos-de-video/) y [Objetos de audio](/guia/tu-contenido/objetos-de-audio/). Si luego editas las hojas de cálculo directamente, los valores de *clip* son intercambiables.
+> El Compositor fija los mismos valores `clip_start` y `clip_end` que describen [Objetos de video](/guia/tu-contenido/objetos-de-video/) y [Objetos de audio](/guia/tu-contenido/objetos-de-audio/). Son intercambiables: puedes definir el clip aquí y editarlo después en la hoja de cálculo, o al revés.
 
 ## Control de bucle
 

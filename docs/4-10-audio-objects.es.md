@@ -53,7 +53,7 @@ Los pasos de las historias pueden especificar un tiempo de inicio, un tiempo de 
 | `loop` | `bucle` | Repetir el *clip* (`true`, `yes` o `sí`) |
 
 {: .tip }
-> También se puede usar la interfaz de captura de *clips* del Compositor para configurar los tiempos de forma visual. Consulta [Video y audio en el Compositor](/guia/el-compositor/video-y-audio/) para más detalles.
+> También puedes fijar los tiempos del clip de forma visual en el Compositor. Consulta [Video y audio en el Compositor](/guia/el-compositor/video-y-audio/) para más detalles.
 
 ## Procesamiento de audio en el *build*
 

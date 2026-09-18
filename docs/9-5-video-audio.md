@@ -10,7 +10,7 @@ permalink: /docs/the-compositor/video-audio/
 
 # Video and Audio
 
-The Compositor supports video and audio objects alongside images. When a story step references a video or audio object, the viewer column shows the appropriate media player — an embedded video player or a waveform audio player — and provides tools for capturing clip times and setting loop behavior.
+The Compositor supports video and audio objects alongside images. When a story step references a video or audio object, the viewer column shows the appropriate media player — an embedded video player or a waveform audio player — and provides tools for setting clip times and loop behavior.
 
 For background on how video and audio objects work in Telar, see [Video Objects](/docs/your-content/video-objects/) and [Audio Objects](/docs/your-content/audio-objects/).
 
@@ -67,9 +67,12 @@ Below the player, the current clip reads as `clip 0:05 → 0:12`, or **No clip s
 {: .note }
 > Google Drive videos cannot be clipped. In place of the clip times, the viewer shows **Google Drive does not support clipping**.
 
+{: .tip }
+> The Compositor sets the same `clip_start` and `clip_end` values described in [Video Objects](/docs/your-content/video-objects/) and [Audio Objects](/docs/your-content/audio-objects/). The two are interchangeable, so you can set a clip here and edit it later in your spreadsheet, or the other way round.
+
 ## Loop toggle
 
-Each step has a loop toggle that controls whether the clip repeats continuously when the audience reaches that step. When enabled, the media plays the captured segment in a loop until the audience advances to the next step.
+Each step has a loop toggle that controls whether the clip repeats continuously when the audience reaches that step. When enabled, the media plays the clip in a loop until the audience advances to the next step.
 
 The loop setting persists when you save and applies to both video and audio steps.
 

@@ -229,8 +229,8 @@ Los paneles de las historias admiten:
 
 Los pasos de una historia pueden hacer referencia a cualquier tipo de objeto — no solo imágenes. Cuando un paso referencia un objeto de video o audio, el área del visor cambia automáticamente al reproductor correspondiente.
 
-- **Objetos de video** — El reproductor de video llena el área del visor con controles de reproducción estándar. Consulta [Objetos de video](/guia/tu-contenido/objetos-video/) para las plataformas compatibles y la configuración.
-- **Objetos de audio** — El reproductor de audio llena el área del visor con visualización de forma de onda. Consulta [Objetos de audio](/guia/tu-contenido/objetos-audio/) para los formatos compatibles y la configuración.
+- **Objetos de video** — El reproductor de video llena el área del visor con controles de reproducción estándar. Consulta [Objetos de video](/guia/tu-contenido/objetos-de-video/) para las plataformas compatibles y la configuración.
+- **Objetos de audio** — El reproductor de audio llena el área del visor con visualización de forma de onda. Consulta [Objetos de audio](/guia/tu-contenido/objetos-de-audio/) para los formatos compatibles y la configuración.
 
 No se necesita configuración adicional. Telar detecta el tipo de objeto desde la hoja de cálculo de objetos y carga el reproductor correcto.
 
@@ -253,7 +253,7 @@ step,object,clip_start,clip_end,loop,question,answer
 ```
 
 {: .tip }
-> Los tiempos de *clip* también se pueden configurar visualmente con la interfaz de captura del Compositor. Consulta [Video y audio en el Compositor](/guia/el-compositor/video-audio/) para más detalles.
+> También puedes fijar los tiempos del clip de forma visual en el Compositor. Consulta [Video y audio en el Compositor](/guia/el-compositor/video-y-audio/) para más detalles.
 
 Consulta la [Referencia CSV: Historias](/guia/tus-datos/csv-historias/) para la referencia completa de columnas incluyendo las columnas de *clip*.
 
@@ -319,8 +319,8 @@ Quienes visitan pueden seguir navegando por los pasos normalmente.
 
 - [Referencia CSV: Historias](/guia/tus-datos/csv-historias/) — Referencia completa de columnas para las hojas de cálculo de historias
 - [Objetos](/guia/tu-contenido/objetos/) — Definir los objetos usados en las historias
-- [Objetos de video](/guia/tu-contenido/objetos-video/) — Agregar objetos de video desde YouTube, Vimeo y Google Drive
-- [Objetos de audio](/guia/tu-contenido/objetos-audio/) — Agregar archivos de audio autoalojados
+- [Objetos de video](/guia/tu-contenido/objetos-de-video/) — Agregar objetos de video desde YouTube, Vimeo y Google Drive
+- [Objetos de audio](/guia/tu-contenido/objetos-de-audio/) — Agregar archivos de audio autoalojados
 - [*Widgets*](/guia/tu-contenido/widgets/) — Carrusel, pestañas y acordeón en paneles de historias
 - [Historias privadas](/guia/funciones/historias-privadas/) — Restringir el acceso a historias
 - [Configuración](/guia/configurar/configuracion/) — Opciones de la interfaz de historias

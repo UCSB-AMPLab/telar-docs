@@ -18,7 +18,7 @@ If you have used Telar before, you know that content is defined through spreadsh
 
 - Import existing content from a Telar repository or Google Sheets
 - Add and edit objects with metadata, IIIF manifests, or uploaded images
-- Build stories visually — write panels, set viewer coordinates, capture clip times
+- Build stories visually — write panels, set viewer coordinates, set clip times
 - Publish changes to GitHub with a single click
 - Track your site's build status in real time
 
@@ -49,6 +49,6 @@ To use the Compositor, you need:
 - [Dashboard](/docs/the-compositor/dashboard/) — Navigate your project, manage stories, and monitor your site
 - [Objects](/docs/the-compositor/objects/) — Browse, edit, upload, and add objects to your exhibition
 - [Story Editor](/docs/the-compositor/story-editor/) — Build stories with a visual editor, capture coordinates, and write layer content
-- [Video and Audio](/docs/the-compositor/video-audio/) — Capture clips, set loop points, and work with multimedia steps
+- [Video and Audio](/docs/the-compositor/video-audio/) — Set clip times, loop points, and work with multimedia steps
 - [Publishing](/docs/the-compositor/publishing/) — Review changes, commit to GitHub, and track your build
 - [Sync and Updates](/docs/the-compositor/sync-updates/) — Re-sync with your repository and upgrade Telar

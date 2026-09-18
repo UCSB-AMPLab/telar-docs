@@ -80,7 +80,7 @@ La página de objeto de cada video incluye un selector de tiempos de *clip*:
 4. Copia los valores en tu hoja de cálculo de historias
 
 {: .tip }
-> También puedes usar la interfaz de captura de *clips* del Compositor para establecer tiempos de *clip* visualmente. Consulta [Video y audio en el Compositor](/guia/el-compositor/video-y-audio/) para más detalles.
+> También puedes fijar los tiempos del clip de forma visual en el Compositor. Consulta [Video y audio en el Compositor](/guia/el-compositor/video-y-audio/) para más detalles.
 
 ## Véase también
 
