@@ -32,7 +32,7 @@ Cada fila define un término:
 - **`term_id`** — Identificador único usado en los enlaces (minúsculas, se recomiendan guiones)
 - **`title`** — Nombre visible en el panel del glosario
 - **`definition`** — El texto de la definición (admite markdown básico)
-- **`related_terms`** — Lista separada por comas de otros valores `term_id` para referencias cruzadas
+- **`related_terms`** — Otros valores `term_id`, separados por `|`, para referencias cruzadas
 
 El formato CSV funciona con Google Sheets — la pestaña de glosario se obtiene automáticamente como los demás CSV. Los nombres de columnas pueden estar en inglés o español (consulta [Referencia CSV: Glosario](/guia/tus-datos/csv-glosario/#glossary-csv-aliases) para los alias).
 
@@ -44,14 +44,16 @@ Archivos markdown individuales en `telar-content/texts/glossary/`:
 ---
 term_id: periodo-colonial
 title: "Periodo Colonial"
-related_terms: encomienda,virreinato
+related_terms:
+  - encomienda
+  - virreinato
 ---
 
 El Periodo Colonial en las Américas comenzó con la llegada de
 los colonizadores europeos a finales del siglo XV...
 ```
 
-Cada archivo define un término. El cuerpo del archivo es la definición.
+Cada archivo define un término. El cuerpo del archivo es la definición. En estos archivos, `related_terms` se escribe como una lista YAML, no con el `|` que separa los valores en el CSV: Telar no reinterpreta el frontmatter de un archivo markdown.
 
 {: .note }
 > Si existen tanto un glosario CSV como archivos markdown de glosario, Telar usa el CSV e ignora los archivos markdown (con una advertencia en la *build*).

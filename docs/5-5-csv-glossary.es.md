@@ -27,7 +27,7 @@ Define términos de glosario que se pueden enlazar desde los paneles de las hist
 | `term_id` | `id_termino` | Sí | Identificador único del término (se usa en la sintaxis de enlaces) |
 | `title` | `titulo` | Sí | Título visible del término |
 | `definition` | `definicion` | No | Texto de la definición del término |
-| `related_terms` | `terminos_relacionados` | No | IDs de términos relacionados, separados por comas |
+| `related_terms` | `terminos_relacionados` | No | IDs de términos relacionados, separados por una barra vertical |
 
 ### Ejemplo
 
@@ -64,7 +64,7 @@ encomienda,Encomienda,"Un sistema de trabajo en la América colonial española, 
 - Admite formato markdown básico
 
 #### related_terms / terminos_relacionados
-- Lista separada por comas de otros valores `term_id`
+- Otros valores `term_id`, separados por `|` (por ejemplo, `urdimbre|telar`)
 - Se usa para referencias cruzadas entre entradas del glosario
 
 ### Sintaxis de enlace en línea
