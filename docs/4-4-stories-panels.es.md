@@ -10,18 +10,18 @@ permalink: /guia/tu-contenido/historias-paneles/
 
 # Historias y paneles
 
-Las historias son narrativas desplazables construidas alrededor de tus objetos. Cada historia guía al público a través de una secuencia de pasos — enfocando regiones específicas de imágenes, momentos en videos o segmentos de grabaciones de audio — con pares de pregunta-respuesta y paneles de detalle expandibles.
+Las historias son narrativas que se leen desplazándose y se construyen en torno a los objetos. Cada historia lleva al público por una secuencia de pasos — que enfocan regiones concretas de las imágenes, momentos de los videos o segmentos de las grabaciones de audio — con pares de pregunta y respuesta y paneles de detalle expandibles.
 
 {: .tip }
-> El [editor de historias del Compositor](/guia/el-compositor/editor-historias/) ofrece una alternativa visual a editar las hojas de cálculo directamente. Permite construir y reordenar pasos, configurar coordenadas y previsualizar la historia sin salir del navegador.
+> El [editor de historias del Compositor](/guia/el-compositor/editor-historias/) te permite hacer lo mismo sin editar las hojas de cálculo a mano: construir y reordenar pasos, configurar coordenadas y previsualizar la historia sin salir del navegador.
 
 ## Cómo funciona la experiencia de desplazamiento
 
 Una historia llena la ventana del navegador con un **diseño de tarjetas apiladas**. El objeto — ya sea una imagen en el visor IIIF, un reproductor de video o un reproductor de audio — ocupa todo el fondo. Las tarjetas de texto se superponen encima y, al desplazarse, cada tarjeta nueva se desliza sobre la anterior.
 
-El desplazamiento es **continuo con puntos de anclaje magnético**. En lugar de avanzar discretamente de paso en paso, el desplazamiento es natural. La vista se ancla magnéticamente a cada paso, asegurando que la tarjeta de texto y la posición del objeto se mantengan sincronizadas.
+El desplazamiento es **continuo con puntos de anclaje magnético**. En lugar de saltar de un paso a otro, el público se desplaza con naturalidad por la historia. La vista se ancla magnéticamente a cada paso, de modo que la tarjeta de texto y la posición del objeto se mantienen sincronizadas.
 
-En dispositivos móviles, las tarjetas de texto se anclan en la parte inferior de la pantalla con un efecto de vidrio esmerilado, superponiéndose sobre la parte inferior del visor.
+En dispositivos móviles, las tarjetas de texto se anclan al borde inferior de la pantalla con un efecto de vidrio esmerilado y quedan por encima de la parte baja del visor.
 
 ![Visor de historia con diseño de tarjetas apiladas y tarjeta de texto sobre el visor IIIF](/images/story-viewer.png)
 
@@ -29,7 +29,7 @@ Cada paso:
 
 1. Enfoca el visor en una región específica de un objeto (usando coordenadas x, y y zoom para imágenes, o tiempos de clip para video y audio)
 2. Muestra una **pregunta** y una breve **respuesta** en la tarjeta de texto
-3. Opcionalmente ofrece hasta dos capas adicionales de detalle mediante botones expandibles
+3. Puede ofrecer hasta dos capas adicionales de detalle mediante botones expandibles
 
 ## Registrar historias
 
@@ -42,7 +42,7 @@ order,story_id,title,subtitle,byline
 
 El `story_id` determina el nombre del archivo CSV de la historia y su URL. Con `story_id: textiles-coloniales`, Telar busca `telar-content/spreadsheets/textiles-coloniales.csv` y sirve la historia en `/stories/textiles-coloniales/`.
 
-Si se omite `story_id`, Telar usa `story-{order}` (ej., `story-1.csv` para order 1).
+Si se omite `story_id`, Telar usa `story-{order}` (p. ej., `story-1.csv` si `order` es 1).
 
 Consulta la [Referencia CSV: Proyecto](/guia/tus-datos/csv-proyecto/#project-csv-projectcsv--proyectocsv) para todas las columnas de project.csv.
 
@@ -62,7 +62,7 @@ step,object,x,y,zoom,question,answer,layer1_content
 Cada paso necesita:
 
 - **`step`** — Número secuencial (1, 2, 3...) sin saltos
-- **`object`** — Un `object_id` de la hoja de cálculo de objetos. Dejar vacío para crear una [tarjeta de título](#tarjetas-de-título)
+- **`object`** — Un `object_id` de la hoja de cálculo de objetos. Déjalo vacío para crear una [tarjeta de título](#tarjetas-de-título)
 - **`x`**, **`y`**, **`zoom`** — Coordenadas del visor (ver abajo). Se ignoran en tarjetas de título
 - **`question`** — El encabezado que se muestra en la tarjeta de texto
 - **`answer`** — Una respuesta breve debajo de la pregunta
@@ -92,13 +92,13 @@ paso,objeto,x,y,zoom,pregunta,respuesta
 3,map-lima,0.5,0.5,1.0,¿Dónde se encontraron?,En el centro histórico de Lima.
 ```
 
-Las tarjetas de título participan plenamente en la navegación — el desplazamiento, el teclado y los [enlaces profundos](#compartir-y-enlaces-profundos) funcionan como se espera. Los paneles de capas no están disponibles en las tarjetas de título — las columnas `layer` se ignoran, igual que `x`, `y` y `zoom`.
+Las tarjetas de título participan plenamente en la navegación — el desplazamiento, el teclado y los [enlaces profundos](#compartir-y-enlaces-profundos) funcionan como se espera. Las tarjetas de título no admiten paneles de capas — las columnas de capa se ignoran, igual que `x`, `y` y `zoom`.
 
 ### Tabla de contenidos de secciones
 
 Si la historia usa tarjetas de título como encabezados de capítulo, se puede mostrar una tabla de contenidos navegable en la tarjeta de inicio. Actívala agregando `mostrar_secciones: si` (o `show_sections: yes`) en la fila de la historia en `project.csv`.
 
-Cuando está activada, la tarjeta de inicio recorre la historia en busca de tarjetas de título y las lista como enlaces clicables. Al hacer clic en un enlace se salta directamente a esa sección. La tarjeta de inicio también cambia a un fondo más oscuro (el color del panel de nivel 2) para distinguirla visualmente.
+Cuando está activada, la tarjeta de inicio recorre la historia en busca de tarjetas de título y las lista como enlaces. Al hacer clic en uno se salta directamente a esa sección. La tarjeta de inicio también cambia a un fondo más oscuro (el color del panel de nivel 2) para distinguirla visualmente.
 
 {: .tip }
 > Si el primer capítulo comienza inmediatamente después de la tarjeta de inicio, crea también una tarjeta de título para ese capítulo. La tabla de contenidos solo lista las tarjetas de título que existan en el CSV de la historia — si el capítulo 1 no tiene tarjeta de título, no aparecerá en la tabla de contenidos.
@@ -107,7 +107,7 @@ Consulta [Columnas del proyecto](/guia/tus-datos/csv-proyecto/) para la referenc
 
 ### Botón de volver al comienzo
 
-Cuando se avanza más allá de la tarjeta de inicio, el botón "Volver al inicio" en la esquina superior izquierda cambia a "Comienzo". Al hacer clic regresa a la tarjeta de inicio. En la tarjeta de inicio, el botón vuelve a mostrar "Volver al inicio" y enlaza a la página principal.
+Cuando se avanza más allá de la tarjeta de inicio, el botón **Volver al inicio** de la esquina superior izquierda cambia a **Comienzo**. Al hacer clic regresa a la tarjeta de inicio. En la tarjeta de inicio, el botón vuelve a mostrar "Volver al inicio" y enlaza a la página principal.
 
 Esto es automático — no requiere configuración.
 
@@ -118,18 +118,18 @@ Cada paso puede tener hasta dos capas de detalle adicional, siguiendo el patrón
 | Capa | Texto predeterminado del botón | Propósito |
 |------|-------------------------------|-----------|
 | Capa 1 | "Saber más" | Panel de detalle principal |
-| Capa 2 | "Profundizar más" | Panel de detalle secundario, que se abre sobre la Capa 1 |
+| Capa 2 | "Profundizar más" | Panel de detalle secundario, que se abre sobre la capa 1 |
 
 Para cada capa, agrega dos columnas a la hoja de cálculo de tu historia:
 
 - **Texto del botón** (`layer1_button`, `layer2_button`) — Déjalo vacío para usar el texto predeterminado, o escribe un texto propio como "Ver la técnica" o "Leer la fuente"
 - **Contenido** (`layer1_content`, `layer2_content`) — El contenido del panel
 
-Si una capa no tiene contenido, su botón se oculta automáticamente. A la Capa 2 se accede desde dentro de la Capa 1: su botón aparece al final del panel de la Capa 1, no en la tarjeta de texto principal.
+Si una capa no tiene contenido, su botón se oculta automáticamente. A la capa 2 se entra desde la capa 1: su botón aparece al final del panel de la Capa 1, no en la tarjeta de texto principal.
 
 ## Escribir contenido para los paneles
 
-El contenido de los paneles se puede proporcionar de tres maneras. La elección depende de la complejidad:
+Puedes escribir el contenido de los paneles de tres maneras. Elige según la complejidad del contenido:
 
 {: .note }
 > Los tres métodos que siguen son para quien trabaja en una hoja de cálculo. En el Compositor, el título del panel tiene su propio campo, y todo lo que pegues en el campo **Contenido** —incluido un bloque `---`— se publica como parte del texto del panel, no como título.
@@ -143,7 +143,7 @@ layer1_content
 "Este fragmento muestra **técnicas avanzadas de tejido** del periodo colonial."
 ```
 
-Se puede usar formato básico: `**negrita**`, `*cursiva*`, `[texto del enlace](url)` y enlaces de glosario (`[[term-id]]`).
+Puedes usar formato básico: `**negrita**`, `*cursiva*`, `[texto del enlace](url)` y enlaces de glosario (`[[term-id]]`).
 
 Para saltos de línea dentro de una celda:
 - **Google Sheets**: Presiona `Ctrl+Enter` (Windows/Linux) u `Option+Enter` (macOS)
@@ -152,14 +152,14 @@ Para saltos de línea dentro de una celda:
 
 ### Método 2: pegar texto Markdown
 
-Pega texto escrito en un editor de texto plano. Esto admite la gama completa de características Markdown, incluyendo encabezados, *widgets* (acordeón, carrusel, pestañas), controles de tamaño de imagen y un título de panel personalizado usando *frontmatter* YAML.
+Pega texto escrito en un editor de texto plano. Así puedes usar todas las funciones de Markdown: encabezados, *widgets* (acordeón, carrusel, pestañas), control del tamaño de las imágenes y un título de panel propio con frontmatter YAML.
 
 {: .warning }
-> Si se copia y pega desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe con sintaxis Markdown en su lugar — consulta la [Guía de sintaxis Markdown](/guia/tu-contenido/sintaxis-markdown/).
+> Si copias y pegas desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se conservará. Escribe directamente en sintaxis Markdown — consulta la [Guía de sintaxis Markdown](/guia/tu-contenido/sintaxis-markdown/).
 
 ### Método 3: indicar un archivo Markdown
 
-Indica la ruta a un archivo Markdown en el repositorio. Ideal para paneles complejos — especialmente aquellos con *widgets* o contenido que se quiera reutilizar en varios pasos.
+Indica la ruta a un archivo Markdown en el repositorio. Ideal para paneles complejos — sobre todo los que llevan *widgets* o contenido que se quiera reutilizar en varios pasos.
 
 ```csv
 layer1_content
@@ -168,7 +168,7 @@ textiles-coloniales/step1-layer1.md
 
 Guarda los archivos Markdown en `telar-content/texts/stories/`. En la hoja de cálculo, ingresa solo el nombre del archivo — o si los archivos están organizados en subcarpetas, incluye el nombre de la subcarpeta.
 
-**Cómo decide Telar**: Si lo ingresado termina en `.md` y el archivo existe, se carga el archivo. De lo contrario, el valor se trata como contenido.
+**Cómo decide Telar**: si el valor termina en `.md` y ese archivo existe, Telar carga el archivo; si no, trata el valor como contenido.
 
 ### Elegir el método correcto
 
@@ -200,7 +200,7 @@ Organizar los archivos en subcarpetas por historia facilita el manejo a medida q
 
 ### Título del panel
 
-Agrega un título de panel personalizado usando *frontmatter* YAML:
+Agrega un título de panel personalizado usando frontmatter YAML:
 
 ```markdown
 ---
@@ -211,7 +211,7 @@ El patrón de urdimbre entrelazada visible aquí indica una técnica
 de tejido compleja que era común en el periodo colonial.
 ```
 
-Si se omite el *frontmatter*, el panel no tiene título — el contenido comienza de inmediato.
+Si omites el frontmatter, el panel no tiene título — el contenido comienza de inmediato.
 
 {: .note }
 > Esto vale para los paneles que se escriben en una hoja de cálculo o en un archivo Markdown. En el Compositor, el título del panel tiene su propio campo, y un bloque `---` que pegues en el campo **Contenido** se publica como parte del texto del panel, no como título.
@@ -227,20 +227,20 @@ Los paneles de las historias admiten:
 
 ## Pasos multimedia
 
-Los pasos de una historia pueden hacer referencia a cualquier tipo de objeto — no solo imágenes. Cuando un paso referencia un objeto de video o audio, el área del visor cambia automáticamente al reproductor correspondiente.
+Los pasos de una historia pueden hacer referencia a cualquier tipo de objeto — no solo imágenes. Cuando un paso apunta a un objeto de video o audio, el área del visor cambia automáticamente al reproductor correspondiente.
 
 - **Objetos de video** — El reproductor de video llena el área del visor con controles de reproducción estándar. Consulta [Objetos de video](/guia/tu-contenido/objetos-de-video/) para las plataformas compatibles y la configuración.
 - **Objetos de audio** — El reproductor de audio llena el área del visor con visualización de forma de onda. Consulta [Objetos de audio](/guia/tu-contenido/objetos-de-audio/) para los formatos compatibles y la configuración.
 
-No se necesita configuración adicional. Telar detecta el tipo de objeto desde la hoja de cálculo de objetos y carga el reproductor correcto.
+No se necesita configuración adicional. Telar detecta el tipo de objeto en la hoja de cálculo de objetos y carga el reproductor que corresponde.
 
 ## Control de clips
 
-Para pasos de video y audio se puede especificar un tiempo de inicio, un tiempo de fin y un ajuste de bucle. Agrega estas columnas a la hoja de cálculo de la historia:
+En los pasos de video y audio puedes fijar un tiempo de inicio, un tiempo de fin y la repetición en bucle. Agrega estas columnas a la hoja de cálculo de la historia:
 
 | Columna (inglés) | Columna (español) | Descripción |
 |---|---|---|
-| `clip_start` | `inicio_clip` | Tiempo de inicio en segundos (ej. `12.5`) |
+| `clip_start` | `inicio_clip` | Tiempo de inicio en segundos (p. ej., `12.5`) |
 | `clip_end` | `fin_clip` | Tiempo de fin en segundos |
 | `loop` | `bucle` | Repetir el clip (`true`, `yes` o `sí`) |
 
@@ -259,7 +259,7 @@ Consulta la [Referencia CSV: Historias](/guia/tus-datos/csv-historias/) para la 
 
 ## Texto alternativo
 
-Cada paso puede incluir una columna `alt_text` con una descripción de lo que se ve o se escucha en ese punto de la historia. Este texto es utilizado por lectores de pantalla y otras tecnologías de asistencia.
+Cada paso puede incluir una columna `alt_text` con una descripción de lo que se ve o se escucha en ese punto de la historia. Los lectores de pantalla y otras tecnologías de asistencia usan este texto.
 
 ```csv
 step,object,x,y,zoom,alt_text,question,answer
@@ -295,7 +295,7 @@ Al abrir un enlace profundo, la historia salta directamente al paso codificado y
 
 ### Ocultar historias de la página principal
 
-Si deseas tener objetos en la página principal pero prefieres que las historias se accedan a través de la navegación o enlaces directos:
+Si deseas tener objetos en la página principal pero prefieres que a las historias se llegue por la navegación o enlaces directos:
 
 ```yaml
 story_interface:
@@ -306,14 +306,14 @@ Las historias siguen accesibles en sus URL — solo se ocultan las tarjetas de l
 
 ### Ocultar indicadores de paso
 
-Los indicadores "Step 1", "Step 2" en la esquina superior izquierda del visor de la historia se pueden ocultar para una experiencia más limpia:
+Los indicadores **Paso 1**, **Paso 2** de la esquina superior izquierda del visor se pueden ocultar para una vista más despejada:
 
 ```yaml
 story_interface:
   show_story_steps: false
 ```
 
-Quienes visitan pueden seguir navegando por los pasos normalmente.
+El público puede seguir navegando por los pasos con normalidad.
 
 ## Véase también
 
