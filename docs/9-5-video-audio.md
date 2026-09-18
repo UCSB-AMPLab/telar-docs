@@ -40,22 +40,32 @@ Audio objects use self-hosted files stored in your repository at `telar-content/
 
 When a step references an audio object, the viewer column displays a WaveSurfer waveform player. The waveform provides a visual representation of the audio and includes play and pause controls.
 
-## Clip capture
+## Clip range
 
-Clip capture lets you define which segment of a video or audio file plays during a particular step. Instead of entering timestamps manually in a spreadsheet, you capture them visually while the media plays.
+A clip is the segment of a video or audio file that plays during one step. You set it visually in the viewer rather than typing timestamps into a spreadsheet.
 
-To capture clip times for a step:
+### Video
+
+A clip timeline sits in the bar below the video. It spans the whole file, showing the clip as a highlighted region, with a thin marker that follows playback.
 
 1. Select the step you want to configure
-2. Play the video or audio in the viewer
-3. When the media reaches the point where you want the clip to begin, click **Capture start**
-4. Continue playing until the media reaches the end point, then click **Capture end**
-5. The captured times appear in the step's settings, displayed in gold monospace MM:SS format
+2. Drag the **start** or **end** handle to move one edge of the clip, or drag the highlighted region itself to move the whole clip without changing its length
+3. Release the handle to save
 
-You can recapture either time at any point by clicking the corresponding button again while the media is at a new position.
+The times at either end of the bar are where the clip begins and ends, and the figure between them is its length. A brief **Clip saved** confirmation replaces the length each time you change the range.
 
-{: .tip }
-> Clip capture in the Compositor sets the same `clip_start` and `clip_end` values described in [Video Objects](/docs/your-content/video-objects/) and [Audio Objects](/docs/your-content/audio-objects/). If you later edit your spreadsheet files directly, the clip values are interchangeable.
+### Audio
+
+Audio has no separate timeline. The waveform carries the clip region directly — drag its handles to set the start and end.
+
+### Checking a clip
+
+Below the player, the current clip reads as `clip 0:05 → 0:12`, or **No clip set** when the step plays the whole file.
+
+**Preview clip** plays the clip on its own, so you can check exactly what a visitor will get without sitting through the rest of the file.
+
+{: .note }
+> Google Drive videos cannot be clipped. In place of the clip times, the viewer shows **Google Drive does not support clipping**.
 
 ## Loop toggle
 

@@ -53,7 +53,7 @@ Story steps can specify a start time, end time, and loop setting for audio objec
 | `loop` | `bucle` | Loop the clip (`true`, `yes`, or `sí`) |
 
 {: .tip }
-> You can also use the Compositor's clip capture interface to set clip times visually. See [Video and Audio in the Compositor](/docs/the-compositor/video-audio/) for details.
+> You can also set clip times visually in the Compositor. See [Video and Audio in the Compositor](/docs/the-compositor/video-audio/) for details.
 
 ## Audio build pipeline
 

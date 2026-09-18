@@ -32,7 +32,7 @@ La pestaña **Stories** lista todas las historias de tu exhibición. Desde aquí
 
 ### Ver y abrir historias
 
-Cada historia en la lista muestra su título, número de pasos y estado actual. Haz clic en una historia para abrirla en el [Editor de historias](/guia/el-compositor/editor-de-historias/).
+Cada historia en la lista muestra su título, número de pasos y estado actual. Haz clic en una historia para abrirla en el [Editor de historias](/guia/el-compositor/editor-historias/).
 
 ### Crear una historia nueva
 

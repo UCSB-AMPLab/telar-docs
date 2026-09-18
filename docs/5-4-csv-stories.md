@@ -146,7 +146,7 @@ Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, ente
 - Start and end times in seconds for video and audio objects (e.g., `12.5`, `65`)
 - Ignored for image objects
 - Leave both empty to play the full media file
-- You can set clip values visually using the [Compositor's clip capture interface](/docs/the-compositor/video-audio/)
+- You can set clip values visually in the [Compositor](/docs/the-compositor/video-audio/)
 
 #### loop / bucle
 - **New in v1.0.0**

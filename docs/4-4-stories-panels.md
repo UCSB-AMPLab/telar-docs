@@ -253,7 +253,7 @@ step,object,clip_start,clip_end,loop,question,answer
 ```
 
 {: .tip }
-> You can also set clip times visually using the Compositor's clip capture interface. See [Video and Audio in the Compositor](/docs/the-compositor/video-audio/) for details.
+> You can also set clip times visually in the Compositor. See [Video and Audio in the Compositor](/docs/the-compositor/video-audio/) for details.
 
 See the [CSV Reference: Stories](/docs/your-data/csv-stories/) for the full column reference including clip columns.
 

@@ -26,7 +26,7 @@ Objects can have one of three statuses:
 
 - **Ready** — The object has metadata and its image tiles are available. It is ready to use in stories.
 - **No metadata** — The object exists but is missing key information like title, creator, or description. You can still use it in stories, but adding metadata improves your exhibition.
-- **Tiles missing** — The object's IIIF tiles have not been generated yet. This can happen with newly uploaded images that have not been published and built.
+- **Needs tiles** — The object's IIIF tiles have not been generated yet. This can happen with newly uploaded images that have not been published and built.
 
 ### Featured toggle
 
@@ -78,7 +78,7 @@ You can upload your own images directly through the Compositor. Uploaded images 
 Supported formats are JPG, PNG, and TIFF, with a maximum file size of 25 MB per image.
 
 {: .note }
-> After uploading, the object's status may show **Tiles missing** until you publish and the GitHub Actions build generates the IIIF tiles. The object is still usable in the Compositor — tiles will be available on your live site after the build completes.
+> After uploading, the object's status may show **Needs tiles** until you publish and the GitHub Actions build generates the IIIF tiles. The object is still usable in the Compositor — tiles will be available on your live site after the build completes.
 
 ## Save to repository
 
