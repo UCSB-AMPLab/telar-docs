@@ -225,7 +225,7 @@ Si desarrollas localmente, ejecuta `npm install` en el repositorio después de a
 
 **Opcional — soporte de audio:**
 
-Si el sitio incluye objetos de audio, instala `ffmpeg` y `audiowaveform` para la extracción de *clips* y los datos de picos de forma de onda:
+Si el sitio incluye objetos de audio, instala `ffmpeg` y `audiowaveform` para la extracción de clips y los datos de picos de forma de onda:
 
 - **macOS:** `brew install ffmpeg audiowaveform`
 - **Ubuntu:** `sudo apt install ffmpeg audiowaveform`

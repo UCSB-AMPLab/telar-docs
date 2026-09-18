@@ -66,7 +66,7 @@ Una vez hecho, vuelve a [compositor.telar.org](https://compositor.telar.org) y c
 
 - **Editar historias visualmente** — agregar pasos, escribir texto, ajustar coordenadas de imagen y previsualizar la narrativa en tiempo real
 - **Subir imágenes** — arrastra y suelta imágenes directamente; las teselas IIIF se generan de forma automática
-- **Agregar video y audio** — inserta videos de YouTube, Vimeo o Google Drive, y archivos de audio autoalojados con controles de *clip*
+- **Agregar video y audio** — inserta videos de YouTube, Vimeo o Google Drive, y archivos de audio autoalojados con controles de clip
 - **Publicar con un clic** — revisa los cambios, haz *commit* a GitHub y sigue el estado del *build* sin salir del editor
 
 Para la guía completa, véase [El Compositor](/guia/el-compositor/).

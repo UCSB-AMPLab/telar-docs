@@ -50,7 +50,7 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
 4. **Procesa audio** (condicional)
    - Se ejecuta solo cuando se detectan archivos de audio en `telar-content/objects/`
    - Instala `ffmpeg` y `audiowaveform` en el ejecutor
-   - Extrae *clips* de audio y genera datos de picos para la forma de onda
+   - Extrae clips de audio y genera datos de picos para la forma de onda
    - Usa una clave de caché basada en el hash del contenido para no reprocesar audio sin cambios
 
 5. **Construye el paquete de JavaScript**
@@ -102,7 +102,7 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 - Para forzar una construcción limpia
 
 {: .tip }
-> Al activar el flujo de trabajo manualmente, la opción **force_audio** permite reprocesar los archivos de audio aunque el caché esté vigente. Esto es útil para regenerar datos de forma de onda o volver a extraer *clips*.
+> Al activar el flujo de trabajo manualmente, la opción **force_audio** permite reprocesar los archivos de audio aunque el caché esté vigente. Esto es útil para regenerar datos de forma de onda o volver a extraer clips.
 
 ## Errores comunes de construcción
 

@@ -27,7 +27,7 @@ En dispositivos móviles, las tarjetas de texto se anclan en la parte inferior d
 
 Cada paso:
 
-1. Enfoca el visor en una región específica de un objeto (usando coordenadas x, y y zoom para imágenes, o tiempos de *clip* para video y audio)
+1. Enfoca el visor en una región específica de un objeto (usando coordenadas x, y y zoom para imágenes, o tiempos de clip para video y audio)
 2. Muestra una **pregunta** y una breve **respuesta** en la tarjeta de texto
 3. Opcionalmente ofrece hasta dos capas adicionales de detalle mediante botones expandibles
 
@@ -234,7 +234,7 @@ Los pasos de una historia pueden hacer referencia a cualquier tipo de objeto —
 
 No se necesita configuración adicional. Telar detecta el tipo de objeto desde la hoja de cálculo de objetos y carga el reproductor correcto.
 
-## Control de *clips*
+## Control de clips
 
 Para pasos de video y audio se puede especificar un tiempo de inicio, un tiempo de fin y un ajuste de bucle. Agrega estas columnas a la hoja de cálculo de la historia:
 
@@ -242,7 +242,7 @@ Para pasos de video y audio se puede especificar un tiempo de inicio, un tiempo 
 |---|---|---|
 | `clip_start` | `inicio_clip` | Tiempo de inicio en segundos (ej. `12.5`) |
 | `clip_end` | `fin_clip` | Tiempo de fin en segundos |
-| `loop` | `bucle` | Repetir el *clip* (`true`, `yes` o `sí`) |
+| `loop` | `bucle` | Repetir el clip (`true`, `yes` o `sí`) |
 
 Las tres columnas son opcionales. Si se omiten, el medio se reproduce desde el inicio sin repetición.
 
@@ -255,7 +255,7 @@ step,object,clip_start,clip_end,loop,question,answer
 {: .tip }
 > También puedes fijar los tiempos del clip de forma visual en el Compositor. Consulta [Video y audio en el Compositor](/guia/el-compositor/video-y-audio/) para más detalles.
 
-Consulta la [Referencia CSV: Historias](/guia/tus-datos/csv-historias/) para la referencia completa de columnas incluyendo las columnas de *clip*.
+Consulta la [Referencia CSV: Historias](/guia/tus-datos/csv-historias/) para la referencia completa de columnas incluyendo las columnas de clip.
 
 ## Texto alternativo
 

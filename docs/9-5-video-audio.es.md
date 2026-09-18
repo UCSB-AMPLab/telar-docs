@@ -72,7 +72,7 @@ Debajo del reproductor, el clip vigente se lee `clip 0:05 → 0:12`. Si el paso 
 
 ## Control de bucle
 
-Cada paso tiene un control de bucle que determina si el *clip* se repite continuamente cuando el público llega a ese paso. Cuando está habilitado, el medio reproduce el segmento capturado en bucle hasta que el público avanza al siguiente paso.
+Cada paso tiene un control de bucle que determina si el clip se repite continuamente cuando el público llega a ese paso. Cuando está habilitado, el medio reproduce el segmento capturado en bucle hasta que el público avanza al siguiente paso.
 
 La configuración de bucle se conserva al guardar y se aplica tanto a pasos de video como de audio.
 
@@ -88,4 +88,4 @@ El valor de género o medio ayuda a la galería de objetos a organizar los eleme
 - [Publicación](/guia/el-compositor/publicacion/) — Revisar y publicar cambios
 - [Objetos de video](/guia/tu-contenido/objetos-de-video/) — Cómo funcionan los objetos de video en Telar
 - [Objetos de audio](/guia/tu-contenido/objetos-de-audio/) — Cómo funcionan los objetos de audio en Telar
-- [Columnas de historias](/guia/tus-datos/csv-historias/) — Referencia completa de columnas incluyendo columnas de *clip*
+- [Columnas de historias](/guia/tus-datos/csv-historias/) — Referencia completa de columnas incluyendo columnas de clip
