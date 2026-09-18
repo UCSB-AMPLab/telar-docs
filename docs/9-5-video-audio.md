@@ -21,7 +21,7 @@ The Compositor detects the media type of each object automatically based on its 
 Each step in the sidebar displays a media type badge to help you identify what kind of object it references:
 
 - **Video** — A film icon for video objects
-- **Music** — A music icon for audio objects
+- **Audio** — A music icon for audio objects
 - **Text** — A text icon for steps with no media object
 
 ## Supported video sources

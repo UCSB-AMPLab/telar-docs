@@ -28,7 +28,7 @@ El mensaje de bienvenida admite formato básico — negrita, cursiva, enlaces y 
 
 ## Historias
 
-La pestaña **Stories** lista todas las historias de tu exhibición. Desde aquí puedes administrar toda tu colección de narrativas.
+La pestaña **Historias** lista todas las historias de tu exhibición. Desde aquí puedes administrar toda tu colección de narrativas.
 
 ### Ver y abrir historias
 
@@ -38,7 +38,7 @@ Cada historia en la lista muestra su título, número de pasos y estado actual. 
 
 Para agregar una historia nueva a tu exhibición:
 
-1. Haz clic en el botón **+** o **New Story** en la pestaña de historias
+1. Haz clic en el botón **+** o **Nueva historia** en la pestaña de historias
 2. Escribe un título para la historia
 3. El Compositor crea la historia y la abre en el editor
 
@@ -64,8 +64,8 @@ Para eliminar una historia de tu exhibición:
 
 Cada historia tiene dos controles de visibilidad:
 
-- **Draft** — Las historias en borrador se excluyen completamente del sitio publicado. Usa esta opción para historias en las que aún estás trabajando.
-- **Private** — Las historias privadas siguen apareciendo en la lista de historias del sitio, con su título y subtítulo visibles, pero su contenido queda bloqueado. Para leerlas se necesita la clave de historia, que se ingresa en la página misma o va incluida en un enlace compartido. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles.
+- **Borrador** — Las historias en borrador quedan por completo fuera del sitio publicado. Usa esta opción mientras todavía estás trabajando en una historia.
+- **Privada** — Las historias privadas siguen apareciendo en la lista de historias del sitio, con su título y subtítulo visibles, pero su contenido queda bloqueado. Para leerlas se necesita la clave de historia, que se ingresa en la página misma o va incluida en un enlace compartido. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles.
 
 ## Cambiar de proyecto
 

@@ -25,7 +25,7 @@ Antes de comenzar, asegúrate de tener:
 El Compositor usa tu cuenta de GitHub para la autenticación y la publicación. No se necesita una cuenta separada.
 
 1. Ve a [compositor.telar.org](https://compositor.telar.org)
-2. Haz clic en **Sign in with GitHub**
+2. Haz clic en **Iniciar sesión con GitHub**
 3. Autoriza el Compositor de Telar cuando GitHub te lo solicite
 
 ## Instalar la aplicación de GitHub
