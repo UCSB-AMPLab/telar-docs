@@ -55,7 +55,7 @@ High-contrast green and crimson on charcoal, with IM Fell, a typeface cut from t
 
 **Typography:** IM Fell DW Pica headings, Mulish body.
 
-**Best for:** Contemporary materials.
+**Best for:** Archival materials.
 
 ### Santa Barbara
 
@@ -145,7 +145,7 @@ telar_theme: "custom"
 3. Review your site
 4. Adjust colors and fonts as needed
 
-## Theme Color Variables
+## Theme Color Keys
 
 All themes support these color keys:
 
@@ -166,7 +166,7 @@ All themes support these color keys:
 {: .note }
 > The four keys under `colors.background` are the ones Telar checks for contrast. See [Color Accessibility](#color-accessibility).
 
-## Typography Variables
+## Typography Keys
 
 Control fonts across your site:
 

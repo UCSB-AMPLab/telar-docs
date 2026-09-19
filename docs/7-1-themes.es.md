@@ -55,7 +55,7 @@ Verde y carmesí encendidos sobre carbón, con IM Fell, una tipografía tomada d
 
 **Tipografía:** encabezados en IM Fell DW Pica, cuerpo en Mulish.
 
-**Ideal para:** materiales contemporáneos.
+**Ideal para:** materiales de archivo.
 
 ### Santa Barbara
 
@@ -145,7 +145,7 @@ telar_theme: "custom"
 3. Revisa tu sitio
 4. Ajusta colores y fuentes según sea necesario
 
-## Variables de color del tema
+## Claves de color del tema
 
 Todos los temas admiten estas claves de color:
 
@@ -166,7 +166,7 @@ Todos los temas admiten estas claves de color:
 {: .note }
 > Telar revisa el contraste del texto sobre los cuatro fondos de `colors.background`. Consulta [Accesibilidad del color](#accesibilidad-del-color).
 
-## Variables de tipografía
+## Claves de tipografía
 
 Estas dos claves controlan las fuentes de todo el sitio:
 
@@ -380,9 +380,9 @@ Para revisarlos, usa herramientas como el [WebAIM Contrast Checker](https://weba
 
 Telar solo lee colores hexadecimales, como `#FFFFFF` o `#FFF`. Un color con nombre como `white`, o un valor `rgb()`, queda tal como lo escribiste: Telar no lo revisa y lo anota en la salida del *build*.
 
-## Respaldo del tema
+## Cuando falta el tema o una de sus claves
 
-Si Telar no encuentra el archivo de tema que nombraste en `_config.yml`, vuelve al tema **Trama** y el sitio no se rompe. Si lo encuentra, lo usa, aunque no reconozca ninguna de sus claves: cada clave que falte toma el valor de Trama y la salida del *build* dice cuáles faltaban.
+Si Telar no encuentra el archivo de tema que nombraste en `_config.yml`, vuelve al tema **Trama** y el sitio no se rompe. Si el archivo existe, Telar lo usa, incluso si no reconoce ninguno de los nombres de clave que trae. Cada clave que no pusiste toma el valor de Trama, y la salida del *build* dice cuáles faltan.
 
 ## Próximos pasos
 
