@@ -10,67 +10,80 @@ permalink: /guia/personalizacion/temas/
 
 ## Temas
 
-Telar incluye 5 temas visuales predeterminados que pueden cambiarse fácilmente vía `_config.yml`.
+Telar incluye cinco temas visuales listos para usar, y puedes cambiarlos desde `_config.yml`.
 
 ## Temas disponibles
 
 ### Trama (predeterminado)
 
-La identidad visual de Telar, diseñada por Adelaida Ávila. Paleta de terracota cálido y lavanda suave.
+La identidad visual de Telar, diseñada por Adelaida Ávila. Terracota y lavanda, con encabezados en Space Grotesk.
 
 **Colores:**
-- Encabezados: Gris oscuro `#333333`
-- Enlaces/botones: Terracota `#883C36`
-- Paneles: Lavanda `#C6D0F8`
-- Glosario: Crema `#FFF6EF`
+- Encabezados: gris oscuro `#333333`
+- Enlaces y botones: terracota `#883C36`
+- Paneles: lavanda `#C6D0F8` y terracota `#883C36`
+- Glosario: crema `#FFF6EF`
 
-**Tipografía:** Space Grotesk para encabezados, Roboto Condensed para cuerpo.
+**Tipografía:** encabezados en Space Grotesk, cuerpo en Roboto Condensed.
 
-**Mejor para:** Un tema versátil, adecuado para la mayoría de exhibiciones.
+**Ideal para:** la mayoría de las exhibiciones; es el tema más versátil.
 
-### Paisajes coloniales
+### Paisajes Coloniales
 
-Tonos tierra inspirados en [Paisajes Coloniales](https://paisajescoloniales.com).
+Colores de tierra y cielo, del proyecto [Paisajes Coloniales](https://paisajescoloniales.com). Azul pizarra y ciruela, con encabezados en Playfair Display.
 
 **Colores:**
-- Primario: Terracota `#c7522a`
-- Secundario: Oliva `#5f7351`
-- Acento: Marrón cálido
+- Encabezados y botones: azul pizarra `#2c3e50`
+- Enlaces: marrón cuero `#8b4513`
+- Paneles: azul pálido `#A8C5D4` y ciruela `#3d2645`
+- Glosario: arena `#F5EDE1`
 
-**Mejor para:** Narrativas históricas, exposiciones arqueológicas.
+**Tipografía:** encabezados en Playfair Display, cuerpo en Source Sans Pro.
+
+**Ideal para:** narrativas históricas y exhibiciones arqueológicas.
 
 ### Neogranadina
 
-Elegancia colonial con burdeos y dorado.
+Verde y carmesí encendidos sobre carbón, con IM Fell, una tipografía tomada de los punzones de una imprenta del siglo XVII.
 
 **Colores:**
-- Primario: Burdeos `#8B0000`
-- Secundario: Dorado colonial `#D4AF37`
-- Acento: Rojo profundo
+- Encabezados: negro `#000000`
+- Enlaces: coral `#D35F3A`
+- Botones: carbón `#2A2F36`
+- Paneles: verde `#00b35c` y carmesí `#b31235`
+- Glosario: blanco hueso `#F5F7FA`
 
-**Mejor para:** Materiales contemporáneos.
+**Tipografía:** encabezados en IM Fell DW Pica, cuerpo en Mulish.
+
+**Ideal para:** materiales contemporáneos.
 
 ### Santa Barbara
 
-Moderno y vibrante con inspiración costera.
+Dorado y azul marino, los colores de la Universidad de California en Santa Bárbara, con encabezados en Roboto Serif.
 
 **Colores:**
-- Primario: Turquesa oceánico `#2E8B9E`
-- Secundario: Coral `#FF6F61`
-- Acento: Azul marino
+- Encabezados: azul marino `#003660`
+- Enlaces: verde azulado `#047C91`
+- Botones: dorado `#FEBC11`
+- Paneles: verde azulado `#047C91` y azul marino `#003660`
+- Glosario: piedra `#F1EEEA`
 
-**Mejor para:** Imágenes en escala de grises y monocromáticas.
+**Tipografía:** encabezados en Roboto Serif, cuerpo en Nunito Sans.
+
+**Ideal para:** imágenes en escala de grises y monocromas.
 
 ### Austin
 
-Atrevido y académico con naranja quemado.
+El naranja quemado de la Universidad de Texas en Austin, con verde salvia y piedra, y encabezados en Crimson Pro.
 
 **Colores:**
-- Primario: Naranja quemado `#BF5700`
-- Secundario: Azul pizarra `#005F86`
-- Acento: Carbón
+- Encabezados, enlaces y botones: naranja quemado `#BF5700`
+- Paneles: gris azulado `#9CADB7` y verde salvia `#577565`
+- Glosario: piedra `#D6D2C4`
 
-**Mejor para:** Materiales contemporáneos.
+**Tipografía:** encabezados en Crimson Pro, cuerpo en Inter.
+
+**Ideal para:** materiales contemporáneos.
 
 ## Cambia temas
 
@@ -86,21 +99,36 @@ Confirma el cambio y GitHub Actions reconstruirá tu sitio automáticamente (2-5
 
 ### Paso 1: crea un archivo de tema
 
-Crea un nuevo archivo en `_data/themes/custom.yml`:
+Crea el archivo `_data/themes/custom.yml`. Los colores se agrupan en `colors.text` y `colors.background`, y las fuentes en `fonts`:
 
 ```yaml
-# Colores
-primary_color: "#2c3e50"
-secondary_color: "#e74c3c"
-accent_color: "#3498db"
-text_color: "#333333"
-heading_color: "#1a1a1a"
-background_color: "#ffffff"
+name: "Mi tema"
 
-# Fuentes
-font_headings: "Playfair Display, Georgia, serif"
-font_body: "Source Sans Pro, -apple-system, sans-serif"
+colors:
+  text:
+    heading: "#1a1a1a"        # Encabezados
+    body: "#333333"           # Texto del cuerpo
+    link: "#883C36"           # Enlaces
+    button: "#FFFFFF"         # Texto de los botones
+    panel_layer1: "#333333"   # Texto del panel de la capa 1
+    panel_layer2: "#FFFFFF"   # Texto del panel de la capa 2
+    panel_glossary: "#333333" # Texto del panel del glosario
+
+  background:
+    button: "#883C36"         # Fondo de los botones
+    panel_layer1: "#C6D0F8"   # Fondo del panel de la capa 1
+    panel_layer2: "#883C36"   # Fondo del panel de la capa 2
+    panel_glossary: "#FFF6EF" # Fondo del panel del glosario
+
+fonts:
+  headings: "'Playfair Display', Georgia, serif"
+  body: "'Source Sans Pro', -apple-system, sans-serif"
 ```
+
+Lo más rápido es copiar uno de los temas que ya vienen en `_data/themes/` y cambiarle los valores. Todas las claves son opcionales: la que no pongas toma el valor de Trama.
+
+{: .warning }
+> Telar solo lee las claves que aparecen aquí. Un archivo con otros nombres de clave se carga sin errores, pero no cambia nada: tu sitio se ve con los colores predeterminados. La salida del *build* nombra las claves que Telar buscó y no encontró.
 
 ### Paso 2: activa el tema personalizado
 
@@ -119,47 +147,58 @@ telar_theme: "custom"
 
 ## Variables de color del tema
 
-Todos los temas soportan estas variables de color:
+Todos los temas admiten estas claves de color:
 
-| Variable | Uso |
-|----------|-----|
-| `primary_color` | Color de marca principal, botones, enlaces |
-| `secondary_color` | Acentos, botones secundarios |
-| `accent_color` | Resaltados, estados al pasar el cursor |
-| `text_color` | Texto del cuerpo |
-| `heading_color` | Todos los niveles de encabezado |
-| `background_color` | Fondo de página |
+| Clave | Uso |
+|-------|-----|
+| `colors.text.heading` | Todos los niveles de encabezado |
+| `colors.text.body` | Texto del cuerpo |
+| `colors.text.link` | Enlaces |
+| `colors.text.button` | Texto de los botones |
+| `colors.text.panel_layer1` | Texto del panel de la capa 1 |
+| `colors.text.panel_layer2` | Texto del panel de la capa 2 |
+| `colors.text.panel_glossary` | Texto del panel del glosario |
+| `colors.background.button` | Fondo de los botones |
+| `colors.background.panel_layer1` | Fondo del panel de la capa 1 |
+| `colors.background.panel_layer2` | Fondo del panel de la capa 2 |
+| `colors.background.panel_glossary` | Fondo del panel del glosario |
+
+{: .note }
+> Telar revisa el contraste del texto sobre los cuatro fondos de `colors.background`. Consulta [Accesibilidad del color](#accesibilidad-del-color).
 
 ## Variables de tipografía
 
-Controla fuentes en todo tu sitio:
+Estas dos claves controlan las fuentes de todo el sitio:
 
-| Variable | Uso |
-|----------|-----|
-| `font_headings` | h1-h6, títulos de página |
-| `font_body` | Párrafos, listas, texto general |
+| Clave | Uso |
+|-------|-----|
+| `fonts.headings` | h1–h6, títulos de página |
+| `fonts.body` | Párrafos, listas, texto general |
 
 ### Ejemplos de fuentes
 
+Las dos claves van dentro de `fonts`, y cada una recibe una lista de fuentes: la que quieres y, después, las que el navegador usa si no puede cargar la primera.
+
 **Encabezados serif:**
 ```yaml
-font_headings: "Playfair Display, Georgia, serif"
-font_headings: "Merriweather, Georgia, serif"
-font_headings: "Lora, Georgia, serif"
+fonts:
+  headings: "'Playfair Display', Georgia, serif"
 ```
+O `'Merriweather', Georgia, serif`, o `'Lora', Georgia, serif`.
 
 **Encabezados sans-serif:**
 ```yaml
-font_headings: "Montserrat, Helvetica, sans-serif"
-font_headings: "Raleway, Arial, sans-serif"
+fonts:
+  headings: "'Montserrat', Helvetica, sans-serif"
 ```
+O `'Raleway', Arial, sans-serif`.
 
 **Fuentes del cuerpo:**
 ```yaml
-font_body: "Source Sans Pro, sans-serif"
-font_body: "Open Sans, Helvetica, sans-serif"
-font_body: "Crimson Text, Georgia, serif"
+fonts:
+  body: "'Source Sans Pro', sans-serif"
 ```
+O `'Open Sans', Helvetica, sans-serif`, o `'Crimson Text', Georgia, serif`.
 
 ## Usa Google Fonts
 
@@ -172,7 +211,8 @@ Para usar fuentes no incluidas por defecto:
    ```
 3. Referencia en archivo de tema:
    ```yaml
-   font_headings: "Tu Fuente, serif"
+   fonts:
+     headings: "'Tu Fuente', serif"
    ```
 
 ## Atribución de la persona creadora del tema
@@ -306,6 +346,8 @@ Cada tema empareja un color de texto con un fondo: `colors.text.panel_layer1` va
 
 Durante la construcción del sitio, Telar calcula un color de texto que alcance una relación de contraste de 4,5:1 sobre cada uno de los cuatro fondos: `button`, `panel_layer1`, `panel_layer2` y `panel_glossary`. Ese es el nivel AA de WCAG para texto de tamaño normal.
 
+Telar también calcula el color del texto que va sobre `colors.text.heading` allí donde ese color se usa como fondo, como en las etiquetas de los filtros activos de la página de objetos. Ese color de texto no se escoge en el archivo del tema, así que ahí Telar no reemplaza ninguna decisión tuya.
+
 Telar empieza por el color que escogiste y lo conserva siempre que llegue a 4,5:1, así que un tema cuyos colores cumplen se ve tal como lo escribiste. Solo cuando ese color no alcanza el nivel, Telar busca otro, en este orden:
 
 1. `colors.text.heading` o `colors.text.button`, el que tenga mayor contraste sobre ese fondo
@@ -340,7 +382,7 @@ Telar solo lee colores hexadecimales, como `#FFFFFF` o `#FFF`. Un color con nomb
 
 ## Respaldo del tema
 
-Si falta un archivo de tema personalizado o tiene errores, Telar automáticamente vuelve al tema **Trama**, asegurando que tu sitio nunca se rompa.
+Si Telar no encuentra el archivo de tema que nombraste en `_config.yml`, vuelve al tema **Trama** y el sitio no se rompe. Si lo encuentra, lo usa, aunque no reconozca ninguna de sus claves: cada clave que falte toma el valor de Trama y la salida del *build* dice cuáles faltaban.
 
 ## Próximos pasos
 
