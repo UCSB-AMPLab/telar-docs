@@ -31,6 +31,7 @@ Define la navegación paso a paso y el contenido de paneles para cada historia.
 | `x` | `x` | Sí | Coordenada horizontal (0-1 normalizada) |
 | `y` | `y` | Sí | Coordenada vertical (0-1 normalizada) |
 | `zoom` | `zoom` | Sí | Nivel de zoom (0-1 normalizado) |
+| `page` | `pagina` | No | Página que se muestra en este paso, en objetos de múltiples páginas (la primera es 1) |
 | `question` | `pregunta` | Sí | Encabezado mostrado en el panel de la historia |
 | `answer` | `respuesta` | Sí | Texto de respuesta breve |
 | `layer1_button` | `boton_capa1` | No | Texto personalizado del botón (vacío = "Saber más") |
@@ -80,6 +81,14 @@ El paso 1 usa contenido en línea para la capa 1, mientras que el paso 2 usa una
 - **y**: 0 = borde superior, 1 = borde inferior, 0.5 = centro
 - **zoom**: 0 = alejado (imagen completa), 1 = zoom máximo
 - Usa el selector de coordenadas en las páginas de objetos para encontrar los valores
+
+#### page / pagina
+- Solo para objetos de múltiples páginas: un PDF alojado en tu sitio o un manifiesto IIIF externo con varias imágenes
+- Los números de página comienzan en 1
+- `x`, `y` y `zoom` encuadran la página que indiques en esta columna, no el documento completo
+- Deja la columna vacía para objetos de una sola imagen
+- Si el valor no es un número entero positivo, se ignora y aparece una advertencia que nombra el paso
+- Consulta [Documentos PDF](/guia/tu-contenido/documentos-pdf/) e [Imágenes IIIF externas](/guia/tu-contenido/iiif-externo/)
 
 #### question / pregunta
 - Se muestra como encabezado de la tarjeta de texto
@@ -180,6 +189,7 @@ Guarda los archivos Markdown en `telar-content/texts/stories/`. En tu hoja de c�
 | `x` | `x` |
 | `y` | `y` |
 | `zoom` | `zoom` |
+| `page` | `page`, `pagina`, `página` |
 | `question` | `question`, `pregunta` |
 | `answer` | `answer`, `respuesta` |
 | `layer1_button` | `layer1_button`, `boton_capa1` |

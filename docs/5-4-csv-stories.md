@@ -31,6 +31,7 @@ Defines step-by-step navigation and panel content for each story.
 | `x` | `x` | Yes | Horizontal coordinate (0-1 normalized) |
 | `y` | `y` | Yes | Vertical coordinate (0-1 normalized) |
 | `zoom` | `zoom` | Yes | Zoom level (0-1 normalized) |
+| `page` | `pagina` | No | Which page of a multi-page object this step shows (the first page is 1) |
 | `question` | `pregunta` | Yes | Heading displayed in story panel |
 | `answer` | `respuesta` | Yes | Brief answer text |
 | `layer1_button` | `boton_capa1` | No | Custom button text (empty = "Learn more") |
@@ -80,6 +81,14 @@ Step 1 uses inline content for layer 1, while step 2 uses a file reference. Both
 - **y**: 0 = top edge, 1 = bottom edge, 0.5 = center
 - **zoom**: 0 = zoomed out (full image), 1 = maximum zoom
 - Use the coordinate picker on object pages to find values
+
+#### page / pagina
+- Only for objects with more than one page: a PDF hosted on your site, or an external IIIF manifest with several images
+- Pages are numbered from 1
+- `x`, `y` and `zoom` frame the page this column selects, not the document as a whole
+- Leave it empty for single-image objects
+- A value that is not a whole number of 1 or more is ignored, and the build says which step it came from
+- See [PDF Documents](/docs/your-content/pdf-documents/) and [External IIIF Images](/docs/your-content/external-iiif/)
 
 #### question / pregunta
 - Displayed as the heading of the text card
@@ -180,6 +189,7 @@ Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, ente
 | `x` | `x` |
 | `y` | `y` |
 | `zoom` | `zoom` |
+| `page` | `page`, `pagina`, `página` |
 | `question` | `question`, `pregunta` |
 | `answer` | `answer`, `respuesta` |
 | `layer1_button` | `layer1_button`, `boton_capa1` |
