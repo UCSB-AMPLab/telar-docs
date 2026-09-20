@@ -199,7 +199,7 @@ Los widgets funcionan bien en móviles, pero sigue estas recomendaciones:
 **Para IIIF externo:**
 - Prefiere instituciones con servidores rápidos
 - Prueba la velocidad de carga del manifiesto
-- Considera imágenes de respaldo para conexiones lentas
+- Considera imágenes alternas para conexiones lentas
 
 ### Consideraciones de ancho de banda
 

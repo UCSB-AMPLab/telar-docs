@@ -67,7 +67,7 @@ Cuando agregas una imagen y compilas tu sitio:
 Esto permite un zoom fluido incluso en imágenes muy grandes.
 
 {: .note }
-> **Generación rápida de teselas con libvips.** Telar usa [libvips](https://www.libvips.org/) para la generación de teselas IIIF cuando está disponible, lo cual es aproximadamente 28 veces más rápido que el respaldo en Python puro. Si libvips no está instalado, Telar recurre automáticamente a la biblioteca `iiif` de Python. Consulta [Desarrollo local](/guia/desarrolladores/desarrollo-local/) para instrucciones de instalación.
+> **Generación rápida de teselas con libvips.** Cuando libvips está disponible, Telar lo usa para generar las teselas IIIF: la generación resulta unas 28 veces más rápida que con la biblioteca `iiif` de Python, a la que recurre automáticamente si libvips no está instalado. Consulta [Desarrollo local](/guia/desarrolladores/desarrollo-local/) para instrucciones de instalación.
 
 ## Sistema de coordenadas
 

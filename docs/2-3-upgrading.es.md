@@ -173,7 +173,7 @@ La migración reescribe cuatro archivos de contenido (`index.md`, `pages/glossar
 
 **Claves de idioma nuevas: `lang.index_page.welcome` y `lang.pages.glossary_intro`.**
 
-Se agregan dos claves nuevas a los archivos de idioma incluidos. Si tienes un archivo de idioma personalizado, no necesitas agregarlas de inmediato (los *layouts* recurren a valores de respaldo), pero agregarlas te da control sobre el texto de bienvenida de la página de inicio y la frase de introducción del glosario en el idioma activo del sitio.
+Se agregan dos claves nuevas a los archivos de idioma incluidos. Si tienes un archivo de idioma personalizado, no necesitas agregarlas de inmediato (si faltan, los *layouts* siguen funcionando), pero agregarlas te da control sobre el texto de bienvenida de la página de inicio y la frase de introducción del glosario en el idioma activo del sitio.
 
 **Si solo usas la interfaz web de GitHub:**
 

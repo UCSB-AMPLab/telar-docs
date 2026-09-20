@@ -26,7 +26,7 @@ El menú de navegación aparece en el encabezado de tu sitio y proporciona enlac
 
 La navegación se configura a través de `_data/navigation.yml`. Este enfoque basado en datos te da control completo sobre la estructura y etiquetas del menú.
 
-Cuando existe `navigation.yml`, Telar lo usa para construir tu menú. Si el archivo falta, aparece un menú de respaldo codificado con enlaces básicos (Historias, Objetos, Acerca de).
+Cuando existe `navigation.yml`, Telar lo usa para construir el menú. Si el archivo falta, aparece un menú básico incluido en el código, con enlaces a Historias, Objetos y Acerca de.
 
 ## Crear tu archivo de navegación
 
@@ -176,13 +176,13 @@ Telar muestra las etiquetas del menú según la configuración de idioma de tu s
 - Si `telar_language: en` → Muestra etiquetas `title_en`
 - Si `telar_language: es` → Muestra etiquetas `titulo_es`
 
-### Comportamiento de respaldo
+### Cuando falta una etiqueta de idioma
 
-Si a un elemento del menú le falta la etiqueta del idioma apropiado, Telar aplica el siguiente orden de recurrencia:
+Si a un elemento del menú le falta la etiqueta del idioma del sitio, Telar sigue este orden:
 
-1. Intenta etiqueta del idioma actual (`title_en` o `titulo_es`)
-2. Si falta, intenta el otro idioma
-3. Si faltan ambas, muestra la URL como etiqueta
+1. Usa la etiqueta del idioma activo (`title_en` o `titulo_es`)
+2. Si falta, usa la del otro idioma
+3. Si faltan las dos, muestra la URL como etiqueta
 
 ## Orden del menú
 
@@ -251,15 +251,15 @@ menu:
   # Resto del menú...
 ```
 
-## Menú de respaldo
+## Cuando no hay archivo de navegación
 
-Si `_data/navigation.yml` no existe, Telar muestra un menú de respaldo codificado:
+Si `_data/navigation.yml` no existe, Telar muestra un menú básico incluido en el código:
 
 - **Stories** (página de inicio)
 - **Objects** (catálogo)
 - **About** (si existe `about.md`)
 
-Esto asegura que tu sitio siempre tenga navegación básica, incluso sin configuración.
+Así tu sitio siempre tiene una navegación básica, incluso sin configuración.
 
 ## Solución de problemas
 
