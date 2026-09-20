@@ -72,7 +72,7 @@ Below the player, the current clip reads as `clip 0:05 → 0:12`, or **No clip s
 
 ## Loop toggle
 
-Each step has a loop toggle that controls whether the clip repeats continuously when the audience reaches that step. When enabled, the media plays the clip in a loop until the audience advances to the next step.
+Each step has a **Loop** switch that controls whether the clip repeats continuously when the audience reaches that step. When it is on, the clip plays in a loop until the audience advances to the next step.
 
 The loop setting persists when you save and applies to both video and audio steps.
 
