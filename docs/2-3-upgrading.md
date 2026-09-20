@@ -162,7 +162,7 @@ The IIIF image viewer has changed from Tify (loaded from a CDN) to a custom Open
 
 Six new keys are added to the built-in language files (`en.yml` and `es.yml`): `object.viewer.prev_page`, `object.viewer.next_page`, `object.viewer.page_input_label`, `object.viewer.page_input_aria`, `object.viewer.image_unavailable_title`, and `object.viewer.image_unavailable_detail`. These drive the multi-page pagination chrome and the error fallback UI in the new viewer.
 
-If you have a customized language file (a copy of `en.yml` or `es.yml` with your own translations), you will need to add these six keys manually after upgrading, or the viewer pagination and error messages will fall back to the built-in English strings. Copy the values from the updated `_data/languages/en.yml` (or `es.yml`) in the Telar repository and translate as needed.
+If you have a customized language file (a copy of `en.yml` or `es.yml` with your own translations), you will need to add these six keys manually after upgrading, or the viewer pagination and error messages will fall back to the built-in English strings. On versions before v1.8.0 the four pagination labels fell back to nothing at all and the controls were left unlabelled, so on those versions adding the keys is the only way to label them. Copy the values from the updated `_data/languages/en.yml` (or `es.yml`) in the Telar repository and translate as needed.
 
 **If you only use GitHub's web interface:**
 
@@ -178,7 +178,7 @@ The upgrade migration rewrites four user-content files (`index.md`, `pages/gloss
 
 **New language keys — `lang.index_page.welcome` and `lang.pages.glossary_intro`:**
 
-Two new keys are added to the built-in language files. If you have a customized language file, you do not need to add them immediately — the layouts use fallback guards — but adding them gives you control over the homepage welcome text and glossary intro sentence in the site's active language.
+Two new keys are added to the built-in language files. If you have a customized language file, you do not need to add them immediately: from v1.8.0, a page whose key is missing falls back to the English text included by default. Before v1.8.0 the text was simply absent, so on those versions add the keys. Adding them gives you the homepage welcome text and the glossary intro sentence in the site's active language.
 
 **If you only use GitHub's web interface:**
 

@@ -157,7 +157,7 @@ El visor de imágenes IIIF pasó de Tify (que se cargaba desde un CDN) a un viso
 
 Se agregan seis claves nuevas a los archivos de idioma incluidos (`en.yml` y `es.yml`): `object.viewer.prev_page`, `object.viewer.next_page`, `object.viewer.page_input_label`, `object.viewer.page_input_aria`, `object.viewer.image_unavailable_title` y `object.viewer.image_unavailable_detail`. Estas claves se usan en los controles de paginación para objetos de varias páginas y en la interfaz de error del nuevo visor.
 
-Si tienes un archivo de idioma personalizado (una copia de `en.yml` o `es.yml` con tus propias traducciones), tendrás que agregar estas seis claves a mano después de actualizar; de lo contrario, la paginación y los mensajes de error del visor recurrirán a los textos en inglés incluidos por defecto. Copia los valores del `_data/languages/en.yml` (o `es.yml`) actualizado en el repositorio de Telar y tradúcelos según lo necesites.
+Si tienes un archivo de idioma personalizado (una copia de `en.yml` o `es.yml` con tus propias traducciones), tendrás que agregar estas seis claves a mano después de actualizar; de lo contrario, la paginación y los mensajes de error del visor recurrirán a los textos en inglés incluidos por defecto. En las versiones anteriores a la v1.8.0, cuando faltaban las cuatro claves de paginación, no aparecía nada en su lugar y los controles quedaban sin etiqueta. En esas versiones, la única manera de etiquetarlos es agregar las claves. Copia los valores del `_data/languages/en.yml` (o `es.yml`) actualizado en el repositorio de Telar y tradúcelos según lo necesites.
 
 **Si solo usas la interfaz web de GitHub:**
 
@@ -173,7 +173,7 @@ La migración reescribe cuatro archivos de contenido (`index.md`, `pages/glossar
 
 **Claves de idioma nuevas: `lang.index_page.welcome` y `lang.pages.glossary_intro`.**
 
-Se agregan dos claves nuevas a los archivos de idioma incluidos. Si tienes un archivo de idioma personalizado, no necesitas agregarlas de inmediato (si faltan, los *layouts* siguen funcionando), pero agregarlas te da control sobre el texto de bienvenida de la página de inicio y la frase de introducción del glosario en el idioma activo del sitio.
+Se agregan dos claves nuevas a los archivos de idioma incluidos. Si tienes un archivo de idioma personalizado, no necesitas agregarlas de inmediato: desde la v1.8.0, cuando falta una clave, la página muestra el texto en inglés incluido por defecto. Antes de la v1.8.0, el texto no aparecía, así que en esas versiones sí toca agregarlas. Al agregarlas, el texto de bienvenida de la página de inicio y la frase de introducción del glosario quedan en el idioma activo del sitio.
 
 **Si solo usas la interfaz web de GitHub:**
 
