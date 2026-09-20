@@ -52,7 +52,7 @@ A clip timeline sits in the bar below the video. It spans the whole file, showin
 2. Drag the **start** or **end** handle to move one edge of the clip, or drag the highlighted region itself to move the whole clip without changing its length
 3. Release the handle to save
 
-The times at either end of the bar are where the clip begins and ends, and the figure between them is its length. A brief **Clip saved** confirmation replaces the length each time you change the range.
+The times at either end of the bar are where the clip begins and ends, and between them the bar gives the clip's length as **0:07 clip**. A brief **Clip saved** confirmation takes its place each time you change the range.
 
 ### Audio
 

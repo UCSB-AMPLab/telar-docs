@@ -21,8 +21,8 @@ El Compositor detecta el tipo de medio de cada objeto automáticamente a partir 
 Cada paso en la barra lateral muestra una insignia de tipo de medio para ayudarte a identificar qué clase de objeto referencia:
 
 - **Video** — Un ícono de película para objetos de video
-- **Music** — Un ícono de música para objetos de audio
-- **Text** — Un ícono de texto para pasos sin objeto de medio
+- **Audio** — Un ícono de música para objetos de audio
+- **Texto** — Un ícono de texto para pasos sin objeto de medio
 
 ## Fuentes de video compatibles
 
@@ -52,7 +52,7 @@ Debajo del video hay una línea de tiempo que abarca el archivo completo: el cli
 2. Arrastra el extremo inicial o el final de la franja para mover ese borde del clip, o arrastra la franja entera para desplazar el clip sin cambiarle la duración
 3. Suelta para guardar
 
-Los tiempos de los dos extremos de la barra son el comienzo y el final del clip, y la cifra del medio es su duración. Cada vez que cambias el rango, esa cifra da paso por un momento a la confirmación **Clip saved**.
+Los tiempos de los dos extremos de la barra son el comienzo y el final del clip, y en el medio se lee su duración: **Clip de 0:07**. Cada vez que cambias el rango, esa duración da paso por un momento a la confirmación **Clip guardado**.
 
 ### Audio
 
@@ -72,7 +72,7 @@ Debajo del reproductor, el clip vigente se lee `clip 0:05 → 0:12`. Si el paso 
 
 ## Control de bucle
 
-Cada paso tiene un control de bucle que determina si el clip se repite continuamente cuando el público llega a ese paso. Cuando está habilitado, el medio reproduce el segmento capturado en bucle hasta que el público avanza al siguiente paso.
+Cada paso tiene un interruptor **Repetir** que determina si el clip se repite continuamente cuando el público llega a ese paso. Cuando está activado, el clip se reproduce en bucle hasta que el público avanza al siguiente paso.
 
 La configuración de bucle se conserva al guardar y se aplica tanto a pasos de video como de audio.
 
