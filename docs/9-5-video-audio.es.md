@@ -60,7 +60,7 @@ El audio no tiene una línea de tiempo aparte: la región del clip va sobre la o
 
 ### Comprobar el clip
 
-Debajo del reproductor, el clip vigente se lee `clip 0:05 → 0:12`. Si el paso reproduce el archivo completo, ahí dice **Sin clip definido**.
+Debajo del reproductor, el clip vigente se lee `Clip 0:05 → 0:12`. Si el paso reproduce el archivo completo, ahí dice **Sin clip definido**.
 
 **Previsualizar fragmento** reproduce el clip solo, para que veas exactamente lo que le va a llegar al público sin tener que aguantar el resto del archivo.
 
