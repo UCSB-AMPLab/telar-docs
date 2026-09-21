@@ -43,7 +43,9 @@ For example, if your spreadsheet has an object with `object_id` = `textile-001`,
 
 ## Supported file formats
 
-- **JPG, PNG, HEIC, WebP, TIFF** — all common image formats work
+- **JPG, PNG, HEIC, WebP, TIFF, GIF, BMP** — all common image formats work
+- **SVG** — vector drawings, maps and diagrams. Telar renders these to images when it builds your site (see below)
+- **PDF** — each page of a document becomes its own zoomable image. See [PDF Documents](/docs/your-content/pdf-documents/)
 - **MP3, OGG, M4A** — audio files are also placed in `telar-content/objects/`
 - Case doesn't matter: `.JPG`, `.png`, `.Tiff` are all fine
 - **Resolution**: Higher is better — at least 2000px on the longest side is recommended for good zoom quality
@@ -51,6 +53,9 @@ For example, if your spreadsheet has an object with `object_id` = `textile-001`,
 
 {: .tip }
 > **iPhone photos work directly.** HEIC photos from iPhones are supported natively — no need to convert them first. Telar converts them to JPEG automatically during tile generation while keeping your originals.
+
+{: .tip }
+> **SVG drawings become images.** When Telar builds the site it renders each SVG to an image 4000 pixels on its longest side and generates the tiles from that. Your original file is kept, but zoom stops at that resolution, so a drawing with very fine detail may look soft at full zoom. If you need more detail, export the drawing to PNG or TIFF at a larger size and upload that instead.
 
 {: .tip }
 > **Naming tip.** Use simple, descriptive IDs without spaces or special characters: `textile-001.jpg`, `ceramic-bowl-blue.jpg`
