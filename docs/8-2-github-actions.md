@@ -106,77 +106,71 @@ Sometimes you need to rebuild without making code changes (e.g., after editing G
 The workflow is defined in `.github/workflows/build.yml`. The following is a simplified outline — the actual file contains caching logic and conditional steps:
 
 ```yaml
-name: Build and Deploy
+name: Build and Deploy Telar Site
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
     inputs:
-      force_audio:
-        description: "Force audio reprocessing"
+      force_iiif:
+        description: 'Force IIIF tile regeneration'
         type: boolean
-        default: false
+        default: true
+      force_audio:
+        description: 'Force audio regeneration'
+        type: boolean
+        default: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v7
 
-      - name: Setup Ruby
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
-          bundler-cache: true
+          ruby-version: '3.2'
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
+      - name: Set up Python
+        uses: actions/setup-python@v7
         with:
-          python-version: 3.9
+          python-version: '3.11'
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
         with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: |
-          bundle install
-          pip install -r requirements.txt
-          npm install
-
-      - name: Fetch Google Sheets (if enabled)
-        run: python3 scripts/fetch_google_sheets.py
-
-      - name: Convert CSVs to JSON
-        run: python3 scripts/csv_to_json.py
-
-      - name: Generate IIIF tiles
-        run: python3 scripts/generate_iiif.py
-
-      - name: Process audio (conditional)
-        run: python3 scripts/process_audio.py
-        # Installs ffmpeg/audiowaveform and processes audio
-        # only when audio files are detected or force_audio is true
+          node-version: '22'
 
       - name: Build JavaScript bundle
-        run: npm run build:js
+      - name: Fetch data from Google Sheets (if enabled)
+      - name: Convert CSV to JSON
+      - name: Generate Jekyll collections
+      - name: Generate search data
+
+      - name: Process audio objects (peaks + clips)
+        # Only when audio files changed, or on a manual run with force_audio;
+        # otherwise the audio data is restored from the cache
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+      - name: Check for destination conflicts
+
+      - name: Generate IIIF tiles into _site
+        # Only when images, objects.csv or _config.yml changed, or on a manual
+        # run with force_iiif; otherwise the tiles are restored from the cache
 
       - name: Encrypt protected stories
-        run: python3 scripts/encrypt_protected_stories.py
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+        uses: actions/deploy-pages@v5
 ```
 
-The `force_audio` input lets you reprocess audio files even when the cache is current. Select it in the **Run workflow** dropdown when you need to regenerate waveform data or re-extract clips.
+On a manual run, the **force_iiif** and **force_audio** checkboxes decide whether IIIF tiles and audio are regenerated. Both are ticked by default. Untick one to take that part from the cache instead, and the build finishes sooner.
 
 ## Build Status
 
@@ -204,6 +198,19 @@ The `force_audio` input lets you reprocess audio files even when the cache is cu
 - Check CSV file for syntax errors
 - Ensure all required columns are present
 - Verify no special characters breaking CSV format
+
+### Spreadsheet Refused
+
+**Error:** `Two columns in this spreadsheet mean the same thing: ...` (fails at the "Convert CSV to JSON" step; the message names the file)
+
+**Solution:**
+- Two of the sheet's headers name the same field, for example `medium` and `medium_genre`, or `privado` and `protected`. Keep one of each pair, delete the other, and rebuild.
+- If you edit your site in the Compositor, publish it again from there instead of editing the file.
+
+**Error:** `This spreadsheet has a column Telar uses for itself: '_metadata'` (fails at the same step)
+
+**Solution:**
+- Rename the `_metadata` column and rebuild. Telar keeps that name for its own use: if a row has anything in that column, Telar reads it as its own data and leaves the row off the published site.
 
 ### IIIF Generation Error
 
@@ -235,14 +242,14 @@ The `force_audio` input lets you reprocess audio files even when the cache is cu
 
 ### Private Story Build Failure
 
-**Error:** `story/stories are marked protected but no story_key is set` (fails at the "Convert CSVs
+**Error:** `story/stories are marked protected but no story_key is set` (fails at the "Convert CSV
 to JSON" step)
 
 **Solution:**
 - Add `story_key: yourkey` to `_config.yml`, or remove `private: yes` from the story
 
 **Error:** `story/stories are marked protected, but .github/workflows/build.yml does not run
-scripts/encrypt_protected_stories.py` (fails at the "Convert CSVs to JSON" step)
+scripts/encrypt_protected_stories.py` (fails at the "Convert CSV to JSON" step)
 
 **Solution:**
 - Your build workflow predates v1.6.0's private-story encryption step. See [Upgrading Telar: v1.6.0
