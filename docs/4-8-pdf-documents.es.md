@@ -57,6 +57,24 @@ Los PDF se comportan de manera diferente según el contexto:
 
 - **Historias** muestran una página a la vez. Cada paso de la historia especifica qué página mostrar usando la columna `pagina` en tu hoja de cálculo. El visor amplía las coordenadas que configuraste para esa página, igual que lo hace con una fotografía.
 
+## Enlazar a una página del documento
+
+Para llevar a alguien directo a una página concreta de un documento, abre la página del objeto, ve a esa página con los controles de navegación y copia la URL de la barra de direcciones. La URL termina en `?page=` y el número de página:
+
+```
+/objects/leyes-nuevas/?page=3
+```
+
+Esa URL abre la página del objeto en la página indicada. Los números de página empiezan en 1, igual que en la columna `pagina`.
+
+Mientras quien visita pasa las páginas, la URL del navegador cambia para indicar la página que tiene en pantalla, así que también puede copiarla y compartirla.
+
+Si el número es mayor que el total de páginas, se abre la última. Si el valor no es un número entero, se abre la página 1.
+
+Funciona igual con cualquier objeto de varias páginas, incluidos los que vienen de un manifiesto IIIF de varias páginas.
+
+Puedes usar esta URL en cualquier enlace del sitio, por ejemplo en una entrada del glosario o en un panel.
+
 ## Usar PDF en historias
 
 Para hacer referencia a una página específica de un PDF en un paso de la historia, agrega una columna `pagina` a tu hoja de cálculo. El valor es el número de página (comenzando desde 1).

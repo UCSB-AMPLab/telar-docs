@@ -57,6 +57,24 @@ PDFs behave differently depending on the context:
 
 - **Stories** show one page at a time. Each story step specifies which page to display using the `page` column in your spreadsheet. The viewer zooms to the coordinates you set for that page, just like it does for a photograph.
 
+## Linking to a page
+
+To send someone straight to a particular page of a document, open the object page, go to that page with the page navigation controls, and copy the address from your browser's address bar. It ends in `?page=` and the page number:
+
+```
+/objects/new-laws/?page=3
+```
+
+That address opens the object page at that page. Page numbers start at 1, as in the `page` column.
+
+As a visitor turns pages, the address in the browser changes to show the page on screen, so they can copy it and share it too.
+
+If the number is larger than the number of pages, the last page opens. If the value isn't a whole number, page 1 opens.
+
+This works the same way for any multi-page object, including one from a multi-page IIIF manifest.
+
+You can use this address in any link on your site, for example in a glossary entry or a panel.
+
 ## Using PDFs in stories
 
 To reference a specific page of a PDF in a story step, add a `page` column to your story spreadsheet. The value is the page number (starting from 1).
