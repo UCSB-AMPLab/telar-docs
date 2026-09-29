@@ -30,7 +30,7 @@ Defines step-by-step navigation and panel content for each story.
 | `object` | `objeto` | Yes | Object ID from objects.csv |
 | `x` | `x` | Yes | Horizontal coordinate (0-1 normalized) |
 | `y` | `y` | Yes | Vertical coordinate (0-1 normalized) |
-| `zoom` | `zoom` | Yes | Zoom level (0-1 normalized) |
+| `zoom` | `zoom` | Yes | Zoom level: 1 shows the whole object; higher values move closer |
 | `page` | `pagina` | No | Which page of a multi-page object this step shows (the first page is 1) |
 | `question` | `pregunta` | Yes | Heading displayed in story panel |
 | `answer` | `respuesta` | Yes | Brief answer text |
@@ -76,10 +76,10 @@ Step 1 uses inline content for layer 1, while step 2 uses a file reference. Both
 - Multiple steps can reference the same object
 
 #### x, y, zoom
-- All values normalized 0-1
+- `x` and `y` run from 0 to 1
 - **x**: 0 = left edge, 1 = right edge, 0.5 = center
 - **y**: 0 = top edge, 1 = bottom edge, 0.5 = center
-- **zoom**: 0 = zoomed out (full image), 1 = maximum zoom
+- **zoom**: 1 shows the whole object beside the text card. Higher values move closer, with the point at `x` and `y` in the middle of the view: 2 shows about half as much of the object, 4 about a quarter. Below 1, down to 0.1, the whole object is shown smaller, with space around it. At 1 or below, the object is centered and `x` and `y` do not move it. If the point is near an edge of the object, the view does not go past that edge, so the point may not be in the middle.
 - Use the coordinate picker on object pages to find values
 
 #### page / pagina

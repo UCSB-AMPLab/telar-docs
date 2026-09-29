@@ -69,11 +69,11 @@ Every step needs:
 
 ### Coordinates
 
-Coordinates tell the viewer where to focus for each step. All values are normalized from 0 to 1:
+Coordinates tell the viewer where to focus for each step. `x` and `y` run from 0 to 1:
 
 - **x** — Horizontal position. 0 = left edge, 0.5 = center, 1 = right edge
 - **y** — Vertical position. 0 = top edge, 0.5 = center, 1 = bottom edge
-- **zoom** — Zoom level. 0 = zoomed out (full image visible), 1 = maximum zoom
+- **zoom** — Zoom level. 1 shows the whole object. Higher values move closer to the point at `x` and `y`: 2 shows about half as much of the object. That point is in the middle of the view, except near an edge, because the view does not go past the edge of the object. Below 1, down to 0.1, the whole object is shown smaller and centered.
 
 To find coordinates, use the **coordinate picker** on any object page: zoom and pan to the region you want, then click the **Copy** buttons to copy the x, y, and zoom values directly into your spreadsheet.
 

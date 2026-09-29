@@ -69,11 +69,11 @@ Cada paso necesita:
 
 ### Coordenadas
 
-Las coordenadas indican al visor dónde enfocar en cada paso. Todos los valores están normalizados de 0 a 1:
+Las coordenadas le indican al visor dónde enfocar en cada paso. Los valores de `x` y `y` van de 0 a 1:
 
 - **x** — Posición horizontal. 0 = borde izquierdo, 0.5 = centro, 1 = borde derecho
 - **y** — Posición vertical. 0 = borde superior, 0.5 = centro, 1 = borde inferior
-- **zoom** — Nivel de zoom. 0 = alejado (imagen completa visible), 1 = zoom máximo
+- **zoom** — Nivel de zoom. Con 1 se ve el objeto completo. Con valores mayores, la vista se acerca al punto que indican `x` y `y`: con 2 se ve más o menos la mitad del objeto. Ese punto queda en el centro de la vista, salvo cerca de un borde, porque la vista no pasa del borde del objeto. Con valores menores que 1, hasta 0.1, el objeto completo se ve más pequeño y centrado.
 
 Para encontrar coordenadas, usa el **selector de coordenadas** en cualquier página de objeto: amplía y desplázate hasta la región que deseas, luego haz clic en los botones **Copy** para copiar los valores x, y y zoom directamente a tu hoja de cálculo.
 

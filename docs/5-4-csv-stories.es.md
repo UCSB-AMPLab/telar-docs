@@ -30,7 +30,7 @@ Define la navegación paso a paso y el contenido de paneles para cada historia.
 | `object` | `objeto` | Sí | ID de objeto del objects.csv |
 | `x` | `x` | Sí | Coordenada horizontal (0-1 normalizada) |
 | `y` | `y` | Sí | Coordenada vertical (0-1 normalizada) |
-| `zoom` | `zoom` | Sí | Nivel de zoom (0-1 normalizado) |
+| `zoom` | `zoom` | Sí | Nivel de zoom: con 1 se ve el objeto completo; con valores mayores, la vista se acerca |
 | `page` | `pagina` | No | Página que se muestra en este paso, en objetos de múltiples páginas (la primera es 1) |
 | `question` | `pregunta` | Sí | Encabezado mostrado en el panel de la historia |
 | `answer` | `respuesta` | Sí | Texto de respuesta breve |
@@ -76,10 +76,10 @@ El paso 1 usa contenido en línea para la capa 1, mientras que el paso 2 usa una
 - Varios pasos pueden hacer referencia al mismo objeto
 
 #### x, y, zoom
-- Todos los valores normalizados de 0 a 1
+- `x` y `y` van de 0 a 1
 - **x**: 0 = borde izquierdo, 1 = borde derecho, 0.5 = centro
 - **y**: 0 = borde superior, 1 = borde inferior, 0.5 = centro
-- **zoom**: 0 = alejado (imagen completa), 1 = zoom máximo
+- **zoom**: con 1 se ve el objeto completo junto a la tarjeta de texto. Con valores mayores, la vista se acerca y el punto que indican `x` y `y` queda en el centro: con 2 se ve más o menos la mitad del objeto y con 4, una cuarta parte. Con valores menores que 1, hasta 0.1, el objeto completo se ve más pequeño y con espacio alrededor. Con 1 o menos, el objeto queda centrado y `x` y `y` no lo mueven. Si el punto está cerca de un borde del objeto, la vista no pasa de ese borde, así que el punto puede no quedar en el centro.
 - Usa el selector de coordenadas en las páginas de objetos para encontrar los valores
 
 #### page / pagina
