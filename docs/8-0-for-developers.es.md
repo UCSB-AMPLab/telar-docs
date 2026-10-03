@@ -18,9 +18,9 @@ Esta sección está diseñada para:
 - **Desarrolladores** que construyen funcionalidades o arreglan errores en Telar
 - **Mantenedores** de versiones fork de Telar para instituciones específicas
 - **Colaboradores** que quieren entender la arquitectura de Telar
-- **Usuarios avanzados** solucionando problemas de compilación o personalizando el framework
+- **Usuarios avanzados** que resuelven problemas de compilación o personalizan Telar
 
-Si eres un narrador creando contenido para un sitio Telar, probablemente necesitas las secciones principales de documentación en su lugar.
+Si estás creando el contenido de un sitio de Telar, lo que probablemente necesitas son las secciones principales de la documentación.
 
 ---
 
@@ -30,7 +30,7 @@ Si eres un narrador creando contenido para un sitio Telar, probablemente necesit
 Configura tu entorno de desarrollo, ejecuta compilaciones localmente y prueba cambios antes de desplegar.
 
 ### [8.2 GitHub Actions](/guia/desarrolladores/github-actions/)
-Entiende el flujo de trabajo automatizado de compilación de Telar y cómo personalizar el pipeline de despliegue.
+Entiende el flujo de trabajo automatizado de compilación de Telar y cómo personalizar el *pipeline* de despliegue.
 
 ### [8.3 Arquitectura del sistema de demos](/guia/desarrolladores/sistema-demos/)
 Aprende cómo funciona el sistema de obtención de contenido de demostración, desde el emparejamiento de versiones hasta la integración de paquetes.
@@ -72,6 +72,6 @@ Telar es código abierto y recibe contribuciones con gusto. Antes de contribuir:
 
 ## Enlaces rápidos
 
-- [Documentación Principal](/guia/) - Documentación para narradores
-- [Referencia de Configuración](/guia/configurar/configuracion/) - Todas las opciones de _config.yml
+- [Documentación principal](/guia/) - Documentación para quienes crean contenido
+- [Referencia de configuración](/guia/configurar/configuracion/) - Todas las opciones de _config.yml
 - [Referencia CSV: Proyecto](/guia/tus-datos/csv-proyecto/) - Documentación de columnas CSV

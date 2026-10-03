@@ -21,13 +21,13 @@ Una historia llena la ventana del navegador con un **diseño de tarjetas apilada
 
 El desplazamiento es **continuo con puntos de anclaje magnético**. En lugar de saltar de un paso a otro, el público se desplaza con naturalidad por la historia. La vista se ancla magnéticamente a cada paso, de modo que la tarjeta de texto y la posición del objeto se mantienen sincronizadas.
 
-En dispositivos móviles, las tarjetas de texto se anclan al borde inferior de la pantalla con un efecto de vidrio esmerilado y quedan por encima de la parte baja del visor.
+En los teléfonos y las tabletas en orientación vertical, la tarjeta de texto va anclada al borde inferior de la pantalla, encima de la parte baja del objeto.
 
-![Visor de historia con diseño de tarjetas apiladas y tarjeta de texto sobre el visor IIIF](/images/story-viewer.png)
+![Página de una historia con el diseño de tarjetas apiladas y una tarjeta de texto sobre el visor IIIF](/images/story-viewer.png)
 
 Cada paso:
 
-1. Enfoca el visor en una región específica de un objeto (usando coordenadas x, y y zoom para imágenes, o tiempos de clip para video y audio)
+1. Enfoca una parte específica de un objeto (usando coordenadas x, y y zoom para imágenes, o tiempos de clip para video y audio)
 2. Muestra una **pregunta** y una breve **respuesta** en la tarjeta de texto
 3. Puede ofrecer hasta dos capas adicionales de detalle mediante botones expandibles
 
@@ -63,7 +63,7 @@ Cada paso necesita:
 
 - **`step`** — Número secuencial (1, 2, 3...) sin saltos
 - **`object`** — Un `object_id` de la hoja de cálculo de objetos. Déjalo vacío para crear una [tarjeta de título](#tarjetas-de-título)
-- **`x`**, **`y`**, **`zoom`** — Coordenadas del visor (ver abajo). Se ignoran en tarjetas de título
+- **`x`**, **`y`**, **`zoom`** — El encuadre del paso (ver abajo). Se ignoran en tarjetas de título
 - **`question`** — El encabezado que se muestra en la tarjeta de texto
 - **`answer`** — Una respuesta breve debajo de la pregunta
 
@@ -227,10 +227,10 @@ Los paneles de las historias admiten:
 
 ## Pasos multimedia
 
-Los pasos de una historia pueden hacer referencia a cualquier tipo de objeto — no solo imágenes. Cuando un paso apunta a un objeto de video o audio, el área del visor cambia automáticamente al reproductor correspondiente.
+Los pasos de una historia pueden hacer referencia a cualquier tipo de objeto — no solo imágenes. Cuando un paso apunta a un objeto de video o audio, en lugar del visor de imágenes aparece el reproductor correspondiente.
 
-- **Objetos de video** — El reproductor de video llena el área del visor con controles de reproducción estándar. Consulta [Objetos de video](/guia/tu-contenido/objetos-de-video/) para las plataformas compatibles y la configuración.
-- **Objetos de audio** — El reproductor de audio llena el área del visor con visualización de forma de onda. Consulta [Objetos de audio](/guia/tu-contenido/objetos-de-audio/) para los formatos compatibles y la configuración.
+- **Objetos de video** — El reproductor de video llena la ventana detrás de las tarjetas de texto, con controles de reproducción estándar. Consulta [Objetos de video](/guia/tu-contenido/objetos-de-video/) para las plataformas compatibles y la configuración.
+- **Objetos de audio** — El reproductor de audio llena la ventana detrás de las tarjetas de texto y muestra la forma de onda. Consulta [Objetos de audio](/guia/tu-contenido/objetos-de-audio/) para los formatos compatibles y la configuración.
 
 No se necesita configuración adicional. Telar detecta el tipo de objeto en la hoja de cálculo de objetos y carga el reproductor que corresponde.
 
@@ -286,7 +286,7 @@ El fragmento de la URL usa un formato compacto:
 | `#s3` | Paso 3 |
 | `#s3l1` | Paso 3 con el primer panel de detalle abierto |
 
-Al abrir un enlace profundo, la historia salta directamente al paso codificado y abre el panel si se especificó uno. Esto funciona tanto con la navegación por desplazamiento en escritorio como con la navegación por botones en dispositivos móviles.
+Al abrir un enlace profundo, la historia salta directamente al paso codificado y abre el panel si se especificó uno. Esto funciona tanto con la navegación por desplazamiento como con la navegación por botones.
 
 {: .note }
 > El botón de retroceso del navegador regresa a la página anterior — no al paso anterior. Los enlaces profundos están diseñados para compartir posiciones, no para navegar dentro de una historia.
@@ -306,14 +306,14 @@ Las historias siguen accesibles en sus URL — solo se ocultan las tarjetas de l
 
 ### Ocultar indicadores de paso
 
-Los indicadores **Paso 1**, **Paso 2** de la esquina superior izquierda del visor se pueden ocultar para una vista más despejada:
+Los indicadores **Paso 1**, **Paso 2** de la esquina superior izquierda de la página de la historia se pueden ocultar para una vista más despejada:
 
 ```yaml
 story_interface:
   show_story_steps: false
 ```
 
-El público puede seguir navegando por los pasos con normalidad.
+Quien lee puede seguir navegando por los pasos con normalidad.
 
 ## Véase también
 

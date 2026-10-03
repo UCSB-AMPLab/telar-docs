@@ -183,9 +183,9 @@ Controla si la sección de historias aparece en la página principal:
 
 ### show_story_steps
 
-Controla si el indicador **Step X** aparece en la esquina superior izquierda del visor de historias.
+Controla si el indicador **Step X** aparece en la esquina superior izquierda de la página de la historia.
 
-- **`true` (predeterminado)**: Muestra **Step 1**, **Step 2**, etc. en el visor
+- **`true` (predeterminado)**: Muestra **Step 1**, **Step 2**, etc. en la página de la historia
 - **`false`**: Oculta los indicadores para una experiencia más limpia e inmersiva
 
 Es solo un cambio visual; las personas siguen pudiendo navegar por los pasos normalmente.
@@ -413,7 +413,7 @@ Usa esto solo al probar traducciones o el estilo de mensajes de advertencia.
 
 Controla cómo se precargan los visores de historias para una navegación más fluida:
 
-- **max_viewer_cards** (predeterminado: 8, máximo: 15): Tope del grupo de visores por escena — cantidad máxima de visores en memoria
+- **max_viewer_cards** (predeterminado: 8, máximo: 15): La cantidad máxima de escenas cuyo visor se mantiene cargado; al superarla, se descarga el de la escena más alejada del paso actual
 - **preload_steps** (predeterminado: 6): Pasos a precargar por delante de la posición actual
 - **loading_threshold** (predeterminado: 5): Mostrar el efecto de carga en la introducción si la historia tiene este número o más de visores
 - **min_ready_viewers** (predeterminado: 3): Ocultar el efecto de carga cuando esté lista esta cantidad de visores

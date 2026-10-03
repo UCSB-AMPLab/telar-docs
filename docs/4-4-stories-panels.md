@@ -21,9 +21,9 @@ A story fills the viewport with a **card-stack layout**. The object — whether 
 
 The scroll is **continuous with magnetic waypoints**. Rather than jumping discretely from step to step, viewers scroll naturally through the story. The view snaps magnetically to each step, ensuring the text card and object position stay in sync.
 
-On phones and on tablets held upright, the text card is anchored to the bottom of the screen, over the lower part of the object.
+On phones and tablets held upright, the text card is anchored to the bottom of the screen, over the lower part of the object.
 
-![Story viewer showing card-stack layout with text card over the IIIF viewer](/images/story-viewer.png)
+![Story page showing the card-stack layout, with a text card over the IIIF viewer](/images/story-viewer.png)
 
 Each step:
 

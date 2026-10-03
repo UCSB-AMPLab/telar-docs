@@ -183,9 +183,9 @@ Use this when you want objects on the homepage but prefer stories to be accessed
 
 ### show_story_steps
 
-Controls whether the "Step X" indicator appears in the top-left corner of story viewers.
+Controls whether the "Step X" indicator appears in the top-left corner of the story page.
 
-- **`true` (default)**: Shows "Step 1", "Step 2", etc. in the viewer
+- **`true` (default)**: Shows "Step 1", "Step 2", etc. on the story page
 - **`false`**: Hides the step indicators for a cleaner, more immersive experience
 
 This is purely visual - users can still navigate through steps normally.
