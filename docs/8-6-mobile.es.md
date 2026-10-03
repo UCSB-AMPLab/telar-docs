@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: "8.6. Optimización móvil"
+title: "8.6. Diseños y pantallas pequeñas"
 parent: "8. Para desarrolladores"
 grand_parent: Documentación
 nav_order: 6
@@ -8,292 +8,169 @@ lang: es
 permalink: /guia/desarrolladores/moviles/
 ---
 
-# Optimización móvil
+# Diseños y pantallas pequeñas
 
-Telar incluye una adaptación completa para móviles y tabletas, para que las exhibiciones narrativas funcionen bien en cualquier tamaño de pantalla. En la v1.4.0 reconstruimos el sistema adaptable: ahora se apoya en capas de cascada CSS, un único conjunto de puntos de quiebre y unidades dinámicas de viewport para mantener alturas estables en Safari de iOS.
+La página de una historia tiene dos diseños, horizontal y vertical, y escoge entre ellos según el tamaño y la forma de la ventana, no según el tipo de dispositivo. Esta página explica qué hace cada diseño y cómo se adapta el resto del sitio a las ventanas pequeñas o bajas. Los términos que usa están definidos en [8.7 Vocabulario del motor de historias](/guia/desarrolladores/motor-de-historias/).
 
-## Panorama del diseño adaptable
+## Los dos diseños
 
-Telar aplica un enfoque de diseño centrado primero en móviles con:
+En el diseño horizontal, la tarjeta de texto va al lado del objeto, como tarjeta lateral, y quien lee avanza por la historia desplazándose. En el diseño vertical, la tarjeta de texto va debajo del objeto, como tarjeta inferior, y quien lee avanza con los botones de anterior y siguiente.
 
-- **Diseños fluidos** que se ajustan a cualquier tamaño de pantalla
-- **Navegación optimizada para toque** y gestos
-- **Tipografía optimizada** para la lectura en pantallas pequeñas
-- **Mejoras progresivas** que aprovechan el espacio adicional en pantallas grandes
+La página usa el diseño vertical cuando la ventana cumple alguna de estas condiciones:
 
-## Visor de historias en móviles
+- Mide 1024 px de ancho o menos.
+- Su relación de aspecto es de 3:4 o más angosta, como la de una tableta en orientación vertical, sea cual sea su ancho.
+- Mide 480 px de alto o menos.
+- Mide entre 481 px y 632 px de alto y es demasiado angosta para la tarjeta lateral que esa altura requiere.
 
-La experiencia del visor de historias está especialmente optimizada para dispositivos móviles:
+En cualquier otro caso usa el diseño horizontal. Si la ventana cambia de tamaño, la página vuelve a escoger el diseño.
 
-### Cuándo se activa el diseño vertical
+### La tarjeta de texto
 
-Telar pasa del diseño de escritorio (con la narración superpuesta sobre el visor) al diseño vertical de tarjetas apiladas cuando la ventana mide menos de 1024px de ancho o tiene una relación de aspecto menor que 3:4. Gracias a la condición de relación de aspecto, las tabletas en orientación vertical adoptan el diseño vertical incluso cuando superan los 1024px de ancho.
+En el diseño horizontal, la tarjeta lateral es blanca, va encima del objeto y ocupa entre el 37 % y el 52 % del ancho de la ventana, según la altura de esta. En el diseño vertical, la tarjeta inferior va anclada al borde inferior de la ventana, es blanca y ocupa hasta el 40 % de la altura de la ventana (el 35 % si el objeto es un video o un audio).
 
-### Adaptaciones de diseño
+En una ventana de 480 px de alto o menos, como la de un teléfono en orientación horizontal, la tarjeta vuelve a ponerse al lado del objeto, aunque la página siga en el diseño vertical. Es la tarjeta lateral de poca altura: ocupa el 37 % del ancho de la ventana y, si el texto no cabe en la ventana, se desplaza dentro de la propia tarjeta.
 
-**Tarjetas apiladas a pantalla completa:**
-- **Escritorio**: Tarjetas a pantalla completa con la narración superpuesta sobre el visor
-- **Móvil**: Las tarjetas de texto se anclan en la parte inferior con un efecto de vidrio esmerilado para facilitar la lectura
+El texto también se ajusta al ancho de la tarjeta: cuando esta mide 480 px o menos, y otra vez a los 360 px, se reducen el relleno y la letra.
 
-**Navegación:**
-- **Escritorio**: Botones estándar **Previous**/**Next**
-- **Móvil**: Navegación por botones a través del motor de desplazamiento — no mediante controladores táctiles independientes. Botones más grandes y colocados de forma ergonómica (objetivos táctiles mínimos de 45px)
+### Navegación
 
-**Rotación de tarjetas:**
-La rotación de tarjetas (el efecto de ligero "desorden") se reduce a la mitad en pantallas pequeñas para mejorar la legibilidad.
+La navegación se escoge una sola vez, al cargar la historia:
 
-### Funciones específicas para móviles
+- **Navegación por desplazamiento** (rueda del mouse, panel táctil, pantalla táctil y teclado) en el diseño horizontal.
+- **Navegación por botones** en el diseño vertical, en las historias insertadas y, en iPhone y iPad, en los dos diseños, porque allí el desplazamiento con inercia no es confiable. Los botones de anterior y siguiente son círculos de 66 px fijos en el borde derecho de la ventana, centrados en vertical.
 
-**Carga esquelética** (*skeleton loading*): Al navegar entre pasos en móviles aparece un efecto sutil de brillo mientras se inicializa el visor; ofrece una señal visual de que el contenido se está cargando.
+Como la elección se hace al cargar, una ventana que se abre ancha y luego se angosta conserva la navegación por desplazamiento, y una que se abre angosta y luego se ensancha conserva los botones. El teclado funciona en los dos casos: las flechas, Re Pág y Av Pág, la barra espaciadora, Inicio y Fin.
 
-**Precarga optimizada:**
-- **Escritorio**: Precarga 3 pasos hacia adelante y 2 hacia atrás
-- **Móvil**: Precarga 2 pasos hacia adelante y 2 hacia atrás (precarga más agresiva para una experiencia más fluida)
+En el diseño vertical, el botón para volver se convierte en un ícono redondo de 44 px, el contador de pasos pasa al centro del borde superior y la insignia de créditos se reduce a una sola línea.
 
-**Transiciones más rápidas:** En móviles se usan transiciones solo con fundidos, sin animaciones de deslizamiento, para acelerar la navegación.
+### Carga
 
-### Diseño compacto para ventanas de poca altura
+Los dos diseños cargan los objetos de la misma manera: cargan los visores de los pasos siguientes (tantos como indique `preload_steps`, 6 por defecto) y de los 2 anteriores, sin pasar de `max_viewer_cards`. Consulta [3.2 Configuración](/guia/configurar/configuracion/). Cuando una historia tiene al menos tantos objetos distintos como indica `loading_threshold` (5 por defecto), aparece un brillo de carga mientras cargan los primeros visores; en la navegación por botones también aparece cuando quien lee llega a un objeto que todavía no ha cargado.
 
-En ventanas de poca altura —600px o menos, lo que cubre los teléfonos muy pequeños y la mayoría de los teléfonos en orientación horizontal— Telar aplica un único diseño compacto: reduce los tamaños de letra y ajusta el espaciado en el contenido de la página, la cuadrícula de la colección, los paneles y la navegación. Lo activa únicamente la altura de la ventana, así que se aplica sin importar el ancho.
+## Tamaño de letra compacto
 
-### Safari de iOS y áreas seguras
+En cualquier ventana de 600 px de alto o menos, sea cual sea su ancho, Telar aplica el tamaño de letra compacto: letra más pequeña y espaciado más ajustado en el contenido de las páginas, la galería de objetos, la barra de navegación, los paneles y sus títulos, y los botones de navegación de la historia, que pasan a medir 45 px.
 
-- **Alturas estables en Safari de iOS:** las alturas principales del diseño usan unidades dinámicas de viewport (`dvh`), con `vh` como alternativa, de modo que el diseño ya no salta cuando la barra de direcciones de Safari aparece o se oculta al desplazarse.
-- **Áreas seguras para la muesca:** la insignia de créditos, los botones de navegación en móvil y la tarjeta de texto en móvil dejan libre la muesca y el indicador de inicio del dispositivo; lo verificamos en iPhone en orientación vertical y horizontal.
-- **Hover según el tipo de puntero:** los estilos *hover* se aplican solo en dispositivos con puntero de precisión (`@media (hover: hover) and (pointer: fine)`), de modo que ya no quedan activos después de tocar una pantalla táctil.
-- **Movimiento reducido:** cuando el sistema operativo solicita movimiento reducido, Telar desactiva el desplazamiento suave y las animaciones de panorámica y zoom del visor.
+## Safari de iOS y muescas
 
-## Optimización de paneles
+- **Alturas estables:** las alturas del diseño usan unidades dinámicas de *viewport* (`dvh`), y `vh` en los navegadores que no las admiten, para que el diseño no salte cuando aparece o desaparece la barra de direcciones de Safari.
+- **Áreas seguras de la muesca:** la insignia de créditos, los botones de navegación, la tarjeta inferior y los paneles quedan libres de la muesca y del indicador de inicio del dispositivo.
+- **Estados al pasar el cursor:** solo se aplican en dispositivos con un puntero preciso (`@media (hover: hover) and (pointer: fine)`), para que no queden activos después de tocar una pantalla táctil.
+- **Movimiento reducido:** cuando el sistema operativo pide reducir el movimiento, Telar desactiva el desplazamiento suave y las transiciones de las tarjetas y de los paneles, y la cámara pasa de inmediato a cada encuadre.
 
-Los paneles laterales se adaptan automáticamente a los dispositivos móviles:
+## Paneles
 
-### Ajustes de tamaño
+Los paneles entran desde la derecha en los dos diseños. En el diseño horizontal, el de la capa 1 ocupa el 65 % de la ventana (800 px como máximo), el de la capa 2 el 55 % (750 px como máximo) y el del glosario el 50 % (700 px como máximo); en ventanas de entre 1025 px y 1200 px de ancho ocupan el 80 %, el 75 % y el 70 %. En el diseño vertical ocupan casi todo el ancho (98 %, 96 % y 94 %) y el 76 % de la altura, muestran solo el botón para cerrar y tienen menos relleno.
 
-**Paneles en escritorio:**
-- Capa 1: 40% de ancho
-- Capa 2: 55% de ancho
-- Glosario: 45% de ancho
-
-**Paneles en móviles:**
-- Ancho completo con posicionamiento optimizado
-- Menor padding y márgenes
-- Tamaños de fuente reducidos para mayor densidad de contenido
-
-### Escalado tipográfico
-
-Todo el contenido de los paneles disminuye en móviles:
-- Encabezados: reducción del 15-25%
-- Cuerpo del texto: reducción del 10-15%
-- Interlineado: más compacto para aprovechar la altura disponible
-
-### Interacciones táctiles
-
-- **Objetivo mínimo**: 45px × 45px para cualquier elemento interactivo
-- **Gestos de deslizamiento**: Desliza hacia abajo para cerrar paneles
-- **Zonas táctiles**: Áreas generosas para botones y enlaces
+La letra de los paneles se reduce solo con el tamaño de letra compacto: los títulos pasan de 2 rem a 1,4 rem, el texto de 1,05 rem a 0,9 rem y el interlineado de 1,8 a 1,35.
 
 ## Galería de objetos
 
-La galería de objetos cambia automáticamente a una disposición de una sola columna en móviles (pantallas ≤767px):
-
-**Escritorio**: Cuadrícula de varias columnas
-**Tableta**: Cuadrícula de 2 columnas
-**Móvil**: Lista de una sola columna
-
-Así, las miniaturas y los metadatos siguen siendo legibles en pantallas pequeñas.
+La galería llena el ancho con columnas de por lo menos 250 px. En el diseño vertical muestra dos columnas, y en ventanas de 441 px de ancho o menos, una.
 
 ## Índice del glosario
 
-El listado de términos del glosario ajusta los espaciados en móviles:
+En el diseño vertical, el índice del glosario ajusta el espaciado: los encabezados de cada letra se hacen más pequeños y sus márgenes se reducen en un tercio, y el espacio entre términos se reduce a la mitad.
 
-- Márgenes reducidos (33-50% menos)
-- Encabezados por letra más compactos
-- Objetivos táctiles optimizados para los enlaces de términos
+## Cómo probar el sitio en pantallas pequeñas
 
-## Prueba tu sitio en dispositivos móviles
+### Herramientas de desarrollo del navegador
 
-### Herramientas de desarrollo en el navegador
-
-Utiliza las herramientas de desarrollo del navegador para probar el comportamiento adaptable:
+Con las herramientas de desarrollo del navegador puedes probar distintos tamaños de ventana:
 
 **Chrome:**
 1. Abre **DevTools** (F12)
-2. Haz clic en el ícono de barra de herramientas de dispositivos
-3. Selecciona un preajuste de dispositivo o ingresa dimensiones personalizadas
-4. Prueba distintos tamaños y orientaciones
+2. Haz clic en el ícono de la barra de dispositivos
+3. Escoge un dispositivo predefinido o escribe medidas propias
+4. Prueba las dos orientaciones
 
 **Firefox:**
 1. Abre **DevTools** (F12)
 2. Haz clic en **Responsive Design Mode**
-3. Prueba varios dispositivos
+3. Prueba distintos dispositivos
 
-### Pruebas en dispositivos reales
+Prueba tamaños de ventana a uno y otro lado de los umbrales: 1024 px de ancho, una relación de aspecto de 3:4, y 480 px y 600 px de alto. Recarga la página después de cambiar el tamaño para ver la navegación que tendría quien lea con esa ventana.
 
-Procura probar en hardware real cuando sea posible:
+### Dispositivos reales
 
-- **iOS**: Safari en iPhone (varios tamaños)
-- **Android**: Chrome en diferentes equipos
-- **Tableta**: iPad y tabletas Android
+Cuando puedas, prueba en dispositivos reales:
 
-### Tamaños de pantalla comunes para probar
+- **iOS**: Safari en iPhone y iPad
+- **Android**: Chrome en un teléfono y en una tableta
 
-- **iPhone SE**: 375 × 667px
-- **iPhone 12/13/14**: 390 × 844px
-- **iPhone 12/13/14 Pro Max**: 428 × 926px
-- **iPad**: 768 × 1024px
-- **Samsung Galaxy S**: 360 × 740px
-- **Samsung Galaxy Note**: 412 × 915px
+### Tamaños de pantalla comunes
 
-## Mejores prácticas de contenido para móviles
+- **iPhone SE**: 375 × 667 px
+- **iPhone 12/13/14**: 390 × 844 px
+- **iPhone 12/13/14 Pro Max**: 428 × 926 px
+- **iPad**: 768 × 1024 px
+- **Samsung Galaxy S**: 360 × 740 px
+- **Samsung Galaxy Note**: 412 × 915 px
 
-### Selección de imágenes
+## Contenido para pantallas pequeñas
 
-**Para el visor de historias:**
-- Asegúrate de que las imágenes IIIF tengan suficiente detalle al hacer zoom
-- Verifica que los elementos clave sean visibles en pantallas pequeñas
-- Revisa cómo se ven las coordenadas en los viewports móviles
+### Imágenes
 
-**Para los widgets:**
-- Usa imágenes de tamaño adecuado (evita archivos exageradamente grandes)
-- Mantén las leyendas concisas y legibles
+- Asegúrate de que las imágenes IIIF tengan suficiente detalle al hacer zoom.
+- Revisa que los detalles que señala cada paso se vean en una pantalla pequeña.
+- Comprueba cómo se ven los encuadres en los dos diseños.
 
-### Contenido de texto
+### Texto
 
-**Narrativas de la historia:**
-- Mantén los párrafos cortos (3-5 oraciones)
-- Emplea viñetas y listas para facilitar la lectura rápida
-- Divide secciones largas con subtítulos
+- Escribe respuestas con párrafos cortos (de 3 a 5 oraciones).
+- Usa listas para dividir los pasajes largos.
+- Pon la información esencial en la capa 1 y los detalles complementarios en la capa 2, porque es posible que quien lee en un teléfono no abra todas las capas.
 
-**Contenido de los paneles:**
-- Prioriza la información esencial en la capa 1
-- Mueve los detalles complementarios a la capa 2
-- Ten en cuenta que quienes leen desde el móvil pueden no explorar todas las capas
+### Widgets
 
-### Uso de widgets
+- **Carruseles:** de 3 a 5 imágenes, con leyendas cortas.
+- **Pestañas:** 2 o 3 pestañas con etiquetas cortas; en pantallas angostas la fila de pestañas se desplaza hacia los lados.
+- **Acordeones:** funcionan bien en pantallas pequeñas; usa títulos claros.
 
-Los widgets funcionan bien en móviles, pero sigue estas recomendaciones:
+## Rendimiento
 
-**Carruseles:**
-- Usa máximo 3-5 imágenes para cuidar el rendimiento
-- Mantén las leyendas breves
-- Comprueba que las imágenes tengan dimensiones amigables para móviles
+Quien lee en un teléfono suele tener una conexión lenta o con datos limitados:
 
-**Pestañas:**
-- Limítate a 2-3 pestañas (4 puede sentirse aglomerado en móviles)
-- Usa etiquetas cortas (1-2 palabras)
-
-**Acordeones:**
-- Son ideales para móviles (revelan contenido progresivamente)
-- Usa títulos claros y descriptivos
-- Mantén el contenido de cada panel enfocado
-
-## Optimización de rendimiento
-
-### Optimización de imágenes
-
-**Para imágenes locales:**
-- Comprime antes de subir (objetivo < 2 MB por imagen)
-- Usa formatos adecuados (JPEG para fotos, PNG para gráficos)
-- Deja que las teselas IIIF manejen la carga progresiva
-
-**Para IIIF externo:**
-- Prefiere instituciones con servidores rápidos
-- Prueba la velocidad de carga del manifiesto
-- Considera imágenes alternas para conexiones lentas
-
-### Consideraciones de ancho de banda
-
-Las personas en móviles suelen tener datos limitados o medidos:
-
-- Mantén el peso de la página razonable (< 3 MB por página)
-- Aprovecha la carga progresiva de IIIF
-- Minimiza imágenes innecesarias en los paneles
-
-### Límites de GitHub Pages
-
-Ten presentes los límites de GitHub Pages:
-- 1GB de almacenamiento
-- 100GB de ancho de banda mensual
-- Para sitios móviles con mucho tráfico, evalúa un hosting alterno
+- Comprime las imágenes antes de subirlas (idealmente menos de 2 MB cada una) y deja que las teselas (*tiles*) IIIF se encarguen de la carga progresiva.
+- Escoge fuentes IIIF externas con servidores rápidos y prueba qué tan rápido cargan sus manifiestos.
+- En los paneles, usa solo las imágenes que el texto necesita.
 
 ## Accesibilidad
 
-La optimización móvil incluye consideraciones de accesibilidad:
-
-### Objetivos táctiles
-
-Todos los elementos interactivos cumplen la guía WCAG 2.1 para objetivos táctiles mínimos (44px × 44px; Telar usa 45px × 45px).
-
-### Compatibilidad con lectores de pantalla
-
-- HTML semántico para navegación adecuada
-- Etiquetas ARIA en elementos interactivos
-- Enlaces de salto para navegación con teclado
-
-### Contraste de color
-
-Todos los temas mantienen relaciones de contraste WCAG AA tanto en escritorio como en móvil.
-
-## Limitaciones conocidas
-
-### Navegación de historias en móviles
-
-- Pantallas muy pequeñas (<360px de ancho) pueden sentirse saturadas
-- Algunas coordenadas IIIF complejas pueden requerir ajustes para móviles
-
-### Variaciones entre navegadores
-
-- Safari en iOS tiene políticas estrictas de reproducción automática de medios
-- Algunos navegadores de Android manejan las teselas IIIF de forma distinta
-- Prueba siempre en los dispositivos objetivo
-
-## Mejoras futuras
-
-Planeadas para versiones próximas:
-
-- Navegación por gestos (deslizamiento entre pasos)
-- Mejor soporte en orientación horizontal
-- Capacidades de aplicación web progresiva (PWA)
-- Visualización sin conexión para exposiciones descargadas
+- La mayoría de los controles miden por lo menos 44 × 44 px, el mínimo de WCAG 2.1 para un objetivo táctil; los botones de navegación de la historia miden 66 px, o 45 px con el tamaño de letra compacto.
+- Los botones de navegación y otros controles tienen etiquetas ARIA.
 
 ## Solución de problemas
 
-### Contenido desbordado
+### El contenido se desborda
 
-Si el contenido se desborda en móviles:
-- Revisa si hay elementos de ancho fijo en tu CSS personalizado
-- Verifica que las imágenes tengan `max-width: 100%`
-- Prueba en las herramientas de desarrollo del navegador
+- Revisa si el CSS personalizado tiene elementos de ancho fijo.
+- Asegúrate de que las imágenes tengan `max-width: 100%`.
+- Prueba la página en el modo de diseño adaptable del navegador.
 
 ### La navegación no funciona
 
-Si la navegación falla en móviles:
-- Limpia la caché del navegador
-- Prueba en modo privado/incógnito
-- Revisa la consola de JavaScript en busca de errores
-- Verifica que tu código personalizado no bloquee eventos táctiles
+- Borra la caché del navegador o prueba en una ventana privada.
+- Revisa la consola de JavaScript en busca de errores.
+- Comprueba que ningún código personalizado bloquee los eventos táctiles o de la rueda.
 
-### Rendimiento lento
+### El sitio va lento
 
-Si el sitio se siente lento en móviles:
-- Reduce el tamaño de los archivos de imagen
-- Comprueba los tiempos de respuesta de los manifiestos IIIF
-- Prueba con conexiones lentas (**DevTools** permite limitar la red)
-- Considera reducir el número de pasos en la historia
+- Reduce el tamaño de los archivos de imagen.
+- Revisa qué tan rápido responden los manifiestos IIIF.
+- Simula una conexión lenta en **DevTools**.
 
-## Lista de verificación de pruebas
+## Lista de verificación
 
-Usa esta lista al probar la visualización en móviles:
-
-- [ ] Verifica que la página de inicio cargue y se muestre correctamente
-- [ ] Verifica que la galería de objetos cambie a columna única
-- [ ] Verifica que el visor de historias se muestre y se oculte correctamente
-- [ ] Verifica que los botones de navegación sean fáciles de tocar
-- [ ] Verifica que los paneles se abran y se cierren con fluidez
-- [ ] Verifica que el texto sea legible sin hacer zoom
-- [ ] Verifica que las imágenes carguen y se muestren correctamente
-- [ ] Verifica que los widgets funcionen como se espera
-- [ ] Verifica que los enlaces del glosario funcionen
-- [ ] Verifica que todos los elementos interactivos respondan al toque
-- [ ] Verifica que el sitio funcione en orientación vertical y horizontal
-- [ ] Verifica que el rendimiento sea aceptable en redes 3G
+- [ ] La página de inicio carga y se ve bien
+- [ ] La galería de objetos muestra dos columnas en el diseño vertical, y una en un teléfono angosto
+- [ ] La historia usa el diseño y la navegación esperados en cada tamaño de ventana
+- [ ] Los botones de navegación son fáciles de tocar
+- [ ] Los paneles se abren y se cierran
+- [ ] El texto se lee sin hacer zoom
+- [ ] Las imágenes cargan
+- [ ] Los widgets funcionan
+- [ ] Los enlaces del glosario funcionan
+- [ ] El sitio funciona con el teléfono en orientación vertical y horizontal
+- [ ] El rendimiento es aceptable con una conexión lenta

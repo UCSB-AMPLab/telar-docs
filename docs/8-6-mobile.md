@@ -29,7 +29,7 @@ Otherwise it uses the horizontal layout. The layout follows the window as it is 
 
 In the horizontal layout, the side card is between 37% and 52% of the window's width, set by the window's height, and white, over the object. In the vertical layout, the bottom card is anchored to the bottom of the window and white, up to 40% of the window's height (35% for a video or audio object).
 
-On a window 480px tall or shorter, such as a phone on its side, the card returns to the side of the object while the page stays in the vertical layout: it takes 37% of the window's width and scrolls within itself when its text is longer than the window.
+On a window 480px tall or shorter, such as a phone on its side, the card returns to the side of the object while the page stays in the vertical layout. This is the phone-height side card: it takes 37% of the window's width and scrolls within itself when its text is longer than the window.
 
 The text inside a card also sizes itself to the card: when the card is 480px wide or narrower, and again at 360px, its padding and type get smaller.
 
@@ -48,7 +48,7 @@ In the vertical layout, the back button becomes a 44px round icon, the step coun
 
 Both layouts load objects the same way: the viewers for the next `preload_steps` steps (6 by default) and the previous 2, up to `max_viewer_cards`. See [3.2 Configuration](/docs/configure/configuration/). When a story has `loading_threshold` or more distinct objects (5 by default), a shimmer shows while the first viewers load; in button navigation it also shows when the reader reaches an object that is not ready yet.
 
-## Short Windows
+## Compact Type Size
 
 On any window 600px tall or shorter, whatever its width, Telar uses a compact type size: smaller type and tighter spacing in page content, the objects gallery, the navigation bar, the panels and their titles, and the story's navigation buttons, which become 45px.
 
