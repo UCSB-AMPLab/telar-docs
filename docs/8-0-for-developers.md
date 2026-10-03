@@ -26,17 +26,26 @@ If you're a storyteller creating content for a Telar site, you probably want the
 
 ## What's In This Section
 
-### [7.1 Local Dev Setup](/docs/developers/local-development/)
+### [8.1 Local Dev Setup](/docs/developers/local-development/)
 Set up your development environment, run builds locally, and test changes before deploying.
 
-### [7.2 GitHub Actions](/docs/developers/github-actions/)
+### [8.2 GitHub Actions](/docs/developers/github-actions/)
 Understand Telar's automated build workflow and how to customize the deployment pipeline.
 
-### [7.3 Demo System Architecture](/docs/developers/demo-system/)
+### [8.3 Demo System Architecture](/docs/developers/demo-system/)
 Learn how the demo content fetching system works, from version matching to bundle integration.
 
-### [7.4 Embedding System](/docs/developers/embedding-system/)
+### [8.4 Embedding System](/docs/developers/embedding-system/)
 Technical details of Telar's iframe embedding system and how it handles different contexts.
+
+### [8.5 Advanced Styling](/docs/developers/styling/)
+Customize Telar's styles with custom CSS, CSS variables and cascade layers.
+
+### [8.6 Layouts and Small Screens](/docs/developers/mobile/)
+How the story page chooses between its two layouts, and how the site adapts to small and short windows.
+
+### [8.7 Story Engine Vocabulary](/docs/developers/story-engine/)
+The terms the story engine's code and these docs use for a story's parts, its moves and its layouts.
 
 ---
 
@@ -44,8 +53,8 @@ Technical details of Telar's iframe embedding system and how it handles differen
 
 Telar is open source and welcomes contributions. Before contributing:
 
-1. **Set up local development** (7.1) to test your changes
-2. **Understand the build system** (7.2, 7.3) to see how content is processed
+1. **Set up local development** (8.1) to test your changes
+2. **Understand the build system** (8.2, 8.3) to see how content is processed
 3. **Follow the existing patterns** in the codebase
 4. **Test thoroughly** before submitting pull requests
 
