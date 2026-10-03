@@ -21,13 +21,13 @@ A story fills the viewport with a **card-stack layout**. The object — whether 
 
 The scroll is **continuous with magnetic waypoints**. Rather than jumping discretely from step to step, viewers scroll naturally through the story. The view snaps magnetically to each step, ensuring the text card and object position stay in sync.
 
-On mobile, text cards are anchored to the bottom of the screen with a frosted glass effect, overlaying the lower portion of the viewer.
+On phones and on tablets held upright, the text card is anchored to the bottom of the screen, over the lower part of the object.
 
 ![Story viewer showing card-stack layout with text card over the IIIF viewer](/images/story-viewer.png)
 
 Each step:
 
-1. Focuses the viewer on a specific region of an object (using x, y, and zoom coordinates for images, or clip times for video and audio)
+1. Focuses on a specific part of an object (using x, y, and zoom coordinates for images, or clip times for video and audio)
 2. Displays a **question** and a brief **answer** in the text card
 3. Optionally offers up to two layers of additional detail via expandable buttons
 
@@ -63,7 +63,7 @@ Every step needs:
 
 - **`step`** — Sequential number (1, 2, 3...) with no gaps
 - **`object`** — An `object_id` from your objects spreadsheet. Leave empty to create a [title card](#title-cards)
-- **`x`**, **`y`**, **`zoom`** — Viewer coordinates (see below). Ignored for title cards
+- **`x`**, **`y`**, **`zoom`** — The step's framing (see below). Ignored for title cards
 - **`question`** — The heading displayed in the text card
 - **`answer`** — A brief answer shown below the question
 
@@ -113,7 +113,7 @@ This is automatic — no configuration needed.
 
 ## Layer panels
 
-Each step can carry up to two layers of additional detail, following the QAI pattern (question, answer, invitation). The question and answer appear in the text card itself. The invitation is the set of panel trigger buttons that let viewers open expandable panels for deeper content:
+Each step can carry up to two layers of additional detail, following the QAI pattern (question, answer, invitation). The question and answer appear in the text card itself. The invitation is the set of panel trigger buttons that let readers open expandable panels for deeper content:
 
 | Layer | Default button text | Purpose |
 |-------|-------------------|---------|
@@ -227,10 +227,10 @@ Story panels support:
 
 ## Multimedia steps
 
-Story steps can reference any object type — not just images. When a step references a video or audio object, the viewer area switches automatically to the appropriate player.
+Story steps can reference any object type — not just images. When a step references a video or audio object, the image viewer gives way to the appropriate player.
 
-- **Video objects** — The video player fills the viewer area with standard playback controls. See [Video Objects](/docs/your-content/video-objects/) for supported platforms and setup.
-- **Audio objects** — The audio player fills the viewer area with waveform visualization. See [Audio Objects](/docs/your-content/audio-objects/) for supported formats and setup.
+- **Video objects** — The video player fills the window behind the text cards with standard playback controls. See [Video Objects](/docs/your-content/video-objects/) for supported platforms and setup.
+- **Audio objects** — The audio player fills the window behind the text cards with waveform visualization. See [Audio Objects](/docs/your-content/audio-objects/) for supported formats and setup.
 
 No additional configuration is needed. Telar detects the object type from your objects spreadsheet and loads the correct player.
 
@@ -277,7 +277,7 @@ When a panel is open, keyboard behavior changes: Arrow Up/Down and Page Up/Down 
 
 ## Sharing and deep linking
 
-Telar automatically updates the URL in the browser address bar as viewers scroll through a story. The URL encodes the current step and any open panel layer, so you can copy it and share a link that opens directly to a specific point in the story.
+Telar automatically updates the URL in the browser address bar as readers move through a story. The URL encodes the current step and any open panel layer, so you can copy it and share a link that opens directly to a specific point in the story.
 
 The URL fragment uses a compact format:
 
@@ -286,7 +286,7 @@ The URL fragment uses a compact format:
 | `#s3` | Step 3 |
 | `#s3l1` | Step 3 with the first detail panel open |
 
-When someone opens a deep link, the story jumps directly to the encoded step and opens the panel if one is specified. This works with both desktop scroll navigation and mobile button navigation.
+When someone opens a deep link, the story jumps directly to the encoded step and opens the panel if one is specified. This works with both scroll navigation and button navigation.
 
 {: .note }
 > The browser back button returns to the previous page — not the previous step. Deep links are designed for sharing positions, not for navigating within a story.
@@ -306,14 +306,14 @@ Stories remain accessible at their URLs — only the homepage cards are hidden.
 
 ### Hiding step indicators
 
-The "Step 1", "Step 2" indicators in the top-left corner of the story viewer can be hidden for a cleaner experience:
+The "Step 1", "Step 2" indicators in the top-left corner of the story page can be hidden for a cleaner experience:
 
 ```yaml
 story_interface:
   show_story_steps: false
 ```
 
-Viewers can still navigate through steps normally.
+Readers can still navigate through steps normally.
 
 ## See also
 
