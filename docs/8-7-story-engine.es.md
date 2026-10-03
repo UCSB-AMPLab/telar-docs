@@ -52,17 +52,17 @@ La página de una historia usa uno de estos dos diseños:
 
 La página usa el diseño vertical cuando la ventana cumple alguna de estas condiciones:
 
-- Mide 1024px de ancho o menos.
+- Mide 1024 px de ancho o menos.
 - Su relación de aspecto es de 3:4 o más angosta, como la de una tableta en orientación vertical.
-- Mide 480px de alto o menos.
-- Mide entre 481px y 632px de alto y es demasiado angosta para la tarjeta lateral que esa altura requiere. Estas ventanas se generan en tramos de 8px y se publican en `--telar-vertical-short-windows`.
+- Mide 480 px de alto o menos.
+- Mide entre 481 px y 632 px de alto y es demasiado angosta para la tarjeta lateral que esa altura requiere. Estas ventanas se generan en tramos de 8 px y se publican en `--telar-vertical-short-windows`.
 
 Los términos para las tarjetas y el espacio que las rodea:
 
 - **Tarjeta lateral**: la tarjeta de texto al lado de la lámina en el diseño horizontal. Su ancho depende de la altura de la ventana y se mantiene entre el 37 % y el 52 % del ancho de la ventana: `min(0.52W, max(0.37W, min(718, 1544 − 1.6H)))`, redondeado al píxel.
 - **Tarjeta inferior**: la tarjeta debajo de la lámina en el diseño vertical.
-- **Tarjeta lateral de poca altura**: en el diseño vertical, en una ventana de 480px de alto o menos (un teléfono en orientación horizontal o una ventana de escritorio así de baja), la tarjeta va al lado de la lámina y el navegador la desplaza. El código la detecta con `isPhoneHeightSideCard()`, en `layout-mode.js`. El umbral es `--telar-card-landscape-max-height`, que conserva su nombre anterior.
-- **Tamaño de letra compacto**: letra más pequeña y espaciado más ajustado en cualquier ventana de 600px de alto o menos, sea cual sea su ancho.
+- **Tarjeta lateral de poca altura**: en el diseño vertical, en una ventana de 480 px de alto o menos (un teléfono en orientación horizontal o una ventana de escritorio así de baja), la tarjeta va al lado de la lámina y el navegador la desplaza. El código la detecta con `isPhoneHeightSideCard()`, en `layout-mode.js`. El umbral es `--telar-card-landscape-max-height`, que conserva su nombre anterior.
+- **Tamaño de letra compacto**: letra más pequeña y espaciado más ajustado en cualquier ventana de 600 px de alto o menos, sea cual sea su ancho.
 - **Franja superior**: la franja bajo los controles superiores; las tarjetas se ubican por debajo de ella.
 - **Tope de altura**: la altura máxima que puede tener una tarjeta lateral.
 - **Navegación por botones**: los botones de anterior y siguiente mueven la historia un paso a la vez. Funciona en el diseño vertical, en las historias insertadas y, en iOS, en los dos diseños. Sus botones conservan la clase `.mobile-nav`.
