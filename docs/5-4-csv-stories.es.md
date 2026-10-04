@@ -99,7 +99,7 @@ El paso 1 usa contenido en línea para la capa 1, mientras que el paso 2 usa una
 #### answer / respuesta
 - Respuesta breve que se muestra en la tarjeta de texto, debajo de la pregunta
 - Solo texto corrido. Consulta [Las respuestas son texto corrido](#las-respuestas-son-texto-corrido)
-- Se recorta si pasa de 200 palabras
+- Se recorta si pasa de 18 líneas. Consulta [El límite de las respuestas](#el-límite-de-las-respuestas)
 - Recomendado: 1-2 oraciones
 
 #### Botones de las capas
@@ -235,9 +235,11 @@ Lo que desaparece por completo, junto con el texto que lleve adentro:
 - **Bloques de código**
 - **Líneas divisorias**
 
-### El límite de 200 palabras
+### El límite de las respuestas
 
-Telar recorta toda respuesta de más de 200 palabras y lo anota en la salida del *build*. El corte cae entre palabras y nunca parte un enlace, un término del glosario, un fragmento de código ni una fórmula LaTeX. El texto que sobra no aparece en la historia.
+La respuesta tiene que caber entera en la tarjeta, sin que quien lee tenga que desplazarse. Por eso Telar no la mide en palabras sino en líneas: cuenta 53 caracteres por línea y dos líneas más por cada párrafo después del primero. Una respuesta puede tener hasta 18 líneas y cinco párrafos. En un solo párrafo, eso da para unas 150 palabras; si la divides en párrafos, para menos. Si pasa de 15 líneas, se muestra con letra un poco más pequeña.
+
+Telar recorta toda respuesta que pase del límite y lo anota en la salida del *build*. El corte cae entre palabras y nunca parte un enlace, un término del glosario, un fragmento de código ni una fórmula LaTeX. El texto que sobra no aparece en la historia.
 
 Escribe una o dos oraciones. Cuando necesites más espacio, pasa el detalle a un panel: los paneles admiten todo lo que describe la [Referencia de sintaxis de Markdown](/guia/tu-contenido/sintaxis-markdown/), incluidas las notas al pie, las tablas, las imágenes y los widgets.
 
@@ -248,7 +250,7 @@ Escribe una o dos oraciones. Cuando necesites más espacio, pasa el detalle a un
 **Markdown en los campos**:
 - `layer_content`, `definition`: Admiten Markdown completo
 - `question`: Solo texto plano, sin procesamiento Markdown
-- `answer`: Solo texto corrido y formato en línea; se recorta si pasa de 200 palabras
+- `answer`: Solo texto corrido y formato en línea; se recorta si pasa de 18 líneas
 
 **Contenido de paneles**: Usa referencias a archivos (Método 3) para contenido complejo con widgets. Usa texto en línea (Método 1) para paneles cortos.
 
@@ -265,7 +267,7 @@ Telar valida los datos CSV de historias durante la compilación:
 **Advertencias de historias (el *build* continúa)**:
 - Nombres de columnas no reconocidos (se ignoran)
 - ID de objeto no encontrado en objects.csv
-- Formato quitado de la respuesta de un paso, o respuesta recortada a 200 palabras
+- Formato quitado de la respuesta de un paso, o respuesta recortada a 18 líneas
 
 ## Véase también
 

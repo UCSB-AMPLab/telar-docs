@@ -31,7 +31,7 @@ En el diseño horizontal, la tarjeta lateral es blanca, va encima del objeto y o
 
 En una ventana de 480 px de alto o menos, como la de un teléfono en orientación horizontal, la tarjeta vuelve a ponerse al lado del objeto, aunque la página siga en el diseño vertical. Es la tarjeta lateral de poca altura: ocupa el 37 % del ancho de la ventana y, si el texto no cabe en la ventana, se desplaza dentro de la propia tarjeta.
 
-El texto también se ajusta al ancho de la tarjeta: cuando esta mide 480 px o menos, y otra vez a los 360 px, se reducen el relleno y la letra.
+El texto también se ajusta al ancho de la tarjeta: cuando esta mide 480 px o menos, y otra vez a los 360 px, se reducen el relleno y la letra. Si una respuesta pasa de 15 líneas, la letra baja al 90 % del tamaño que la tarjeta usa para las respuestas, para que una de 18 líneas, el máximo, quepa en la tarjeta lateral sin que haya que desplazarse.
 
 ### Navegación
 

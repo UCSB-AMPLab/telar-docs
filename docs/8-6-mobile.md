@@ -31,7 +31,7 @@ In the horizontal layout, the side card is between 37% and 52% of the window's w
 
 On a window 480px tall or shorter, such as a phone on its side, the card returns to the side of the object while the page stays in the vertical layout. This is the phone-height side card: it takes 37% of the window's width and scrolls within itself when its text is longer than the window.
 
-The text inside a card also sizes itself to the card: when the card is 480px wide or narrower, and again at 360px, its padding and type get smaller.
+The text inside a card also sizes itself to the card: when the card is 480px wide or narrower, and again at 360px, its padding and type get smaller. An answer longer than 15 lines is set at 90% of the card's answer size, so that an answer at the 18-line limit fits the side card without scrolling.
 
 ### Navigation
 

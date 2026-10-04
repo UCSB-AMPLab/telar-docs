@@ -14,7 +14,7 @@ katex: true
 El contenido de los paneles de Telar admite formato Markdown enriquecido. Esta referencia recoge la sintaxis más útil para el texto narrativo.
 
 {: .note }
-> **Esta referencia cubre el contenido de los paneles**: lo que sigue vale para `layer1_content` y `layer2_content`, y para los archivos Markdown que indiquen esas columnas. Los campos `question` y `answer` de un paso funcionan de otra manera. La pregunta es un encabezado, así que va en texto plano, sin procesamiento Markdown. Las respuestas quedan en texto corrido y Telar recorta las que pasan de 200 palabras. Consulta [Las respuestas son texto corrido](/guia/tus-datos/csv-historias/#las-respuestas-son-texto-corrido).
+> **Esta referencia cubre el contenido de los paneles**: lo que sigue vale para `layer1_content` y `layer2_content`, y para los archivos Markdown que indiquen esas columnas. Los campos `question` y `answer` de un paso funcionan de otra manera. La pregunta es un encabezado, así que va en texto plano, sin procesamiento Markdown. Las respuestas quedan en texto corrido y Telar recorta las que pasan de 18 líneas. Consulta [Las respuestas son texto corrido](/guia/tus-datos/csv-historias/#las-respuestas-son-texto-corrido).
 
 ## ¿Qué es Markdown?
 

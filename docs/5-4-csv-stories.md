@@ -99,7 +99,7 @@ Step 1 uses inline content for layer 1, while step 2 uses a file reference. Both
 #### answer / respuesta
 - Brief answer shown in the text card, below the question
 - Plain prose only (see [Answers Are Plain Prose](#answers-are-plain-prose))
-- Cut above 200 words
+- Cut above 18 lines (see [The Answer Limit](#the-answer-limit))
 - Recommended: 1-2 sentences
 
 #### Layer buttons
@@ -235,9 +235,11 @@ Telar removes these completely, along with any text inside them:
 - **Code blocks**
 - **Horizontal rules**
 
-### The 200-Word Limit
+### The Answer Limit
 
-Telar cuts any answer longer than 200 words and reports the cut in the build log. The cut falls on a word boundary, never inside a link, a glossary term, a code span or a LaTeX expression, so your markup never breaks. Text past the cut does not appear on your site.
+An answer has to fit on its card without scrolling. Telar therefore measures it in lines rather than words, counting 53 characters to a line and two lines for each paragraph after the first. An answer can have up to 18 lines and five paragraphs: roughly 150 words in a single paragraph, fewer when you split it into paragraphs. An answer longer than 15 lines is set in slightly smaller type.
+
+Telar cuts any answer over the limit and reports the cut in the build log. The cut falls on a word boundary, never inside a link, a glossary term, a code span or a LaTeX expression, so your markup never breaks. Text past the cut does not appear on your site.
 
 Aim for 1-2 sentences. When you need more room, move the detail into a layer panel: panels take the full markdown of the [Markdown Syntax Reference](/docs/your-content/markdown-syntax/), footnotes, tables, images and widgets included.
 
@@ -248,7 +250,7 @@ Aim for 1-2 sentences. When you need more room, move the detail into a layer pan
 **Markdown in fields**:
 - `layer_content`: Full markdown supported
 - `question`: No markdown processing (plain text only)
-- `answer`: plain prose, inline formatting only, cut above 200 words
+- `answer`: plain prose, inline formatting only, cut above 18 lines
 
 **Panel content**: Use file references (Method 3) for complex content with widgets. Use inline text (Method 1) for short panels.
 
@@ -265,7 +267,7 @@ Telar validates story CSV data during build:
 **Warnings (build succeeds)**:
 - Unrecognized column names (ignored)
 - Object ID not found in objects.csv
-- Formatting removed from a step's answer, or an answer cut at 200 words
+- Formatting removed from a step's answer, or an answer cut at 18 lines
 
 Check build output for validation messages.
 

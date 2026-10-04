@@ -14,7 +14,7 @@ katex: true
 Panel content in Telar supports rich markdown formatting. This reference covers the syntax most useful for narrative content.
 
 {: .note }
-> **This reference covers panel content**: these options apply to `layer1_content` and `layer2_content`, and to the markdown files they point to. A step's `question` and `answer` work differently. The question is a heading, so it is plain text with no markdown processing. Answers are reduced to plain prose, and Telar cuts any answer over 200 words. See [Answers Are Plain Prose](/docs/your-data/csv-stories/#answers-are-plain-prose).
+> **This reference covers panel content**: these options apply to `layer1_content` and `layer2_content`, and to the markdown files they point to. A step's `question` and `answer` work differently. The question is a heading, so it is plain text with no markdown processing. Answers are reduced to plain prose, and Telar cuts any answer over 18 lines. See [Answers Are Plain Prose](/docs/your-data/csv-stories/#answers-are-plain-prose).
 
 ## What is Markdown?
 
