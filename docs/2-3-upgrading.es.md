@@ -187,9 +187,9 @@ La actualización corrige una falla silenciosa en el script que descarga el cont
 
 ### Notas de actualización a v1.2.0
 
-v1.2.0 agrega una tabla de contenido por secciones, un botón de "Volver al inicio" y navegación dentro de la historia. No requiere pasos manuales.
+v1.2.0 agrega una tabla de contenidos por secciones, un botón de "Volver al inicio" y navegación dentro de la historia. No requiere pasos manuales.
 
-Todas las funciones nuevas se activan automáticamente. La tabla de contenido por secciones es opcional en cada historia: agrega `show_sections: yes` a la fila de la historia en `project.csv` (o `mostrar_secciones: si` en los sitios en español) para mostrarla. Los sitios que no tengan esa columna siguen funcionando sin necesidad de cambiar los CSV.
+Todas las funciones nuevas se activan automáticamente. La tabla de contenidos por secciones es opcional en cada historia: agrega `show_sections: yes` a la fila de la historia en `project.csv` (o `mostrar_secciones: si` en los sitios en español) para mostrarla. Los sitios que no tengan esa columna siguen funcionando sin necesidad de cambiar los CSV.
 
 **Si solo usas la interfaz web de GitHub:**
 

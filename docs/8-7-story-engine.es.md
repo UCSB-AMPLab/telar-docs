@@ -33,7 +33,7 @@ Estos términos describen lo que pasa cuando quien lee avanza de un paso al sigu
 
 - **Encuadre**: los valores `x`, `y` y `zoom` que se fijaron para un paso al escribir la historia, en cualquier tipo de lámina.
 - **Cámara**: lo que muestra el visor de una lámina de imagen en un momento dado. Solo las imágenes tienen cámara.
-- **Movimiento**: una transición entre dos pasos. El desplazamiento, la cámara, las tarjetas y las láminas comparten una misma duración, que crece con el recorrido de la cámara: `max(1.2, min(3, 1.33 × S))` segundos, donde S es la longitud del recorrido de zoom y panorámica de la cámara entre los dos encuadres (`camera-travel.js`). Un movimiento sin recorrido de cámara dura los 1,2 segundos de base, igual que los saltos desde el índice o desde un enlace.
+- **Movimiento**: una transición entre dos pasos. El desplazamiento, la cámara, las tarjetas y las láminas comparten una misma duración, que crece con el recorrido de la cámara: `max(1.2, min(3, 1.33 × S))` segundos, donde S es la longitud del recorrido de zoom y panorámica de la cámara entre los dos encuadres (`camera-travel.js`). Un movimiento sin recorrido de cámara dura los 1,2 segundos de base, igual que los saltos desde la tabla de contenidos o desde un enlace.
 - **El desplazamiento de quien lee**: lo que hace quien lee con la rueda del mouse, el panel táctil o el dedo.
 - **Arrastre**: el estado en el que el desplazamiento de quien lee mueve la historia. La página lleva la clase `is-scrubbing`.
 - **Anclaje**: el motor termina un gesto que se detuvo entre dos pasos y lleva la historia al más cercano.
