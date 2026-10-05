@@ -21,7 +21,7 @@ Una historia se arma con estas partes:
 - **Paso**: una fila de la hoja de cálculo de una historia, con una pregunta, una respuesta y un encuadre.
 - **Escena**: los pasos consecutivos sobre un mismo objeto. En pantalla, una escena es una lámina con su pila de tarjetas encima, y sube sobre la escena anterior como una sola pieza. Si la historia vuelve más adelante a un objeto, empieza una escena nueva.
 - **Lámina**: la parte de la escena que ocupa toda la ventana y muestra el objeto. Una lámina de imagen tiene un visor; una de video o de audio tiene un reproductor.
-- **Pila de tarjetas**: las tarjetas de texto de una escena, con la más reciente encima y las anteriores asomándose por arriba. Cada tarjeta pertenece a su escena y se mueve con la lámina de esa escena. El módulo que la construye es `card-pool.js`.
+- **Pila de tarjetas**: las tarjetas de texto de una escena, que pasan una tras otra a medida que la historia avanza de un paso a otro, en lugar de quedar apiladas. El nombre viene de un diseño anterior, en el que las tarjetas se apilaban. Cada tarjeta pertenece a su escena y se mueve con la lámina de esa escena. El módulo que la construye es `card-pool.js`.
 - **Tarjeta de texto**: la tarjeta con la pregunta y la respuesta de un paso.
 - **Tarjeta de título**: un paso sin objeto, que puede ser el título de la historia o el encabezado de una sección.
 - **Visor**: el visor de imágenes (OpenSeadragon) de una lámina de imagen.

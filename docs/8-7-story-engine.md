@@ -21,7 +21,7 @@ A story is built from these parts:
 - **Step**: one row of a story's spreadsheet, holding a question, an answer and a framing.
 - **Scene**: consecutive steps on the same object. On screen, a scene is a plate with its card stack on it, and it rises over the previous scene as one unit. A return to an object later in the story starts a new scene.
 - **Plate**: the full-window part of a scene that shows the object. An image plate holds a viewer; a video or audio plate holds a player.
-- **Card stack**: a scene's text cards, the newest on top and the earlier ones peeking above it. A card belongs to its scene and moves with its scene's plate. The module that builds it is `card-pool.js`.
+- **Card stack**: a scene's text cards, which pass one after another as the story moves from step to step, rather than stacking. The name comes from an earlier design, in which the cards stacked. A card belongs to its scene and moves with its scene's plate. The module that builds it is `card-pool.js`.
 - **Text card**: the card holding a step's question and answer.
 - **Title card**: a step with no object, either the story's title or a section heading.
 - **Viewer**: the image viewer (OpenSeadragon) on an image plate.

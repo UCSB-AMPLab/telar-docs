@@ -165,12 +165,12 @@ Edit reusable components in `_includes/`:
 
 ## Responsive Design
 
-Telar's story layout switches to its vertical, card-stack layout when the viewport is narrower than 1024px or has an aspect ratio narrower than 3:4 (see [Mobile Optimization](/docs/developers/mobile/) for details). When you add responsive rules to your own components, match those breakpoints so your styles change in step with the layout:
+Telar's story layout switches to its vertical layout when the viewport is narrower than 1024px or has an aspect ratio narrower than 3:4 (see [Mobile Optimization](/docs/developers/mobile/) for details). When you add responsive rules to your own components, match those breakpoints so your styles change in step with the layout:
 
 ```scss
-// Vertical (card-stack) layout: narrow width OR portrait-ish aspect ratio.
-// Note: the story layout itself is a full-viewport card-stack, not a
-// split-column layout — these overrides target your own containers.
+// Vertical layout: narrow width OR portrait-ish aspect ratio.
+// Note: the story layout itself fills the viewport rather than
+// splitting into columns; these overrides target your own containers.
 @media (max-width: 1024px), (max-aspect-ratio: 3 / 4) {
   .my-block {
     flex-direction: column;

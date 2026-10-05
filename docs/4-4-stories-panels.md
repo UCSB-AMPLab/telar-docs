@@ -17,13 +17,13 @@ Stories are scrollable narratives built around your objects. Each story guides y
 
 ## How the scroll experience works
 
-A story fills the viewport with a **card-stack layout**. The object — whether an image in the IIIF viewer, a video player, or an audio player — fills the entire background. Text cards are layered on top, and as you scroll, each new card slides over the previous one.
+A story fills the viewport. The object, whether an image in the IIIF viewer, a video player or an audio player, fills the entire background, and as you scroll the text cards pass over it one after another, rather than stacking.
 
 The scroll is **continuous with magnetic waypoints**. Rather than jumping discretely from step to step, viewers scroll naturally through the story. The view snaps magnetically to each step, ensuring the text card and object position stay in sync.
 
 On phones and tablets held upright, the text card is anchored to the bottom of the screen, over the lower part of the object.
 
-![Story page showing the card-stack layout, with a text card over the IIIF viewer](/images/story-viewer.png)
+![Story page with a text card over the IIIF viewer](/images/story-viewer.png)
 
 Each step:
 

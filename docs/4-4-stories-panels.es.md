@@ -17,13 +17,13 @@ Las historias son narrativas que se leen desplazándose y se construyen en torno
 
 ## Cómo funciona la experiencia de desplazamiento
 
-Una historia llena la ventana del navegador con un **diseño de tarjetas apiladas**. El objeto — ya sea una imagen en el visor IIIF, un reproductor de video o un reproductor de audio — ocupa todo el fondo. Las tarjetas de texto se superponen encima y, al desplazarse, cada tarjeta nueva se desliza sobre la anterior.
+Una historia llena la ventana del navegador. El objeto — ya sea una imagen en el visor IIIF, un reproductor de video o uno de audio — ocupa todo el fondo. A medida que se avanza en la historia, las tarjetas de texto pasan por encima una tras otra, en lugar de quedar apiladas.
 
 El desplazamiento es **continuo con puntos de anclaje magnético**. En lugar de saltar de un paso a otro, el público se desplaza con naturalidad por la historia. La vista se ancla magnéticamente a cada paso, de modo que la tarjeta de texto y la posición del objeto se mantienen sincronizadas.
 
 En los teléfonos y las tabletas en orientación vertical, la tarjeta de texto va anclada al borde inferior de la pantalla, encima de la parte baja del objeto.
 
-![Página de una historia con el diseño de tarjetas apiladas y una tarjeta de texto sobre el visor IIIF](/images/story-viewer.png)
+![Página de una historia con una tarjeta de texto sobre el visor IIIF](/images/story-viewer.png)
 
 Cada paso:
 
