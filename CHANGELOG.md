@@ -4,16 +4,30 @@ All notable changes to Telar Documentation will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased]
+## [1.8.0] - 2026-10-04
 
 ### Added
+- Upgrade notes for v1.8.0, in English and Spanish.
+- The answer limit (5-4): how many lines an answer can take, and what the build does with a longer one.
+- A developer page on the story engine's vocabulary (8.7): the terms for a story's parts, its moves, its layouts and what stays loaded.
+- Linking to a page of a PDF with `?page=`, and the `page` column in the story CSV reference.
+- The theme contrast check, for theme authors.
 - A showcase of projects built with Telar, in English at `/showcase/` and in Spanish at `/proyectos/`, with a form for sharing a project at `/showcase/submit/` and `/proyectos/compartir/`. Projects appear only after their authors agree and the submission has been reviewed.
 - A `section` layout for telar.org pages that sit outside the documentation, with the site header and footer but no docs navigation.
 
 ### Changed
+- Layouts and small screens (8.6) rewritten around the two layouts.
+- Text cards described as passing one after another, and "viewer" names only the image viewer.
+- Zoom defined as the viewer uses it: 1 is the whole object, higher values move closer.
+- The GitHub Actions page describes the current workflows and the spreadsheets a build refuses.
+- `related_terms` is separated by a vertical bar.
+- The clip, video and audio controls described as the editor shows them.
 - Documented the full set of file formats self-hosted objects accept. SVG drawings are now supported and are rendered to an image during the build; GIF, BMP and PDF were already accepted but had never been listed.
+- Spanish pages brought in line with the style guide.
 
 ### Fixed
+- The custom-theme recipe and the theme palettes.
+- Ten dead links in the Spanish clip section.
 - Restored the accents in the contributor names and in "código" in the site footer.
 
 ## [1.5.1] - 2026-06-10
