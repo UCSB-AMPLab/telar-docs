@@ -77,6 +77,16 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
+### Notas de actualización a v1.8.0
+
+**Actualiza con el workflow «Upgrade Telar».** Lleva un sitio de v1.7.0 a v1.8.0, y en cadena desde versiones anteriores. Antes de la primera construcción, la actualización corrige las hojas con columnas duplicadas que ahora detendrían la construcción (una columna conserva los valores y las otras quedan vacías) y lista las respuestas que la construcción va a recortar.
+
+**Si tienes tus historias en una hoja de cálculo, revisa la columna que marca una historia como privada.** Si la columna se llamaba `privado` o `protegido`, ten en cuenta que esas historias estuvieron públicas hasta ahora: la próxima construcción las cifra, pero no puede deshacer lo que ya se publicó.
+
+**Copia de nuevo `.github/workflows/build.yml` a mano** desde la plantilla, salvo que actualices con el Compositor de Telar, que lo actualiza por ti. GitHub no permite que el workflow de actualización modifique archivos de workflow, y sin el archivo nuevo, las correcciones de imágenes y de audio de la v1.8.0 no le llegan a tu sitio, y sus construcciones siguen con la versión anterior de Python y de las dependencias. Copiar de nuevo `upgrade.yml` es opcional, y `telar-tests.yml`, que ejecuta las pruebas de Telar, se puede copiar de nuevo o borrar junto con `tests/`, `pytest.ini` y `vitest.config.js`.
+
+**Si tu sitio lee una hoja de Google Sheets**, borra de la hoja las columnas que nombre el resumen de la actualización: la actualización corrigió la copia de la hoja que está en el repositorio, pero cada construcción vuelve a leer la hoja de Google.
+
 ### Notas de actualización a v1.7.0
 
 **Actualizar en GitHub no cambia.** Si usas el flujo de trabajo **"Upgrade Telar"**, ejecútalo como siempre: no hay nada nuevo que hacer.

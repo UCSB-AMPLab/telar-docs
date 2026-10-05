@@ -62,6 +62,16 @@ The upgrade system:
 4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
 5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
+### v1.8.0 Upgrade Notes
+
+**Upgrade with the "Upgrade Telar" workflow.** It takes a site from v1.7.0 to v1.8.0, and chains through from earlier versions. Before your first build, the upgrade repairs a sheet whose duplicate columns would now stop the build (one column holds the values, the others are empty) and lists the answers the build will shorten.
+
+**If you keep your stories in a spreadsheet, check the column that marks a story private.** If it used `privado` or `protegido`, treat those stories as having been public until now: the next build encrypts them, but it cannot undo what was already published.
+
+**Recopy `.github/workflows/build.yml` by hand** from the template, unless you upgrade through the Telar Compositor, which updates it for you. GitHub does not let the upgrade workflow change workflow files, and without the new one the image and audio fixes in v1.8.0 do not reach your site, and its builds stay on the old Python and dependencies. Recopying `upgrade.yml` is optional, and `telar-tests.yml`, which runs Telar's own tests, can be recopied or deleted together with `tests/`, `pytest.ini` and `vitest.config.js`.
+
+**If your site reads a Google Sheet**, delete from the sheet any column the upgrade summary names: the upgrade fixed your local copy, but the build reads the sheet again.
+
 ### v1.7.0 Upgrade Notes
 
 **Upgrading on GitHub is unchanged.** If you use the **Upgrade Telar** workflow, run it as usual — there is nothing new to do.
