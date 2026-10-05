@@ -77,6 +77,16 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
+### Notas de actualización a v1.8.0
+
+**Actualiza con el workflow «Upgrade Telar».** Lleva un sitio de v1.7.0 a v1.8.0, y en cadena desde versiones anteriores. Antes de la primera construcción, la actualización corrige las hojas con columnas duplicadas que ahora detendrían la construcción (una columna conserva los valores y las otras quedan vacías) y lista las respuestas que la construcción va a recortar.
+
+**Si tienes tus historias en una hoja de cálculo, revisa la columna que marca una historia como privada.** Si la columna se llamaba `privado` o `protegido`, ten en cuenta que esas historias estuvieron públicas hasta ahora: la próxima construcción las cifra, pero no puede deshacer lo que ya se publicó.
+
+**Copia de nuevo `.github/workflows/build.yml` a mano** desde la plantilla, salvo que actualices con el Compositor de Telar, que lo actualiza por ti. GitHub no permite que el workflow de actualización modifique archivos de workflow, y sin el archivo nuevo, las correcciones de imágenes y de audio de la v1.8.0 no le llegan a tu sitio, y sus construcciones siguen con la versión anterior de Python y de las dependencias. Copiar de nuevo `upgrade.yml` es opcional, y `telar-tests.yml`, que ejecuta las pruebas de Telar, se puede copiar de nuevo o borrar junto con `tests/`, `pytest.ini` y `vitest.config.js`.
+
+**Si tu sitio lee una hoja de Google Sheets**, borra de la hoja las columnas que nombre el resumen de la actualización: la actualización corrigió la copia de la hoja que está en el repositorio, pero cada construcción vuelve a leer la hoja de Google.
+
 ### Notas de actualización a v1.7.0
 
 **Actualizar en GitHub no cambia.** Si usas el flujo de trabajo **"Upgrade Telar"**, ejecútalo como siempre: no hay nada nuevo que hacer.
@@ -96,7 +106,7 @@ Después de cualquiera de las dos, el `scripts/upgrade.py` de tu sitio es el nue
 
 v1.6.0 cambia la forma en que se construyen las historias privadas. Las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios — pero **si tu sitio tiene alguna historia marcada `private: yes` (o `protected: yes`), tienes que actualizar tu flujo de construcción a mano, o la construcción fallará.**
 
-**Qué incluye:** las historias privadas ahora se generan con las mismas plantillas que las historias abiertas durante la construcción con Jekyll — el markdown, los enlaces de glosario, el LaTeX, los clips de audio y el texto alternativo funcionan al desbloquear una historia privada, igual que en una abierta. El cifrado ahora ocurre como un paso aparte cuando la construcción termina, y no durante ella. La construcción se niega a publicar una historia privada sin cifrar: se detiene temprano si existe una historia privada sin `story_key`, y se detiene de nuevo al final si algo está mal configurado y el flujo de trabajo no ejecuta el nuevo paso de cifrado.
+**Qué incluye:** las historias privadas ahora se generan con las mismas plantillas que las historias abiertas durante la construcción con Jekyll — el Markdown, los enlaces de glosario, el LaTeX, los clips de audio y el texto alternativo funcionan al desbloquear una historia privada, igual que en una abierta. El cifrado ahora ocurre como un paso aparte cuando la construcción termina, y no durante ella. La construcción se niega a publicar una historia privada sin cifrar: se detiene temprano si existe una historia privada sin `story_key`, y se detiene de nuevo al final si algo está mal configurado y el flujo de trabajo no ejecuta el nuevo paso de cifrado.
 
 **Paso manual obligatorio — actualiza tu flujo de construcción de GitHub Actions:**
 
@@ -151,13 +161,13 @@ v1.4.0 es una actualización que solo afecta el código de ejecución del sitio.
 
 **Cambio de visor: OpenSeadragon reemplaza a Tify.**
 
-El visor de imágenes IIIF pasó de Tify (que se cargaba desde un CDN) a un visor propio basado en OpenSeadragon, alojado localmente. Para la mayoría de los sitios esto es imperceptible: las imágenes IIIF se siguen mostrando y ampliando. Si tu sitio tiene un `_sass/_viewer.scss` personalizado que sobrescribía los estilos de Tify, esas reglas quedan sin efecto y puedes eliminarlas, aunque no romperán la *build* si las dejas.
+El visor de imágenes IIIF pasó de Tify (que se cargaba desde un CDN) a un visor propio basado en OpenSeadragon, alojado localmente. Para la mayoría de los sitios esto es imperceptible: las imágenes IIIF se siguen mostrando y ampliando. Si tu sitio tiene un `_sass/_viewer.scss` personalizado que sobrescribía los estilos de Tify, esas reglas quedan sin efecto y puedes eliminarlas, aunque no romperán el *build* si las dejas.
 
 **Archivo de idioma: seis claves nuevas `object.viewer.*`.**
 
 Se agregan seis claves nuevas a los archivos de idioma incluidos (`en.yml` y `es.yml`): `object.viewer.prev_page`, `object.viewer.next_page`, `object.viewer.page_input_label`, `object.viewer.page_input_aria`, `object.viewer.image_unavailable_title` y `object.viewer.image_unavailable_detail`. Estas claves se usan en los controles de paginación para objetos de varias páginas y en la interfaz de error del nuevo visor.
 
-Si tienes un archivo de idioma personalizado (una copia de `en.yml` o `es.yml` con tus propias traducciones), tendrás que agregar estas seis claves a mano después de actualizar; de lo contrario, la paginación y los mensajes de error del visor recurrirán a los textos en inglés incluidos por defecto. Copia los valores del `_data/languages/en.yml` (o `es.yml`) actualizado en el repositorio de Telar y tradúcelos según lo necesites.
+Si tienes un archivo de idioma personalizado (una copia de `en.yml` o `es.yml` con tus propias traducciones), tendrás que agregar estas seis claves a mano después de actualizar; de lo contrario, la paginación y los mensajes de error del visor recurrirán a los textos en inglés incluidos por defecto. En las versiones anteriores a la v1.8.0, cuando faltaban las cuatro claves de paginación, no aparecía nada en su lugar y los controles quedaban sin etiqueta. En esas versiones, la única manera de etiquetarlos es agregar las claves. Copia los valores del `_data/languages/en.yml` (o `es.yml`) actualizado en el repositorio de Telar y tradúcelos según lo necesites.
 
 **Si solo usas la interfaz web de GitHub:**
 
@@ -173,7 +183,7 @@ La migración reescribe cuatro archivos de contenido (`index.md`, `pages/glossar
 
 **Claves de idioma nuevas: `lang.index_page.welcome` y `lang.pages.glossary_intro`.**
 
-Se agregan dos claves nuevas a los archivos de idioma incluidos. Si tienes un archivo de idioma personalizado, no necesitas agregarlas de inmediato (los *layouts* recurren a valores de respaldo), pero agregarlas te da control sobre el texto de bienvenida de la página de inicio y la frase de introducción del glosario en el idioma activo del sitio.
+Se agregan dos claves nuevas a los archivos de idioma incluidos. Si tienes un archivo de idioma personalizado, no necesitas agregarlas de inmediato: desde la v1.8.0, cuando falta una clave, la página muestra el texto en inglés incluido por defecto. Antes de la v1.8.0, el texto no aparecía, así que en esas versiones sí toca agregarlas. Al agregarlas, el texto de bienvenida de la página de inicio y la frase de introducción del glosario quedan en el idioma activo del sitio.
 
 **Si solo usas la interfaz web de GitHub:**
 
@@ -187,9 +197,9 @@ La actualización corrige una falla silenciosa en el script que descarga el cont
 
 ### Notas de actualización a v1.2.0
 
-v1.2.0 agrega una tabla de contenido por secciones, un botón de "Volver al inicio" y navegación dentro de la historia. No requiere pasos manuales.
+v1.2.0 agrega una tabla de contenidos por secciones, un botón de "Volver al inicio" y navegación dentro de la historia. No requiere pasos manuales.
 
-Todas las funciones nuevas se activan automáticamente. La tabla de contenido por secciones es opcional en cada historia: agrega `show_sections: yes` a la fila de la historia en `project.csv` (o `mostrar_secciones: si` en los sitios en español) para mostrarla. Los sitios que no tengan esa columna siguen funcionando sin necesidad de cambiar los CSV.
+Todas las funciones nuevas se activan automáticamente. La tabla de contenidos por secciones es opcional en cada historia: agrega `show_sections: yes` a la fila de la historia en `project.csv` (o `mostrar_secciones: si` en los sitios en español) para mostrarla. Los sitios que no tengan esa columna siguen funcionando sin necesidad de cambiar los CSV.
 
 **Si solo usas la interfaz web de GitHub:**
 
@@ -225,7 +235,7 @@ Si desarrollas localmente, ejecuta `npm install` en el repositorio después de a
 
 **Opcional — soporte de audio:**
 
-Si el sitio incluye objetos de audio, instala `ffmpeg` y `audiowaveform` para la extracción de *clips* y los datos de picos de forma de onda:
+Si el sitio incluye objetos de audio, instala `ffmpeg` y `audiowaveform` para la extracción de clips y los datos de picos de forma de onda:
 
 - **macOS:** `brew install ffmpeg audiowaveform`
 - **Ubuntu:** `sudo apt install ffmpeg audiowaveform`

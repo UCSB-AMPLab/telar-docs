@@ -183,9 +183,9 @@ Use this when you want objects on the homepage but prefer stories to be accessed
 
 ### show_story_steps
 
-Controls whether the "Step X" indicator appears in the top-left corner of story viewers.
+Controls whether the "Step X" indicator appears in the top-left corner of the story page.
 
-- **`true` (default)**: Shows "Step 1", "Step 2", etc. in the viewer
+- **`true` (default)**: Shows "Step 1", "Step 2", etc. on the story page
 - **`false`**: Hides the step indicators for a cleaner, more immersive experience
 
 This is purely visual - users can still navigate through steps normally.
@@ -417,7 +417,7 @@ Use this only when testing translations or warning message styling.
 
 Controls how story viewers are preloaded for smoother navigation:
 
-- **max_viewer_cards** (default: 8, max: 15): Per-scene pool cap — maximum viewers kept in memory
+- **max_viewer_cards** (default: 8, max: 15): The most scenes whose viewer stays loaded; past it, the viewer farthest from the current step is unloaded
 - **preload_steps** (default: 6): Steps to preload ahead of current position
 - **loading_threshold** (default: 5): Show loading shimmer on intro if story has this many or more viewers
 - **min_ready_viewers** (default: 3): Hide shimmer when this many viewers are ready

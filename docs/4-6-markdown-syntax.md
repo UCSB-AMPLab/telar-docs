@@ -11,7 +11,10 @@ katex: true
 
 # Markdown Syntax Reference
 
-Panel content in Telar supports rich markdown formatting. This reference covers all available syntax for creating engaging narrative content.
+Panel content in Telar supports rich markdown formatting. This reference covers the syntax most useful for narrative content.
+
+{: .note }
+> **This reference covers panel content**: these options apply to `layer1_content` and `layer2_content`, and to the markdown files they point to. A step's `question` and `answer` work differently. The question is a heading, so it is plain text with no markdown processing. Answers are reduced to plain prose, and Telar cuts any answer over 18 lines. See [Answers Are Plain Prose](/docs/your-data/csv-stories/#answers-are-plain-prose).
 
 ## What is Markdown?
 
@@ -297,6 +300,8 @@ The textile shows advanced techniques.[^1]
 ```
 
 Footnotes automatically appear at the bottom of panel content with proper styling.
+
+Footnotes work in panel content only. If you put one in a step's `answer`, Telar removes both the reference and the note, and tells you in the build log.
 
 ---
 

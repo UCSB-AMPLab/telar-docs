@@ -10,14 +10,14 @@ permalink: /guia/tu-contenido/contenido-enriquecido/
 
 # Contenido enriquecido con Markdown
 
-Tu sitio está funcionando y tus historias están en la hoja de cálculo. Ahora quieres paneles más ricos — esta guía te muestra cómo agregar archivos markdown para paneles de historias que necesiten más que unos pocos párrafos de texto.
+Tu sitio está funcionando y tus historias están en la hoja de cálculo. Ahora quieres paneles más ricos — esta guía te muestra cómo agregar archivos Markdown para paneles de historias que necesiten más que unos pocos párrafos de texto.
 
 {: .note }
 > Esta guía se construye sobre las guías de configuración. Completa una de las opciones de [Primeros pasos](/guia/primeros-pasos/) primero si aún no lo has hecho.
 
-## Cuándo agregar archivos markdown
+## Cuándo agregar archivos Markdown
 
-La hoja de cálculo maneja bien la mayoría de las exposiciones en Telar. Considera agregar archivos markdown cuando necesites:
+La hoja de cálculo maneja bien la mayoría de las exposiciones en Telar. Considera agregar archivos Markdown cuando necesites:
 
 - **Narrativas más extensas** — paneles con varias secciones, encabezados y estructura
 - **Widgets interactivos** — acordeones, paneles con pestañas o carruseles de imágenes

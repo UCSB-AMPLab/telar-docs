@@ -24,9 +24,9 @@ La lista de objetos muestra todos los objetos de tu exhibición como una cuadrí
 
 Los objetos pueden tener uno de tres estados:
 
-- **Ready** — El objeto tiene metadatos y sus teselas (*tiles*) están disponibles. Está listo para usar en historias.
-- **No metadata** — El objeto existe pero le falta información clave como título, creador o descripción. Aún puedes usarlo en historias, pero agregar metadatos mejora tu exhibición.
-- **Tiles missing** — Las teselas IIIF del objeto aún no se han generado. Esto puede ocurrir con imágenes recién subidas que no se han publicado ni procesado en el *build*.
+- **Listo** — El objeto tiene metadatos y sus teselas (*tiles*) ya están generadas. Ya puedes usarlo en las historias.
+- **Sin metadatos** — El objeto existe pero le falta información clave como el título, el creador o la descripción. Aún puedes usarlo en las historias, pero agregar metadatos mejora la exhibición.
+- **Sin teselas** — Las teselas IIIF del objeto aún no se han generado. Esto puede ocurrir con imágenes recién subidas que no se han publicado ni procesado en el *build*.
 
 ### Control de destacados
 
@@ -57,7 +57,7 @@ Los campos de metadatos son:
 
 Puedes agregar objetos de museos, bibliotecas y otras instituciones que publican manifiestos IIIF. El Compositor obtiene la imagen y los metadatos automáticamente.
 
-1. Haz clic en **Add Object** y selecciona la opción IIIF
+1. Haz clic en **Agregar objeto** y selecciona la opción IIIF
 2. Pega la URL del manifiesto en el campo
 3. El Compositor recupera la imagen y completa los metadatos disponibles (título, creador, descripción)
 4. Revisa y ajusta los metadatos según sea necesario
@@ -70,7 +70,7 @@ Puedes agregar objetos de museos, bibliotecas y otras instituciones que publican
 
 Puedes subir tus propias imágenes directamente a través del Compositor. Las imágenes subidas se confirman en tu repositorio y las teselas IIIF se generan automáticamente durante el siguiente *build*.
 
-1. Haz clic en **Add Object** y selecciona la opción de subida
+1. Haz clic en **Agregar objeto** y selecciona la opción de subida
 2. Arrastra archivos al área de subida, o haz clic para seleccionar archivos desde tu computador
 3. Completa los metadatos mientras se procesa la subida
 4. Guarda el objeto en tu proyecto
@@ -78,7 +78,7 @@ Puedes subir tus propias imágenes directamente a través del Compositor. Las im
 Los formatos admitidos son JPG, PNG y TIFF, con un tamaño máximo de 25 MB por imagen.
 
 {: .note }
-> Después de subir, el estado del objeto puede mostrar **Tiles missing** hasta que publiques y el *build* de GitHub Actions genere las teselas IIIF. El objeto sigue siendo utilizable en el Compositor — las teselas estarán disponibles en tu sitio en línea después de que se complete el *build*.
+> Después de subir, el estado del objeto puede mostrar **Sin teselas** hasta que publiques y el *build* de GitHub Actions genere las teselas IIIF. El objeto sigue siendo utilizable en el Compositor — las teselas estarán disponibles en tu sitio en línea después de que se complete el *build*.
 
 ## Guardar en el repositorio
 
@@ -90,7 +90,7 @@ Al publicar se confirma un archivo `objects.csv` actualizado en tu repositorio j
 
 Si se agregaron o cambiaron objetos fuera del Compositor — por ejemplo, al editar `objects.csv` directamente o subir imágenes a través de GitHub — puedes reescanear tu repositorio para detectar esos cambios.
 
-1. Haz clic en el botón **Sync**
+1. Haz clic en el botón **Sincronizar desde GitHub**
 2. El Compositor relee tu repositorio y actualiza la lista de objetos
 
 {: .warning }

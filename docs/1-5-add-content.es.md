@@ -77,11 +77,11 @@ Cada historia es una secuencia de pasos. Ya sea que estés agregando filas en un
 | `step` | Número del paso (1, 2, 3...) |
 | `object` | Qué objeto mostrar (el `object_id` de la pestaña de objetos) |
 | `x`, `y`, `zoom` | Dónde enfocar en la imagen — usa `0.5, 0.5, 1.0` como punto de partida |
-| `clip` | Tiempos de inicio y fin para *clips* de video/audio (ej., `00:30-01:15`) |
+| `clip` | Tiempos de inicio y fin para clips de video/audio (ej., `00:30-01:15`) |
 | `question` | El encabezado de este paso (ej., "¿Qué es este textil?") |
 | `answer` | Una respuesta breve de 1-2 oraciones |
 
-Esto es suficiente para crear una historia funcional. Cada paso muestra una imagen (o reproduce un *clip* de video/audio) con una pregunta y respuesta que guían a quien la ve a través de tu narrativa.
+Esto es suficiente para crear una historia funcional. Cada paso muestra una imagen (o reproduce un clip de video/audio) con una pregunta y respuesta que guían a quien la ve a través de tu narrativa.
 
 ## Agrega paneles de detalle
 
@@ -94,7 +94,7 @@ Para los pasos donde quieras compartir más que una respuesta breve, agrega cont
 | `layer1_button` | Texto personalizado del botón (deja en blanco para "Saber más") |
 | `layer2_button` | Texto personalizado del botón (deja en blanco para "Profundizar más") |
 
-Escribe tu texto directamente en la celda. Puedes usar formato básico de markdown: `**negrita**`, `*cursiva*` y encabezados con `##`.
+Escribe tu texto directamente en la celda. Puedes usar formato básico de Markdown: `**negrita**`, `*cursiva*` y encabezados con `##`.
 
 {: .tip }
 > **Mantenlo sencillo**

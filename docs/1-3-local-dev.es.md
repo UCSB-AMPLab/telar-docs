@@ -14,7 +14,7 @@ Trabaja completamente en tu computadora con archivos CSV y un servidor Jekyll lo
 
 ## Descripción general
 
-Este flujo de trabajo te da control total sobre el proceso de compilación. Editas archivos CSV y markdown directamente, previsualizas los cambios al instante y publicas cuando estés listo. Es ideal para:
+Este flujo de trabajo te da control total sobre el proceso de compilación. Editas archivos CSV y Markdown directamente, previsualizas los cambios al instante y publicas cuando estés listo. Es ideal para:
 
 - **Cursos de humanidades digitales** — enseñar control de versiones, sitios estáticos y datos estructurados junto con la creación de contenido
 - **Personas con experiencia técnica** — cualquiera que prefiera editores de texto y la línea de comandos a hojas de cálculo
@@ -119,14 +119,14 @@ Elige una de dos opciones:
 
 ### Paso 2: escribe tu texto narrativo
 
-Crea archivos markdown para las capas de tu historia:
+Crea archivos Markdown para las capas de tu historia:
 
 1. Crea directorio para tu historia:
    ```bash
    mkdir -p telar-content/texts/stories/story1
    ```
 
-2. Crea archivos markdown (ej., `paso1-capa1.md`, `paso1-capa2.md`)
+2. Crea archivos Markdown (ej., `paso1-capa1.md`, `paso1-capa2.md`)
 
 3. Agrega frontmatter y contenido:
    ```markdown
@@ -217,7 +217,7 @@ Conecta tu narrativa a tus objetos:
 
 Mejora tu narrativa con definiciones de términos:
 
-1. Crea archivo markdown en `telar-content/texts/glossary/` (ej., `periodo-colonial.md`)
+1. Crea archivo Markdown en `telar-content/texts/glossary/` (ej., `periodo-colonial.md`)
 
 2. Agrega frontmatter y definición:
    ```markdown

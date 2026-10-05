@@ -16,12 +16,12 @@ Telar includes 5 preset visual themes that can be easily switched via `_config.y
 
 ### Trama (Default)
 
-Telar's visual identity, designed by Adelaida Ávila. Warm terracotta and soft lavender palette.
+Telar's own visual identity, designed by Adelaida Ávila. Terracotta and lavender, with Space Grotesk headings.
 
 **Colors:**
 - Headings: Dark grey `#333333`
-- Links/buttons: Terracotta `#883C36`
-- Panels: Lavender `#C6D0F8`
+- Links and buttons: Terracotta `#883C36`
+- Panels: Lavender `#C6D0F8` and terracotta `#883C36`
 - Glossary: Cream `#FFF6EF`
 
 **Typography:** Space Grotesk headings, Roboto Condensed body.
@@ -30,45 +30,58 @@ Telar's visual identity, designed by Adelaida Ávila. Warm terracotta and soft l
 
 ### Paisajes Coloniales
 
-Earthy tones, inspired by [Colonial Landscapes](https://colonial-landscapes.com)
+Earth and sky, from the [Colonial Landscapes](https://colonial-landscapes.com) project. Slate blue and plum, with Playfair Display headings.
 
 **Colors:**
-- Primary: Terracotta `#c7522a`
-- Secondary: Olive `#5f7351`
-- Accent: Warm brown
+- Headings and buttons: Slate blue `#2c3e50`
+- Links: Saddle brown `#8b4513`
+- Panels: Pale blue `#A8C5D4` and plum `#3d2645`
+- Glossary: Sand `#F5EDE1`
+
+**Typography:** Playfair Display headings, Source Sans Pro body.
 
 **Best for:** Historical narratives, archaeological exhibits.
 
 ### Neogranadina
 
-Bold colours.
+High-contrast green and crimson on charcoal, with IM Fell, a typeface cut from the punches of a seventeenth-century press.
 
 **Colors:**
-- Primary: Burgundy `#8B0000`
-- Secondary: Colonial gold `#D4AF37`
-- Accent: Deep red
+- Headings: Black `#000000`
+- Links: Coral `#D35F3A`
+- Buttons: Charcoal `#2A2F36`
+- Panels: Green `#00b35c` and crimson `#b31235`
+- Glossary: Off-white `#F5F7FA`
 
-**Best for:** Contemporary materials.
+**Typography:** IM Fell DW Pica headings, Mulish body.
+
+**Best for:** Archival materials.
 
 ### Santa Barbara
 
-Inspired by sunset over the ocean.
+Gold and deep navy, in the University of California, Santa Barbara colors. Roboto Serif headings.
 
 **Colors:**
-- Primary: Ocean teal `#2E8B9E`
-- Secondary: Coral `#FF6F61`
-- Accent: Navy blue
+- Headings: Navy `#003660`
+- Links: Teal `#047C91`
+- Buttons: Gold `#FEBC11`
+- Panels: Teal `#047C91` and navy `#003660`
+- Glossary: Stone `#F1EEEA`
+
+**Typography:** Roboto Serif headings, Nunito Sans body.
 
 **Best for:** Greyscale and monochrome images
 
 ### Austin
 
-Formal and subtle.
+The University of Texas at Austin's burnt orange, with sage and stone. Crimson Pro headings.
 
 **Colors:**
-- Primary: Burnt orange `#BF5700`
-- Secondary: Slate blue `#005F86`
-- Accent: Charcoal
+- Headings, links and buttons: Burnt orange `#BF5700`
+- Panels: Blue grey `#9CADB7` and sage `#577565`
+- Glossary: Stone `#D6D2C4`
+
+**Typography:** Crimson Pro headings, Inter body.
 
 **Best for:** Contemporary materials
 
@@ -86,21 +99,36 @@ Commit the change and GitHub Actions will rebuild your site automatically (2-5 m
 
 ### Step 1: Create Theme File
 
-Create a new file at `_data/themes/custom.yml`:
+Create a new file at `_data/themes/custom.yml`. Colors are grouped under `colors.text` and `colors.background`, and fonts under `fonts`:
 
 ```yaml
-# Colors
-primary_color: "#2c3e50"
-secondary_color: "#e74c3c"
-accent_color: "#3498db"
-text_color: "#333333"
-heading_color: "#1a1a1a"
-background_color: "#ffffff"
+name: "My Theme"
 
-# Fonts
-font_headings: "Playfair Display, Georgia, serif"
-font_body: "Source Sans Pro, -apple-system, sans-serif"
+colors:
+  text:
+    heading: "#1a1a1a"        # Headings
+    body: "#333333"           # Body text
+    link: "#883C36"           # Links
+    button: "#FFFFFF"         # Text on buttons
+    panel_layer1: "#333333"   # Text in the first panel
+    panel_layer2: "#FFFFFF"   # Text in the second panel
+    panel_glossary: "#333333" # Text in the glossary panel
+
+  background:
+    button: "#883C36"         # Button background
+    panel_layer1: "#C6D0F8"   # First panel background
+    panel_layer2: "#883C36"   # Second panel background
+    panel_glossary: "#FFF6EF" # Glossary panel background
+
+fonts:
+  headings: "'Playfair Display', Georgia, serif"
+  body: "'Source Sans Pro', -apple-system, sans-serif"
 ```
+
+The quickest start is to copy a shipped theme from `_data/themes/` and change its values. Every key is optional, and Telar uses the Trama value for any you leave out.
+
+{: .warning }
+> Telar reads only the keys shown here. A theme file built from other key names loads without an error and has no effect, and your site renders in the default colors. The build log names the keys Telar looked for and did not find.
 
 ### Step 2: Activate Custom Theme
 
@@ -117,49 +145,60 @@ telar_theme: "custom"
 3. Review your site
 4. Adjust colors and fonts as needed
 
-## Theme Color Variables
+## Theme Color Keys
 
-All themes support these color variables:
+All themes support these color keys:
 
-| Variable | Usage |
-|----------|-------|
-| `primary_color` | Main brand color, buttons, links |
-| `secondary_color` | Accents, secondary buttons |
-| `accent_color` | Highlights, hover states |
-| `text_color` | Body text |
-| `heading_color` | All heading levels |
-| `background_color` | Page background |
+| Key | Usage |
+|-----|-------|
+| `colors.text.heading` | All heading levels |
+| `colors.text.body` | Body text |
+| `colors.text.link` | Links |
+| `colors.text.button` | Text on buttons |
+| `colors.text.panel_layer1` | Text in the first panel |
+| `colors.text.panel_layer2` | Text in the second panel |
+| `colors.text.panel_glossary` | Text in the glossary panel |
+| `colors.background.button` | Button background |
+| `colors.background.panel_layer1` | First panel background |
+| `colors.background.panel_layer2` | Second panel background |
+| `colors.background.panel_glossary` | Glossary panel background |
 
-## Typography Variables
+{: .note }
+> The four keys under `colors.background` are the ones Telar checks for contrast. See [Color Accessibility](#color-accessibility).
+
+## Typography Keys
 
 Control fonts across your site:
 
-| Variable | Usage |
-|----------|-------|
-| `font_headings` | h1-h6, page titles |
-| `font_body` | Paragraphs, lists, general text |
+| Key | Usage |
+|-----|-------|
+| `fonts.headings` | h1-h6, page titles |
+| `fonts.body` | Paragraphs, lists, general text |
 
 ### Font Examples
 
+Both keys sit under `fonts`, and each takes a stack: the font you want, then the fallbacks a browser uses when it cannot load that one.
+
 **Serif headings:**
 ```yaml
-font_headings: "Playfair Display, Georgia, serif"
-font_headings: "Merriweather, Georgia, serif"
-font_headings: "Lora, Georgia, serif"
+fonts:
+  headings: "'Playfair Display', Georgia, serif"
 ```
+Or `'Merriweather', Georgia, serif`, or `'Lora', Georgia, serif`.
 
 **Sans-serif headings:**
 ```yaml
-font_headings: "Montserrat, Helvetica, sans-serif"
-font_headings: "Raleway, Arial, sans-serif"
+fonts:
+  headings: "'Montserrat', Helvetica, sans-serif"
 ```
+Or `'Raleway', Arial, sans-serif`.
 
 **Body fonts:**
 ```yaml
-font_body: "Source Sans Pro, sans-serif"
-font_body: "Open Sans, Helvetica, sans-serif"
-font_body: "Crimson Text, Georgia, serif"
+fonts:
+  body: "'Source Sans Pro', sans-serif"
 ```
+Or `'Open Sans', Helvetica, sans-serif`, or `'Crimson Text', Georgia, serif`.
 
 ## Using Google Fonts
 
@@ -172,7 +211,8 @@ To use fonts not included by default:
    ```
 3. Reference in theme file:
    ```yaml
-   font_headings: "Your Font, serif"
+   fonts:
+     headings: "'Your Font', serif"
    ```
 
 ## Theme Creator Attribution
@@ -300,17 +340,47 @@ No attribution will appear in the footer.
 
 ## Color Accessibility
 
-When creating custom themes, ensure good contrast:
+Every theme pairs a text color with a background: `colors.text.panel_layer1` sits on `colors.background.panel_layer1`, and so on. When the two are too close in brightness, the text is hard to read.
 
-- **Text on background**: Minimum 4.5:1 contrast ratio
-- **Large text (18px+)**: Minimum 3:1 contrast ratio
-- **Interactive elements**: Must be distinguishable
+### How Telar Checks Your Colors
+
+During the build, Telar works out a text color that reaches a contrast ratio of 4.5:1 on each of four backgrounds: `button`, `panel_layer1`, `panel_layer2` and `panel_glossary`. That is the WCAG AA level for normal-size text.
+
+Telar also works out the text color for `colors.text.heading` where that color is used as a background, such as the active filter chips on the objects page. You do not set that text color in the theme file, so Telar replaces nothing of yours there.
+
+Your own color comes first. Telar keeps it whenever it reaches 4.5:1, so a theme whose colors all pass renders exactly as you wrote it. Only when your color falls short does Telar look further, in this order:
+
+1. Your `colors.text.heading` or `colors.text.button`, whichever has the higher contrast on that background
+2. White or black, whichever has the higher contrast
+
+### When Telar Replaces a Color
+
+Telar prints one line in the build log for each color it replaces:
+
+```
+Theme "santa-barbara": colors.text.button is #FFFFFF, a contrast ratio of 1.69:1 on its #FEBC11 background, below the 4.5:1 that text needs. Telar used #003660 instead, 7.32:1. To keep your own color, choose a lighter or darker colors.background.button.
+```
+
+A theme whose colors all pass prints nothing. To keep the color you wanted, change the background rather than the text.
+
+### What Telar Does Not Check
+
+These are still yours to get right:
+
+- **Body text on the page background**
+- **Link colors** (`colors.text.link`)
+- **Large text (18px+)**, which needs 3:1 rather than 4.5:1
+- **Interactive elements**, which must stay distinguishable
 
 Use tools like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) to verify.
 
+### Colors Telar Cannot Read
+
+Telar only reads hex colors, like `#FFFFFF` or `#FFF`. A named color like `white`, or an `rgb()` value, is left exactly as you wrote it and unchecked, and the build log says so.
+
 ## Theme Fallback
 
-If a custom theme file is missing or has errors, Telar automatically falls back to the **Trama** theme, ensuring your site never breaks.
+If Telar cannot find the theme file named in `_config.yml`, it falls back to the **Trama** theme, so your site never breaks. A file Telar can find is always used, even when none of its keys are ones Telar reads. Each key you have not set takes its Trama value, and the build log says which ones were missing.
 
 ## Next Steps
 

@@ -30,7 +30,8 @@ Defines step-by-step navigation and panel content for each story.
 | `object` | `objeto` | Yes | Object ID from objects.csv |
 | `x` | `x` | Yes | Horizontal coordinate (0-1 normalized) |
 | `y` | `y` | Yes | Vertical coordinate (0-1 normalized) |
-| `zoom` | `zoom` | Yes | Zoom level (0-1 normalized) |
+| `zoom` | `zoom` | Yes | Zoom level: 1 shows the whole object; higher values move closer |
+| `page` | `pagina` | No | Which page of a multi-page object this step shows (the first page is 1) |
 | `question` | `pregunta` | Yes | Heading displayed in story panel |
 | `answer` | `respuesta` | Yes | Brief answer text |
 | `layer1_button` | `boton_capa1` | No | Custom button text (empty = "Learn more") |
@@ -75,20 +76,30 @@ Step 1 uses inline content for layer 1, while step 2 uses a file reference. Both
 - Multiple steps can reference the same object
 
 #### x, y, zoom
-- All values normalized 0-1
+- `x` and `y` run from 0 to 1
 - **x**: 0 = left edge, 1 = right edge, 0.5 = center
 - **y**: 0 = top edge, 1 = bottom edge, 0.5 = center
-- **zoom**: 0 = zoomed out (full image), 1 = maximum zoom
+- **zoom**: 1 shows the whole object beside the text card. Higher values move closer, with the point at `x` and `y` in the middle of the view: 2 shows about half as much of the object, 4 about a quarter. Below 1, down to 0.1, the whole object is shown smaller, with space around it. At 1 or below, the object is centered and `x` and `y` do not move it. If the point is near an edge of the object, the view does not go past that edge, so the point may not be in the middle.
 - Use the coordinate picker on object pages to find values
 
+#### page / pagina
+- Only for objects with more than one page: a PDF hosted on your site, or an external IIIF manifest with several images
+- Pages are numbered from 1
+- `x`, `y` and `zoom` frame the page this column selects, not the document as a whole
+- Leave it empty for single-image objects
+- A value that is not a whole number of 1 or more is ignored, and the build says which step it came from
+- See [PDF Documents](/docs/your-content/pdf-documents/) and [External IIIF Images](/docs/your-content/external-iiif/)
+
 #### question / pregunta
-- Displayed as panel heading
+- Displayed as the heading of the text card
+- No markdown processing (plain text only)
 - Brief question or statement
 - Recommended: 3-8 words
 
 #### answer / respuesta
-- Brief answer shown in panel
-- Teaser for layer 1 content
+- Brief answer shown in the text card, below the question
+- Plain prose only (see [Answers Are Plain Prose](#answers-are-plain-prose))
+- Cut above 18 lines (see [The Answer Limit](#the-answer-limit))
 - Recommended: 1-2 sentences
 
 #### Layer buttons
@@ -144,7 +155,7 @@ Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, ente
 - Start and end times in seconds for video and audio objects (e.g., `12.5`, `65`)
 - Ignored for image objects
 - Leave both empty to play the full media file
-- You can set clip values visually using the [Compositor's clip capture interface](/docs/the-compositor/video-audio/)
+- You can set clip values visually in the [Compositor](/docs/the-compositor/video-audio/)
 
 #### loop / bucle
 - **New in v1.0.0**
@@ -178,6 +189,7 @@ Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, ente
 | `x` | `x` |
 | `y` | `y` |
 | `zoom` | `zoom` |
+| `page` | `page`, `pagina`, `página` |
 | `question` | `question`, `pregunta` |
 | `answer` | `answer`, `respuesta` |
 | `layer1_button` | `layer1_button`, `boton_capa1` |
@@ -194,13 +206,51 @@ Save markdown files in `telar-content/texts/stories/`. In your spreadsheet, ente
 {: .note }
 > The `layer_file` / `archivo_capa` column names are backward-compatible aliases from before v0.6.3. The preferred names are `layer_content` / `contenido_capa`.
 
+## Answers Are Plain Prose
+
+The `answer` field appears in the text card beside your object, under the question. On desktop that card is a fixed size and does not scroll, so anything past its edge never reaches your readers.
+
+To keep answers readable, Telar reduces every answer to plain prose during the build, and reports each change it makes in the build log.
+
+These work in an answer and appear as you wrote them:
+
+- **Paragraph breaks**
+- **Bold and italics**
+- **Inline links**
+- **Glossary links**, written `[[term]]`
+- **Inline LaTeX**
+- **Code spans**
+
+Telar keeps the words of these but drops the formatting:
+
+- **Lists**, both bulleted and numbered
+- **Headings**
+- **Blockquotes**
+
+Telar removes these completely, along with any text inside them:
+
+- **Images and embeds**, both markdown image syntax and the `img`, `iframe`, `video`, `audio`, `embed` and `object` elements
+- **Footnotes**, the reference and the note alike
+- **Tables**
+- **Code blocks**
+- **Horizontal rules**
+
+### The Answer Limit
+
+An answer has to fit on its card without scrolling. Telar therefore measures it in lines rather than words, counting 53 characters to a line and two lines for each paragraph after the first. An answer can have up to 18 lines and five paragraphs: roughly 150 words in a single paragraph, fewer when you split it into paragraphs. An answer longer than 15 lines is set in slightly smaller type.
+
+Telar cuts any answer over the limit and reports the cut in the build log. The cut falls on a word boundary, never inside a link, a glossary term, a code span or a LaTeX expression, so your markup never breaks. Text past the cut does not appear on your site.
+
+Aim for 1-2 sentences. When you need more room, move the detail into a layer panel: panels take the full markdown of the [Markdown Syntax Reference](/docs/your-content/markdown-syntax/), footnotes, tables, images and widgets included.
+
 ## Data Entry Tips
 
 **Coordinates**: Use the coordinate picker on object pages to find x, y, zoom values and copy them directly into your CSV.
 
 **Markdown in fields**:
 - `layer_content`: Full markdown supported
-- `question`, `answer`: Plain text only
+- `question`: No markdown processing (plain text only)
+- `answer`: plain prose, inline formatting only, cut above 18 lines
 
 **Panel content**: Use file references (Method 3) for complex content with widgets. Use inline text (Method 1) for short panels.
 
@@ -217,6 +267,7 @@ Telar validates story CSV data during build:
 **Warnings (build succeeds)**:
 - Unrecognized column names (ignored)
 - Object ID not found in objects.csv
+- Formatting removed from a step's answer, or an answer cut at 18 lines
 
 Check build output for validation messages.
 

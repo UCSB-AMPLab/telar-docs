@@ -202,7 +202,7 @@ A partir de v0.6.0, las demos se entregan como un solo archivo JSON:
 ```
 
 **Inclusión de Contenido:**
-- `layer1_content`, `layer2_content` incluyen markdown completo
+- `layer1_content`, `layer2_content` incluyen Markdown completo
 - No hay referencias de archivo para resolver
 - El contenido está pre-procesado y listo para fusionar
 
@@ -281,7 +281,7 @@ El contenido de demos pasa por el pipeline de procesamiento completo:
 
 1. **Widgets**: Sintaxis de acordeón, pestañas, carrusel convertida
 2. **Dimensionamiento de imágenes**: Imágenes de panel procesadas para dimensiones
-3. **Markdown**: Conversión completa de markdown a HTML
+3. **Markdown**: Conversión completa de Markdown a HTML
 4. **Enlaces de glosario**: Sintaxis `[term:glossary-term]` convertida
 
 Esto sucede en `csv_to_json.py` después de la fusión.

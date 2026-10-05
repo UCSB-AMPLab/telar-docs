@@ -27,7 +27,7 @@ Cataloga todos los objetos usados en las historias y mostrados en la galería.
 |--------|---------|-----------|-------------|
 | `object_id` | `id_objeto` | Sí | Identificador único (minúsculas, guiones, guiones bajos) |
 | `title` | `titulo` | Sí | Título del objeto |
-| `description` | `descripcion` | No | Descripción extensa (admite markdown) |
+| `description` | `descripcion` | No | Descripción extensa (admite Markdown) |
 | `source_url` | `url_fuente` | No | URL de la imagen IIIF info.json o manifiesto |
 | `creator` | `creador` | No | Nombre del creador o artista |
 | `period` | `periodo` | No | Periodo histórico |
@@ -80,7 +80,7 @@ mapa-lima,Mapa de Lima,Mapa colonial temprano...,Juan de Cuellar,1685,mapa,"cart
 - Formato: minúsculas, guiones, guiones bajos
 
 #### description / descripcion
-- Admite markdown
+- Admite Markdown
 - Se muestra en las páginas de objetos
 - Puede incluir encabezados, listas, enlaces, énfasis
 
@@ -234,19 +234,19 @@ Agrega estas a tu objects.csv si deseas filtrado y ordenación en la galería:
 
 ## Validación
 
-Telar revisa los datos del CSV de objetos durante la *build* y escribe mensajes en la salida de la *build*.
+Telar revisa los datos del CSV de objetos durante el *build* y escribe mensajes en la salida del *build*.
 
-**Lo que revisa la *build***:
+**Lo que revisa el *build***:
 - Las filas con `object_id` vacío se descartan sin aviso.
 - Cada objeto debe tener un `source_url` que apunte a un manifiesto IIIF válido, o una imagen local que coincida en `telar-content/objects/`. Si la fuente falta o no responde, se genera una advertencia y el objeto se escribe de todos modos.
 - Los valores de miniatura que no son rutas de imagen (por ejemplo, "n/a" o "none") se borran y se genera una advertencia.
 - Los `object_id` que contienen espacios generan una advertencia, ya que los espacios pueden causar problemas con las rutas de archivo.
 
-**Lo que la *build* no exige**:
-- Que el `object_id` no falte ni se repita. Un `object_id` ausente o duplicado no detiene la *build*: las filas sin `object_id` se descartan sin mensaje y los identificadores duplicados no se detectan, así que, al generar los archivos de colección, prevalece la última fila.
-- Que haya `title`. Un `title` vacío o ausente no detiene la *build*; el objeto se publica con el título en blanco.
+**Lo que el *build* no exige**:
+- Que el `object_id` no falte ni se repita. Un `object_id` ausente o duplicado no detiene el *build*: las filas sin `object_id` se descartan sin mensaje y los identificadores duplicados no se detectan, así que, al generar los archivos de colección, prevalece la última fila.
+- Que haya `title`. Un `title` vacío o ausente no detiene el *build*; el objeto se publica con el título en blanco.
 
-Todas las advertencias aparecen en la salida de la *build*. Revisa la salida en busca de mensajes marcados con `[WARN]` para detectar problemas en los datos antes de publicar.
+Todas las advertencias aparecen en la salida del *build*. Revisa la salida en busca de mensajes marcados con `[WARN]` para detectar problemas en los datos antes de publicar.
 
 ## Véase también
 

@@ -18,7 +18,7 @@ Define términos de glosario que se pueden enlazar desde los paneles de las hist
 
 **Ubicación**: `telar-content/spreadsheets/glossary.csv`
 
-**Nuevo en v0.8.0.** El formato CSV es el método preferido para los términos de glosario. Los archivos markdown heredados en `telar-content/texts/glossary/` siguen siendo compatibles, pero el CSV tiene precedencia si ambos existen.
+**Nuevo en v0.8.0.** El formato CSV es el método preferido para los términos de glosario. Los archivos Markdown heredados en `telar-content/texts/glossary/` siguen siendo compatibles, pero el CSV tiene precedencia si ambos existen.
 
 ### Columnas
 
@@ -27,7 +27,7 @@ Define términos de glosario que se pueden enlazar desde los paneles de las hist
 | `term_id` | `id_termino` | Sí | Identificador único del término (se usa en la sintaxis de enlaces) |
 | `title` | `titulo` | Sí | Título visible del término |
 | `definition` | `definicion` | No | Texto de la definición del término |
-| `related_terms` | `terminos_relacionados` | No | IDs de términos relacionados, separados por comas |
+| `related_terms` | `terminos_relacionados` | No | IDs de términos relacionados, separados por una barra vertical |
 
 ### Ejemplo
 
@@ -61,10 +61,10 @@ encomienda,Encomienda,"Un sistema de trabajo en la América colonial española, 
 
 #### definition / definicion
 - El texto de la definición mostrado en la entrada del glosario
-- Admite formato markdown básico
+- Admite formato Markdown básico
 
 #### related_terms / terminos_relacionados
-- Lista separada por comas de otros valores `term_id`
+- Otros valores `term_id`, separados por `|` (por ejemplo, `urdimbre|telar`)
 - Se usa para referencias cruzadas entre entradas del glosario
 
 ### Sintaxis de enlace en línea
@@ -81,7 +81,7 @@ El [[loom]] era central para la producción textil.
 El [[loom|dispositivo de tejido]] era central para la producción textil.
 ```
 
-Si el `term_id` no se encuentra en el glosario, un ícono de advertencia y un mensaje de error aparecen en la salida de la *build* y en el panel de la historia.
+Si el `term_id` no se encuentra en el glosario, un ícono de advertencia y un mensaje de error aparecen en la salida del *build* y en el panel de la historia.
 
 ### Alias del CSV de glosario
 
@@ -92,7 +92,7 @@ Si el `term_id` no se encuentra en el glosario, un ícono de advertencia y un me
 | `definition` | `definition`, `definicion`, `definición` |
 | `related_terms` | `related_terms`, `terminos_relacionados`, `términos_relacionados` |
 
-### CSV vs. glosario en markdown
+### CSV vs. glosario en Markdown
 
 | Aspecto | CSV (preferido) | Markdown (heredado) |
 |---------|----------------|-------------------|
@@ -101,7 +101,7 @@ Si el `term_id` no se encuentra en el glosario, un ícono de advertencia y un me
 | Encabezados bilingües | Sí (mediante alias de columnas) | No |
 | Google Sheets | Sí (se obtiene como los demás CSV) | No |
 
-Si existen tanto un CSV como un glosario en markdown, se usa el CSV y se ignoran los archivos markdown (con una advertencia en la *build*).
+Si existen tanto un CSV como un glosario en Markdown, se usa el CSV y se ignoran los archivos Markdown (con una advertencia en el *build*).
 
 ## Validación
 

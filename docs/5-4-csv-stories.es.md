@@ -30,7 +30,8 @@ Define la navegación paso a paso y el contenido de paneles para cada historia.
 | `object` | `objeto` | Sí | ID de objeto del objects.csv |
 | `x` | `x` | Sí | Coordenada horizontal (0-1 normalizada) |
 | `y` | `y` | Sí | Coordenada vertical (0-1 normalizada) |
-| `zoom` | `zoom` | Sí | Nivel de zoom (0-1 normalizado) |
+| `zoom` | `zoom` | Sí | Nivel de zoom: con 1 se ve el objeto completo; con valores mayores, la vista se acerca |
+| `page` | `pagina` | No | Página que se muestra en este paso, en objetos de múltiples páginas (la primera es 1) |
 | `question` | `pregunta` | Sí | Encabezado mostrado en el panel de la historia |
 | `answer` | `respuesta` | Sí | Texto de respuesta breve |
 | `layer1_button` | `boton_capa1` | No | Texto personalizado del botón (vacío = "Saber más") |
@@ -75,20 +76,30 @@ El paso 1 usa contenido en línea para la capa 1, mientras que el paso 2 usa una
 - Varios pasos pueden hacer referencia al mismo objeto
 
 #### x, y, zoom
-- Todos los valores normalizados de 0 a 1
+- `x` y `y` van de 0 a 1
 - **x**: 0 = borde izquierdo, 1 = borde derecho, 0.5 = centro
 - **y**: 0 = borde superior, 1 = borde inferior, 0.5 = centro
-- **zoom**: 0 = alejado (imagen completa), 1 = zoom máximo
+- **zoom**: con 1 se ve el objeto completo junto a la tarjeta de texto. Con valores mayores, la vista se acerca y el punto que indican `x` y `y` queda en el centro: con 2 se ve más o menos la mitad del objeto y con 4, una cuarta parte. Con valores menores que 1, hasta 0.1, el objeto completo se ve más pequeño y con espacio alrededor. Con 1 o menos, el objeto queda centrado y `x` y `y` no lo mueven. Si el punto está cerca de un borde del objeto, la vista no pasa de ese borde, así que el punto puede no quedar en el centro.
 - Usa el selector de coordenadas en las páginas de objetos para encontrar los valores
 
+#### page / pagina
+- Solo para objetos de múltiples páginas: un PDF alojado en tu sitio o un manifiesto IIIF externo con varias imágenes
+- Los números de página comienzan en 1
+- `x`, `y` y `zoom` encuadran la página que indiques en esta columna, no el documento completo
+- Deja la columna vacía para objetos de una sola imagen
+- Si el valor no es un número entero positivo, se ignora y aparece una advertencia que nombra el paso
+- Consulta [Documentos PDF](/guia/tu-contenido/documentos-pdf/) e [Imágenes IIIF externas](/guia/tu-contenido/iiif-externo/)
+
 #### question / pregunta
-- Se muestra como encabezado del panel
+- Se muestra como encabezado de la tarjeta de texto
+- Solo texto plano, sin procesamiento Markdown
 - Pregunta o afirmación breve
 - Recomendado: 3-8 palabras
 
 #### answer / respuesta
-- Respuesta breve mostrada en el panel
-- Anticipo del contenido de la capa 1
+- Respuesta breve que se muestra en la tarjeta de texto, debajo de la pregunta
+- Solo texto corrido. Consulta [Las respuestas son texto corrido](#las-respuestas-son-texto-corrido)
+- Se recorta si pasa de 18 líneas. Consulta [El límite de las respuestas](#el-límite-de-las-respuestas)
 - Recomendado: 1-2 oraciones
 
 #### Botones de las capas
@@ -120,22 +131,22 @@ Para crear saltos de párrafo dentro de una celda:
 
 Puedes usar formato básico: `**negrita**`, `*cursiva*`, `[texto del enlace](url)`, y enlaces de glosario (`[[term-id]]`).
 
-**Método 2: Pegar texto markdown**
+**Método 2: Pegar texto Markdown**
 
 Pega texto escrito en un editor de texto plano. Esto admite la gama completa de características de formato, incluyendo encabezados, widgets (acordeón, carrusel, pestañas), controles de tamaño de imagen y un título de panel personalizado usando frontmatter YAML.
 
 {: .warning }
-> Si copias y pegas desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe con sintaxis markdown en su lugar — consulta la [Guía de Sintaxis Markdown](/guia/tu-contenido/sintaxis-markdown/).
+> Si copias y pegas desde Microsoft Word, Google Docs o aplicaciones similares, el formato **no** se preservará. Escribe con sintaxis Markdown en su lugar — consulta la [Guía de Sintaxis Markdown](/guia/tu-contenido/sintaxis-markdown/).
 
-**Método 3: Indicar un archivo markdown**
+**Método 3: Indicar un archivo Markdown**
 
-Indica la ruta a un archivo markdown en tu repositorio. Esto se recomienda para paneles complejos, especialmente aquellos con widgets o contenido que quieras reutilizar.
+Indica la ruta a un archivo Markdown en tu repositorio. Esto se recomienda para paneles complejos, especialmente aquellos con widgets o contenido que quieras reutilizar.
 
 | contenido_capa1 |
 |----------------|
 | textiles-coloniales/step1-layer1.md |
 
-Guarda los archivos markdown en `telar-content/texts/stories/`. En tu hoja de cálculo, ingresa solo el nombre del archivo — o si organizaste los archivos en subcarpetas, incluye el nombre de la subcarpeta.
+Guarda los archivos Markdown en `telar-content/texts/stories/`. En tu hoja de cálculo, ingresa solo el nombre del archivo — o si organizaste los archivos en subcarpetas, incluye el nombre de la subcarpeta.
 
 **Cómo decide Telar**: Si lo que ingresas termina en `.md` y el archivo existe, lo carga. De lo contrario, trata el valor como contenido.
 
@@ -144,7 +155,7 @@ Guarda los archivos markdown en `telar-content/texts/stories/`. En tu hoja de c�
 - Tiempos de inicio y fin en segundos para objetos de video y audio (ej., `12.5`, `65`)
 - Se ignoran para objetos de imagen
 - Deja ambos vacíos para reproducir el archivo completo
-- Los valores de clip se pueden configurar visualmente con la [interfaz de captura de clips del Compositor](/guia/el-compositor/video-audio/)
+- Puedes fijar los valores del clip de forma visual en el [Compositor](/guia/el-compositor/video-y-audio/)
 
 #### loop / bucle
 - **Nuevo en v1.0.0**
@@ -178,6 +189,7 @@ Guarda los archivos markdown en `telar-content/texts/stories/`. En tu hoja de c�
 | `x` | `x` |
 | `y` | `y` |
 | `zoom` | `zoom` |
+| `page` | `page`, `pagina`, `página` |
 | `question` | `question`, `pregunta` |
 | `answer` | `answer`, `respuesta` |
 | `layer1_button` | `layer1_button`, `boton_capa1` |
@@ -194,13 +206,51 @@ Guarda los archivos markdown en `telar-content/texts/stories/`. En tu hoja de c�
 {: .note }
 > Los nombres de columna `layer_file` / `archivo_capa` son alias heredados de antes de v0.6.3. Los nombres preferidos son `layer_content` / `contenido_capa`.
 
+## Las respuestas son texto corrido
+
+El campo `answer` aparece en la tarjeta de texto, debajo de la pregunta. En pantallas de escritorio esa tarjeta tiene un tamaño fijo y no se desplaza, así que lo que se salga del borde no le llega a quien lee.
+
+Por eso Telar deja las respuestas en texto corrido durante la construcción del sitio, y anota cada cambio en la salida del *build*.
+
+Lo que se conserva tal como lo escribiste:
+
+- **Saltos de párrafo**
+- **Negrita y cursiva**
+- **Enlaces en línea**
+- **Enlaces de glosario**, con la sintaxis `[[term-id]]`
+- **Fórmulas LaTeX en línea**
+- **Código en línea**
+
+Lo que conserva las palabras y pierde el formato:
+
+- **Listas**, con viñetas o numeradas
+- **Títulos** (los encabezados de Markdown)
+- **Citas en bloque**
+
+Lo que desaparece por completo, junto con el texto que lleve adentro:
+
+- **Imágenes y elementos incrustados**, tanto la sintaxis de imagen de Markdown como las etiquetas `<img>`, `<iframe>`, `<video>`, `<audio>`, `<embed>` y `<object>`
+- **Notas al pie**, tanto el número como el texto de la nota
+- **Tablas**
+- **Bloques de código**
+- **Líneas divisorias**
+
+### El límite de las respuestas
+
+La respuesta tiene que caber entera en la tarjeta, sin que quien lee tenga que desplazarse. Por eso Telar no la mide en palabras sino en líneas: cuenta 53 caracteres por línea y dos líneas más por cada párrafo después del primero. Una respuesta puede tener hasta 18 líneas y cinco párrafos. En un solo párrafo, eso da para unas 150 palabras; si la divides en párrafos, para menos. Si pasa de 15 líneas, se muestra con letra un poco más pequeña.
+
+Telar recorta toda respuesta que pase del límite y lo anota en la salida del *build*. El corte cae entre palabras y nunca parte un enlace, un término del glosario, un fragmento de código ni una fórmula LaTeX. El texto que sobra no aparece en la historia.
+
+Escribe una o dos oraciones. Cuando necesites más espacio, pasa el detalle a un panel: los paneles admiten todo lo que describe la [Referencia de sintaxis de Markdown](/guia/tu-contenido/sintaxis-markdown/), incluidas las notas al pie, las tablas, las imágenes y los widgets.
+
 ## Consejos para la entrada de datos
 
 **Coordenadas**: Usa el selector de coordenadas en las páginas de objetos para encontrar los valores x, y y zoom, y cópialos directamente a tu CSV.
 
 **Markdown en los campos**:
-- `layer_content`, `definition`: Admiten markdown completo
-- `question`, `answer`: Solo texto plano
+- `layer_content`, `definition`: Admiten Markdown completo
+- `question`: Solo texto plano, sin procesamiento Markdown
+- `answer`: Solo texto corrido y formato en línea; se recorta si pasa de 18 líneas
 
 **Contenido de paneles**: Usa referencias a archivos (Método 3) para contenido complejo con widgets. Usa texto en línea (Método 1) para paneles cortos.
 
@@ -208,15 +258,16 @@ Guarda los archivos markdown en `telar-content/texts/stories/`. En tu hoja de c�
 
 Telar valida los datos CSV de historias durante la compilación:
 
-**Errores de historias (la *build* falla)**:
+**Errores de historias (el *build* falla)**:
 - Faltan columnas requeridas
 - Secuencia de `step` inválida (saltos, duplicados)
-- Archivos markdown de capas faltantes
+- Archivos Markdown de capas faltantes
 - Valores de coordenadas inválidos (fuera del rango 0-1)
 
-**Advertencias de historias (la *build* continúa)**:
+**Advertencias de historias (el *build* continúa)**:
 - Nombres de columnas no reconocidos (se ignoran)
 - ID de objeto no encontrado en objects.csv
+- Formato quitado de la respuesta de un paso, o respuesta recortada a 18 líneas
 
 ## Véase también
 

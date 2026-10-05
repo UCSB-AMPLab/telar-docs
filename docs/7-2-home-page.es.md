@@ -133,7 +133,7 @@ La plantilla incluye de manera predeterminada un aviso que dice que el sitio es 
 
 ### Para personalizar
 
-Edita el contenido markdown para que coincida con tu proyecto.
+Edita el contenido Markdown para que coincida con tu proyecto.
 
 ### Para eliminar
 

@@ -26,7 +26,7 @@ Objects can have one of three statuses:
 
 - **Ready** — The object has metadata and its image tiles are available. It is ready to use in stories.
 - **No metadata** — The object exists but is missing key information like title, creator, or description. You can still use it in stories, but adding metadata improves your exhibition.
-- **Tiles missing** — The object's IIIF tiles have not been generated yet. This can happen with newly uploaded images that have not been published and built.
+- **Needs tiles** — The object's IIIF tiles have not been generated yet. This can happen with newly uploaded images that have not been published and built.
 
 ### Featured toggle
 
@@ -57,7 +57,7 @@ The metadata fields are:
 
 You can add objects from museums, libraries, and other institutions that publish IIIF manifests. The Compositor fetches the image and metadata automatically.
 
-1. Click **Add Object** and select the IIIF option
+1. Click **Add object** and select the IIIF option
 2. Paste the manifest URL into the field
 3. The Compositor retrieves the image and fills in available metadata (title, creator, description)
 4. Review and adjust the metadata as needed
@@ -70,7 +70,7 @@ You can add objects from museums, libraries, and other institutions that publish
 
 You can upload your own images directly through the Compositor. Uploaded images are committed to your repository and IIIF tiles are generated automatically during the next build.
 
-1. Click **Add Object** and select the upload option
+1. Click **Add object** and select the upload option
 2. Drag files into the upload area, or click to select files from your computer
 3. Fill in metadata while the upload processes
 4. Save the object to your project
@@ -78,7 +78,7 @@ You can upload your own images directly through the Compositor. Uploaded images 
 Supported formats are JPG, PNG, and TIFF, with a maximum file size of 25 MB per image.
 
 {: .note }
-> After uploading, the object's status may show **Tiles missing** until you publish and the GitHub Actions build generates the IIIF tiles. The object is still usable in the Compositor — tiles will be available on your live site after the build completes.
+> After uploading, the object's status may show **Needs tiles** until you publish and the GitHub Actions build generates the IIIF tiles. The object is still usable in the Compositor — tiles will be available on your live site after the build completes.
 
 ## Save to repository
 
@@ -90,7 +90,7 @@ Publishing commits an updated `objects.csv` to your repository along with any up
 
 If objects were added or changed outside the Compositor — for example, by editing `objects.csv` directly or uploading images through GitHub — you can re-scan your repository to pick up those changes.
 
-1. Click the **Sync** button
+1. Click the **Sync from GitHub** button
 2. The Compositor re-reads your repository and updates the object list
 
 {: .warning }

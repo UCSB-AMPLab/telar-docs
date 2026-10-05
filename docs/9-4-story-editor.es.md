@@ -49,7 +49,7 @@ Cuando un paso hace referencia a un objeto de video o audio, la columna del viso
 
 ## Edición de capas
 
-El panel de texto de cada paso utiliza un editor con vista previa en vivo basado en CodeMirror. Escribes en *markdown* y ves el resultado formateado de inmediato — no necesitas alternar entre modos de edición y vista previa.
+El panel de texto de cada paso utiliza un editor con vista previa en vivo basado en CodeMirror. Escribes en *Markdown* y ves el resultado formateado de inmediato — no necesitas alternar entre modos de edición y vista previa.
 
 ### Barra de formato
 
@@ -78,12 +78,12 @@ Para editar más rápido, el editor admite atajos de teclado estándar:
 
 Puedes agregar imágenes al texto de tu panel de dos maneras:
 
-- **Desde una URL** — Pega cualquier URL de imagen y el editor la inserta como imagen en *markdown*
+- **Desde una URL** — Pega cualquier URL de imagen y el editor la inserta como imagen en *Markdown*
 - **Desde tus objetos IIIF** — Explora los objetos de tu repositorio y selecciona uno. El Compositor genera la URL correcta automáticamente.
 
 ### Pegado enriquecido
 
-Cuando pegas contenido desde otras aplicaciones — como un procesador de texto o una página web — el editor convierte automáticamente el formato HTML a *markdown*. El texto en negrita se mantiene en negrita, los enlaces siguen siendo funcionales y los encabezados conservan sus niveles. Esto facilita trasladar texto existente a los paneles de tu historia.
+Cuando pegas contenido desde otras aplicaciones — como un procesador de texto o una página web — el editor convierte automáticamente el formato HTML a *Markdown*. El texto en negrita se mantiene en negrita, los enlaces siguen siendo funcionales y los encabezados conservan sus niveles. Esto facilita trasladar texto existente a los paneles de tu historia.
 
 ### Preservación de inserciones
 
@@ -95,4 +95,4 @@ Si pegas un código de inserción de YouTube o Vimeo (una etiqueta `<iframe>`), 
 - [Video y audio](/guia/el-compositor/video-y-audio/) — Trabajar con pasos de video y audio
 - [Publicación](/guia/el-compositor/publicacion/) — Revisar y publicar cambios
 - [Historias y paneles](/guia/tu-contenido/historias-y-paneles/) — Cómo funcionan las historias en Telar
-- [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) — Referencia de formato *markdown* para texto de paneles
+- [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) — Referencia de formato *Markdown* para texto de paneles

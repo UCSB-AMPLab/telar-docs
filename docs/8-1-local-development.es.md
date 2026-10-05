@@ -67,9 +67,9 @@ sudo apt-get install libvips-dev
 
 ### Opcional (solo para objetos de audio)
 
-Si el sitio incluye objetos de audio, dos herramientas adicionales permiten la extracción de *clips* y la generación de datos de forma de onda. Los sitios sin objetos de audio no necesitan estas herramientas.
+Si el sitio incluye objetos de audio, dos herramientas adicionales permiten la extracción de clips y la generación de datos de forma de onda. Los sitios sin objetos de audio no necesitan estas herramientas.
 
-- **ffmpeg**: Extracción de *clips* de audio
+- **ffmpeg**: Extracción de clips de audio
 - **audiowaveform**: Datos de picos para el reproductor WaveSurfer
 
 **macOS:**

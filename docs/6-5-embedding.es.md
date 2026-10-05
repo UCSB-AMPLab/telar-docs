@@ -289,7 +289,7 @@ Puedes insertar múltiples historias en una sola página:
 
 **Los cambios a tu sitio Telar aparecen automáticamente en las inserciones:**
 
-1. Edita el contenido en tu repositorio Telar (Google Sheets o markdown)
+1. Edita el contenido en tu repositorio Telar (Google Sheets o Markdown)
 2. Haz *push* de los cambios y deja que GitHub Actions construya el sitio
 3. Las historias insertadas se actualizan automáticamente—no es necesario volver a insertar
 

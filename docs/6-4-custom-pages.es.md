@@ -38,7 +38,7 @@ telar-content/texts/pages/
 
 ### Paso 2: escribe tu contenido
 
-Las páginas personalizadas usan markdown estándar con soporte completo para widgets y glosario:
+Las páginas personalizadas usan Markdown estándar con soporte completo para widgets y glosario:
 
 ```markdown
 ---
@@ -79,9 +79,9 @@ Actualiza `_data/navigation.yml` para incluir tu nueva página en el menú. Cons
 
 ## Funcionalidades soportadas
 
-Las páginas personalizadas soportan las mismas funcionalidades de markdown que las capas de historia:
+Las páginas personalizadas soportan las mismas funcionalidades de Markdown que las capas de historia:
 
-### Formato markdown
+### Formato Markdown
 - **Encabezados** (h1-h6)
 - **Negrita**, *cursiva* y otro formato de texto
 - Listas (con viñetas y numeradas)
@@ -116,7 +116,7 @@ Las páginas personalizadas usan el layout `user-page`, que proporciona:
 - **Procesamiento de widgets**: Soporte para acordeón, pestañas y carrusel
 - **Integración de glosario**: Enlace automático y visualización de panel
 
-También está disponible el layout convencional de Jekyll, `layout: page`, si agregas tus propios archivos markdown con front matter: una columna de texto centrada y mínima, con el encabezado y el pie de página del sitio, pero sin procesamiento de widgets ni integración con el glosario.
+También está disponible el layout convencional de Jekyll, `layout: page`, si agregas tus propios archivos Markdown con front matter: una columna de texto centrada y mínima, con el encabezado y el pie de página del sitio, pero sin procesamiento de widgets ni integración con el glosario.
 
 ## Nombres de archivo
 

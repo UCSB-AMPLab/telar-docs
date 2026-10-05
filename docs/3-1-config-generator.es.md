@@ -464,7 +464,7 @@ collections:
 collections_dir: _jekyll-files
 
 # Build Settings
-markdown: kramdown
+Markdown: kramdown
 permalink: pretty
 exclude:
   - Gemfile

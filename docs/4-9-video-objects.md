@@ -80,7 +80,7 @@ The object page for each video includes a clip time picker:
 4. Copy the values into your story spreadsheet
 
 {: .tip }
-> You can also use the Compositor's clip capture interface to set clip times visually. See [Video and Audio in the Compositor](/docs/the-compositor/video-audio/) for details.
+> You can also set clip times visually in the Compositor. See [Video and Audio in the Compositor](/docs/the-compositor/video-audio/) for details.
 
 ## See also
 

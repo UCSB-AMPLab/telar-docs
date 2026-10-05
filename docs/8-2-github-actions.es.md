@@ -21,7 +21,7 @@ Cuando publicas vía GitHub Pages, el proceso de construcción es **completament
 Edita contenido directamente en GitHub o empuja desde local:
 
 1. **Edita la pestaña `objects` de tu Google Sheet o `objects.csv`** en `telar-content/spreadsheets/`
-2. **Edita markdown** en `telar-content/texts/`
+2. **Edita Markdown** en `telar-content/texts/`
 3. **Agrega imágenes** a `telar-content/objects/`
 4. **Haz *commit* y *push*** a la rama main
 
@@ -37,7 +37,7 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
 2. **Convierte CSVs a JSON**
    - Ejecuta `scripts/csv_to_json.py`
    - Lee CSVs de `telar-content/spreadsheets/`
-   - Incrusta contenido markdown de `telar-content/texts/`
+   - Incrusta contenido Markdown de `telar-content/texts/`
    - Genera archivos JSON en `_data/` para Jekyll
 
 3. **Genera teselas IIIF**
@@ -50,7 +50,7 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
 4. **Procesa audio** (condicional)
    - Se ejecuta solo cuando se detectan archivos de audio en `telar-content/objects/`
    - Instala `ffmpeg` y `audiowaveform` en el ejecutor
-   - Extrae *clips* de audio y genera datos de picos para la forma de onda
+   - Extrae clips de audio y genera datos de picos para la forma de onda
    - Usa una clave de caché basada en el hash del contenido para no reprocesar audio sin cambios
 
 5. **Construye el paquete de JavaScript**
@@ -77,7 +77,7 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
 El flujo de trabajo se ejecuta automáticamente cuando:
 
 - **Push a rama main**: Cualquier confirmación activa una construcción
-- **Cambios a CSV o markdown**: Las actualizaciones de contenido se publican inmediatamente
+- **Cambios a CSV o Markdown**: Las actualizaciones de contenido se publican inmediatamente
 - **Cambios a config**: Modificaciones a `_config.yml` reconstruyen el sitio
 
 ## Activador manual de construcción
@@ -102,7 +102,7 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 - Para forzar una construcción limpia
 
 {: .tip }
-> Al activar el flujo de trabajo manualmente, la opción **force_audio** permite reprocesar los archivos de audio aunque el caché esté vigente. Esto es útil para regenerar datos de forma de onda o volver a extraer *clips*.
+> Cuando activas el flujo de trabajo a mano, las casillas **force_iiif** y **force_audio** deciden si se regeneran las teselas IIIF y el audio. Las dos vienen marcadas. Si desmarcas una, esa parte se toma del caché y la construcción termina antes.
 
 ## Errores comunes de construcción
 
@@ -115,6 +115,21 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 - Verifica el archivo CSV para errores de sintaxis
 - Asegura que todas las columnas requeridas estén presentes
 - Verifica que no haya caracteres especiales rompiendo el formato CSV
+
+### Hoja de cálculo rechazada
+
+**Error:** `Two columns in this spreadsheet mean the same thing: ...` (falla en el paso "Convert CSV to JSON"; el mensaje nombra el archivo)
+
+**Solución:**
+
+- Dos encabezados de la hoja nombran el mismo campo, por ejemplo `medium` y `medium_genre`, o `privado` y `protected`. Deja uno de cada par, borra el otro y reconstruye el sitio.
+- Si editas tu sitio en el Compositor, vuelve a publicarlo desde allí en lugar de editar el archivo.
+
+**Error:** `This spreadsheet has a column Telar uses for itself: '_metadata'` (falla en el mismo paso)
+
+**Solución:**
+
+- Cámbiale el nombre a la columna `_metadata` y reconstruye el sitio. Telar reserva ese nombre para su propio uso: si una fila tiene algo escrito en esa columna, Telar la toma por un dato interno y no la muestra en el sitio publicado.
 
 ### Error de generación IIIF
 
@@ -132,7 +147,7 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 
 **Solución:**
 
-- Verifica archivos markdown para sintaxis inválida
+- Verifica archivos Markdown para sintaxis inválida
 - Verifica que el frontmatter esté correctamente formateado
 - Busca etiquetas o corchetes sin cerrar
 
@@ -148,12 +163,12 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 
 ### Fallo de construcción por historia privada
 
-**Error:** `story/stories are marked protected but no story_key is set` (falla en el paso "Convert CSVs to JSON")
+**Error:** `story/stories are marked protected but no story_key is set` (falla en el paso "Convert CSV to JSON")
 
 **Solución:**
 - Agrega `story_key: tuclave` a `_config.yml`, o quítale `private: yes` a la historia
 
-**Error:** `story/stories are marked protected, but .github/workflows/build.yml does not run scripts/encrypt_protected_stories.py` (falla en el paso "Convert CSVs to JSON")
+**Error:** `story/stories are marked protected, but .github/workflows/build.yml does not run scripts/encrypt_protected_stories.py` (falla en el paso "Convert CSV to JSON")
 
 **Solución:**
 - Tu flujo de construcción es anterior al paso de cifrado de historias privadas de v1.6.0. Consulta [Actualizar Telar: notas de v1.6.0](/guia/configuracion/actualizacion/#notas-de-actualización-a-v160) para actualizar `build.yml`.

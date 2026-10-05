@@ -18,7 +18,7 @@ Si ya has usado Telar, sabes que el contenido se define a través de archivos de
 
 - Importar contenido existente desde un repositorio de Telar o Google Sheets
 - Agregar y editar objetos con metadatos, manifiestos IIIF o imágenes subidas
-- Construir historias visualmente — escribir paneles, definir coordenadas del visor, capturar tiempos de *clip*
+- Construir historias visualmente — escribir paneles, definir coordenadas del visor, fijar los tiempos del clip
 - Publicar cambios en GitHub con un solo clic
 - Monitorear el estado del *build* de tu sitio en tiempo real
 
@@ -49,6 +49,6 @@ Para usar el Compositor necesitas:
 - [Panel de control](/guia/el-compositor/panel-de-control/) — Navega tu proyecto, administra historias y monitorea tu sitio
 - [Objetos](/guia/el-compositor/objetos/) — Explora, edita, sube y agrega objetos a tu exhibición
 - [Editor de historias](/guia/el-compositor/editor-historias/) — Construye historias con un editor visual, captura coordenadas y escribe contenido de capas
-- [Video y audio](/guia/el-compositor/video-y-audio/) — Captura *clips*, configura puntos de bucle y trabaja con pasos multimedia
+- [Video y audio](/guia/el-compositor/video-y-audio/) — Fija los tiempos del clip y los puntos de bucle, y trabaja con pasos multimedia
 - [Publicación](/guia/el-compositor/publicacion/) — Revisa los cambios, confirma el *commit* en GitHub y sigue el *build*
 - [Sincronización y actualizaciones](/guia/el-compositor/sincronizacion-y-actualizaciones/) — Resincroniza con tu repositorio y actualiza Telar

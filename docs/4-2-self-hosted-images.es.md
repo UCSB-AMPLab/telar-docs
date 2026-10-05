@@ -43,7 +43,9 @@ Por ejemplo, si tu hoja de cálculo tiene un objeto con `object_id` = `textile-0
 
 ## Formatos compatibles
 
-- **JPG, PNG, HEIC, WebP, TIFF** — todos los formatos de imagen comunes funcionan
+- **JPG, PNG, HEIC, WebP, TIFF, GIF, BMP** — todos los formatos de imagen comunes funcionan
+- **SVG** — dibujos vectoriales, mapas y diagramas. Telar los convierte en imágenes al compilar el sitio (véase más abajo)
+- **PDF** — cada página del documento se convierte en una imagen ampliable. Consulta [Documentos PDF](/guia/tu-contenido/documentos-pdf/)
 - **MP3, OGG, M4A** — los archivos de audio también se ponen en `telar-content/objects/`
 - No importan mayúsculas o minúsculas: `.JPG`, `.png`, `.Tiff` funcionan
 - **Resolución**: Mientras más alta, mejor — se recomienda al menos 2000px en el lado más largo para buena calidad de zoom
@@ -51,6 +53,9 @@ Por ejemplo, si tu hoja de cálculo tiene un objeto con `object_id` = `textile-0
 
 {: .tip }
 > **Las fotos de iPhone funcionan directamente.** Las fotos HEIC de iPhone se procesan sin conversión previa. Telar las convierte automáticamente a JPEG durante la generación de teselas, conservando tus archivos originales.
+
+{: .tip }
+> **Los dibujos SVG se convierten en imagen.** Al compilar el sitio, Telar convierte cada SVG en una imagen de 4000 píxeles en el lado más largo y genera las teselas a partir de ella. Tu archivo original se conserva, pero el zoom no pasa de esa resolución: un dibujo con detalles muy finos puede verse borroso al ampliarlo al máximo. Si necesitas más detalle, exporta el dibujo a PNG o TIFF en un tamaño mayor y sube ese archivo.
 
 {: .tip }
 > **Nombres de archivo.** Usa IDs simples y descriptivos, sin espacios ni caracteres especiales: `textile-001.jpg`, `ceramic-bowl-blue.jpg`
@@ -67,7 +72,7 @@ Cuando agregas una imagen y compilas tu sitio:
 Esto permite un zoom fluido incluso en imágenes muy grandes.
 
 {: .note }
-> **Generación rápida de teselas con libvips.** Telar usa [libvips](https://www.libvips.org/) para la generación de teselas IIIF cuando está disponible, lo cual es aproximadamente 28 veces más rápido que el respaldo en Python puro. Si libvips no está instalado, Telar recurre automáticamente a la biblioteca `iiif` de Python. Consulta [Desarrollo local](/guia/desarrolladores/desarrollo-local/) para instrucciones de instalación.
+> **Generación rápida de teselas con libvips.** Cuando libvips está disponible, Telar lo usa para generar las teselas IIIF: la generación resulta unas 28 veces más rápida que con la biblioteca `iiif` de Python, a la que recurre automáticamente si libvips no está instalado. Consulta [Desarrollo local](/guia/desarrolladores/desarrollo-local/) para instrucciones de instalación.
 
 ## Sistema de coordenadas
 

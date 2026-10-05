@@ -10,7 +10,7 @@ permalink: /docs/the-compositor/video-audio/
 
 # Video and Audio
 
-The Compositor supports video and audio objects alongside images. When a story step references a video or audio object, the viewer column shows the appropriate media player — an embedded video player or a waveform audio player — and provides tools for capturing clip times and setting loop behavior.
+The Compositor supports video and audio objects alongside images. When a story step references a video or audio object, the viewer column shows the appropriate media player — an embedded video player or a waveform audio player — and provides tools for setting clip times and loop behavior.
 
 For background on how video and audio objects work in Telar, see [Video Objects](/docs/your-content/video-objects/) and [Audio Objects](/docs/your-content/audio-objects/).
 
@@ -21,7 +21,7 @@ The Compositor detects the media type of each object automatically based on its 
 Each step in the sidebar displays a media type badge to help you identify what kind of object it references:
 
 - **Video** — A film icon for video objects
-- **Music** — A music icon for audio objects
+- **Audio** — A music icon for audio objects
 - **Text** — A text icon for steps with no media object
 
 ## Supported video sources
@@ -40,26 +40,39 @@ Audio objects use self-hosted files stored in your repository at `telar-content/
 
 When a step references an audio object, the viewer column displays a WaveSurfer waveform player. The waveform provides a visual representation of the audio and includes play and pause controls.
 
-## Clip capture
+## Clip range
 
-Clip capture lets you define which segment of a video or audio file plays during a particular step. Instead of entering timestamps manually in a spreadsheet, you capture them visually while the media plays.
+A clip is the segment of a video or audio file that plays during one step. You set it visually in the viewer rather than typing timestamps into a spreadsheet.
 
-To capture clip times for a step:
+### Video
+
+A clip timeline sits in the bar below the video. It spans the whole file, showing the clip as a highlighted region, with a thin marker that follows playback.
 
 1. Select the step you want to configure
-2. Play the video or audio in the viewer
-3. When the media reaches the point where you want the clip to begin, click **Capture start**
-4. Continue playing until the media reaches the end point, then click **Capture end**
-5. The captured times appear in the step's settings, displayed in gold monospace MM:SS format
+2. Drag the **start** or **end** handle to move one edge of the clip, or drag the highlighted region itself to move the whole clip without changing its length
+3. Release the handle to save
 
-You can recapture either time at any point by clicking the corresponding button again while the media is at a new position.
+The times at either end of the bar are where the clip begins and ends, and between them the bar gives the clip's length as **0:07 clip**. A brief **Clip saved** confirmation takes its place each time you change the range.
+
+### Audio
+
+Audio has no separate timeline. The waveform carries the clip region directly — drag its handles to set the start and end.
+
+### Checking a clip
+
+Below the player, the current clip reads as `clip 0:05 → 0:12`, or **No clip set** when the step plays the whole file.
+
+**Preview clip** plays the clip on its own, so you can check exactly what a visitor will get without sitting through the rest of the file.
+
+{: .note }
+> Google Drive videos cannot be clipped. In place of the clip times, the viewer shows **Google Drive does not support clipping**.
 
 {: .tip }
-> Clip capture in the Compositor sets the same `clip_start` and `clip_end` values described in [Video Objects](/docs/your-content/video-objects/) and [Audio Objects](/docs/your-content/audio-objects/). If you later edit your spreadsheet files directly, the clip values are interchangeable.
+> The Compositor sets the same `clip_start` and `clip_end` values described in [Video Objects](/docs/your-content/video-objects/) and [Audio Objects](/docs/your-content/audio-objects/). The two are interchangeable, so you can set a clip here and edit it later in your spreadsheet, or the other way round.
 
 ## Loop toggle
 
-Each step has a loop toggle that controls whether the clip repeats continuously when the audience reaches that step. When enabled, the media plays the captured segment in a loop until the audience advances to the next step.
+Each step has a **Loop** switch that controls whether the clip repeats continuously when the audience reaches that step. When it is on, the clip plays in a loop until the audience advances to the next step.
 
 The loop setting persists when you save and applies to both video and audio steps.
 

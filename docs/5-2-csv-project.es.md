@@ -51,7 +51,7 @@ Define las historias y su orden de visualización en la página principal.
 | `story_id` | `id_historia` | No | Identificador semántico (ej., `textiles-coloniales`). Si se omite, usa `story-{order}` |
 | `title` | `titulo` | Sí | Título de la historia mostrado en la página principal y en la historia |
 | `subtitle` | `subtitulo` | No | Descripción breve mostrada en las tarjetas de historia |
-| `byline` | `firma` | No | Atribución de autoría; admite markdown para enlaces y formato |
+| `byline` | `firma` | No | Atribución de autoría; admite Markdown para enlaces y formato |
 | `private` | `privada` | No | Pon `yes` para encriptar esta historia (requiere `story_key` en la configuración); también se aceptan `protected`/`protegida` |
 | `show_sections` | `mostrar_secciones` | No | Pon `si` para mostrar una tabla de contenidos en la tarjeta de inicio de la historia. Consulta [Historias y paneles: Tabla de contenidos de secciones](/guia/tu-contenido/historias-paneles/#tabla-de-contenidos-de-secciones). **Nuevo en v1.2.0** |
 
@@ -88,19 +88,19 @@ orden,id_historia,titulo,subtitulo,firma,privada,mostrar_secciones
 
 #### title
 - Se muestra en las tarjetas de la página principal y en los encabezados de la historia
-- Sin procesamiento markdown (solo texto plano)
+- Sin procesamiento Markdown (solo texto plano)
 - Recomendado: 2-6 palabras
 
 #### subtitle
 - Se muestra debajo del título en las tarjetas de la página principal
-- Sin procesamiento markdown
+- Sin procesamiento Markdown
 - Recomendado: 5-12 palabras
 - Describe brevemente el contenido de la historia
 
 #### byline
-- **Admite markdown** (v0.6.0+)
+- **Admite Markdown** (v0.6.0+)
 - Página principal: se renderiza como texto plano
-- Página de la historia: renderiza enlaces markdown como clicables
+- Página de la historia: renderiza enlaces Markdown como clicables
 - Patrones comunes:
   - `por Dra. María García`
   - `por María García y Juan López`

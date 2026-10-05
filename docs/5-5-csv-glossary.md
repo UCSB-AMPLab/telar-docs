@@ -27,7 +27,7 @@ Defines glossary terms that can be linked from story panels using `[[term_id]]` 
 | `term_id` | `id_termino` | Yes | Unique identifier for the term (used in link syntax) |
 | `title` | `titulo` | Yes | Display title of the term |
 | `definition` | `definicion` | No | The term definition text |
-| `related_terms` | `terminos_relacionados` | No | Comma-separated related term IDs |
+| `related_terms` | `terminos_relacionados` | No | Related term IDs, separated by a vertical bar |
 
 ### Example
 
@@ -64,7 +64,7 @@ encomienda,Encomienda,"Un sistema de trabajo en la América colonial española, 
 - Supports basic markdown formatting
 
 #### related_terms / terminos_relacionados
-- Comma-separated list of other `term_id` values
+- Other `term_id` values, separated by `|` (for example, `warp|loom`)
 - Used for cross-referencing between glossary entries
 
 ### Inline Link Syntax

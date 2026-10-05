@@ -165,12 +165,12 @@ Edita componentes reutilizables en `_includes/`:
 
 ## Diseño adaptable
 
-El diseño de historias de Telar cambia a su disposición vertical de tarjetas apiladas cuando la ventana mide menos de 1024px de ancho o tiene una relación de aspecto menor que 3:4 (consulta [Optimización móvil](/guia/desarrolladores/moviles/) para más detalles). Cuando agregues reglas adaptables a tus propios componentes, usa esos mismos puntos de quiebre (*breakpoints*) para que tus estilos cambien al mismo tiempo que el diseño:
+El diseño de historias de Telar cambia a su disposición vertical cuando la ventana mide menos de 1024px de ancho o tiene una relación de aspecto menor que 3:4 (consulta [Optimización móvil](/guia/desarrolladores/moviles/) para más detalles). Cuando agregues reglas adaptables a tus propios componentes, usa esos mismos puntos de quiebre (*breakpoints*) para que tus estilos cambien al mismo tiempo que el diseño:
 
 ```scss
-// Disposición vertical (tarjetas apiladas): ancho reducido O relación de aspecto vertical.
-// Nota: las historias usan un diseño de tarjetas apiladas a pantalla completa,
-// no una disposición en columnas — estos ajustes aplican a tus propios contenedores.
+// Disposición vertical: ancho reducido O relación de aspecto vertical.
+// Nota: las historias ocupan toda la ventana en lugar de dividirse
+// en columnas; estos ajustes son para tus propios contenedores.
 @media (max-width: 1024px), (max-aspect-ratio: 3 / 4) {
   .my-block {
     flex-direction: column;
