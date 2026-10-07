@@ -79,13 +79,13 @@ Esta actualización elimina funciones obsoletas (la programación con cron y el 
 
 ### Notas de actualización a v1.8.0
 
-**Actualiza con el workflow «Upgrade Telar».** Lleva un sitio de v1.7.0 a v1.8.0, y en cadena desde versiones anteriores. Antes de la primera construcción, la actualización corrige las hojas con columnas duplicadas que ahora detendrían la construcción (una columna conserva los valores y las otras quedan vacías) y lista las respuestas que la construcción va a recortar.
+**Actualiza con el workflow «Upgrade Telar».** Lleva un sitio de v1.7.0 a v1.8.0, y en cadena desde versiones anteriores. Antes del primer *build*, la actualización corrige las hojas con columnas duplicadas que ahora detendrían el *build* (una columna conserva los valores y las otras quedan vacías) y lista las respuestas que el *build* va a recortar.
 
-**Si tienes tus historias en una hoja de cálculo, revisa la columna que marca una historia como privada.** Si la columna se llamaba `privado` o `protegido`, ten en cuenta que esas historias estuvieron públicas hasta ahora: la próxima construcción las cifra, pero no puede deshacer lo que ya se publicó.
+**Si tienes tus historias en una hoja de cálculo, revisa la columna que marca una historia como privada.** Si la columna se llamaba `privado` o `protegido`, ten en cuenta que esas historias estuvieron públicas hasta ahora: el próximo *build* las cifra, pero no puede deshacer lo que ya se publicó.
 
-**Copia de nuevo `.github/workflows/build.yml` a mano** desde la plantilla, salvo que actualices con el Compositor de Telar, que lo actualiza por ti. GitHub no permite que el workflow de actualización modifique archivos de workflow, y sin el archivo nuevo, las correcciones de imágenes y de audio de la v1.8.0 no le llegan a tu sitio, y sus construcciones siguen con la versión anterior de Python y de las dependencias. Copiar de nuevo `upgrade.yml` es opcional, y `telar-tests.yml`, que ejecuta las pruebas de Telar, se puede copiar de nuevo o borrar junto con `tests/`, `pytest.ini` y `vitest.config.js`.
+**Copia de nuevo `.github/workflows/build.yml` a mano** desde la plantilla, salvo que actualices con el Compositor de Telar, que lo actualiza por ti. GitHub no permite que el workflow de actualización modifique archivos de workflow, y sin el archivo nuevo, las correcciones de imágenes y de audio de la v1.8.0 no le llegan a tu sitio, que se sigue construyendo con la versión anterior de Python y de las dependencias. Copiar de nuevo `upgrade.yml` es opcional, y `telar-tests.yml`, que ejecuta las pruebas de Telar, se puede copiar de nuevo o borrar junto con `tests/`, `pytest.ini` y `vitest.config.js`.
 
-**Si tu sitio lee una hoja de Google Sheets**, borra de la hoja las columnas que nombre el resumen de la actualización: la actualización corrigió la copia de la hoja que está en el repositorio, pero cada construcción vuelve a leer la hoja de Google.
+**Si tu sitio lee una hoja de Google Sheets**, borra de la hoja las columnas que nombre el resumen de la actualización: la actualización corrigió la copia de la hoja que está en el repositorio, pero cada *build* vuelve a leer la hoja de Google.
 
 ### Notas de actualización a v1.7.0
 
@@ -104,11 +104,11 @@ Después de cualquiera de las dos, el `scripts/upgrade.py` de tu sitio es el nue
 
 ### Notas de actualización a v1.6.0
 
-v1.6.0 cambia la forma en que se construyen las historias privadas. Las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios — pero **si tu sitio tiene alguna historia marcada `private: yes` (o `protected: yes`), tienes que actualizar tu flujo de construcción a mano, o la construcción fallará.**
+v1.6.0 cambia la forma en que se construyen las historias privadas. Las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios — pero **si tu sitio tiene alguna historia marcada `private: yes` (o `protected: yes`), tienes que actualizar tu flujo de trabajo Build and Deploy a mano, o el *build* fallará.**
 
-**Qué incluye:** las historias privadas ahora se generan con las mismas plantillas que las historias abiertas durante la construcción con Jekyll — el Markdown, los enlaces de glosario, el LaTeX, los clips de audio y el texto alternativo funcionan al desbloquear una historia privada, igual que en una abierta. El cifrado ahora ocurre como un paso aparte cuando la construcción termina, y no durante ella. La construcción se niega a publicar una historia privada sin cifrar: se detiene temprano si existe una historia privada sin `story_key`, y se detiene de nuevo al final si algo está mal configurado y el flujo de trabajo no ejecuta el nuevo paso de cifrado.
+**Qué incluye:** las historias privadas ahora se generan con las mismas plantillas que las historias abiertas durante el *build* con Jekyll — el Markdown, los enlaces de glosario, el LaTeX, los clips de audio y el texto alternativo funcionan al desbloquear una historia privada, igual que en una abierta. El cifrado ahora ocurre como un paso aparte cuando el *build* termina, y no durante él. El *build* se niega a publicar una historia privada sin cifrar: se detiene temprano si existe una historia privada sin `story_key`, y se detiene de nuevo al final si algo está mal configurado y el flujo de trabajo no ejecuta el nuevo paso de cifrado.
 
-**Paso manual obligatorio — actualiza tu flujo de construcción de GitHub Actions:**
+**Paso manual obligatorio — actualiza tu flujo de trabajo Build and Deploy:**
 
 Por seguridad, GitHub no permite que la actualización automática modifique los archivos de flujo de trabajo. Si tu sitio tiene (o podría tener algún día) una historia privada, tienes que agregar el nuevo paso de cifrado a `.github/workflows/build.yml` tú mismo:
 
@@ -119,7 +119,7 @@ Por seguridad, GitHub no permite que la actualización automática modifique los
 5. Confirma el cambio
 
 {: .warning }
-> Si te saltas este paso y marcas una historia con `private: yes`, la construcción fallará en el paso "Convert CSVs to JSON" con un error que dice que el flujo de trabajo no ejecuta el script de cifrado. Es intencional: sin el paso nuevo, tu sitio publicaría la historia "privada" en texto plano.
+> Si te saltas este paso y marcas una historia con `private: yes`, el *build* fallará en el paso "Convert CSVs to JSON" con un error que dice que el flujo de trabajo no ejecuta el script de cifrado. Es intencional: sin el paso nuevo, tu sitio publicaría la historia "privada" en texto plano.
 >
 > Si tu sitio no tiene historias privadas, no se rompe nada si te saltas este paso — pero no podrás agregar una más adelante sin aplicar antes esta actualización.
 
@@ -133,19 +133,19 @@ La actualización automática se encarga de reemplazar todos los demás archivos
 
 v1.5.0 es una versión centrada en la robustez y la seguridad. Solo afecta el motor y las herramientas: las historias, los objetos y la configuración que ya tienes siguen funcionando sin cambios, sin editar los CSV ni cambiar la configuración. La actualización automática reemplaza todos los archivos del marco; los dos pasos manuales opcionales se describen abajo.
 
-**Qué incluye:** el contenido que escribes en tu sitio ahora se escapa en cada punto de salida; se verifica el certificado TLS en todas las descargas de Google Sheets e IIIF; las historias protegidas quedan más seguras (la construcción se detiene en vez de publicarlas sin cifrar, el cifrado es más fuerte y ya no se filtran autoría, descripción ni metadatos de SEO); el flujo de actualización descarga sus herramientas verificadas con su suma de control y las ejecuta de forma aislada; y todas las lecturas remotas tienen límites y barreras contra el *path traversal*. WaveSurfer va incluido en el sitio para que el audio funcione sin conexión, los archivos del marco se instalan de forma atómica y se corrigieron varios errores del visor, los videos, el audio y el orden de los pasos. No tienes que hacer nada para recibir estos cambios; consulta el [CHANGELOG](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) para ver la lista completa.
+**Qué incluye:** el contenido que escribes en tu sitio ahora se escapa en cada punto de salida; se verifica el certificado TLS en todas las descargas de Google Sheets e IIIF; las historias protegidas quedan más seguras (el *build* se detiene en vez de publicarlas sin cifrar, el cifrado es más fuerte y ya no se filtran autoría, descripción ni metadatos de SEO); el flujo de actualización descarga sus herramientas verificadas con su suma de control y las ejecuta de forma aislada; y todas las lecturas remotas tienen límites y barreras contra el *path traversal*. WaveSurfer va incluido en el sitio para que el audio funcione sin conexión, los archivos del marco se instalan de forma atómica y se corrigieron varios errores del visor, los videos, el audio y el orden de los pasos. No tienes que hacer nada para recibir estos cambios; consulta el [CHANGELOG](https://github.com/UCSB-AMPLab/telar/blob/main/CHANGELOG.md) para ver la lista completa.
 
 **Recomendado: actualiza tus archivos de flujo de trabajo de GitHub Actions:**
 
 Por seguridad, GitHub no permite que la actualización automática modifique los archivos de flujo de trabajo, así que dos mejoras de seguridad de v1.5.0 no se aplican solas:
 
 - `.github/workflows/upgrade.yml`: el proceso de actualización ahora descarga sus herramientas como un recurso verificado con su suma de control y las ejecuta de forma aislada.
-- `.github/workflows/build.yml`: la acción `ruby/setup-ruby` queda fijada a un commit específico para mayor seguridad en la cadena de suministro, y la construcción ahora instala las dependencias de Node con `npm ci`.
+- `.github/workflows/build.yml`: la acción `ruby/setup-ruby` queda fijada a un commit específico para mayor seguridad en la cadena de suministro, y el *build* ahora instala las dependencias de Node con `npm ci`.
 
 Para aplicarlos, usa los pasos de copiar desde «Raw» de la sección "Configuración manual para versiones anteriores" más abajo, una vez por cada archivo. Si te saltas este paso, tu sitio se sigue construyendo y publicando con normalidad; estos cambios solo refuerzan tus flujos de trabajo.
 
 {: .warning }
-> **Si actualizas `build.yml`, agrega también `package-lock.json`.** El nuevo `build.yml` instala las dependencias de Node con `npm ci`, que necesita un `package-lock.json` incluido en el repositorio. Cópialo desde el repositorio de Telar (abre [package-lock.json](https://github.com/UCSB-AMPLab/telar/blob/main/package-lock.json) y haz clic en **Copy raw contents**) en la raíz de tu repositorio, o la construcción fallará. Los sitios nuevos creados a partir de la plantilla ya lo incluyen.
+> **Si actualizas `build.yml`, agrega también `package-lock.json`.** El nuevo `build.yml` instala las dependencias de Node con `npm ci`, que necesita un `package-lock.json` incluido en el repositorio. Cópialo desde el repositorio de Telar (abre [package-lock.json](https://github.com/UCSB-AMPLab/telar/blob/main/package-lock.json) y haz clic en **Copy raw contents**) en la raíz de tu repositorio, o el *build* fallará. Los sitios nuevos creados a partir de la plantilla ya lo incluyen.
 
 **Paquetes de idioma: nuevas claves para compartir historias protegidas:**
 
@@ -217,7 +217,7 @@ No tienes que hacer nada.
 
 ### Notas de actualización a v1.0.0-beta
 
-v1.0.0-beta agrega soporte multimedia (objetos de video y audio), un pipeline de construcción actualizado y renombra la columna CSV `object_type` a `medium`.
+v1.0.0-beta agrega soporte multimedia (objetos de video y audio), un *build* actualizado y renombra la columna CSV `object_type` a `medium`.
 
 **Paso manual — actualizar el flujo de trabajo de *build*:**
 
@@ -231,7 +231,7 @@ El archivo `build.yml` tiene nuevos pasos para el procesamiento de audio, la con
 
 **Paso manual — instalar dependencias de Node.js (solo desarrollo local):**
 
-Si desarrollas localmente, ejecuta `npm install` en el repositorio después de actualizar. Esto instala las dependencias de JavaScript requeridas por el nuevo pipeline de construcción (lenis, @vimeo/player, esbuild, vitest).
+Si desarrollas localmente, ejecuta `npm install` en el repositorio después de actualizar. Esto instala las dependencias de JavaScript requeridas por el nuevo *build* (lenis, @vimeo/player, esbuild, vitest).
 
 **Opcional — soporte de audio:**
 
@@ -251,11 +251,11 @@ La columna `object_type` en `objects.csv` se renombró a `medium`. Este cambio e
 
 ### Notas de actualización a v0.7.0
 
-v0.7.0 agrega Node.js como requisito para compilar el sitio localmente:
+v0.7.0 agrega Node.js como requisito para construir el sitio localmente:
 
 **Nuevo requisito para desarrollo local:**
 - **Node.js 18+** ahora es necesario para ejecutar `bundle exec jekyll build` o `bundle exec jekyll serve`
-- Esto permite el empaquetado de módulos JavaScript mediante esbuild durante el proceso de compilación
+- Esto permite el empaquetado de módulos JavaScript mediante esbuild durante el *build*
 - **Los flujos de trabajo en GitHub no se ven afectados** — GitHub Actions ya incluye Node.js
 
 **Si desarrollas localmente:**
@@ -264,7 +264,7 @@ v0.7.0 agrega Node.js como requisito para compilar el sitio localmente:
 3. Luego procede con los comandos normales de Jekyll
 
 **Si solo usas la interfaz web de GitHub:**
-- No se requiere ninguna acción — tu sitio seguirá compilándose automáticamente
+- No se requiere ninguna acción — tu sitio se seguirá construyendo automáticamente
 
 ## Configuración manual para versiones anteriores
 

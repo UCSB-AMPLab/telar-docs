@@ -141,7 +141,7 @@ telar_theme: "custom"
 ### Paso 3: prueba y refina
 
 1. Confirma cambios
-2. Espera construcción automática
+2. Espera a que se construya el sitio
 3. Revisa tu sitio
 4. Ajusta colores y fuentes según sea necesario
 
@@ -344,7 +344,7 @@ Cada tema empareja un color de texto con un fondo: `colors.text.panel_layer1` va
 
 ### Cómo revisa Telar tus colores
 
-Durante la construcción del sitio, Telar calcula un color de texto que alcance una relación de contraste de 4,5:1 sobre cada uno de los cuatro fondos: `button`, `panel_layer1`, `panel_layer2` y `panel_glossary`. Ese es el nivel AA de WCAG para texto de tamaño normal.
+Al construir el sitio, Telar calcula un color de texto que alcance una relación de contraste de 4,5:1 sobre cada uno de los cuatro fondos: `button`, `panel_layer1`, `panel_layer2` y `panel_glossary`. Ese es el nivel AA de WCAG para texto de tamaño normal.
 
 Telar también calcula el color del texto que va sobre `colors.text.heading` allí donde ese color se usa como fondo, como en las etiquetas de los filtros activos de la página de objetos. Ese color de texto no se escoge en el archivo del tema, así que ahí Telar no reemplaza ninguna decisión tuya.
 

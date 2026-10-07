@@ -54,7 +54,7 @@ Tu hoja de cálculo de Google Sheets es donde administras todo el contenido — 
 
 ### Publica tu hoja
 
-Tu hoja de cálculo necesita estar publicada para que Telar pueda leerla durante la compilación.
+Tu hoja de cálculo necesita estar publicada para que Telar pueda leerla durante el *build*.
 
 1. Ve a **File** → **Share** → **Publish to web**
 2. Haz clic en **Publish**
@@ -119,7 +119,7 @@ Después de hacer *commit*, GitHub Actions construirá y publicará tu sitio aut
 ![Página de inicio de Telar con título y menú de navegación](/images/telar-homepage.png)
 
 {: .warning }
-> Si la compilación falla o tu sitio no se ve bien, revisa tu `_config.yml` con cuidado. Errores comunes:
+> Si el *build* falla o tu sitio no se ve bien, revisa tu `_config.yml` con cuidado. Errores comunes:
 > - **Comillas sin cerrar** — cada `"` necesita su par
 > - **Falta espacio después de los dos puntos** — escribe `title: "Mi sitio"`, no `title:"Mi sitio"`
 > - **Indentación incorrecta** — las opciones anidadas como `published_url` deben indentarse con espacios, no tabulaciones

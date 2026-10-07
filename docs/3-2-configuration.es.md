@@ -153,7 +153,7 @@ google_sheets:
 
 **Descarga automatizada:**
 - **GitHub Pages**: GitHub Actions descubre automáticamente los GIDs de pestañas y obtiene los CSV
-- **Desarrollo local**: Ejecuta `python3 scripts/fetch_google_sheets.py` antes de compilar
+- **Desarrollo local**: Ejecuta `python3 scripts/fetch_google_sheets.py` antes de construir el sitio
 
 {: .note }
 > Solo se necesita la URL publicada. Si tu configuración todavía tiene una línea `shared_url` de una versión anterior, se ignora sin problemas.
@@ -197,7 +197,7 @@ Habilita historias de demostración pre-construidas que muestran las funcionalid
 - **`false` (predeterminado)**: El sitio contiene solo tu contenido
 - **`true`**: Agrega historias de tutorial y ejemplos a tu sitio
 
-Las historias de demostración aparecen junto con tu propio contenido con una etiqueta de "Contenido de demostración". Se obtienen automáticamente durante el proceso de compilación y se ajustan al idioma de tu sitio.
+Las historias de demostración aparecen junto con tu propio contenido con una etiqueta de "Contenido de demostración". Se obtienen automáticamente durante el *build* y se ajustan al idioma de tu sitio.
 
 **Cuándo habilitar:**
 - Aprendiendo cómo estructurar historias
@@ -268,11 +268,11 @@ Encripta historias para que solo las personas con la clave correcta puedan acced
 story_key: "tu-clave-secreta"
 ```
 
-- Las historias con `private: yes` en project.csv se encriptan cuando la compilación termina (también se acepta `protected` como nombre de columna)
+- Las historias con `private: yes` en project.csv se encriptan cuando el *build* termina (también se acepta `protected` como nombre de columna)
 - Las personas acceden a historias privadas mediante un parámetro de URL: `?key=tu-clave-secreta`
 - Deja `story_key` vacío u omítelo para desactivar la protección de historias
-- Si alguna historia está marcada `private: yes`, la compilación falla en lugar de publicarla en texto plano — ya sea porque falta `story_key`, o porque el flujo de compilación no ejecuta el paso de encriptación (los sitios actualizados desde antes de v1.6.0 necesitan agregarlo a mano)
-- Consulta [Historias privadas](/guia/funciones/historias-privadas/) para la configuración, las pruebas locales y los detalles de los fallos de compilación
+- Si alguna historia está marcada `private: yes`, el *build* falla en lugar de publicarla en texto plano — ya sea porque falta `story_key`, o porque el flujo de trabajo **Build and Deploy** no ejecuta el paso de encriptación (los sitios actualizados desde antes de v1.6.0 necesitan agregarlo a mano)
+- Consulta [Historias privadas](/guia/funciones/historias-privadas/) para la configuración, las pruebas locales y los detalles de los fallos del *build*
 
 {: .warning }
 > La protección de historias usa encriptación del lado del cliente. Previene el acceso casual pero no es adecuada para contenido altamente sensible. Para mayor seguridad, usa un repositorio privado de GitHub.
@@ -341,9 +341,9 @@ defaults:
       layout: "user-page"
 ```
 
-### Ajustes de construcción
+### Ajustes del *build*
 
-Configuración estándar de compilación de Jekyll:
+Configuración estándar del *build* de Jekyll:
 
 ```yaml
 markdown: kramdown
@@ -422,7 +422,7 @@ Valores más altos = navegación más fluida pero mayor uso de memoria. Los valo
 
 #### skip_stories
 
-Compila un sitio sin historias, manteniendo solo los objetos visibles:
+Construye un sitio sin historias, manteniendo solo los objetos visibles:
 
 - **`false` (predeterminado)**: Las historias se generan y muestran normalmente
 - **`true`**: Omite la generación de historias y oculta la sección de historias de la página de inicio
@@ -434,7 +434,7 @@ Usa esto cuando quieras mostrar objetos sin historias narrativas, o al construir
 
 #### skip_collections
 
-Compila un sitio con solo páginas personalizadas (sin objetos ni historias):
+Construye un sitio con solo páginas personalizadas (sin objetos ni historias):
 
 - **`false` (predeterminado)**: Los objetos e historias se generan normalmente
 - **`true`**: Omite la generación de objetos e historias, oculta la sección de historias y la muestra de objetos de la página de inicio, elimina `/objects/` de la navegación

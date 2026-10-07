@@ -205,7 +205,7 @@ image: https://archive.org/download/item/photo.jpg
 
 ## Validación
 
-Telar valida los widgets durante el proceso de compilación:
+Telar valida los widgets durante el *build*:
 
 **Errores (el *build* falla):**
 - Falta el campo `image` obligatorio en el carrusel

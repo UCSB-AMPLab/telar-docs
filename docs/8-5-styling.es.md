@@ -207,7 +207,7 @@ El código fuente del motor de historias vive en `assets/js/telar-story/` (un m�
 npm run build:js
 ```
 
-Nunca edites `assets/js/telar-story.js` directamente: es un archivo generado y la próxima compilación lo sobrescribe. El mapa del directorio en `assets/js/README.md` describe qué hace cada módulo y dónde conviene hacer cada tipo de cambio.
+Nunca edites `assets/js/telar-story.js` directamente: es un archivo generado y la próxima vez que se genere el paquete lo sobrescribe. El mapa del directorio en `assets/js/README.md` describe qué hace cada módulo y dónde conviene hacer cada tipo de cambio.
 
 ### Agregar interacciones personalizadas
 

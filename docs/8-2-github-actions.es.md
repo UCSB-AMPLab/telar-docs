@@ -14,7 +14,7 @@ Telar usa GitHub Actions para construir y publicar automáticamente tu sitio. En
 
 ## Qué hace GitHub Actions
 
-Cuando publicas vía GitHub Pages, el proceso de construcción es **completamente automatizado**. ¡No se requieren pasos manuales!
+Cuando publicas vía GitHub Pages, el *build* es **completamente automatizado**. ¡No se requieren pasos manuales!
 
 ### Acciones del usuario (tú)
 
@@ -58,29 +58,29 @@ El flujo de trabajo (`.github/workflows/build.yml`) automáticamente:
    - Empaqueta los módulos de JavaScript con esbuild en formato IIFE
    - Genera `assets/js/telar-story.js` con mapa de origen
 
-6. **Hace el *build* del sitio Jekyll**
+6. **Construye el sitio Jekyll**
    - Ejecuta `bundle exec jekyll build`
-   - Compila plantillas con datos
+   - Combina las plantillas con los datos
    - Salida al directorio `_site/`
 
 7. **Cifra las historias privadas**
    - Ejecuta `scripts/encrypt_protected_stories.py`, siempre, justo antes de publicar
    - Cifra en el propio `_site/` cualquier historia marcada `private: yes` (o `protected: yes`)
-   - Hace fallar la construcción si algo quedara por publicarse en texto plano
+   - Hace fallar el *build* si algo quedara por publicarse en texto plano
 
 8. **Publica en GitHub Pages**
    - Publica directorio `_site/`
    - El sitio queda en vivo en la URL de GitHub Pages
 
-## Activadores de construcción
+## Activadores del *build*
 
 El flujo de trabajo se ejecuta automáticamente cuando:
 
-- **Push a rama main**: Cualquier confirmación activa una construcción
+- **Push a rama main**: Cualquier confirmación activa un *build*
 - **Cambios a CSV o Markdown**: Las actualizaciones de contenido se publican inmediatamente
 - **Cambios a config**: Modificaciones a `_config.yml` reconstruyen el sitio
 
-## Activador manual de construcción
+## Activador manual del *build*
 
 A veces necesitas reconstruir sin hacer cambios de código (ej., después de editar Google Sheets).
 
@@ -99,12 +99,12 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 - Después de editar contenido de Google Sheets
 - Después de agregar objetos o pasos de historia en Google Sheets
 - Para reconstruir sin cambios de código
-- Para forzar una construcción limpia
+- Para forzar un *build* limpio
 
 {: .tip }
-> Cuando activas el flujo de trabajo a mano, las casillas **force_iiif** y **force_audio** deciden si se regeneran las teselas IIIF y el audio. Las dos vienen marcadas. Si desmarcas una, esa parte se toma del caché y la construcción termina antes.
+> Cuando activas el flujo de trabajo a mano, las casillas **force_iiif** y **force_audio** deciden si se regeneran las teselas IIIF y el audio. Las dos vienen marcadas. Si desmarcas una, esa parte se toma del caché y el *build* termina antes.
 
-## Errores comunes de construcción
+## Errores comunes del *build*
 
 ### Error de análisis CSV
 
@@ -141,7 +141,7 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 - Verifica que la imagen no esté dañada
 - Asegúrate de que el formato de imagen sea compatible (JPG, PNG, TIFF)
 
-### Error de construcción de Jekyll
+### Error del *build* de Jekyll
 
 **Error:** `Liquid syntax error`
 
@@ -161,7 +161,7 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 - Asegura que la hoja esté publicada en la web (no solo compartida)
 - Verifica que la hoja tenga permisos apropiados
 
-### Fallo de construcción por historia privada
+### Fallo del *build* por historia privada
 
 **Error:** `story/stories are marked protected but no story_key is set` (falla en el paso "Convert CSV to JSON")
 
@@ -171,22 +171,22 @@ A veces necesitas reconstruir sin hacer cambios de código (ej., después de edi
 **Error:** `story/stories are marked protected, but .github/workflows/build.yml does not run scripts/encrypt_protected_stories.py` (falla en el paso "Convert CSV to JSON")
 
 **Solución:**
-- Tu flujo de construcción es anterior al paso de cifrado de historias privadas de v1.6.0. Consulta [Actualizar Telar: notas de v1.6.0](/guia/configuracion/actualizacion/#notas-de-actualización-a-v160) para actualizar `build.yml`.
+- Tu flujo de trabajo **Build and Deploy** es anterior al paso de cifrado de historias privadas de v1.6.0. Consulta [Actualizar Telar: notas de v1.6.0](/guia/configuracion/actualizacion/#notas-de-actualización-a-v160) para actualizar `build.yml`.
 
-**Error:** el propio paso "Encrypt protected stories" falla (cerca del final de la construcción, justo antes de "Upload artifact")
+**Error:** el propio paso "Encrypt protected stories" falla (cerca del final del *build*, justo antes de "Upload artifact")
 
 **Solución:**
 - Significa que el sitio generado todavía contiene un rastro del contenido de una historia privada que debió quedar cifrado. Es un error del programa, no de configuración — [repórtalo](https://github.com/UCSB-AMPLab/telar/issues) con el enlace a la ejecución del flujo de trabajo.
 
-## Rendimiento de construcción
+## Rendimiento del *build*
 
-Tiempos de construcción típicos:
+Tiempos típicos del *build*:
 
 - **Sitios pequeños** (< 10 objetos, 1-2 historias): 2-3 minutos
 - **Sitios medianos** (10-50 objetos, múltiples historias): 3-5 minutos
 - **Sitios grandes** (50+ objetos, muchas historias): 5-10 minutos
 
-### Optimiza el tiempo de construcción
+### Optimiza el tiempo del *build*
 
 - **Usa IIIF externo** para imágenes grandes (evita generar teselas (*tiles*))
 - **Confirma menos imágenes** a la vez (divide cargas grandes)
@@ -194,14 +194,14 @@ Tiempos de construcción típicos:
 
 ## Solución de problemas
 
-### La construcción falla cada vez
+### El *build* falla cada vez
 
 1. Verifica confirmaciones recientes para errores
-2. Revisa los _logs_ de construcción para mensajes de error específicos
-3. Prueba localmente primero (`bundle exec jekyll serve`) — ten en cuenta que este comando nunca ejecuta el paso de cifrado de historias privadas, así que no reproduce un fallo de construcción por historia privada. Para eso, usa `python3 scripts/build_local_site.py --build-only` (consulta la [Referencia de Desarrollo Local](/guia/desarrolladores/desarrollo-local/))
+2. Revisa el registro del *build* para mensajes de error específicos
+3. Prueba localmente primero (`bundle exec jekyll serve`) — ten en cuenta que este comando nunca ejecuta el paso de cifrado de historias privadas, así que no reproduce un fallo del *build* por historia privada. Para eso, usa `python3 scripts/build_local_site.py --build-only` (consulta la [Referencia de Desarrollo Local](/guia/desarrolladores/desarrollo-local/))
 4. Revierte a la última confirmación funcional si es necesario
 
-### La construcción tiene éxito pero el sitio no se actualiza
+### El *build* tiene éxito pero el sitio no se actualiza
 
 1. Limpia caché del navegador (recarga forzada: Cmd+Shift+R o Ctrl+Shift+R)
 2. Espera 5 minutos para propagación de CDN

@@ -39,12 +39,12 @@ Por ejemplo, si tu hoja de cálculo tiene un objeto con `object_id` = `textile-0
    ```
 
 {: .note }
-> Telar solo genera teselas para objetos que estén en tu hoja de cálculo y que no tengan una fuente IIIF externa. Esto es automático — solo agrega tus imágenes y se procesarán durante la siguiente compilación.
+> Telar solo genera teselas para objetos que estén en tu hoja de cálculo y que no tengan una fuente IIIF externa. Esto es automático — solo agrega tus imágenes y se procesarán durante el siguiente *build*.
 
 ## Formatos compatibles
 
 - **JPG, PNG, HEIC, WebP, TIFF, GIF, BMP** — todos los formatos de imagen comunes funcionan
-- **SVG** — dibujos vectoriales, mapas y diagramas. Telar los convierte en imágenes al compilar el sitio (véase más abajo)
+- **SVG** — dibujos vectoriales, mapas y diagramas. Telar los convierte en imágenes al construir el sitio (véase más abajo)
 - **PDF** — cada página del documento se convierte en una imagen ampliable. Consulta [Documentos PDF](/guia/tu-contenido/documentos-pdf/)
 - **MP3, OGG, M4A** — los archivos de audio también se ponen en `telar-content/objects/`
 - No importan mayúsculas o minúsculas: `.JPG`, `.png`, `.Tiff` funcionan
@@ -55,14 +55,14 @@ Por ejemplo, si tu hoja de cálculo tiene un objeto con `object_id` = `textile-0
 > **Las fotos de iPhone funcionan directamente.** Las fotos HEIC de iPhone se procesan sin conversión previa. Telar las convierte automáticamente a JPEG durante la generación de teselas, conservando tus archivos originales.
 
 {: .tip }
-> **Los dibujos SVG se convierten en imagen.** Al compilar el sitio, Telar convierte cada SVG en una imagen de 4000 píxeles en el lado más largo y genera las teselas a partir de ella. Tu archivo original se conserva, pero el zoom no pasa de esa resolución: un dibujo con detalles muy finos puede verse borroso al ampliarlo al máximo. Si necesitas más detalle, exporta el dibujo a PNG o TIFF en un tamaño mayor y sube ese archivo.
+> **Los dibujos SVG se convierten en imagen.** Al construir el sitio, Telar convierte cada SVG en una imagen de 4000 píxeles en el lado más largo y genera las teselas a partir de ella. Tu archivo original se conserva, pero el zoom no pasa de esa resolución: un dibujo con detalles muy finos puede verse borroso al ampliarlo al máximo. Si necesitas más detalle, exporta el dibujo a PNG o TIFF en un tamaño mayor y sube ese archivo.
 
 {: .tip }
 > **Nombres de archivo.** Usa IDs simples y descriptivos, sin espacios ni caracteres especiales: `textile-001.jpg`, `ceramic-bowl-blue.jpg`
 
 ## Cómo funciona
 
-Cuando agregas una imagen y compilas tu sitio:
+Cuando agregas una imagen y construyes tu sitio:
 
 1. Telar crea versiones en teselas a múltiples niveles de zoom
 2. Las teselas se guardan en `iiif/objects/{object-id}/`

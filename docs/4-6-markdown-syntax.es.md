@@ -311,7 +311,7 @@ Telar permite representar fórmulas matemáticas mediante [KaTeX](https://katex.
 
 ### Cómo funciona
 
-Telar detecta automáticamente el LaTeX en el contenido durante la construcción del sitio. No necesitas configurar nada — si el texto contiene notación LaTeX, se representará como fórmula formateada.
+Telar detecta automáticamente el LaTeX en el contenido al construir el sitio. No necesitas configurar nada — si el texto contiene notación LaTeX, se representará como fórmula formateada.
 
 ### Fórmulas en línea
 
