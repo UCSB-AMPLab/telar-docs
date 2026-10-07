@@ -109,7 +109,7 @@ object_id,title,description,source_url,creator,period,location,credit
 map-001,,,https://example.org/iiif/manifest.json,,,,
 ```
 
-Cuando tu sitio se compile, Telar:
+Cuando tu sitio se construya, Telar:
 
 1. Obtendrá el manifiesto IIIF
 2. Extraerá los metadatos disponibles
@@ -165,22 +165,22 @@ Quizás quieras ingresar tus propios valores cuando:
 - La descripción es muy técnica para tu público
 - Prefieres una versión más corta o más simple de algún campo
 
-### Procesamiento durante la compilación
+### Procesamiento durante el *build*
 
-La extracción de metadatos ocurre automáticamente al compilar el sitio:
+La extracción de metadatos ocurre automáticamente al construir el sitio:
 
 - **GitHub Pages**: Se ejecuta durante el despliegue — no necesitas hacer nada
 - **Desarrollo local**: Ejecuta `python3 scripts/csv_to_json.py` cuando agregues o actualices URLs de manifiestos
 
 ### Validación
 
-Durante la compilación, Telar verifica cada manifiesto:
+Durante el *build*, Telar verifica cada manifiesto:
 
 - **Manifiesto válido** — Metadatos extraídos con éxito
-- **Manifiesto no disponible** — La URL no respondió; se reintentará en la siguiente compilación
+- **Manifiesto no disponible** — La URL no respondió; se reintentará en el siguiente *build*
 - **Sin metadatos** — El manifiesto es válido pero no contiene campos extraíbles
 
-Revisa los registros de la compilación para ver el estado de la extracción.
+Revisa los registros del *build* para ver el estado de la extracción.
 
 ### Limitaciones
 
@@ -199,7 +199,7 @@ Revisa los registros de la compilación para ver el estado de la extracción.
 
 ### Los metadatos no aparecen
 
-- Revisa los registros de la compilación para ver advertencias de extracción
+- Revisa los registros del *build* para ver advertencias de extracción
 - El manifiesto puede no incluir los campos que esperas
 - Intenta ingresar los valores manualmente en tu hoja de cálculo
 

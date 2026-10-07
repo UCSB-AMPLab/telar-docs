@@ -210,7 +210,7 @@ Guarda los archivos Markdown en `telar-content/texts/stories/`. En tu hoja de c�
 
 El campo `answer` aparece en la tarjeta de texto, debajo de la pregunta. En pantallas de escritorio esa tarjeta tiene un tamaño fijo y no se desplaza, así que lo que se salga del borde no le llega a quien lee.
 
-Por eso Telar deja las respuestas en texto corrido durante la construcción del sitio, y anota cada cambio en la salida del *build*.
+Por eso Telar deja las respuestas en texto corrido al construir el sitio, y anota cada cambio en la salida del *build*.
 
 Lo que se conserva tal como lo escribiste:
 
@@ -256,7 +256,7 @@ Escribe una o dos oraciones. Cuando necesites más espacio, pasa el detalle a un
 
 ## Validación
 
-Telar valida los datos CSV de historias durante la compilación:
+Telar valida los datos CSV de historias durante el *build*:
 
 **Errores de historias (el *build* falla)**:
 - Faltan columnas requeridas

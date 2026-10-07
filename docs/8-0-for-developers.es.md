@@ -18,7 +18,7 @@ Esta sección está diseñada para:
 - **Desarrolladores** que construyen funcionalidades o arreglan errores en Telar
 - **Mantenedores** de versiones fork de Telar para instituciones específicas
 - **Colaboradores** que quieren entender la arquitectura de Telar
-- **Usuarios avanzados** que resuelven problemas de compilación o personalizan Telar
+- **Usuarios avanzados** que resuelven problemas del *build* o personalizan Telar
 
 Si estás creando el contenido de un sitio de Telar, lo que probablemente necesitas son las secciones principales de la documentación.
 
@@ -27,10 +27,10 @@ Si estás creando el contenido de un sitio de Telar, lo que probablemente necesi
 ## Qué hay en esta sección
 
 ### [8.1 Desarrollo local](/guia/desarrolladores/desarrollo-local/)
-Configura tu entorno de desarrollo, ejecuta compilaciones localmente y prueba cambios antes de desplegar.
+Configura tu entorno de desarrollo, construye el sitio en tu computador y prueba los cambios antes de publicarlos.
 
 ### [8.2 GitHub Actions](/guia/desarrolladores/github-actions/)
-Entiende el flujo de trabajo automatizado de compilación de Telar y cómo personalizar el *pipeline* de despliegue.
+Entiende cómo el flujo de trabajo **Build and Deploy** construye y publica el sitio, y cómo personalizarlo.
 
 ### [8.3 Arquitectura del contenido de demostración](/guia/desarrolladores/sistema-demos/)
 Aprende cómo funciona el sistema de obtención de contenido de demostración, desde el emparejamiento de versiones hasta la integración de paquetes.
@@ -54,7 +54,7 @@ Los términos con que el código del motor de historias y esta documentación no
 Telar es código abierto y recibe contribuciones con gusto. Antes de contribuir:
 
 1. **Configura desarrollo local** (8.1) para probar tus cambios
-2. **Entiende el sistema de compilación** (8.2, 8.3) para ver cómo se procesa el contenido
+2. **Entiende cómo se construye el sitio** (8.2, 8.3) para ver de qué manera se procesa el contenido
 3. **Sigue los patrones existentes** en el código base
 4. **Prueba exhaustivamente** antes de enviar pull requests
 

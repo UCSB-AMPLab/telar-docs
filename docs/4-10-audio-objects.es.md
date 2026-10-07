@@ -57,7 +57,7 @@ Los pasos de las historias pueden especificar un tiempo de inicio, un tiempo de 
 
 ## Procesamiento de audio en el *build*
 
-Telar procesa los archivos de audio durante el *build* para extraer clips y generar datos de picos para la visualización de la forma de onda. Esto se gestiona mediante `process_audio.py`, que se ejecuta automáticamente como parte del proceso de construcción.
+Telar procesa los archivos de audio durante el *build* para extraer clips y generar datos de picos para la visualización de la forma de onda. Esto se gestiona mediante `process_audio.py`, que se ejecuta automáticamente como parte del *build*.
 
 ### Dependencias opcionales
 
@@ -87,6 +87,6 @@ sudo apt install ffmpeg audiowaveform
 
 - [Objetos de video](/guia/tu-contenido/objetos-de-video/) — Insertar video desde plataformas externas
 - [Objetos](/guia/tu-contenido/objetos/) — Definir objetos en tu hoja de cálculo
-- [Historias y paneles](/guia/tu-contenido/historias-y-paneles/) — Construir pasos de historias
+- [Historias y paneles](/guia/tu-contenido/historias-paneles/) — Construir pasos de historias
 - [Columnas de historias](/guia/tus-datos/csv-historias/) — Referencia completa de columnas incluyendo columnas de clips
-- [Galería de objetos](/guia/funciones-del-sitio/galeria-de-objetos/) — Cómo aparecen los objetos de audio en la galería
+- [Galería de objetos](/guia/funciones/galeria-objetos/) — Cómo aparecen los objetos de audio en la galería

@@ -14,11 +14,11 @@ Trabaja completamente en tu computadora con archivos CSV y un servidor Jekyll lo
 
 ## Descripción general
 
-Este flujo de trabajo te da control total sobre el proceso de compilación. Editas archivos CSV y Markdown directamente, previsualizas los cambios al instante y publicas cuando estés listo. Es ideal para:
+Este flujo de trabajo te da control total sobre el *build*. Editas archivos CSV y Markdown directamente, previsualizas los cambios al instante y publicas cuando estés listo. Es ideal para:
 
 - **Cursos de humanidades digitales** — enseñar control de versiones, sitios estáticos y datos estructurados junto con la creación de contenido
 - **Personas con experiencia técnica** — cualquiera que prefiera editores de texto y la línea de comandos a hojas de cálculo
-- **Trabajo sin conexión** — compila y previsualiza sin necesidad de internet
+- **Trabajo sin conexión** — construye el sitio y previsualízalo sin necesidad de internet
 
 ## Requisitos previos
 
@@ -93,7 +93,7 @@ bundle exec jekyll serve --livereload --port 4001
 ```
 
 {: .note }
-> **Aquí las historias privadas se previsualizan en texto plano.** Ni `bundle exec jekyll serve` ni el modo de servir por defecto de `build_local_site.py` ejecutan el paso de encriptación — Jekyll regenera `_site` continuamente mientras sirve el sitio, y la encriptación corre una sola vez, cuando una compilación termina. Si tu sitio tiene una historia marcada `private: yes`, verás su contenido a la vista al previsualizar así; es el comportamiento esperado. Para previsualizar el comportamiento bloqueado que vería una persona visitante, ejecuta `python3 scripts/build_local_site.py --build-only` y sirve el `_site/` resultante con un servidor de archivos estáticos. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles.
+> **Aquí las historias privadas se previsualizan en texto plano.** Ni `bundle exec jekyll serve` ni el modo de servir por defecto de `build_local_site.py` ejecutan el paso de encriptación — Jekyll regenera `_site` continuamente mientras sirve el sitio, y la encriptación corre una sola vez, cuando un *build* termina. Si tu sitio tiene una historia marcada `private: yes`, verás su contenido a la vista al previsualizar así; es el comportamiento esperado. Para previsualizar el comportamiento bloqueado que vería una persona visitante, ejecuta `python3 scripts/build_local_site.py --build-only` y sirve el `_site/` resultante con un servidor de archivos estáticos. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles.
 
 ## Flujo de trabajo paso a paso
 
@@ -242,15 +242,15 @@ Mejora tu narrativa con definiciones de términos:
 
 ## Flujo de trabajo de desarrollo diario
 
-Cuando trabajes en tu sitio, puedes usar el script de construcción todo-en-uno o ejecutar los comandos uno por uno.
+Cuando trabajes en tu sitio, puedes usar el script todo-en-uno que construye el sitio o ejecutar los comandos uno por uno.
 
-**Usando el script de construcción (recomendado):**
+**Usando el script todo-en-uno (recomendado):**
 
 ```bash
-# Reconstrucción completa y servidor local
+# Volver a construir todo el sitio y servirlo localmente
 python3 scripts/build_local_site.py
 
-# Reconstrucción rápida (omite IIIF cuando las imágenes no han cambiado)
+# Volver a construir más rápido, sin generar las teselas IIIF (cuando las imágenes no han cambiado)
 python3 scripts/build_local_site.py --skip-iiif --skip-fetch
 ```
 
@@ -278,7 +278,7 @@ bundle exec jekyll serve --livereload
 # Construir solamente (salida a _site/)
 bundle exec jekyll build
 
-# Limpiar artefactos de construcción
+# Borrar los archivos generados al construir el sitio
 bundle exec jekyll clean
 ```
 

@@ -61,7 +61,7 @@ google_sheets:
 
 ## Obtener datos (solo desarrollo local)
 
-Cuando desarrolles localmente, la forma más sencilla es usar el script de construcción **todo-en-uno** del sitio, que descarga y procesa los datos automáticamente:
+Cuando desarrolles localmente, la forma más sencilla es usar el script **todo-en-uno**, que construye el sitio y descarga y procesa los datos automáticamente:
 
 ```bash
 python3 scripts/build_local_site.py

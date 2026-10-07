@@ -10,7 +10,7 @@ permalink: /guia/desarrolladores/desarrollo-local/
 
 # Desarrollo local
 
-Referencia completa para desarrollo local, comandos de construcción y solución de problemas.
+Referencia completa para desarrollo local, comandos para construir el sitio y solución de problemas.
 
 ## Requisitos previos
 
@@ -110,11 +110,11 @@ baseurl: ""  # Vacío para desarrollo local
 url: "http://localhost:4001"
 ```
 
-## Comandos de construcción
+## Comandos para construir el sitio
 
-### Inicio rápido: script de construcción (recomendado)
+### Inicio rápido: script de *build* (recomendado)
 
-La forma más sencilla de construir y servir tu sitio Telar localmente es usando el script de construcción todo‑en‑uno:
+La forma más sencilla de construir y servir tu sitio Telar localmente es usando el script de *build* todo‑en‑uno:
 
 ```bash
 # Construye y sirve en el puerto 4001 (predeterminado)
@@ -126,17 +126,17 @@ python3 scripts/build_local_site.py --build-only
 # Usar un puerto diferente
 python3 scripts/build_local_site.py --port 4000
 
-# Omitir generación de teselas IIIF (reconstrucciones más rápidas cuando las imágenes no han cambiado)
+# Omitir generación de teselas IIIF (el sitio se vuelve a construir más rápido cuando las imágenes no han cambiado)
 python3 scripts/build_local_site.py --skip-iiif
 
 # Omitir la descarga desde Google Sheets (usa los CSV existentes)
 python3 scripts/build_local_site.py --skip-fetch
 
-# Omitir procesamiento de audio (reconstrucciones más rápidas cuando el audio no ha cambiado)
+# Omitir procesamiento de audio (el sitio se vuelve a construir más rápido cuando el audio no ha cambiado)
 python3 scripts/build_local_site.py --skip-audio
 ```
 
-Este script ejecuta en secuencia todos los pasos necesarios de construcción, imitando lo que hace GitHub Actions durante el despliegue. También detiene instancias de Jekyll que estén ejecutándose antes de iniciar una nueva.
+Este script ejecuta en secuencia todos los pasos necesarios del *build*, imitando lo que hace GitHub Actions al publicar el sitio. También detiene instancias de Jekyll que estén ejecutándose antes de iniciar una nueva.
 
 ### Comandos principales (manuales)
 
@@ -171,7 +171,7 @@ bundle exec jekyll serve --livereload --port 4001
 # Solo construir (salida a _site/)
 bundle exec jekyll build
 
-# Limpiar artefactos de construcción
+# Borrar los archivos generados al construir el sitio
 bundle exec jekyll clean
 ```
 
@@ -186,7 +186,7 @@ bundle exec jekyll serve --port 4001
 # Sirve en red local
 bundle exec jekyll serve --host 0.0.0.0
 
-# Construcción incremental (más rápida)
+# Construir solo lo que cambió (más rápido)
 bundle exec jekyll serve --incremental
 
 # Deshabilitar la recarga automática
@@ -258,7 +258,7 @@ tu-sitio-telar/
 │   ├── images/              # Imágenes fuente
 │   └── texts/               # Archivos Markdown
 ├── iiif/                    # Teselas (*tiles*) IIIF generadas
-├── scripts/                 # Scripts de construcción
+├── scripts/                 # Scripts para construir el sitio
 │   ├── build_local_site.py  # Build local todo‑en‑uno
 │   ├── fetch_google_sheets.py
 │   ├── csv_to_json.py

@@ -25,7 +25,7 @@ Bienvenido a Telar. Elige el método de configuración que mejor funcione para t
   </a>
   <a href="/guia/primeros-pasos/desarrollo-local/" class="gs-card">
     <h3>Opción C: Desarrollo local</h3>
-    <p>Trabaja localmente con archivos CSV y Jekyll. Control total sobre tu contenido y proceso de construcción.</p>
+    <p>Trabaja localmente con archivos CSV y Jekyll. Control total sobre tu contenido y el <em>build</em> del sitio.</p>
     <span class="gs-card__cta">Guía de desarrollo local</span>
   </a>
 </div>

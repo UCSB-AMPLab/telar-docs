@@ -16,13 +16,13 @@ Las historias privadas se encriptan para que solo las personas con la clave corr
 
 ## Cómo funciona
 
-Telar construye todas las historias — privadas o no — con las mismas plantillas. Durante la compilación de Jekyll, una historia privada se genera exactamente igual que una abierta. Solo cuando la compilación termina, un paso aparte la encripta:
+Telar construye todas las historias — privadas o no — con las mismas plantillas. Durante el *build* de Jekyll, una historia privada se genera exactamente igual que una abierta. Solo cuando el *build* termina, un paso aparte la encripta:
 
-1. **Durante la compilación de Jekyll**, los pasos de una historia privada se generan con las plantillas normales de historias: el mismo procesamiento de Markdown, los mismos enlaces de glosario, LaTeX, clips de audio y texto alternativo que cualquier historia abierta.
-2. **Después de la compilación**, un paso posterior encripta el contenido ya generado de la historia (AES-256-GCM) y lo reemplaza con un marcador bloqueado. El título y el subtítulo siguen visibles en el listado del proyecto; solo se encripta el contenido paso a paso.
+1. **Durante el *build* de Jekyll**, los pasos de una historia privada se generan con las plantillas normales de historias: el mismo procesamiento de Markdown, los mismos enlaces de glosario, LaTeX, clips de audio y texto alternativo que cualquier historia abierta.
+2. **Cuando el *build* termina**, un paso posterior encripta el contenido ya generado de la historia (AES-256-GCM) y lo reemplaza con un marcador bloqueado. El título y el subtítulo siguen visibles en el listado del proyecto; solo se encripta el contenido paso a paso.
 3. **En el sitio publicado**, la página de la historia se carga con una capa de bloqueo en lugar de su contenido.
 4. **Las personas ingresan la clave** (o usan un enlace que la incluye), y la historia se desencripta en su navegador.
-5. **Una vez desbloqueada**, la historia se comporta exactamente igual que una abierta, porque durante la compilación se generó con las mismas plantillas que las demás.
+5. **Una vez desbloqueada**, la historia se comporta exactamente igual que una abierta, porque durante el *build* se generó con las mismas plantillas que las demás.
 
 El título y subtítulo de la historia permanecen visibles en el listado del proyecto. Solo el contenido paso a paso se encripta.
 
@@ -59,7 +59,7 @@ Las historias sin `privada: yes` permanecen públicas.
 
 ## Probar localmente
 
-Ni `bundle exec jekyll serve` ni el modo por defecto de `scripts/build_local_site.py` (servir) encriptan nada: Jekyll regenera `_site` continuamente mientras sirve el sitio, y la encriptación es un paso único que corre cuando una compilación termina. **Al previsualizar así, las historias privadas se ven como contenido legible, en texto plano.** Es el comportamiento esperado, no un error: el comando con el que un despliegue real compila el sitio todavía no ha corrido.
+Ni `bundle exec jekyll serve` ni el modo por defecto de `scripts/build_local_site.py` (servir) encriptan nada: Jekyll regenera `_site` continuamente mientras sirve el sitio, y la encriptación es un paso único que corre cuando un *build* termina. **Al previsualizar así, las historias privadas se ven como contenido legible, en texto plano.** Es el comportamiento esperado, no un error: el comando con el que se construye el sitio al publicarlo todavía no ha corrido.
 
 Para ver una historia privada como la vería alguien que visita el sitio (bloqueada, pidiendo la clave):
 
@@ -67,7 +67,7 @@ Para ver una historia privada como la vería alguien que visita el sitio (bloque
 python3 scripts/build_local_site.py --build-only
 ```
 
-Luego sirve el directorio `_site/` resultante con un servidor de archivos estáticos (por ejemplo, `python3 -m http.server` desde dentro de `_site/`). Esto ejecuta el mismo paso de encriptación que la compilación de GitHub Actions, así que también puede fallar como fallaría una compilación real — mira Fallos de compilación más abajo.
+Luego sirve el directorio `_site/` resultante con un servidor de archivos estáticos (por ejemplo, `python3 -m http.server` desde dentro de `_site/`). Esto ejecuta el mismo paso de encriptación que el *build* de GitHub Actions, así que también puede fallar como fallaría un *build* real — mira Fallos del *build* más abajo.
 
 ## Compartir historias protegidas
 
@@ -113,12 +113,12 @@ La protección de historias es apenas una barrera de privacidad superficial, no 
 
 **Para una confidencialidad real**, usa un repositorio privado de GitHub. En un repositorio privado ni el sitio ni sus archivos quedan al alcance del público, así que solo pueden ver algo las personas a quienes les diste acceso al repositorio. La protección de historias, por sí sola, no sustituye a un repositorio privado cuando el contenido de verdad no debe ser leído por personas no autorizadas.
 
-## Fallos de compilación
+## Fallos del *build*
 
-Telar se niega a publicar una historia privada en texto plano. En lugar de desplegar contenido sin proteger, la compilación puede fallar en dos puntos:
+Telar se niega a publicar una historia privada en texto plano. En lugar de publicar contenido sin proteger, el *build* puede fallar en dos puntos:
 
 - **Una historia está marcada `private: yes` pero falta `story_key`** en `_config.yml`. Agrega la clave o quítale la marca `private` a la historia.
-- **El flujo de compilación no ejecuta el paso de encriptación.** Los sitios actualizados desde una versión anterior a v1.6.0 necesitan agregar este paso a `.github/workflows/build.yml` a mano — GitHub no permite que la actualización automática edite archivos de flujos de trabajo. Consulta [Actualizar Telar: notas de v1.6.0](/guia/configuracion/actualizacion/#notas-de-actualización-a-v160).
+- **El flujo de trabajo Build and Deploy no ejecuta el paso de encriptación.** Los sitios actualizados desde una versión anterior a v1.6.0 necesitan agregar este paso a `.github/workflows/build.yml` a mano — GitHub no permite que la actualización automática edite archivos de flujos de trabajo. Consulta [Actualizar Telar: notas de v1.6.0](/guia/configuracion/actualizacion/#notas-de-actualización-a-v160).
 
 Cualquiera de los dos fallos imprime un mensaje que identifica cuál ocurrió, en inglés y en español.
 

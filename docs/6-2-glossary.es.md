@@ -116,7 +116,7 @@ La persona permanece en el paso actual de la historia durante todo el proceso �
 - **Mantén las definiciones concisas** — Las personas las leen en medio de una historia. Una o dos oraciones es lo ideal; guarda las explicaciones extensas para los paneles de las historias.
 - **Usa términos relacionados** para construir una red de referencias cruzadas. Esto ayuda a las personas a explorar conceptos conectados.
 - **Prefija los términos de demostración** con `demo-` (ej., `demo-loom`) para etiquetarlos como contenido de demostración.
-- **Prueba tus enlaces** compilando el sitio y revisando las advertencias de glosario en la salida del *build*.
+- **Prueba tus enlaces** construyendo el sitio y revisando las advertencias de glosario en la salida del *build*.
 
 ## Véase también
 

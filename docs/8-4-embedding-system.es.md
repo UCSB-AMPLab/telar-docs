@@ -342,7 +342,7 @@ function normalizeDimension(value) {
 ```
 
 **Proceso:**
-1. Jekyll procesa etiquetas liquid durante la construcción
+1. Jekyll procesa etiquetas liquid durante el *build*
 2. Las cadenas de idioma se inyectan en `window.telarLang`
 3. JavaScript lee desde `window.telarLang.embedBanner`
 4. Alternativa al inglés si faltan datos de idioma

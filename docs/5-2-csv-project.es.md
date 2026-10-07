@@ -109,8 +109,8 @@ orden,id_historia,titulo,subtitulo,firma,privada,mostrar_secciones
 
 #### private
 - **Nuevo en v0.8.0**
-- Pon `yes` para encriptar la historia cuando la compilación termina (durante la compilación de Jekyll la historia se genera normalmente; la encriptación es un paso aparte que corre después)
-- Requiere `story_key` en `_config.yml` — si falta la clave, la compilación falla en lugar de publicar la historia en texto plano
+- Pon `yes` para encriptar la historia cuando el *build* termina (durante el *build* de Jekyll la historia se genera normalmente; la encriptación es un paso aparte que corre después)
+- Requiere `story_key` en `_config.yml` — si falta la clave, el *build* falla en lugar de publicar la historia en texto plano
 - Las personas acceden a historias privadas mediante el parámetro de URL `?key=tu-clave`
 - La previsualización local (`bundle exec jekyll serve`) no encripta nada — consulta [Historias privadas: Probar localmente](/guia/funciones/historias-privadas/#probar-localmente)
 - Déjalo vacío u omítelo para historias públicas

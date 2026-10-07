@@ -28,7 +28,7 @@ Las coordenadas iniciales (`0.5, 0.5, 1.0`) muestran el centro de cada imagen. P
 3. Desplaza y amplía para encontrar la vista perfecta de cada paso
 4. Copia los valores de X, Y y Zoom
 5. Pégalos en tu hoja de cálculo
-6. Activa una reconstrucción para ver los cambios
+6. Vuelve a construir el sitio para ver los cambios
 
 ![Selector de coordenadas mostrando valores X, Y y Zoom debajo del visor de imágenes](/images/coordinate-picker.png)
 
@@ -45,7 +45,7 @@ Si quieres restringir el acceso a una historia — para uso en el aula, borrador
 
 3. Comparte la clave con tus lectores, o envíales un enlace con `?key=tu-clave-secreta` al final
 
-Una historia privada se genera como cualquier otra durante la compilación — el Markdown, los enlaces de glosario y las imágenes funcionan una vez que la persona la desbloquea. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles, incluido cómo previsualizarla localmente.
+Una historia privada se genera como cualquier otra durante el *build* — el Markdown, los enlaces de glosario y las imágenes funcionan una vez que la persona la desbloquea. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles, incluido cómo previsualizarla localmente.
 
 ## Sigue construyendo
 
