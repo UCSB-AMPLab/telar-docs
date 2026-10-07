@@ -10,231 +10,144 @@ permalink: /docs/customization/demo-content/
 
 # Demo Content
 
-Learn from pre-built example stories while developing your own Telar site.
+Demo content adds two finished example stories to your site, so you can see how a Telar story is built and how it behaves before you write your own.
 
 ## What is Demo Content?
 
-Demo content consists of complete example stories that showcase Telar's features. These stories are automatically added to your site when enabled, giving you working examples to explore and learn from.
+Demo content is a set of example stories, together with the objects and glossary entries they use. Telar downloads it from [content.telar.org](https://content.telar.org) each time your site builds and adds it to your own content. It is never saved in your repository, so when you turn it off, the next build on GitHub leaves it out.
 
-**Available demos:**
-- **Telar Tutorial**: A 10-step interactive tutorial demonstrating all Telar features
-- **Paisajes Coloniales**: A 5-step excerpt from a real research project about colonial maps
+Demo content is marked wherever it appears, so you can always tell it apart from your own work.
 
-Both demos include:
-- Story narratives with layer panels
-- IIIF image integration
-- Glossary definitions
-- Widget examples (accordion, tabs, carousel)
-- Self-hosted and external images
+## The Demo Stories
 
-## When to Use Demo Content
+Your site gets two stories, in your site's language:
 
-### Enable Demos When:
-- **Learning Telar**: Explore how stories are structured and written
-- **Local development**: Test features without creating content
-- **Demonstrations**: Show stakeholders what Telar can do
-- **Reference**: See working examples of specific features
+| English title | Spanish title | Steps | What it shows |
+|---------------|---------------|-------|---------------|
+| The Allegorical Woman | La mujer alegórica | 10 | A simple story built around one image |
+| Colonial Landscapes | Paisajes coloniales | 22 | A longer story with chapters, panels and primary sources |
 
-### Disable Demos When:
-- **Production sites**: Publishing your final project
-- **Clean testing**: Testing only your own content
-- **Public deployment**: Sharing work with audiences
+### The Allegorical Woman
+
+This story, by Natalie Cobo, follows the details of *Aspecto Symbólico del Mundo Hispánico*, a 1761 engraving by Laureano Atlas held by Princeton University Library. It shows:
+
+- Steps that move around a single image, zooming in on one detail at a time
+- A IIIF (pronounced "triple-eye-eff") image served by the institution that holds it, Princeton University Library, rather than by content.telar.org
+- A step that switches to a second image, the frontispiece of Hobbes's *Leviathan*
+- Layer panels, including one step with a second layer
+- Links to glossary entries from the story's text
+
+The first step links to the story's spreadsheet in Google Sheets, so you can compare each row with the step it produces.
+
+### Colonial Landscapes
+
+This story is a selection from *Colonial Landscapes*, a project by Santiago Muñoz, Adelaida Ávila, and María Alejandra Orduz Avella. It is built around a 1614 painting of the Bogotá savanna, made for a lawsuit and held by the Archivo General de Indias in Seville.
+
+The story is organized as follows:
+
+- The first step introduces the original project and links to it, and the last step repeats that link
+- Four chapters, each opened by a title card: "A Painting of the Savanna", "Villages for the “indios”", "From Terraces to Grasslands", and "A Divided Landscape"
+- Most of the other steps have a layer panel, which holds the longer text, image carousels, and callouts to primary sources
+
+Each primary source is a glossary entry, which opens from its callout in a panel. Many of the entries end with a **See full document** link to the document's own object page; two panels link to documents in the same way. The painting and the nine documents are served from content.telar.org as IIIF images. Five of the documents have more than one page, and their object pages let you move from page to page.
+
+The glossary also includes several key terms and one person, so the glossary page groups its entries under **Key terms**, **Primary sources**, and **People and entities**.
+
+## Turning Demo Content On or Off
+
+Demo content is controlled by one setting in `_config.yml`. A new Telar site has it turned on.
+
+To change it:
+
+1. Open `_config.yml`
+2. Find the `story_interface` section
+3. Set `include_demo_content` to `true` to show the demo stories, or `false` to hide them:
+
+   ```yaml
+   story_interface:
+     include_demo_content: true
+   ```
+
+4. Commit the change
+
+GitHub Actions rebuilds your site, and the change appears when the build finishes. If you build your site on your own computer, run `python3 scripts/csv_to_json.py` and `python3 scripts/generate_collections.py` (or `python3 scripts/build_local_site.py`, which runs both) before Jekyll. See [Local Development](/docs/getting-started/local-dev/).
 
 {: .tip }
-> **Learning from Examples**
-> Demo stories show you how to structure narratives, write layer panels, use widgets, and integrate IIIF images. Use them as templates for your own stories.
+> **Keep the demos while you learn**
+> The demo stories are useful to keep open next to your own while you write your first story. Turn them off before you share your site.
 
-## Enabling Demo Content
+## Where Demo Content Appears
 
-### Step 1: Update Configuration
+Demo content appears in the same places as your own content, with a label:
 
-Open `_config.yml` and find the `story_interface` section:
+| Where | What you see |
+|-------|--------------|
+| Home page | The demo stories, listed before your own stories, with a **DEMO** badge |
+| Story intro card | A **Demo content** label above the story title |
+| Layer panels | A **Demo content** badge next to the panel title |
+| Objects page | The demo objects, listed after your own objects, with a **DEMO** badge |
+| Object page | A **Demo content** label above the object title |
+| Glossary page | A **DEMO** badge next to each demo entry |
+| Glossary entry page | A **Demo content** badge next to the entry title |
 
-```yaml
-story_interface:
-  show_story_steps: true
-  include_demo_content: true    # Change to true
-```
+On a Spanish site the labels read **DEMO** and **Contenido de demostración**.
 
-### Step 2: Rebuild Your Site
+## Language
 
-**For GitHub Pages:**
-1. Commit the change to `_config.yml`
-2. Push to your repository
-3. Wait 2-3 minutes for the build to complete
+Demo content follows your site's language, set by `telar_language` in `_config.yml`:
 
-**For local development:**
-```bash
-bundle exec jekyll build
-bundle exec jekyll serve
-```
+| Your setting | Demo content you get |
+|--------------|----------------------|
+| `telar_language: "en"` | English stories, objects and glossary |
+| `telar_language: "es"` | Spanish stories, objects and glossary |
 
-The build process automatically fetches demo content from content.telar.org and integrates it with your stories.
+Any other value gets the English demo content. If you change your site's language, the next build fetches the demo content in the new language.
 
-## What You'll See
+## Demo Content and Your Own Content
 
-When demo content is enabled:
+Demo content is added to your content during the build, and it never replaces anything of yours:
 
-### Homepage
-Demo stories appear alongside your own stories with a small "Demo content" badge:
+| | Your content | Demo content |
+|---|---|---|
+| Where it lives | Your repository | Downloaded during each build; not saved in your repository |
+| Editable | Yes | No |
+| Label | None | **DEMO** badge or **Demo content** label |
+| Same object ID as one of yours | — | Your object is kept and the demo object is left out |
+| Same glossary entry ID as one of yours | — | Your entry is kept and the demo entry is left out |
 
-- **Your Story** (if you have one)
-- **Telar Tutorial** 🏷️ Demo content
-- **Paisajes Coloniales** 🏷️ Demo content
+The demo object and glossary IDs all begin with `demo-`, so they do not normally match yours.
 
-### Objects Page
-Demo objects are included in the catalog with the same badge.
+## Using the Demos as Models
 
-### Glossary
-Demo glossary terms appear with your terms, also marked with badges.
+The demo stories are written in the same spreadsheet format as your own stories. Their sources are published in the [demo content repository](https://github.com/UCSB-AMPLab/demo-content) on GitHub, under `demos/v1.8.0/en/` and `demos/v1.8.0/es/`:
 
-## Demo Stories Overview
+- `demo-project.csv`: the two stories' rows in the project sheet
+- `demo-objects.csv`: the objects
+- `allegorical-woman.csv` and `colonial-landscapes.csv` (`mujer-alegorica.csv` and `paisajes.csv` in Spanish): the stories' steps
+- `glossary.csv` (`glosario.csv` in Spanish): the glossary entries, with the `kind` column that marks sources and people
+- `texts/stories/`: the markdown files for the Colonial Landscapes panels
 
-### Telar Tutorial (10 steps)
-
-An interactive walkthrough of Telar features:
-
-1. **IIIF Introduction**: Using external IIIF resources
-2. **Self-Hosted Images**: IIIF tile generation
-3. **Markdown Formatting**: Text styling with tabs widget
-4. **Coordinate System**: Understanding x, y, zoom
-5-7. **Pan & Zoom**: Demonstrating coordinate sequences
-8. **Glossary Auto-Linking**: Terms with tabs widget
-9. **Widgets Showcase**: Carousel and accordion examples
-10. **Rich Media**: Next steps and resources
-
-**Languages**: Available in English and Spanish
-
-### Paisajes Coloniales (5 steps)
-
-An excerpt from a digital history project exploring colonial cartography:
-
-- Early mapping traditions
-- Spanish colonial legal frameworks
-- Visual rhetoric in maps
-- Self-hosted historical images
-- Scholarly narrative techniques
-
-**Languages**: Available in English and Spanish
-
-## Language Matching
-
-Demo content automatically matches your site's language:
-
-| Your Site Language | Demos You Get |
-|-------------------|---------------|
-| `telar_language: en` | English demos |
-| `telar_language: es` | Spanish demos |
-
-Set `telar_language` in `_config.yml` to control which language demos appear.
-
-## How It Works
-
-When you enable demo content:
-
-1. **Fetch**: During build, Telar downloads a demo bundle from content.telar.org
-2. **Version Match**: The system selects demos compatible with your Telar version
-3. **Merge**: Demo stories, objects, and glossary terms are merged with your content
-4. **Display**: Demos appear with visual badges to distinguish them from your work
-
-When you disable demo content:
-
-1. **Cleanup**: Telar removes all demo files
-2. **Rebuild**: Site rebuilds with only your content
-3. **No traces**: Demos leave no artifacts in your repository
-
-## Disabling Demo Content
-
-### Step 1: Update Configuration
-
-Change `include_demo_content` to `false`:
-
-```yaml
-story_interface:
-  show_story_steps: true
-  include_demo_content: false    # Disable demos
-```
-
-### Step 2: Rebuild Your Site
-
-Commit, push, and wait for the rebuild (GitHub Pages) or run `bundle exec jekyll build` (local).
-
-All demo content is automatically removed.
-
-## Using Demos as Templates
-
-### Viewing Demo Source Content
-
-Demo content is hosted at [content.telar.org](https://content.telar.org). You can view:
-
-- Story CSV structures
-- Layer panel markdown
-- Glossary definitions
-- Widget syntax
-- Image integration patterns
-
-### Adapting Demo Patterns
-
-Common patterns to adapt from demos:
-
-**From Telar Tutorial:**
-- Question/Answer/Invitation narrative structure
-- Coordinate sequences for visual arguments
-- Widget integration (tabs, accordion, carousel)
-- Glossary term definitions
-
-**From Paisajes Coloniales:**
-- Scholarly narrative tone
-- Self-hosted image workflow
-- Historical context layer panels
-- Academic citation practices
-
-## Demo Content vs. Your Content
-
-| Aspect | Your Content | Demo Content |
-|--------|--------------|--------------|
-| Location | `telar-content/` directory | Downloaded during build |
-| Editable | Yes | No (view only) |
-| Badge | None | "Demo content" badge |
-| Tracked in git | Yes | No |
-| Persistence | Permanent | Only while enabled |
-| Customizable | Fully | Not editable |
+To see how a story's structure shows up on the page, compare the rows of `colonial-landscapes.csv` with the story on your site: the rows with an empty `object` column are the chapter title cards.
 
 ## Troubleshooting
 
-### Demos Not Appearing
+### Demo Stories Do Not Appear
 
-If demos don't show up after enabling:
+If you turned demo content on and the stories are missing:
 
-1. **Check config syntax**: Verify `include_demo_content: true` (not `enabled` or `yes`)
-2. **Rebuild completed**: Wait for GitHub Actions to finish
-3. **Clear browser cache**: Hard refresh with Ctrl+Shift+R (Cmd+Shift+R on Mac)
-4. **Check build log**: Look for errors in GitHub Actions workflow
+1. Check that `include_demo_content: true` is inside the `story_interface` section of `_config.yml`
+2. Check that the build finished in your repository's **Actions** tab
+3. Open the build log, expand the **Convert CSV to JSON** step, and look for the lines that begin with **Telar Demo Content Fetcher**
+4. Reload the page without the cache (Ctrl+Shift+R on Windows/Linux, Cmd+Shift+R on Mac)
 
-### Wrong Language Demos
+### The Demo Content Could Not Be Downloaded
 
-If demos appear in unexpected language:
+If content.telar.org cannot be reached, or the download fails, the build log says that your site will build without demos, and the build continues. Your own content is published as usual, without the demo stories. The next build tries again.
 
-1. Verify `telar_language` setting in `_config.yml`
-2. Rebuild site after changing language setting
-3. Clear browser cache
+### Demo Glossary Entries Remain After Turning Demo Content Off
 
-### Network Errors
+On your own computer, the demo stories and objects disappear at the next build, but the demo glossary entries stay, because the file that lists them, `_data/demo-glossary.json`, is not deleted. Delete that file and build again. Builds on GitHub are not affected, because they start without the file.
 
-If build fails with demo fetch errors:
+### Demo Content Is in the Wrong Language
 
-- Telar continues building without demos (graceful degradation)
-- Your own content still appears
-- Check content.telar.org availability
-- Temporarily disable demos if fetching consistently fails
-
-## Next Steps
-
-- Explore [Telar Tutorial](/) demo to learn core features
-- Review [Paisajes Coloniales](/) demo for scholarly narrative techniques
-- Create your first story using patterns from demos
-- Disable demos when ready to deploy your production site
-
----
-
-**New in v0.6.0**: Automatically fetched demo stories with version matching and language support.
+Check `telar_language` in `_config.yml`. It must be `"en"` or `"es"`; any other value gets the English demo content.

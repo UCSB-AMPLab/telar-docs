@@ -32,7 +32,7 @@ Configura tu entorno de desarrollo, ejecuta compilaciones localmente y prueba ca
 ### [8.2 GitHub Actions](/guia/desarrolladores/github-actions/)
 Entiende el flujo de trabajo automatizado de compilación de Telar y cómo personalizar el *pipeline* de despliegue.
 
-### [8.3 Arquitectura del sistema de demos](/guia/desarrolladores/sistema-demos/)
+### [8.3 Arquitectura del contenido de demostración](/guia/desarrolladores/sistema-demos/)
 Aprende cómo funciona el sistema de obtención de contenido de demostración, desde el emparejamiento de versiones hasta la integración de paquetes.
 
 ### [8.4 Arquitectura del sistema de inserción](/guia/desarrolladores/sistema-insercion/)
