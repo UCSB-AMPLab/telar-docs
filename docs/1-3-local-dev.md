@@ -271,7 +271,7 @@ When working on your site:
 # Full rebuild and serve
 python3 scripts/build_local_site.py
 
-# Quick rebuild (skip IIIF when images haven't changed)
+# Quick rebuild (skip IIIF tiles and the Google Sheets fetch when nothing there has changed)
 python3 scripts/build_local_site.py --skip-iiif --skip-fetch
 ```
 

@@ -250,7 +250,7 @@ Cuando trabajes en tu sitio, puedes usar el script todo-en-uno que construye el 
 # Volver a construir todo el sitio y servirlo localmente
 python3 scripts/build_local_site.py
 
-# Volver a construir más rápido, sin generar las teselas IIIF (cuando las imágenes no han cambiado)
+# Volver a construir más rápido, sin generar las teselas IIIF ni descargar los datos de Google Sheets (cuando las imágenes y las hojas no han cambiado)
 python3 scripts/build_local_site.py --skip-iiif --skip-fetch
 ```
 
