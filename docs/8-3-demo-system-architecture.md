@@ -10,520 +10,353 @@ permalink: /docs/developers/demo-system/
 
 # Demo System Architecture
 
-Technical documentation for Telar's demo content fetching and integration system.
+This page describes how a Telar site fetches its demo content, merges it into the site's data, and marks it on the page, and how the demo bundles are produced. For what demo content looks like to a site's author, see [Demo Content](/docs/customization/demo-content/).
 
 ## Overview
 
-The demo system provides pre-built example stories (telar-tutorial, paisajes-demo) that are automatically fetched from content.telar.org during the build process and merged with user content.
+Demo content is published as one JSON file per Telar release and language, the demo bundle, at [content.telar.org](https://content.telar.org). The site is served by GitHub Pages from the [demo content repository](https://github.com/UCSB-AMPLab/demo-content). A site downloads the bundle during its build, merges it into the JSON files in `_data/`, and the collection generator writes demo stories, objects and glossary entries as pages flagged `demo: true`.
 
-**Key components:**
-- `scripts/fetch_demo_content.py` - Fetches demo bundle from remote server
-- `scripts/csv_to_json.py` - Merges demo content with user content
-- `_demo_content/` directory - Temporary storage (gitignored)
-- `content.telar.org` - Demo content CDN
+The parts involved are:
 
-## Architecture Diagram
+| Part | Role |
+|------|------|
+| `scripts/fetch_demo_content.py` | Reads the site's settings, picks a bundle version, downloads and checks the bundle, and saves it |
+| `scripts/telar/demo.py` | Runs the fetch script (`fetch_demo_content_if_enabled`), loads the saved bundle (`load_demo_bundle`), and merges it into `_data/` (`merge_demo_content`) |
+| `scripts/telar/core.py` | Calls those functions from `main()`, which `scripts/csv_to_json.py` runs |
+| `scripts/generate_collections.py` and `scripts/telar/glossary_pages.py` | Write the story, object and glossary pages, including the demo ones |
+| `_demo_content/telar-demo-bundle.json` | The downloaded bundle; gitignored |
+| `_data/demo-glossary.json` | The bundle's glossary entries, for the glossary page generator; gitignored |
 
-```
-Build Process:
-1. fetch_demo_content.py runs (if include_demo_content: true)
-   ↓
-2. Downloads telar-demo-bundle.json to _demo_content/
-   ↓
-3. csv_to_json.py runs
-   ↓
-4. load_demo_bundle() reads _demo_content/telar-demo-bundle.json
-   ↓
-5. merge_demo_content() integrates demos with user content
-   ↓
-6. Jekyll processes merged content
-```
+## Build Sequence
 
-## Fetch Mechanism
+The build workflow has no separate step for demo content. The fetch runs inside the **Convert CSV to JSON** step, which runs `python scripts/csv_to_json.py`.
 
-### Configuration Check
+When `csv_to_json.py` runs:
 
-`fetch_demo_content.py` first reads `_config.yml`:
+1. `fetch_demo_content_if_enabled()` runs `python3 scripts/fetch_demo_content.py` as a subprocess, before any spreadsheet is converted. It allows the subprocess 60 seconds and prints its standard output. The subprocess's exit status is not checked, and a timeout or an error starting it prints a warning and lets the build continue.
+2. The site's project, objects and story spreadsheets are converted to JSON in `_data/`.
+3. `load_demo_bundle()` reads `_demo_content/telar-demo-bundle.json` if it exists, and `merge_demo_content()` merges it into `_data/`.
+4. `_cleanup_stale_data_files()` removes any `_data/*.json` story file that matches neither a spreadsheet in `telar-content/spreadsheets/` nor a story in the loaded bundle. This removes the demo story files after demo content is turned off, or after a change of language or bundle version.
 
-```python
-def should_fetch_demos():
-    config = load_config('_config.yml')
-    return config.get('story_interface', {}).get('include_demo_content', False)
-```
+The next workflow step, **Generate Jekyll collections**, runs `generate_collections.py`, which writes the pages.
 
-If `include_demo_content: false` or unset:
-- Script deletes `_demo_content/` directory
-- Exits silently (no demos fetched)
-- Build continues normally
+## Fetching the Bundle
 
-### Version Matching Algorithm
+### Settings
 
-The system fetches `versions.json` index to find compatible demo versions:
+`load_config()` in `fetch_demo_content.py` reads three settings from `_config.yml`:
 
-```json
-{
-  "versions": ["0.4.0", "0.5.0", "0.6.0"],
-  "latest": "0.6.0"
-}
-```
+| Setting | Used for | When it is missing or invalid |
+|---------|----------|-------------------------------|
+| `story_interface.include_demo_content` | Whether to fetch | Treated as `false` |
+| `telar.version` | Choosing the bundle version | A value that does not parse prints a warning, and the script exits without fetching |
+| `telar_language` | Choosing the bundle language | Any value other than `en` or `es` prints a warning and is treated as `en` |
 
-**Matching logic:**
-1. Read `telar.version` from `_config.yml` (e.g., "v0.6.0-beta")
-2. Strip `-beta` suffix and `v` prefix → "0.6.0"
-3. Find highest available version ≤ site version
-4. Construct demo URL: `https://content.telar.org/demos/v{version}/{lang}/telar-demo-bundle.json`
+The version may carry a `v` or `V` prefix and a `-beta` suffix (for example `v1.8.0` or `1.0.0-beta`). The script uses only the three-part release number.
 
-**Example scenarios:**
+If `include_demo_content` is `false`, `cleanup_demo_content()` deletes `_demo_content/` and the script exits. If it is `true`, the script deletes `_demo_content/` first and then fetches, so a failed fetch leaves no bundle from an earlier build behind.
 
-| Site Version | Available Versions | Selected Version |
-|--------------|-------------------|------------------|
-| v0.6.0-beta | 0.4.0, 0.5.0, 0.6.0 | 0.6.0 |
-| v0.5.5 | 0.4.0, 0.5.0, 0.6.0 | 0.5.0 |
-| v0.7.0 | 0.4.0, 0.5.0, 0.6.0 | 0.6.0 |
-| v0.3.0 | 0.4.0, 0.5.0, 0.6.0 | None (too old) |
+### Version Matching
 
-### Language Selection
-
-Language is determined by `telar_language` setting:
-
-```python
-def get_demo_language():
-    config = load_config('_config.yml')
-    return config.get('telar_language', 'en')
-```
-
-Maps to demo URLs:
-- `en` → `/demos/v0.6.0/en/telar-demo-bundle.json`
-- `es` → `/demos/v0.6.0/es/telar-demo-bundle.json`
-
-### HTTP Fetching
-
-```python
-def fetch_demo_bundle(url):
-    try:
-        response = requests.get(url, timeout=30)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        log_error(f"Failed to fetch demos: {e}")
-        return None
-```
-
-**Error handling:**
-- Network failures: Script exits gracefully, build continues
-- 404 errors: Script logs warning, build continues
-- Timeout (30s): Script exits gracefully
-- Invalid JSON: Script logs error, build continues
-
-All errors are non-fatal. The site builds without demos if fetching fails.
-
-## Bundle Structure
-
-### Single-Bundle Format
-
-As of v0.6.0, demos are delivered as a single JSON file:
+`fetch_versions_index()` downloads `https://content.telar.org/demos/versions.json`, which lists the published bundle versions:
 
 ```json
 {
-  "version": "0.6.0",
-  "language": "en",
-  "generated": "2025-11-28T10:00:00Z",
-  "projects": [ ... ],
-  "objects": [ ... ],
-  "stories": {
-    "telar-tutorial": [ ... ],
-    "paisajes-demo": [ ... ]
-  },
-  "glossary": [ ... ]
-}
-```
-
-### Projects Array
-
-```json
-"projects": [
-  {
-    "number": 1,
-    "story_id": "telar-tutorial",
-    "title": "Telar Tutorial",
-    "subtitle": "Interactive Guide to Telar Features",
-    "byline": "Start here to learn Telar"
-  },
-  {
-    "number": 2,
-    "story_id": "paisajes-demo",
-    "title": "Paisajes Coloniales",
-    "subtitle": "Colonial Cartography Excerpt",
-    "byline": "Scholarly narrative example"
-  }
-]
-```
-
-### Objects Array
-
-```json
-"objects": [
-  {
-    "object_id": "demo-leviathan",
-    "title": "Leviathan Frontispiece (1651)",
-    "iiif_manifest": "",
-    "iiif_source_url": "https://content.telar.org/iiif/demo-leviathan/info.json",
-    "creator": "Abraham Bosse",
-    "period": "1651",
-    "credit": "Public Domain"
-  }
-]
-```
-
-**IIIF Auto-Population:**
-- If `iiif_manifest` is empty and object is self-hosted
-- `iiif_source_url` is populated with content.telar.org URL
-- `csv_to_json.py` processes this the same as user objects
-
-### Stories Object
-
-```json
-"stories": {
-  "telar-tutorial": [
-    {
-      "step": 1,
-      "object": "demo-tutorial-iiif",
-      "x": 0,
-      "y": 0,
-      "zoom": 0,
-      "question": "What is IIIF?",
-      "answer": "...",
-      "layer1_button": "Learn More",
-      "layer1_file": "iiif-intro",
-      "layer1_content": "# What is IIIF?\n\nIIIF (pronounced..."
-    }
+  "versions": [
+    "0.6.0",
+    "0.8.1",
+    "0.9.0",
+    "1.8.0"
   ]
 }
 ```
 
-**Content Inclusion:**
-- `layer1_content`, `layer2_content` include full markdown
-- No file references to resolve
-- Content is pre-processed and ready to merge
+`find_best_version(site_version, available_versions)` returns the highest listed version that is less than or equal to the site's version. With the versions above, sites get these bundles:
 
-### Glossary Array
+| Site version | Bundle |
+|--------------|--------|
+| 1.8.0 and later | 1.8.0 |
+| 0.9.0 to 1.7.x | 0.9.0 |
+| 0.8.1 to 0.8.x | 0.8.1 |
+| 0.6.0 to 0.8.0 | 0.6.0 |
 
-```json
-"glossary": [
-  {
-    "term": "iiif",
-    "title": "IIIF",
-    "content": "# IIIF\n\nInternational Image Interoperability Framework..."
-  }
-]
+If no listed version is less than or equal to the site's version, the script prints the available versions and exits without fetching. If `versions.json` cannot be read, the script tries a bundle for the site's own version.
+
+### Download and Checks
+
+`fetch_bundle(version, language)` downloads:
+
+```
+https://content.telar.org/demos/v{version}/{language}/telar-demo-bundle.json
 ```
 
-## Content Merging
+and prints the bundle's `_meta.telar_version`, `_meta.language` and `_meta.generated`. On a 404, another HTTP error, a network error or invalid JSON, it prints the error and returns `None`, and the script exits with "Your site will build without demos".
 
-### Integration Point
+The fetch script applies these limits:
 
-`csv_to_json.py` handles merging:
+| Limit | Value |
+|-------|-------|
+| Timeout for `versions.json` | 10 seconds |
+| Timeout for the bundle | 30 seconds |
+| Size of `versions.json` | 64 KB |
+| Size of the bundle | 10 MB |
 
-```python
-def main():
-    # Load user content
-    user_projects = process_project_csv()
-    user_objects = process_objects_csv()
-    user_stories = process_story_csvs()
+The size limits are `MAX_VERSIONS_BYTES` and `MAX_BUNDLE_BYTES` in `scripts/pipeline_utils.py`.
 
-    # Load and merge demo content
-    demo_bundle = load_demo_bundle()
-    if demo_bundle:
-        merge_demo_content(demo_bundle, user_projects, user_objects, user_stories)
+Before saving, `save_bundle()` checks that the bundle has the keys `_meta`, `objects`, `stories` and `project`; that `objects`, `stories` and `project` are each a list or an object; and that `objects` and `stories` have no more than 10,000 entries each. A bundle that fails any check is not saved. A bundle that passes is written to `_demo_content/telar-demo-bundle.json`.
 
-    # Write merged results
-    write_json_files(user_projects, user_objects, user_stories)
-```
+## Bundle Format
 
-### Merge Process
+A bundle has these top-level keys:
 
-**Projects:**
-```python
-def merge_projects(user_projects, demo_projects):
-    # User projects first, then demos
-    merged = user_projects + demo_projects
-    # Renumber if needed
-    for i, project in enumerate(merged, 1):
-        project['number'] = i
-    return merged
-```
+| Key | Contents |
+|-----|----------|
+| `_meta` | `bundle_format`, `telar_version`, `language`, `generated`, `generator`, `source`, `description`, `license` |
+| `iiif_base_url` | The base URL of the bundle's hosted IIIF objects |
+| `project` | A list of story entries, one per story |
+| `objects` | An object keyed by object ID |
+| `stories` | An object keyed by story ID, each holding a `steps` list |
+| `glossary` | An object keyed by glossary entry ID |
 
-**Objects:**
-```python
-def merge_objects(user_objects, demo_objects):
-    # Simple concatenation, unique object_ids guaranteed
-    return user_objects + demo_objects
-```
+The site's build does not read `iiif_base_url` or `_meta.bundle_format`.
 
-**Stories:**
-```python
-def merge_stories(user_stories, demo_stories):
-    # Demo stories written as separate JSON files
-    for story_id, steps in demo_stories.items():
-        write_story_json(f"{story_id}.json", steps)
-```
-
-**Glossary:**
-```python
-def merge_glossary(demo_glossary):
-    # Written to _data/demo-glossary.json (not telar-content/)
-    write_json('_data/demo-glossary.json', demo_glossary)
-```
-
-### Widget Processing
-
-Demo content undergoes full processing pipeline:
-
-1. **Widgets**: Accordion, tabs, carousel syntax converted
-2. **Image sizing**: Panel images processed for dimensions
-3. **Markdown**: Full markdown-to-HTML conversion
-4. **Glossary links**: `[term:glossary-term]` syntax converted
-
-This happens in `csv_to_json.py` after merging.
-
-### Demo Badges
-
-Demo content is marked with `demo: true` flag:
+A `project` entry from the English v1.8.0 bundle:
 
 ```json
 {
-  "step": 1,
-  "object": "demo-tutorial-iiif",
-  "demo": true,
-  ...
+  "order": 2,
+  "story_id": "colonial-landscapes",
+  "title": "Colonial Landscapes",
+  "subtitle": "A 1614 legal painting of the Bogotá savanna — a story with complex content",
+  "byline": "By Santiago Muñoz, Adelaida Ávila, and María Alejandra Orduz Avella",
+  "show_sections": true
 }
 ```
 
-Templates check this flag to display badges:
+An entry in `objects`:
 
-```liquid
-{% raw %}{% if step.demo %}
-  <span class="demo-badge">{{ lang.demo.panel_badge }}</span>
-{% endif %}{% endraw %}
+```json
+"demo-leviathan": {
+  "title": "Leviathan Frontispiece",
+  "description": "Frontispiece from Thomas Hobbes’ Leviathan (1651), showing the sovereign as a giant body composed of individual citizens",
+  "creator": "Abraham Bosse (after design by Thomas Hobbes)",
+  "period": "17th century",
+  "credit": "British Library",
+  "year": "1651",
+  "subjects": "political philosophy, sovereignty",
+  "featured": "TRUE",
+  "source": "British Library",
+  "source_url": "https://content.telar.org/iiif/objects/demo-leviathan/manifest.json",
+  "thumbnail": "https://content.telar.org/iiif/objects/demo-leviathan/full/231,313/0/default.jpg"
+}
 ```
 
-## File System
+Each step in a story's `steps` list has `step`, `object`, `x`, `y` and `zoom`, and may have `question`, `answer`, `alt_text`, `page` and `layers`. A step whose `object` is empty is a title card. This is step 2 of `colonial-landscapes`:
 
-### Directory Structure
-
-```
-_demo_content/               # Gitignored
-└── telar-demo-bundle.json   # Downloaded bundle
-
-_data/
-├── demo-glossary.json       # Demo glossary (generated)
-├── objects.json             # Merged objects
-├── project.json             # Merged projects
-├── telar-tutorial.json      # Demo story
-└── paisajes-demo.json       # Demo story
+```json
+{
+  "step": 2,
+  "object": "",
+  "x": 0.5,
+  "y": 0.5,
+  "zoom": 1.0,
+  "question": "A Painting of the Savanna",
+  "answer": "This document, which can be read both as a map and a painting, was part of a legal proceeding that consolidated one of the most important haciendas and family lineages of the New Kingdom of Granada."
+}
 ```
 
-### Gitignore Rules
+`layers` holds `layer1` and `layer2`, each with `button`, `content` and, when the panel's markdown file has a title in its front matter, `title`. Layer content is raw markdown; the site's build renders it.
 
-```gitignore
-# Demo content (ephemeral)
-_demo_content/
+A glossary entry has `term` (its title) and `content` (markdown), and may have `kind` and `related_terms`. The `kind` value is written as in the source spreadsheet, for example `source` in the English bundle and `fuente` in the Spanish one; the site's build resolves both to the same kind.
 
-# Demo glossary files
-telar-content/texts/glossary/_demo_*
-_data/demo-glossary.json
-```
+## Merging into `_data/`
 
-Demo content never enters version control.
+`merge_demo_content(bundle)` runs four functions in order. Each catches its own errors and prints a `[WARN]` line, so a failure in one does not stop the others.
 
-## GitHub Actions Integration
+### Stories in `project.json`
 
-### Workflow Step
+`_merge_demo_projects()` turns each `project` entry into a story record and puts the demo stories before the site's own in `stories` of the first entry in `_data/project.json`. It runs only when `_data/project.json` exists and the bundle's `project` list is not empty.
 
-`.github/workflows/build.yml`:
+| Record field | Taken from |
+|--------------|------------|
+| `number` | `order`, as a string |
+| `story_id` | `story_id` |
+| `title`, `subtitle`, `byline` | The same fields |
+| `_demo` | Always `true` |
 
-```yaml
-- name: Fetch demo content (if enabled)
-  run: python3 scripts/fetch_demo_content.py
-  continue-on-error: true
+No other field is carried. The bundle entry's `show_sections` is not copied, so a demo story's intro card shows no section list, even where the bundle entry sets `show_sections` to `true`, as `colonial-landscapes` and `paisajes` do in the v1.8.0 bundles.
 
-- name: Process CSV to JSON
-  run: python3 scripts/csv_to_json.py
-```
+### Objects in `objects.json`
 
-**Key points:**
-- Runs before `csv_to_json.py`
-- `continue-on-error: true` - Build continues if fetch fails
-- Demo content ready for merge when CSV processing starts
+`_merge_demo_objects()` appends the bundle's objects to `_data/objects.json`. An object whose ID is already in the site's objects is skipped, and the site's object is kept.
 
-## Error Handling
+Each demo object gets `object_id`, `title`, `description`, `source_url`, `iiif_manifest`, `creator`, `period`, `year`, `object_type`, `subjects`, `featured`, `source`, `credit`, `thumbnail`, `medium` and `_demo: true`, with these rules:
 
-### Graceful Degradation
+- `iiif_manifest` is a copy of `source_url`
+- `source` falls back to `location`, the field name in the v0.6.0 bundles
+- `medium` falls back to `object_type`
+- `alt_text` is added only when the bundle object has a value for it
+- `media_type` is computed from `source_url` by `detect_media_type()`, as for the site's own objects; a `media_type` in the bundle is not read
 
-All demo fetch errors are non-fatal:
+### Story Files
 
-```python
-try:
-    bundle = fetch_demo_bundle(url)
-    if bundle:
-        save_bundle(bundle)
-except Exception as e:
-    logger.warning(f"Demo fetch failed: {e}")
-    logger.info("Building without demo content")
-    # No raise, no sys.exit()
-```
+`_write_demo_stories()` writes one `_data/{story_id}.json` per bundle story. Each step becomes:
 
-Site builds successfully without demos.
+| Field | Value |
+|-------|-------|
+| `step`, `object`, `question`, `answer` | From the bundle step |
+| `x`, `y`, `zoom` | From the bundle step, as strings; `0.5`, `0.5` and `1` when absent |
+| `alt_text`, `page`, `clip_start`, `clip_end`, `loop` | Copied as strings, only when they have a value |
+| `layer1_button`, `layer2_button` | The layer's `button` |
+| `layer1_title`, `layer2_title` | The layer's `title`, or its `button` when it has none |
+| `layer1_text`, `layer2_text` | The layer's `content`, rendered |
+| `layer1_demo`, `layer2_demo` | `true` for every layer present |
+| `_demo` | Always `true` |
 
-### Common Errors
+Layer content goes through the same steps as a site's own panels: `process_widgets()`, then `process_images()`, then `render_markdown()`, which adds glossary links to the rendered HTML. Answers are rendered with `render_answer()`, as a site's answers are. If a story contains LaTeX, a `{"_metadata": true, "has_latex": true}` entry is put first in the file.
 
-| Error | Cause | Behavior |
-|-------|-------|----------|
-| Network timeout | content.telar.org unreachable | Build continues, no demos |
-| 404 Not Found | Version not available | Build continues, no demos |
-| Invalid JSON | Malformed bundle | Build continues, no demos |
-| Version mismatch | No compatible version | Build continues, no demos |
-| Config syntax | Invalid YAML | Script may fail, build fails |
+Glossary links in a demo story resolve against a link map built by `_demo_link_terms()` from the bundle's glossary and the site's own glossary pages together.
 
-Only config syntax errors are fatal.
+### Glossary
 
-## Debugging
+`_write_demo_glossary()` writes the bundle's glossary to `_data/demo-glossary.json` as a list. Each entry has `term_id`, `title` (from `term`), `content` and `_demo: true`, plus `kind` and `related_terms` when the bundle entry has them. A `related_terms` value written as a string is split on `|` into a list.
 
-### Enable Verbose Logging
+## Writing the Pages
 
-```python
-import logging
-logging.basicConfig(level=logging.DEBUG)
-```
+`generate_collections.py` reads the merged data and writes the Jekyll collection files:
 
-### Check Fetch Status
+- **Stories** (`generate_stories()`): a story record with `_demo` gets `demo: true` in its front matter. Demo stories get `sort_order` values from 0 and the site's stories from 1000, so the home page lists demo stories first.
+- **Objects**: a demo object gets `demo: true` in its front matter.
+- **Glossary** (`generate_glossary()` in `scripts/telar/glossary_pages.py`): demo entries are written after the site's own, from `_data/demo-glossary.json`. Each gets `glossary_kind` (resolved by `resolve_kind()`) and `demo: true`.
+
+Two glossary entries whose IDs produce the same page address cannot both be published. `place_demo_terms()` decides which demo entries are written: a demo entry whose address already belongs to a site entry, or to an earlier demo entry, is skipped with a warning, and links to its ID go to the page that holds the address. The same function decides the glossary links in demo stories, so the links and the pages agree. All demo entry IDs begin with `demo-`.
+
+## Marking Demo Content
+
+The layouts read the `demo` front matter flag, and the story engine reads the layer flags:
+
+| File | What it shows |
+|------|---------------|
+| `_layouts/index.html` | A `demo-badge` with `lang.demo.badge` on demo story cards |
+| `_layouts/story.html` | An `intro-demo-label` with `lang.story.demo_label` on a demo story's intro card |
+| `assets/js/telar-story/panels.js` | A `demo-badge-inline` with `lang.demo.panel_badge` next to the title of a panel whose `layer1_demo` or `layer2_demo` is set |
+| `_layouts/objects-index.html` | Lists the site's objects first and demo objects after them |
+| `_includes/object-grid-item.html` | A `demo-badge` with `lang.demo.badge` on demo object cards |
+| `_layouts/object.html` | An `object-demo-label` with `lang.story.demo_label` on a demo object's page |
+| `_layouts/glossary-index.html` | A `demo-badge-inline` with `lang.demo.badge` next to demo entries |
+| `_layouts/glossary.html` | A `demo-badge-inline` with `lang.demo.panel_badge` on a demo entry's page |
+
+`panels.js` reads the panel badge text from `window.telarLang.demoPanelBadge`, which `_layouts/story.html` sets from `lang.demo.panel_badge`. The strings are in `_data/languages/en.yml` and `es.yml`:
+
+| Key | English | Spanish |
+|-----|---------|---------|
+| `demo.badge` | DEMO | DEMO |
+| `demo.panel_badge` | Demo content | Contenido de demostración |
+| `story.demo_label` | Demo content | Contenido de demostración |
+
+## Files on Disk
+
+| Path | Written by | Removed |
+|------|------------|---------|
+| `_demo_content/telar-demo-bundle.json` | `save_bundle()` | By `cleanup_demo_content()` at the start of every run of the fetch script |
+| `_data/{story_id}.json` for each demo story | `_write_demo_stories()` | By `_cleanup_stale_data_files()` when the loaded bundle no longer has the story |
+| `_data/demo-glossary.json` | `_write_demo_glossary()` | Not removed by the build; a fresh checkout, as on GitHub Actions, does not have it |
+| Demo records in `_data/project.json` and `_data/objects.json` | `_merge_demo_projects()`, `_merge_demo_objects()` | Rewritten from the site's spreadsheets on every build |
+
+`.gitignore` lists `_demo_content/` and `_data/demo-glossary.json`.
+
+## The Demo Content Repository
+
+The bundles are built in the [demo content repository](https://github.com/UCSB-AMPLab/demo-content), which content.telar.org serves.
+
+### Layout
+
+The repository holds:
+
+| Path | Contents |
+|------|----------|
+| `demos/versions.json` | The version index the fetch script reads |
+| `demos/v{version}/{language}/` | One bundle's sources and its `telar-demo-bundle.json` |
+| `iiif/all-demo-objects.csv` | The images the generator tiles, with English and Spanish metadata for their manifests |
+| `iiif/sources/` | Source images for those tiles |
+| `iiif/objects/{object_id}/` | Hosted IIIF objects: `manifest.json`, `info.json` and tiles |
+| `assets/images/` | Images that panels use, such as carousel images |
+| `generator/build-demos.py` | The bundle and tile generator |
+
+A language directory holds these sources:
+
+| File | Contents |
+|------|----------|
+| `demo-project.csv` | One row per story |
+| `demo-objects.csv` | The objects |
+| `{story_id}.csv` | One file per story, named by the story's `story_id` |
+| `glossary.csv` or `glosario.csv` | The glossary entries |
+| `texts/stories/` | Markdown files that panel cells point to |
+
+The v1.8.0 bundles hold two stories: `allegorical-woman` (10 steps) and `colonial-landscapes` (22 steps) in English, and `mujer-alegorica` and `paisajes` in Spanish. Each language has 12 objects and 24 glossary entries.
+
+### The Generator
+
+The generator builds a bundle from a language directory's sources and writes it next to them. It reads the following columns:
+
+| Source | Columns |
+|--------|---------|
+| Project | `order`, `story_id`, `title`, `subtitle`, `byline`, `show_sections` |
+| Objects | `title`, `description`, `source_url`, `creator`, `period`, `credit`, `thumbnail`, `year`, `object_type`, `subjects`, `featured`, `medium`, `alt_text`, `source` |
+| Story | `step`, `object`, `x`, `y`, `zoom`, `question`, `answer`, `alt_text`, `page`, `layer1_button`, `layer1_content`, `layer2_button`, `layer2_content` |
+| Glossary | `term_id`, `title`, `definition`, `kind`, `related_terms` |
+
+Spanish column names are accepted and mapped to these names, as in a site's own spreadsheets. A row is skipped when its key column (`order`, `object_id`, `step` or `term_id`) is empty or begins with `#`, and a project or story row whose `order` or `step` is not a number is skipped too. `show_sections` is written as `true` when the cell holds `yes`, `true`, `sí` or `si`.
+
+A layer cell that ends in `.md` is read as a path under `texts/stories/`; its front matter is removed, and its `title`, if any, becomes the layer's `title`. Any other value is used as the panel's markdown. Carousel items whose images are in the repository's `assets/images/` get `width` and `height` written into them, so a site's build does not have to download the images to size the carousel.
+
+For objects listed in `iiif/all-demo-objects.csv`, the generator fills in an empty `source_url` with the object's manifest URL on content.telar.org, and an empty `thumbnail` from the object's `info.json`. Other objects keep the `source_url` written in `demo-objects.csv`.
+
+After a bundle is built, the generator rewrites `demos/versions.json` from the version directories that contain a `telar-demo-bundle.json`.
+
+The generator's options are:
+
+| Option | Effect |
+|--------|--------|
+| `--version`, `-v` | The bundle version to build, matching a `demos/v{version}/` directory; required unless `--iiif-only` is given |
+| `--bundle-only` | Build the bundles only |
+| `--iiif-only` | Generate IIIF tiles only |
+| `--force` | Regenerate tiles that already exist |
+| `--base-url` | The base URL written into IIIF manifests and into the URLs the bundle carries; defaults to `https://content.telar.org` |
+| `--skip-validation` | Skip IIIF manifest validation |
+
+To rebuild the v1.8.0 bundles without regenerating tiles:
 
 ```bash
-# Run fetch manually
-python3 scripts/fetch_demo_content.py
-
-# Check if bundle downloaded
-ls -lh _demo_content/
-cat _demo_content/telar-demo-bundle.json | python3 -m json.tool | head
+python generator/build-demos.py --version 1.8.0 --bundle-only
 ```
-
-### Verify Merge
-
-```bash
-# Check merged content
-cat _data/project.json | grep -i demo
-cat _data/objects.json | grep -i demo
-ls -1 _data/*demo*.json
-```
-
-### Test Version Matching
-
-```python
-from scripts.fetch_demo_content import find_compatible_version
-
-site_version = "0.6.0"
-available = ["0.4.0", "0.5.0", "0.6.0"]
-selected = find_compatible_version(site_version, available)
-print(f"Selected: {selected}")  # Should be 0.6.0
-```
-
-## Performance
-
-### Bundle Size
-
-Typical bundle sizes:
-- English bundle: ~200-300 KB (compressed)
-- Spanish bundle: ~200-300 KB (compressed)
-
-### Fetch Time
-
-- Network fetch: 1-3 seconds (good connection)
-- JSON parsing: <100ms
-- Total overhead: 1-5 seconds added to build
-
-### Caching
-
-No caching currently implemented. Each build fetches fresh content.
-
-**Future consideration:** Cache with TTL for local development.
-
-## Security
-
-### HTTPS Enforcement
-
-All demo URLs use HTTPS:
-
-```python
-DEMO_BASE_URL = "https://content.telar.org"  # Not http://
-```
-
-### Content Validation
-
-Basic validation on fetched bundle:
-
-```python
-def validate_bundle(bundle):
-    required_keys = ['version', 'language', 'projects', 'objects', 'stories']
-    return all(key in bundle for key in required_keys)
-```
-
-### No Code Execution
-
-Demo content is data only (JSON). No executable code in bundles.
 
 ## Troubleshooting
 
-### Demos Not Appearing
+### Run the Fetch on Its Own
 
-**Check configuration:**
-```bash
-grep include_demo_content _config.yml
-# Should show: include_demo_content: true
-```
+From the root of a site, run:
 
-**Check fetch log:**
 ```bash
 python3 scripts/fetch_demo_content.py
-# Look for errors or warnings
 ```
 
-**Check bundle exists:**
+The script prints the site version and language it read, the bundle version it chose, the bundle's URL and `_meta` fields, and a count of the projects, objects, stories and glossary entries it saved.
+
+### Check the Merge
+
+After `python3 scripts/csv_to_json.py`, the merge prints a line for each part: `Merged 2 demo project(s) into project.json`, a `Merged … demo object(s)` line, a `Created demo story:` line for each story, and `Created _data/demo-glossary.json (24 demo terms)` for the v1.8.0 bundles. A failure in a part prints a `[WARN]` line instead. Each demo record in `_data/project.json` and `_data/objects.json` has `"_demo": true`.
+
+### Check the Published Files
+
+To see which versions are published, and to check that a bundle is reachable:
+
 ```bash
-ls _demo_content/telar-demo-bundle.json
-# Should exist if fetch succeeded
+curl https://content.telar.org/demos/versions.json
+curl -I https://content.telar.org/demos/v1.8.0/en/telar-demo-bundle.json
 ```
-
-### Version Mismatch
-
-**Check versions.json:**
-```bash
-curl https://content.telar.org/versions.json
-# Compare with your site version
-```
-
-**Check selected version:**
-```bash
-python3 scripts/fetch_demo_content.py --verbose
-# Shows version selection logic
-```
-
-### Network Errors
-
-**Test connectivity:**
-```bash
-curl -I https://content.telar.org/
-# Should return 200 OK
-```
-
-**Check firewall:**
-- GitHub Actions may block outbound HTTPS
-- Check Actions logs for connection errors
 
 ## Related Documentation
 
-- [Demo Content (User Guide)](/docs/customization/demo-content/) - User-facing documentation
-- [GitHub Actions Reference](/docs/developers/github-actions/) - Build workflow details
-
----
-
-**New in v0.6.0**: Automated demo fetching with version matching and language support.
+- [Demo Content](/docs/customization/demo-content/): demo content for site authors
+- [GitHub Actions](/docs/developers/github-actions/): the build workflow

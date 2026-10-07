@@ -10,231 +10,144 @@ permalink: /guia/personalizacion/contenido-demostracion/
 
 # Contenido de demostración
 
-Aprende de historias de ejemplo pre-construidas mientras desarrollas tu propio sitio Telar.
+El contenido de demostración agrega a tu sitio dos historias de ejemplo terminadas. Con ellas puedes ver, antes de escribir la tuya, cómo se arma una historia en Telar y cómo funciona.
 
 ## ¿Qué es el contenido de demostración?
 
-El contenido de demostración consiste en historias de ejemplo completas que muestran las funcionalidades de Telar. Estas historias se agregan automáticamente a tu sitio cuando están habilitadas, dándote ejemplos funcionales para explorar y aprender.
+Es un conjunto de historias de ejemplo, junto con los objetos y las entradas del glosario que usan. Cada vez que se construye el sitio, Telar lo descarga de [content.telar.org](https://content.telar.org) y lo suma a tu propio contenido. Nunca se guarda en tu repositorio, así que, cuando lo desactivas, el siguiente *build* en GitHub ya no lo incluye.
 
-**Demostraciones disponibles:**
-- **Tutorial de Telar**: Un tutorial interactivo de 10 pasos que demuestra todas las funcionalidades de Telar
-- **Paisajes coloniales**: Un extracto de 5 pasos de un proyecto de investigación real sobre mapas coloniales
+El contenido de demostración lleva una marca en todos los lugares donde aparece, de modo que siempre puedes distinguirlo de tu propio trabajo.
 
-Ambas demostraciones incluyen:
-- Narrativas de historia con paneles de capa
-- Integración de imágenes IIIF
-- Definiciones de glosario
-- Ejemplos de widgets (acordeón, pestañas, carrusel)
-- Imágenes autoalojadas y externas
+## Las historias de demostración
 
-## Cuándo usar contenido de demostración
+El sitio recibe dos historias, en su mismo idioma:
 
-### Habilita las demostraciones cuando:
-- **Aprendiendo Telar**: Explora cómo se estructuran y escriben las historias
-- **Desarrollo local**: Prueba funcionalidades sin crear contenido
-- **Demostraciones**: Muestra a las partes interesadas lo que Telar puede hacer
-- **Referencia**: Ve ejemplos funcionales de funcionalidades específicas
+| Título en inglés | Título en español | Pasos | Qué muestra |
+|------------------|-------------------|-------|-------------|
+| The Allegorical Woman | La mujer alegórica | 10 | Una historia sencilla, centrada en una sola imagen |
+| Colonial Landscapes | Paisajes coloniales | 22 | Una historia más larga, con capítulos, paneles y fuentes primarias |
 
-### Deshabilita las demostraciones cuando:
-- **Sitios de producción**: Publicando tu proyecto final
-- **Pruebas limpias**: Probando solo tu propio contenido
-- **Despliegue público**: Compartiendo trabajo con audiencias
+### La mujer alegórica
+
+Esta historia, de Natalie Cobo, recorre los detalles de *Aspecto Symbólico del Mundo Hispánico*, un grabado de 1761 de Laureano Atlas que se conserva en la Princeton University Library. En ella se ven:
+
+- pasos que recorren una sola imagen y amplían un detalle a la vez
+- una imagen IIIF (se pronuncia "triple i efe") que viene directamente de la institución que la conserva, la Princeton University Library, y no de content.telar.org
+- un paso que cambia a una segunda imagen, el frontispicio del *Leviatán* de Hobbes
+- paneles de capa, con un paso que tiene también una segunda capa
+- enlaces a entradas del glosario desde el texto de la historia
+
+El primer paso enlaza a la hoja de cálculo de la historia en Google Sheets, para que puedas comparar cada fila con el paso que produce.
+
+### Paisajes coloniales
+
+Esta historia es una selección de *Paisajes Coloniales*, un proyecto de Santiago Muñoz, Adelaida Ávila y María Alejandra Orduz Avella. Gira en torno a una pintura de 1614 de la Sabana de Bogotá, hecha para un pleito y conservada en el Archivo General de Indias, en Sevilla.
+
+La historia tiene:
+
+- un primer paso que presenta el proyecto original y enlaza a él, y un último paso que repite ese enlace
+- cuatro capítulos, cada uno con una tarjeta de título al comienzo: "Una pintura de la Sabana", "Pueblos para los indios", "De terrazas a pastizales" y "Un paisaje dividido"
+- un panel de capa en casi todos los demás pasos, con el texto más extenso, los carruseles de imágenes y los recuadros que remiten a las fuentes primarias
+
+Cada fuente primaria es una entrada del glosario: al hacer clic en su recuadro, la entrada se abre en un panel. Muchas de esas entradas terminan con un enlace **Ver documento completo**, que lleva a la página del objeto correspondiente; dos paneles enlazan a documentos de la misma manera. La pintura y los nueve documentos vienen de content.telar.org como imágenes IIIF. Cinco de los documentos tienen varias páginas, y en la página de objeto de cada uno se puede pasar de una a otra.
+
+El glosario incluye además varias palabras clave y una persona, así que la página del glosario agrupa sus entradas en **Palabras clave**, **Fuentes primarias** y **Personas y entidades**.
+
+## Activar o desactivar el contenido de demostración
+
+Un solo ajuste de `_config.yml` controla el contenido de demostración. En un sitio de Telar nuevo viene activado.
+
+Para cambiarlo:
+
+1. Abre `_config.yml`
+2. Busca la sección `story_interface`
+3. Pon `include_demo_content` en `true` para mostrar las historias de demostración, o en `false` para ocultarlas:
+
+   ```yaml
+   story_interface:
+     include_demo_content: true
+   ```
+
+4. Haz commit del cambio
+
+GitHub Actions vuelve a construir el sitio, y el cambio se ve en cuanto termina. Si construyes el sitio en tu computador, ejecuta `python3 scripts/csv_to_json.py` y `python3 scripts/generate_collections.py` (o `python3 scripts/build_local_site.py`, que ejecuta ambos) y después Jekyll. Consulta [Desarrollo local](/guia/primeros-pasos/desarrollo-local/).
 
 {: .tip }
-> **Aprender de los Ejemplos**
-> Las historias de demostración te muestran cómo estructurar narrativas, escribir paneles de capa, usar widgets e integrar imágenes IIIF. Úsalas como plantillas para tus propias historias.
+> **Conserva las demostraciones mientras aprendes**
+> Mientras escribes tu primera historia, vale la pena tener a mano las historias de demostración, al lado de la tuya. Desactívalas antes de compartir el sitio.
 
-## Habilitar contenido de demostración
+## Dónde aparece el contenido de demostración
 
-### Paso 1: actualiza la configuración
+El contenido de demostración aparece en los mismos lugares que tu propio contenido, con una marca:
 
-Abre `_config.yml` y encuentra la sección `story_interface`:
+| Dónde | Qué ves |
+|-------|---------|
+| Página de inicio | Las historias de demostración, antes de las tuyas, con una insignia **DEMO** |
+| Tarjeta de inicio de la historia | Una etiqueta **Contenido de demostración** encima del título de la historia |
+| Paneles de capa | Una insignia **Contenido de demostración** junto al título del panel |
+| Página de objetos | Los objetos de demostración, después de los tuyos, con una insignia **DEMO** |
+| Página de un objeto | Una etiqueta **Contenido de demostración** encima del título del objeto |
+| Página del glosario | Una insignia **DEMO** junto a cada entrada de demostración |
+| Página de una entrada del glosario | Una insignia **Contenido de demostración** junto al título de la entrada |
 
-```yaml
-story_interface:
-  show_story_steps: true
-  include_demo_content: true    # Cambia a true
-```
+En un sitio en inglés, las marcas dicen **DEMO** y **Demo content**.
 
-### Paso 2: reconstruye tu sitio
+## Idioma
 
-**Para GitHub Pages:**
-1. Confirma el cambio a `_config.yml`
-2. Envía a tu repositorio
-3. Espera 2-3 minutos para que se complete la compilación
+El contenido de demostración sigue el idioma del sitio, que se define con `telar_language` en `_config.yml`:
 
-**Para desarrollo local:**
-```bash
-bundle exec jekyll build
-bundle exec jekyll serve
-```
+| Tu configuración | Contenido de demostración que recibes |
+|------------------|---------------------------------------|
+| `telar_language: "en"` | Historias, objetos y glosario en inglés |
+| `telar_language: "es"` | Historias, objetos y glosario en español |
 
-El proceso de compilación automáticamente obtiene el contenido de demostración de content.telar.org y lo integra con tus historias.
+Con cualquier otro valor se recibe el contenido de demostración en inglés. Si cambias el idioma del sitio, el siguiente *build* descarga el contenido de demostración en el idioma nuevo.
 
-## Qué verás
+## El contenido de demostración y tu propio contenido
 
-Cuando el contenido de demostración está habilitado:
+El contenido de demostración se suma al tuyo durante el *build* y nunca reemplaza nada de lo que tienes:
 
-### Página de inicio
-Las historias de demostración aparecen junto con tus propias historias con una pequeña etiqueta "Contenido de demostración":
+| | Tu contenido | Contenido de demostración |
+|---|---|---|
+| Dónde está | En tu repositorio | Se descarga en cada *build*; no se guarda en tu repositorio |
+| ¿Se puede editar? | Sí | No |
+| Marca | Ninguna | Insignia **DEMO** o etiqueta **Contenido de demostración** |
+| Mismo identificador de objeto que uno tuyo | — | Se conserva tu objeto y se omite el de demostración |
+| Mismo identificador de entrada del glosario que uno tuyo | — | Se conserva tu entrada y se omite la de demostración |
 
-- **Tu historia** (si tienes una)
-- **Tutorial de Telar** — Contenido de demostración
-- **Paisajes coloniales** — Contenido de demostración
+Todos los identificadores de los objetos y de las entradas del glosario de demostración empiezan con `demo-`, así que normalmente no coinciden con los tuyos.
 
-### Página de objetos
-Los objetos de demostración se incluyen en el catálogo con la misma etiqueta.
+## Usar las demostraciones como modelo
 
-### Glosario
-Los términos de glosario de demostración aparecen con tus términos, también marcados con etiquetas.
+Las historias de demostración están escritas en el mismo formato de hoja de cálculo que tus historias. Los archivos de origen están publicados en el [repositorio de contenido de demostración](https://github.com/UCSB-AMPLab/demo-content) en GitHub, en `demos/v1.8.0/es/` y `demos/v1.8.0/en/`:
 
-## Resumen de historias de demostración
+- `demo-project.csv`: las filas de las dos historias en la hoja del proyecto
+- `demo-objects.csv`: los objetos
+- `mujer-alegorica.csv` y `paisajes.csv` (`allegorical-woman.csv` y `colonial-landscapes.csv` en inglés): los pasos de las historias
+- `glosario.csv` (`glossary.csv` en inglés): las entradas del glosario, con la columna `tipo` (`kind` en inglés), que indica cuáles entradas son fuentes y cuáles son personas
+- `texts/stories/`: los archivos Markdown de los paneles de Paisajes coloniales
 
-### Tutorial de Telar (10 pasos)
-
-Un recorrido interactivo de las funcionalidades de Telar:
-
-1. **Introducción a IIIF**: Usando recursos IIIF externos
-2. **Imágenes Autoalojadas**: Generación de teselas IIIF
-3. **Formato Markdown**: Estilo de texto con widget de pestañas
-4. **Sistema de Coordenadas**: Entendiendo x, y, zoom
-5-7. **Pan y Zoom**: Demostrando secuencias de coordenadas
-8. **Enlace Automático de Glosario**: Términos con widget de pestañas
-9. **Muestra de Widgets**: Ejemplos de carrusel y acordeón
-10. **Medios Enriquecidos**: Próximos pasos y recursos
-
-**Idiomas**: Disponible en inglés y español
-
-### Paisajes coloniales (5 pasos)
-
-Un extracto de un proyecto de historia digital que explora la cartografía colonial:
-
-- Tradiciones de mapeo temprano
-- Marcos legales coloniales españoles
-- Retórica visual en mapas
-- Imágenes históricas autoalojadas
-- Técnicas narrativas académicas
-
-**Idiomas**: Disponible en inglés y español
-
-## Coincidencia de idioma
-
-El contenido de demostración automáticamente coincide con el idioma de tu sitio:
-
-| Idioma de tu sitio | Demostraciones que obtienes |
-|-------------------|---------------|
-| `telar_language: en` | Demostraciones en inglés |
-| `telar_language: es` | Demostraciones en español |
-
-Establece `telar_language` en `_config.yml` para controlar en qué idioma aparecen las demostraciones.
-
-## Cómo funciona
-
-Cuando habilitas el contenido de demostración:
-
-1. **Obtener**: Durante la compilación, Telar descarga un paquete de demostraciones de content.telar.org
-2. **Coincidencia de versión**: El sistema selecciona demostraciones compatibles con tu versión de Telar
-3. **Fusionar**: Las historias, objetos y términos de glosario de demostración se fusionan con tu contenido
-4. **Mostrar**: Las demostraciones aparecen con etiquetas visuales para distinguirlas de tu trabajo
-
-Cuando deshabilitas el contenido de demostración:
-
-1. **Limpieza**: Telar elimina todos los archivos de demostración
-2. **Reconstruir**: El sitio se reconstruye solo con tu contenido
-3. **Sin rastros**: Las demostraciones no dejan artefactos en tu repositorio
-
-## Deshabilitar contenido de demostración
-
-### Paso 1: actualiza la configuración
-
-Cambia `include_demo_content` a `false`:
-
-```yaml
-story_interface:
-  show_story_steps: true
-  include_demo_content: false    # Deshabilita demostraciones
-```
-
-### Paso 2: reconstruye tu sitio
-
-Confirma, envía y espera la reconstrucción (GitHub Pages) o ejecuta `bundle exec jekyll build` (local).
-
-Todo el contenido de demostración se elimina automáticamente.
-
-## Usar las demostraciones como plantillas
-
-### Ver contenido fuente de demostraciones
-
-El contenido de demostración está alojado en [content.telar.org](https://content.telar.org). Puedes ver:
-
-- Estructuras CSV de historias
-- Markdown de paneles de capa
-- Definiciones de glosario
-- Sintaxis de widgets
-- Patrones de integración de imágenes
-
-### Adaptar patrones de demostraciones
-
-Patrones comunes para adaptar de las demostraciones:
-
-**Del Tutorial de Telar:**
-- Estructura narrativa Pregunta/Respuesta/Invitación
-- Secuencias de coordenadas para argumentos visuales
-- Integración de widgets (pestañas, acordeón, carrusel)
-- Definiciones de términos de glosario
-
-**De Paisajes Coloniales:**
-- Tono narrativo académico
-- Flujo de trabajo de imágenes autoalojadas
-- Paneles de capa de contexto histórico
-- Prácticas de citación académica
-
-## Contenido de demostración vs. tu contenido
-
-| Aspecto | Tu Contenido | Contenido de Demostración |
-|--------|--------------|--------------|
-| Ubicación | Directorio `telar-content/` | Descargado durante compilación |
-| Editable | Sí | No (solo vista) |
-| Etiqueta | Ninguna | Etiqueta "Contenido de demostración" |
-| Rastreado en git | Sí | No |
-| Persistencia | Permanente | Solo mientras esté habilitado |
-| Personalizable | Completamente | No editable |
+Para ver cómo se refleja en la página la estructura de una historia, compara las filas de `paisajes.csv` con la historia en tu sitio: las filas con la columna `objeto` vacía son las tarjetas de título de los capítulos.
 
 ## Solución de problemas
 
-### Las demostraciones no aparecen
+### No aparecen las historias de demostración
 
-Si las demostraciones no se muestran después de habilitar:
+Si activaste el contenido de demostración y las historias no aparecen:
 
-1. **Verifica sintaxis de configuración**: Verifica `include_demo_content: true` (no `enabled` o `yes`)
-2. **Reconstrucción completada**: Espera a que termine GitHub Actions
-3. **Limpia caché del navegador**: Actualización forzada con Ctrl+Shift+R (Cmd+Shift+R en Mac)
-4. **Verifica log de compilación**: Busca errores en el flujo de trabajo de GitHub Actions
+1. Verifica que `include_demo_content: true` esté dentro de la sección `story_interface` de `_config.yml`
+2. Comprueba en la pestaña **Actions** de tu repositorio que el *build* haya terminado
+3. Abre el registro del *build*, despliega el paso **Convert CSV to JSON** y busca las líneas que empiezan con **Telar Demo Content Fetcher**
+4. Haz una recarga forzada de la página (Ctrl+Shift+R en Windows o Linux, Cmd+Shift+R en Mac)
 
-### Demostraciones en idioma incorrecto
+### No se pudo descargar el contenido de demostración
 
-Si las demostraciones aparecen en idioma inesperado:
+Si content.telar.org no responde o la descarga falla, el registro del *build* avisa que el sitio se construirá sin las demostraciones, y el *build* continúa. Tu contenido se publica como siempre, sin las historias de demostración. El siguiente *build* vuelve a intentarlo.
 
-1. Verifica la configuración de `telar_language` en `_config.yml`
-2. Reconstruye el sitio después de cambiar la configuración de idioma
-3. Limpia caché del navegador
+### Las entradas del glosario de demostración no desaparecen al desactivar el contenido
 
-### Errores de red
+Si construyes el sitio en tu computador, las historias y los objetos de demostración desaparecen en el siguiente *build*, pero las entradas del glosario de demostración se quedan, porque el archivo que las contiene, `_data/demo-glossary.json`, no se borra. Borra ese archivo y vuelve a construir el sitio. En GitHub esto no pasa, porque cada *build* empieza sin ese archivo.
 
-Si la compilación falla con errores de obtención de demostraciones:
+### El contenido de demostración está en otro idioma
 
-- Telar continúa compilando sin demostraciones aunque falle la descarga
-- Tu propio contenido aún aparece
-- Verifica disponibilidad de content.telar.org
-- Deshabilita temporalmente las demostraciones si la obtención falla consistentemente
-
-## Próximos pasos
-
-- Explora la demostración [Tutorial de Telar](/) para aprender funcionalidades principales
-- Revisa la demostración [Paisajes Coloniales](/) para técnicas narrativas académicas
-- Crea tu primera historia usando patrones de las demostraciones
-- Deshabilita las demostraciones cuando estés listo para desplegar tu sitio de producción
-
----
-
-**Nuevo en v0.6.0**: Historias de demostración obtenidas automáticamente con coincidencia de versión y soporte de idioma.
+Revisa `telar_language` en `_config.yml`. Debe ser `"en"` o `"es"`; con cualquier otro valor se recibe el contenido de demostración en inglés.
