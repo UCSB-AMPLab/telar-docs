@@ -365,7 +365,7 @@ Your configuration is never sent to any server — everything runs in your brows
     var df = config['development-features'];
     if (!df) return;
     checkBooleanFields(df, 'development-features', [
-      'christmas_tree_mode', 'skip_stories', 'skip_collections'
+      'christmas_tree_mode', 'hide_warnings', 'skip_stories', 'skip_collections'
     ], issues);
   }
 

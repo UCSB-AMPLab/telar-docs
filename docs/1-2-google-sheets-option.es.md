@@ -543,6 +543,7 @@ webrick:
 # Development & Testing
 development-features:
   christmas_tree_mode: false
+  hide_warnings: false
   viewer_preloading:
     max_viewer_cards: 8
     preload_steps: 6

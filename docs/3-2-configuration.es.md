@@ -391,6 +391,7 @@ Opciones para desarrollo, pruebas y situaciones especiales (por favor no edites 
 ```yaml
 development-features:
   christmas_tree_mode: false
+  hide_warnings: false
   viewer_preloading:
     max_viewer_cards: 8
     preload_steps: 6
@@ -408,6 +409,15 @@ Muestra todos los mensajes de advertencia para probar el soporte multilingüe:
 - **`true`**: Muestra objetos de prueba con errores falsos para verificar que los mensajes de advertencia se muestren correctamente
 
 Usa esto solo al probar traducciones o el estilo de mensajes de advertencia.
+
+#### hide_warnings
+
+Oculta en el sitio publicado las advertencias que genera el *build*:
+
+- **`false` (predeterminado)**: Las advertencias sobre tu contenido (imágenes que faltan, problemas con IIIF, entradas del glosario que no existen, errores de configuración) aparecen en las páginas a las que se refieren, para que puedas verlas y corregirlas
+- **`true`**: Los visitantes no ven las advertencias, pero el registro del *build* las sigue mostrando
+
+Usa esto solo cuando hayas revisado una advertencia y sepas que no afecta tu sitio. Mientras esté activado, tampoco verás en el sitio las advertencias de problemas nuevos.
 
 #### viewer_preloading
 
@@ -562,6 +572,7 @@ webrick:
 # Development & Testing
 development-features:
   christmas_tree_mode: false
+  hide_warnings: false
   viewer_preloading:
     max_viewer_cards: 8
     preload_steps: 6

@@ -366,7 +366,7 @@ Tu configuración nunca se envía a ningún servidor — todo se ejecuta en tu n
     var df = config['development-features'];
     if (!df) return;
     checkBooleanFields(df, 'development-features', [
-      'christmas_tree_mode', 'skip_stories', 'skip_collections'
+      'christmas_tree_mode', 'hide_warnings', 'skip_stories', 'skip_collections'
     ], issues);
   }
 

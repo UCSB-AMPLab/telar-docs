@@ -395,6 +395,7 @@ Options for development, testing, and special use cases (please do not edit thes
 ```yaml
 development-features:
   christmas_tree_mode: false
+  hide_warnings: false
   viewer_preloading:
     max_viewer_cards: 8
     preload_steps: 6
@@ -412,6 +413,15 @@ Displays all warning messages for testing multilingual support:
 - **`true`**: Shows test objects with fake errors to verify all warning messages display correctly
 
 Use this only when testing translations or warning message styling.
+
+#### hide_warnings
+
+Hides the warnings the build produces on the published site:
+
+- **`false` (default)**: Warnings about your content (missing images, IIIF problems, missing glossary entries, configuration errors) appear on the pages they refer to, so you can see and fix them
+- **`true`**: Visitors don't see the warnings, but the build log still lists them
+
+Use this only when you have checked a warning and know it does not affect your site. While it is on, you won't see warnings about new problems on your site either.
 
 #### viewer_preloading
 
@@ -566,6 +576,7 @@ webrick:
 # Development & Testing
 development-features:
   christmas_tree_mode: false
+  hide_warnings: false
   viewer_preloading:
     max_viewer_cards: 8
     preload_steps: 6
