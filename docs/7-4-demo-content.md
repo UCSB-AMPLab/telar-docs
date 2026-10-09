@@ -14,7 +14,7 @@ Demo content adds two finished example stories to your site, so you can see how 
 
 ## What is Demo Content?
 
-Demo content is a set of example stories, together with the objects and glossary entries they use. Telar downloads it from [content.telar.org](https://content.telar.org) each time your site builds and adds it to your own content. It is never saved in your repository, so when you turn it off, the next build on GitHub leaves it out.
+Demo content is a set of example stories, together with the objects and glossary entries they use. Telar downloads it from [content.telar.org](https://content.telar.org) each time your site builds and adds it to your own content. It is never saved in your repository, so when you turn it off, the next build leaves it out.
 
 Demo content is marked wherever it appears, so you can always tell it apart from your own work.
 
@@ -143,10 +143,6 @@ If you turned demo content on and the stories are missing:
 ### The Demo Content Could Not Be Downloaded
 
 If content.telar.org cannot be reached, or the download fails, the build log says that your site will build without demos, and the build continues. Your own content is published as usual, without the demo stories. The next build tries again.
-
-### Demo Glossary Entries Remain After Turning Demo Content Off
-
-On your own computer, the demo stories and objects disappear at the next build, but the demo glossary entries stay, because the file that lists them, `_data/demo-glossary.json`, is not deleted. Delete that file and build again. Builds on GitHub are not affected, because they start without the file.
 
 ### Demo Content Is in the Wrong Language
 

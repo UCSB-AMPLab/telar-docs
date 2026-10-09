@@ -36,7 +36,7 @@ When `csv_to_json.py` runs:
 1. `fetch_demo_content_if_enabled()` runs `python3 scripts/fetch_demo_content.py` as a subprocess, before any spreadsheet is converted. It allows the subprocess 60 seconds and prints its standard output. The subprocess's exit status is not checked, and a timeout or an error starting it prints a warning and lets the build continue.
 2. The site's project, objects and story spreadsheets are converted to JSON in `_data/`.
 3. `load_demo_bundle()` reads `_demo_content/telar-demo-bundle.json` if it exists, and `merge_demo_content()` merges it into `_data/`.
-4. `_cleanup_stale_data_files()` removes any `_data/*.json` story file that matches neither a spreadsheet in `telar-content/spreadsheets/` nor a story in the loaded bundle. This removes the demo story files after demo content is turned off, or after a change of language or bundle version.
+4. `_cleanup_stale_data_files()` removes any `_data/*.json` story file that matches neither a spreadsheet in `telar-content/spreadsheets/` nor a story in the loaded bundle. This removes the demo story files after demo content is turned off, or after a change of language or bundle version. It also removes `_data/demo-glossary.json` when no bundle is loaded or the loaded bundle has no glossary, so the demo glossary entries go with the stories.
 
 The next workflow step, **Generate Jekyll collections**, runs `generate_collections.py`, which writes the pages.
 
@@ -182,9 +182,10 @@ A glossary entry has `term` (its title) and `content` (markdown), and may have `
 | `number` | `order`, as a string |
 | `story_id` | `story_id` |
 | `title`, `subtitle`, `byline` | The same fields |
+| `show_sections` | `show_sections`, only when it is `true` |
 | `_demo` | Always `true` |
 
-No other field is carried. The bundle entry's `show_sections` is not copied, so a demo story's intro card shows no section list, even where the bundle entry sets `show_sections` to `true`, as `colonial-landscapes` and `paisajes` do in the v1.8.0 bundles.
+No other field is carried. In the v1.8.0 bundles, `colonial-landscapes` and `paisajes` set `show_sections` to `true`, so their intro cards list their sections.
 
 ### Objects in `objects.json`
 
@@ -260,7 +261,7 @@ The layouts read the `demo` front matter flag, and the story engine reads the la
 |------|------------|---------|
 | `_demo_content/telar-demo-bundle.json` | `save_bundle()` | By `cleanup_demo_content()` at the start of every run of the fetch script |
 | `_data/{story_id}.json` for each demo story | `_write_demo_stories()` | By `_cleanup_stale_data_files()` when the loaded bundle no longer has the story |
-| `_data/demo-glossary.json` | `_write_demo_glossary()` | Not removed by the build; a fresh checkout, as on GitHub Actions, does not have it |
+| `_data/demo-glossary.json` | `_write_demo_glossary()` | By `_cleanup_stale_data_files()` when no bundle is loaded or the loaded bundle has no glossary |
 | Demo records in `_data/project.json` and `_data/objects.json` | `_merge_demo_projects()`, `_merge_demo_objects()` | Rewritten from the site's spreadsheets on every build |
 
 `.gitignore` lists `_demo_content/` and `_data/demo-glossary.json`.

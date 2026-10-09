@@ -14,7 +14,7 @@ El contenido de demostración agrega a tu sitio dos historias de ejemplo termina
 
 ## ¿Qué es el contenido de demostración?
 
-Es un conjunto de historias de ejemplo, junto con los objetos y las entradas del glosario que usan. Cada vez que se construye el sitio, Telar lo descarga de [content.telar.org](https://content.telar.org) y lo suma a tu propio contenido. Nunca se guarda en tu repositorio, así que, cuando lo desactivas, el siguiente *build* en GitHub ya no lo incluye.
+Es un conjunto de historias de ejemplo, junto con los objetos y las entradas del glosario que usan. Cada vez que se construye el sitio, Telar lo descarga de [content.telar.org](https://content.telar.org) y lo suma a tu propio contenido. Nunca se guarda en tu repositorio, así que, cuando lo desactivas, el siguiente *build* ya no lo incluye.
 
 El contenido de demostración lleva una marca en todos los lugares donde aparece, de modo que siempre puedes distinguirlo de tu propio trabajo.
 
@@ -143,10 +143,6 @@ Si activaste el contenido de demostración y las historias no aparecen:
 ### No se pudo descargar el contenido de demostración
 
 Si content.telar.org no responde o la descarga falla, el registro del *build* avisa que el sitio se construirá sin las demostraciones, y el *build* continúa. Tu contenido se publica como siempre, sin las historias de demostración. El siguiente *build* vuelve a intentarlo.
-
-### Las entradas del glosario de demostración no desaparecen al desactivar el contenido
-
-Si construyes el sitio en tu computador, las historias y los objetos de demostración desaparecen en el siguiente *build*, pero las entradas del glosario de demostración se quedan, porque el archivo que las contiene, `_data/demo-glossary.json`, no se borra. Borra ese archivo y vuelve a construir el sitio. En GitHub esto no pasa, porque cada *build* empieza sin ese archivo.
 
 ### El contenido de demostración está en otro idioma
 
