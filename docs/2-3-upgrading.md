@@ -62,6 +62,12 @@ The upgrade system:
 4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
 5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
+### v1.8.1 Upgrade Notes
+
+**Upgrade with the "Upgrade Telar" workflow or through the Telar Compositor.** It takes a site from v1.8.0 to v1.8.1, and chains through from earlier versions. No manual steps: only the Telar files that changed are installed, and your site's content and settings are left as they are.
+
+The upgrade does not add the new [`hide_warnings`](/docs/configure/configuration/#hide_warnings) setting to `_config.yml`, so your site keeps showing warnings as before. To hide them, add `hide_warnings: true` to the `development-features` block.
+
 ### v1.8.0 Upgrade Notes
 
 **Upgrade with the "Upgrade Telar" workflow.** It takes a site from v1.7.0 to v1.8.0, and chains through from earlier versions. Before your first build, the upgrade repairs a sheet whose duplicate columns would now stop the build (one column holds the values, the others are empty) and lists the answers the build will shorten.
