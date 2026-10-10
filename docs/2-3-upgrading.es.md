@@ -77,6 +77,12 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
+### Notas de actualización a v1.8.1
+
+**Actualiza con el workflow «Upgrade Telar» o con el Compositor de Telar.** La actualización lleva un sitio de la v1.8.0 a la v1.8.1; desde versiones anteriores, pasa en orden por cada versión intermedia. No hay pasos manuales: solo se instalan los archivos de Telar que cambiaron, y el contenido y la configuración del sitio quedan como estaban.
+
+La actualización no agrega a `_config.yml` la opción nueva [`hide_warnings`](/guia/configurar/configuracion/#hide_warnings), así que el sitio sigue mostrando las advertencias como hasta ahora. Para ocultarlas, pon `hide_warnings: true` en el bloque `development-features`.
+
 ### Notas de actualización a v1.8.0
 
 **Actualiza con el workflow «Upgrade Telar».** Lleva un sitio de v1.7.0 a v1.8.0, y en cadena desde versiones anteriores. Antes del primer *build*, la actualización corrige las hojas con columnas duplicadas que ahora detendrían el *build* (una columna conserva los valores y las otras quedan vacías) y lista las respuestas que el *build* va a recortar.

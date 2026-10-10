@@ -36,7 +36,7 @@ Cuando se ejecuta `csv_to_json.py`:
 1. Antes de convertir las hojas de cálculo, `fetch_demo_content_if_enabled()` ejecuta `python3 scripts/fetch_demo_content.py` como subproceso, con un plazo de 60 segundos, y muestra su salida estándar. No revisa el código de salida del subproceso; si se agota el plazo o el subproceso no logra arrancar, muestra una advertencia y el *build* continúa.
 2. Las hojas de cálculo del proyecto, de los objetos y de las historias del sitio se convierten a JSON en `_data/`.
 3. `load_demo_bundle()` lee `_demo_content/telar-demo-bundle.json`, si existe, y `merge_demo_content()` lo incorpora a `_data/`.
-4. `_cleanup_stale_data_files()` borra cualquier archivo de historia `_data/*.json` que no corresponda ni a una hoja de cálculo de `telar-content/spreadsheets/` ni a una historia del paquete cargado. Así desaparecen los archivos de las historias de demostración cuando se desactiva el contenido de demostración o cuando cambian el idioma o la versión del paquete.
+4. `_cleanup_stale_data_files()` borra cualquier archivo de historia `_data/*.json` que no corresponda ni a una hoja de cálculo de `telar-content/spreadsheets/` ni a una historia del paquete cargado. Así desaparecen los archivos de las historias de demostración cuando se desactiva el contenido de demostración o cuando cambian el idioma o la versión del paquete. También borra `_data/demo-glossary.json` cuando no hay un paquete cargado o cuando el paquete no trae glosario; así, las entradas del glosario de demostración desaparecen junto con las historias.
 
 El paso siguiente del flujo de trabajo, **Generate Jekyll collections**, ejecuta `generate_collections.py`, que escribe las páginas.
 
@@ -183,9 +183,10 @@ Una entrada del glosario tiene `term` (su título) y `content` (Markdown), y pue
 | `number` | `order`, como cadena de texto |
 | `story_id` | `story_id` |
 | `title`, `subtitle`, `byline` | Los mismos campos |
+| `show_sections` | `show_sections`, solo cuando es `true` |
 | `_demo` | Siempre `true` |
 
-No se copia ningún otro campo. Como `show_sections` queda por fuera, la tarjeta de inicio de una historia de demostración no muestra la tabla de contenidos de secciones, aunque la entrada del paquete tenga `show_sections` en `true`, como ocurre con `colonial-landscapes` y `paisajes` en los paquetes de la v1.8.0.
+No se copia ningún otro campo. En los paquetes de la v1.8.0, `colonial-landscapes` y `paisajes` tienen `show_sections` en `true`, así que la tarjeta de inicio de cada una muestra la tabla de contenidos de secciones.
 
 ### Objetos en `objects.json`
 
@@ -261,7 +262,7 @@ Las plantillas leen la marca `demo` del frontmatter, y el motor de historias lee
 |------|------------|-----------------|
 | `_demo_content/telar-demo-bundle.json` | `save_bundle()` | Lo borra `cleanup_demo_content()` al comienzo de cada ejecución del script de descarga |
 | `_data/{story_id}.json` de cada historia de demostración | `_write_demo_stories()` | Lo borra `_cleanup_stale_data_files()` cuando el paquete cargado ya no tiene esa historia |
-| `_data/demo-glossary.json` | `_write_demo_glossary()` | El *build* no lo borra; una copia recién clonada del repositorio, como la de GitHub Actions, no lo tiene |
+| `_data/demo-glossary.json` | `_write_demo_glossary()` | Lo borra `_cleanup_stale_data_files()` cuando no hay un paquete cargado o cuando el paquete no trae glosario |
 | Registros de demostración en `_data/project.json` y `_data/objects.json` | `_merge_demo_projects()`, `_merge_demo_objects()` | Se reescriben a partir de las hojas de cálculo del sitio en cada *build* |
 
 `.gitignore` incluye `_demo_content/` y `_data/demo-glossary.json`.

@@ -4,6 +4,15 @@ All notable changes to Telar Documentation will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.8.1] - 2026-10-09
+
+### Added
+- Upgrade notes for v1.8.1, in English and Spanish.
+- The `hide_warnings` setting: in the configuration reference (3-2), the list of warnings it hides (3-3) and the sample configuration (1-2).
+
+### Changed
+- Demo content (7-4, 8-3): the build removes the demo glossary when demo content is turned off, and a demo story's `show_sections` reaches its intro card.
+
 ## [1.8.0] - 2026-10-04
 
 ### Added
