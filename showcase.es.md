@@ -122,7 +122,15 @@ extra_css:
     var language = LANGUAGE_CHIPS[p.language] ? p.language : '';
     li.setAttribute('data-context', context);
     li.setAttribute('data-language', language);
-    li.appendChild(el('div', 'sc-thumb', ''));
+    var thumb = el('div', 'sc-thumb', '');
+    if (p.image && /^https?:\/\//i.test(p.image)) {
+      var img = document.createElement('img');
+      img.src = p.image;
+      img.alt = '';
+      img.loading = 'lazy';
+      thumb.appendChild(img);
+    }
+    li.appendChild(thumb);
 
     var body = el('div', 'sc-card__body');
     var title = el('h3', 'sc-card__title');

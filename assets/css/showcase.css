@@ -363,6 +363,14 @@
   color: #6B7280;
 }
 
+/* A card with a picture: the site's own image, cropped to the square well. */
+.section-content .sc-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .section-content .sc-card__body {
   display: flex;
   flex-direction: column;
