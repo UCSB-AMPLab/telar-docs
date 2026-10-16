@@ -135,6 +135,141 @@ permalink: /
   </div>
 </section>
 
+<!-- Showcase Section -->
+<section class="section showcase-section fade-in" id="showcase" hidden>
+  <div class="section__content">
+    <h2 data-lang="en">Projects built with Telar</h2>
+    <h2 data-lang="es">Proyectos hechos con Telar</h2>
+    <p class="section__lede" data-lang="en">Exhibitions, class projects and research made with Telar.</p>
+    <p class="section__lede" data-lang="es">Exposiciones, investigaciones y trabajos de clase hechos con Telar.</p>
+
+    <div class="showcase__grid" id="showcase-grid">
+      <div class="showcase-card showcase-card--invite">
+        <h3 data-lang="en">Send us yours</h3>
+        <h3 data-lang="es">Mándanos el tuyo</h3>
+        <p data-lang="en">We are collecting sites made with Telar. If you have made one, we would like to include it.</p>
+        <p data-lang="es">Estamos reuniendo sitios hechos con Telar. Si hiciste uno, nos gustaría incluirlo.</p>
+        <div class="showcase-card__footer">
+          <a class="btn btn--primary" href="{{ '/showcase/submit/' | relative_url }}" data-lang="en">Share your project</a>
+          <a class="btn btn--primary" href="{{ '/proyectos/compartir/' | relative_url }}" data-lang="es">Comparte tu proyecto</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="showcase__after">
+      <a class="btn btn--secondary" href="{{ '/showcase/' | relative_url }}" data-lang="en">See all projects</a>
+      <a class="btn btn--secondary" href="{{ '/proyectos/' | relative_url }}" data-lang="es">Ver todos los proyectos</a>
+    </p>
+  </div>
+</section>
+
+<script>
+// The showcase block: the two newest approved projects, beside the invitation
+// card the page ships with. The section stays hidden unless a project renders,
+// so a failed request or an empty showcase leaves the page as it was.
+(function () {
+  var API = '{{ site.showcase_api }}';
+  var MAX_CARDS = 2;
+  var section = document.getElementById('showcase');
+  var grid = document.getElementById('showcase-grid');
+  var invite = grid ? grid.querySelector('.showcase-card--invite') : null;
+  if (!API || !section || !grid || !invite) return;
+
+  var CONTEXT = {
+    class: ['Class project', 'Trabajo de clase'],
+    thesis: ['Thesis', 'Tesis'],
+    research: ['Research project', 'Proyecto de investigación'],
+    teaching: ['Teaching resource', 'Recurso didáctico'],
+    community: ['Community project', 'Proyecto comunitario'],
+    personal: ['Personal project', 'Proyecto personal'],
+    other: ['Other', 'Otro']
+  };
+  var LANGUAGE = {
+    en: ['English', 'Inglés'],
+    es: ['Spanish', 'Español'],
+    other: ['Other language', 'Otro idioma']
+  };
+
+  function el(tag, cls, text) {
+    var node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text) node.textContent = text;
+    return node;
+  }
+
+  function bilingual(tag, cls, pair) {
+    var frag = document.createDocumentFragment();
+    ['en', 'es'].forEach(function (lang, index) {
+      var node = el(tag, cls, pair[index]);
+      node.setAttribute('data-lang', lang);
+      frag.appendChild(node);
+    });
+    return frag;
+  }
+
+  function card(project) {
+    var item = el('div', 'showcase-card');
+
+    if (project.image) {
+      var thumb = el('div', 'showcase-card__thumb');
+      var img = document.createElement('img');
+      img.src = project.image;
+      img.alt = '';
+      img.loading = 'lazy';
+      thumb.appendChild(img);
+      item.appendChild(thumb);
+    }
+
+    var body = el('div', 'showcase-card__body');
+    body.appendChild(el('h3', null, project.title));
+    if (project.author) body.appendChild(el('p', 'showcase-card__byline', project.author));
+    body.appendChild(el('p', null, project.description));
+
+    var tags = el('div', 'showcase-card__tags');
+    var context = CONTEXT[project.context];
+    if (context) tags.appendChild(bilingual('span', 'showcase-chip', context));
+    var language = LANGUAGE[project.language];
+    if (language) tags.appendChild(bilingual('span', 'showcase-chip', language));
+    if (tags.childNodes.length) body.appendChild(tags);
+
+    var footer = el('div', 'showcase-card__footer');
+    ['en', 'es'].forEach(function (lang, index) {
+      var link = el('a', 'showcase-card__link', ['Visit site \u2197', 'Visitar el sitio \u2197'][index]);
+      link.href = project.url;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.setAttribute('data-lang', lang);
+      footer.appendChild(link);
+    });
+    body.appendChild(footer);
+    item.appendChild(body);
+    return item;
+  }
+
+  function usable(project) {
+    if (!project || !project.title || !project.url || !project.description) return false;
+    return /^https?:\/\//i.test(project.url);
+  }
+
+  var controller = new AbortController();
+  var timeout = setTimeout(function () { controller.abort(); }, 20000);
+
+  fetch(API + '/projects', { signal: controller.signal }).then(function (res) {
+    clearTimeout(timeout);
+    if (!res.ok) throw new Error('status ' + res.status);
+    return res.json();
+  }).then(function (data) {
+    if (!data || !Array.isArray(data.projects)) throw new Error('bad envelope');
+    var shown = data.projects.filter(usable).slice(0, MAX_CARDS);
+    if (!shown.length) return;
+    shown.forEach(function (project) { grid.insertBefore(card(project), invite); });
+    section.hidden = false;
+  }).catch(function () {
+    clearTimeout(timeout);
+  });
+})();
+</script>
+
 <!-- Sponsors Section -->
 <section class="section sponsors-section fade-in">
   <div class="section__content">
