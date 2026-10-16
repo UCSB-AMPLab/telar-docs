@@ -150,16 +150,26 @@
     }
 
     /* A button that carries a mark sets its own baseline, since inline-block
-       leaves the glyph sitting on the text baseline rather than beside it. */
+       leaves the glyph sitting on the text baseline rather than beside it.
+       The mark is concentric with the pill's end cap: the cap is centred half
+       the button's height from the edge, so the padding is that minus the
+       mark's radius. */
     .btn--icon {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      padding-left: 16px;
+    }
+
+    /* The hero's buttons draw a 1px border, which pushes their padding box
+       in by that much. */
+    .hero .btn--icon {
+      padding-left: 15px;
     }
 
     .btn__icon {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       flex: none;
       fill: currentColor;
     }
@@ -626,6 +636,10 @@
     html[lang="es"] .showcase-card__tags [data-lang="es"],
     html[lang="es"] .showcase-card__footer [data-lang="es"],
     html[lang="es"] .showcase__after [data-lang="es"] { display: inline-block; }
+
+    /* Same rule, same problem: a button carrying a mark has to keep the flex
+       box that puts the mark beside the text rather than on its baseline. */
+    html[lang="es"] .btn--icon[data-lang="es"] { display: inline-flex; }
 
     /* Fade-in animation */
     .fade-in {
