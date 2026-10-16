@@ -153,17 +153,11 @@
        leaves the glyph sitting on the text baseline rather than beside it.
        The mark is concentric with the pill's end cap: the cap is centred half
        the button's height from the edge, so the padding is that minus the
-       mark's radius. */
+       mark's radius, less the 1px border these buttons draw. */
     .btn--icon {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding-left: 16px;
-    }
-
-    /* The hero's buttons draw a 1px border, which pushes their padding box
-       in by that much. */
-    .hero .btn--icon {
       padding-left: 15px;
     }
 
