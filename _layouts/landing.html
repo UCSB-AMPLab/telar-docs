@@ -149,6 +149,21 @@
       transition: all 0.2s;
     }
 
+    /* A button that carries a mark sets its own baseline, since inline-block
+       leaves the glyph sitting on the text baseline rather than beside it. */
+    .btn--icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn__icon {
+      width: 16px;
+      height: 16px;
+      flex: none;
+      fill: currentColor;
+    }
+
     .hero .btn--primary {
       background: var(--cream);
       color: var(--terracotta);
