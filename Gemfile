@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.4"
 gem "just-the-docs", "0.10.0"
+gem "csv"
+gem "base64"
 
 group :jekyll_plugins do
   gem "jekyll-seo-tag"
