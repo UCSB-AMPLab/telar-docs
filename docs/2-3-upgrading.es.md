@@ -77,6 +77,16 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
+### Notas de actualización a v1.8.2
+
+**Actualiza con el workflow «Upgrade Telar» o con el Compositor de Telar.** La actualización lleva un sitio de la v1.8.1 a la v1.8.2; desde versiones anteriores, pasa en orden por cada versión intermedia.
+
+La actualización corrige dos partes de la hoja de cálculo del glosario, salvo que las hayas modificado: las filas de instrucciones del comienzo ahora indican la carpeta `/telar-content/texts/glossary/`, y la entrada «Telar» queda solo en el idioma del sitio. Si tu sitio lee el contenido de Google Sheets, la actualización te pide que hagas el mismo cambio en la entrada «Telar» de la hoja, porque el siguiente *build* vuelve a leerla.
+
+En los sitios que se actualizan con `scripts/upgrade.py`, la actualización también borra las copias viejas de los scripts de actualización (`scripts/telar_upgrade.py` y tres archivos auxiliares), salvo que las hayas modificado.
+
+Si actualizas con el workflow o desde tu computador, puedes borrar `.github/workflows/telar-tests.yml`. Ese workflow ejecuta las pruebas del propio Telar, que en tu sitio siempre se omiten. Si actualizas con el Compositor, este lo borra por ti.
+
 ### Notas de actualización a v1.8.1
 
 **Actualiza con el workflow «Upgrade Telar» o con el Compositor de Telar.** La actualización lleva un sitio de la v1.8.0 a la v1.8.1; desde versiones anteriores, pasa en orden por cada versión intermedia. No hay pasos manuales: solo se instalan los archivos de Telar que cambiaron, y el contenido y la configuración del sitio quedan como estaban.

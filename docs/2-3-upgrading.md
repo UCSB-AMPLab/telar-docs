@@ -62,6 +62,16 @@ The upgrade system:
 4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
 5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
+### v1.8.2 Upgrade Notes
+
+**Upgrade with the "Upgrade Telar" workflow or through the Telar Compositor.** It takes a site from v1.8.1 to v1.8.2, and chains through from earlier versions.
+
+The upgrade corrects two parts of your glossary spreadsheet, unless you have changed them: the instruction rows at the top now name `/telar-content/texts/glossary/`, and the "Telar" entry keeps only your site's language. If your site reads its content from Google Sheets, the upgrade asks you to make the same change to the "Telar" entry in your sheet, since the next build reads the sheet again.
+
+On sites that upgrade with `scripts/upgrade.py`, the upgrade also deletes the old copies of the upgrade scripts (`scripts/telar_upgrade.py` and three helper files), unless you have changed them.
+
+If you upgrade with the workflow or from your own computer, you can delete `.github/workflows/telar-tests.yml`. It runs Telar's own tests, which are always skipped on your site. An upgrade through the Compositor deletes it for you.
+
 ### v1.8.1 Upgrade Notes
 
 **Upgrade with the "Upgrade Telar" workflow or through the Telar Compositor.** It takes a site from v1.8.0 to v1.8.1, and chains through from earlier versions. No manual steps: only the Telar files that changed are installed, and your site's content and settings are left as they are.

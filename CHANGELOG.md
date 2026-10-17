@@ -4,6 +4,11 @@ All notable changes to Telar Documentation will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.8.2] - 2026-10-16
+
+### Added
+- Upgrade notes for v1.8.2, in English and Spanish.
+
 ## [1.8.1] - 2026-10-09
 
 ### Added
