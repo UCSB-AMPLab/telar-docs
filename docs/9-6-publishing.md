@@ -54,6 +54,8 @@ The Compositor includes a configuration editor for essential site settings. Inst
 
 The config editor lets you change settings like your site title, theme options, and other configuration values that affect how your exhibition appears. Changes to configuration are included in your next publish alongside any content changes.
 
+If your site's `_config.yml` is written in a way that doesn't let the Compositor save your **Site settings** in it, the **Publish** page tells you and offers to rewrite the file. Click **Review the rewrite** to see what will happen. The Compositor rebuilds `_config.yml` from the template for the version of Telar your site uses and keeps the settings from your file as they are. The review lists the settings that will take their value from **Site settings** or from the template, and any lines the Compositor can't read, which will be removed. Comments between settings aren't kept. When you click **Accept the rewrite**, the Compositor writes the new file the next time you publish; the old one stays in your site's history on GitHub. Anyone who can edit **Site settings** can accept the rewrite.
+
 {: .note }
 > The config editor covers the most commonly used settings. For advanced configuration options, you can still edit `_config.yml` directly in your repository. See [Configuration](/docs/configuration/) for the full reference.
 

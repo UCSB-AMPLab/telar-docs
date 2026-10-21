@@ -54,6 +54,8 @@ El Compositor incluye un editor de configuración para los ajustes esenciales de
 
 El editor de configuración te permite cambiar ajustes como el título del sitio, opciones de tema y otros valores de configuración que afectan la apariencia de tu exhibición. Los cambios de configuración se incluyen en tu próxima publicación junto con cualquier cambio de contenido.
 
+Si el archivo `_config.yml` de tu sitio está escrito de una forma que no le permite al Compositor guardar en él los ajustes de **Configuración del sitio**, la página **Publicar** te avisa y te ofrece reescribir el archivo. Haz clic en **Revisar la reescritura** para ver qué va a pasar. El Compositor rehace `_config.yml` a partir de la plantilla de la versión de Telar que usa tu sitio y conserva tal cual los ajustes propios de tu archivo. La revisión te muestra qué ajustes van a quedar con el valor de **Configuración del sitio** o de la plantilla, y qué líneas no puede leer el Compositor y por eso se van a quitar. Los comentarios entre ajustes no se conservan. Cuando haces clic en **Aceptar la reescritura**, el Compositor escribe el archivo nuevo la próxima vez que publiques; el anterior queda en el historial de tu sitio en GitHub. Cualquier persona con permiso para editar **Configuración del sitio** puede aceptar la reescritura.
+
 {: .note }
 > El editor de configuración cubre los ajustes de uso más común. Para opciones de configuración avanzadas, puedes seguir editando `_config.yml` directamente en tu repositorio. Consulta [Configuración](/guia/configuracion/) para la referencia completa.
 
