@@ -1,6 +1,6 @@
 # Telar homepage video
 The homepage uses normal document flow and the supplied Spanish/English Vimeo
-embeds. The canonical definition sits above a full-width film at every screen size. There is no native scroll-film renderer or local MP4 fetch.
+embeds. The definition and viewport-fitted film occupy separate scroll steps. There is no native scroll-film renderer or local MP4 fetch.
 
 Only the active-language poster is loaded initially. IntersectionObserver creates
 the iframe and loads Vimeo's SDK as the film enters view. Playback is muted and
@@ -10,8 +10,12 @@ The progress bar and auxiliary player controls are disabled. Reduced motion supp
 uses Vimeo's own controls. A failed load retains the poster and offers a Vimeo
 link. The supplied video IDs and privacy hashes are preserved.
 
-Lenis and scroll-motion.js provide bounded page smoothing and one section per
-arrow press. Film bookmarks and the pinned 2500svh section have been removed.
+Lenis and scroll-motion.js animate one stop per wheel/trackpad gesture or arrow
+press. A 200ms quiet gap separates wheel gestures; momentum cannot trigger a
+second move. Tall sections include reading stops to keep every row reachable.
+Native snap points cover touch input. For wheel input inside Vimeo, a scroll
+observer hands native movement to the same step controller without covering the
+player or disabling its controls. Reduced motion uses immediate transitions. Film bookmarks and the pinned 2500svh section have been removed.
 The approved palette is terracotta, cream, light grey, charcoal and darker
 secondary text, with a blue project section. The larger loom and original wordmark scale are retained. All developer/supporter logos, including UT AMPL, remain.
 
