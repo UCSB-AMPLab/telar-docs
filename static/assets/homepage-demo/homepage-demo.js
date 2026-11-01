@@ -27,9 +27,13 @@
   raf=requestAnimationFrame(tick);
   function manualInput(){pendingTarget=null;onArrival=null;travel.reset(scrollY)}
   function preference(){manualInput();lenis.options.smoothWheel=!motion.matches;lenis.resize();if(motion.matches)suspend();else syncPlayback()}
+  // Read layout positions so fade-in transforms cannot create an extra arrow stop.
+  function layoutTop(element){
+    let top=0;for(;element;element=element.offsetParent)top+=element.offsetTop;return top;
+  }
   function scrollTo(target,arrive=null){
     if(typeof target==='string')target=document.querySelector(target);
-    if(target instanceof Element)target=target.getBoundingClientRect().top+scrollY;
+    if(target instanceof Element)target=layoutTop(target);
     if(!Number.isFinite(target))return;
     target=Math.min(limit(),Math.max(0,target));onArrival=arrive;
     if(!smooth()){lenis.scrollTo(target,{immediate:true});travel.reset(target);pendingTarget=null;onArrival=null;arrive?.();return}
@@ -47,7 +51,7 @@
     if(!direction||event.altKey||event.ctrlKey||event.metaKey||event.shiftKey)return;
     if(event.target.isContentEditable||event.target.closest('input,textarea,select,iframe,video,[role="slider"],[role="listbox"],[role="tablist"]'))return;
     event.preventDefault();if(event.repeat)return;
-    const stops=[...document.querySelectorAll('main > section,body > section,body > footer')].filter(e=>!e.hidden).map(e=>e.getBoundingClientRect().top+scrollY);
+    const stops=[...document.querySelectorAll('main > section,body > section,body > footer')].filter(e=>!e.hidden).map(layoutTop);
     const ordered=[...new Set(stops.map(n=>Math.min(limit(),Math.max(0,n))))].sort((a,b)=>a-b);
     const current=pendingTarget??scrollY,target=direction>0?ordered.find(n=>n>current+8):ordered.slice().reverse().find(n=>n<current-8);
     if(target===undefined)return;

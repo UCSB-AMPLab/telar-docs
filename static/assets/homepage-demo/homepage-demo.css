@@ -17,11 +17,12 @@ a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid var(
 .hero__utility a{color:var(--cream);font-size:15px;text-decoration:underline;text-underline-offset:4px;opacity:.9}
 .hero__utility a:hover{opacity:1}
 .hero__scroll{bottom:20px}
-.telar-demo-section{background:var(--demo-background);min-height:auto;padding:64px 24px}
-.telar-demo-layout{display:grid;grid-template-columns:1fr;gap:32px;max-width:1600px;width:100%;margin:auto}
-.telar-about-copy{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.7fr);gap:clamp(24px,4vw,64px);align-items:start;background:transparent;box-shadow:none;border:0;padding:0}
-.telar-about-copy h2{margin-bottom:0}
-.telar-about-copy p{font-weight:400;line-height:1.65;margin-bottom:0}
+.telar-demo-section{background:var(--demo-background);min-height:100svh;padding:24px}
+/* Fit the complete film inside one viewport, including on short desktop windows. */
+.telar-demo-layout{width:100%;max-width:min(1600px,calc((100svh - 48px) * 16 / 9));margin:auto}
+.telar-about-copy{background:transparent;box-shadow:none;border:0;padding:0;margin-bottom:56px}
+.telar-about-copy h2{margin-bottom:20px}
+.telar-about-copy p{font-weight:400;line-height:1.65;margin-bottom:0;font-size:20px}
 .telar-demo-media{margin:0;min-width:0}
 /* The Vimeo exports have 109px of blank padding above and below the
    1920x1080 film. Crop that padding without cropping any film content.
@@ -49,18 +50,16 @@ a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid var(
 .landing-footer a{color:var(--cream);text-underline-offset:3px}
 .landing-footer a:hover{color:var(--gold)}
 @media(max-width:900px){
- .telar-demo-layout{grid-template-columns:1fr;gap:24px;max-width:900px}
- .telar-demo-section{padding:64px 24px}
- .telar-about-copy{grid-template-columns:1fr;gap:12px;max-width:900px}
+ .telar-demo-section{min-height:auto}
+ .telar-about-copy{margin-bottom:40px}
  .telar-demo-media{width:100%}
 }
 @media(max-width:600px){
  .hero{padding:24px 20px 68px}
  .hero__lang-toggle button{min-height:44px}
  .hero__utility{gap:4px 18px}
- .telar-demo-section{padding:48px 16px}
+ .telar-demo-section{padding:24px 16px}
  .telar-about-copy{padding:0 4px}
- .telar-demo-layout{gap:16px}
  .cta-section{padding:56px 20px}
  .features__grid{gap:16px}
 }
