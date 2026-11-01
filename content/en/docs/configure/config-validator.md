@@ -38,7 +38,7 @@ Your configuration is never sent to any server — everything runs in your brows
   inputEl.addEventListener('scroll', function() { linesEl.scrollTop = inputEl.scrollTop; });
   updateLineNumbers();
 
-  var KNOWN_THEMES = ['paisajes', 'neogranadina', 'santa-barbara', 'austin'];
+  var KNOWN_THEMES = ['trama', 'paisajes', 'neogranadina', 'santa-barbara', 'austin'];
   var WEAK_KEYS = ['test', 'password', '123', '1234', 'abc', 'key', 'secret', 'demo', 'admin'];
 
   function friendlyYamlError(reason) {

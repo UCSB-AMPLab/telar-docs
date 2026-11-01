@@ -134,8 +134,8 @@ show_drafts: false
 
 # Telar Settings (version information)
 telar:
-  version: "__TELAR_VERSION__"
-  release_date: "__TELAR_RELEASE_DATE__"
+  version: __TELAR_VERSION__
+  release_date: __TELAR_RELEASE_DATE__
 
 # Plugins
 plugins:

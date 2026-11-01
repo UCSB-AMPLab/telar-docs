@@ -39,7 +39,7 @@ Tu configuración nunca se envía a ningún servidor — todo se ejecuta en tu n
   inputEl.addEventListener('scroll', function() { linesEl.scrollTop = inputEl.scrollTop; });
   updateLineNumbers();
 
-  var KNOWN_THEMES = ['paisajes', 'neogranadina', 'santa-barbara', 'austin'];
+  var KNOWN_THEMES = ['trama', 'paisajes', 'neogranadina', 'santa-barbara', 'austin'];
   var WEAK_KEYS = ['test', 'password', '123', '1234', 'abc', 'key', 'secret', 'demo', 'admin'];
 
   function friendlyYamlError(reason) {
