@@ -1,18 +1,26 @@
-/* Normal page flow with bounded Lenis smoothing. Vimeo loads only on approach. */
+/* Stepped page navigation with bounded transitions. Vimeo loads only on approach. */
 (() => {
   'use strict';
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
   const small=matchMedia('(max-width: 900px)');
   const travel=new TelarScrollMotion(scrollY);
   const limit=()=>Math.max(0,document.documentElement.scrollHeight-innerHeight);
-  const smooth=()=>!motion.matches&&!small.matches;
+  const smooth=()=>!motion.matches;
+  let lastWheel=-Infinity,wheelTotal=0,wheelConsumed=false;
   const lenis=new Lenis({lerp:.06,smoothWheel:!motion.matches,wheelMultiplier:.65,autoRaf:false,anchors:false,
     virtualScroll({deltaY,event}){
-      if(!smooth()||event.type!=='wheel'||event.ctrlKey)return;
+      if(event.type!=='wheel'||event.ctrlKey||event.metaKey)return;
       if(event.target.closest('input,textarea,select,iframe,[data-lenis-prevent]'))return false;
-      event.preventDefault();pendingTarget=null;
-      if(!travel.active)travel.reset(scrollY);
-      travel.wheel(deltaY,innerHeight,limit());return false;
+      event.preventDefault();
+      const now=performance.now();
+      if(now-lastWheel>200){wheelTotal=0;wheelConsumed=false}
+      lastWheel=now;
+      // One gesture owns one move. Its momentum tail must not start another.
+      if(wheelConsumed||travel.active){wheelConsumed=true;return false}
+      if(Math.sign(wheelTotal)!==Math.sign(deltaY))wheelTotal=0;
+      wheelTotal+=deltaY;
+      if(Math.abs(wheelTotal)>=12){wheelConsumed=true;advance(Math.sign(wheelTotal))}
+      return false;
     }
   });
   let raf=0,lastTick=0,pendingTarget=null,onArrival=null;
@@ -20,19 +28,24 @@
     const dt=lastTick?(time-lastTick)/1000:0;lastTick=time;
     if(travel.active){
       lenis.scrollTo(travel.step(dt,innerHeight,limit()),{immediate:true});
-      if(!travel.active){pendingTarget=null;const arrived=onArrival;onArrival=null;arrived?.()}
+      if(!travel.active){document.documentElement.classList.remove('is-stepping');pendingTarget=null;const arrived=onArrival;onArrival=null;arrived?.()}
     }
     lenis.raf(time);raf=requestAnimationFrame(tick);
   }
   raf=requestAnimationFrame(tick);
-  function manualInput(){pendingTarget=null;onArrival=null;travel.reset(scrollY)}
+  function manualInput(){document.documentElement.classList.remove('is-stepping');pendingTarget=null;onArrival=null;travel.reset(scrollY)}
   function preference(){manualInput();lenis.options.smoothWheel=!motion.matches;lenis.resize();if(motion.matches)suspend();else syncPlayback()}
+  // Read layout positions so fade-in transforms cannot create an extra arrow stop.
+  function layoutTop(element){
+    let top=0;for(;element;element=element.offsetParent)top+=element.offsetTop;return top;
+  }
   function scrollTo(target,arrive=null){
     if(typeof target==='string')target=document.querySelector(target);
-    if(target instanceof Element)target=target.getBoundingClientRect().top+scrollY;
+    if(target instanceof Element)target=layoutTop(target);
     if(!Number.isFinite(target))return;
     target=Math.min(limit(),Math.max(0,target));onArrival=arrive;
-    if(!smooth()){lenis.scrollTo(target,{immediate:true});travel.reset(target);pendingTarget=null;onArrival=null;arrive?.();return}
+    document.documentElement.classList.add('is-stepping');
+    if(!smooth()){lenis.scrollTo(target,{immediate:true});travel.reset(target);pendingTarget=null;onArrival=null;document.documentElement.classList.remove('is-stepping');arrive?.();return}
     if(!travel.active)travel.reset(scrollY);
     travel.moveTo(target,innerHeight);
   }
@@ -41,17 +54,47 @@
     if(!element.hasAttribute('tabindex'))element.setAttribute('tabindex','-1');
     element.focus({preventScroll:true});
   }
+  function stops(){
+    const points=[];
+    for(const section of document.querySelectorAll('main > section,body > section,body > footer')){
+      const top=layoutTop(section),overflow=section.offsetHeight-innerHeight;
+      const offsets=[];
+      if(!section.hidden){
+        points.push(top);
+        // Tall content gets reading stops too, so stepping never skips its lower rows.
+        if(overflow>64){
+          const parts=Math.ceil(section.offsetHeight/innerHeight)-1;
+          for(let i=1;i<=parts;i++)offsets.push(overflow*i/parts);
+        }
+        points.push(...offsets.map(offset=>top+offset));
+      }
+      // Native snapping also handles wheel events inside the cross-origin Vimeo frame.
+      // Keep identical stops available when those events cannot reach this document.
+      const existing=[...section.querySelectorAll('.telar-reading-stop')];
+      if(existing.length!==offsets.length||existing.some((node,i)=>parseFloat(node.style.top)!==offsets[i])){
+        existing.forEach(node=>node.remove());
+        for(const offset of offsets){
+          const marker=document.createElement('span');marker.className='telar-reading-stop';
+          marker.setAttribute('aria-hidden','true');marker.style.top=offset+'px';section.append(marker);
+        }
+      }
+    }
+    return [...new Set(points.map(n=>Math.min(limit(),Math.max(0,n))))].sort((a,b)=>a-b);
+  }
+  const stopObserver=new ResizeObserver(stops);
+  document.querySelectorAll('main > section,body > footer').forEach(section=>stopObserver.observe(section));
+  function advance(direction){
+    const ordered=stops(),current=pendingTarget??scrollY;
+    const target=direction>0?ordered.find(n=>n>current+8):ordered.slice().reverse().find(n=>n<current-8);
+    if(target===undefined)return;
+    pendingTarget=target;scrollTo(target);
+  }
   function keydown(event){
     if(['Home','End','PageUp','PageDown',' '].includes(event.key))manualInput();
     const direction={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[event.key];
     if(!direction||event.altKey||event.ctrlKey||event.metaKey||event.shiftKey)return;
     if(event.target.isContentEditable||event.target.closest('input,textarea,select,iframe,video,[role="slider"],[role="listbox"],[role="tablist"]'))return;
-    event.preventDefault();if(event.repeat)return;
-    const stops=[...document.querySelectorAll('main > section,body > section,body > footer')].filter(e=>!e.hidden).map(e=>e.getBoundingClientRect().top+scrollY);
-    const ordered=[...new Set(stops.map(n=>Math.min(limit(),Math.max(0,n))))].sort((a,b)=>a-b);
-    const current=pendingTarget??scrollY,target=direction>0?ordered.find(n=>n>current+8):ordered.slice().reverse().find(n=>n<current-8);
-    if(target===undefined)return;
-    pendingTarget=target;scrollTo(target);
+    event.preventDefault();if(!event.repeat)advance(direction);
   }
   function anchor(event){
     const link=event.target.closest('a[href^="#"]');if(!link?.hash||link.hash==='#')return;
@@ -72,6 +115,22 @@
   const embed=root.querySelector('[data-demo-embed]'),poster=root.querySelector('[data-demo-poster]');
   const error=root.querySelector('[data-demo-error]'),errorText=root.querySelector('[data-demo-error-text]'),errorLink=root.querySelector('[data-demo-error-link]');
   const transcript=root.querySelector('[data-demo-transcript]');
+  window.addEventListener('scroll',()=>{
+    // Cross-origin iframe wheel events do not bubble. Observe their native movement
+    // and hand the gesture to the same step controller, keeping Vimeo clickable.
+    if(!embed.querySelector('iframe')?.matches(':hover')){
+      if(!travel.active)travel.reset(scrollY);return;
+    }
+    const delta=scrollY-travel.position;if(Math.abs(delta)<2)return;
+    const now=performance.now();
+    if(now-lastWheel>200){wheelTotal=0;wheelConsumed=false}
+    lastWheel=now;
+    if(wheelConsumed||travel.active){
+      wheelConsumed=true;lenis.scrollTo(travel.position,{immediate:true});return;
+    }
+    const previous=travel.position;wheelConsumed=true;
+    travel.reset(scrollY);pendingTarget=previous;advance(Math.sign(delta));
+  },{passive:true});
   const languages=JSON.parse(document.getElementById('telar-demo-config').textContent);
   let sdkPromise=null,player=null,iframe=null,ready=false,playing=false,inView=false,userPaused=false,pauseExpected=false,generation=0,timeout=0,data;
   function sdk(){
