@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 1.5. Add Your Content
+title: "Add an object and a first story"
 parent: 1. Getting Started
 grand_parent: Documentation
 nav_order: 5
@@ -14,102 +14,66 @@ tutorial_next:
   url: /docs/getting-started/review-refine/
 ---
 
-# Add Your Content
+# Add an object and a first story
 
-Your site is set up. Now it's time to add your images, videos, and audio files and build your stories. How you enter your content depends on which setup method you chose — but the structure is the same regardless.
+Start with one object and a short sequence. Once the full route works, extend it with more sources and optional layers.
 
-## Add Your Media
+<span class="anchor-alias" id="add-detail-panels"></span>
+<span class="anchor-alias" id="add-your-content"></span>
+<span class="anchor-alias" id="add-your-media"></span>
+## Add the source
 
-Objects in Telar can be images, videos, or audio files. Telar supports two ways to include them:
+In the **objects** tab, add an ID, title, source address and useful metadata. For an external IIIF source, put the manifest URL in `source_url`.
 
-**Option A: Upload your own images**
+Use this example if you need a source for practice:
 
-1. In your GitHub repository, navigate to `telar-content/objects/`
-2. Click **Add file** → **Upload files**
-3. Drag your images into the upload area
-4. Give each file a simple name without spaces (e.g., `textile-001.jpg`, `map-lima.jpg`)
-5. Click **Commit changes** to save
+```text
+https://juancobo.com/138la/iiif/khipu/p7/manifest.json
+```
 
-The filename (without the extension) becomes the object's `object_id` — you will use this in your spreadsheet.
+Choose the ID `khipu` and a title such as “Haptic khipu”. Add a description of the visible activity and retain the source's catalogue information and credit.
 
-![Uploading files on GitHub](/images/add-files.png)
-![Committing uploaded files](/images/commit-files.png)
+For a file you host yourself, upload it to `telar-content/objects/` in your repository, use its filename as the object ID and leave `source_url` blank. Read [self-hosted images](/docs/your-content/self-hosted-images/) for supported formats and processing.
 
-{: .warning }
-> **File Size Limits**
-> Individual images: up to 100 MB. Total repository: keep under 1 GB.
+<span class="anchor-alias" id="register-your-objects"></span>
+<span class="anchor-alias" id="register-your-stories"></span>
+<span class="anchor-alias" id="structure-your-story"></span>
+## Register the story
 
-**Option B: Use IIIF images from museums and libraries**
+In **project**, add a story row with an order, stable story ID and title. For example:
 
-Many institutions provide high-resolution images through the IIIF standard. You can use these directly without downloading anything.
+| order | story_id | title |
+|---|---|---|
+| 1 | khipu-story | Examining a khipu |
 
-1. Find IIIF resources from institutions like the Library of Congress, the British Library, or the Smithsonian ([IIIF Guide to Finding Resources](https://iiif.io/guides/finding_resources/))
-2. Copy the manifest URL (e.g., `https://example.org/iiif/manifest.json`)
-3. In your spreadsheet's objects tab, add a row and paste the URL into the `source_url` column
+Create or rename the story tab to `khipu-story`. The ID and tab name must match. Keep the template's column headers.
 
-![Finding a IIIF manifest URL](/images/external-iiif-manifest.png)
+## Add the first step
 
-## Register Your Objects
+Fill one row:
 
-Once your files are in the repository, register them as objects so Telar knows about them. Each object needs:
+| Column | Example |
+|---|---|
+| `step` | `1` |
+| `object` | `khipu` |
+| `x`, `y`, `zoom` | `0.5`, `0.5`, `1` |
+| `question` | Which activity does this image document? |
+| `answer` | Sampling a khipu for radiocarbon dating in spring 2025. |
+| `alt_text` | Gloved hands working with knotted cords on a white surface. |
 
-- **`object_id`** — a simple identifier (matches the filename for uploaded images, or any name for IIIF images)
-- **`title`** — the display name
-- **`description`** — a brief description (optional, but helps with search)
-- **`source_url`** — the IIIF manifest URL (leave blank for uploaded images)
-- **`creator`**, **`year`**, **`object_type`**, **`subjects`** — metadata for gallery filtering (all optional)
+Add another numbered row for the next observation. You can use the same object with a different framing. For multi-page objects, the optional `page` column chooses the page first.
 
-Where you enter this depends on your setup method:
-- **Compositor** — add objects in the Objects tab
-- **Google Sheets** — add rows in the **objects** tab of your spreadsheet
-- **CSV** — add rows to `objects.csv`
+For recordings, use `clip_start` and `clip_end` in seconds and `loop` where needed. Read [video](/docs/your-content/video-objects/) and [audio](/docs/your-content/audio-objects/) before using a provider with different playback behaviour.
 
-{: .tip }
-> **Ignoring Rows and Columns**
-> Prefix any row or column header with `#` to have Telar skip it. Useful for notes and TODOs.
+## Add optional depth
 
-## Structure Your Story
+Write additional context in `layer1_content`. Give the opening button a useful name in `layer1_button`. A second panel uses `layer2_content` and opens from the first.
 
-Each story is a sequence of steps. Whether you're adding rows in a spreadsheet, editing a CSV, or using the Compositor's visual editor, each step needs:
+For longer texts, use a Markdown file reference. Add glossary terms in the **glossary** tab and insert `[[term-id]]` links in supported text fields.
 
-| Column | What it does |
-|--------|-------------|
-| `step` | Step number (1, 2, 3...) |
-| `object` | Which object to show (the `object_id` from the objects tab) |
-| `x`, `y`, `zoom` | Where to look in the image — use `0.5, 0.5, 1.0` as a starting point |
-| `clip` | Start and end times for video/audio clips (e.g., `00:30-01:15`) |
-| `question` | The heading for this step (e.g., "What is this textile?") |
-| `answer` | A brief 1-2 sentence response |
+<span class="anchor-alias" id="build-your-site"></span>
+## Build the first edition
 
-This is enough to create a working story. Each step shows an image (or plays a video/audio clip) with a question and answer that guide the viewer through your narrative.
+Save the sheet changes. In your repository, open **Actions**, select **Build and Deploy**, then **Run workflow**. The build fetches the published sheet.
 
-## Add Detail Panels
-
-For steps where you want to share more than a brief answer, add content to the panel columns:
-
-| Column | What it does |
-|--------|-------------|
-| `layer1_content` | "Learn more" panel — extra detail about this step |
-| `layer2_content` | "Go deeper" panel — even more depth |
-| `layer1_button` | Custom button text (leave blank for "Learn more") |
-| `layer2_button` | Custom button text (leave blank for "Go deeper") |
-
-Write your panel text directly in the cell. You can use basic markdown formatting: `**bold**`, `*italic*`, and headings with `##`.
-
-{: .tip }
-> **Keep It Simple**
-> For most stories, the question-and-answer columns plus one layer of detail panels is plenty. You can always add more depth later.
-
-## Register Your Stories
-
-In your project data, list each story with its title and subtitle.
-
-## Build Your Site
-
-After making changes to your content:
-
-- **Compositor** — export and push your updated site to GitHub
-- **Google Sheets** — go to your repository's **Actions** tab, click **Build and Deploy**, then **Run workflow**
-- **Local development** — build locally with Jekyll, then push to GitHub
-
-Wait 2–5 minutes for GitHub Pages to publish the new version.
+Wait for that run to complete, then open the site. Next, [capture the framing and review the result](/docs/getting-started/review-refine/).

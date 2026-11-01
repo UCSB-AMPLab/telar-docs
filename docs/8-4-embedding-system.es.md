@@ -526,23 +526,13 @@ Sobrescribe estilos del banner en `telar.scss`:
 - Sin postMessage `lti.frameResize` de Canvas
 - Intencional: Telar usa desplazamiento interno
 
-**Sin enlaces profundos (v0.5.0):**
-- El *embed* siempre comienza en el paso 1
-- Parámetro `?section=` no implementado
-- Planeado para versión futura
+<span class="anchor-alias" id="mejoras-futuras"></span>
 
-**Estado del visor no preservado:**
-- La URL de *embed* elimina coordenadas hash
-- Cada carga de *embed* comienza fresca
-- Las personas deben navegar a la vista deseada
+## Enlaces a pasos y estado de la inserción
 
-## Mejoras futuras
+El código que genera Compartir retira la consulta y el fragmento actuales y agrega el parámetro de inserción; por eso abre la historia desde la introducción. No conserva los cambios temporales de desplazamiento y zoom del lector.
 
-**Planeadas para versiones futuras:**
-- Enlaces profundos mediante parámetro `?section=`
-- Tiempo de espera opcional para auto-ocultar banner
-- Seguimiento de analíticas de *embed*
-- Optimizaciones específicas de LMS
+El motor también admite fragmentos de pasos y paneles: <code>#s3</code> abre el tercer paso de contenido, <code>#s3l1</code> abre su primer panel y <code>#s3l1g1</code> señala su primer enlace de glosario. Son distintos del parámetro <code>?section=</code>, que no está implementado. Prueba los enlaces insertados que construyas manualmente en el alojamiento previsto antes de compartirlos.
 
 ## Documentación relacionada
 

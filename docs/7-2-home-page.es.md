@@ -8,6 +8,12 @@ lang: es
 permalink: /guia/personalizacion/pagina-de-inicio/
 ---
 
+# Personalizar la página de inicio {#guide-title}
+
+
+
+En el Compositor, usa [Inicio y páginas](/guia/el-compositor/paginas/). El formato siguiente describe la misma página de inicio publicada.
+
 ## Personalizar la página de inicio
 
 La página principal de tu sitio Telar está controlada por un archivo Markdown sencillo (`index.md`) en el directorio raíz del repositorio. Ahí puedes editar o quitar el mensaje de bienvenida y cambiar los encabezados de cada sección.

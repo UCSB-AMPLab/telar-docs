@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 1.6. Review and Refine
+title: "Frame, review and publish from Sheets"
 parent: 1. Getting Started
 grand_parent: Documentation
 nav_order: 6
@@ -11,59 +11,53 @@ tutorial_prev:
   url: /docs/getting-started/add-content/
 ---
 
-# Review and Refine
+# Frame, review and publish from Sheets
 
-Browse through your exhibition and check for:
+<span class="anchor-alias" id="review-and-refine"></span>
 
-- Warning messages on the homepage (these point to configuration issues)
-- Correct images appearing for each story step
-- Text displaying as expected
+<span class="anchor-alias" id="next-steps"></span>
 
-## Set Your Image Coordinates
+<span class="anchor-alias" id="keep-building"></span>
 
-The placeholder coordinates (`0.5, 0.5, 1.0`) show the center of each image. To focus on specific details:
+Use the first build to choose precise views and test the narrative. Keep the sheet as your source while you revise.
 
-1. Navigate to any object page on your site
-2. Click **Identify coordinates** below the image viewer
-3. Pan and zoom to find the perfect view for each story step
-4. Copy the X, Y, and Zoom values
-5. Paste them into your spreadsheet
-6. Trigger a rebuild to see the changes
+<span class="anchor-alias" id="set-your-image-coordinates"></span>
+## Set each image's framing
 
-![Coordinate picker showing X, Y, and Zoom values below the image viewer](/images/coordinate-picker.png)
+1. Open the intended object's page on the built site.
+2. Choose **Identify coordinates**.
+3. Select the document page if it has more than one.
+4. Pan and zoom to the detail for your step.
+5. Copy the X, Y and Zoom values into that step's row.
+6. Rebuild and revisit the step.
 
-## Make Stories Private (Optional)
+For the khipu example, frame the khipu image itself. Do not substitute a view from another object just because its coordinate tool is already open.
 
-If you want to restrict access to a story — for classroom use, drafts, or work in progress:
+{% include docs/media.html id="coordinates" %}
 
-1. In the **project** tab, set the `private` column to `yes` for that story
-2. In your repository's `_config.yml`, add a `story_key`:
+<span class="anchor-alias" id="make-stories-private-optional"></span>
+## Check the main story and optional routes
 
-   ```yaml
-   story_key: "your-secret-key"
-   ```
+Read the questions and short answers in sequence. Verify that the source and view support each observation.
 
-3. Share the key with your viewers, or send them a link with `?key=your-secret-key` appended
+Open every first and second panel, follow glossary links and return to the story. Check the ending, the homepage story order and the menu. Test a narrow window and keyboard navigation.
 
-A private story renders like any other story during the build — markdown, glossary links, and
-images all work once a viewer unlocks it. See [Private
-Stories](/docs/site-features/private-stories/) for details, including how to preview one locally.
+Use [the reader-testing guide](/docs/plan/review/) for a structured review with another person.
 
-## Keep Building
+## Publish a sheet revision
 
-Once the basics are in place, you can:
+A sheet edit does not trigger the repository workflow by itself. Run **Build and Deploy** from **Actions** when you want to publish the latest sheet content.
 
-- Add more stories
-- Add a glossary of terms
-- Customize your homepage (edit `index.md` in your repository)
-- Browse and search your objects collection (enabled by default)
+Open the run's log if it fails. Confirm the published spreadsheet address and that the required tabs remain published. If the site loads but a source does not, check the object ID and source URL rather than changing unrelated configuration.
 
-When your panels need more than a few paragraphs — widgets, rich formatting, or reusable content — see [Rich Content](/docs/your-content/rich-content/) for how to add markdown files.
+## Handle private or unfinished work
 
-## Next Steps
+A private story uses the `private` project column and a `story_key` in the configuration. Read [private stories](/docs/site-features/private-stories/) before using it. A key does not make externally hosted images private.
 
-- [Rich Content](/docs/your-content/rich-content/) — Enhance panels with markdown files and widgets
-- [Your Content](/docs/your-content/) — How Telar organizes your materials
-- [Themes](/docs/customization/themes/) — Customizing your site's look and feel
-- [Self-Hosted Images](/docs/your-content/self-hosted-images/) — Upload and process your own images
-- [External IIIF Images](/docs/your-content/external-iiif/) — Use images from museums and libraries
+Keep unfinished work out of the published story list until it is ready. The Compositor's draft flag is an editor workflow; do not assume that marking a row private removes it from publication.
+
+## Complete the exhibition
+
+Edit the homepage introduction and supporting pages, review credits and disable demo content when the examples no longer belong. Rebuild and inspect the public result once more.
+
+Keep the spreadsheet, repository and public-site addresses together. Record which one is the editing source so collaborators know where to make the next change.

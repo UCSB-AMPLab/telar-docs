@@ -436,5 +436,5 @@ For a complete list of changes in each version, see the [Changelog](https://gith
 ## Need Help?
 
 - **Documentation**: [telar.org/docs](https://telar.org/docs)
-- **Example Site**: [telar.org/demo](https://telar.org/demo)
+- **Example Site**: [telar.org/demo](https://landscapes.telar.org/)
 - **Report Issues**: [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues)

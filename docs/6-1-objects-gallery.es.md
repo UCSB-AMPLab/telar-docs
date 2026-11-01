@@ -111,7 +111,7 @@ collection_interface:
   featured_count: 4             # Cantidad de objetos en la página principal
 ```
 
-Consulta la [Referencia de configuración](/guia/configurar/configuracion/#collection-interface-settings) para detalles completos de cada opción.
+Consulta la [Referencia de configuración](/guia/configurar/configuracion/#ajustes-de-la-interfaz-de-colección) para detalles completos de cada opción.
 
 ## Véase también
 

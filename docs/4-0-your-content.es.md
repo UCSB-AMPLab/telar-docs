@@ -10,7 +10,7 @@ permalink: /guia/tu-contenido/
 
 # Tu contenido
 
-Tu exhibición se construye a partir de varios tipos de contenido — objetos, imágenes, historias y páginas de apoyo. Todo el contenido fuente está en la carpeta `telar-content/` de tu repositorio. La estructura se define a través de archivos de hoja de cálculo (con [Google Sheets](/guia/tus-datos/google-sheets/) o [CSV](/guia/tus-datos/csv-proyecto/)), y el contenido narrativo extenso se escribe en archivos Markdown.
+Los objetos, las historias, los paneles y las páginas de apoyo forman la exhibición. Esta referencia explica sus archivos fuente y formatos. Usa el [manual del Compositor](/guia/el-compositor/) para edición visual, el [de Sheets](/guia/google-sheets/) para hojas de cálculo o el [de autoría local](/guia/autoria-local/) para CSV y Markdown. Los tres métodos generan un sitio estático.
 
 - [Objetos](/guia/tu-contenido/objetos/) — Los elementos visuales que tus historias exploran — imágenes, mapas, documentos, fotografías
 - [Imágenes autoalojadas](/guia/tu-contenido/imagenes-autoalojadas/) — Sube tus propias imágenes y Telar genera teselas ampliables automáticamente

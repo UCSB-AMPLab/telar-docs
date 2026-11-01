@@ -27,11 +27,13 @@ Hay dos niveles de validación:
 - **Errores** — Problemas críticos que bloquean la publicación. Por ejemplo, un campo obligatorio podría faltar o una historia podría hacer referencia a un objeto que no existe. Debes corregir los errores antes de publicar.
 - **Advertencias** — Problemas no críticos que no bloquean la publicación pero vale la pena revisar. Por ejemplo, un objeto podría no tener texto alternativo o una historia podría tener un solo paso. Puedes publicar con advertencias, pero resolverlas mejora tu exhibición.
 
+{% include docs/media.html id="upgrade" %}
+
 ## Publicar
 
-Cuando estés listo, haz clic en el botón de publicar. El Compositor crea un solo *commit* atómico en tu repositorio de GitHub que contiene todos tus cambios. El *commit* se atribuye a tu cuenta de GitHub — tu nombre y correo electrónico aparecen en el historial de *commits* del repositorio, no los del Compositor.
+Cuando estés listo, usa el control de publicación. El Compositor envía los cambios revisados al repositorio mediante su App de GitHub instalada. El cuerpo del commit registra **Published by @tu-usuario-de-github**.
 
-La publicación activa un *build* de GitHub Pages automáticamente. No necesitas visitar GitHub ni ejecutar pasos adicionales.
+Publicar y terminar la generación del sitio son etapas distintas. Sigue el estado de la generación antes de revisar el sitio público.
 
 ## Seguimiento del *build*
 
@@ -64,4 +66,4 @@ Si el archivo `_config.yml` de tu sitio está escrito de una forma que no le per
 - [Editor de historias](/guia/el-compositor/editor-historias/) — Construir y editar historias
 - [Objetos](/guia/el-compositor/objetos/) — Gestionar objetos en el Compositor
 - [Sincronización y actualizaciones](/guia/el-compositor/sincronizacion-y-actualizaciones/) — Mantener tu proyecto sincronizado con el repositorio
-- [Panel de control](/guia/el-compositor/panel-de-control/) — Regresa a la vista general del proyecto
+- [Inicio y navegación](/guia/el-compositor/panel-de-control/) — Regresa a la vista general del proyecto

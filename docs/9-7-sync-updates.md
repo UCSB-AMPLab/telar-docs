@@ -10,55 +10,47 @@ permalink: /docs/the-compositor/sync-updates/
 
 # Sync and Updates
 
-The Compositor keeps track of changes in your repository and Telar updates. When you return to a project, it checks whether anything has changed remotely and whether a newer version of Telar is available. This page explains how synchronization and upgrades work.
+The Compositor checks for changes made on GitHub as well as available Telar updates. A change made outside the editor needs review before it is applied to your draft.
 
 ## On return detection
 
-Each time you open the Compositor, it checks whether your GitHub repository has changed since your last session. Changes might come from another collaborator, from direct edits on GitHub, or from a previous session on a different device.
-
-If the repository has not changed, you continue where you left off. If changes are detected, the Compositor prompts you to re-sync before editing.
+When you open a connected project, the Compositor checks its repository. If GitHub has changed, follow the review prompt. The review covers the affected objects, stories, settings, glossary terms and pages.
 
 ## Re-sync
 
-Re-syncing imports the latest content from your repository into the Compositor. This ensures you are working with the most current version of your objects, stories, and configuration.
+The **Changes on GitHub** review shows what differs and asks which version to keep where a choice is needed.
 
-During re-sync, the Compositor:
+1. Read each change and its consequence.
+2. Choose GitHub's version or the Compositor's version, as appropriate.
+3. Resolve the choices the review requires.
+4. Choose **Apply these choices** when the result is the one you intend.
 
-1. Reads the current state of your repository
-2. Updates your local project to reflect any remote changes
-3. Warns you if the remote changes conflict with unpublished local edits
+Keeping the Compositor's version means the next publish sends that version to GitHub. Taking GitHub's version applies the corresponding content to the Compositor. Unpublished changes made only in the Compositor are kept.
 
-{: .warning }
-> If you have unpublished changes in the Compositor and the repository has also changed, the Compositor warns you about potential conflicts. Review the warning carefully — you may need to publish your local changes first or accept that the remote version will replace your unpublished edits.
+{: .note }
+> Sync review and publishing are separate actions. Review the consequences shown for each item; do not use re-importing as a routine way to undo a small editing mistake.
+
+If files cannot be read or the repository changes while you are reviewing, follow the message and refresh the comparison before applying it.
 
 ## Version detection
 
-The Compositor checks which version of Telar your site is running. If a newer version is available, it lets you know and offers to upgrade.
-
-Version detection happens automatically when you open your project. If your site is already running the latest version, no action is needed.
+The Compositor checks the version of Telar used by your site and may ask you to upgrade before continuing.
 
 ## Upgrade page
 
-When an upgrade is available, the Compositor shows an upgrade page with the details you need to make an informed decision:
+Review the current and target versions, release notes and grouped file changes. An upgrade can update framework files and migrate settings needed by the new version. Read the proposed changes before accepting them.
 
-- **Current version** — The version of Telar your site is currently running
-- **Target version** — The latest available version
-- **Release notes** — A summary of what changed in the new version — new features, improvements, and fixes
-- **Grouped file changes** — A list of the Telar files that will be added, modified, or removed, organized by type
-
-Review this information before proceeding. Upgrades update Telar's code in your repository but do not alter your content — your objects, stories, and configuration remain unchanged.
+{% include docs/media.html id="upgrade" %}
 
 ## One-click upgrade
 
-When you are ready to upgrade, click the upgrade button. The Compositor commits the updated Telar files as a single atomic commit to your repository and tracks the resulting build, just like a regular publish.
+Follow the upgrade controls, wait for the operation and site build to complete, then follow the return link. Check the site before continuing with the work that prompted the upgrade.
 
-After the upgrade completes and the build succeeds, the Compositor continues to the operation that was originally blocked by the version check. For example, if you were about to publish and the Compositor detected an outdated version, the upgrade runs first and then the publish proceeds.
-
-{: .note }
-> Upgrading updates only Telar's code files in your repository. Your content — objects, stories, images, and configuration — is never modified by an upgrade.
+Your repository's history records the changes made by the upgrade. If something does not look right, use the build information and the proposed file list to understand what changed.
 
 ## See also
 
-- [Publishing](/docs/the-compositor/publishing/) — How publishing and build tracking work
-- [Dashboard](/docs/the-compositor/dashboard/) — Return to the project overview
-- [Getting Started](/docs/the-compositor/getting-started/) — Initial setup and connecting a repository
+- [Publishing](/docs/the-compositor/publishing/)
+- [Start and navigation](/docs/the-compositor/dashboard/)
+- [Connect an existing site](/docs/the-compositor/getting-started/)
+- [Upgrading Telar](/docs/setup/upgrading/) — Framework upgrade reference

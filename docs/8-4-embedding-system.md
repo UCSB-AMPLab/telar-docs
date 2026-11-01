@@ -526,23 +526,13 @@ Override banner styles in `telar.scss`:
 - No Canvas `lti.frameResize` postMessage
 - Intentional: Telar uses internal scrolling
 
-**No deep linking (v0.5.0):**
-- Embed always starts at step 1
-- `?section=` parameter not implemented
-- Planned for future release
+<span class="anchor-alias" id="future-enhancements"></span>
 
-**Viewer state not preserved:**
-- Embed URL strips hash coordinates
-- Each embed load starts fresh
-- Users must navigate to desired view
+## Deep links and embed state
 
-## Future Enhancements
+The Share panel's generated embed code removes the current query and fragment and adds the embed parameter, so that code opens the story from its introduction. It does not preserve a reader's temporary pan and zoom.
 
-**Planned for future releases:**
-- Deep linking via `?section=` parameter
-- Optional banner auto-hide timeout
-- Embed analytics tracking
-- LMS-specific optimizations
+The story engine also supports step and panel fragments: <code>#s3</code> opens the third content step, <code>#s3l1</code> opens its first panel, and <code>#s3l1g1</code> targets its first glossary link. These are distinct from the unsupported <code>?section=</code> parameter. Test a manually constructed embedded link in the host environment before sharing it.
 
 ## Related Documentation
 

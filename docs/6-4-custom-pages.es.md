@@ -12,6 +12,9 @@ permalink: /guia/funciones/paginas-personalizadas/
 
 Crea páginas personalizadas para créditos, metodología, información del equipo, o cualquier otro contenido que no encaje en la estructura de la historia.
 
+
+Para autoría visual, consulta [inicio y páginas](/guia/el-compositor/paginas/).
+
 ## ¿Qué son las páginas personalizadas?
 
 Las páginas personalizadas son páginas independientes que aparecen en el menú de navegación de tu sitio pero no son parte del visor de historia. A diferencia de las capas de historia, que están estrechamente integradas con objetos IIIF y navegación de pasos, las páginas personalizadas son contenedores flexibles para cualquier contenido que quieras compartir.

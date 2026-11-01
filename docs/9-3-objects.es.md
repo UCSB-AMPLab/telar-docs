@@ -14,7 +14,7 @@ La página de objetos en el Compositor te permite explorar, editar y agregar los
 
 ## Lista de objetos
 
-La lista de objetos muestra todos los objetos de tu exhibición como una cuadrícula de miniaturas. Cada objeto muestra:
+La lista muestra los objetos con su miniatura, ID, usos y estado. Cada objeto muestra:
 
 - Una **miniatura** de vista previa de la imagen o el medio
 - El **título** del objeto
@@ -22,17 +22,20 @@ La lista de objetos muestra todos los objetos de tu exhibición como una cuadrí
 
 ### Indicadores de estado
 
-Los objetos pueden tener uno de tres estados:
+El estado informa sobre la disponibilidad; no significa que la ficha de catálogo ya esté completamente revisada.
 
-- **Listo** — El objeto tiene metadatos y sus teselas (*tiles*) ya están generadas. Ya puedes usarlo en las historias.
-- **Sin metadatos** — El objeto existe pero le falta información clave como el título, el creador o la descripción. Aún puedes usarlo en las historias, pero agregar metadatos mejora la exhibición.
-- **Sin teselas** — Las teselas IIIF del objeto aún no se han generado. Esto puede ocurrir con imágenes recién subidas que no se han publicado ni procesado en el *build*.
+- **Listo** — El objeto tiene título y supera la comprobación de imagen cuando corresponde.
+- **Sin metadatos** — Falta el título. Revisa la ficha y completa el título y la información útil de catálogo.
+- **Sin teselas** — La imagen aún no está disponible. En archivos alojados por el sitio, revisa el build y las teselas; en fuentes externas, revisa el manifiesto.
+- **No está en el repositorio** — La ficha está marcada como ausente del repositorio. Revisa la comparación con GitHub antes de decidir qué conservar.
 
 ### Control de destacados
 
 Puedes marcar cualquier objeto como destacado. Los objetos destacados aparecen de manera prominente en la página de inicio de tu sitio y en la galería de objetos.
 
-Para cambiar el estado de destacado de un objeto, haz clic en el indicador de destacado en la tarjeta del objeto.
+Para cambiar el estado de destacado de un objeto, haz clic en el indicador de destacado en la fila del objeto.
+
+{% include docs/media.html id="objects" %}
 
 ## Editar metadatos
 
@@ -44,7 +47,7 @@ Los campos de metadatos son:
 |---|---|
 | **Título** | El nombre del objeto como aparece en tu sitio |
 | **Creador** | La persona u organización que creó el objeto |
-| **Fecha** | Cuándo se creó o publicó el objeto |
+| **Año** | Cuándo se creó o publicó el objeto |
 | **Descripción** | Un resumen breve de lo que el objeto muestra o contiene |
 | **Fuente** | De dónde proviene el objeto — una colección, archivo o URL |
 | **Texto alternativo** | Una descripción para lectores de pantalla y accesibilidad |
@@ -53,18 +56,21 @@ Los campos de metadatos son:
 {: .tip }
 > El texto alternativo es importante para la accesibilidad. Escribe una oración breve y descriptiva que transmita lo que muestra la imagen a quien no puede verla.
 
+{% include docs/media.html id="object-metadata" %}
+
 ## Agregar IIIF externo
 
-Puedes agregar objetos de museos, bibliotecas y otras instituciones que publican manifiestos IIIF. El Compositor obtiene la imagen y los metadatos automáticamente.
+1. Abre **Objetos** y pulsa **+ Agregar objeto**.
+2. Selecciona **Manifiesto IIIF**.
+3. Pega la URL y pulsa **Obtener manifiesto**.
+4. Revisa la vista previa, el título, la fuente, el crédito y los demás metadatos disponibles.
+5. Pulsa **Agregar objeto**.
 
-1. Haz clic en **Agregar objeto** y selecciona la opción IIIF
-2. Pega la URL del manifiesto en el campo
-3. El Compositor recupera la imagen y completa los metadatos disponibles (título, creador, descripción)
-4. Revisa y ajusta los metadatos según sea necesario
-5. Guarda el objeto
+Agregar el objeto lo deja disponible en la colección. Debes seleccionarlo por separado en un paso con **Cambiar objeto**.
 
-{: .note }
-> Para encontrar manifiestos IIIF, busca el logo de IIIF en los sitios web de museos y bibliotecas, o consulta la [guía de IIIF para encontrar recursos](https://iiif.io/guides/finding_resources/). Para más información sobre IIIF en Telar, consulta [Imágenes IIIF externas](/guia/tu-contenido/iiif-externo/).
+Sigue [Usar un objeto IIIF en una historia](/guia/el-compositor/iiif-a-historia/) para el ejemplo ilustrado completo del khipu. Consulta [Imágenes IIIF externas](/guia/tu-contenido/iiif-externo/) para más contexto.
+
+{% include docs/media.html id="import" %}
 
 ## Subir imágenes
 
@@ -82,23 +88,19 @@ Los formatos admitidos son JPG, PNG y TIFF, con un tamaño máximo de 25 MB por 
 
 ## Guardar en el repositorio
 
-Cuando guardas cambios en los objetos — ya sea editando metadatos, agregando IIIF o subiendo imágenes — esos cambios se almacenan localmente en el Compositor. Para enviarlos a GitHub, necesitas publicar.
+Cuando guardas cambios en los objetos — ya sea editando metadatos, agregando IIIF o subiendo imágenes — esos cambios se guardan en el borrador del Compositor. Para enviarlos a GitHub, necesitas publicar.
 
 Al publicar se confirma un archivo `objects.csv` actualizado en tu repositorio junto con cualquier imagen subida. Consulta [Publicación](/guia/el-compositor/publicacion/) para el flujo de trabajo completo.
 
 ## Sincronización
 
-Si se agregaron o cambiaron objetos fuera del Compositor — por ejemplo, al editar `objects.csv` directamente o subir imágenes a través de GitHub — puedes reescanear tu repositorio para detectar esos cambios.
+Cuando los objetos cambian fuera del Compositor, usa la revisión de **Cambios en GitHub** del proyecto. Lee las diferencias y elige qué versión conservar antes de aplicarlas. Consulta [Sincronización y actualizaciones](/guia/el-compositor/sincronizacion-y-actualizaciones/).
 
-1. Haz clic en el botón **Sincronizar desde GitHub**
-2. El Compositor relee tu repositorio y actualiza la lista de objetos
-
-{: .warning }
-> Si tienes cambios sin publicar en el Compositor, la sincronización puede sobrescribirlos con el estado actual del repositorio. Publica tus cambios primero, o revisa con cuidado antes de sincronizar.
+Editar un borrador y publicar son acciones distintas. Revisa las consecuencias para el objeto afectado en vez de volver a importar todo el proyecto.
 
 ## Véase también
 
-- [Panel de control](/guia/el-compositor/panel-de-control/) — Regresa a la vista general del proyecto
+- [Inicio y navegación](/guia/el-compositor/panel-de-control/) — Regresa a la vista general del proyecto
 - [Objetos](/guia/tu-contenido/objetos/) — Cómo funcionan los objetos en Telar
 - [Imágenes IIIF externas](/guia/tu-contenido/iiif-externo/) — Información sobre manifiestos IIIF y fuentes
 - [Imágenes autoalojadas](/guia/tu-contenido/imagenes-autoalojadas/) — Cómo las imágenes subidas se convierten en teselas IIIF

@@ -12,6 +12,9 @@ permalink: /docs/site-features/glossary/
 
 The glossary lets you define terms that viewers can look up without leaving a story. When a viewer clicks a glossary link, the definition appears in a slide-over panel.
 
+
+For visual authoring, see [create and link glossary entries](/docs/the-compositor/glossary/).
+
 ## Creating a Glossary
 
 There are two ways to define glossary terms. The CSV format (new in v0.8.0) is recommended for most projects.
@@ -34,7 +37,7 @@ Each row defines one term:
 - **`definition`** — The definition text (supports basic markdown)
 - **`related_terms`** — Other `term_id` values, separated by `|`, for cross-referencing
 
-The CSV format works with Google Sheets — the glossary tab is fetched automatically like your other CSVs. Column names can be in English or Spanish (see [CSV Reference: Glossary](/docs/your-data/csv-glossary/#glossary-csv-aliases) for aliases).
+The CSV format works with Google Sheets — the glossary tab is fetched automatically like your other CSVs. Column names can be in English or Spanish (see [CSV Reference: Glossary](/docs/your-data/csv-glossary/#column-aliases) for aliases).
 
 ### Markdown Format (Legacy)
 

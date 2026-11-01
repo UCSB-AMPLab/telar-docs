@@ -1,15 +1,11 @@
 ---
+layout: docs
+title: Workshop quick guide
+lang: en
 permalink: /start/
+docs_section: quick
+en_url: /start/
+es_url: /empezar/
+docs_quick: true
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url={{ '/docs/getting-started/' | relative_url }}">
-  <title>Redirecting&hellip;</title>
-</head>
-<body>
-  <p>Redirecting to <a href="{{ '/docs/getting-started/' | relative_url }}">Getting Started</a>&hellip;</p>
-  <script>window.location.replace("{{ '/docs/getting-started/' | relative_url }}");</script>
-</body>
-</html>
+{% include docs/quick-guide.html %}

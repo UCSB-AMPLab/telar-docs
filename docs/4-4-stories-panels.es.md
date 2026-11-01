@@ -44,7 +44,7 @@ El `story_id` determina el nombre del archivo CSV de la historia y su URL. Con `
 
 Si se omite `story_id`, Telar usa `story-{order}` (p. ej., `story-1.csv` si `order` es 1).
 
-Consulta la [Referencia CSV: Proyecto](/guia/tus-datos/csv-proyecto/#project-csv-projectcsv--proyectocsv) para todas las columnas de project.csv.
+Consulta la [Referencia CSV: Proyecto](/guia/tus-datos/csv-proyecto/#csv-de-proyecto-projectcsv--proyectocsv) para todas las columnas de project.csv.
 
 ## Construir los pasos de la historia
 

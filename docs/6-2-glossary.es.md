@@ -12,6 +12,9 @@ permalink: /guia/funciones/glosario/
 
 El glosario te permite definir términos que las personas pueden consultar sin abandonar una historia. Cuando alguien hace clic en un enlace de glosario, la definición aparece en un panel lateral deslizante.
 
+
+Para autoría visual, consulta [cómo crear y enlazar entradas](/guia/el-compositor/glosario/).
+
 ## Crear un glosario
 
 Hay dos formas de definir términos de glosario. El formato CSV (nuevo en v0.8.0) es el recomendado para la mayoría de los proyectos.
@@ -34,7 +37,7 @@ Cada fila define un término:
 - **`definition`** — El texto de la definición (admite Markdown básico)
 - **`related_terms`** — Otros valores `term_id`, separados por `|`, para referencias cruzadas
 
-El formato CSV funciona con Google Sheets — la pestaña de glosario se obtiene automáticamente como los demás CSV. Los nombres de columnas pueden estar en inglés o español (consulta [Referencia CSV: Glosario](/guia/tus-datos/csv-glosario/#glossary-csv-aliases) para los alias).
+El formato CSV funciona con Google Sheets — la pestaña de glosario se obtiene automáticamente como los demás CSV. Los nombres de columnas pueden estar en inglés o español (consulta [Referencia CSV: Glosario](/guia/tus-datos/csv-glosario/#alias-del-csv-de-glosario) para los alias).
 
 ### Formato Markdown (legado)
 

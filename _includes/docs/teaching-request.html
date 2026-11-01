@@ -1,0 +1,25 @@
+{% assign t = site.data.teaching_contact[page.lang] %}
+<div class="section-content teaching-request-page">
+<img class="sc-mark" src="{{ '/images/telar-icon.svg' | relative_url }}" alt="" aria-hidden="true" width="724" height="506">
+<h1>{{ t.title }}</h1>
+<div class="teaching-request-intro">{% for paragraph in t.intro_paragraphs %}<p{% if forloop.first %} class="sc-lede"{% endif %}>{{ paragraph }}</p>{% endfor %}</div>
+<div class="contact-alert sc-callout sc-callout--error" data-contact-alert role="alert" hidden></div>
+<form class="teaching-contact-form sc-form" data-teaching-request action="{{ site.teaching_request_api | escape }}/teaching-requests" method="post"
+ data-language="{{ page.lang }}" data-sending="{{ t.sending | escape }}" data-failure="{{ t.failure | escape }}"
+ data-validation="{{ t.validation | escape }}" data-verification="{{ t.verification | escape }}" data-field-error="{{ t.field_error | escape }}">
+<div class="sc-q"><label class="sc-label" for="teaching-name">{{ t.name }}</label><input class="sc-input" id="teaching-name" name="name" autocomplete="name" maxlength="100" required></div>
+<div class="sc-q"><label class="sc-label" for="teaching-email">{{ t.email }}</label><input class="sc-input" id="teaching-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+<div class="sc-q"><label class="sc-label" for="teaching-github">{{ t.github }}</label><p class="sc-help" id="teaching-github-help">{{ t.github_help }}</p><input class="sc-input" id="teaching-github" name="github" autocomplete="off" maxlength="39" pattern="[a-zA-Z0-9]([a-zA-Z0-9-]{0,37}[a-zA-Z0-9])?" aria-describedby="teaching-github-help"></div>
+<div class="sc-q"><label class="sc-label" for="teaching-institution">{{ t.institution }}</label><input class="sc-input" id="teaching-institution" name="institution" autocomplete="organization" maxlength="200"></div>
+<div class="sc-q"><label class="sc-label" for="teaching-course">{{ t.course }}</label><p class="sc-help" id="teaching-course-help">{{ t.course_help }}</p><textarea class="sc-textarea" id="teaching-course" name="course" rows="5" maxlength="3000" required aria-describedby="teaching-course-help"></textarea></div>
+<div class="contact-honeypot" aria-hidden="true"><label class="sc-label" for="teaching-website">{{ t.honeypot }}</label><input class="sc-input" id="teaching-website" name="website" tabindex="-1" autocomplete="off"></div>
+<p class="contact-privacy sc-note">{{ t.privacy }}</p>
+{% if site.showcase_turnstile_site_key and site.showcase_turnstile_site_key != "" %}<div class="cf-turnstile" data-sitekey="{{ site.showcase_turnstile_site_key }}" data-language="{{ page.lang }}"></div>{% endif %}
+<div class="sc-actions"><button type="submit" class="sc-btn sc-btn--primary">{{ t.send }}</button></div>
+</form>
+<section class="contact-success sc-callout sc-callout--success" data-contact-success role="status" tabindex="-1" hidden><h2>{{ t.success_title }}</h2><p>{{ t.success }}</p></section>
+<noscript><p>{{ t.noscript }}</p></noscript>
+<p class="contact-back"><a href="{% if page.lang == 'es' %}/guia/ensenar/{% else %}/docs/teaching/{% endif %}">{{ t.back }} →</a></p>
+{% if site.showcase_turnstile_site_key and site.showcase_turnstile_site_key != "" %}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>{% endif %}
+<script src="{{ '/assets/js/teaching-contact.js' | relative_url }}" defer></script>
+</div>

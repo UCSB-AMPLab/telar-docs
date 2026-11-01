@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 1.6. Revisa y perfecciona
+title: "Encuadra, revisa y publica desde Sheets"
 parent: 1. Primeros pasos
 grand_parent: Documentación
 nav_order: 6
@@ -11,57 +11,53 @@ tutorial_prev:
   url: /guia/primeros-pasos/agrega-contenido/
 ---
 
-# Revisa y perfecciona
+# Encuadra, revisa y publica desde Sheets
 
-Navega tu exposición y verifica:
+<span class="anchor-alias" id="sigue-construyendo"></span>
 
-- Mensajes de advertencia en la página de inicio (señalan problemas de configuración)
-- Que las imágenes correctas aparezcan en cada paso de la historia
-- Que el texto se muestre como esperas
+<span class="anchor-alias" id="próximos-pasos"></span>
 
-## Ajusta las coordenadas de imagen
+<span class="anchor-alias" id="haz-historias-privadas-opcional"></span>
 
-Las coordenadas iniciales (`0.5, 0.5, 1.0`) muestran el centro de cada imagen. Para enfocar detalles específicos:
+Usa el primer build para elegir vistas precisas y probar la narrativa. Conserva la hoja como fuente mientras revisas.
 
-1. Navega a cualquier página de objeto en tu sitio
-2. Haz clic en **Identify coordinates** debajo del visor de imágenes
-3. Desplaza y amplía para encontrar la vista perfecta de cada paso
-4. Copia los valores de X, Y y Zoom
-5. Pégalos en tu hoja de cálculo
-6. Vuelve a construir el sitio para ver los cambios
+<span class="anchor-alias" id="ajusta-las-coordenadas-de-imagen"></span>
+## Ajusta el encuadre de cada imagen
 
-![Selector de coordenadas mostrando valores X, Y y Zoom debajo del visor de imágenes](/images/coordinate-picker.png)
+1. Abre la página del objeto correspondiente en el sitio generado.
+2. Elige **Identificar coordenadas**.
+3. Selecciona la página si el documento tiene varias.
+4. Desplaza y acerca la imagen hasta el detalle del paso.
+5. Copia X, Y y Zoom a la fila del paso.
+6. Vuelve a generar y visita de nuevo ese paso.
 
-## Haz historias privadas (opcional)
+En el ejemplo del khipu, encuadra el propio khipu. No uses otra imagen porque ya tengas abierta su herramienta de coordenadas.
 
-Si quieres restringir el acceso a una historia — para uso en el aula, borradores o trabajos en progreso:
+{% include docs/media.html id="coordinates" %}
 
-1. En la pestaña **project**, establece la columna `private` en `yes` para esa historia
-2. En el archivo `_config.yml` de tu repositorio, agrega un `story_key`:
+<span class="anchor-alias" id="revisa-y-perfecciona"></span>
+## Revisa la historia y las rutas opcionales
 
-   ```yaml
-   story_key: "tu-clave-secreta"
-   ```
+Lee las preguntas y respuestas breves en secuencia. Comprueba que la fuente y el encuadre respalden cada observación.
 
-3. Comparte la clave con tus lectores, o envíales un enlace con `?key=tu-clave-secreta` al final
+Abre todos los paneles, sigue los enlaces del glosario y vuelve a la historia. Revisa cierre, orden de historias y menú. Prueba una ventana estrecha y la navegación con teclado.
 
-Una historia privada se genera como cualquier otra durante el *build* — el Markdown, los enlaces de glosario y las imágenes funcionan una vez que la persona la desbloquea. Consulta [Historias privadas](/guia/funciones/historias-privadas/) para más detalles, incluido cómo previsualizarla localmente.
+Usa [la guía de pruebas con lectores](/guia/planear/revision/) para revisar con otra persona.
 
-## Sigue construyendo
+## Publica una revisión de la hoja
 
-Una vez que tengas lo básico, puedes:
+Editar la hoja no ejecuta por sí solo el flujo del repositorio. Inicia **Build and Deploy** desde **Actions** cuando quieras publicar su versión más reciente.
 
-- Agregar más historias
-- Agregar un glosario de términos
-- Personalizar tu página de inicio (edita `index.md` en tu repositorio)
-- Explorar y buscar en tu colección de objetos (habilitado por defecto)
+Si falla, abre el registro de ejecución. Confirma la dirección publicada de la hoja y que sigan publicadas las pestañas necesarias. Si carga el sitio, pero no una fuente, revisa el ID y la URL del objeto antes de cambiar otros ajustes.
 
-Cuando tus paneles necesiten más que unos pocos párrafos — widgets, formato enriquecido o contenido reutilizable — consulta [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) para aprender a agregar archivos Markdown.
+## Maneja lo privado y lo incompleto
 
-## Próximos pasos
+Una historia privada usa la columna `private` de project y una `story_key` en la configuración. Lee [historias privadas](/guia/funciones/historias-privadas/) antes de usarla. Una clave no vuelve privadas las imágenes alojadas externamente.
 
-- [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) — Enriquece paneles con archivos Markdown y widgets
-- [Tu Contenido](/guia/tu-contenido/) — Cómo Telar organiza tus materiales
-- [Temas](/guia/personalizacion/temas/) — Personaliza la apariencia de tu sitio
-- [Imágenes autoalojadas](/guia/tu-contenido/imagenes-autoalojadas/) — Sube y procesa tus propias imágenes
-- [Imágenes IIIF externas](/guia/tu-contenido/iiif-externo/) — Usa imágenes de museos y bibliotecas
+Mantén el trabajo incompleto fuera de la lista pública hasta que esté listo. El borrador del Compositor es un proceso del editor; no supongas que marcar una fila como privada la excluye de la publicación.
+
+## Completa la exhibición
+
+Edita la presentación del inicio y las páginas de apoyo, revisa créditos y desactiva el contenido de demostración cuando ya no corresponda. Vuelve a generar y comprueba el resultado público.
+
+Guarda juntas las direcciones de la hoja, el repositorio y el sitio. Anota cuál es la fuente de edición para que los colaboradores sepan dónde hacer el próximo cambio.

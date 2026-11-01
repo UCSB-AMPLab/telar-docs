@@ -8,9 +8,11 @@ lang: es
 permalink: /guia/el-compositor/primeros-pasos/
 ---
 
-# Primeros pasos con el Compositor
+<span class="anchor-alias" id="primeros-pasos-con-el-compositor" aria-hidden="true"></span>
 
-Esta página te guía a través del inicio de sesión en el Compositor, la conexión de un repositorio y la importación de tu contenido. Al final, tendrás tu exhibición cargada en el Compositor y lista para editar.
+# Conectar un sitio existente
+
+Usa esta guía cuando tu repositorio Telar ya exista. Para empezar un proyecto nuevo, sigue [Crear tu primer sitio](/guia/primeros-pasos/compositor/).
 
 ## Requisitos previos
 
@@ -51,18 +53,13 @@ Si el repositorio se creó a partir de la plantilla de Telar y tiene contenido e
 
 ## Importar desde Google Sheets
 
-Si tu sitio de Telar usa Google Sheets como fuente de datos, el Compositor puede importar directamente desde tu hoja de cálculo.
+Si el sitio usa Google Sheets, sigue la importación y las comprobaciones de configuración que muestre el Compositor. Revisa el contenido importado y cualquier solicitud de desactivar la conexión con Sheets antes de continuar con la autoría visual.
 
-1. Cuando el Compositor detecta una URL de Google Sheets en la configuración del sitio, ofrece importar desde Sheets
-2. Confirma la importación para traer el contenido actual al Compositor
-3. Después de tu primera publicación a través del Compositor, puedes deshabilitar opcionalmente la conexión con Google Sheets — el Compositor se convierte en tu editor principal
-
-{: .note }
-> Importar desde Google Sheets no elimina ni modifica tu hoja de cálculo. Los datos se copian al Compositor para que puedas editarlos visualmente.
+La importación no elimina la hoja de cálculo. Decide qué método de autoría administrará los cambios futuros; no supongas que editar en el Compositor actualiza automáticamente la hoja original.
 
 ## Después de importar
 
-Una vez que la importación se completa, llegas al [Panel de control](/guia/el-compositor/panel-de-control/). Desde allí puedes:
+Después de la importación y las comprobaciones de configuración, usa la [navegación principal](/guia/el-compositor/panel-de-control/) para:
 
 - Ver y administrar tus historias
 - Explorar y editar tus objetos
@@ -72,6 +69,6 @@ El contenido importado se guarda en el servidor. Los cambios que hagas no se env
 
 ## Véase también
 
-- [Panel de control](/guia/el-compositor/panel-de-control/) — Navega tu proyecto y administra historias
+- [Inicio y navegación](/guia/el-compositor/panel-de-control/) — Navega tu proyecto y administra historias
 - [Objetos](/guia/el-compositor/objetos/) — Explora, edita y agrega objetos
 - [Usar el Compositor](/guia/primeros-pasos/compositor/) — Crear un repositorio y habilitar GitHub Pages

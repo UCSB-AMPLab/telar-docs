@@ -1,0 +1,24 @@
+{% assign arc_lang = page.lang | default: 'en' %}{% assign arc_copy = site.data.guides.copy[arc_lang] %}
+{% comment %}Shared narrative symbols: title square, question circle, terminal triangle. Panel 2 branches from panel 1, as in StepLineBranch and the workshop's layered diagrams.{% endcomment %}
+<div class="story-sketch" role="img" aria-label="{% if arc_lang == 'es' %}Un cuadrado marca el inicio, un círculo marca las preguntas y un triángulo que apunta hacia arriba marca el cierre. El primer panel sale de una pregunta y el segundo sale del primer panel.{% else %}A square marks the beginning, a circle marks the questions, and a triangle pointing upward marks the ending. The first panel branches from a question and the second branches from the first panel.{% endif %}">
+<svg viewBox="0 0 310 250" aria-hidden="true" focusable="false">
+ <g class="arc-lines" fill="none" stroke="currentColor" stroke-width="1.5">
+  <path d="M24 32 V79 M24 93 V210"/>
+  <path data-layer="1" d="M31 86 Q58 86 72 115 L78 124"/>
+  <path data-layer="2" d="M80 128 Q84 148 106 154"/>
+ </g>
+ <g fill="currentColor">
+  <rect data-symbol="beginning" x="16" y="16" width="16" height="16"/>
+  <circle data-symbol="question" cx="24" cy="86" r="7"/>
+  <circle data-symbol="panel-1" cx="78" cy="124" r="4"/>
+  <circle data-symbol="panel-2" cx="106" cy="154" r="4"/>
+  {% if site.data.guides.diagram_end_direction == 'down' %}<polygon data-symbol="ending" data-direction="down" points="12,210 36,210 24,232"/>{% else %}<polygon data-symbol="ending" data-direction="up" points="24,210 36,232 12,232"/>{% endif %}
+ </g>
+ <g class="arc-labels" fill="currentColor" dominant-baseline="middle">
+  <text x="56" y="24">{{ arc_copy.beginning }}</text>
+  <text x="56" y="86">{{ arc_copy.question }}</text>
+  <text x="124" y="139">{{ arc_copy.layers }}</text>
+  <text x="56" y="224">{{ arc_copy.ending }}</text>
+ </g>
+</svg>
+</div>

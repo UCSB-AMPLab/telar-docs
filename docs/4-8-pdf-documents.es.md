@@ -148,6 +148,6 @@ Los PDF producen más datos que las imágenes individuales porque cada página g
 
 - [Imágenes autoalojadas](/guia/tu-contenido/imagenes-autoalojadas/) — Agregar fotografías y escaneos
 - [Objetos](/guia/tu-contenido/objetos/) — Definir objetos en tu hoja de cálculo
-- [Historias y paneles](/guia/tu-contenido/historias-y-paneles/) — Construir pasos de historias
+- [Historias y paneles](/guia/tu-contenido/historias-paneles/) — Construir pasos de historias
 - [Columnas de historias](/guia/tus-datos/csv-historias/) — Referencia completa de columnas incluyendo la columna `pagina`
 - [IIIF externo](/guia/tu-contenido/iiif-externo/) — Usar manifiestos IIIF de bibliotecas y archivos

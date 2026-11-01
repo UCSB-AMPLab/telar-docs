@@ -18,8 +18,8 @@ Referencia completa para desarrollo local, comandos para construir el sitio y so
 
 - **Ruby 3.2+**: Runtime de Jekyll
 - **Bundler**: Gestión de dependencias de Ruby
-- **Python 3.9+**: Generación IIIF y procesamiento CSV
-- **Node.js 18+**: Empaquetado de JavaScript (esbuild)
+- **Python 3.12**: Generación IIIF y procesamiento CSV
+- **Node.js 22**: Empaquetado de JavaScript (esbuild)
 - **Git**: Control de versiones
 
 Telar necesita Ruby 3.2 o una versión más nueva, y la integración continua
@@ -67,19 +67,18 @@ sudo apt-get install libvips-dev
 
 ### Opcional (solo para objetos de audio)
 
-Si el sitio incluye objetos de audio, dos herramientas adicionales permiten la extracción de clips y la generación de datos de forma de onda. Los sitios sin objetos de audio no necesitan estas herramientas.
+Si el sitio incluye audio, audiowaveform prepara los datos de la forma de onda. Los límites de los fragmentos se aplican en el navegador; el script no extrae archivos separados. Los sitios sin audio no necesitan esta herramienta.
 
-- **ffmpeg**: Extracción de clips de audio
 - **audiowaveform**: Datos de picos para el reproductor WaveSurfer
 
 **macOS:**
 ```bash
-brew install ffmpeg audiowaveform
+brew install audiowaveform
 ```
 
 **Ubuntu/Debian:**
 ```bash
-sudo apt install ffmpeg audiowaveform
+sudo apt install audiowaveform
 ```
 
 ## Configuración del proyecto
@@ -152,7 +151,7 @@ python3 scripts/csv_to_json.py
 # 3. Genera archivos de colección de Jekyll
 python3 scripts/generate_collections.py
 
-# 4. Procesa archivos de audio (si los hay — requiere ffmpeg y audiowaveform)
+# 4. Procesa archivos de audio (si los hay — requiere audiowaveform)
 #    Nota: la detección básica de audio funciona sin este paso (csv_to_json.py
 #    genera el manifiesto de audio automáticamente). Este script solo se
 #    necesita para los datos de forma de onda y la extracción de clips.

@@ -27,16 +27,20 @@ Una vez que hayas iniciado sesión, tienes dos opciones:
 
 ### Crea un sitio nuevo
 
-Haz clic en **Crear un sitio nuevo**, escribe un nombre para el repositorio — **usa letras minúsculas y guiones** (ej., `mi-exhibicion`) — y el Compositor se encarga del resto: crea el repositorio a partir de la plantilla de Telar, configura GitHub Pages y deja tu sitio listo para editar.
+Abre el menú de proyectos y elige **Agregar o crear un repositorio**; después, **Un sitio de Telar**. Escribe un nombre de repositorio y un título visible, y elige el idioma y el tema. Usa un nombre breve, en minúsculas y con guiones, como `mi-exhibicion`.
+
+Pulsa **Crear sitio** cuando estén listos esos datos. El Compositor crea el repositorio con la plantilla de Telar y prepara el sitio para editarlo.
 
 {: .warning }
 > **El repositorio será público.** GitHub Pages requiere un repositorio público a menos que tengas un plan pago de GitHub.
+
+{% include docs/media.html id="create-site" %}
 
 ### Conecta un repositorio existente
 
 Si ya creaste un repositorio a partir de la [plantilla de Telar](https://github.com/UCSB-AMPLab/telar) o tienes un sitio Telar existente, selecciónalo de la lista y el Compositor importará tu contenido.
 
-<details Markdown="1">
+<details markdown="1">
 <summary><strong>Configuración manual: crea un repositorio en GitHub primero</strong></summary>
 
 Si prefieres crear el repositorio tú mismo antes de conectarlo:
@@ -71,9 +75,13 @@ Una vez hecho, vuelve a [compositor.telar.org](https://compositor.telar.org) y c
 
 Para la guía completa, véase [El Compositor](/guia/el-compositor/).
 
+{% include docs/media.html id="editor-overview" %}
+
 ## Siguientes pasos
 
-Una vez que el sitio esté en línea, continúa con el tutorial para aprender más sobre el modelo narrativo de Telar y cómo perfeccionar la exhibición:
+Sigue con el recorrido de autoría visual:
 
-- **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — conoce cómo se articulan historias, pasos y paneles
-- **[Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/)** — ajusta coordenadas de imagen, revisa el sitio y dale los toques finales
+- [Objetos](/guia/el-compositor/objetos/) — Agrega fuentes y revisa sus metadatos.
+- [Usar un objeto IIIF en una historia](/guia/el-compositor/iiif-a-historia/) — Sigue el ejemplo ilustrado del khipu.
+- [Editor de historias](/guia/el-compositor/editor-historias/) — Escribe pasos, captura vistas y desarrolla paneles.
+- [Publicación](/guia/el-compositor/publicacion/) — Revisa los cambios y comprueba el sitio generado.

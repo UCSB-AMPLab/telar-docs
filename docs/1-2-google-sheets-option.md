@@ -205,7 +205,7 @@ After committing, GitHub Actions will automatically build and publish your site.
 
 ## Next Steps
 
-Your Telar site is up and running. Follow this tutorial to learn how Telar stories work and add your own content, or jump ahead to any section:
+The connection is ready. Continue with [the spreadsheet model](/docs/your-data/google-sheets/), then add an object and your first story. Use [the planning guide](/docs/plan/) if you have not yet drafted the narrative.
 
 - **[Plan Your Narrative](/docs/getting-started/narrative-structure/)** — Understand how stories, steps, and panels fit together
 - **[Add Your Content](/docs/getting-started/add-content/)** — Upload images, fill in your spreadsheet, and create your first story

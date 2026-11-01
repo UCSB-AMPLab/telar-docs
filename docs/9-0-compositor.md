@@ -8,47 +8,46 @@ lang: en
 permalink: /docs/the-compositor/
 ---
 
-# The Compositor
+# Compositor manual
 
-The Telar Compositor is a visual editor for building and managing your exhibition — no spreadsheets, no command line, no code. It runs in your browser at [compositor.telar.org](https://compositor.telar.org) and connects directly to your GitHub repository.
+<span class="anchor-alias" id="the-compositor"></span>
 
-## What is the Compositor?
+<span class="anchor-alias" id="what-is-the-compositor"></span>
 
-If you have used Telar before, you know that content is defined through spreadsheet files — CSV files or Google Sheets — and published through GitHub. The Compositor replaces that workflow with a point-and-click editor. You can:
+The Telar Compositor is a visual authoring tool for creating and managing Telar exhibitions. It runs in your browser at [compositor.telar.org](https://compositor.telar.org), where you can bring images, video, audio and text together into layered visual narratives without writing code.
 
-- Import existing content from a Telar repository or Google Sheets
-- Add and edit objects with metadata, IIIF manifests, or uploaded images
-- Build stories visually — write panels, set viewer coordinates, set clip times
-- Publish changes to GitHub with a single click
-- Track your site's build status in real time
+You can use it for digital scholarship, public exhibitions, community storytelling and classroom projects, working on your own or with collaborators. The interface is available in English and Spanish.
 
-The Compositor is designed for students, educators, and anyone who wants to focus on storytelling rather than data files.
+Telar provides the framework for the exhibition your visitors explore. The Compositor gives you a workspace to assemble its content, preview your stories and publish the site. Your published site's content and configuration are kept as files in a GitHub repository.
+
+## The parts of an exhibition
+
+- **Objects** are your source materials: images, video or audio, with their descriptions, sources and credits.
+- **Stories** guide visitors through those materials in a sequence of **steps**. Each step combines narrative text with a view of an object or a media clip.
+- **Panels and glossary entries** offer further context that visitors can open as they explore.
+- **The homepage and supporting pages** introduce the exhibition and help visitors find their way around it.
+
+You can manage all of these in the Compositor, along with the site's appearance and navigation.
 
 ## How it works
 
-The typical workflow has four stages:
+1. **Start a site.** Create a new Telar site or connect one you already have.
+2. **Compose your exhibition.** Add your sources, write stories, choose the details each step will show and develop the surrounding context.
+3. **Review and publish.** Check your work and publish the changes to GitHub. Telar then builds the public website.
 
-1. **Sign in** — Authenticate with your GitHub account at [compositor.telar.org](https://compositor.telar.org)
-2. **Connect a repository** — Select an existing Telar repository and import its content
-3. **Edit** — Use the visual editor to manage objects, write stories, and arrange steps
-4. **Publish** — Review your changes, commit to GitHub, and watch the build complete
+Your work is saved as you edit. Publishing is a separate action, so you can develop a draft before updating the public site. After publishing, check the website once its build has finished.
 
-Every change you make in the Compositor is saved automatically on the server until you publish. Publishing creates a single commit in your repository — attributed to you — and triggers a GitHub Pages build automatically.
+<span class="anchor-alias" id="requirements"></span>
 
-## Requirements
+## Before you begin
 
-To use the Compositor, you need:
+You need a GitHub account. The [first-site guide](/docs/getting-started/compositor/) takes you through signing in, granting the Telar GitHub App access and creating a site. If you already have a Telar repository, follow [Connect an existing site](/docs/the-compositor/getting-started/).
 
-- A **GitHub account** ([sign up for free](https://github.com/join))
-- A **Telar repository** created from the [Telar template](https://github.com/UCSB-AMPLab/telar) (see [Getting Started](/docs/getting-started/compositor/) for setup instructions)
-- **GitHub Pages enabled** with the source set to **GitHub Actions** (see [Getting Started](/docs/getting-started/compositor/) for details)
+If you are still developing your idea, start with [Plan an exhibition](/docs/plan/). For a practical first exercise, the illustrated [khipu walkthrough](/docs/the-compositor/iiif-to-story/) takes one image from an IIIF collection into a story step and shows how to save its framing.
 
-## In this section
+<span class="anchor-alias" id="in-this-section"></span>
 
-- [Getting Started](/docs/the-compositor/getting-started/) — Sign in, connect a repository, and import your content
-- [Dashboard](/docs/the-compositor/dashboard/) — Navigate your project, manage stories, and monitor your site
-- [Objects](/docs/the-compositor/objects/) — Browse, edit, upload, and add objects to your exhibition
-- [Story Editor](/docs/the-compositor/story-editor/) — Build stories with a visual editor, capture coordinates, and write layer content
-- [Video and Audio](/docs/the-compositor/video-audio/) — Set clip times, loop points, and work with multimedia steps
-- [Publishing](/docs/the-compositor/publishing/) — Review changes, commit to GitHub, and track your build
-- [Sync and Updates](/docs/the-compositor/sync-updates/) — Re-sync with your repository and upgrade Telar
+{% assign manual_book = site.data.docs_navigation.sections[page.lang].compositor %}
+{% for group in manual_book.groups %}{% unless group.id == 'main' %}
+<h2>{{ group.title }}</h2><ul>{% for item in group.items %}<li><a href='{{ item.url }}'>{{ item.title }}</a></li>{% endfor %}</ul>
+{% endunless %}{% endfor %}

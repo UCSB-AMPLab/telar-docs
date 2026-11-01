@@ -8,6 +8,9 @@ lang: es
 permalink: /guia/desarrolladores/estilos/
 ---
 
+# Estilos avanzados {#guide-title}
+
+
 ## Estilos avanzados
 
 Ve más allá de los temas con CSS personalizado, modificaciones de diseño y estilos de componentes.

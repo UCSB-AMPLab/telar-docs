@@ -8,9 +8,11 @@ lang: en
 permalink: /docs/the-compositor/getting-started/
 ---
 
-# Getting started with the Compositor
+<span class="anchor-alias" id="getting-started-with-the-compositor" aria-hidden="true"></span>
 
-This page walks you through signing in to the Compositor, connecting a repository, and importing your content. By the end, you will have your exhibition loaded in the Compositor and ready to edit.
+# Connect an existing site
+
+Use this guide when your Telar repository already exists. To start a new project, follow [Create your first site](/docs/getting-started/compositor/).
 
 ## Prerequisites
 
@@ -51,18 +53,13 @@ If the repository was created from the Telar template and has content in `telar-
 
 ## Import from Google Sheets
 
-If your Telar site uses Google Sheets as its data source, the Compositor can import directly from your spreadsheet.
+If the site uses Google Sheets, follow the import and settings checks shown by the Compositor. Review the content that is imported and any request to switch off the Sheets connection before proceeding with visual authoring.
 
-1. When the Compositor detects a Google Sheets URL in your site configuration, it offers to import from Sheets
-2. Confirm the import to pull your current content into the Compositor
-3. After your first publish through the Compositor, you can optionally disable the Google Sheets connection — the Compositor becomes your primary editor
-
-{: .note }
-> Importing from Google Sheets does not delete or modify your spreadsheet. It copies the data into the Compositor so you can edit it visually.
+Your spreadsheet is not deleted by importing it. Decide which authoring method will manage future changes; do not assume edits in the Compositor automatically update the original sheet.
 
 ## After import
 
-Once the import completes, you land on the [Dashboard](/docs/the-compositor/dashboard/). From here you can:
+After import and the setup checks, use the [main navigation](/docs/the-compositor/dashboard/) to:
 
 - View and manage your stories
 - Browse and edit your objects
@@ -72,6 +69,6 @@ Your imported content is saved on the server. Changes you make are not sent to G
 
 ## See also
 
-- [Dashboard](/docs/the-compositor/dashboard/) — Navigate your project and manage stories
+- [Start and navigation](/docs/the-compositor/dashboard/) — Navigate your project and manage stories
 - [Objects](/docs/the-compositor/objects/) — Browse, edit, and add objects
 - [Use the Compositor](/docs/getting-started/compositor/) — Create a repository and enable GitHub Pages

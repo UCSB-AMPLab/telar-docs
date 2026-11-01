@@ -24,14 +24,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | {{ site.title }}</title>
-  <meta name="description" content="{{ page.description | default: site.description }}">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   {% for css in page.extra_css %}
   <link href="{{ '/assets/css/' | append: css | append: '.css' | relative_url }}" rel="stylesheet">
   {% endfor %}
-  {% seo %}
+  {% seo title=false %}
 
   <style>
     :root {
@@ -298,8 +298,8 @@
     <div class="docs-header__right">
       <nav class="aux-links">
         <a href="{{ '/' | relative_url }}"><span data-lang="en">Telar Home</span><span data-lang="es">Inicio</span></a>
-        <a href="https://github.com/UCSB-AMPLab/telar"><span data-lang="en">GitHub Repo</span><span data-lang="es">Repositorio GitHub</span></a>
-        <a href="https://ampl.clair.ucsb.edu/telar"><span data-lang="en">Demo Site</span><span data-lang="es">Sitio de Demo</span></a>
+        <a href="https://github.com/UCSB-AMPLab/telar"><span data-lang="en">GitHub repository</span><span data-lang="es">Repositorio en GitHub</span></a>
+        <a href="https://ampl.clair.ucsb.edu/telar"><span data-lang="en">Demo site</span><span data-lang="es">Sitio de demostración</span></a>
       </nav>
       <!-- Mobile language toggle -->
       <div class="lang-toggle" style="display: none;" id="mobileLangToggle">
@@ -318,7 +318,7 @@
 
   <footer class="landing-footer">
     <p data-lang="en">Telar is open source software released under the MIT License. It is developed by Adelaida Ávila, Ana María Cárdenas Gasca, Juan Cobo Betancourt, Natalie Cobo, Santiago Muñoz, and students and scholars at the <a href="https://ampl.clair.ucsb.edu">UCSB Archives, Memory, and Preservation Lab</a>, the UT Archives, Mapping, and Pedagogy Lab, and <a href="https://neogranadina.org/en">Neogranadina</a>. <a href="https://github.com/UCSB-AMPLab/telar">View on GitHub</a></p>
-    <p data-lang="es">Telar es software de código abierto publicado bajo la licencia MIT. Es desarrollado por Adelaida Ávila, Ana María Cárdenas Gasca, Juan Cobo Betancourt, Natalie Cobo, Santiago Muñoz y estudiantes e investigadores del <a href="https://ampl.clair.ucsb.edu">UCSB Archives, Memory, and Preservation Lab</a>, el UT Archives, Mapping, and Pedagogy Lab y <a href="https://neogranadina.org">Neogranadina</a>. <a href="https://github.com/UCSB-AMPLab/telar">Ver en GitHub</a></p>
+    <p data-lang="es">Telar es software de código abierto publicado bajo la licencia MIT. Lo desarrollan Adelaida Ávila, Ana María Cárdenas Gasca, Juan Cobo Betancourt, Natalie Cobo, Santiago Muñoz y estudiantes e investigadores del <a href="https://ampl.clair.ucsb.edu">UCSB Archives, Memory, and Preservation Lab</a>, del UT Archives, Mapping, and Pedagogy Lab y de <a href="https://neogranadina.org">Neogranadina</a>. <a href="https://github.com/UCSB-AMPLab/telar">Ver en GitHub</a></p>
   </footer>
 
   <script>

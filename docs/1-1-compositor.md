@@ -27,10 +27,14 @@ Once signed in, you have two options:
 
 ### Create a new site
 
-Click **Create new site**, type a name for your repository — **use lowercase letters and hyphens** (e.g., `my-exhibition`) — and the Compositor will set everything up for you: it creates the repository from the Telar template, configures GitHub Pages, and gets your site ready to edit.
+Open the project menu and choose **Add or create a repo**, then **A Telar site**. Enter a repository name, a visible title, a language and a theme. Use a short repository name with lowercase letters and hyphens, such as `my-exhibition`.
+
+Choose **Create site** when those details are ready. The Compositor creates the repository from the Telar template and prepares the site for editing.
 
 {: .warning }
 > **Your repository will be public.** GitHub Pages requires a public repository unless you have a paid GitHub plan.
+
+{% include docs/media.html id="create-site" %}
 
 ### Connect an existing repository
 
@@ -71,9 +75,13 @@ Once that's done, return to [compositor.telar.org](https://compositor.telar.org)
 
 For the full guide, see [The Compositor](/docs/the-compositor/).
 
+{% include docs/media.html id="editor-overview" %}
+
 ## Next steps
 
-Once your site is live, continue with the tutorial to learn more about Telar's narrative model and how to refine your exhibition:
+Continue with the visual authoring workflow:
 
-- **[Plan Your Narrative](/docs/getting-started/narrative-structure/)** — Understand how stories, steps, and panels fit together
-- **[Review and Refine](/docs/getting-started/review-refine/)** — Set image coordinates, review your site, and polish
+- [Objects](/docs/the-compositor/objects/) — Add sources and review their metadata.
+- [Use an IIIF object in a story](/docs/the-compositor/iiif-to-story/) — Follow the illustrated khipu example.
+- [Story Editor](/docs/the-compositor/story-editor/) — Write steps, capture views and develop panels.
+- [Publishing](/docs/the-compositor/publishing/) — Review changes and check the built site.

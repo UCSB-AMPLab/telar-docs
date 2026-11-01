@@ -12,6 +12,9 @@ permalink: /docs/site-features/custom-pages/
 
 Create custom pages for credits, methodology, team information, or any other content that doesn't fit into the story structure.
 
+
+For visual authoring, see [homepage and pages](/docs/the-compositor/pages/).
+
 ## What are Custom Pages?
 
 Custom pages are standalone pages that appear in your site's navigation menu but aren't part of the story viewer. Unlike story layers, which are tightly integrated with IIIF objects and step navigation, custom pages are flexible containers for any content you want to share.

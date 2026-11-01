@@ -12,6 +12,9 @@ permalink: /docs/customization/navigation-menu/
 
 Customize your site's navigation menu to include custom pages, external links, and bilingual labels.
 
+
+In the Compositor, arrange navigation in [Home and Pages](/docs/the-compositor/pages/). This page documents the underlying navigation file.
+
 ## What is the Navigation Menu?
 
 The navigation menu appears in your site's header and provides links to:

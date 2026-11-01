@@ -12,11 +12,12 @@ has_children: true
 
 Telar usa archivos de hoja de cálculo para definir la estructura de tu exhibición — qué historias existen, qué objetos contienen, dónde hacer zoom en cada imagen y qué términos de glosario incluir.
 
-Puedes administrar estos datos de dos maneras:
+Estos archivos son el formato de publicación. Elige cómo editar su contenido:
+- **Compositor** — edita visualmente; el editor escribe los archivos al publicar
 - **Google Sheets** — edita una hoja de cálculo en tu navegador y Telar la obtiene y convierte a archivos CSV automáticamente durante cada *build*
 - **Archivos CSV** — edita los archivos directamente en `telar-content/spreadsheets/`
 
-Ambos enfoques producen el mismo resultado. La mayoría de las personas comienzan con Google Sheets y nunca tocan un archivo CSV.
+Elige una fuente para la autoría. Si Google Sheets está activo, el build lo descarga y reemplaza sus copias CSV locales. Los [tres manuales](/guia/#build) explican cada proceso.
 
 ## Archivos de datos
 
@@ -37,7 +38,7 @@ orden,id_historia,titulo,subtitulo,firma
 1,textiles-coloniales,Textiles Coloniales,Tradiciones de tejido,por Dra. María García
 ```
 
-Telar detecta automáticamente y omite la segunda fila de encabezado. También se admiten nombres de archivos en español (`proyecto.csv`, `objetos.csv`). Consulta [Columnas del proyecto](/guia/tus-datos/csv-proyecto/#descripcion-general) para detalles completos sobre la normalización de columnas.
+Telar detecta automáticamente y omite la segunda fila de encabezado. También se admiten nombres de archivos en español (`proyecto.csv`, `objetos.csv`). Consulta [Columnas del proyecto](/guia/tus-datos/csv-proyecto/#descripción-general) para detalles completos sobre la normalización de columnas.
 
 ## Google Sheets
 

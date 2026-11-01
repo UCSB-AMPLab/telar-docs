@@ -1,0 +1,40 @@
+{
+  "/docs/": {
+    "top": [
+      "documentation"
+    ],
+    "planning": [
+      "getting-started"
+    ],
+    "build": [
+      "set-up-your-site"
+    ],
+    "reference": [
+      "configure-your-site",
+      "customization",
+      "for-developers",
+      "site-features",
+      "your-content",
+      "your-data"
+    ]
+  },
+  "/guia/": {
+    "top": [
+      "documentación"
+    ],
+    "planning": [
+      "primeros-pasos"
+    ],
+    "build": [
+      "configura-tu-sitio"
+    ],
+    "reference": [
+      "configura-tu-proyecto",
+      "funciones-del-sitio",
+      "para-desarrolladores",
+      "personalización",
+      "tu-contenido",
+      "tus-datos"
+    ]
+  }
+}

@@ -431,5 +431,5 @@ Para ver la lista completa de cambios en cada versión, consulta el [Changelog](
 ## ¿Necesitas ayuda?
 
 - **Documentación:** [telar.org/guia](https://telar.org/guia)
-- **Sitio de ejemplo:** [telar.org/demo](https://telar.org/demo)
+- **Sitio de ejemplo:** [telar.org/demo](https://paisajes.telar.org/)
 - **Reportar un problema:** [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues)

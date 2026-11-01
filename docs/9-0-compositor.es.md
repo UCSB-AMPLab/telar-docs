@@ -8,47 +8,46 @@ lang: es
 permalink: /guia/el-compositor/
 ---
 
-# El Compositor
+# Manual del Compositor
 
-El Compositor de Telar es un editor visual para construir y administrar tu exhibición — sin hojas de cálculo, sin línea de comandos, sin código. Funciona en tu navegador en [compositor.telar.org](https://compositor.telar.org) y se conecta directamente a tu repositorio de GitHub.
+<span class="anchor-alias" id="el-compositor"></span>
 
-## ¿Qué es el Compositor?
+<span class="anchor-alias" id="qué-es-el-compositor"></span>
 
-Si ya has usado Telar, sabes que el contenido se define a través de archivos de hoja de cálculo — archivos CSV o Google Sheets — y se publica a través de GitHub. El Compositor reemplaza ese flujo de trabajo con un editor visual. Puedes:
+El Compositor de Telar es una herramienta de autoría visual para crear y administrar exhibiciones en Telar. Funciona en tu navegador en [compositor.telar.org](https://compositor.telar.org), donde puedes entretejer imágenes, video, audio y texto en narrativas visuales por capas sin escribir código.
 
-- Importar contenido existente desde un repositorio de Telar o Google Sheets
-- Agregar y editar objetos con metadatos, manifiestos IIIF o imágenes subidas
-- Construir historias visualmente — escribir paneles, definir coordenadas del visor, fijar los tiempos del clip
-- Publicar cambios en GitHub con un solo clic
-- Monitorear el estado del *build* de tu sitio en tiempo real
+Puedes usarlo para proyectos de humanidades digitales, exhibiciones públicas, narrativas comunitarias y proyectos en el salón de clase, de forma individual o con un equipo. La interfaz está disponible en español e inglés.
 
-El Compositor está diseñado para estudiantes, docentes y cualquier persona que quiera enfocarse en la narrativa en lugar de los archivos de datos.
+Telar proporciona el marco para la exhibición que explora tu público. El Compositor te ofrece un espacio de trabajo para reunir su contenido, previsualizar las historias y publicar el sitio. El contenido y la configuración del sitio publicado se conservan como archivos en un repositorio de GitHub.
 
-## Cómo funciona
+## Las partes de una exhibición
 
-El flujo de trabajo tiene cuatro etapas:
+- **Los objetos** son tus materiales de trabajo: imágenes, video o audio, con sus descripciones, fuentes y créditos.
+- **Las historias** guían al público por esos materiales mediante una secuencia de **pasos**. Cada paso combina texto narrativo con un encuadre de un objeto o un fragmento de video o audio.
+- **Los paneles y las entradas del glosario** ofrecen contexto adicional que el público puede abrir durante el recorrido.
+- **La página de inicio y las páginas de apoyo** presentan la exhibición y ayudan al público a orientarse.
 
-1. **Iniciar sesión** — Autentícate con tu cuenta de GitHub en [compositor.telar.org](https://compositor.telar.org)
-2. **Conectar un repositorio** — Selecciona un repositorio de Telar existente e importa su contenido
-3. **Editar** — Usa el editor visual para administrar objetos, escribir historias y organizar los pasos
-4. **Publicar** — Revisa tus cambios, confirma el *commit* en GitHub y observa cómo se completa el *build*
+Puedes administrar todo esto desde el Compositor, junto con la apariencia y la navegación del sitio.
 
-Todos los cambios que hagas en el Compositor se guardan automáticamente en el servidor hasta que publiques. Al publicar se crea un solo *commit* en tu repositorio — atribuido a ti — y se activa automáticamente un *build* de GitHub Pages.
+## Cómo funciona {#cómo-funciona}
 
-## Requisitos
+1. **Comienza un sitio.** Crea un sitio Telar nuevo o conecta uno que ya tengas.
+2. **Compón tu exhibición.** Agrega las fuentes, escribe las historias, elige los detalles que mostrará cada paso y desarrolla el contexto.
+3. **Revisa y publica.** Comprueba tu trabajo y publica los cambios en GitHub. Después, Telar genera el sitio web público.
 
-Para usar el Compositor necesitas:
+Tu trabajo se guarda mientras editas. Publicar es una acción aparte, así que puedes desarrollar un borrador antes de actualizar el sitio público. Después de publicar, revisa el sitio cuando termine de generarse.
 
-- Una **cuenta de GitHub** ([regístrate gratis](https://github.com/join))
-- Un **repositorio de Telar** creado a partir de la [plantilla de Telar](https://github.com/UCSB-AMPLab/telar) (consulta [Primeros pasos](/guia/primeros-pasos/compositor/) para instrucciones de configuración)
-- **GitHub Pages habilitado** con la fuente configurada como **GitHub Actions** (consulta [Primeros pasos](/guia/primeros-pasos/compositor/) para más detalles)
+<span class="anchor-alias" id="requisitos"></span>
 
-## En esta sección
+## Antes de comenzar
 
-- [Primeros pasos](/guia/el-compositor/primeros-pasos/) — Inicia sesión, conecta un repositorio e importa tu contenido
-- [Panel de control](/guia/el-compositor/panel-de-control/) — Navega tu proyecto, administra historias y monitorea tu sitio
-- [Objetos](/guia/el-compositor/objetos/) — Explora, edita, sube y agrega objetos a tu exhibición
-- [Editor de historias](/guia/el-compositor/editor-historias/) — Construye historias con un editor visual, captura coordenadas y escribe contenido de capas
-- [Video y audio](/guia/el-compositor/video-y-audio/) — Fija los tiempos del clip y los puntos de bucle, y trabaja con pasos multimedia
-- [Publicación](/guia/el-compositor/publicacion/) — Revisa los cambios, confirma el *commit* en GitHub y sigue el *build*
-- [Sincronización y actualizaciones](/guia/el-compositor/sincronizacion-y-actualizaciones/) — Resincroniza con tu repositorio y actualiza Telar
+Necesitas una cuenta de GitHub. La [guía del primer sitio](/guia/primeros-pasos/compositor/) te acompaña al iniciar sesión, dar acceso a la aplicación de Telar en GitHub y crear un sitio. Si ya tienes un repositorio de Telar, sigue [Conectar un sitio existente](/guia/el-compositor/primeros-pasos/).
+
+Si todavía estás desarrollando tu idea, empieza por [Planear una exhibición](/guia/planear/). Para un primer ejercicio práctico, el [recorrido ilustrado del khipu](/guia/el-compositor/iiif-a-historia/) lleva una imagen de una colección IIIF hasta un paso de una historia y muestra cómo guardar su encuadre.
+
+<span class="anchor-alias" id="en-esta-sección"></span>
+
+{% assign manual_book = site.data.docs_navigation.sections[page.lang].compositor %}
+{% for group in manual_book.groups %}{% unless group.id == 'main' %}
+<h2>{{ group.title }}</h2><ul>{% for item in group.items %}<li><a href='{{ item.url }}'>{{ item.title }}</a></li>{% endfor %}</ul>
+{% endunless %}{% endfor %}

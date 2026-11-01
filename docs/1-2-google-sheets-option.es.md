@@ -22,8 +22,6 @@ Vas a configurar tres cosas: un repositorio en GitHub para tu sitio, una hoja de
 
 ## Configura tu sitio
 
-En este primer paso vas a configurar tres cosas: un repositorio en GitHub para tu sitio, una hoja de cálculo en Google Sheets para tu contenido y un archivo de configuración para conectarlos. A medida que avanzas, vas a ingresar algunos datos — tu nombre de usuario de GitHub, el enlace de tu hoja de cálculo, un título para tu sitio. Al final de esta página, vas a descargar un archivo de configuración listo para usar.
-
 Vas a necesitar:
 - Una [cuenta de GitHub](https://github.com/join) (gratis)
 - Una [cuenta de Google](https://accounts.google.com/) para Google Sheets (gratis)
@@ -209,7 +207,7 @@ Después de guardar, GitHub Actions construirá y publicará tu sitio automátic
 
 ## Próximos pasos
 
-Tu sitio Telar ya está funcionando. Sigue este tutorial para aprender cómo funcionan las historias de Telar y agregar tu propio contenido, o salta a la sección que quieras:
+La conexión está lista. Sigue con [el modelo de la hoja](/guia/tus-datos/google-sheets/) y después agrega un objeto y tu primera historia. Usa [la guía de planeación](/guia/planear/) si aún no has preparado la narrativa.
 
 - **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — Conoce cómo se articulan historias, pasos y paneles
 - **[Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/)** — Sube imágenes, llena tu hoja de cálculo y crea tu primera historia

@@ -8,6 +8,9 @@ lang: es
 permalink: /guia/personalizacion/
 ---
 
+# Personalización {#guide-title}
+
+
 ## Personalización
 
 Haz Telar tuyo con temas, estilos personalizados y modificaciones de diseño.

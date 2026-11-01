@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: "5.1. Google Sheets"
+title: "Understand the spreadsheet"
 parent: "5. Your Data"
 grand_parent: Documentation
 nav_order: 1
@@ -8,118 +8,65 @@ lang: en
 permalink: /docs/your-data/google-sheets/
 ---
 
-## Google Sheets Integration
+# Understand the spreadsheet
 
-Use Google Sheets to manage your Telar content through a familiar, collaborative interface. This works with both the GitHub Web workflow and Local Development.
+<span class="anchor-alias" id="troubleshooting"></span>
 
-## Quick start
+<span class="anchor-alias" id="see-also"></span>
 
-1. Duplicate the template: <https://bit.ly/telar-template> (File → Make a copy)
-2. Publish: File → Share → Publish to web
-3. Configure `_config.yml` → `google_sheets` block (published_url)
-4. Build your site (GitHub Actions or local build)
+<span class="anchor-alias" id="google-sheets-integration"></span>
 
-{: .tip }
-> **Compositor onboarding.** The Compositor can import directly from your Google Sheet during onboarding. After your first publish via the Compositor, you can disable Google Sheets integration if you prefer to manage content entirely through the Compositor.
+<span class="anchor-alias" id="fetching-data-local-dev-only"></span>
 
-Optional: Import from Excel instead of duplicating the Google template
+<span class="anchor-alias" id="configuring-_configyml"></span>
 
-- Download the Excel template (raw file):
-  {{ site.baseurl }}/assets/templates/telar-template.xlsx
-- In Google Sheets: File → Import → Upload → Replace spreadsheet
+<span class="anchor-alias" id="column-reference-summary"></span>
 
-## Sheet structure
+Your Google Sheet is the source for a generated edition of your exhibition. Editing a cell does not immediately change the public site: the next build fetches the published sheet and processes it.
 
-Your spreadsheet contains these tabs by default:
+## How the tabs connect
 
-- `project` — Site-wide settings and story list
-- `objects` — IIIF objects used across stories
-- `story-1`, `story-2`, ... — Steps and content for each story
+| Tab | Purpose | Connection |
+|---|---|---|
+| `project` | Lists stories and their display order | `story_id` identifies a story tab |
+| `objects` | Describes the shared source collection | `object_id` is used in story rows |
+| A tab for each story | Lists its steps, views, questions and panels | `object` matches an object ID |
+| `glossary` | Defines recurring terms | `term_id` is used in text links |
 
-Tips
+The template includes guidance and bilingual headers. Keep the machine-readable column names. Rows or columns beginning with `#` are ignored.
 
-- Use `#`-prefixed rows as section breaks or TODOs (ignored during processing)
-- Any column starting with `#` is also ignored (for inline notes/guidance)
-- Coordinates: start with `0.500, 0.500, 1.000` and refine later using the Identify Coordinates tool
+<span class="anchor-alias" id="quick-start"></span>
+## Start with the template
 
-## Configuring `_config.yml`
+Use the template linked in the [guided setup](/docs/getting-started/google-sheets/). Make your own copy, then publish the spreadsheet through **File → Share → Publish to web**.
 
-In your repository, set:
+The ordinary editing link is different from the published link. The configuration needs the published address:
 
 ```yaml
 google_sheets:
   enabled: true
-  published_url: "https://docs.google.com/..." # File → Share → Publish to web
+  published_url: "YOUR-PUBLISHED-SPREADSHEET-URL"
 ```
 
-- The `published_url` provides stable CSV endpoints for each sheet
+Publish the tabs Telar must read. Do not put confidential notes in content you publish to the web.
 
-{: .note }
-> **Simplified in v0.9.0.** You no longer need to share your sheet separately. Only the published URL is required. If your config still has a `shared_url` line, it is safely ignored.
+## Keep IDs consistent
 
-![GitHub screenshot for editing config file](/images/config_drive.gif)
+Use short, stable IDs with lowercase letters and hyphens. A story ID must match its tab name. An object reference must match an ID in `objects`. A glossary link must match the term ID.
 
-## Fetching data (local dev only)
+Titles can change without changing these relationships. Renaming an ID requires updating the references that use it.
 
-When developing locally, use the build script which handles fetching automatically:
+## Use text and file references
 
-```bash
-python3 scripts/build_local_site.py
-```
+A short panel can be written directly in a `layer1_content` or `layer2_content` cell. Use Markdown syntax for formatting. A path ending in `.md` can refer to a longer text in the repository's stories text folder.
 
-Or run the fetch step manually:
+Answers are brief plain prose. Panels are the place for richer formatting and further context. See [story columns](/docs/your-data/csv-stories/) for supported fields.
 
-```bash
-python3 scripts/fetch_google_sheets.py
-```
+<span class="anchor-alias" id="sheet-structure"></span>
+## Choose this sheet as the source
 
-What the fetch script does:
+If you move to the Compositor, review its import process and switch the content source deliberately. The Compositor does not write your visual edits back to the Google Sheet. Leaving Sheets enabled can cause later builds to replace those edits with the sheet's content.
 
-- Discovers tab GIDs automatically
-- Downloads CSVs to `telar-content/spreadsheets/`
-- Skips instruction-only tabs
+For local work, `python3 scripts/build_local_site.py` fetches Sheets when enabled. The CSV copies in `telar-content/spreadsheets/` are fetched inputs; edit the sheet if it is your chosen source.
 
-Then run your normal build steps:
-
-```bash
-python3 scripts/csv_to_json.py
-python3 scripts/generate_collections.py
-bundle exec jekyll build
-```
-
-## Column reference (summary)
-
-`project` tab
-
-- After the `STORIES` row, list each story (number and title)
-
-`objects` tab (common fields)
-
-- object_id, title, description, source_url, creator, period, medium, dimensions, location, credit, thumbnail
-
-![GitHub screenshot for editing sheet objects](/images/object-sheet.png)
-
-`story-X` tabs
-
-- step, object, x, y, zoom, clip, question, answer, alt_text
-- layer1_button, **layer1_content**, layer2_button, **layer2_content**
-
-Panel content can be:
-- Inline text (write directly in the cell)
-- File reference (path ending in `.md`)
-
-{: .tip }
-> **Inline vs File References**
-> For short panels (1–2 paragraphs), write content directly in the spreadsheet cell. Use file references for complex content with widgets or very long narratives. See the [CSV Reference: Stories](/docs/your-data/csv-stories/#layer-content) for details.
-
-## Troubleshooting
-
-- Invalid object references → ensure IDs match exactly between `objects` and story tabs
-- Fetch fails → verify share/publish settings and URLs in `_config.yml`
-- Coordinates off → keep values in range (x/y: 0.000–1.000; zoom: positive number)
-
-## See also
-
-- [Manual Setup](/docs/setup/manual/)
-- [Local Development](/docs/getting-started/local-dev/)
-- [Upgrading](/docs/setup/upgrading/)
+Next, [add an object and build a first story](/docs/getting-started/add-content/).

@@ -10,7 +10,7 @@ permalink: /guia/tus-datos/csv-glosario/
 
 # Columnas del glosario
 
-Referencia completa de las columnas de `glossary.csv` con soporte bilingüe de nombres de columnas. Para la normalización de columnas y soporte de encabezados dobles, consulta [Columnas del proyecto](/guia/tus-datos/csv-proyecto/#descripcion-general).
+Referencia completa de las columnas de `glossary.csv` con soporte bilingüe de nombres de columnas. Para la normalización de columnas y soporte de encabezados dobles, consulta [Columnas del proyecto](/guia/tus-datos/csv-proyecto/#descripción-general).
 
 ## CSV de glosario (glossary.csv)
 

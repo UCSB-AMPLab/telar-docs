@@ -14,7 +14,7 @@ The Objects page in the Compositor lets you browse, edit, and add the visual ite
 
 ## Object list
 
-The object list shows all objects in your exhibition as a grid of thumbnails. Each object displays:
+The object list shows all objects in your exhibition as a list with thumbnails. Each object displays:
 
 - A **thumbnail** preview of the image or media
 - The object's **title**
@@ -22,17 +22,20 @@ The object list shows all objects in your exhibition as a grid of thumbnails. Ea
 
 ### Status indicators
 
-Objects can have one of three statuses:
+The status reports availability; it does not mean the catalogue description has been fully reviewed.
 
-- **Ready** — The object has metadata and its image tiles are available. It is ready to use in stories.
-- **No metadata** — The object exists but is missing key information like title, creator, or description. You can still use it in stories, but adding metadata improves your exhibition.
-- **Needs tiles** — The object's IIIF tiles have not been generated yet. This can happen with newly uploaded images that have not been published and built.
+- **Ready** — The object has a title and passes the image-availability check where that check applies.
+- **No metadata** — The title is missing. Review the record and add its title and other useful catalogue information.
+- **Needs tiles** — The image is not yet available. For a hosted file, check its build and generated tiles; for an external source, check the manifest.
+- **Missing from repo** — The record has been flagged as absent from the repository. Review the repository comparison before deciding what to keep.
 
 ### Featured toggle
 
 You can mark any object as featured. Featured objects appear prominently on your site's home page and in the objects gallery.
 
-To toggle an object's featured status, click the featured indicator on the object card.
+To toggle an object's featured status, click the featured indicator on the object row.
+
+{% include docs/media.html id="objects" %}
 
 ## Edit metadata
 
@@ -44,7 +47,7 @@ The metadata fields are:
 |---|---|
 | **Title** | The name of the object as it appears on your site |
 | **Creator** | The person or organization that created the object |
-| **Date** | When the object was created or published |
+| **Year** | When the object was created or published |
 | **Description** | A short summary of what the object depicts or contains |
 | **Source** | Where the object comes from — a collection, archive, or URL |
 | **Alt text** | A description for screen readers and accessibility |
@@ -53,18 +56,21 @@ The metadata fields are:
 {: .tip }
 > Alt text is important for accessibility. Write a brief, descriptive sentence that conveys what the image shows to someone who cannot see it.
 
+{% include docs/media.html id="object-metadata" %}
+
 ## Add external IIIF
 
-You can add objects from museums, libraries, and other institutions that publish IIIF manifests. The Compositor fetches the image and metadata automatically.
+1. Open **Objects** and choose **+ Add object**.
+2. Select **IIIF manifest**.
+3. Paste the manifest URL and choose **Fetch manifest**.
+4. Review the preview, title, source, credit and any other supplied metadata.
+5. Choose **Add object**.
 
-1. Click **Add object** and select the IIIF option
-2. Paste the manifest URL into the field
-3. The Compositor retrieves the image and fills in available metadata (title, creator, description)
-4. Review and adjust the metadata as needed
-5. Save the object
+Adding the object makes it available in the collection. Select it separately in a story step using **Change object**.
 
-{: .note }
-> To find IIIF manifests, look for the IIIF logo on museum and library websites, or check the [IIIF Guide to Finding Resources](https://iiif.io/guides/finding_resources/). For more background on IIIF in Telar, see [External IIIF Images](/docs/your-content/external-iiif/).
+Follow [Use an IIIF object in a story](/docs/the-compositor/iiif-to-story/) for the complete illustrated khipu example. See [External IIIF Images](/docs/your-content/external-iiif/) for background.
+
+{% include docs/media.html id="import" %}
 
 ## Upload images
 
@@ -82,23 +88,19 @@ Supported formats are JPG, PNG, and TIFF, with a maximum file size of 25 MB per 
 
 ## Save to repository
 
-When you save changes to objects — whether editing metadata, adding IIIF, or uploading images — those changes are stored locally in the Compositor. To send them to GitHub, you need to publish.
+When you save changes to objects — whether editing metadata, adding IIIF, or uploading images — those changes are saved in the Compositor draft. To send them to GitHub, you need to publish.
 
 Publishing commits an updated `objects.csv` to your repository along with any uploaded image files. See [Publishing](/docs/the-compositor/publishing/) for the full workflow.
 
 ## Sync
 
-If objects were added or changed outside the Compositor — for example, by editing `objects.csv` directly or uploading images through GitHub — you can re-scan your repository to pick up those changes.
+When objects change outside the Compositor, use the project's **Changes on GitHub** review. Read the differences and choose which version to keep before applying them. See [Sync and Updates](/docs/the-compositor/sync-updates/).
 
-1. Click the **Sync from GitHub** button
-2. The Compositor re-reads your repository and updates the object list
-
-{: .warning }
-> If you have unpublished changes in the Compositor, syncing may overwrite them with the repository's current state. Publish your changes first, or review carefully before syncing.
+Unpublished editing and publishing are separate. Review the consequences shown for the affected object rather than re-importing the entire project.
 
 ## See also
 
-- [Dashboard](/docs/the-compositor/dashboard/) — Return to the project overview
+- [Start and navigation](/docs/the-compositor/dashboard/) — Return to the project overview
 - [Objects](/docs/your-content/objects/) — How objects work in Telar
 - [External IIIF Images](/docs/your-content/external-iiif/) — Background on IIIF manifests and sources
 - [Self-Hosted Images](/docs/your-content/self-hosted-images/) — How uploaded images become IIIF tiles

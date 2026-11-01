@@ -12,6 +12,9 @@ permalink: /guia/personalizacion/menu-navegacion/
 
 Personaliza el menú de navegación de tu sitio para incluir páginas personalizadas, enlaces externos y etiquetas bilingües.
 
+
+En el Compositor, organiza la navegación en [Inicio y páginas](/guia/el-compositor/paginas/). Esta página documenta el archivo de navegación.
+
 ## ¿Qué es el menú de navegación?
 
 El menú de navegación aparece en el encabezado de tu sitio y proporciona enlaces a:

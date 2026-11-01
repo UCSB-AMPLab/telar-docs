@@ -1,56 +1,55 @@
 ---
 layout: docs
-title: 1.4. Plan Your Narrative
-parent: 1. Getting Started
-grand_parent: Documentation
-nav_order: 4
+title: "Sketch the narrative arc"
 lang: en
 permalink: /docs/getting-started/narrative-structure/
-tutorial_prev:
-  title: "Getting Started"
-  url: /docs/getting-started/
-tutorial_next:
-  title: "Add Your Content"
-  url: /docs/getting-started/add-content/
+docs_section: planning
+en_url: /docs/getting-started/narrative-structure/
+es_url: /guia/primeros-pasos/estructura-narrativa/
+docs_draft: true
 ---
 
-# Plan Your Narrative
+# Sketch the narrative arc
 
-Understanding Telar's narrative model will help you plan your content effectively.
+<span class="anchor-alias" id="the-questionanswerinvitation-pattern"></span>
 
-Each page in your Telar site contains one or more stories, which can be independent or related narratives. Stories unfold through successive steps that show an image (or a detail of an image) alongside a brief text.
+<span class="anchor-alias" id="planning-your-story"></span>
 
-## The Question/Answer/Invitation Pattern
+<span class="anchor-alias" id="plan-your-narrative"></span>
 
-Each step follows this pattern:
+<span class="anchor-alias" id="layered-panels"></span>
 
-- **Question**: Draws viewers in with a compelling heading
-- **Answer**: A brief 1-2 sentence response
-- **Invitation**: "Learn more" opens a layer panel with extended information
+A story leads visitors from an opening to an ending through a sequence of close looks. Its steps should develop the guiding question in your exhibition brief.
 
-You can provide up to two layer panels in each step to give viewers further information.
+## Give the opening a job
 
-## Layered Panels
+Introduce the source, the question and the context visitors need to begin. Offer a first view that helps them orient themselves. Save details that matter later for the steps where they become useful.
 
-Layer panels are where you can expand on your narrative. They are written in [markdown format](https://www.markdownguide.org/getting-started/), allowing you to include:
+The opening square in the [narrative planner](/assets/templates/telar-worksheet.pdf) marks this introduction. It is not an extra question to squeeze into the first step.
 
-- Headings, bold and italic text
-- Links and lists
-- Additional images
-- Embedded videos or 3D renderings
+## Build a string of questions
 
-## Planning Your Story
+Write one question or observation for each circle. Move from something visitors can recognise towards the relationships or interpretation you want them to understand.
 
-Before you start gathering materials or building your site, take time to sketch out your story's structure:
+For a painting, a possible sequence is: What do we see? Which details identify the place? Why were those details included? What does their arrangement suggest? These are prompts to investigate, not claims the image proves by itself.
 
-1. What stories do you want to tell?
-2. What are the key moments in each story?
-3. What images or details will anchor each step in the story?
-4. What information belongs in the brief answer and what in the panel layers?
+Put a source or source detail beside each question. If you cannot show the evidence for an answer, revise the answer, add a source or acknowledge the uncertainty.
 
-Drafting these answers and panels will make the implementation much easier.
+{% include docs/story-arc.html %}
 
-{: .tip }
+## Write an ending that follows from the steps
 
-> **Tip: Get Inspired**
-> Browse the [example site](https://ampl.clair.ucsb.edu/telar) to see this structure in action.
+The upward triangle marks the ending. Return to the guiding question and draw together what the visitor has examined. Do not introduce the source on which the whole interpretation depends only at the end.
+
+Ask whether the ending would make sense to someone who read only the main route. Optional panels can enrich the argument, but the central thread should remain understandable without them.
+
+## Try the sequence aloud
+
+Read just the questions and short answers in order. Then ask a colleague to do the same while looking at the proposed views.
+
+- Remove repeated explanations.
+- Divide a step that asks visitors to make two unrelated observations.
+- Add a transition where a change of source, place or time is hard to follow.
+- Move specialist context into a panel when it interrupts the main route.
+
+**Your result:** an opening, a numbered sequence of questions with sources, and a provisional ending. Next, [choose the framing for each step](/docs/plan/sources-and-framing/).

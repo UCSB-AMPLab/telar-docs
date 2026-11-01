@@ -10,7 +10,7 @@ permalink: /guia/tus-datos/csv-objetos/
 
 # Columnas de objetos
 
-Referencia completa de las columnas de `objects.csv` con soporte bilingüe de nombres de columnas. Para la normalización de columnas y soporte de encabezados dobles, consulta [Columnas del proyecto](/guia/tus-datos/csv-proyecto/#descripcion-general).
+Referencia completa de las columnas de `objects.csv` con soporte bilingüe de nombres de columnas. Para la normalización de columnas y soporte de encabezados dobles, consulta [Columnas del proyecto](/guia/tus-datos/csv-proyecto/#descripción-general).
 
 ## CSV de objetos (objects.csv / objetos.csv)
 

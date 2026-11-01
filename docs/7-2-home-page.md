@@ -12,6 +12,9 @@ permalink: /docs/customization/home-page/
 
 The homepage of your Telar site is controlled by a simple markdown file (`index.md`) in the root of your repository. This makes it easy to customize your welcome message, section headings, and introductory content.
 
+
+In the Compositor, use [Home and Pages](/docs/the-compositor/pages/). The file format below describes the same published homepage.
+
 ## File Location
 
 `index.md` **must** be in the root directory of your repository (not in a subdirectory). Jekyll automatically serves this file as your homepage.

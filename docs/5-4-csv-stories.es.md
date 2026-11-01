@@ -10,7 +10,7 @@ permalink: /guia/tus-datos/csv-historias/
 
 # Columnas de historias
 
-Referencia completa de las columnas del CSV de historia con soporte bilingüe de nombres de columnas. Para la normalización de columnas y soporte de encabezados dobles, consulta [Columnas del proyecto](/guia/tus-datos/csv-proyecto/#descripcion-general).
+Referencia completa de las columnas del CSV de historia con soporte bilingüe de nombres de columnas. Para la normalización de columnas y soporte de encabezados dobles, consulta [Columnas del proyecto](/guia/tus-datos/csv-proyecto/#descripción-general).
 
 ## CSV de historia (story-{id}.csv)
 

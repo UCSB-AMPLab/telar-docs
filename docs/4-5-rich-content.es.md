@@ -15,6 +15,9 @@ Tu sitio está funcionando y tus historias están en la hoja de cálculo. Ahora 
 {: .note }
 > Esta guía se construye sobre las guías de configuración. Completa una de las opciones de [Primeros pasos](/guia/primeros-pasos/) primero si aún no lo has hecho.
 
+
+Esta página explica el contenido de paneles en archivos y hojas de cálculo. En el Compositor, edita el título en su campo y el contenido en el editor del panel; la misma referencia de formato se aplica al cuerpo.
+
 ## Cuándo agregar archivos Markdown
 
 La hoja de cálculo maneja bien la mayoría de las exposiciones en Telar. Considera agregar archivos Markdown cuando necesites:

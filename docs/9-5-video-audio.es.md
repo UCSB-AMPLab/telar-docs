@@ -34,6 +34,8 @@ El Compositor reconoce URLs de video de tres plataformas:
 
 Cuando un paso hace referencia a un objeto de video, un reproductor de video en línea aparece en la columna del visor con controles de reproducción estándar.
 
+{% include docs/media.html id="external-media" %}
+
 ## Objetos de audio
 
 Los objetos de audio utilizan archivos autoalojados almacenados en tu repositorio en `telar-content/objects/`. El Compositor admite formatos MP3, OGG y M4A.

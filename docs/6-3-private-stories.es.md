@@ -129,7 +129,7 @@ Cualquiera de los dos fallos imprime un mensaje que identifica cuál ocurrió, e
 | `story_key` | `_config.yml` | La clave de encriptación/desencriptación |
 | `private` | Columna de `project.csv` | Marca historias individuales para encriptación (también se acepta `protected`) |
 
-Consulta [Configuración](/guia/configurar/configuracion/#story-protection) para detalles sobre la opción `story_key`.
+Consulta [Configuración](/guia/configurar/configuracion/#protección-de-historias) para detalles sobre la opción `story_key`.
 
 ## Véase también
 

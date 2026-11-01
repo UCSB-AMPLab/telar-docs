@@ -8,6 +8,9 @@ lang: es
 permalink: /guia/personalizacion/temas/
 ---
 
+# Temas {#guide-title}
+
+
 ## Temas
 
 Telar incluye cinco temas visuales listos para usar, y puedes cambiarlos desde `_config.yml`.

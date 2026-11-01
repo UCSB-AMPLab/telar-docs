@@ -39,7 +39,7 @@ Telar usa el procesador [Python Markdown](https://python-markdown.github.io/) co
 
 ## Cómo escribir el contenido de los paneles
 
-Puedes escribir el contenido de los paneles de tres maneras. Para más detalles, consulta la [Referencia CSV: Historias](/guia/tus-datos/csv-historias/#contenido-de-capa).
+Puedes escribir el contenido de los paneles de tres maneras. Para más detalles, consulta la [Referencia CSV: Historias](/guia/tus-datos/csv-historias/#contenido-de-las-capas).
 
 {: .note }
 > Los tres métodos que siguen son para quien trabaja en una hoja de cálculo. En el Compositor, el título del panel tiene su propio campo, y todo lo que pegues en el campo **Contenido** —incluido un bloque `---`— se publica como parte del texto del panel, no como título.

@@ -1,0 +1,368 @@
+{
+  "labels": {
+    "en": {
+      "play": "Play steps",
+      "stop": "Stop animation",
+      "open": "Open full-size screenshot",
+      "gif": "Download GIF"
+    },
+    "es": {
+      "play": "Ver los pasos",
+      "stop": "Detener animación",
+      "open": "Ampliar captura",
+      "gif": "Descargar GIF"
+    }
+  },
+  "items": {
+    "public-object": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-public-object.jpg",
+        "width": 1280,
+        "height": 720,
+        "alt": "The khipu object page generated locally by Telar.",
+        "caption": "The local build produces a zoomable object page with its catalogue information and manifest link.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-public-object.jpg",
+        "width": 1280,
+        "height": 720,
+        "alt": "La página del khipu generada localmente por Telar.",
+        "caption": "El build local genera una página ampliable con la información de catálogo y el enlace al manifiesto.",
+        "overview": false
+      }
+    },
+    "create-site": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-create-site.jpg",
+        "width": 640,
+        "height": 550,
+        "alt": "The new-site form with repository name, visible title, language and theme.",
+        "caption": "Choose the repository name, title, language and theme before creating the site.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-create-site.jpg",
+        "width": 640,
+        "height": 550,
+        "alt": "El formulario del sitio con nombre de repositorio, título visible, idioma y tema.",
+        "caption": "Elige el nombre del repositorio, el título, el idioma y el tema antes de crear el sitio.",
+        "overview": false
+      }
+    },
+    "objects": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-objects.jpg",
+        "width": 1280,
+        "height": 664,
+        "alt": "The Objects list with thumbnails, IDs, usage counts, status and the Add object control.",
+        "caption": "Each row connects an object to its thumbnail, ID, usage and status. Filter the list or open an object to inspect it.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-objects.jpg",
+        "width": 1280,
+        "height": 664,
+        "alt": "La lista de Objetos con miniaturas, IDs, usos, estado y el control Agregar objeto.",
+        "caption": "Cada fila relaciona un objeto con su miniatura, ID, usos y estado. Filtra la lista o abre el objeto para revisarlo.",
+        "overview": false
+      }
+    },
+    "object-metadata": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-object-metadata.jpg",
+        "width": 1280,
+        "height": 664,
+        "alt": "The khipu image beside its title, description and catalogue fields.",
+        "caption": "The image and metadata describe the same khipu. Continue down the form for source, credit and accessibility text.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-object-metadata.jpg",
+        "width": 1280,
+        "height": 664,
+        "alt": "La imagen del khipu junto al título, la descripción y los campos de catálogo.",
+        "caption": "La imagen y los metadatos describen el mismo khipu. Más abajo están la fuente, el crédito y el texto de accesibilidad.",
+        "overview": false
+      }
+    },
+    "editor-overview": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-editor-overview.jpg",
+        "width": 1280,
+        "height": 622,
+        "alt": "The story outline, step card and khipu viewer in the Compositor.",
+        "caption": "The outline is on the left, the step text in the centre and the object on the right. Capture position records the view for the selected step.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-editor-overview.jpg",
+        "width": 1280,
+        "height": 580,
+        "alt": "El esquema de la historia, la tarjeta del paso y el visor del khipu en el Compositor.",
+        "caption": "A la izquierda está el esquema; en el centro, el texto del paso; a la derecha, el objeto. Capturar posición guarda la vista del paso seleccionado.",
+        "overview": false
+      }
+    },
+    "glossary": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-glossary.jpg",
+        "width": 1232,
+        "height": 540,
+        "alt": "A glossary term with its title, kind, ID, usage list, definition editor and reader preview.",
+        "caption": "The ID connects links to this entry. Edit the definition in the middle and check the reader preview on the right.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-glossary.jpg",
+        "width": 1232,
+        "height": 540,
+        "alt": "Un término del glosario con título, tipo, ID, usos, editor de definición y vista previa.",
+        "caption": "El ID relaciona los enlaces con esta entrada. Edita la definición en el centro y revisa la vista del lector a la derecha.",
+        "overview": false
+      }
+    },
+    "pages": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-pages.jpg",
+        "width": 1280,
+        "height": 664,
+        "alt": "A supporting page with its title, address and content below the navigation preview.",
+        "caption": "A supporting page has its own title, address and content. The menu preview above shows how readers will find it.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-pages.jpg",
+        "width": 1280,
+        "height": 664,
+        "alt": "Una página de apoyo con título, dirección y contenido bajo la vista previa del menú.",
+        "caption": "Cada página de apoyo tiene título, dirección y contenido propios. La vista previa superior muestra cómo la encontrará el público.",
+        "overview": false
+      }
+    },
+    "homepage": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-homepage.jpg",
+        "width": 1232,
+        "height": 585,
+        "alt": "The pinned Home entry selected beside the homepage title and description fields.",
+        "caption": "Choose the pinned Home entry to edit the introduction. Its editing position is separate from the order of the published menu.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-homepage.jpg",
+        "width": 1232,
+        "height": 585,
+        "alt": "La entrada Inicio seleccionada junto a los campos de título y descripción.",
+        "caption": "Selecciona Inicio en la barra lateral para editar la presentación. Su posición en el editor es independiente del orden del menú público.",
+        "overview": false
+      }
+    },
+    "theme-language": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-theme-language.jpg",
+        "width": 800,
+        "height": 580,
+        "alt": "Site theme swatches, logo field, exhibition language and hosting settings.",
+        "caption": "These settings affect the exhibition. The language here controls the site's interface; it does not translate your written content.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-theme-language.jpg",
+        "width": 800,
+        "height": 580,
+        "alt": "Los temas, el campo del logo, el idioma de la exhibición y los ajustes de alojamiento.",
+        "caption": "Estos ajustes afectan la exhibición. El idioma de esta página controla la interfaz del sitio; no traduce el contenido que escribiste.",
+        "overview": false
+      }
+    },
+    "preferences": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-preferences.jpg",
+        "width": 720,
+        "height": 268,
+        "alt": "Account Preferences with the English and Spanish interface-language options.",
+        "caption": "Account → Preferences changes the Compositor's interface language. The exhibition's language is a separate site setting.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-preferences.jpg",
+        "width": 720,
+        "height": 268,
+        "alt": "Preferencias de la cuenta con las opciones de idioma de interfaz EN y ES.",
+        "caption": "Cuenta → Preferencias cambia el idioma de la interfaz del Compositor. El idioma de la exhibición es un ajuste separado del sitio.",
+        "overview": false
+      }
+    },
+    "stories": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-stories.jpg",
+        "width": 1232,
+        "height": 555,
+        "alt": "The story list with order handles, Draft and Private switches and Edit links.",
+        "caption": "Draft excludes a story from publication; Private uses the site's key. Dragging a row changes the story order.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-stories.jpg",
+        "width": 1232,
+        "height": 555,
+        "alt": "La lista de historias con controles de orden, Borrador, Privada y Editar.",
+        "caption": "Borrador excluye una historia de la publicación; Privada utiliza la clave del sitio. Arrastrar una fila cambia el orden.",
+        "overview": false
+      }
+    },
+    "panel-editor": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-panel-editor.jpg",
+        "width": 640,
+        "height": 480,
+        "alt": "A contextual panel with its text editor and formatting toolbar open.",
+        "caption": "Click the panel text to enter editing mode. The toolbar offers formatting, links, images and other content controls.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-panel-editor.jpg",
+        "width": 640,
+        "height": 480,
+        "alt": "Un panel contextual con el editor de texto y su barra de formato abiertos.",
+        "caption": "Haz clic en el texto del panel para editarlo. La barra ofrece formato, enlaces, imágenes y otros controles de contenido.",
+        "overview": false
+      }
+    },
+    "upgrade": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-upgrade.jpg",
+        "width": 800,
+        "height": 460,
+        "alt": "An example upgrade notice comparing Telar 1.8.2 with 1.8.3.",
+        "caption": "An example version notice before publication. Compare the versions and review the proposed file changes; the versions shown will vary.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-upgrade.jpg",
+        "width": 800,
+        "height": 460,
+        "alt": "Un aviso de actualización que compara, como ejemplo, Telar 1.8.2 y 1.8.3.",
+        "caption": "Un ejemplo del aviso previo a publicar. Compara las versiones y revisa los archivos propuestos; los números cambian según tu sitio.",
+        "overview": false
+      }
+    },
+    "external-media": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-external-media.jpg",
+        "width": 512,
+        "height": 614,
+        "alt": "The External media form recognising a Vimeo address and showing a title and object ID.",
+        "caption": "External media recognises the host from its address. Add a useful title and check the object ID before adding it.",
+        "overview": false
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-external-media.jpg",
+        "width": 512,
+        "height": 614,
+        "alt": "El formulario Medio externo reconoce una dirección de Vimeo y muestra título e ID.",
+        "caption": "Medio externo reconoce el proveedor por la dirección. Agrega un título útil y revisa el ID antes de incorporarlo.",
+        "overview": false
+      }
+    },
+    "public-home": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-public-home.jpg",
+        "width": 1280,
+        "height": 1862,
+        "alt": "The full exhibition homepage with introduction, story cards, featured objects and navigation.",
+        "caption": "A complete homepage connects the introduction, story choices and object collection. Open the full-size image to examine the layout.",
+        "overview": true
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-public-home.jpg",
+        "width": 1280,
+        "height": 1830,
+        "alt": "La página de inicio completa con presentación, tarjetas de historias, objetos y navegación.",
+        "caption": "El inicio conecta la presentación, las historias y la colección de objetos. Abre la captura completa para examinar la organización.",
+        "overview": true
+      }
+    },
+    "import": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-import-poster.jpg",
+        "animation": "/assets/manual/tutorials/en-import.gif",
+        "width": 512,
+        "height": 640,
+        "alt": "The IIIF dialog moves from an empty URL to the pasted manifest and the fetched khipu preview.",
+        "caption": "Paste the manifest, fetch it, then check the returned khipu and metadata. Adding the object is a separate action.",
+        "bytes": 127917
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-import-poster.jpg",
+        "animation": "/assets/manual/tutorials/es-import.gif",
+        "width": 512,
+        "height": 640,
+        "alt": "La ventana IIIF pasa de la URL vacía al manifiesto escrito y a la vista previa del khipu.",
+        "caption": "Pega el manifiesto, obtén los datos y revisa el khipu y sus metadatos. Agregar el objeto es una acción posterior.",
+        "bytes": 134700
+      }
+    },
+    "framing": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-framing-poster.jpg",
+        "animation": "/assets/manual/tutorials/en-framing.gif",
+        "width": 612,
+        "height": 576,
+        "alt": "The khipu view changes, then Capture position confirms that it has been captured.",
+        "caption": "Adjust the view, choose Capture position and look for Captured. The same khipu is shown throughout.",
+        "bytes": 621200
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-framing-poster.jpg",
+        "animation": "/assets/manual/tutorials/es-framing.gif",
+        "width": 612,
+        "height": 534,
+        "alt": "Cambia el encuadre del khipu y Capturar posición confirma que quedó guardado.",
+        "caption": "Ajusta la vista, pulsa Capturar posición y comprueba Capturada. Todo el recorrido muestra el mismo khipu.",
+        "bytes": 596146
+      }
+    },
+    "panels": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-panels-poster.jpg",
+        "animation": "/assets/manual/tutorials/en-panels.gif",
+        "width": 900,
+        "height": 496,
+        "alt": "A story step opens its contextual panel alongside the main card.",
+        "caption": "Open the step's panel to develop its context. This example uses the existing map-and-painting story.",
+        "bytes": 470738
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-panels-poster.jpg",
+        "animation": "/assets/manual/tutorials/es-panels.gif",
+        "width": 900,
+        "height": 496,
+        "alt": "Un paso abre su panel contextual junto a la tarjeta principal.",
+        "caption": "Abre el panel del paso para desarrollar el contexto. Este ejemplo usa la historia existente sobre el mapa y la pintura.",
+        "bytes": 465607
+      }
+    },
+    "coordinates": {
+      "en": {
+        "image": "/assets/manual/tutorials/en-coordinates-poster.jpg",
+        "animation": "/assets/manual/tutorials/en-coordinates.gif",
+        "width": 736,
+        "height": 600,
+        "alt": "The khipu is framed on its object page, then the coordinate panel copies X, Y and Zoom for Sheets.",
+        "caption": "Frame the khipu, scroll to the coordinate panel and copy the values for Sheets or CSV. This is a local example built with Telar.",
+        "bytes": 469459
+      },
+      "es": {
+        "image": "/assets/manual/tutorials/es-coordinates-poster.jpg",
+        "animation": "/assets/manual/tutorials/es-coordinates.gif",
+        "width": 736,
+        "height": 600,
+        "alt": "Se encuadra el khipu en su página y después se copian X, Y y Zoom desde el panel de coordenadas.",
+        "caption": "Encuadra el khipu, baja al panel y copia los valores para Sheets o CSV. Es un ejemplo local construido con Telar.",
+        "bytes": 466531
+      }
+    }
+  }
+}

@@ -10,55 +10,49 @@ permalink: /guia/el-compositor/sincronizacion-y-actualizaciones/
 
 # Sincronización y actualizaciones
 
-El Compositor hace seguimiento de los cambios en tu repositorio y las actualizaciones de Telar. Cuando regresas a un proyecto, verifica si algo cambió remotamente y si hay una versión más reciente de Telar disponible. Esta página explica cómo funcionan la sincronización y las actualizaciones.
+El Compositor comprueba los cambios hechos en GitHub y las actualizaciones disponibles de Telar. Los cambios hechos fuera del editor se revisan antes de aplicarlos al borrador.
 
 ## Detección al regresar
 
-Cada vez que abres el Compositor, verifica si tu repositorio de GitHub ha cambiado desde tu última sesión. Los cambios pueden provenir de otra persona colaboradora, de ediciones directas en GitHub o de una sesión anterior en un dispositivo diferente.
+Al abrir un proyecto conectado, el Compositor revisa su repositorio. Si GitHub cambió, sigue el aviso para revisar las diferencias. La revisión abarca los objetos, historias, ajustes, términos del glosario y páginas afectados.
 
-Si el repositorio no ha cambiado, continúas donde lo dejaste. Si se detectan cambios, el Compositor te invita a resincronizar antes de editar.
+<span class="anchor-alias" id="resincronización" aria-hidden="true"></span>
 
-## Resincronización
+## Resincronizar
 
-La resincronización importa el contenido más reciente de tu repositorio al Compositor. Esto asegura que trabajas con la versión más actual de tus objetos, historias y configuración.
+La revisión de **Cambios en GitHub** muestra las diferencias y pide elegir qué versión conservar cuando es necesario.
 
-Durante la resincronización, el Compositor:
+1. Lee cada cambio y sus consecuencias.
+2. Elige la versión de GitHub o la del Compositor, según corresponda.
+3. Resuelve las decisiones que solicite la revisión.
+4. Pulsa **Aplicar estas elecciones** cuando el resultado sea el que buscas.
 
-1. Lee el estado actual de tu repositorio
-2. Actualiza tu proyecto local para reflejar cualquier cambio remoto
-3. Te advierte si los cambios remotos entran en conflicto con ediciones locales sin publicar
+Conservar la versión del Compositor significa que la próxima publicación enviará esa versión a GitHub. Tomar la versión de GitHub aplica el contenido correspondiente al Compositor. Los cambios sin publicar que solo existen en el Compositor se conservan.
 
-{: .warning }
-> Si tienes cambios sin publicar en el Compositor y el repositorio también ha cambiado, el Compositor te advierte sobre posibles conflictos. Revisa la advertencia con cuidado — puede que necesites publicar tus cambios locales primero o aceptar que la versión remota reemplazará tus ediciones sin publicar.
+{: .note }
+> Revisar la sincronización y publicar son acciones distintas. Lee las consecuencias de cada elemento; no uses una nueva importación como forma habitual de deshacer un pequeño error de edición.
+
+Si no se puede leer un archivo o el repositorio cambia durante la revisión, sigue el mensaje y actualiza la comparación antes de aplicarla.
 
 ## Detección de versión
 
-El Compositor verifica qué versión de Telar ejecuta tu sitio. Si hay una versión más reciente disponible, te lo informa y ofrece actualizar.
-
-La detección de versión ocurre automáticamente al abrir tu proyecto. Si tu sitio ya ejecuta la versión más reciente, no se requiere ninguna acción.
+El Compositor comprueba la versión de Telar que usa tu sitio y puede pedir una actualización antes de continuar.
 
 ## Página de actualización
 
-Cuando hay una actualización disponible, el Compositor muestra una página de actualización con los detalles necesarios para tomar una decisión informada:
+Revisa las versiones actual y de destino, las notas de la versión y los cambios agrupados por archivo. Una actualización puede cambiar archivos del framework y migrar los ajustes que necesite la nueva versión. Lee la propuesta antes de aceptarla.
 
-- **Versión actual** — La versión de Telar que tu sitio ejecuta actualmente
-- **Versión destino** — La versión más reciente disponible
-- **Notas de la versión** — Un resumen de lo que cambió en la nueva versión — funciones nuevas, mejoras y correcciones
-- **Cambios de archivos agrupados** — Una lista de los archivos de Telar que se agregarán, modificarán o eliminarán, organizados por tipo
-
-Revisa esta información antes de continuar. Las actualizaciones modifican el código de Telar en tu repositorio pero no alteran tu contenido — tus objetos, historias y configuración se mantienen sin cambios.
+{% include docs/media.html id="upgrade" %}
 
 ## Actualización con un clic
 
-Cuando estés listo para actualizar, haz clic en el botón de actualización. El Compositor confirma los archivos actualizados de Telar como un solo *commit* atómico en tu repositorio y hace seguimiento del *build* resultante, igual que en una publicación normal.
+Sigue los controles de actualización y espera a que terminen la operación y la generación del sitio. Después, sigue el enlace de regreso. Revisa el sitio antes de continuar con el trabajo que motivó la actualización.
 
-Después de que la actualización se completa y el *build* finaliza correctamente, el Compositor continúa con la operación que estaba bloqueada originalmente por la verificación de versión. Por ejemplo, si estabas a punto de publicar y el Compositor detectó una versión desactualizada, la actualización se ejecuta primero y luego la publicación procede.
-
-{: .note }
-> La actualización modifica únicamente los archivos de código de Telar en tu repositorio. Tu contenido — objetos, historias, imágenes y configuración — nunca se modifica durante una actualización.
+El historial del repositorio registra los cambios de la actualización. Si algo no se ve bien, usa la información de la generación y la lista de archivos propuesta para entender qué cambió.
 
 ## Véase también
 
-- [Publicación](/guia/el-compositor/publicacion/) — Cómo funcionan la publicación y el seguimiento de *builds*
-- [Panel de control](/guia/el-compositor/panel-de-control/) — Regresa a la vista general del proyecto
-- [Primeros pasos](/guia/el-compositor/primeros-pasos/) — Configuración inicial y conexión de un repositorio
+- [Publicación](/guia/el-compositor/publicacion/)
+- [Inicio y navegación](/guia/el-compositor/panel-de-control/)
+- [Conectar un sitio existente](/guia/el-compositor/primeros-pasos/)
+- [Actualizar Telar](/guia/configuracion/actualizacion/) — Referencia de actualización del framework

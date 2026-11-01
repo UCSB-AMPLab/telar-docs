@@ -1,0 +1,44 @@
+{
+  "es": {
+    "vimeo": "https://player.vimeo.com/video/1241745045?h=9f98bd213d&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+    "poster": "/assets/homepage-demo/posters/es.jpg",
+    "title": "Demostración de Telar",
+    "error": "No se pudo cargar el video.",
+    "watch": "Ver en Vimeo",
+    "summary": [
+      "Objetos: Fuentes para explorar",
+      "Pasos: Preguntas, respuestas e invitaciones",
+      "Paneles: Fuentes e interpretación",
+      "Glosario: Definiciones compartidas entre historias",
+      "Construye tu exhibición con el Compositor de Telar.",
+      "Elige las fuentes y organiza los pasos de la historia.",
+      "Agrega imágenes IIIF externas y sus metadatos.",
+      "Edita los metadatos, organiza los pasos y escribe los paneles.",
+      "Encuadra la imagen y captura la posición de cada paso.",
+      "Colabora en tiempo real.",
+      "Publica tu propio sitio.",
+      "Código abierto. Computación mínima. Tu contenido, en tu propio repositorio."
+    ]
+  },
+  "en": {
+    "vimeo": "https://player.vimeo.com/video/1241792049?h=68f09533de&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+    "poster": "/assets/homepage-demo/posters/en.jpg",
+    "title": "Telar demonstration",
+    "error": "The video could not be loaded.",
+    "watch": "Watch on Vimeo",
+    "summary": [
+      "Objects: Sources to explore",
+      "Steps: Questions, answers and invitations",
+      "Panels: Sources and interpretation",
+      "Glossary: Definitions shared across stories",
+      "Build your exhibition with Telar Compositor.",
+      "Choose your sources and arrange your story’s steps.",
+      "Add external IIIF images and their metadata.",
+      "Edit metadata, arrange steps and write panels.",
+      "Frame the image and save the view for each step.",
+      "Collaborate in real time.",
+      "Publish your own site.",
+      "Open source. Minimal computing. Your content, in your own repository."
+    ]
+  }
+}

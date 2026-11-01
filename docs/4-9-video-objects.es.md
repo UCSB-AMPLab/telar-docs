@@ -86,6 +86,6 @@ La página de objeto de cada video incluye un selector de tiempos de clip:
 
 - [Objetos de audio](/guia/tu-contenido/objetos-de-audio/) — Agregar archivos de audio autoalojados
 - [Objetos](/guia/tu-contenido/objetos/) — Definir objetos en tu hoja de cálculo
-- [Historias y paneles](/guia/tu-contenido/historias-y-paneles/) — Construir pasos de historias
+- [Historias y paneles](/guia/tu-contenido/historias-paneles/) — Construir pasos de historias
 - [Columnas de historias](/guia/tus-datos/csv-historias/) — Referencia completa de columnas incluyendo columnas de clip
-- [Galería de objetos](/guia/funciones-del-sitio/galeria-de-objetos/) — Cómo se muestran los videos en la galería
+- [Galería de objetos](/guia/funciones/galeria-objetos/) — Cómo se muestran los videos en la galería

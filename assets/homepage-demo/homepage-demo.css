@@ -1,0 +1,70 @@
+/* Approved homepage palette and normal-flow Vimeo demonstration. */
+:root{--text-medium:#596776;--demo-background:#f4f5f6}
+html{scroll-snap-type:none;scroll-behavior:auto}
+body{overflow-x:clip}
+.visually-hidden,.skip-link:not(:focus){position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.skip-link:focus{position:fixed;top:12px;left:12px;z-index:2000;padding:12px 18px;background:var(--cream);color:var(--terracotta);border-radius:8px}
+a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid var(--terracotta);outline-offset:5px}
+.hero a:focus-visible,.hero button:focus-visible{outline-color:var(--cream)}
+.hero{min-height:100svh;padding:24px 24px 72px}
+.hero__logo{width:90%;max-width:480px;height:auto;margin-bottom:16px}
+.hero__title{font-size:clamp(52px,10vw,80px);line-height:1.1;margin-bottom:16px}
+.hero__lang-toggle{margin-bottom:20px}
+.hero__lang-toggle button{min-height:36px}
+.hero__tagline{font-size:clamp(18px,1.5vw,20px);line-height:1.55;max-width:760px;margin-bottom:24px}
+.hero__cta{gap:12px;margin-bottom:16px}
+.hero__utility{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 24px;min-height:30px}
+.hero__utility a{color:var(--cream);font-size:15px;text-decoration:underline;text-underline-offset:4px;opacity:.9}
+.hero__utility a:hover{opacity:1}
+.hero__scroll{bottom:20px}
+.telar-demo-section{background:var(--demo-background);min-height:auto;padding:64px 24px}
+.telar-demo-layout{display:grid;grid-template-columns:1fr;gap:32px;max-width:1600px;width:100%;margin:auto}
+.telar-about-copy{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.7fr);gap:clamp(24px,4vw,64px);align-items:start;background:transparent;box-shadow:none;border:0;padding:0}
+.telar-about-copy h2{margin-bottom:0}
+.telar-about-copy p{font-weight:400;line-height:1.65;margin-bottom:0}
+.telar-demo-media{margin:0;min-width:0}
+/* The Vimeo exports have 109px of blank padding above and below the
+   1920x1080 film. Crop that padding without cropping any film content.
+   The small brightness adjustment plus darken blend brings both encoded
+   pale mattes (#f2f3f5 and #f4f5f7) onto the section's single background. */
+.telar-demo-player{position:relative;aspect-ratio:16/9;width:100%;background:var(--demo-background);overflow:hidden;isolation:isolate}
+.telar-demo-poster,.telar-demo-embed,.telar-demo-embed iframe{position:absolute;inset:0;width:100%;height:100%}
+.telar-demo-poster{display:block;object-fit:cover;filter:brightness(1.01);mix-blend-mode:darken}
+.telar-demo-embed{mix-blend-mode:darken}
+.telar-demo-embed iframe{display:block;border:0;height:calc(100% * 1298 / 1080);top:50%;transform:translateY(-50%);filter:brightness(1.01)}
+.telar-demo-section:not(.has-player) .telar-demo-embed{opacity:0}
+.telar-demo-section.has-player .telar-demo-poster{visibility:hidden}
+.telar-demo-error{font-size:15px;margin:12px 0 0;color:var(--text-medium)}
+.features{background:var(--cream)}
+.showcase-section{background:var(--lavender)}
+.feature-card,.showcase-card:not(.showcase-card--invite){background:white}
+.feature-card:hover{transform:none;box-shadow:none}
+.feature-card p,.showcase-card p,.landing-footer{font-weight:400}
+.cta-section{background:var(--cream);padding:72px 24px}
+.sponsors-row:first-child .sponsors-logos{flex-wrap:wrap}
+.sponsor-logo{max-width:100%}
+.sponsor-logo img{max-width:100%}
+.sponsor-logo img[loading=lazy]{content-visibility:auto}
+.landing-footer{background:var(--dark-grey);color:#dcd7d4;border-top:1px solid #ffffff20}
+.landing-footer a{color:var(--cream);text-underline-offset:3px}
+.landing-footer a:hover{color:var(--gold)}
+@media(max-width:900px){
+ .telar-demo-layout{grid-template-columns:1fr;gap:24px;max-width:900px}
+ .telar-demo-section{padding:64px 24px}
+ .telar-about-copy{grid-template-columns:1fr;gap:12px;max-width:900px}
+ .telar-demo-media{width:100%}
+}
+@media(max-width:600px){
+ .hero{padding:24px 20px 68px}
+ .hero__lang-toggle button{min-height:44px}
+ .hero__utility{gap:4px 18px}
+ .telar-demo-section{padding:48px 16px}
+ .telar-about-copy{padding:0 4px}
+ .telar-demo-layout{gap:16px}
+ .cta-section{padding:56px 20px}
+ .features__grid{gap:16px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero__scroll{animation:none}
+ .fade-in{opacity:1;transform:none;transition:none}
+}

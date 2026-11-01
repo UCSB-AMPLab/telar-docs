@@ -8,6 +8,9 @@ lang: es
 permalink: /guia/desarrolladores/github-actions/
 ---
 
+# GitHub Actions {#guide-title}
+
+
 ## Flujo de trabajo con GitHub Actions
 
 Telar usa GitHub Actions para construir y publicar automáticamente tu sitio. Entender este flujo de trabajo te ayuda a solucionar problemas y optimizar tu proceso de desarrollo.

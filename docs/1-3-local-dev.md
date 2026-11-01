@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: "1.3. Option C: Local Development"
+title: "Install and run Telar locally"
 parent: 1. Getting Started
 grand_parent: Documentation
 nav_order: 3
@@ -8,320 +8,107 @@ lang: en
 permalink: /docs/getting-started/local-dev/
 ---
 
-# Local Development
+# Install and run Telar locally
 
-Work entirely on your computer with CSV files and a local Jekyll server. No Google Sheets or GitHub required.
+<span class="anchor-alias" id="step-by-step-workflow"></span>
 
-## Overview
+<span class="anchor-alias" id="step-7-add-glossary-terms-optional"></span>
 
-This workflow gives you full control over the build process. You edit CSV and markdown files directly, preview changes instantly, and publish when ready. It is ideal for:
+<span class="anchor-alias" id="step-5-find-coordinates-for-story-moments"></span>
 
-- **Digital humanities courses** — teaching version control, static sites, and structured data alongside content creation
-- **Power users** — anyone who prefers text editors and the command line over spreadsheets
-- **Offline work** — build and preview without an internet connection
+<span class="anchor-alias" id="step-3-catalog-your-objects"></span>
+
+<span class="anchor-alias" id="step-2-write-your-narrative-text"></span>
+
+<span class="anchor-alias" id="step-1-gather-your-images"></span>
+
+<span class="anchor-alias" id="overview"></span>
+
+<span class="anchor-alias" id="next-steps"></span>
+
+<span class="anchor-alias" id="local-development"></span>
+
+<span class="anchor-alias" id="installation"></span>
+
+<span class="anchor-alias" id="deploying-to-github-pages"></span>
+
+<span class="anchor-alias" id="daily-development-workflow"></span>
+
+<span class="anchor-alias" id="core-commands"></span>
+
+<span class="anchor-alias" id="clone-and-setup"></span>
+
+Build an exhibition from CSV and Markdown files on your computer. This route gives you control of the source files, build process and hosting. You can also preview a site whose content comes from Google Sheets.
 
 ## Prerequisites
 
-- Ruby 3.2+ (for Jekyll)
-- Bundler
-- Python 3.9+ (for IIIF generation)
-- Node.js 18+ (for JavaScript bundling)
+The current Telar build uses Ruby 3.2, Python 3.12 and Node.js 22. Use Ruby 3.2 or newer within the 3.x series and Bundler. The template's dependency files are the authority for the version you are building.
 
-## Installation
+Check the programs in the terminal:
 
-### Install Ruby and Bundler
-
-**macOS (using Homebrew):**
 ```bash
-brew install ruby
-gem install bundler
+ruby -v
+bundle -v
+python3 --version
+node --version
+npm --version
+git --version
 ```
 
-**Ubuntu/Debian:**
+Install missing programs with the package manager or version manager you use on your operating system. On macOS, the system Ruby may be too old; check the version rather than assuming the preinstalled program is suitable.
+
+## Get your own source copy
+
+Create a repository from the [Telar template](https://github.com/UCSB-AMPLab/telar), then clone your repository. Replace the example address with your own:
+
 ```bash
-sudo apt-get install ruby-full build-essential
-gem install bundler
+git clone https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY.git
+cd YOUR-REPOSITORY
 ```
 
-If your distribution's package installs an older Ruby, check with `ruby -v` and
-install 3.2 or newer with a version manager instead.
+You can also download a source archive if you do not plan to use Git. Keep a separate backup of your editable files.
 
-### Clone and Setup
+<span class="anchor-alias" id="install-ruby-and-bundler"></span>
+## Install dependencies
+
+Use a Python virtual environment so the project's packages remain separate from other Python work:
 
 ```bash
-# Clone the repository
-git clone https://github.com/UCSB-AMPLab/telar.git
-cd telar
-
-# Install Ruby dependencies
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
 bundle install
-
-# Install Python dependencies (for IIIF generation)
-pip install -r requirements.txt
-
-# Install Node.js dependencies (for JavaScript bundling)
-npm install
+npm ci
 ```
 
-### Configure Site Settings
+On Windows, activate with `.venv\Scripts\Activate.ps1` in PowerShell. Reopen and activate the same environment when returning to the project. If dependency installation fails, check the program versions before changing the lockfiles.
 
-Edit `_config.yml`:
+<span class="anchor-alias" id="configure-site-settings"></span>
+For audio objects, install the system tool audiowaveform to prepare waveform data. Clip boundaries are applied in the browser; the audio-processing script does not extract separate clip files.
+
+## Configure the site
+
+Edit the author-facing section of `_config.yml`: title, description, author, language and theme. If editing CSV files directly, set:
+
 ```yaml
-title: Your Narrative Title
-description: A brief description
-baseurl: "/your-repository-name"  # For GitHub Pages, or "" for root
-url: "https://your-username.github.io"
-author: Your Name
-email: your-email@example.com
+google_sheets:
+  enabled: false
 ```
 
-## Core Commands
+Keep the template's build settings below the author-facing section. For a site served at a domain root, `baseurl` is empty; for a project site it is the repository path.
 
-**Quick start (recommended):**
+<span class="anchor-alias" id="step-4-preview-your-objects"></span>
+<span class="anchor-alias" id="step-6-build-your-story"></span>
+## Build the first preview
+
+From the repository root, with the environment active:
 
 ```bash
-# Build and serve everything with one command
 python3 scripts/build_local_site.py
-
-# View at http://localhost:4001
 ```
 
-The build script handles all steps automatically. Use `--skip-iiif` for faster rebuilds when images haven't changed.
+The helper processes content, audio and IIIF tiles, bundles JavaScript and starts Jekyll on port 4001. Open the address with the configured base path, for example `http://127.0.0.1:4001/my-exhibition/`.
 
-**Manual commands** (if you prefer granular control):
+Stop the server with Ctrl+C. Use `--port 4003` if another site already uses 4001.
 
-```bash
-# Convert CSVs to JSON (run after editing CSVs)
-python3 scripts/csv_to_json.py
-
-# Generate Jekyll collections
-python3 scripts/generate_collections.py
-
-# Generate IIIF tiles (run after adding/updating images)
-python3 scripts/generate_iiif.py --base-url http://localhost:4001
-
-# Serve with live reload
-bundle exec jekyll serve --livereload --port 4001
-
-# View at http://localhost:4001
-```
-
-{: .note }
-> **Private stories preview as plaintext here.** `bundle exec jekyll serve` and
-> `build_local_site.py`'s default serve mode never run the encryption step — Jekyll keeps
-> regenerating `_site` while serving, and encryption only runs once, after a build finishes. If
-> your site has a story marked `private: yes`, you will see its content in plain view while
-> previewing locally this way; this is expected. To preview the locked behavior a visitor would
-> see, run `python3 scripts/build_local_site.py --build-only`, then serve the resulting `_site/`
-> directory with a static file server. See [Private Stories](/docs/site-features/private-stories/)
-> for details.
-
-## Step-by-Step Workflow
-
-### Step 1: Gather Your Images
-
-Choose one of two options:
-
-**Option A: Upload Your Own Images**
-
-1. Add high-res images to `telar-content/objects/` directory
-2. Name files to match object IDs (e.g., `textile-001.jpg`)
-3. Generate IIIF tiles:
-   ```bash
-   python3 scripts/generate_iiif.py --base-url http://localhost:4001
-   ```
-
-**Option B: Use External IIIF Manifests**
-
-1. Find IIIF resources ([IIIF Guide](https://iiif.io/guides/finding_resources/))
-2. Copy the info.json URL
-3. Create an object_id (e.g., `museum-textile-001`)
-4. Save for next step
-
-### Step 2: Write Your Narrative Text
-
-Create markdown files for your story layers:
-
-1. Create directory for your story:
-   ```bash
-   mkdir -p telar-content/texts/stories/story1
-   ```
-
-2. Create markdown files (e.g., `step1-layer1.md`, `step1-layer2.md`)
-
-3. Add frontmatter and content:
-   ```markdown
-   ---
-   title: "Weaving Techniques"
-   ---
-
-   The interlocking warp pattern visible here indicates...
-   ```
-
-### Step 3: Catalog Your Objects
-
-Add metadata to the objects catalog:
-
-1. Edit `telar-content/spreadsheets/objects.csv`
-2. Add a row for each object:
-
-**For uploaded images:**
-```csv
-textile-001,Colonial Textile Fragment,"A woven textile from...",Unknown Artist,circa 1650-1700,Wool,45 x 60 cm,,,
-```
-
-**For external IIIF:**
-```csv
-museum-textile-001,Colonial Textile Fragment,"A woven textile from...",Unknown Artist,circa 1650-1700,Wool,45 x 60 cm,,https://example.org/iiif/image/abc123/info.json,
-```
-
-3. Convert to JSON:
-   ```bash
-   python3 scripts/csv_to_json.py
-   ```
-
-### Step 4: Preview Your Objects
-
-Build and view your site:
-
-```bash
-bundle exec jekyll serve --livereload
-```
-
-Then:
-1. Visit `http://localhost:4001`
-2. Click "Objects" in the navigation
-3. Verify all images appear with their metadata
-
-### Step 5: Find Coordinates for Story Moments
-
-Use the coordinate identification tool:
-
-1. Navigate to an object page: `http://localhost:4001/objects/{object_id}`
-2. Click **Identify coordinates** button
-3. Pan and zoom to the area you want to feature
-4. Click **Copy entire row** for CSV template with coordinates
-
-### Step 6: Build Your Story
-
-Connect your narrative to your objects:
-
-1. Create CSV file in `telar-content/spreadsheets/` (e.g., `story-1.csv`)
-
-2. Add header row:
-   ```csv
-   step,question,answer,object,x,y,zoom,layer1_button,layer1_file,layer2_button,layer2_file
-   ```
-
-3. Add story steps:
-   ```csv
-   1,"What is this textile?","This fragment shows...","textile-001",0.5,0.5,1.0,"","story1/step1-layer1.md","",""
-   2,"Notice the pattern","The geometric motifs...","textile-001",0.3,0.4,2.5,"","story1/step2-layer1.md","",""
-   ```
-
-4. Add to project setup:
-   - Edit `telar-content/spreadsheets/project.csv`
-   - Scroll to `STORIES` section
-   - Add row: `1,Your Story Title`
-
-5. Convert to JSON:
-   ```bash
-   python3 scripts/csv_to_json.py
-   ```
-
-6. Rebuild and test:
-   ```bash
-   bundle exec jekyll serve
-   ```
-
-### Step 7: Add Glossary Terms (Optional)
-
-Enhance your narrative with term definitions:
-
-1. Create markdown file in `telar-content/texts/glossary/` (e.g., `colonial-period.md`)
-
-2. Add frontmatter and definition:
-   ```markdown
-   ---
-   term_id: colonial-period
-   title: "Colonial Period"
-   related_terms: encomienda,viceroyalty
-   ---
-
-   The Colonial Period in the Americas began with...
-   ```
-
-3. Generate collection:
-   ```bash
-   python3 scripts/generate_collections.py
-   ```
-
-4. Build and test:
-   ```bash
-   bundle exec jekyll serve
-   ```
-
-## Daily Development Workflow
-
-When working on your site:
-
-**Using the build script (recommended):**
-
-```bash
-# Full rebuild and serve
-python3 scripts/build_local_site.py
-
-# Quick rebuild (skip IIIF tiles and the Google Sheets fetch when nothing there has changed)
-python3 scripts/build_local_site.py --skip-iiif --skip-fetch
-```
-
-**Manual workflow:**
-
-```bash
-# 1. Edit content
-# - CSVs in telar-content/spreadsheets/
-# - Markdown in telar-content/texts/
-# - Images in telar-content/objects/
-
-# 2. Convert CSVs to JSON (after editing CSVs)
-python3 scripts/csv_to_json.py
-
-# 3. Generate Jekyll collections
-python3 scripts/generate_collections.py
-
-# 4. Generate IIIF tiles (after adding/updating images)
-python3 scripts/generate_iiif.py --base-url http://localhost:4001
-
-# 5. Serve with live reload
-bundle exec jekyll serve --livereload
-
-# Additional commands:
-# Build only (output to _site/)
-bundle exec jekyll build
-
-# Clean build artifacts
-bundle exec jekyll clean
-```
-
-## Deploying to GitHub Pages
-
-Once you're happy with your local site:
-
-1. Commit and push changes to GitHub:
-   ```bash
-   git add .
-   git commit -m "Update content"
-   git push origin main
-   ```
-
-2. GitHub Actions will automatically build and deploy
-
-3. View your live site at `https://[username].github.io/[repository]/`
-
-## Next Steps
-
-- [Your Content](/docs/your-content/) — How Telar organizes files
-- [Self-Hosted Images](/docs/your-content/self-hosted-images/) — Upload and process your own images
-- [External IIIF Images](/docs/your-content/external-iiif/) — Use images from museums and libraries
-- [Configuration](/docs/configure/configuration/) — All `_config.yml` options
-- [Customize Your Theme](/docs/customization/themes/)
+**Check your work:** the homepage and a sample object should load. Next, [edit the content files](/docs/local-authoring/content/).

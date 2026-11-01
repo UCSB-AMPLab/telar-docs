@@ -34,6 +34,8 @@ The Compositor recognizes video URLs from three platforms:
 
 When a step references a video object, an inline video player appears in the viewer column with standard playback controls.
 
+{% include docs/media.html id="external-media" %}
+
 ## Audio objects
 
 Audio objects use self-hosted files stored in your repository at `telar-content/objects/`. The Compositor supports MP3, OGG, and M4A formats.

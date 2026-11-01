@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: "5.1. Google Sheets"
+title: "Entiende la hoja de cálculo"
 parent: "5. Tus datos"
 grand_parent: Documentación
 nav_order: 1
@@ -8,116 +8,66 @@ lang: es
 permalink: /guia/tus-datos/google-sheets/
 ---
 
-## Integración con Google Sheets
+# Entiende la hoja de cálculo
 
-Usa Google Sheets para gestionar el contenido de tu exhibición con una interfaz familiar y colaborativa. Funciona tanto con el flujo de trabajo de Interfaz Web de GitHub como con Desarrollo Local.
+<span class="anchor-alias" id="véase-también"></span>
 
-## Inicio rápido
+<span class="anchor-alias" id="solución-de-problemas"></span>
 
-1. Duplica la plantilla: <https://bit.ly/telar-template> (Archivo → Hacer una copia · File → Make a copy)
-2. Publica: Archivo → Compartir → Publicar en la Web · File → Share → Publish to the web
-3. Configura `_config.yml` → bloque `google_sheets` (published_url)
-4. Construye tu sitio (GitHub Actions o build local)
+<span class="anchor-alias" id="referencia-de-columnas-resumen"></span>
 
-{: .tip }
-> **Integración con el Compositor.** El Compositor puede importar directamente desde tu Google Sheet durante la configuración inicial. Después de la primera publicación con el Compositor, puedes desactivar la integración con Google Sheets si prefieres gestionar el contenido solo desde el Compositor.
+<span class="anchor-alias" id="obtener-datos-solo-desarrollo-local"></span>
 
-Opcional: Importar desde Excel en lugar de duplicar la plantilla de Google
+<span class="anchor-alias" id="integración-con-google-sheets"></span>
 
-- Descarga la plantilla de Excel (archivo):
-  {{ site.baseurl }}/assets/templates/telar-template.xlsx
-- En Google Sheets: Archivo → Importar → Subir → Reemplazar hoja de cálculo · File → Import → Upload → Replace spreadsheet
+<span class="anchor-alias" id="inicio-rápido"></span>
 
-## Estructura de la hoja
+<span class="anchor-alias" id="configurar-_configyml"></span>
 
-Tu hoja de cálculo incluye estas pestañas por defecto:
+Tu hoja de Google Sheets es la fuente de una versión generada de la exhibición. Editar una celda no cambia inmediatamente el sitio público: el siguiente build descarga y procesa la hoja publicada.
 
-- `project` — Configuración del sitio y lista de historias
-- `objects` — Objetos IIIF usados en las historias
-- `story-1`, `story-2`, … — Pasos y contenido de cada historia
+## Cómo se conectan las pestañas
 
-Consejos
+| Pestaña | Función | Relación |
+|---|---|---|
+| `project` | Enumera historias y su orden | `story_id` identifica la pestaña de una historia |
+| `objects` | Describe la colección compartida | `object_id` se usa en los pasos |
+| Una pestaña por historia | Enumera pasos, vistas, preguntas y paneles | `object` corresponde al ID de un objeto |
+| `glossary` | Define términos recurrentes | `term_id` se usa en enlaces del texto |
 
-- Usa filas que comiencen con `#` como separadores o TODOs (se ignoran en el procesamiento)
-- Cualquier columna que empiece con `#` también se ignora (para notas y guía en línea)
-- Coordenadas: empieza con `0.500, 0.500, 1.000` y luego afina usando la herramienta Identificar Coordenadas
+La plantilla incluye instrucciones y encabezados bilingües. Conserva los nombres de columnas que procesa Telar. Se ignoran las filas o columnas que comienzan con `#`.
 
-## Configurar `_config.yml`
+## Empieza con la plantilla
 
-En tu repositorio, define:
+Usa la plantilla enlazada en [la configuración guiada](/guia/primeros-pasos/google-sheets/). Haz tu propia copia y publícala mediante **Archivo → Compartir → Publicar en la Web**.
+
+El enlace de edición es distinto del publicado. La configuración necesita este último:
 
 ```yaml
 google_sheets:
   enabled: true
-  published_url: "https://docs.google.com/..."   # Archivo → Compartir → Publicar en la Web · File → Share → Publish to the web
+  published_url: "URL-PUBLICADA-DE-TU-HOJA"
 ```
 
-- `published_url` provee URLs CSV estables por pestaña
+Publica las pestañas que necesita Telar. No pongas notas confidenciales en contenido publicado en la web.
 
-{: .note }
-> **Simplificado en v0.9.0.** Ya no necesitas compartir tu hoja por separado. Solo se requiere la URL publicada. Si tu configuración todavía tiene una línea `shared_url`, se ignora sin problemas.
+## Mantén IDs consistentes
 
-![Captura de pantalla de GitHub: editando el archivo de configuración](/images/config_drive.gif)
+Usa IDs breves y estables, en minúsculas y con guiones. El ID de historia debe coincidir con su pestaña. La referencia de un objeto debe coincidir con su ID en `objects`. Un enlace al glosario debe corresponder al ID del término.
 
-## Obtener datos (solo desarrollo local)
+Los títulos pueden cambiar sin alterar estas relaciones. Si cambias un ID, actualiza sus referencias.
 
-Cuando desarrolles localmente, la forma más sencilla es usar el script **todo-en-uno**, que construye el sitio y descarga y procesa los datos automáticamente:
+## Usa texto y referencias a archivos
 
-```bash
-python3 scripts/build_local_site.py
-```
+Puedes escribir un panel breve en `layer1_content` o `layer2_content`. Usa Markdown para el formato. Una ruta terminada en `.md` puede referirse a un texto más extenso en la carpeta de textos de historias del repositorio.
 
-O ejecuta el paso de descarga de manera independiente:
+Las respuestas son prosa breve y sin formato enriquecido. Los paneles sirven para ampliar el contexto. Consulta los campos en [columnas de historias](/guia/tus-datos/csv-historias/).
 
-```bash
-python3 scripts/fetch_google_sheets.py
-```
+<span class="anchor-alias" id="estructura-de-la-hoja"></span>
+## Elige la hoja como fuente
 
-Qué hace el script de descarga:
+Si pasas al Compositor, revisa la importación y cambia deliberadamente la fuente de contenido. El Compositor no devuelve tus ediciones visuales a Google Sheets. Si dejas Sheets activo, un build posterior puede reemplazarlas con el contenido de la hoja.
 
-- Detecta automáticamente los GID de las pestañas
-- Descarga CSV a `telar-content/spreadsheets/`
-- Omite pestañas solo de instrucciones
+En trabajo local, `python3 scripts/build_local_site.py` descarga Sheets cuando está activo. Los CSV de `telar-content/spreadsheets/` son copias descargadas; edita la hoja si esa es tu fuente.
 
-Luego ejecuta tu flujo de build habitual:
-
-```bash
-python3 scripts/csv_to_json.py
-python3 scripts/generate_collections.py
-bundle exec jekyll build
-```
-
-## Referencia de columnas (resumen)
-
-Pestaña `project`
-
-- Después de la fila `STORIES`, lista cada historia (número y título)
-
-Pestaña `objects` (campos comunes)
-
-- object_id, title, description, source_url, creator, period, medium, dimensions, location, credit, thumbnail
-
-Pestañas `story-X`
-
-- step, object, x, y, zoom, clip, question, answer, alt_text
-- layer1_button, **layer1_content**, layer2_button, **layer2_content**
-
-El contenido del panel puede ser:
-- Texto en línea (escrito directamente en la celda)
-- Indicar un archivo de texto (ruta terminando en `.md`)
-
-{: .tip }
-> **Texto en línea vs archivos de texto**
-> Para paneles cortos (1–2 párrafos), escribe el contenido directamente en la celda de la hoja de cálculo. Usa archivos de texto para contenido complejo con widgets o narrativas muy largas. Consulta la [Referencia CSV: Historias](/guia/tus-datos/csv-historias/#contenido-de-capa) para más detalles.
-
-## Solución de problemas
-
-- Referencias de objetos inválidas → asegúrate de que los IDs coincidan exactamente entre `objects` y las pestañas de historia
-- Falla al traer datos → verifica la configuración de compartir/publicar y las URLs en `_config.yml`
-- Coordenadas imprecisas → usa rangos válidos (x/y: 0.000–1.000; zoom: número positivo)
-
-## Véase también
-
-- [Configuración manual](/guia/configuracion/configuracion-manual/)
-- [Desarrollo local](/guia/primeros-pasos/desarrollo-local/)
-- [Actualizar Telar](/guia/configuracion/actualizacion/)
+Sigue con [un objeto y tu primera historia](/guia/primeros-pasos/agrega-contenido/).

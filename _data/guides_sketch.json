@@ -1,0 +1,302 @@
+{
+  "copy": {
+    "en": {
+      "guides": "Guides",
+      "explore": "Explore",
+      "teaching": "Teaching",
+      "about": "About",
+      "compositor": "Compositor",
+      "language": "Language",
+      "skip": "Skip to content",
+      "design": "Design sketch",
+      "brand_sub": "Visual storytelling",
+      "hero_tag": "Make an exhibition with Telar",
+      "hero_title": "From your sources to a visual story.",
+      "hero_intro": "Plan what you want to say, choose how to build it, and shape an exhibition your visitors can explore.",
+      "plan_tag": "Start with the story",
+      "plan_title": "Plan your exhibition",
+      "plan_text": "Read your sources closely. Sketch an opening and an ending. Connect your questions to details, then decide where readers can go deeper.",
+      "plan_link": "Start planning",
+      "beginning": "Beginning",
+      "question": "Questions & sources",
+      "layers": "Further layers",
+      "ending": "Ending",
+      "build_tag": "Choose your way of working",
+      "build_title": "Build your exhibition",
+      "build_intro": "Three manuals, each with a first-story walkthrough and focused guides for the work that follows.",
+      "reference_title": "Find a specific answer",
+      "reference_text": "Content formats, configuration, media, accessibility and troubleshooting. Shared reference for all three ways of building.",
+      "reference_link": "Browse current reference",
+      "teach_title": "Teach and learn with Telar",
+      "teach_text": "Use the workshop and narrative planner to develop a story together. A future teaching section can bring together assignments and classroom guides.",
+      "workshop": "Workshop slides",
+      "worksheet": "Download the planner",
+      "examples_title": "See the choices behind an exhibition",
+      "examples_text": "Explore finished projects. The proposed case studies would explain their sources, storyboards and use of layers, with links to the relevant guides.",
+      "examples_link": "Explore projects",
+      "outline": "In this chapter",
+      "planning": "Plan an exhibition",
+      "chapter": "1. Purpose, audience and sources",
+      "guide_home": "All guides",
+      "back_build": "Choose how to build",
+      "footer": "Preview for discussion. The planning chapter is a draft; Sheets, local-authoring and reference links open the current documentation.",
+      "purpose": "Purpose",
+      "audience": "Audience",
+      "source": "Sources",
+      "exercise": "Try it",
+      "next": "What comes next",
+      "nav_prefix": "Guide contents",
+      "book_link": "Compositor manual preview",
+      "preview_note": "Proposed structure · English and Spanish",
+      "site_home": "/"
+    },
+    "es": {
+      "guides": "Guías",
+      "explore": "Explorar",
+      "teaching": "Enseñar",
+      "about": "Acerca de",
+      "compositor": "Compositor",
+      "language": "Idioma",
+      "skip": "Saltar al contenido",
+      "design": "Boceto de diseño",
+      "brand_sub": "Narrativas visuales",
+      "hero_tag": "Crea una exhibición con Telar",
+      "hero_title": "De tus fuentes a una narrativa visual.",
+      "hero_intro": "Planea lo que quieres contar, elige cómo construirlo y crea una exhibición que tus visitantes puedan explorar.",
+      "plan_tag": "Empieza por la historia",
+      "plan_title": "Planea tu exhibición",
+      "plan_text": "Observa tus fuentes con cuidado. Esboza un inicio y un cierre. Conecta tus preguntas con detalles y decide dónde se puede profundizar.",
+      "plan_link": "Empieza a planear",
+      "beginning": "Inicio",
+      "question": "Preguntas y fuentes",
+      "layers": "Capas adicionales",
+      "ending": "Cierre",
+      "build_tag": "Elige cómo trabajar",
+      "build_title": "Construye tu exhibición",
+      "build_intro": "Tres manuales, cada uno con un recorrido para crear tu primera historia y guías para las tareas que siguen.",
+      "reference_title": "Encuentra una respuesta concreta",
+      "reference_text": "Formatos de contenido, configuración, medios, accesibilidad y solución de problemas. Una referencia común para las tres formas de construir.",
+      "reference_link": "Consulta la referencia actual",
+      "teach_title": "Enseña y aprende con Telar",
+      "teach_text": "Usa el taller y el planeador narrativo para desarrollar una historia en grupo. La futura sección de enseñanza puede reunir actividades y guías para el aula.",
+      "workshop": "Diapositivas del taller",
+      "worksheet": "Descarga el planeador",
+      "examples_title": "Descubre las decisiones detrás de una exhibición",
+      "examples_text": "Explora proyectos terminados. Los casos comentados que proponemos explicarían sus fuentes, esquemas narrativos y capas, con enlaces a las guías correspondientes.",
+      "examples_link": "Explora los proyectos",
+      "outline": "En este capítulo",
+      "planning": "Planear una exhibición",
+      "chapter": "1. Propósito, público y fuentes",
+      "guide_home": "Todas las guías",
+      "back_build": "Elige cómo construir",
+      "footer": "Vista previa para conversar. El capítulo de planeación es un borrador; los enlaces de Sheets, autoría local y referencia abren la documentación actual.",
+      "purpose": "Propósito",
+      "audience": "Público",
+      "source": "Fuentes",
+      "exercise": "Pruébalo",
+      "next": "Qué sigue",
+      "nav_prefix": "Contenido de la guía",
+      "book_link": "Borrador del manual del Compositor",
+      "preview_note": "Estructura propuesta · Inglés y español",
+      "site_home": "/?lang=es"
+    }
+  },
+  "manuals": [
+    {
+      "id": "compositor",
+      "en": {
+        "title": "Compositor",
+        "tag": "Visual authoring",
+        "text": "Work in your browser. Add objects, write stories, capture views, collaborate and publish.",
+        "link": "Open the manual preview",
+        "href": "/manual/en/"
+      },
+      "es": {
+        "title": "Compositor",
+        "tag": "Autoría visual",
+        "text": "Trabaja en el navegador. Agrega objetos, escribe historias, captura encuadres, colabora y publica.",
+        "link": "Abre el borrador del manual",
+        "href": "/manual/es/"
+      }
+    },
+    {
+      "id": "sheets",
+      "en": {
+        "title": "Google Sheets",
+        "tag": "Spreadsheet authoring",
+        "text": "Organise objects, steps and text in a spreadsheet, connect it to your site and preview the result.",
+        "link": "Read the current guide",
+        "href": "/docs/getting-started/google-sheets/"
+      },
+      "es": {
+        "title": "Google Sheets",
+        "tag": "Autoría en hojas de cálculo",
+        "text": "Organiza objetos, pasos y textos en una hoja de cálculo, conéctala con tu sitio y revisa el resultado.",
+        "link": "Lee la guía actual",
+        "href": "/guia/primeros-pasos/google-sheets/"
+      }
+    },
+    {
+      "id": "local",
+      "en": {
+        "title": "Local authoring & builds",
+        "tag": "Files and a local preview",
+        "text": "Write in CSV and Markdown, build on your own computer, customise the site and choose your hosting.",
+        "link": "Read the current guide",
+        "href": "/docs/getting-started/local-dev/"
+      },
+      "es": {
+        "title": "Autoría local",
+        "tag": "Archivos y vista previa local",
+        "text": "Escribe en CSV y Markdown, genera el sitio en tu computador, personalízalo y elige dónde alojarlo.",
+        "link": "Lee la guía actual",
+        "href": "/guia/primeros-pasos/desarrollo-local/"
+      }
+    }
+  ],
+  "quick": {
+    "en": {
+      "title": "Workshop quick guide",
+      "intro": "A short route from a source and a question to your first published story, using the Compositor.",
+      "tag": "Keep this open during the workshop",
+      "hub_title": "Here for a workshop?",
+      "hub_text": "Keep the short guide open while you work. Six steps, the essential controls and links when you need more help.",
+      "hub_link": "Open the quick guide",
+      "contents": "The six steps",
+      "saved": "Drafts and publication",
+      "saved_text": "Your edits are saved as you work. Use Publish to send them to the repository and rebuild the public site.",
+      "help": "If you get stuck",
+      "after": "After the workshop",
+      "after_text": "Return to the planning guide, explore the full Compositor manual, or choose Google Sheets or local authoring.",
+      "print": "Print this guide",
+      "shortlink": "Proposed workshop link: telar.org/start",
+      "shortlink_note": "The existing /start shortcut can point here once the guide is reviewed and published.",
+      "labels": [
+        "Plan",
+        "Connect",
+        "Add an object",
+        "Write the story",
+        "Frame and add context",
+        "Publish and check"
+      ]
+    },
+    "es": {
+      "title": "Guía rápida para talleres",
+      "intro": "Un recorrido breve, con el Compositor, desde una fuente y una pregunta hasta tu primera historia publicada.",
+      "tag": "Ten esta guía abierta durante el taller",
+      "hub_title": "¿Vienes a un taller?",
+      "hub_text": "Ten la guía breve abierta mientras trabajas. Seis pasos, los controles esenciales y enlaces para cuando necesites más ayuda.",
+      "hub_link": "Abre la guía rápida",
+      "contents": "Los seis pasos",
+      "saved": "Borradores y publicación",
+      "saved_text": "Tus cambios se guardan mientras trabajas. Usa Publicar para enviarlos al repositorio y regenerar el sitio público.",
+      "help": "Si te atascas",
+      "after": "Después del taller",
+      "after_text": "Retoma la guía de planeación, explora el manual completo del Compositor o elige Google Sheets o autoría local.",
+      "print": "Imprime esta guía",
+      "shortlink": "Enlace propuesto para talleres: telar.org/start",
+      "shortlink_note": "El acceso corto /start puede dirigir aquí cuando revisemos y publiquemos la guía.",
+      "labels": [
+        "Planear",
+        "Conectar",
+        "Agregar un objeto",
+        "Escribir la historia",
+        "Encuadrar y agregar contexto",
+        "Publicar y revisar"
+      ]
+    }
+  },
+  "quick_steps": [
+    {
+      "id": "plan",
+      "en": {
+        "title": "Start with a source and a question",
+        "text": "Choose one source you can share. Write an opening question, a possible ending and two or three questions to connect them.",
+        "link": "Use the narrative planner",
+        "href": "/assets/templates/telar-worksheet.pdf"
+      },
+      "es": {
+        "title": "Empieza con una fuente y una pregunta",
+        "text": "Elige una fuente que puedas compartir. Escribe una pregunta inicial, un posible cierre y dos o tres preguntas para conectarlos.",
+        "link": "Usa el planeador narrativo",
+        "href": "/assets/templates/telar-worksheet.pdf"
+      }
+    },
+    {
+      "id": "connect",
+      "en": {
+        "title": "Open the Compositor and create your site",
+        "text": "<a href=\"https://compositor.telar.org\">Open the Compositor</a> and sign in with GitHub. Follow the setup instructions, choose <strong>Create a new Telar site</strong> and give it a name with lowercase letters and hyphens. If you already have a site, open or connect that one.",
+        "link": "Setup help",
+        "href": "/docs/the-compositor/getting-started/"
+      },
+      "es": {
+        "title": "Abre el Compositor y crea tu sitio",
+        "text": "<a href=\"https://compositor.telar.org\">Abre el Compositor</a> e inicia sesión con GitHub. Sigue las instrucciones, elige <strong>Crear un nuevo sitio Telar</strong> y usa un nombre con letras minúsculas y guiones. Si ya tienes un sitio, ábrelo o conéctalo.",
+        "link": "Ayuda para empezar",
+        "href": "/guia/el-compositor/primeros-pasos/"
+      }
+    },
+    {
+      "id": "object",
+      "en": {
+        "title": "Add your source to Objects",
+        "text": "In <strong>Objects</strong>, choose <strong>+ Add object</strong>. Upload an image with <strong>Upload file</strong>, or use <strong>IIIF manifest</strong> and <strong>Fetch manifest</strong> for an external collection. Review the title, source and credit.",
+        "link": "Try the khipu IIIF example",
+        "href": "/manual/en/iiif-to-story/"
+      },
+      "es": {
+        "title": "Agrega tu fuente a Objetos",
+        "text": "En <strong>Objetos</strong>, pulsa <strong>+ Agregar objeto</strong>. Sube una imagen con <strong>Subir archivo</strong>, o usa <strong>Manifiesto IIIF</strong> y <strong>Obtener manifiesto</strong> para una colección externa. Revisa el título, la fuente y el crédito.",
+        "link": "Prueba el ejemplo IIIF del khipu",
+        "href": "/manual/es/iiif-a-historia/"
+      }
+    },
+    {
+      "id": "story",
+      "en": {
+        "title": "Create a short story",
+        "text": "Open <strong>Stories</strong> and choose <strong>+ New Story</strong>. Give it a title, then use <strong>+ Add step</strong> and <strong>Change object</strong> to select your source. Write a question and a brief answer. Repeat for your next questions.",
+        "link": "Read the story walkthrough",
+        "href": "/manual/en/iiif-to-story/#choose"
+      },
+      "es": {
+        "title": "Crea una historia breve",
+        "text": "Abre <strong>Historias</strong> y elige <strong>+ Nueva historia</strong>. Ponle un título; después, usa <strong>+ Agregar paso</strong> y <strong>Cambiar objeto</strong> para seleccionar la fuente. Escribe una pregunta y una respuesta breve. Repite con las siguientes preguntas.",
+        "link": "Consulta el recorrido de historias",
+        "href": "/manual/es/iiif-a-historia/#elegir"
+      }
+    },
+    {
+      "id": "frame",
+      "en": {
+        "title": "Frame the detail and offer context",
+        "text": "On each image step, pan and zoom to the detail you want to discuss, then choose <strong>Capture position</strong>. Use <strong>+ Add panel</strong> when a step needs a longer explanation. Keep the main answer short.",
+        "link": "See the framing controls",
+        "href": "/manual/en/iiif-to-story/#frame"
+      },
+      "es": {
+        "title": "Encuadra el detalle y ofrece contexto",
+        "text": "En cada paso con imagen, desplázala y ajusta el zoom hasta el detalle que quieras comentar; después, pulsa <strong>Capturar posición</strong>. Usa <strong>+ Agregar panel</strong> cuando necesites una explicación más larga. Mantén breve la respuesta principal.",
+        "link": "Mira los controles de encuadre",
+        "href": "/manual/es/iiif-a-historia/#encuadrar"
+      }
+    },
+    {
+      "id": "publish",
+      "en": {
+        "title": "Publish, then visit the result",
+        "text": "Open <strong>Publish</strong>, review your changes and resolve any blocking errors. Publish and wait for the build to finish. Visit the public story and check its images, framing, text and credits. If the story is marked Draft, it will not appear in the public exhibition.",
+        "link": "Publishing help",
+        "href": "/docs/the-compositor/publishing/"
+      },
+      "es": {
+        "title": "Publica y visita el resultado",
+        "text": "Abre <strong>Publicar</strong>, revisa los cambios y resuelve los errores que impidan publicar. Publica y espera a que termine de generarse el sitio. Visita la historia pública y revisa imágenes, encuadres, textos y créditos. Si la historia está marcada como borrador, no aparecerá en la exhibición pública.",
+        "link": "Ayuda para publicar",
+        "href": "/guia/el-compositor/publicacion/"
+      }
+    }
+  ],
+  "diagram_end_direction": "up"
+}

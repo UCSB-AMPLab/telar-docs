@@ -15,6 +15,9 @@ Your site is running and your stories are in the spreadsheet. Now you want riche
 {: .note }
 > This guide builds on the setup guides. Complete one of the [Getting Started](/docs/getting-started/) setup options first if you haven't already.
 
+
+This page explains panel content in files and spreadsheets. In the Compositor, edit a panel's title in its title field and its content in the panel editor; the same formatting reference applies to its body.
+
 ## When to Add Markdown Files
 
 The spreadsheet handles most Telar exhibitions well. Consider adding markdown files when you need:

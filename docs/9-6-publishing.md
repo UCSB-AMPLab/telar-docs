@@ -27,11 +27,13 @@ There are two levels of validation:
 - **Errors** — Critical issues that block publishing. For example, a required field might be missing or a story might reference an object that does not exist. You must fix errors before you can publish.
 - **Warnings** — Non-critical issues that do not block publishing but are worth reviewing. For example, an object might be missing alt text or a story might have only one step. You can publish with warnings, but addressing them improves your exhibition.
 
+{% include docs/media.html id="upgrade" %}
+
 ## Publish
 
-When you are ready, click the publish button. The Compositor creates a single atomic commit in your GitHub repository containing all your changes. The commit is attributed to your GitHub account — your name and email appear in the repository's commit history, not the Compositor's.
+When you are ready, use the publish control. The Compositor sends the reviewed changes to your repository through its installed GitHub App. The commit body records **Published by @your-github-login**.
 
-Publishing triggers a GitHub Pages build automatically. You do not need to visit GitHub or run any additional steps.
+Publishing and completing the site build are separate stages. Follow the build status before checking the public site.
 
 ## Build tracking
 
@@ -57,11 +59,11 @@ The config editor lets you change settings like your site title, theme options, 
 If your site's `_config.yml` is written in a way that doesn't let the Compositor save your **Site settings** in it, the **Publish** page tells you and offers to rewrite the file. Click **Review the rewrite** to see what will happen. The Compositor rebuilds `_config.yml` from the template for the version of Telar your site uses and keeps the settings from your file as they are. The review lists the settings that will take their value from **Site settings** or from the template, and any lines the Compositor can't read, which will be removed. Comments between settings aren't kept. When you click **Accept the rewrite**, the Compositor writes the new file the next time you publish; the old one stays in your site's history on GitHub. Anyone who can edit **Site settings** can accept the rewrite.
 
 {: .note }
-> The config editor covers the most commonly used settings. For advanced configuration options, you can still edit `_config.yml` directly in your repository. See [Configuration](/docs/configuration/) for the full reference.
+> The config editor covers the most commonly used settings. For advanced configuration options, you can still edit `_config.yml` directly in your repository. See [Configuration](/docs/configure/configuration/) for the full reference.
 
 ## See also
 
 - [Story Editor](/docs/the-compositor/story-editor/) — Building and editing your stories
 - [Objects](/docs/the-compositor/objects/) — Managing objects in the Compositor
 - [Sync and Updates](/docs/the-compositor/sync-updates/) — Keeping your project in sync with your repository
-- [Dashboard](/docs/the-compositor/dashboard/) — Return to the project overview
+- [Start and navigation](/docs/the-compositor/dashboard/) — Return to the project overview

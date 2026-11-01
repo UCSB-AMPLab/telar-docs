@@ -1,0 +1,1066 @@
+{
+  "date": "2026-10-31",
+  "compositor_version": "1.5.5-beta",
+  "baselines": [
+    {
+      "name": "telar",
+      "sha": "a579828e89b7553c1078ce1605be86f436131f6a",
+      "branch": "v1.8.3"
+    },
+    {
+      "name": "telar-compositor",
+      "sha": "b117ab969feec70a493beb78999446dd07fffccb",
+      "branch": "main"
+    },
+    {
+      "name": "telar-docs",
+      "sha": "46d18487e56f3b3d209894e35d7bd6170fb5f0f4",
+      "branch": "main"
+    },
+    {
+      "name": "telar-demo-content",
+      "sha": "5126c31adaf5651cc3fdae49f481f9c8822b9390",
+      "branch": "main"
+    },
+    {
+      "name": "telar-showcase",
+      "sha": "6de17b2dba5a84b83b5f558ed622352d40c0e5ee",
+      "branch": "main"
+    }
+  ],
+  "coverage": [
+    {
+      "id": "C01",
+      "chapter": "workspace",
+      "task": "Account and interface language",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.account.tsx",
+      "existing_english_reference": "/docs/the-compositor/getting-started/",
+      "status": "missing-guide",
+      "verification": "source-and-live",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C02",
+      "chapter": "first-site",
+      "task": "Create a new site",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/onboarding.tsx",
+      "existing_english_reference": "/docs/getting-started/compositor/",
+      "status": "needs-update",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C03",
+      "chapter": "first-site",
+      "task": "Connect a repository or import Sheets",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/onboarding.tsx",
+      "existing_english_reference": "/docs/the-compositor/getting-started/",
+      "status": "needs-update",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C04",
+      "chapter": "workspace",
+      "task": "Start and the six setup tasks",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.start.tsx",
+      "existing_english_reference": "/docs/the-compositor/dashboard/",
+      "status": "needs-update",
+      "verification": "live-inspected",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C05",
+      "chapter": "objects",
+      "task": "Fetch an external IIIF manifest",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/components/features/objects/AddObjectDialog.tsx",
+      "existing_english_reference": "/docs/the-compositor/objects/",
+      "status": "pilot-draft",
+      "verification": "source-and-live",
+      "recording": "Pilot script"
+    },
+    {
+      "id": "C06",
+      "chapter": "objects",
+      "task": "Review imported metadata and add the object",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.objects.tsx",
+      "existing_english_reference": "/docs/the-compositor/objects/",
+      "status": "pilot-draft",
+      "verification": "source-checked",
+      "recording": "Pilot script"
+    },
+    {
+      "id": "C07",
+      "chapter": "objects",
+      "task": "Upload images, PDF, WEBP and audio",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/components/features/objects/AddObjectDialog.tsx",
+      "existing_english_reference": "/docs/the-compositor/objects/",
+      "status": "needs-update",
+      "verification": "source-checked",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C08",
+      "chapter": "objects",
+      "task": "Add external video or audio",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/components/features/objects/AddObjectDialog.tsx",
+      "existing_english_reference": "/docs/the-compositor/video-audio/",
+      "status": "needs-update",
+      "verification": "source-checked",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C09",
+      "chapter": "objects",
+      "task": "Metadata, credits and alternative text",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.objects.$objectId.tsx",
+      "existing_english_reference": "/docs/the-compositor/objects/",
+      "status": "needs-illustrations",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C10",
+      "chapter": "objects",
+      "task": "Find, feature, rename and remove objects",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.objects.tsx",
+      "existing_english_reference": "/docs/the-compositor/objects/",
+      "status": "needs-update",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C11",
+      "chapter": "stories",
+      "task": "Create a story and its title card",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.stories.tsx",
+      "existing_english_reference": "/docs/the-compositor/story-editor/",
+      "status": "needs-update",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C12",
+      "chapter": "stories",
+      "task": "Add steps and choose objects",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.stories.$storyId.tsx",
+      "existing_english_reference": "/docs/the-compositor/story-editor/",
+      "status": "pilot-draft",
+      "verification": "source-checked",
+      "recording": "Pilot script"
+    },
+    {
+      "id": "C13",
+      "chapter": "stories",
+      "task": "Reorder steps and add sections",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.stories.$storyId.tsx",
+      "existing_english_reference": "/docs/the-compositor/story-editor/",
+      "status": "needs-illustrations",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C14",
+      "chapter": "framing",
+      "task": "Frame an image and press Capture position",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/components/features/editor/ViewerBottomBar.tsx",
+      "existing_english_reference": "/docs/the-compositor/story-editor/",
+      "status": "pilot-draft",
+      "verification": "source-checked",
+      "recording": "Pilot script"
+    },
+    {
+      "id": "C15",
+      "chapter": "framing",
+      "task": "Frame, centre, whole area and text limit",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/components/features/editor/StoryStage.tsx",
+      "existing_english_reference": "/docs/the-compositor/story-editor/",
+      "status": "missing-guide",
+      "verification": "source-checked",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C16",
+      "chapter": "panels",
+      "task": "Edit answers and layered panels",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.stories.$storyId.tsx",
+      "existing_english_reference": "/docs/the-compositor/story-editor/",
+      "status": "needs-update",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C17",
+      "chapter": "panels",
+      "task": "Widgets, footnotes and mathematics",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.stories.$storyId.tsx",
+      "existing_english_reference": "/docs/your-content/widgets/",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C18",
+      "chapter": "media",
+      "task": "Capture media clips and looping",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.stories.$storyId.tsx",
+      "existing_english_reference": "/docs/the-compositor/video-audio/",
+      "status": "needs-illustrations",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C19",
+      "chapter": "glossary",
+      "task": "Terms, aliases, kinds and links",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.glossary.tsx",
+      "existing_english_reference": "/docs/site-features/glossary/",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C20",
+      "chapter": "pages",
+      "task": "Edit the homepage",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.homepage.tsx",
+      "existing_english_reference": "/docs/customization/home-page/",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C21",
+      "chapter": "pages",
+      "task": "Create pages and arrange navigation",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.pages.tsx",
+      "existing_english_reference": "/docs/site-features/custom-pages/",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C22",
+      "chapter": "pages",
+      "task": "Themes, site language and settings",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.config.tsx",
+      "existing_english_reference": "/docs/configure/configuration/",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C23",
+      "chapter": "team",
+      "task": "Invitations, roles and repository access",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.team.tsx",
+      "existing_english_reference": "",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C24",
+      "chapter": "team",
+      "task": "Presence and simultaneous editing",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.tsx",
+      "existing_english_reference": "",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C25",
+      "chapter": "team",
+      "task": "Contribution record and its limits",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.contributions.tsx",
+      "existing_english_reference": "",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C26",
+      "chapter": "courses",
+      "task": "Set up a course and shared objects",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.course.tsx",
+      "existing_english_reference": "",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C27",
+      "chapter": "courses",
+      "task": "Join a course or join as staff",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.account.tsx",
+      "existing_english_reference": "",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C28",
+      "chapter": "publish",
+      "task": "Draft, saved state and published site",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.publish.tsx",
+      "existing_english_reference": "/docs/the-compositor/publishing/",
+      "status": "needs-update",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C29",
+      "chapter": "publish",
+      "task": "Validation, publishing and build results",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.publish.tsx",
+      "existing_english_reference": "/docs/the-compositor/publishing/",
+      "status": "needs-illustrations",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C30",
+      "chapter": "sync",
+      "task": "Review individual changes made on GitHub",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.publish.tsx",
+      "existing_english_reference": "/docs/the-compositor/sync-updates/",
+      "status": "needs-update",
+      "verification": "source-checked",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C31",
+      "chapter": "sync",
+      "task": "Upgrade and interpret build outcomes",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.upgrade.tsx",
+      "existing_english_reference": "/docs/the-compositor/sync-updates/",
+      "status": "needs-update",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "C32",
+      "chapter": "recovery",
+      "task": "Reconnect, identify saved work and get help",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/routes/_app.tsx",
+      "existing_english_reference": "",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "R01",
+      "chapter": "workspace",
+      "task": "Browse a site and its stories",
+      "repository": "telar",
+      "source": "telar/assets/js/telar-story/main.js",
+      "existing_english_reference": "",
+      "status": "missing-reader-guide",
+      "verification": "live-inspected",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "R02",
+      "chapter": "framing",
+      "task": "Scroll, arrow keys, zoom and navigation",
+      "repository": "telar",
+      "source": "telar/assets/js/telar-story/navigation.js",
+      "existing_english_reference": "/docs/developers/story-engine/",
+      "status": "needs-reader-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "R03",
+      "chapter": "panels",
+      "task": "Open panels and glossary definitions",
+      "repository": "telar",
+      "source": "telar/assets/js/telar-story/panels.js",
+      "existing_english_reference": "/docs/site-features/glossary/",
+      "status": "needs-reader-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "R04",
+      "chapter": "objects",
+      "task": "Browse, search and filter the collection",
+      "repository": "telar",
+      "source": "telar/scripts/telar/processors/objects/__init__.py",
+      "existing_english_reference": "/docs/site-features/objects-gallery/",
+      "status": "needs-reader-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "R05",
+      "chapter": "media",
+      "task": "Play video and audio in stories",
+      "repository": "telar",
+      "source": "telar/assets/js/telar-story/media-arrangement.js",
+      "existing_english_reference": "/docs/your-content/video-objects/",
+      "status": "needs-reader-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "R06",
+      "chapter": "publish",
+      "task": "Share and embed in an LMS",
+      "repository": "telar",
+      "source": "telar/assets/js/embed.js",
+      "existing_english_reference": "/docs/site-features/embedding/",
+      "status": "existing-reference",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "R07",
+      "chapter": "recovery",
+      "task": "Private stories and unlocking",
+      "repository": "telar",
+      "source": "telar/assets/js/story-unlock.js",
+      "existing_english_reference": "/docs/site-features/private-stories/",
+      "status": "existing-reference",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "A01",
+      "chapter": "first-site",
+      "task": "Google Sheets setup",
+      "repository": "telar",
+      "source": "telar/scripts/fetch_google_sheets.py",
+      "existing_english_reference": "/docs/getting-started/google-sheets/",
+      "status": "needs-journey-review",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "A02",
+      "chapter": "stories",
+      "task": "CSV object and story authoring",
+      "repository": "telar",
+      "source": "telar/scripts/telar/processors/stories.py",
+      "existing_english_reference": "/docs/your-data/csv-stories/",
+      "status": "existing-reference",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "A03",
+      "chapter": "objects",
+      "task": "Generate IIIF tiles and process PDFs",
+      "repository": "telar",
+      "source": "telar/scripts/generate_iiif.py",
+      "existing_english_reference": "/docs/your-content/self-hosted-images/",
+      "status": "existing-reference",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "A04",
+      "chapter": "recovery",
+      "task": "Build and preview locally",
+      "repository": "telar",
+      "source": "telar/scripts/build_local_site.py",
+      "existing_english_reference": "/docs/developers/local-development/",
+      "status": "existing-reference",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "A05",
+      "chapter": "sync",
+      "task": "Upgrade through scripts and migrations",
+      "repository": "telar",
+      "source": "telar/scripts/telar_upgrade.py",
+      "existing_english_reference": "/docs/setup/upgrading/",
+      "status": "needs-task-first-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "D01",
+      "chapter": "workspace",
+      "task": "Bilingual navigation and search",
+      "repository": "telar-docs",
+      "source": "telar-docs/_layouts/docs.html",
+      "existing_english_reference": "/docs/",
+      "status": "needs-fixes",
+      "verification": "source-and-live",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "D02",
+      "chapter": "first-site",
+      "task": "Setup generator and validator",
+      "repository": "telar-docs",
+      "source": "telar-docs/docs/1-2-google-sheets-option.md",
+      "existing_english_reference": "/docs/getting-started/google-sheets/",
+      "status": "needs-accessibility-fixes",
+      "verification": "source-and-live",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "D03",
+      "chapter": "workspace",
+      "task": "Contextual help inside the editor",
+      "repository": "telar-compositor",
+      "source": "telar-compositor/app/lib/docs-content.ts",
+      "existing_english_reference": "",
+      "status": "needs-content-sync",
+      "verification": "source-checked",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "D04",
+      "chapter": "objects",
+      "task": "Versioned multilingual demo bundles",
+      "repository": "telar-demo-content",
+      "source": "telar-demo-content/generator/build-demos.py",
+      "existing_english_reference": "/docs/customization/demo-content/",
+      "status": "existing-reference",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "D05",
+      "chapter": "publish",
+      "task": "Submit a project to the showcase",
+      "repository": "telar-showcase",
+      "source": "telar-showcase/src/index.ts",
+      "existing_english_reference": "/showcase/submit/",
+      "status": "missing-guide",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    },
+    {
+      "id": "D06",
+      "chapter": "publish",
+      "task": "Public showcase and consent",
+      "repository": "telar-docs",
+      "source": "telar-docs/showcase-submit.md",
+      "existing_english_reference": "/showcase/submit/",
+      "status": "needs-journey-review",
+      "verification": "source-mapped",
+      "recording": "To scope during chapter rehearsal"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "workspace",
+      "es": "Tu espacio de trabajo",
+      "en": "Your workspace",
+      "outcome_es": "Distinguir objetos, historias, pasos, paneles y glosario.",
+      "outcome_en": "Understand objects, stories, steps, panels and glossary."
+    },
+    {
+      "id": "first-site",
+      "es": "Tu primer sitio",
+      "en": "Your first site",
+      "outcome_es": "Crear un sitio o conectar uno existente.",
+      "outcome_en": "Create a site or connect an existing one."
+    },
+    {
+      "id": "objects",
+      "es": "Objetos y colecciones",
+      "en": "Objects and collections",
+      "outcome_es": "Importar, describir y organizar tus materiales.",
+      "outcome_en": "Import, describe and organise your materials."
+    },
+    {
+      "id": "stories",
+      "es": "Historias y pasos",
+      "en": "Stories and steps",
+      "outcome_es": "Construir una secuencia de preguntas, respuestas e invitaciones.",
+      "outcome_en": "Build a sequence of questions, answers and invitations."
+    },
+    {
+      "id": "framing",
+      "es": "Encuadre y posición",
+      "en": "Framing and position",
+      "outcome_es": "Elegir qué verá el público y capturar esa vista.",
+      "outcome_en": "Choose what visitors will see and capture that view."
+    },
+    {
+      "id": "panels",
+      "es": "Textos y paneles",
+      "en": "Text and panels",
+      "outcome_es": "Desarrollar el relato con formato, imágenes y contenido contextual.",
+      "outcome_en": "Develop your narrative with formatting, images and contextual content."
+    },
+    {
+      "id": "media",
+      "es": "Video y audio",
+      "en": "Video and audio",
+      "outcome_es": "Usar clips, reproducción y bucles.",
+      "outcome_en": "Work with clips, playback and loops."
+    },
+    {
+      "id": "glossary",
+      "es": "Glosario",
+      "en": "Glossary",
+      "outcome_es": "Crear definiciones y enlazarlas desde tus textos.",
+      "outcome_en": "Create definitions and link them from your text."
+    },
+    {
+      "id": "pages",
+      "es": "Inicio, páginas y apariencia",
+      "en": "Home, pages and appearance",
+      "outcome_es": "Configurar la portada, la navegación y la presentación.",
+      "outcome_en": "Configure the homepage, navigation and appearance."
+    },
+    {
+      "id": "team",
+      "es": "Trabajar en equipo",
+      "en": "Working together",
+      "outcome_es": "Invitar a otras personas y comprender los roles.",
+      "outcome_en": "Invite other people and understand the roles."
+    },
+    {
+      "id": "courses",
+      "es": "Enseñar con Telar",
+      "en": "Teaching with Telar",
+      "outcome_es": "Organizar cursos, grupos y objetos compartidos.",
+      "outcome_en": "Organise courses, groups and shared objects."
+    },
+    {
+      "id": "publish",
+      "es": "Publicar",
+      "en": "Publishing",
+      "outcome_es": "Revisar cambios, corregir avisos y seguir la construcción.",
+      "outcome_en": "Review changes, address notices and follow the build."
+    },
+    {
+      "id": "sync",
+      "es": "Cambios en GitHub y actualizaciones",
+      "en": "GitHub changes and upgrades",
+      "outcome_es": "Revisar cambios externos y actualizar el sitio.",
+      "outcome_en": "Review external changes and upgrade your site."
+    },
+    {
+      "id": "recovery",
+      "es": "Mantenimiento y recuperación",
+      "en": "Maintenance and recovery",
+      "outcome_es": "Reconocer problemas y recuperar el trabajo.",
+      "outcome_en": "Recognise problems and recover work."
+    }
+  ],
+  "captions": [
+    {
+      "start": 0,
+      "end": 7,
+      "es": "Conecta un objeto IIIF con un paso de tu historia.",
+      "en": "Connect an IIIF object to a step in your story.",
+      "action": "Show the object and the intended story result."
+    },
+    {
+      "start": 7,
+      "end": 15,
+      "es": "En Objetos, pulsa Agregar objeto y elige Manifiesto IIIF.",
+      "en": "In Objects, choose Add object, then IIIF manifest.",
+      "action": "Open the existing dialog. Keep the relevant controls legible."
+    },
+    {
+      "start": 15,
+      "end": 25,
+      "es": "Pega la URL del manifiesto y pulsa Obtener manifiesto.",
+      "en": "Paste the manifest URL and choose Fetch manifest.",
+      "action": "Paste the complete URL. Hold after the click; shorten a long wait with an explicit editorial note."
+    },
+    {
+      "start": 25,
+      "end": 37,
+      "es": "Revisa el título, la fuente y el crédito antes de agregar el objeto.",
+      "en": "Review the title, source and credit before adding the object.",
+      "action": "Show imported metadata. Do not invent missing cataloguing data."
+    },
+    {
+      "start": 37,
+      "end": 46,
+      "es": "Abre tu historia y agrega un paso.",
+      "en": "Open your story and add a step.",
+      "action": "Use the dedicated documentation fixture for the actual recording."
+    },
+    {
+      "start": 46,
+      "end": 57,
+      "es": "Elige el objeto que acabas de agregar.",
+      "en": "Choose the object you have just added.",
+      "action": "Show the object picker and the resulting viewer."
+    },
+    {
+      "start": 57,
+      "end": 68,
+      "es": "Escribe una pregunta y una respuesta breve.",
+      "en": "Write a question and a short answer.",
+      "action": "Use the reviewed example text from the guide."
+    },
+    {
+      "start": 68,
+      "end": 82,
+      "es": "Encuadra el detalle y pulsa Capturar posición.",
+      "en": "Frame the detail and choose Capture position.",
+      "action": "Show the action and its Captured confirmation. Leave time to read the guides."
+    },
+    {
+      "start": 82,
+      "end": 94,
+      "es": "Usa los paneles para desarrollar el contexto.",
+      "en": "Use panels to develop the context.",
+      "action": "Open one panel and show how it relates to the step."
+    },
+    {
+      "start": 94,
+      "end": 106,
+      "es": "Revisa tus cambios en Publicar antes de llevarlos al sitio.",
+      "en": "Review your changes in Publish before sending them to your site.",
+      "action": "Show the review. Publishing rehearsal on a dedicated fixture remains to do."
+    },
+    {
+      "start": 106,
+      "end": 116,
+      "es": "Comprueba el objeto, el encuadre y el panel en el sitio publicado.",
+      "en": "Check the object, framing and panel on the published site.",
+      "action": "Finish on the reader result. The pilot film is not recorded before copy review."
+    }
+  ],
+  "ui_strings": [
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "title",
+      "text": "Objects"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "add_object_button",
+      "text": "+ Add object"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "tab_iiif",
+      "text": "IIIF manifest"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "add_iiif_url_label",
+      "text": "IIIF manifest URL"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "add_iiif_fetch",
+      "text": "Fetch manifest"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "add_iiif_confirm",
+      "text": "Add object"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "field_title",
+      "text": "Title"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "field_creator",
+      "text": "Creator"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "field_source",
+      "text": "Source"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "field_credit",
+      "text": "Credit"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "field_alt_text",
+      "text": "Description for accessibility"
+    },
+    {
+      "language": "en",
+      "namespace": "editor",
+      "key": "viewer.capture_position",
+      "text": "Capture position"
+    },
+    {
+      "language": "en",
+      "namespace": "editor",
+      "key": "viewer.captured",
+      "text": "Captured"
+    },
+    {
+      "language": "en",
+      "namespace": "editor",
+      "key": "viewer.change_object",
+      "text": "Change object"
+    },
+    {
+      "language": "en",
+      "namespace": "editor",
+      "key": "step.add_step",
+      "text": "+ Add step"
+    },
+    {
+      "language": "en",
+      "namespace": "stories",
+      "key": "title",
+      "text": "Stories"
+    },
+    {
+      "language": "en",
+      "namespace": "stories",
+      "key": "new_story_button",
+      "text": "+ New Story"
+    },
+    {
+      "language": "en",
+      "namespace": "stories",
+      "key": "save",
+      "text": "Save"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "title",
+      "text": "Objetos"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "add_object_button",
+      "text": "+ Agregar objeto"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "tab_iiif",
+      "text": "Manifiesto IIIF"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "add_iiif_url_label",
+      "text": "URL del manifiesto IIIF"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "add_iiif_fetch",
+      "text": "Obtener manifiesto"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "add_iiif_confirm",
+      "text": "Agregar objeto"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "field_title",
+      "text": "Título"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "field_creator",
+      "text": "Creador"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "field_source",
+      "text": "Fuente"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "field_credit",
+      "text": "Crédito"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "field_alt_text",
+      "text": "Descripción para accesibilidad"
+    },
+    {
+      "language": "es",
+      "namespace": "editor",
+      "key": "viewer.capture_position",
+      "text": "Capturar posición"
+    },
+    {
+      "language": "es",
+      "namespace": "editor",
+      "key": "viewer.captured",
+      "text": "Capturada"
+    },
+    {
+      "language": "es",
+      "namespace": "editor",
+      "key": "viewer.change_object",
+      "text": "Cambiar objeto"
+    },
+    {
+      "language": "es",
+      "namespace": "editor",
+      "key": "step.add_step",
+      "text": "+ Agregar paso"
+    },
+    {
+      "language": "es",
+      "namespace": "stories",
+      "key": "title",
+      "text": "Historias"
+    },
+    {
+      "language": "es",
+      "namespace": "stories",
+      "key": "new_story_button",
+      "text": "+ Nueva historia"
+    },
+    {
+      "language": "es",
+      "namespace": "stories",
+      "key": "save",
+      "text": "Guardar"
+    },
+    {
+      "language": "en",
+      "namespace": "editor",
+      "key": "layer.add_panel",
+      "text": "+ Add panel"
+    },
+    {
+      "language": "en",
+      "namespace": "editor",
+      "key": "stage.edit_panel_title",
+      "text": "Edit panel title"
+    },
+    {
+      "language": "en",
+      "namespace": "editor",
+      "key": "stage.edit_panel_text",
+      "text": "Edit panel text"
+    },
+    {
+      "language": "es",
+      "namespace": "editor",
+      "key": "layer.add_panel",
+      "text": "+ Agregar panel"
+    },
+    {
+      "language": "es",
+      "namespace": "editor",
+      "key": "stage.edit_panel_title",
+      "text": "Editar título del panel"
+    },
+    {
+      "language": "es",
+      "namespace": "editor",
+      "key": "stage.edit_panel_text",
+      "text": "Editar texto del panel"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "field_year",
+      "text": "Year"
+    },
+    {
+      "language": "en",
+      "namespace": "objects",
+      "key": "field_description",
+      "text": "Description"
+    },
+    {
+      "language": "en",
+      "namespace": "editor",
+      "key": "step.new_step_dialog.choose",
+      "text": "Choose another object"
+    },
+    {
+      "language": "en",
+      "namespace": "publish",
+      "key": "title",
+      "text": "Publish"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "field_year",
+      "text": "Año"
+    },
+    {
+      "language": "es",
+      "namespace": "objects",
+      "key": "field_description",
+      "text": "Descripción"
+    },
+    {
+      "language": "es",
+      "namespace": "editor",
+      "key": "step.new_step_dialog.choose",
+      "text": "Elegir otro objeto"
+    },
+    {
+      "language": "es",
+      "namespace": "publish",
+      "key": "title",
+      "text": "Publicar"
+    }
+  ],
+  "manifest": "https://juancobo.com/138la/iiif/khipu/p7/manifest.json",
+  "pilot_status": "Draft for copy review. Import preview checked in both languages. Existing khipu selected in an authorised unpublished draft step; framing captured and illustrated in both languages. Object creation, panel authoring and publishing remain to rehearse."
+}

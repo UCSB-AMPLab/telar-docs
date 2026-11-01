@@ -10,7 +10,7 @@ permalink: /docs/your-content/
 
 # Your Content
 
-Your exhibition is built from several types of content — objects, images, stories, and supporting pages. All source content lives in the `telar-content/` folder of your repository. You define the structure through spreadsheet files (via [Google Sheets](/docs/your-data/google-sheets/) or [CSV](/docs/your-data/csv-project/)), and write longer narrative content in markdown files.
+Objects, stories, panels and supporting pages make up an exhibition. This reference describes their source files and formats. Use the [Compositor manual](/docs/the-compositor/) for visual editing, the [Sheets manual](/docs/google-sheets/) for spreadsheet authoring or the [local manual](/docs/local-authoring/) for CSV and Markdown files. All three routes produce a static site.
 
 - [Objects](/docs/your-content/objects/) — The visual items your stories explore — images, maps, documents, photographs
 - [Self-Hosted Images](/docs/your-content/self-hosted-images/) — Upload your own images and Telar generates zoomable tiles automatically

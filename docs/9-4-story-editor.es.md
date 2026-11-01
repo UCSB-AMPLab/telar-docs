@@ -10,89 +10,88 @@ permalink: /guia/el-compositor/editor-historias/
 
 # Editor de historias
 
-El editor de historias es donde construyes y refinas tus narrativas. Combina un editor de texto, un visor interactivo y herramientas de gestión de pasos en un solo espacio de trabajo — todo lo que necesitas para componer una historia sin editar hojas de cálculo.
+Abre una historia desde **Historias** para escribir sus preguntas, respuestas breves y paneles opcionales. El editor reúne el esquema narrativo, los textos editables y la vista que tendrán tus visitantes.
 
-Cuando abres una historia desde el [Panel de control](/guia/el-compositor/panel-de-control/), el editor se carga con la tarjeta de título a la izquierda y el visor a la derecha. Cada paso de la historia aparece como una tarjeta en la barra lateral, y al seleccionar un paso se actualizan tanto el editor de texto como el visor para mostrar el contenido de ese paso.
+La barra lateral usa un **cuadrado** para la portada, **círculos** para los pasos y un **triángulo hacia arriba** para el último paso. El primer panel se desprende de su paso; el segundo se desprende del primero.
 
-## Tarjeta de título
+<span class="anchor-alias" id="tarjeta-de-título" aria-hidden="true"></span>
 
-La tarjeta de título es lo primero que ve el público. Muestra el título, subtítulo y línea de autoría de tu historia.
+{% include docs/media.html id="editor-overview" %}
 
-Para editar la tarjeta de título, haz clic directamente en cualquiera de sus campos. Los cambios se guardan automáticamente a medida que escribes — no hay un botón de guardar aparte. La tarjeta de título es siempre el primer elemento en la barra lateral de pasos.
+## Portada
+
+Selecciona la portada en la parte superior del esquema. Haz clic en el título, el subtítulo o la firma, o en el icono de edición correspondiente, para cambiar el campo. Tus cambios se guardan mientras trabajas.
+
+<span class="anchor-alias" id="selector-de-objetos" aria-hidden="true"></span>
 
 ## Visor IIIF
 
-El lado derecho del editor muestra un visor IIIF interactivo. Cuando un paso hace referencia a un objeto de imagen, puedes desplazar y ampliar para encuadrar la vista exacta que deseas que vea el público.
+Selecciona un paso con imagen y usa **Cambiar objeto** para elegir su fuente. Desplaza la imagen y ajusta el zoom hasta el detalle que quieras mostrar.
 
-Para capturar la vista actual de un paso:
+Para guardar la vista:
 
-1. Navega al paso que deseas configurar
-2. Desplaza y amplía el visor hasta que la imagen muestre el encuadre que deseas
-3. El Compositor captura las coordenadas actuales de x, y y zoom y las guarda en el paso
+1. Selecciona el paso.
+2. Desplaza la imagen y ajusta el zoom al encuadre deseado.
+3. Pulsa **Capturar posición**.
+4. Comprueba la confirmación **Capturada**.
+5. Pasa a la portada o a otro paso; después, regresa y revisa el encuadre guardado.
 
-Estas coordenadas controlan lo que ve el público cuando llega a ese paso en la historia publicada. Para más información sobre cómo funcionan las coordenadas del visor en Telar, consulta [Historias y paneles](/guia/tu-contenido/historias-y-paneles/).
+{: .note }
+> Mover la imagen y ajustar el zoom te permite explorar el objeto. **Capturar posición** guarda el encuadre del paso seleccionado. Vuelve a capturarlo si cambias la vista que quieres conservar.
+
+{% include docs/media.html id="framing" %}
+
+Las guías indican el marco y el centro de la vista. El límite del texto ayuda a ver cuánto de la respuesta breve cabe en la tarjeta pública.
 
 ## Gestión de pasos
 
-La barra lateral lista todos los pasos de tu historia. Aquí puedes reorganizar y modificar la estructura de la historia.
+- **+ Agregar paso** crea un paso. Si el diálogo ofrece el objeto anterior, puedes conservarlo o elegir otro.
+- **Cambiar objeto** selecciona otra fuente para el paso actual.
+- Arrastra un paso desde su control de orden para cambiar su posición.
+- Usa el control de eliminación y lee la confirmación antes de quitar un paso.
+- **Agregar título de sección** inserta un encabezado para agrupar partes de la historia.
 
-- **Agregar un paso** — Haz clic en el botón de agregar en la parte inferior de la barra lateral para añadir un nuevo paso al final
-- **Insertar un paso** — Haz clic en el botón de insertar entre dos pasos existentes para colocar un nuevo paso en esa posición
-- **Eliminar un paso** — Elimina un paso y su contenido de la historia
-- **Reordenar pasos** — Arrastra un paso por su asa para moverlo a una nueva posición en la secuencia
+Escribe una pregunta y una respuesta breve en cada tarjeta. Haz clic en el texto o en su icono de edición. El campo de respuesta acepta Markdown; haz clic fuera para revisar el texto con formato.
 
-### Selector de objetos
-
-Cada paso puede mostrar un objeto diferente en el visor. Para cambiar qué objeto muestra un paso, usa el selector de objetos — te permite explorar todos los objetos de tu exhibición y seleccionar uno para el paso actual.
-
-Cuando un paso hace referencia a un objeto de video o audio, la columna del visor muestra el reproductor de medios correspondiente en lugar del visor IIIF. Consulta [Video y audio](/guia/el-compositor/video-y-audio/) para más detalles sobre los pasos multimedia.
+Los pasos de video y audio tienen controles de medios en lugar del visor de imágenes. Consulta [Video y audio](/guia/el-compositor/video-y-audio/).
 
 ## Edición de capas
 
-El panel de texto de cada paso utiliza un editor con vista previa en vivo basado en CodeMirror. Escribes en *Markdown* y ves el resultado formateado de inmediato — no necesitas alternar entre modos de edición y vista previa.
+Pulsa **+ Agregar panel** en la tarjeta de un paso o abre un panel existente con su botón. Edita el título y el contenido directamente desde el texto o los iconos de edición. El primer panel puede ofrecer un botón para abrir un segundo panel.
+
+Mantén breve la respuesta principal. Usa los paneles para el contexto, la evidencia y los matices que una persona pueda elegir explorar.
+
+{% include docs/media.html id="panels" %}
 
 ### Barra de formato
 
-La barra de herramientas sobre el editor ofrece acceso rápido a las opciones de formato más comunes:
+Al editar el contenido de un panel, usa los controles de formato o escribe Markdown directamente. Revisa el panel con formato al terminar. Consulta [Sintaxis de Markdown](/guia/tu-contenido/sintaxis-markdown/) y [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/).
 
-- **Negrita** y **cursiva** — Énfasis y énfasis fuerte
-- **Enlace** — Insertar o editar un hipervínculo
-- **Imagen** — Insertar una imagen en el texto del panel
-- **Encabezados** — Aplicar niveles de encabezado (H2, H3)
-- **Listas** — Listas con viñetas y listas numeradas
-- **Cita** — Bloques de cita indentados
-- **Deshacer** y **Rehacer** — Retroceder o avanzar en las ediciones
+{% include docs/media.html id="panel-editor" %}
 
 ### Atajos de teclado
 
-Para editar más rápido, el editor admite atajos de teclado estándar:
-
-| Atajo | Acción |
-|---|---|
-| Cmd+B (Ctrl+B en Windows/Linux) | Negrita |
-| Cmd+I (Ctrl+I en Windows/Linux) | Cursiva |
-| Cmd+K (Ctrl+K en Windows/Linux) | Insertar enlace |
-| Cmd+Z (Ctrl+Z en Windows/Linux) | Deshacer |
+Los atajos dependen del campo que tenga el foco. Mantén el foco en el editor de texto al aplicar un comando de formato. Usa la barra de herramientas si no sabes qué comando está disponible.
 
 ### Inserción de imágenes
 
-Puedes agregar imágenes al texto de tu panel de dos maneras:
+Usa los controles de imágenes del editor de paneles y completa los datos que solicite el diálogo. Una imagen dentro del panel hace parte de la explicación; la fuente principal del paso se elige por separado con **Cambiar objeto**.
 
-- **Desde una URL** — Pega cualquier URL de imagen y el editor la inserta como imagen en *Markdown*
-- **Desde tus objetos IIIF** — Explora los objetos de tu repositorio y selecciona uno. El Compositor genera la URL correcta automáticamente.
+<span class="anchor-alias" id="pegado-enriquecido" aria-hidden="true"></span>
 
-### Pegado enriquecido
+### Pegado con formato
 
-Cuando pegas contenido desde otras aplicaciones — como un procesador de texto o una página web — el editor convierte automáticamente el formato HTML a *Markdown*. El texto en negrita se mantiene en negrita, los enlaces siguen siendo funcionales y los encabezados conservan sus niveles. Esto facilita trasladar texto existente a los paneles de tu historia.
+Al traer texto de otra aplicación, revisa el formato, los enlaces y el espaciado del panel antes de publicar.
 
-### Preservación de inserciones
+<span class="anchor-alias" id="preservación-de-inserciones" aria-hidden="true"></span>
 
-Si pegas un código de inserción de YouTube o Vimeo (una etiqueta `<iframe>`), el editor lo preserva como HTML sin procesar en lugar de convertirlo. Esto te permite insertar reproductores de video directamente en el texto del panel, independientemente de la columna del visor.
+### Conservación de inserciones
+
+Para agregar medios y contenido interactivo dentro de los paneles, sigue [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) y [Widgets](/guia/tu-contenido/widgets/). Revisa el resultado publicado además de la vista del editor.
 
 ## Véase también
 
-- [Panel de control](/guia/el-compositor/panel-de-control/) — Regresa a la vista general del proyecto
-- [Video y audio](/guia/el-compositor/video-y-audio/) — Trabajar con pasos de video y audio
-- [Publicación](/guia/el-compositor/publicacion/) — Revisar y publicar cambios
-- [Historias y paneles](/guia/tu-contenido/historias-y-paneles/) — Cómo funcionan las historias en Telar
-- [Contenido enriquecido](/guia/tu-contenido/contenido-enriquecido/) — Referencia de formato *Markdown* para texto de paneles
+- [Usar un objeto IIIF en una historia](/guia/el-compositor/iiif-a-historia/)
+- [Inicio y navegación](/guia/el-compositor/panel-de-control/)
+- [Video y audio](/guia/el-compositor/video-y-audio/)
+- [Publicación](/guia/el-compositor/publicacion/)
