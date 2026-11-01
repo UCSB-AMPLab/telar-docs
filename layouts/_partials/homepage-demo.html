@@ -1,0 +1,19 @@
+<section class="section telar-demo-section" id="about" aria-labelledby="about-title" data-telar-demo>
+  <div class="telar-demo-layout">
+    <div class="about telar-about-copy">
+      <h2 id="about-title"><span data-lang="en" lang="en">What is Telar?</span><span data-lang="es" lang="es">¿Qué es Telar?</span></h2>
+      <p data-lang="en" lang="en">Telar (Spanish for "loom") weaves together images, video, audio, narrative text, and layered contextual information into interactive visual narrative exhibitions. It follows minimal computing principles: plain text authoring, static generation, and sustainable hosting.</p>
+      <p data-lang="es" lang="es">Telar entreteje imágenes, video, audio, texto narrativo e información contextual en exhibiciones narrativas visuales e interactivas. Sigue los principios de computación mínima: autoría en texto plano, generación estática y alojamiento sostenible.</p>
+    </div>
+    <figure class="telar-demo-media">
+      <div class="telar-demo-player" data-demo-frame>
+        <img class="telar-demo-poster" data-demo-poster width="1280" height="866" decoding="async" alt="">
+        <div class="telar-demo-embed" data-demo-embed></div>
+      </div>
+      <p class="telar-demo-error" data-demo-error role="status" hidden><span data-demo-error-text></span> <a data-demo-error-link target="_blank" rel="noopener"></a></p>
+      <noscript><p><a href="https://player.vimeo.com/video/1241792049?h=68f09533de" data-lang="en">Watch on Vimeo</a><a href="https://player.vimeo.com/video/1241745045?h=9f98bd213d" data-lang="es">Ver en Vimeo</a></p></noscript>
+    </figure>
+  </div>
+  <div class="visually-hidden" data-demo-transcript></div>
+</section>
+<script id="telar-demo-config" type="application/json">{{ hugo.Data.homepage_demo | jsonify | safeJS }}</script>

@@ -1,0 +1,371 @@
+<div class="cg-container" data-telar-version="{{ site.Params.telar_version }}" data-telar-release-date="{{ site.Params.telar_release_date }}">
+
+  <!-- Selector de modo -->
+  <div class="cg-mode-toggle">
+    <button id="cg-mode-create" class="cg-mode-btn cg-active" type="button">Crear nueva</button>
+    <button id="cg-mode-edit" class="cg-mode-btn" type="button">Editar existente</button>
+  </div>
+
+  <!-- Área de pegado (modo Editar existente) -->
+  <div id="cg-paste-area" class="cg-paste-area">
+    <p class="cg-section-desc">Pega tu <code>_config.yml</code> existente a continuación y haz clic en Cargar para llenar el formulario.</p>
+    <div class="cv-editor">
+      <div class="cv-lines" id="cg-load-lines" aria-hidden="true">1</div>
+      <textarea id="cg-load-input" class="cv-textarea" placeholder="Pega el contenido completo de tu _config.yml aquí..."></textarea>
+    </div>
+    <div class="cg-load-actions">
+      <button id="cg-load-btn" class="cg-button" type="button">Cargar</button>
+      <span id="cg-load-feedback" class="cg-load-feedback"></span>
+    </div>
+    <div id="cg-load-results" class="cv-results"></div>
+  </div>
+
+  <!-- 1. Configuración del sitio -->
+  <div class="cg-section">
+    <h3>Configuración del sitio</h3>
+    <p class="cg-section-desc">Información básica y apariencia del sitio. Estos son los ajustes más importantes para tu sitio.</p>
+
+    <div class="cg-row">
+      <label class="cg-label" for="cg-title">Título</label>
+      <div class="cg-field">
+        <input type="text" id="cg-title" class="cg-input" placeholder="Mi Exhibición Narrativa">
+        <div class="cg-warn-msg" id="cg-title-warn"></div>
+        <div class="cg-hint">El nombre de tu sitio, visible en la pestaña del navegador y en el encabezado de navegación</div>
+      </div>
+    </div>
+
+    <div class="cg-row">
+      <label class="cg-label" for="cg-description">Descripción <span class="cg-optional">(opcional)</span></label>
+      <div class="cg-field">
+        <textarea id="cg-description" class="cg-textarea-input" rows="2" placeholder="Una breve descripción de tu exhibición"></textarea>
+        <div class="cg-hint">Se usa para los metadatos de motores de búsqueda y vistas previas en redes sociales</div>
+      </div>
+    </div>
+
+    <div class="cg-row">
+      <label class="cg-label" for="cg-author">Autor <span class="cg-optional">(opcional)</span></label>
+      <div class="cg-field">
+        <input type="text" id="cg-author" class="cg-input" placeholder="Tu Nombre">
+      </div>
+    </div>
+
+    <div class="cg-row">
+      <label class="cg-label" for="cg-email">Correo electrónico <span class="cg-optional">(opcional)</span></label>
+      <div class="cg-field">
+        <input type="text" id="cg-email" class="cg-input" placeholder="tu@ejemplo.com">
+      </div>
+    </div>
+
+    <div class="cg-row">
+      <label class="cg-label" for="cg-theme">Tema</label>
+      <div class="cg-field">
+        <select id="cg-theme" class="cg-select">
+          <option value="trama" selected>trama</option>
+          <option value="paisajes">paisajes</option>
+          <option value="neogranadina">neogranadina</option>
+          <option value="santa-barbara">santa-barbara</option>
+          <option value="austin">austin</option>
+        </select>
+        <div class="cg-hint">Controla el esquema de colores y el estilo visual de tu sitio</div>
+      </div>
+    </div>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-logo-toggle">
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-logo-toggle">Usar una imagen como logo</label>
+        <div class="cg-toggle-hint cg-hint">Cuando está desactivado, el título del sitio se muestra como texto en el encabezado de navegación</div>
+      </div>
+    </div>
+    <div id="cg-logo-fields" class="cg-optional-fields">
+      <div class="cg-row">
+        <label class="cg-label" for="cg-logo-path">Ruta del logo</label>
+        <div class="cg-field">
+          <input type="text" id="cg-logo-path" class="cg-input" placeholder="telar-content/objects/logo.png">
+          <div class="cg-hint">Pon tu logo en <code>telar-content/objects/</code>. Recomendado: máx. 80px de alto, 200–300px de ancho, PNG/JPG/SVG</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cg-row">
+      <label class="cg-label" for="cg-language">Idioma</label>
+      <div class="cg-field">
+        <select id="cg-language" class="cg-select">
+          <option value="en">English (en)</option>
+          <option value="es" selected>Español (es)</option>
+        </select>
+        <div class="cg-hint">Controla todos los elementos de la interfaz: navegación, botones, etiquetas, mensajes de error. Tu contenido permanece en el idioma en que lo escribas.</div>
+      </div>
+    </div>
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-collection-mode">
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-collection-mode">Modo colección</label>
+        <div class="cg-toggle-hint cg-hint">Cuando se activa, la página principal muestra los objetos primero en una cuadrícula grande, con las historias debajo. Cuando está desactivado (predeterminado), las historias aparecen primero.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Alojamiento -->
+  <div class="cg-section">
+    <h3>Alojamiento</h3>
+    <p class="cg-section-desc">Telar está diseñado para funcionar con GitHub Pages — la mayoría de los usuarios solo necesitan su nombre de usuario y el nombre del repositorio.</p>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-ghpages" checked>
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-ghpages">Alojar en GitHub Pages</label>
+        <div class="cg-toggle-hint cg-hint">Si no usas GitHub Pages, desactiva esta opción para ingresar tu URL manualmente.</div>
+      </div>
+    </div>
+
+    <div id="cg-ghpages-fields" class="cg-optional-fields cg-visible">
+      <div class="cg-row">
+        <label class="cg-label" for="cg-gh-username">Usuario de GitHub</label>
+        <div class="cg-field">
+          <input type="text" id="cg-gh-username" class="cg-input" placeholder="usuario">
+          <div class="cg-error-msg" id="cg-gh-username-error"></div>
+        </div>
+      </div>
+      <div class="cg-row">
+        <label class="cg-label" for="cg-gh-repo">Nombre del repositorio</label>
+        <div class="cg-field">
+          <input type="text" id="cg-gh-repo" class="cg-input" placeholder="mi-exhibicion">
+          <div class="cg-error-msg" id="cg-gh-repo-error"></div>
+          <div class="cg-warn-msg" id="cg-gh-repo-warn"></div>
+        </div>
+      </div>
+
+      <div class="cg-toggle-row">
+        <label class="cg-toggle">
+          <input type="checkbox" id="cg-custom-domain">
+          <span class="cg-track"></span>
+        </label>
+        <div class="cg-toggle-info">
+          <label class="cg-toggle-label" for="cg-custom-domain">Dominio personalizado</label>
+          <div class="cg-toggle-hint cg-hint">¿Tienes un dominio personalizado configurado con GitHub Pages? <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener">Aprende cómo configurarlo</a></div>
+        </div>
+      </div>
+
+      <div id="cg-custom-domain-fields" class="cg-optional-fields">
+        <div class="cg-row">
+          <label class="cg-label" for="cg-domain-url">URL del dominio</label>
+          <div class="cg-field">
+            <input type="text" id="cg-domain-url" class="cg-input" placeholder="https://minombre.org">
+            <div class="cg-error-msg" id="cg-domain-url-error"></div>
+            <div class="cg-warn-msg" id="cg-domain-url-warn"></div>
+          </div>
+        </div>
+        <div class="cg-toggle-row">
+          <label class="cg-toggle">
+            <input type="checkbox" id="cg-root-domain">
+            <span class="cg-track"></span>
+          </label>
+          <div class="cg-toggle-info">
+            <label class="cg-toggle-label" for="cg-root-domain">Servir desde el dominio raíz</label>
+            <div class="cg-toggle-hint cg-hint">Cuando está activado, tu sitio se sirve desde la raíz del dominio. Cuando está desactivado, se sirve en dominio.com/nombre-repo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="cg-manual-fields" class="cg-optional-fields">
+      <div class="cg-row">
+        <label class="cg-label" for="cg-manual-url">URL</label>
+        <div class="cg-field">
+          <input type="text" id="cg-manual-url" class="cg-input" placeholder="https://misitio.org">
+          <div class="cg-error-msg" id="cg-manual-url-error"></div>
+          <div class="cg-hint">El dominio base de tu sitio</div>
+        </div>
+      </div>
+      <div class="cg-row">
+        <label class="cg-label" for="cg-manual-baseurl">Baseurl</label>
+        <div class="cg-field">
+          <input type="text" id="cg-manual-baseurl" class="cg-input" placeholder="/mi-sitio">
+          <div class="cg-hint">Ruta después del dominio. Déjalo vacío para servir desde la raíz.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Integración con Google Sheets -->
+  <div class="cg-section">
+    <h3>Integración con Google Sheets</h3>
+    <p class="cg-section-desc">Administra tu contenido a través de Google Sheets en vez de editar archivos CSV directamente. Telar obtiene tus datos automáticamente en cada <em>build</em>.</p>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-gsheets-toggle" checked>
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-gsheets-toggle">Activar Google Sheets</label>
+        <div class="cg-toggle-hint cg-hint">Cuando está desactivado, Telar usa los archivos CSV de tu repositorio — asegúrate de tenerlos en <code>telar-content/spreadsheets/</code></div>
+      </div>
+    </div>
+
+    <div id="cg-gsheets-fields" class="cg-optional-fields cg-visible">
+      <div class="cg-row">
+        <label class="cg-label" for="cg-gsheets-published">URL publicada</label>
+        <div class="cg-field">
+          <input type="text" id="cg-gsheets-published" class="cg-input" placeholder="https://docs.google.com/spreadsheets/d/e/your-published-id/pubhtml">
+          <div class="cg-error-msg" id="cg-gsheets-published-error"></div>
+          <div class="cg-warn-msg" id="cg-gsheets-published-warn"></div>
+          <div class="cg-hint">Desde Archivo → Compartir → Publicar en la web</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Interfaz de historias -->
+  <div class="cg-section">
+    <h3>Interfaz de historias</h3>
+    <p class="cg-section-desc">Controla cómo se muestran y se comportan las historias en tu sitio. Estos ajustes afectan al visor de historias y la presentación en la página de inicio.</p>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-show-on-homepage" checked>
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-show-on-homepage">Mostrar historias en la página de inicio</label>
+        <div class="cg-toggle-hint cg-hint">Cuando está activado, las tarjetas de historia aparecen en la página de inicio. Las historias siguen siendo accesibles por navegación cuando está desactivado.</div>
+      </div>
+    </div>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-show-story-steps" checked>
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-show-story-steps">Mostrar indicadores de paso en las historias</label>
+        <div class="cg-toggle-hint cg-hint">Muestra "Paso 1", "Paso 2", etc. al desplazarte por una historia. Es puramente visual.</div>
+      </div>
+    </div>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-show-object-credits" checked>
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-show-object-credits">Mostrar créditos de objetos</label>
+        <div class="cg-toggle-hint cg-hint">Muestra un distintivo de créditos desplegable en la esquina inferior izquierda del visor de historias. La información de créditos siempre aparece en la tabla de metadatos.</div>
+      </div>
+    </div>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-include-demo-content" checked>
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-include-demo-content">Incluir contenido de demostración</label>
+        <div class="cg-toggle-hint cg-hint">Obtiene historias de demostración del servidor de contenido de Telar. Muestran un distintivo "Demo" y ayudan a los nuevos usuarios a explorar la interfaz. Desactívalo en sitios en producción.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Interfaz de la colección -->
+  <div class="cg-section">
+    <h3>Interfaz de la colección</h3>
+    <p class="cg-section-desc">Controla cómo se muestra y se comporta la galería de objetos, incluyendo filtrado, búsqueda y presentación en la página de inicio.</p>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-browse-and-search" checked>
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-browse-and-search">Mostrar la interfaz completa de exploración y búsqueda</label>
+        <div class="cg-toggle-hint cg-hint">Activa la barra lateral de filtros con facetas en la página de objetos</div>
+      </div>
+    </div>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-show-link-on-homepage" checked>
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-show-link-on-homepage">Mostrar enlace a objetos en la página de inicio</label>
+        <div class="cg-toggle-hint cg-hint">Muestra un enlace "Ver los objetos" en la página de inicio</div>
+      </div>
+    </div>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-show-sample-on-homepage" checked>
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-show-sample-on-homepage">Mostrar una muestra de objetos en la página de inicio</label>
+        <div class="cg-toggle-hint cg-hint">Muestra en la página de inicio los objetos marcados como destacados en tu objects.csv</div>
+      </div>
+    </div>
+
+    <div class="cg-row">
+      <label class="cg-label" for="cg-featured-count">Cantidad de destacados</label>
+      <div class="cg-field">
+        <input type="number" id="cg-featured-count" class="cg-input cg-input--number" value="4" min="1">
+        <div class="cg-hint">Número de objetos a mostrar en la muestra de la página de inicio</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Historias privadas -->
+  <div class="cg-section">
+    <h3>Historias privadas</h3>
+    <p class="cg-section-desc">Encripta las historias para que solo los espectadores con la clave correcta puedan acceder a ellas. Las historias con <code>private: yes</code> en tu project.csv (o en la pestaña Proyecto de Google Sheets) se encriptarán durante el <em>build</em>.</p>
+
+    <div class="cg-toggle-row">
+      <label class="cg-toggle">
+        <input type="checkbox" id="cg-protection-toggle">
+        <span class="cg-track"></span>
+      </label>
+      <div class="cg-toggle-info">
+        <label class="cg-toggle-label" for="cg-protection-toggle">Activar historias privadas</label>
+        <div class="cg-toggle-hint cg-hint">Usa encriptación del lado del cliente. Previene el acceso casual, pero no es adecuado para contenido altamente sensible.</div>
+      </div>
+    </div>
+
+    <div id="cg-protection-fields" class="cg-optional-fields">
+      <div class="cg-row">
+        <label class="cg-label" for="cg-secret-key">Clave secreta</label>
+        <div class="cg-field">
+          <input type="text" id="cg-secret-key" class="cg-input" placeholder="tu-clave-secreta">
+          <div class="cg-error-msg" id="cg-secret-key-error"></div>
+          <div class="cg-warn-msg" id="cg-secret-key-warn"></div>
+          <div class="cg-hint">Los espectadores acceden a las historias protegidas mediante <code>?key=tu-clave-secreta</code></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Acciones -->
+  <div class="cg-actions">
+    <button id="cg-generate" class="cg-button" type="button">Generar</button>
+    <button id="cg-copy" class="cg-button" type="button" style="display: none;">Copiar</button>
+    <span id="cg-copied" class="cg-copied">¡Copiado!</span>
+  </div>
+
+  <!-- 8. Salida -->
+  <div id="cg-output-wrapper" class="cg-output-wrapper">
+    <p class="cg-output-heading">Archivo _config.yml generado</p>
+    <div class="cv-editor">
+      <div class="cv-lines" id="cg-lines" aria-hidden="true">1</div>
+      <textarea id="cg-output" class="cv-textarea" readonly wrap="off"></textarea>
+    </div>
+  </div>
+
+</div>

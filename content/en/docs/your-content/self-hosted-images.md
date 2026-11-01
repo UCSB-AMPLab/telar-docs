@@ -1,0 +1,127 @@
+---
+title: Self-Hosted Images
+url: /docs/your-content/self-hosted-images/
+translationKey: docs-your-content-self-hosted-images
+type: guide
+docs_section: reference
+---
+
+# Self-Hosted Images {#self-hosted-images}
+
+If you have your own images — photographs, scans of documents, maps — you can upload them directly to your Telar site. Telar automatically converts them into zoomable, high-resolution tiles so viewers can explore every detail.
+
+You can also host audio files (MP3, OGG, M4A) in the same directory. Telar auto-detects the file type and displays the appropriate player.
+
+This process uses a technology called [IIIF](https://iiif.io/) (International Image Interoperability Framework) behind the scenes for images, but you don't need to understand IIIF to use self-hosted files. Just upload your files and Telar handles the rest.
+
+## Adding images {#adding-images}
+
+Each image needs to match an object defined in your spreadsheet. The filename (without its extension) must match the object's `object_id`.
+
+For example, if your spreadsheet has an object with `object_id` = `textile-001`, name your image file `textile-001.jpg`.
+
+**From the GitHub web interface:**
+
+1. Navigate to `telar-content/objects/` in your repository
+2. Click **Add file** > **Upload files**
+3. Drag your images into the upload area
+4. Make sure filenames match your object IDs
+5. Commit changes
+
+**For local development:**
+
+1. Place your images in `telar-content/objects/`
+2. Generate the IIIF tiles:
+   ```bash
+   python3 scripts/generate_iiif.py --base-url http://localhost:4001
+   ```
+
+{{< callout "note" >}}
+Telar only generates tiles for objects listed in your spreadsheet that don't already have an external IIIF source. This is automatic — just add your images and they'll be processed during the next build.
+{{< /callout >}}
+
+## Supported file formats {#supported-file-formats}
+
+- **JPG, PNG, HEIC, WebP, TIFF, GIF, BMP** — all common image formats work
+- **SVG** — vector drawings, maps and diagrams. Telar renders these to images when it builds your site (see below)
+- **PDF** — each page of a document becomes its own zoomable image. See [PDF Documents](/docs/your-content/pdf-documents/)
+- **MP3, OGG, M4A** — audio files are also placed in `telar-content/objects/`
+- Case doesn't matter: `.JPG`, `.png`, `.Tiff` are all fine
+- **Resolution**: Higher is better — at least 2000px on the longest side is recommended for good zoom quality
+- **Size limits**: Individual images up to 100 MB; keep the total repository under 1 GB for GitHub
+
+{{< callout "tip" >}}
+**iPhone photos work directly.** HEIC photos from iPhones are supported natively — no need to convert them first. Telar converts them to JPEG automatically during tile generation while keeping your originals.
+{{< /callout >}}
+
+{{< callout "tip" >}}
+**SVG drawings become images.** When Telar builds the site it renders each SVG to an image 4000 pixels on its longest side and generates the tiles from that. Your original file is kept, but zoom stops at that resolution, so a drawing with very fine detail may look soft at full zoom. If you need more detail, export the drawing to PNG or TIFF at a larger size and upload that instead.
+{{< /callout >}}
+
+{{< callout "tip" >}}
+**Naming tip.** Use simple, descriptive IDs without spaces or special characters: `textile-001.jpg`, `ceramic-bowl-blue.jpg`
+{{< /callout >}}
+
+## How it works {#how-it-works}
+
+When you add an image and build your site:
+
+1. Telar creates tiled versions at multiple zoom levels
+2. Tiles are saved to `iiif/objects/{object-id}/`
+3. A manifest file describes the image structure
+4. The viewer loads tiles progressively — only the visible area at the current zoom level, not the entire image
+
+This allows smooth zooming even on very large images.
+
+{{< callout "note" >}}
+**Fast tile generation with libvips.** Telar uses [libvips](https://www.libvips.org/) for IIIF tile generation when available, which is roughly 28x faster than the pure-Python fallback. If libvips is not installed, Telar falls back to the Python `iiif` library automatically. See [Local Development](/docs/developers/local-development/) for installation instructions.
+{{< /callout >}}
+
+## Coordinate system {#coordinate-system}
+
+Telar uses normalized coordinates (values from 0 to 1) to describe positions within an image:
+
+- **x**: Horizontal position (0 = left edge, 1 = right edge)
+- **y**: Vertical position (0 = top edge, 1 = bottom edge)
+- **zoom**: Zoom level (1.0 = full image, 2.0 = 2x zoom, etc.)
+
+You use these coordinates in your story steps to tell Telar where to zoom in on each image.
+
+### Finding coordinates {#finding-coordinates}
+
+Each object page includes a built-in coordinate picker:
+
+1. Navigate to any object page on your site
+2. Click the **Identify coordinates** button
+3. Pan and zoom to the view you want
+4. Copy the X, Y, and Zoom values
+5. Paste them into your story spreadsheet or CSV
+
+{{< callout "tip" >}}
+The coordinate tool has a **Copy entire row** button that copies a complete row template with the coordinates already filled in — ready to paste into your spreadsheet.
+{{< /callout >}}
+
+## Troubleshooting {#troubleshooting}
+
+### Image not loading {#image-not-loading}
+
+- Check that the file exists in `telar-content/objects/`
+- Make sure the filename (without extension) matches the `object_id` in your spreadsheet
+- Verify the object has a blank `source_url` column (otherwise Telar expects an external image)
+- Make sure IIIF tiles have been generated (check that `iiif/objects/{object-id}/` exists)
+
+### Low quality display {#low-quality-display}
+
+- Use higher resolution source images (at least 2000px on the longest side)
+- Very small images won't look good when zoomed in
+
+### Slow loading {#slow-loading}
+
+- Optimize file sizes before uploading (large TIFFs can be converted to high-quality JPEGs)
+- GitHub Pages has bandwidth limits — for high-traffic sites, consider alternative hosting
+
+## See also {#see-also}
+
+- [External IIIF Images](/docs/your-content/external-iiif/) — Use images from museums and libraries instead of uploading your own
+- [Objects](/docs/your-content/objects/) — How to define objects in your spreadsheet
+- [Object Columns](/docs/your-data/csv-objects/) — Complete column reference for the objects spreadsheet

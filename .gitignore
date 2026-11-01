@@ -1,28 +1,8 @@
-# Jekyll build files
-_site/
-.jekyll-cache/
-.jekyll-metadata
-.sass-cache/
-
-# Ruby/Bundler
-vendor/
-.bundle/
-Gemfile.lock
-
-# macOS
+node_modules/
+public/
+resources/
+.hugo_build.lock
 .DS_Store
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Logs
 *.log
-
-# Screenshot automation
-screenshots/google-auth.json
-screenshots/gifs/_tmp_video/
-screenshots/gifs/_tmp_frames/
+reports/
+.build-result.json

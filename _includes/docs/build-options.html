@@ -1,4 +1,0 @@
-{% assign lang = page.lang %}{% assign routes = site.data.docs_navigation.routes[lang] %}{% assign c = site.data.guides.copy[lang] %}{% assign q = site.data.guides.quick[lang] %}
-<div class="chapter-outcome"><strong>{% if lang == 'es' %}¿Vienes a un taller?{% else %}Here for a workshop?{% endif %}</strong><p><a href="{{ routes.quick }}">{{ q.title }} →</a></p></div>
-<p><a href="{{ routes.planning }}">{{ c.plan_title }} →</a></p>
-<div class="manual-cards">{% for manual in site.data.guides.manuals %}{% assign m = manual[lang] %}<article class="manual-card"><span class="card-index">0{{ forloop.index }}</span><p class="eyebrow">{{ m.tag }}</p><h2>{{ m.title }}</h2><p>{{ m.text }}</p><a href="{{ m.href }}">{{ m.link }} →</a></article>{% endfor %}</div>

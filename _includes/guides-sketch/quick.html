@@ -1,8 +1,0 @@
-{% assign q = site.data.guides_sketch.quick[page.lang] %}{% assign c = site.data.guides_sketch.copy[page.lang] %}{% assign es = false %}{% if page.lang == "es" %}{% assign es = true %}{% endif %}
-<nav class="breadcrumbs" aria-label="{% if es %}Ruta de navegación{% else %}Breadcrumbs{% endif %}"><a href="/guide-sketch/{{ page.lang }}/">{{ c.guides }}</a><span aria-hidden="true">/</span><span>{{ q.title }}</span></nav>
-<p class="eyebrow">{{ q.tag }}</p><h1>{{ q.title }}</h1><p class="lede">{{ q.intro }}</p>
-<div class="quick-links"><a href="https://compositor.telar.org">{{ c.compositor }} ↗</a><a href="https://telar.org/workshop/">{{ c.workshop }} ↗</a><a href="/assets/templates/telar-worksheet.pdf">{{ c.worksheet }} ↓</a><button class="print-guide" type="button" onclick="window.print()">{{ q.print }}</button></div>
-<div class="chapter-outcome"><strong>{{ q.saved }}</strong><p>{{ q.saved_text }}</p></div>
-<ol class="quick-steps">{% for step in site.data.guides_sketch.quick_steps %}{% assign item = step[page.lang] %}<li id="{{ step.id }}"><h2>{{ item.title }}</h2><p>{{ item.text }}</p><a href="{{ item.href }}">{{ item.link }} →</a></li>{% endfor %}</ol>
-<div class="workshop-link-note"><strong>{{ q.shortlink }}</strong><p>{{ q.shortlink_note }}</p></div>
-<h2>{{ q.after }}</h2><p>{{ q.after_text }}</p><a class="button" href="/guide-sketch/{{ page.lang }}/">{{ c.guide_home }} →</a>

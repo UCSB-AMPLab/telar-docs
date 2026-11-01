@@ -1,0 +1,107 @@
+{{ $lang := $.Language.Lang }}{{ $es := false }}{{ if (eq $lang "es") }}{{ $es = true }}{{ end }}{{ $nav := (index hugo.Data "docs_navigation") }}{{ $routes := (index (index $nav "routes") $lang) }}{{ $book := (index (index (index $nav "sections") $lang) $.Params.docs_section) }}
+<h1>{{ (index $book "title") }}</h1>
+
+{{ if eq $.Params.docs_section "sheets" }}
+{{ if $es }}
+<p class="lede">La autoría con Google Sheets te permite crear una exhibición en Telar desde una hoja de cálculo compartida. Registras tus fuentes, organizas los pasos de las historias y escribes los textos en filas y columnas; Telar lee ese contenido y genera el sitio web.</p>
+<p>Esta forma de trabajo es útil si prefieres editar en una hoja de cálculo, revisar varios registros a la vez o escribir con un equipo. La hoja reúne el contenido narrativo y los metadatos. Las imágenes y los demás medios se cargan desde sus direcciones de origen o desde los archivos del sitio.</p>
+<h2>Cómo se organiza la hoja de cálculo</h2>
+<ul>
+<li><code>objects</code> reúne el catálogo de fuentes, con sus descripciones, créditos y direcciones.</li>
+<li><code>project</code> enumera las historias y define su orden en la exhibición.</li>
+<li>Cada historia tiene su propia pestaña. Cada fila corresponde a un paso y relaciona el texto con un objeto, su encuadre y sus paneles.</li>
+<li><code>glossary</code> define términos que puedes enlazar desde los textos.</li>
+</ul>
+<h2>Cómo funciona</h2>
+<ol>
+<li><strong>Prepara el sitio y la hoja.</strong> Crea un repositorio de Telar en GitHub, copia la plantilla de Google Sheets y conecta su dirección publicada con el sitio.</li>
+<li><strong>Escribe y organiza.</strong> Registra objetos, agrega historias y pasos, y desarrolla los textos. Usa el visor del sitio para elegir los encuadres.</li>
+<li><strong>Genera y revisa.</strong> Ejecuta el proceso de generación en GitHub para incorporar el contenido actualizado de la hoja. Abre el sitio y comprueba el resultado.</li>
+</ol>
+<p>Editar una celda no actualiza de inmediato el sitio público. Cada generación lee la versión publicada de la hoja y produce una nueva versión de la exhibición.</p>
+<h2>Antes de comenzar</h2>
+<p>Necesitas cuentas de Google y GitHub. La <a href="/guia/primeros-pasos/google-sheets/">configuración guiada</a> te acompaña desde la copia de las plantillas hasta la conexión del sitio y genera el archivo de configuración. Si todavía estás desarrollando la narrativa, empieza por <a href="{{ (index $routes "planning") }}">Planear una exhibición</a>.</p>
+{{ else }}
+<p class="lede">The Google Sheets workflow lets you author a Telar exhibition in a shared spreadsheet. You catalogue your sources, arrange story steps and write narrative text in rows and columns; Telar reads that content and builds the website.</p>
+<p>This approach suits people who prefer a spreadsheet, want to review several records at once or write with a team. The sheet brings together narrative content and metadata. Images and other media load from their source addresses or from files in your site.</p>
+<h2>How the spreadsheet fits together</h2>
+<ul>
+<li><code>objects</code> holds your source catalogue, including descriptions, credits and addresses.</li>
+<li><code>project</code> lists the stories and sets their order in the exhibition.</li>
+<li>Each story has its own tab. Each row is a step, connecting text to an object, its framing and its panels.</li>
+<li><code>glossary</code> defines terms you can link from your text.</li>
+</ul>
+<h2>How it works</h2>
+<ol>
+<li><strong>Set up the site and sheet.</strong> Create a Telar repository on GitHub, copy the Google Sheets template and connect its published address to the site.</li>
+<li><strong>Write and arrange.</strong> Catalogue objects, add stories and steps, and develop the text. Use the site's viewer to choose image framings.</li>
+<li><strong>Build and review.</strong> Run the build on GitHub to bring in the updated sheet content. Open the website and check the result.</li>
+</ol>
+<p>Editing a cell does not immediately update the public site. Each build reads the published sheet and produces a new edition of the exhibition.</p>
+<h2>Before you begin</h2>
+<p>You need Google and GitHub accounts. The <a href="/docs/getting-started/google-sheets/">guided setup</a> takes you from copying the templates to connecting the site and generates your configuration file. If you are still developing the narrative, begin with <a href="{{ (index $routes "planning") }}">Plan an exhibition</a>.</p>
+{{ end }}
+{{ else if eq $.Params.docs_section "local" }}
+{{ if $es }}
+<p class="lede">La autoría local consiste en editar los archivos de tu exhibición en tu computador y generar allí una vista previa. Trabajas con archivos CSV y Markdown en el editor que prefieras y usas las herramientas de Telar para convertirlos en un sitio web.</p>
+<p>Elige esta forma de trabajo si quieres acceso directo a los archivos, personalizar el sitio o controlar el proceso de generación y el alojamiento. El resultado es un sitio estático que puedes publicar en GitHub Pages o en otro servidor web.</p>
+<h2>Los archivos con los que trabajas</h2>
+<ul>
+<li><strong>CSV:</strong> tablas en texto plano para el catálogo de objetos, la lista de historias, los pasos y el glosario.</li>
+<li><strong>Markdown:</strong> archivos de texto para paneles extensos, entradas del glosario y páginas de apoyo.</li>
+<li><strong>Archivos de medios:</strong> imágenes y otros materiales que alojas en tu sitio. También puedes referenciar objetos IIIF y medios alojados en otras colecciones.</li>
+<li><strong>Configuración:</strong> archivos que definen el título, el idioma, el tema y la navegación del sitio.</li>
+</ul>
+<h2>Cómo funciona</h2>
+<ol>
+<li><strong>Prepara una copia local.</strong> Obtén los archivos de Telar e instala las herramientas necesarias para generar el sitio.</li>
+<li><strong>Edita y previsualiza.</strong> Agrega las fuentes, escribe las historias y genera una vista previa en tu navegador. Repite este proceso para revisar los encuadres, los textos y los enlaces.</li>
+<li><strong>Publica.</strong> Envía los cambios al repositorio de GitHub para generar el sitio público o aloja los archivos generados en el servidor que elijas.</li>
+</ol>
+<p>La vista previa local te permite revisar el trabajo antes de publicarlo. Conserva los archivos de autoría: son la fuente para las revisiones y las futuras versiones del sitio.</p>
+<h2>Antes de comenzar</h2>
+<p>Debes poder trabajar con carpetas, editar archivos de texto y ejecutar comandos en una terminal. La <a href="/guia/primeros-pasos/desarrollo-local/">guía de instalación</a> explica las herramientas necesarias: Ruby, Python, Node.js y Git. Si todavía estás desarrollando la narrativa, empieza por <a href="{{ (index $routes "planning") }}">Planear una exhibición</a>.</p>
+{{ else }}
+<p class="lede">Local authoring means editing your exhibition's source files on your computer and generating a preview there. You work with CSV and Markdown files in your preferred editor and use Telar's tools to turn them into a website.</p>
+<p>Choose this approach if you want direct access to the files, want to customise the site or need control over building and hosting it. The result is a static site you can publish on GitHub Pages or another web server.</p>
+<h2>The files you work with</h2>
+<ul>
+<li><strong>CSV:</strong> plain-text tables for the object catalogue, story list, steps and glossary.</li>
+<li><strong>Markdown:</strong> text files for longer panels, glossary entries and supporting pages.</li>
+<li><strong>Media files:</strong> images and other materials hosted by your site. You can also reference IIIF objects and media hosted by other collections.</li>
+<li><strong>Configuration:</strong> files that define the site's title, language, theme and navigation.</li>
+</ul>
+<h2>How it works</h2>
+<ol>
+<li><strong>Set up a local copy.</strong> Get the Telar source files and install the tools needed to build the site.</li>
+<li><strong>Edit and preview.</strong> Add your sources, write stories and build a preview in your browser. Repeat as you check framings, text and links.</li>
+<li><strong>Publish.</strong> Send changes to your GitHub repository to build the public site, or host the generated files on your chosen server.</li>
+</ol>
+<p>The local preview lets you review the work before publishing. Keep your editable source files: they are the starting point for revisions and future editions of the site.</p>
+<h2>Before you begin</h2>
+<p>You should be comfortable working with folders, editing text files and running commands in a terminal. The <a href="/docs/getting-started/local-dev/">installation guide</a> covers the tools you need: Ruby, Python, Node.js and Git. If you are still developing the narrative, begin with <a href="{{ (index $routes "planning") }}">Plan an exhibition</a>.</p>
+{{ end }}
+{{ else if eq $.Params.docs_section "reference" }}
+<p class="lede">{{ if $es }}Consulta formatos, contenido, configuración y funciones que comparten las tres formas de construir una exhibición.{{ else }}Look up formats, content, configuration and features shared by the three ways of building an exhibition.{{ end }}</p>
+<p>{{ if $es }}Para un recorrido paso a paso, elige uno de los manuales desde el menú. Aquí puedes ir directamente al tema que necesitas.{{ else }}For a step-by-step walkthrough, choose one of the manuals from the section menu. Here you can go straight to the topic you need.{{ end }}</p>
+{{ else if eq $.Params.docs_section "teaching" }}
+<p class="lede">{{ if $es }}Planea un taller o un proyecto de clase que empiece por las fuentes y las preguntas que tus estudiantes quieren explorar.{{ else }}Plan a workshop or a classroom project that begins with sources and the questions your students want to explore.{{ end }}</p>
+<section class="teaching-access-card" aria-labelledby="teaching-access-heading">
+<h2 id="teaching-access-heading">{{ if $es }}Usa el Compositor con tu clase{{ else }}Use the Compositor with your class{{ end }}</h2>
+<p>{{ if $es }}El modo docente permite compartir una colección de objetos con la clase, trabajar en sitios de grupos de estudiantes y revisar sus exhibiciones desde un espacio de curso.{{ else }}Teaching mode lets you share an object collection with a class, work with student-group sites and review their exhibitions from a course workspace.{{ end }}</p>
+<p>{{ if $es }}El acceso se habilita por solicitud. Cuéntanos sobre tu curso o taller para que podamos ayudarte a comenzar.{{ else }}Access is enabled on request. Tell us about your course or workshop so we can help you get started.{{ end }}</p>
+<div class="resource-links"><a class="button" href="{{ if $es }}/guia/ensenar/solicitar-acceso/{{ else }}/docs/teaching/request-access/{{ end }}">{{ if $es }}Solicita acceso al modo docente{{ else }}Request teaching-mode access{{ end }}</a><a href="{{ if $es }}/guia/el-compositor/cursos/{{ else }}/docs/the-compositor/courses/{{ end }}">{{ if $es }}Cómo funcionan los cursos{{ else }}How courses work{{ end }} →</a></div>
+</section>
+<div class="resource-grid">
+<section class="resource-card"><h2>{{ if $es }}Durante el taller{{ else }}During a workshop{{ end }}</h2><p>{{ if $es }}Comparte el acceso corto y usa los seis pasos para acompañar la creación de una primera historia.{{ else }}Share the short link and use the six steps to guide the creation of a first story.{{ end }}</p><a href="{{ (index $routes "quick") }}">{{ if $es }}Guía rápida · /empezar{{ else }}Quick guide · /start{{ end }} →</a></section>
+<section class="resource-card"><h2>{{ if $es }}Planeación narrativa{{ else }}Narrative planning{{ end }}</h2><p>{{ if $es }}Combina las diapositivas con el planeador para ordenar preguntas, fuentes y capas antes de editar.{{ else }}Combine the slides and planner to arrange questions, sources and layers before editing.{{ end }}</p><div class="resource-links"><a href="https://telar.org/workshop/">{{ if $es }}Diapositivas{{ else }}Slides{{ end }} ↗</a><a href="/assets/templates/telar-worksheet.pdf">{{ if $es }}Planeador{{ else }}Planner{{ end }} ↓</a></div></section></div>
+<h2>{{ if $es }}Del ejercicio a la exhibición{{ else }}From exercise to exhibition{{ end }}</h2>
+<p><a href="{{ (index $routes "planning") }}">{{ if $es }}La guía de planeación{{ else }}The planning guide{{ end }}</a> {{ if $es }}ayuda a definir el público, la pregunta central y las fuentes de un proyecto. Los <a href="/proyectos/">proyectos hechos con Telar</a> permiten conversar sobre decisiones narrativas concretas.{{ else }}helps define a project's audience, guiding question and sources. <a href="/showcase/">Projects made with Telar</a> offer examples for discussing narrative choices.{{ end }}</p>
+<h2>{{ if $es }}Compartir el trabajo{{ else }}Sharing the work{{ end }}</h2>
+<ul><li><a href="{{ if $es }}/guia/funciones/insercion/{{ else }}/docs/site-features/embedding/{{ end }}">{{ if $es }}Insertar una exhibición en Canvas{{ else }}Embed an exhibition in Canvas{{ end }}</a></li><li><a href="{{ if $es }}/guia/funciones/historias-privadas/{{ else }}/docs/site-features/private-stories/{{ end }}">{{ if $es }}Entender las historias privadas{{ else }}Understand private stories{{ end }}</a></li><li><a href="{{ (index $routes "compositor") }}">{{ if $es }}Trabajar con el Compositor{{ else }}Work with the Compositor{{ end }}</a></li></ul>
+{{ end }}
+{{ if not (eq $.Params.docs_section "teaching") }}
+{{ if (eq $.Params.docs_section "reference") }}<div class="reference-groups">{{ range $loopIndex, $group := (index $book "groups") }}{{ if not (eq (index $group "id") "main") }}<section><h2>{{ (index $group "title") }}</h2><ul>{{ range $loopIndex, $item := (index $group "items") }}<li><a href="{{ (index $item "url") }}">{{ (index $item "title") }}</a></li>{{ end }}</ul></section>{{ end }}{{ end }}</div>
+{{ else }}<h2>{{ if $es }}En este manual{{ else }}In this manual{{ end }}</h2><ol class="manual-contents">{{ range $loopIndex, $item := (index $book "items") }}{{ if not (eq (index $item "url") $.RelPermalink) }}<li><a href="{{ (index $item "url") }}">{{ (index $item "title") }}</a></li>{{ end }}{{ end }}</ol>
+<h2>{{ if $es }}Referencia para tu trabajo{{ else }}Reference for your work{{ end }}</h2><ul><li><a href="{{ if $es }}/guia/tus-datos/{{ else }}/docs/your-data/{{ end }}">{{ if $es }}Archivos y columnas{{ else }}Files and columns{{ end }}</a></li><li><a href="{{ if $es }}/guia/tu-contenido/{{ else }}/docs/your-content/{{ end }}">{{ if $es }}Fuentes y contenido{{ else }}Sources and content{{ end }}</a></li><li><a href="{{ if $es }}/guia/configurar/configuracion/{{ else }}/docs/configure/configuration/{{ end }}">{{ if $es }}Configuración del sitio{{ else }}Site configuration{{ end }}</a></li></ul>{{ end }}
+{{ end }}

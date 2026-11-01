@@ -1,0 +1,141 @@
+---
+title: Columnas del proyecto
+url: /guia/tus-datos/csv-proyecto/
+translationKey: docs-your-data-csv-project
+type: guide
+docs_section: reference
+---
+
+# Columnas del proyecto {#columnas-del-proyecto}
+
+Referencia completa de las columnas de `project.csv` con soporte bilingüe de nombres de columnas.
+
+## Descripción general {#descripción-general}
+
+Telar v0.6.0+ admite columnas CSV en inglés y español. Puedes usar cualquiera de los dos idiomas de forma consistente, mezclarlos o incluir encabezados dobles para referencia bilingüe.
+
+### Normalización de columnas {#normalización-de-columnas}
+
+Todos los nombres de columnas se normalizan durante el procesamiento:
+- Sin distinción entre mayúsculas y minúsculas (`Title` = `title` = `TITLE`)
+- Espacios recortados
+- Nombres en español mapeados a equivalentes en inglés
+- Caracteres con tilde admitidos
+
+### Soporte de encabezados dobles {#soporte-de-encabezados-dobles}
+
+Incluye encabezados en inglés y español para equipos bilingües:
+
+```csv
+order,story_id,title,subtitle,byline
+orden,id_historia,titulo,subtitulo,firma
+1,colonial-textiles,Colonial Textiles,Weaving traditions,by Dr. Smith
+2,textiles-coloniales,Textiles Coloniales,Tradiciones textiles,por Dra. García
+```
+
+Telar detecta automáticamente y omite la segunda fila de encabezado.
+
+## CSV de proyecto (project.csv / proyecto.csv) {#csv-de-proyecto-projectcsv--proyectocsv}
+
+Define las historias y su orden de visualización en la página principal.
+
+**Ubicación**: `telar-content/spreadsheets/project.csv` o `telar-content/spreadsheets/proyecto.csv`
+
+### Columnas {#columnas}
+
+| Inglés | Español | Requerido | Descripción |
+|--------|---------|-----------|-------------|
+| `order` | `orden` | Sí | Orden de visualización en la página principal (1, 2, 3...) |
+| `story_id` | `id_historia` | No | Identificador semántico (ej., `textiles-coloniales`). Si se omite, usa `story-{order}` |
+| `title` | `titulo` | Sí | Título de la historia mostrado en la página principal y en la historia |
+| `subtitle` | `subtitulo` | No | Descripción breve mostrada en las tarjetas de historia |
+| `byline` | `firma` | No | Atribución de autoría; admite Markdown para enlaces y formato |
+| `private` | `privada` | No | Pon `yes` para encriptar esta historia (requiere `story_key` en la configuración); también se aceptan `protected`/`protegida` |
+| `show_sections` | `mostrar_secciones` | No | Pon `si` para mostrar una tabla de contenidos en la tarjeta de inicio de la historia. Consulta [Historias y paneles: Tabla de contenidos de secciones](/guia/tu-contenido/historias-paneles/#tabla-de-contenidos-de-secciones). **Nuevo en v1.2.0** |
+
+### Ejemplo {#ejemplo}
+
+**Inglés:**
+```csv
+order,story_id,title,subtitle,byline,private,show_sections
+1,colonial-textiles,Colonial Textiles,Weaving traditions of the Americas,by Dr. Jane Smith,,yes
+2,trade-routes,Trade Routes,Following the threads of commerce,based on [original research](https://example.com),yes,
+```
+
+**Español:**
+```csv
+orden,id_historia,titulo,subtitulo,firma,privada,mostrar_secciones
+1,textiles-coloniales,Textiles Coloniales,Tradiciones de tejido de las Américas,por Dra. María García,,si
+2,rutas-comerciales,Rutas Comerciales,Siguiendo los hilos del comercio,basado en [investigación original](https://ejemplo.com),si,
+```
+
+### Notas de los campos {#notas-de-los-campos}
+
+#### order {#order}
+- Deben ser enteros únicos
+- Determina el orden de las tarjetas en la página principal
+- Se permiten saltos (1, 2, 5 funciona bien)
+- Se renumera automáticamente si se incluye contenido de demostración
+
+#### story_id {#story_id}
+- **Nuevo en v0.6.0**
+- Solo minúsculas, guiones y guiones bajos
+- Se usa para: nombre del archivo CSV de la historia, URL de la historia, referencias internas
+- Si se omite: se usa `story-1`, `story-2`, etc. según el orden
+- Ejemplos: `textiles-coloniales`, `paisajes_coloniales`, `story-one`
+
+#### title {#title}
+- Se muestra en las tarjetas de la página principal y en los encabezados de la historia
+- Sin procesamiento Markdown (solo texto plano)
+- Recomendado: 2-6 palabras
+
+#### subtitle {#subtitle}
+- Se muestra debajo del título en las tarjetas de la página principal
+- Sin procesamiento Markdown
+- Recomendado: 5-12 palabras
+- Describe brevemente el contenido de la historia
+
+#### byline {#byline}
+- **Admite Markdown** (v0.6.0+)
+- Página principal: se renderiza como texto plano
+- Página de la historia: renderiza enlaces Markdown como clicables
+- Patrones comunes:
+  - `por Dra. María García`
+  - `por María García y Juan López`
+  - `basado en [investigación original](https://example.com)`
+  - `curado por *Proyecto de Archivo Digital*`
+
+#### private {#private}
+- **Nuevo en v0.8.0**
+- Pon `yes` para encriptar la historia cuando el *build* termina (durante el *build* de Jekyll la historia se genera normalmente; la encriptación es un paso aparte que corre después)
+- Requiere `story_key` en `_config.yml` — si falta la clave, el *build* falla en lugar de publicar la historia en texto plano
+- Las personas acceden a historias privadas mediante el parámetro de URL `?key=tu-clave`
+- La previsualización local (`bundle exec jekyll serve`) no encripta nada — consulta [Historias privadas: Probar localmente](/guia/funciones/historias-privadas/#probar-localmente)
+- Déjalo vacío u omítelo para historias públicas
+- Consulta [Historias Privadas](/guia/funciones/historias-privadas/) para detalles
+
+#### show_sections {#show_sections}
+- **Nuevo en v1.2.0**
+- Pon `si` para mostrar una tabla de contenidos navegable en la tarjeta de inicio
+- La tabla de contenidos genera enlaces automáticamente a cada tarjeta de título de la historia
+- Déjalo vacío u omítelo para mostrar la tarjeta de inicio sin tabla de contenidos
+- Consulta [Historias y paneles](/guia/tu-contenido/historias-paneles/#tabla-de-contenidos-de-secciones) para detalles
+
+### Alias del CSV de proyecto {#alias-del-csv-de-proyecto}
+
+| Normalizado | Acepta |
+|------------|--------|
+| `order` | `order`, `orden` |
+| `story_id` | `story_id`, `id_historia` |
+| `title` | `title`, `titulo` |
+| `subtitle` | `subtitle`, `subtitulo` |
+| `byline` | `byline`, `firma` |
+| `private` | `private`, `privada`, `protected`, `protegida` |
+| `show_sections` | `show_sections`, `mostrar_secciones` |
+
+## Véase también {#véase-también}
+
+- [Columnas de objetos](/guia/tus-datos/csv-objetos/) — Columnas de objects.csv
+- [Columnas de historias](/guia/tus-datos/csv-historias/) — Columnas de los CSV de historia
+- [Columnas del glosario](/guia/tus-datos/csv-glosario/) — Columnas de glossary.csv
+- [Google Sheets](/guia/tus-datos/google-sheets/) — Uso de Google Sheets con Telar

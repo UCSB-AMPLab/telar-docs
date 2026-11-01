@@ -1,7 +1,0 @@
----
-layout: redirect
-permalink: /guia/flujos-de-trabajo/desarrollo-local/
-redirect_to: /guia/primeros-pasos/desarrollo-local/
-lang: es
-sitemap: false
----

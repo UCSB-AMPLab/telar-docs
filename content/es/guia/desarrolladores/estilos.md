@@ -1,0 +1,340 @@
+---
+title: Estilos avanzados
+url: /guia/desarrolladores/estilos/
+translationKey: docs-developers-styling
+type: guide
+docs_section: developers
+---
+
+# Estilos avanzados {#guide-title}
+
+
+## Estilos avanzados {#estilos-avanzados}
+
+Ve más allá de los temas con CSS personalizado, modificaciones de diseño y estilos de componentes.
+
+## CSS personalizado {#css-personalizado}
+
+### Método 1: agrega a telar.scss {#método-1-agrega-a-telarscss}
+
+Edita `assets/css/telar.scss` para agregar estilos personalizados:
+
+```scss
+// Tus estilos personalizados
+.story-step {
+  padding: 2rem;
+  border-left: 3px solid var(--primary-color);
+}
+
+.object-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+```
+
+### Método 2: crea una hoja de estilos personalizada {#método-2-crea-una-hoja-de-estilos-personalizada}
+
+Crea `assets/css/custom.css`:
+
+```css
+/* Ajustes personalizados */
+.site-header {
+  background: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+}
+
+.story-answer {
+  font-style: italic;
+  color: #666;
+}
+```
+
+Luego inclúyela en tu `_layouts/default.html`:
+
+```html
+<link rel="stylesheet" href="/assets/css/custom.css">
+```
+
+## Variables CSS {#variables-css}
+
+Telar usa propiedades personalizadas CSS que puedes sobrescribir:
+
+```scss
+:root {
+  // Colores
+  --primary-color: #c7522a;
+  --secondary-color: #5f7351;
+  --accent-color: #8b7355;
+  --text-color: #333;
+  --heading-color: #1a1a1a;
+
+  // Tipografía
+  --font-headings: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans Pro', sans-serif;
+
+  // Espaciado
+  --spacing-unit: 1rem;
+  --story-step-padding: 3rem;
+
+  // Bordes
+  --border-radius: 4px;
+  --border-color: #e0e0e0;
+}
+```
+
+Sobrescribe estas en tu CSS personalizado para hacer cambios globales.
+
+## Personalización del diseño {#personalización-del-diseño}
+
+### Modifica los diseños {#modifica-los-diseños}
+
+Edita archivos en el directorio `_layouts/`:
+
+- `default.html`: Plantilla base (encabezado, pie de página, nav)
+- `story.html`: Página de scrollytelling
+- `object.html`: Página de detalle de objeto
+- `glossary.html`: Página de término de glosario
+- `home.html`: Diseño de página de inicio
+
+### Modifica los includes {#modifica-los-includes}
+
+Edita componentes reutilizables en `_includes/`:
+
+- `header.html`: Encabezado y navegación del sitio
+- `footer.html`: Pie de página del sitio
+- `story-step.html`: Paso individual de historia
+- `object-card.html`: Tarjeta de cuadrícula de objetos
+
+## Estilos de componentes {#estilos-de-componentes}
+
+### Pasos de historia {#pasos-de-historia}
+
+```scss
+.story-step {
+  padding: var(--story-step-padding);
+  margin-bottom: 2rem;
+
+  .story-question {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .story-answer {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+}
+```
+
+### Paneles en capas {#paneles-en-capas}
+
+```scss
+.layer-panel {
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+
+  .layer-title {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+```
+
+### Tarjetas de objeto {#tarjetas-de-objeto}
+
+```scss
+.object-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  .object-thumbnail {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .object-info {
+    padding: 1rem;
+  }
+}
+```
+
+## Diseño adaptable {#diseño-adaptable}
+
+El diseño de historias de Telar cambia a su disposición vertical cuando la ventana mide menos de 1024px de ancho o tiene una relación de aspecto menor que 3:4 (consulta [Optimización móvil](/guia/desarrolladores/moviles/) para más detalles). Cuando agregues reglas adaptables a tus propios componentes, usa esos mismos puntos de quiebre (*breakpoints*) para que tus estilos cambien al mismo tiempo que el diseño:
+
+```scss
+// Disposición vertical: ancho reducido O relación de aspecto vertical.
+// Nota: las historias ocupan toda la ventana en lugar de dividirse
+// en columnas; estos ajustes son para tus propios contenedores.
+@media (max-width: 1024px), (max-aspect-ratio: 3 / 4) {
+  .my-block {
+    flex-direction: column;
+  }
+}
+
+// Disposición amplia (escritorio)
+@media (min-width: 1025px) {
+  .my-block {
+    max-width: 600px;
+  }
+}
+```
+
+## Capas de cascada {#capas-de-cascada}
+
+Desde la v1.4.0, los estilos de Telar se organizan en capas de cascada CSS, declaradas en este orden:
+
+```
+reset, third-party, telar-base, telar-bootstrap-overrides, telar-components, telar-overrides
+```
+
+Bootstrap se carga en la capa `third-party` y los estilos propios de Telar se cargan en las capas posteriores, así que los estilos de Telar prevalecen sobre Bootstrap de manera confiable, sin necesidad de `!important`.
+
+Esto también facilita tus personalizaciones: **el CSS sin capa siempre prevalece sobre el CSS con capa**, sin importar la especificidad del selector. Cualquier regla de CSS común que agregues por fuera de estas capas tiene prioridad sobre los estilos de Telar, así que casi siempre puedes cambiar la apariencia sin recurrir a `!important`. Si una regla personalizada no se aplica como esperas, revisa que no haya quedado dentro de alguna de las capas de Telar.
+
+## Personalización de JavaScript {#personalización-de-javascript}
+
+### Modificar el comportamiento de la historia {#modificar-el-comportamiento-de-la-historia}
+
+El código fuente del motor de historias vive en `assets/js/telar-story/` (un módulo por función — motor de desplazamiento, navegación, tarjetas, paneles) y se empaqueta en `assets/js/telar-story.js`, que es el archivo que las páginas cargan. Para cambiar el comportamiento de las historias, edita los módulos y vuelve a generar el paquete:
+
+```bash
+npm run build:js
+```
+
+Nunca edites `assets/js/telar-story.js` directamente: es un archivo generado y la próxima vez que se genere el paquete lo sobrescribe. El mapa del directorio en `assets/js/README.md` describe qué hace cada módulo y dónde conviene hacer cada tipo de cambio.
+
+### Agregar interacciones personalizadas {#agregar-interacciones-personalizadas}
+
+Crea `assets/js/custom.js`:
+
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+  // Desplazamiento suave a enlaces internos
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Animación en tarjetas de objeto al entrar en vista
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+      }
+    });
+  });
+
+  document.querySelectorAll('.object-card').forEach(card => {
+    observer.observe(card);
+  });
+});
+```
+
+## Personalización de tipografía {#personalización-de-tipografía}
+
+### Estilos de encabezados {#estilos-de-encabezados}
+
+```scss
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+  color: var(--heading-color);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+// Tamaños personalizados de encabezado
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+```
+
+### Cuerpo de texto {#cuerpo-de-texto}
+
+```scss
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+```
+
+## Animación {#animación}
+
+Agrega animaciones sutiles:
+
+```scss
+// Animación de aparición gradual
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+// Hover de tarjeta de objeto
+.object-card {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+}
+```
+
+## Mejores prácticas {#mejores-prácticas}
+
+1. **Usa variables CSS** para valores que se repiten
+2. **Prueba en múltiples tamaños de pantalla**
+3. **Mantén accesibilidad** (contraste, navegación por teclado)
+4. **Manténlo eficiente** (evita animaciones pesadas, imágenes grandes)
+5. **Comenta tu código** para referencia futura
+6. **Prueba en múltiples navegadores** (Chrome, Firefox, Safari)
+
+## Optimización de rendimiento {#optimización-de-rendimiento}
+
+```scss
+// Usa will-change para animaciones
+.animated-element {
+  will-change: transform;
+}
+
+// Optimiza imágenes
+.object-thumbnail {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+// Aceleración por hardware
+.smooth-scroll {
+  transform: translateZ(0);
+}
+```
+
+## Próximos pasos {#próximos-pasos}
+
+- [Conoce sobre temas](/guia/personalizacion/temas/)
+- [Ver sitios de ejemplo](https://ampl.clair.ucsb.edu/telar)
+- [Explora los diseños de Jekyll](https://jekyllrb.com/docs/layouts/)

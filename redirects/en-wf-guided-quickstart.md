@@ -1,7 +1,0 @@
----
-layout: redirect
-permalink: /docs/workflows/guided-quickstart/
-redirect_to: /docs/getting-started/google-sheets/
-lang: en
-sitemap: false
----
