@@ -62,6 +62,12 @@ The upgrade system:
 4. **Close the upgrade issue** once everything is working - this marks the upgrade as complete
 5. If you encounter issues, check the [GitHub Issues](https://github.com/UCSB-AMPLab/telar/issues) or report a bug
 
+### v1.8.3 Upgrade Notes
+
+**Upgrade with the "Upgrade Telar" workflow or through the Telar Compositor.** It takes a site from v1.8.2 to v1.8.3, and chains through from earlier versions. No manual steps: only the Telar files that changed are installed, and your site's content and settings are left as they are.
+
+The upgrade installs a `Gemfile.lock` that includes the `x86_64-linux` platform. If your site's build has been failing on GitHub's Ubuntu 26.04 runners while installing `google-protobuf`, the first build after the upgrade installs prebuilt gems and succeeds.
+
 ### v1.8.2 Upgrade Notes
 
 **Upgrade with the "Upgrade Telar" workflow or through the Telar Compositor.** It takes a site from v1.8.1 to v1.8.2, and chains through from earlier versions.

@@ -77,6 +77,12 @@ Si estás actualizando desde **v0.2.0 hasta v0.3.3**, el resumen de actualizaci�
 
 Esta actualización elimina funciones obsoletas (la programación con cron y el paso de `git push`) que ya no son necesarias en v0.3.4+.
 
+### Notas de actualización a v1.8.3
+
+**Actualiza con el workflow «Upgrade Telar» o con el Compositor de Telar.** La actualización lleva un sitio de la v1.8.2 a la v1.8.3; desde versiones anteriores, pasa en orden por cada versión intermedia. No hay pasos manuales: solo se instalan los archivos de Telar que cambiaron, y el contenido y la configuración del sitio quedan como estaban.
+
+La actualización instala un `Gemfile.lock` que incluye la plataforma `x86_64-linux`. Si el *build* de tu sitio venía fallando en los servidores de GitHub con Ubuntu 26.04 al instalar la gema `google-protobuf`, el primer *build* después de la actualización instala gemas ya compiladas y termina sin errores.
+
 ### Notas de actualización a v1.8.2
 
 **Actualiza con el workflow «Upgrade Telar» o con el Compositor de Telar.** La actualización lleva un sitio de la v1.8.1 a la v1.8.2; desde versiones anteriores, pasa en orden por cada versión intermedia.
