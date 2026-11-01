@@ -1,0 +1,139 @@
+---
+title: Configuración manual
+url: /guia/configuracion/configuracion-manual/
+translationKey: docs-setup-manual
+type: guide
+docs_section: sheets
+---
+
+# Configuración manual {#configuración-manual}
+
+Construye una exposición completa de Telar desde tu navegador usando GitHub y Google Sheets. No necesitas instalar nada.
+
+Vas a necesitar:
+- Una [cuenta de GitHub](https://github.com/join) (gratis)
+- Una [cuenta de Google](https://accounts.google.com/) para Google Sheets (gratis)
+
+---
+
+## Parte 1: Configura la parte técnica {#parte-1-configura-la-parte-técnica}
+
+Esta parte puede parecer intimidante, pero solo tienes que hacerla una vez. Una vez que todo esté configurado, no tendrás que volver aquí — todo lo demás es trabajo creativo en tu hoja de cálculo.
+
+### Crea tu repositorio {#crea-tu-repositorio}
+
+Un repositorio es el espacio de tu proyecto en GitHub — almacena tus imágenes y archivos de configuración.
+
+1. Visita la [plantilla de Telar](https://github.com/UCSB-AMPLab/telar)
+2. Haz clic en el botón verde **Use this template**
+3. Selecciona **Create a new repository**
+4. Escoge un nombre para tu repositorio — **usa solo letras minúsculas y evita espacios (los guiones están bien)** — será parte de la dirección web de tu sitio
+5. Haz clic en **Create repository**
+
+![Captura de pantalla de GitHub: botón Use this template](/images/use-this-template.png)
+
+### Habilita GitHub Pages {#habilita-github-pages}
+
+GitHub Pages convierte tu repositorio en un sitio web en vivo de forma gratuita.
+
+1. En tu repositorio, ve a **Settings** → **Pages**
+2. En **Source**, selecciona **GitHub Actions**
+3. Haz clic en **Save**
+
+![Configuración de GitHub Pages con GitHub Actions](/images/github-actions.gif)
+
+### Duplica la plantilla de Google Sheets {#duplica-la-plantilla-de-google-sheets}
+
+Tu hoja de cálculo de Google Sheets es donde administras todo el contenido — objetos, historias y textos.
+
+1. Ve a [https://bit.ly/telar-template](https://bit.ly/telar-template)
+2. Haz clic en **File** → **Make a copy**
+3. Guárdala en tu Google Drive con un nombre descriptivo (ej., "Mi exposición Telar")
+
+### Publica tu hoja {#publica-tu-hoja}
+
+Tu hoja de cálculo necesita estar publicada para que Telar pueda leerla durante el *build*.
+
+1. Ve a **File** → **Share** → **Publish to web**
+2. Haz clic en **Publish**
+3. Copia la URL publicada
+
+{{< callout "note" >}}
+**Simplificado en v0.9.0.** Las versiones anteriores requerían tanto una URL compartida como una URL publicada. Desde v0.9.0, solo se necesita la URL publicada. Si tu `_config.yml` todavía tiene una línea `shared_url`, se ignora sin problemas.
+{{< /callout >}}
+
+### Configura tu sitio {#configura-tu-sitio}
+
+Edita el archivo `_config.yml` en tu repositorio para conectar todo:
+
+1. Navega a `_config.yml` y haz clic en el ícono de lápiz para editar
+
+2. **Configuración del sitio** — completa el nombre y la descripción de tu sitio:
+
+   ```yaml
+   title: "Mi exposición"
+   description: "Una narrativa visual sobre..."
+   author: Tu Nombre
+   ```
+
+3. **Dirección web** — establece la URL de tu sitio:
+
+   ```yaml
+   url: "https://tuusuariogithub.github.io"
+   baseurl: "/nombre-de-tu-repositorio"
+   ```
+
+   Tu sitio estará disponible en `https://tuusuariogithub.github.io/nombre-de-tu-repositorio`.
+
+{.warning}
+   > Es muy importante que tu baseurl coincida exactamente con el nombre de tu repositorio. Baseurl debe estar completamente en minúsculas, así que si le pusiste mayúsculas al nombre de tu repositorio, ve y cámbialo ahora.
+
+4. **Google Sheets** — pega la URL publicada que copiaste:
+
+   ```yaml
+   google_sheets:
+     enabled: true
+     published_url: "https://docs.google.com/..."
+   ```
+
+5. **Tema** (opcional) — escoge un tema visual:
+
+   ```yaml
+   telar_theme: "paisajes"  # Opciones: paisajes, neogranadina, santa-barbara, austin
+   ```
+
+6. Haz clic en **Commit changes** para guardar
+
+![Editando config: título y URL](/images/config_title.gif)
+![Editando config: tema](/images/config_theme.gif)
+
+### Verifica tu configuración {#verifica-tu-configuración}
+
+Después de hacer *commit*, GitHub Actions construirá y publicará tu sitio automáticamente. Esto toma de 2 a 5 minutos.
+
+1. Haz clic en la pestaña **Actions** para ver el progreso del *build*
+2. Cuando termine, visita tu sitio en la URL que configuraste
+3. Deberías ver un sitio vacío de Telar con tu título y tema
+
+![Página de inicio de Telar con título y menú de navegación](/images/telar-homepage.png)
+
+{{< callout "warning" >}}
+Si el *build* falla o tu sitio no se ve bien, revisa tu `_config.yml` con cuidado. Errores comunes:
+- **Comillas sin cerrar** — cada `"` necesita su par
+- **Falta espacio después de los dos puntos** — escribe `title: "Mi sitio"`, no `title:"Mi sitio"`
+- **Indentación incorrecta** — las opciones anidadas como `published_url` deben indentarse con espacios, no tabulaciones
+- **baseurl no coincide** — debe coincidir exactamente con el nombre de tu repositorio, todo en minúsculas
+- **URL de Google Sheets incorrecta** — asegúrate de usar la URL publicada de Archivo → Compartir → Publicar en la Web
+
+Consulta la [Referencia de configuración](/guia/configurar/configuracion/) para la lista completa de opciones. También puedes pegar tu `_config.yml` en el [Validador de Configuración de Telar](/guia/configurar/validador-de-configuracion/) para buscar errores, o usar el [Generador y editor de configuración](/guia/configurar/generador-de-configuracion/) para crear uno desde cero.
+{{< /callout >}}
+
+
+
+## Próximos pasos {#próximos-pasos}
+
+Tu sitio está configurado y funcionando. Continúa con el tutorial de Primeros pasos:
+
+- **[Agrega tu contenido](/guia/primeros-pasos/agrega-contenido/)** — Sube imágenes, llena tu hoja de cálculo y crea tu primera historia
+- **[Revisa y perfecciona](/guia/primeros-pasos/revisa-y-perfecciona/)** — Ajusta coordenadas de imagen, revisa tu sitio y dale los toques finales
+- **[Planea tu narrativa](/guia/primeros-pasos/estructura-narrativa/)** — Conoce cómo se articulan historias, pasos y paneles

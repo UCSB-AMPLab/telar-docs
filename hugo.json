@@ -1,0 +1,75 @@
+{
+  "baseURL": "https://telar.org/",
+  "title": "Telar",
+  "defaultContentLanguage": "en",
+  "defaultContentLanguageInSubdir": false,
+  "disableKinds": [
+    "taxonomy",
+    "term",
+    "RSS"
+  ],
+  "languages": {
+    "en": {
+      "contentDir": "content/en",
+      "weight": 1,
+      "languageCode": "en",
+      "languageName": "English"
+    },
+    "es": {
+      "contentDir": "content/es",
+      "weight": 2,
+      "languageCode": "es",
+      "languageName": "Español"
+    }
+  },
+  "markup": {
+    "goldmark": {
+      "renderer": {
+        "unsafe": true
+      },
+      "parser": {
+        "attribute": {
+          "title": true,
+          "block": true
+        }
+      },
+      "extensions": {
+        "passthrough": {
+          "enable": true,
+          "delimiters": {
+            "block": [
+              [
+                "$$",
+                "$$"
+              ],
+              [
+                "\\[",
+                "\\]"
+              ]
+            ],
+            "inline": [
+              [
+                "\\(",
+                "\\)"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    "highlight": {
+      "style": "github",
+      "noClasses": false
+    }
+  },
+  "params": {
+    "docs_preview": false,
+    "teaching_api": "https://showcase.telar.org",
+    "showcase_api": "https://showcase.telar.org",
+    "turnstile_key": "0x4AAAAAAE2tYZjlIcT_XQw9",
+    "showcase_turnstile_site_key": "0x4AAAAAAE2tYZjlIcT_XQw9",
+    "telar_version": "1.8.3",
+    "telar_release_date": "2026-10-31"
+  },
+  "enableRobotsTXT": true
+}

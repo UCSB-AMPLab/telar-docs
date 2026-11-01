@@ -1,0 +1,592 @@
+[
+  {
+    "file": "docs/1-0-getting-started.es.md",
+    "url": "/guia/primeros-pasos/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/1-0-getting-started.md",
+    "url": "/docs/getting-started/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/1-1-compositor.es.md",
+    "url": "/guia/primeros-pasos/compositor/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/1-1-compositor.md",
+    "url": "/docs/getting-started/compositor/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/1-2-google-sheets-option.es.md",
+    "url": "/guia/primeros-pasos/google-sheets/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/1-2-google-sheets-option.md",
+    "url": "/docs/getting-started/google-sheets/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/1-3-local-dev.es.md",
+    "url": "/guia/primeros-pasos/desarrollo-local/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/1-3-local-dev.md",
+    "url": "/docs/getting-started/local-dev/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/1-4-narrative-structure.es.md",
+    "url": "/guia/primeros-pasos/estructura-narrativa/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/1-4-narrative-structure.md",
+    "url": "/docs/getting-started/narrative-structure/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/1-5-add-content.es.md",
+    "url": "/guia/primeros-pasos/agrega-contenido/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/1-5-add-content.md",
+    "url": "/docs/getting-started/add-content/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/1-6-review-refine.es.md",
+    "url": "/guia/primeros-pasos/revisa-y-perfecciona/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/1-6-review-refine.md",
+    "url": "/docs/getting-started/review-refine/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/2-0-setup.es.md",
+    "url": "/guia/configuracion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/2-0-setup.md",
+    "url": "/docs/setup/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/2-1-manual-setup.es.md",
+    "url": "/guia/configuracion/configuracion-manual/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/2-1-manual-setup.md",
+    "url": "/docs/setup/manual/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/2-3-upgrading.es.md",
+    "url": "/guia/configuracion/actualizacion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/2-3-upgrading.md",
+    "url": "/docs/setup/upgrading/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/3-0-configure.es.md",
+    "url": "/guia/configurar/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/3-0-configure.md",
+    "url": "/docs/configure/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/3-1-config-generator.es.md",
+    "url": "/guia/configurar/generador-de-configuracion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/3-1-config-generator.md",
+    "url": "/docs/configure/config-generator/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/3-2-configuration.es.md",
+    "url": "/guia/configurar/configuracion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/3-2-configuration.md",
+    "url": "/docs/configure/configuration/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/3-3-config-validator.es.md",
+    "url": "/guia/configurar/validador-de-configuracion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/3-3-config-validator.md",
+    "url": "/docs/configure/config-validator/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-0-your-content.es.md",
+    "url": "/guia/tu-contenido/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-0-your-content.md",
+    "url": "/docs/your-content/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-1-objects.es.md",
+    "url": "/guia/tu-contenido/objetos/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-1-objects.md",
+    "url": "/docs/your-content/objects/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-10-audio-objects.es.md",
+    "url": "/guia/tu-contenido/objetos-de-audio/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-10-audio-objects.md",
+    "url": "/docs/your-content/audio-objects/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-2-self-hosted-images.es.md",
+    "url": "/guia/tu-contenido/imagenes-autoalojadas/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-2-self-hosted-images.md",
+    "url": "/docs/your-content/self-hosted-images/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-3-external-iiif.es.md",
+    "url": "/guia/tu-contenido/iiif-externo/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-3-external-iiif.md",
+    "url": "/docs/your-content/external-iiif/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-4-stories-panels.es.md",
+    "url": "/guia/tu-contenido/historias-paneles/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-4-stories-panels.md",
+    "url": "/docs/your-content/stories-panels/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-5-rich-content.es.md",
+    "url": "/guia/tu-contenido/contenido-enriquecido/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-5-rich-content.md",
+    "url": "/docs/your-content/rich-content/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-6-markdown-syntax.es.md",
+    "url": "/guia/tu-contenido/sintaxis-markdown/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-6-markdown-syntax.md",
+    "url": "/docs/your-content/markdown-syntax/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-7-widgets.es.md",
+    "url": "/guia/tu-contenido/widgets/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-7-widgets.md",
+    "url": "/docs/your-content/widgets/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-8-pdf-documents.es.md",
+    "url": "/guia/tu-contenido/documentos-pdf/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-8-pdf-documents.md",
+    "url": "/docs/your-content/pdf-documents/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/4-9-video-objects.es.md",
+    "url": "/guia/tu-contenido/objetos-de-video/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/4-9-video-objects.md",
+    "url": "/docs/your-content/video-objects/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/5-0-your-data.es.md",
+    "url": "/guia/tus-datos/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/5-0-your-data.md",
+    "url": "/docs/your-data/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/5-1-google-sheets.es.md",
+    "url": "/guia/tus-datos/google-sheets/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/5-1-google-sheets.md",
+    "url": "/docs/your-data/google-sheets/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/5-2-csv-project.es.md",
+    "url": "/guia/tus-datos/csv-proyecto/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/5-2-csv-project.md",
+    "url": "/docs/your-data/csv-project/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/5-3-csv-objects.es.md",
+    "url": "/guia/tus-datos/csv-objetos/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/5-3-csv-objects.md",
+    "url": "/docs/your-data/csv-objects/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/5-4-csv-stories.es.md",
+    "url": "/guia/tus-datos/csv-historias/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/5-4-csv-stories.md",
+    "url": "/docs/your-data/csv-stories/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/5-5-csv-glossary.es.md",
+    "url": "/guia/tus-datos/csv-glosario/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/5-5-csv-glossary.md",
+    "url": "/docs/your-data/csv-glossary/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/6-0-site-features.es.md",
+    "url": "/guia/funciones/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/6-0-site-features.md",
+    "url": "/docs/site-features/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/6-1-objects-gallery.es.md",
+    "url": "/guia/funciones/galeria-objetos/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/6-1-objects-gallery.md",
+    "url": "/docs/site-features/objects-gallery/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/6-2-glossary.es.md",
+    "url": "/guia/funciones/glosario/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/6-2-glossary.md",
+    "url": "/docs/site-features/glossary/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/6-3-private-stories.es.md",
+    "url": "/guia/funciones/historias-privadas/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/6-3-private-stories.md",
+    "url": "/docs/site-features/private-stories/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/6-4-custom-pages.es.md",
+    "url": "/guia/funciones/paginas-personalizadas/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/6-4-custom-pages.md",
+    "url": "/docs/site-features/custom-pages/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/6-5-embedding.es.md",
+    "url": "/guia/funciones/insercion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/6-5-embedding.md",
+    "url": "/docs/site-features/embedding/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/7-0-customization.es.md",
+    "url": "/guia/personalizacion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/7-0-customization.md",
+    "url": "/docs/customization/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/7-1-themes.es.md",
+    "url": "/guia/personalizacion/temas/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/7-1-themes.md",
+    "url": "/docs/customization/themes/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/7-2-home-page.es.md",
+    "url": "/guia/personalizacion/pagina-de-inicio/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/7-2-home-page.md",
+    "url": "/docs/customization/home-page/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/7-3-navigation-menu.es.md",
+    "url": "/guia/personalizacion/menu-navegacion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/7-3-navigation-menu.md",
+    "url": "/docs/customization/navigation-menu/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/7-4-demo-content.es.md",
+    "url": "/guia/personalizacion/contenido-demostracion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/7-4-demo-content.md",
+    "url": "/docs/customization/demo-content/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/8-0-for-developers.es.md",
+    "url": "/guia/desarrolladores/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/8-0-for-developers.md",
+    "url": "/docs/developers/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/8-1-local-development.es.md",
+    "url": "/guia/desarrolladores/desarrollo-local/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/8-1-local-development.md",
+    "url": "/docs/developers/local-development/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/8-2-github-actions.es.md",
+    "url": "/guia/desarrolladores/github-actions/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/8-2-github-actions.md",
+    "url": "/docs/developers/github-actions/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/8-3-demo-system-architecture.es.md",
+    "url": "/guia/desarrolladores/sistema-demos/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/8-3-demo-system-architecture.md",
+    "url": "/docs/developers/demo-system/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/8-4-embedding-system.es.md",
+    "url": "/guia/desarrolladores/sistema-insercion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/8-4-embedding-system.md",
+    "url": "/docs/developers/embedding-system/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/8-5-styling.es.md",
+    "url": "/guia/desarrolladores/estilos/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/8-5-styling.md",
+    "url": "/docs/developers/styling/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/8-6-mobile.es.md",
+    "url": "/guia/desarrolladores/moviles/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/8-6-mobile.md",
+    "url": "/docs/developers/mobile/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/8-7-story-engine.es.md",
+    "url": "/guia/desarrolladores/motor-de-historias/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/8-7-story-engine.md",
+    "url": "/docs/developers/story-engine/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/9-0-compositor.es.md",
+    "url": "/guia/el-compositor/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/9-0-compositor.md",
+    "url": "/docs/the-compositor/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/9-1-getting-started.es.md",
+    "url": "/guia/el-compositor/primeros-pasos/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/9-1-getting-started.md",
+    "url": "/docs/the-compositor/getting-started/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/9-2-dashboard.es.md",
+    "url": "/guia/el-compositor/panel-de-control/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/9-2-dashboard.md",
+    "url": "/docs/the-compositor/dashboard/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/9-3-objects.es.md",
+    "url": "/guia/el-compositor/objetos/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/9-3-objects.md",
+    "url": "/docs/the-compositor/objects/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/9-4-story-editor.es.md",
+    "url": "/guia/el-compositor/editor-historias/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/9-4-story-editor.md",
+    "url": "/docs/the-compositor/story-editor/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/9-5-video-audio.es.md",
+    "url": "/guia/el-compositor/video-y-audio/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/9-5-video-audio.md",
+    "url": "/docs/the-compositor/video-audio/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/9-6-publishing.es.md",
+    "url": "/guia/el-compositor/publicacion/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/9-6-publishing.md",
+    "url": "/docs/the-compositor/publishing/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/9-7-sync-updates.es.md",
+    "url": "/guia/el-compositor/sincronizacion-y-actualizaciones/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/9-7-sync-updates.md",
+    "url": "/docs/the-compositor/sync-updates/",
+    "lang": "en"
+  },
+  {
+    "file": "docs/index.es.md",
+    "url": "/guia/",
+    "lang": "es"
+  },
+  {
+    "file": "docs/index.md",
+    "url": "/docs/",
+    "lang": "en"
+  }
+]

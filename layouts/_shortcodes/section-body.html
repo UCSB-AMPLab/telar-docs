@@ -1,0 +1,1 @@
+{{ partial (printf "pages/%s.html" (.Get 0)) .Page | .Page.RenderString (dict "display" "block") }}

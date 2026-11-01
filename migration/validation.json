@@ -1,0 +1,72 @@
+{
+  "recorded_on": "2026-11-01",
+  "branch": "site/hugo-migration",
+  "baseline_html_routes": 234,
+  "migrated_non_home_pages": 233,
+  "native_homepages": [
+    "/",
+    "/es/"
+  ],
+  "canonical_docs_pages": 160,
+  "legacy_route_inventory": 118,
+  "source_output_parity_issues": 0,
+  "production_checks": {
+    "checks": 20441,
+    "failures": 0,
+    "routes": 233
+  },
+  "preview_checks": {
+    "checks": 20370,
+    "failures": 0,
+    "routes": 233
+  },
+  "clean_install": "npm ci completed successfully",
+  "browser_checks": [
+    "English and Spanish guide search",
+    "Native translation links and query-homepage compatibility",
+    "Six KaTeX expressions in the syntax reference with zero math errors",
+    "Configuration generator output accepted by validator with no issues",
+    "English and Spanish teaching requests stored in isolated local database",
+    "Showcase form validation and a local pending submission",
+    "Public showcase fixture loaded in both interface languages",
+    "Slash shortcut opens search; Escape closes it",
+    "Animated guide GIF play/stop controls"
+  ],
+  "viewport_checks": {
+    "mobile_width": 390,
+    "mobile_height": 844,
+    "mobile_routes": [
+      "/guia/",
+      "/empezar/",
+      "/guia/el-compositor/iiif-a-historia/",
+      "/guia/tu-contenido/sintaxis-markdown/",
+      "/proyectos/compartir/",
+      "/es/",
+      "/guia/configurar/generador-de-configuracion/"
+    ],
+    "tablet_width": 768,
+    "tablet_height": 1024,
+    "tablet_routes": [
+      "/docs/",
+      "/docs/teaching/request-access/",
+      "/showcase/submit/",
+      "/es/"
+    ],
+    "horizontal_overflow": false
+  },
+  "notification_test": {
+    "teaching_records": 2,
+    "showcase_test_records": 1,
+    "notification_attempts": 0,
+    "sent_notices": 0,
+    "scope": "separate local database; synthetic contact details"
+  },
+  "verification_scope": "pre-publication local validation",
+  "upstream_base": "143fc62",
+  "source_design_commit": "6eb1299",
+  "release_verification": [
+    "GitHub-hosted workflow execution",
+    "Production deployment",
+    "Live notification delivery after deployment"
+  ]
+}

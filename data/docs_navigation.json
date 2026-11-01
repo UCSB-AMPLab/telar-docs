@@ -1,0 +1,3204 @@
+{
+  "routes": {
+    "en": {
+      "home": "/docs/",
+      "quick": "/start/",
+      "planning": "/docs/plan/",
+      "compositor": "/docs/the-compositor/",
+      "sheets": "/docs/google-sheets/",
+      "local": "/docs/local-authoring/",
+      "reference": "/docs/reference/",
+      "teaching": "/docs/teaching/",
+      "developers": "/docs/developers/",
+      "iiif": "/docs/the-compositor/iiif-to-story/"
+    },
+    "es": {
+      "home": "/guia/",
+      "quick": "/empezar/",
+      "planning": "/guia/planear/",
+      "compositor": "/guia/el-compositor/",
+      "sheets": "/guia/google-sheets/",
+      "local": "/guia/autoria-local/",
+      "reference": "/guia/referencia/",
+      "teaching": "/guia/ensenar/",
+      "developers": "/guia/desarrolladores/",
+      "iiif": "/guia/el-compositor/iiif-a-historia/"
+    }
+  },
+  "labels": {
+    "en": {
+      "browse": "Browse guides",
+      "contents": "In this guide",
+      "all_guides": "All guides",
+      "search": "Search the guides",
+      "close_search": "Close search",
+      "search_hint": "Search by task, feature or question.",
+      "search_unavailable": "Search is unavailable.",
+      "previous": "Previous",
+      "next": "Next",
+      "on_page": "On this page",
+      "copy_code": "Copy code",
+      "copied": "Copied",
+      "copy_link": "Copy link to this section",
+      "link_copied": "Section link copied",
+      "copy_failed": "Copy was unavailable. Select the text and copy it.",
+      "table": "Scrollable table",
+      "preview": "Documentation preview",
+      "reference": "Shared reference",
+      "help": "Help improve the guides",
+      "section": "Guide section",
+      "index": "Overview",
+      "code": "Code example",
+      "open_menu": "Guide contents",
+      "footer": "Telar is developed by Neogranadina, the UCSB Archives, Memory, and Preservation Lab, the UT Archives, Mapping, and Pedagogy Lab, and collaborators."
+    },
+    "es": {
+      "browse": "Explora las guías",
+      "contents": "En esta guía",
+      "all_guides": "Todas las guías",
+      "search": "Busca en las guías",
+      "close_search": "Cerrar búsqueda",
+      "search_hint": "Busca por tarea, función o pregunta.",
+      "search_unavailable": "La búsqueda no está disponible.",
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "on_page": "En esta página",
+      "copy_code": "Copiar código",
+      "copied": "Copiado",
+      "copy_link": "Copiar enlace a esta sección",
+      "link_copied": "Enlace de la sección copiado",
+      "copy_failed": "No se pudo copiar. Selecciona el texto y cópialo.",
+      "table": "Tabla desplazable",
+      "preview": "Vista previa de la documentación",
+      "reference": "Referencia compartida",
+      "help": "Ayuda a mejorar las guías",
+      "section": "Sección de la guía",
+      "index": "Presentación",
+      "code": "Ejemplo de código",
+      "open_menu": "Contenido de la guía",
+      "footer": "Telar lo desarrollan Neogranadina, el UCSB Archives, Memory, and Preservation Lab, el UT Archives, Mapping, and Pedagogy Lab y quienes colaboran con el proyecto."
+    }
+  },
+  "order": [
+    "quick",
+    "planning",
+    "compositor",
+    "sheets",
+    "local",
+    "reference",
+    "teaching",
+    "developers"
+  ],
+  "sections": {
+    "en": {
+      "quick": {
+        "id": "quick",
+        "title": "Workshop quick guide",
+        "url": "/start/",
+        "items": [
+          {
+            "url": "/start/",
+            "title": "Workshop quick guide",
+            "section": "quick",
+            "group": "main",
+            "other_url": "/empezar/",
+            "path": "start.html"
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Guide contents",
+            "items": [
+              {
+                "url": "/start/",
+                "title": "Workshop quick guide",
+                "section": "quick",
+                "group": "main",
+                "other_url": "/empezar/",
+                "path": "start.html"
+              }
+            ]
+          }
+        ]
+      },
+      "planning": {
+        "id": "planning",
+        "title": "Plan an exhibition",
+        "url": "/docs/plan/",
+        "items": [
+          {
+            "url": "/docs/plan/",
+            "title": "Plan an exhibition",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/guia/planear/",
+            "path": "guides/planning.en.html"
+          },
+          {
+            "url": "/docs/getting-started/narrative-structure/",
+            "title": "Sketch the narrative arc",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/guia/primeros-pasos/estructura-narrativa/",
+            "path": "docs/1-4-narrative-structure.md"
+          },
+          {
+            "url": "/docs/plan/sources-and-framing/",
+            "title": "Choose sources and framing",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/guia/planear/fuentes-y-encuadres/",
+            "path": "guides/planning-sources.en.md"
+          },
+          {
+            "url": "/docs/plan/layers-and-glossary/",
+            "title": "Plan panels and glossary links",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/guia/planear/capas-y-glosario/",
+            "path": "guides/planning-layers.en.md"
+          },
+          {
+            "url": "/docs/plan/exhibition-layout/",
+            "title": "Arrange the whole exhibition",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/guia/planear/organizar-la-exhibicion/",
+            "path": "guides/planning-layout.en.md"
+          },
+          {
+            "url": "/docs/plan/review/",
+            "title": "Test the exhibition with readers",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/guia/planear/revision/",
+            "path": "guides/planning-review.en.md"
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Contents",
+            "items": [
+              {
+                "url": "/docs/plan/",
+                "title": "Plan an exhibition",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/guia/planear/",
+                "path": "guides/planning.en.html"
+              },
+              {
+                "url": "/docs/getting-started/narrative-structure/",
+                "title": "Sketch the narrative arc",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/guia/primeros-pasos/estructura-narrativa/",
+                "path": "docs/1-4-narrative-structure.md"
+              },
+              {
+                "url": "/docs/plan/sources-and-framing/",
+                "title": "Choose sources and framing",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/guia/planear/fuentes-y-encuadres/",
+                "path": "guides/planning-sources.en.md"
+              },
+              {
+                "url": "/docs/plan/layers-and-glossary/",
+                "title": "Plan panels and glossary links",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/guia/planear/capas-y-glosario/",
+                "path": "guides/planning-layers.en.md"
+              },
+              {
+                "url": "/docs/plan/exhibition-layout/",
+                "title": "Arrange the whole exhibition",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/guia/planear/organizar-la-exhibicion/",
+                "path": "guides/planning-layout.en.md"
+              },
+              {
+                "url": "/docs/plan/review/",
+                "title": "Test the exhibition with readers",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/guia/planear/revision/",
+                "path": "guides/planning-review.en.md"
+              }
+            ]
+          }
+        ]
+      },
+      "compositor": {
+        "id": "compositor",
+        "title": "Compositor manual",
+        "url": "/docs/the-compositor/",
+        "items": [
+          {
+            "url": "/docs/the-compositor/",
+            "title": "Compositor manual",
+            "section": "compositor",
+            "group": "main",
+            "other_url": "/guia/el-compositor/",
+            "path": "docs/9-0-compositor.md",
+            "order": 9
+          },
+          {
+            "url": "/docs/getting-started/compositor/",
+            "title": "Use the Compositor",
+            "section": "compositor",
+            "group": "begin",
+            "other_url": "/guia/primeros-pasos/compositor/",
+            "path": "docs/1-1-compositor.md",
+            "order": 1
+          },
+          {
+            "url": "/docs/the-compositor/getting-started/",
+            "title": "Connect an existing site",
+            "section": "compositor",
+            "group": "begin",
+            "other_url": "/guia/el-compositor/primeros-pasos/",
+            "path": "docs/9-1-getting-started.md",
+            "order": 1
+          },
+          {
+            "url": "/docs/the-compositor/dashboard/",
+            "title": "Start and navigation",
+            "section": "compositor",
+            "group": "begin",
+            "other_url": "/guia/el-compositor/panel-de-control/",
+            "path": "docs/9-2-dashboard.md",
+            "order": 2
+          },
+          {
+            "url": "/docs/the-compositor/objects/",
+            "title": "Objects",
+            "section": "compositor",
+            "group": "compose",
+            "other_url": "/guia/el-compositor/objetos/",
+            "path": "docs/9-3-objects.md",
+            "order": 3
+          },
+          {
+            "url": "/docs/the-compositor/iiif-to-story/",
+            "title": "Use an IIIF object in a story",
+            "section": "compositor",
+            "group": "compose",
+            "other_url": "/guia/el-compositor/iiif-a-historia/",
+            "path": "guides/iiif.en.md"
+          },
+          {
+            "url": "/docs/the-compositor/story-editor/",
+            "title": "Story Editor",
+            "section": "compositor",
+            "group": "compose",
+            "other_url": "/guia/el-compositor/editor-historias/",
+            "path": "docs/9-4-story-editor.md",
+            "order": 4
+          },
+          {
+            "url": "/docs/the-compositor/video-audio/",
+            "title": "Video and Audio",
+            "section": "compositor",
+            "group": "compose",
+            "other_url": "/guia/el-compositor/video-y-audio/",
+            "path": "docs/9-5-video-audio.md",
+            "order": 5
+          },
+          {
+            "url": "/docs/the-compositor/glossary/",
+            "title": "Create and link glossary entries",
+            "section": "compositor",
+            "group": "exhibition",
+            "other_url": "/guia/el-compositor/glosario/",
+            "path": "guides/compositor-glossary.en.md"
+          },
+          {
+            "url": "/docs/the-compositor/pages/",
+            "title": "Arrange the homepage and pages",
+            "section": "compositor",
+            "group": "exhibition",
+            "other_url": "/guia/el-compositor/paginas/",
+            "path": "guides/compositor-pages.en.md"
+          },
+          {
+            "url": "/docs/the-compositor/settings/",
+            "title": "Adjust appearance and site settings",
+            "section": "compositor",
+            "group": "exhibition",
+            "other_url": "/guia/el-compositor/configuracion/",
+            "path": "guides/compositor-settings.en.md"
+          },
+          {
+            "url": "/docs/the-compositor/team/",
+            "title": "Work with a team",
+            "section": "compositor",
+            "group": "team",
+            "other_url": "/guia/el-compositor/equipo/",
+            "path": "guides/compositor-team.en.md"
+          },
+          {
+            "url": "/docs/the-compositor/courses/",
+            "title": "Run a course with student sites",
+            "section": "compositor",
+            "group": "team",
+            "other_url": "/guia/el-compositor/cursos/",
+            "path": "guides/compositor-courses.en.md"
+          },
+          {
+            "url": "/docs/the-compositor/publishing/",
+            "title": "Publishing",
+            "section": "compositor",
+            "group": "publish",
+            "other_url": "/guia/el-compositor/publicacion/",
+            "path": "docs/9-6-publishing.md",
+            "order": 6
+          },
+          {
+            "url": "/docs/the-compositor/sync-updates/",
+            "title": "Sync and Updates",
+            "section": "compositor",
+            "group": "publish",
+            "other_url": "/guia/el-compositor/sincronizacion-y-actualizaciones/",
+            "path": "docs/9-7-sync-updates.md",
+            "order": 7
+          },
+          {
+            "url": "/docs/the-compositor/troubleshooting/",
+            "title": "Resolve problems and recover stories",
+            "section": "compositor",
+            "group": "publish",
+            "other_url": "/guia/el-compositor/solucionar-problemas/",
+            "path": "guides/compositor-recovery.en.md"
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Overview",
+            "items": [
+              {
+                "url": "/docs/the-compositor/",
+                "title": "Compositor manual",
+                "section": "compositor",
+                "group": "main",
+                "other_url": "/guia/el-compositor/",
+                "path": "docs/9-0-compositor.md",
+                "order": 9
+              }
+            ]
+          },
+          {
+            "id": "begin",
+            "title": "Get started",
+            "items": [
+              {
+                "url": "/docs/getting-started/compositor/",
+                "title": "Use the Compositor",
+                "section": "compositor",
+                "group": "begin",
+                "other_url": "/guia/primeros-pasos/compositor/",
+                "path": "docs/1-1-compositor.md",
+                "order": 1
+              },
+              {
+                "url": "/docs/the-compositor/getting-started/",
+                "title": "Connect an existing site",
+                "section": "compositor",
+                "group": "begin",
+                "other_url": "/guia/el-compositor/primeros-pasos/",
+                "path": "docs/9-1-getting-started.md",
+                "order": 1
+              },
+              {
+                "url": "/docs/the-compositor/dashboard/",
+                "title": "Start and navigation",
+                "section": "compositor",
+                "group": "begin",
+                "other_url": "/guia/el-compositor/panel-de-control/",
+                "path": "docs/9-2-dashboard.md",
+                "order": 2
+              }
+            ]
+          },
+          {
+            "id": "compose",
+            "title": "Sources and stories",
+            "items": [
+              {
+                "url": "/docs/the-compositor/objects/",
+                "title": "Objects",
+                "section": "compositor",
+                "group": "compose",
+                "other_url": "/guia/el-compositor/objetos/",
+                "path": "docs/9-3-objects.md",
+                "order": 3
+              },
+              {
+                "url": "/docs/the-compositor/iiif-to-story/",
+                "title": "Use an IIIF object in a story",
+                "section": "compositor",
+                "group": "compose",
+                "other_url": "/guia/el-compositor/iiif-a-historia/",
+                "path": "guides/iiif.en.md"
+              },
+              {
+                "url": "/docs/the-compositor/story-editor/",
+                "title": "Story Editor",
+                "section": "compositor",
+                "group": "compose",
+                "other_url": "/guia/el-compositor/editor-historias/",
+                "path": "docs/9-4-story-editor.md",
+                "order": 4
+              },
+              {
+                "url": "/docs/the-compositor/video-audio/",
+                "title": "Video and Audio",
+                "section": "compositor",
+                "group": "compose",
+                "other_url": "/guia/el-compositor/video-y-audio/",
+                "path": "docs/9-5-video-audio.md",
+                "order": 5
+              }
+            ]
+          },
+          {
+            "id": "exhibition",
+            "title": "The exhibition",
+            "items": [
+              {
+                "url": "/docs/the-compositor/glossary/",
+                "title": "Create and link glossary entries",
+                "section": "compositor",
+                "group": "exhibition",
+                "other_url": "/guia/el-compositor/glosario/",
+                "path": "guides/compositor-glossary.en.md"
+              },
+              {
+                "url": "/docs/the-compositor/pages/",
+                "title": "Arrange the homepage and pages",
+                "section": "compositor",
+                "group": "exhibition",
+                "other_url": "/guia/el-compositor/paginas/",
+                "path": "guides/compositor-pages.en.md"
+              },
+              {
+                "url": "/docs/the-compositor/settings/",
+                "title": "Adjust appearance and site settings",
+                "section": "compositor",
+                "group": "exhibition",
+                "other_url": "/guia/el-compositor/configuracion/",
+                "path": "guides/compositor-settings.en.md"
+              }
+            ]
+          },
+          {
+            "id": "team",
+            "title": "Team and courses",
+            "items": [
+              {
+                "url": "/docs/the-compositor/team/",
+                "title": "Work with a team",
+                "section": "compositor",
+                "group": "team",
+                "other_url": "/guia/el-compositor/equipo/",
+                "path": "guides/compositor-team.en.md"
+              },
+              {
+                "url": "/docs/the-compositor/courses/",
+                "title": "Run a course with student sites",
+                "section": "compositor",
+                "group": "team",
+                "other_url": "/guia/el-compositor/cursos/",
+                "path": "guides/compositor-courses.en.md"
+              }
+            ]
+          },
+          {
+            "id": "publish",
+            "title": "Publish and maintain",
+            "items": [
+              {
+                "url": "/docs/the-compositor/publishing/",
+                "title": "Publishing",
+                "section": "compositor",
+                "group": "publish",
+                "other_url": "/guia/el-compositor/publicacion/",
+                "path": "docs/9-6-publishing.md",
+                "order": 6
+              },
+              {
+                "url": "/docs/the-compositor/sync-updates/",
+                "title": "Sync and Updates",
+                "section": "compositor",
+                "group": "publish",
+                "other_url": "/guia/el-compositor/sincronizacion-y-actualizaciones/",
+                "path": "docs/9-7-sync-updates.md",
+                "order": 7
+              },
+              {
+                "url": "/docs/the-compositor/troubleshooting/",
+                "title": "Resolve problems and recover stories",
+                "section": "compositor",
+                "group": "publish",
+                "other_url": "/guia/el-compositor/solucionar-problemas/",
+                "path": "guides/compositor-recovery.en.md"
+              }
+            ]
+          }
+        ]
+      },
+      "sheets": {
+        "id": "sheets",
+        "title": "Google Sheets manual",
+        "url": "/docs/google-sheets/",
+        "items": [
+          {
+            "url": "/docs/google-sheets/",
+            "title": "Google Sheets manual",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/guia/google-sheets/",
+            "path": "guides/sheets.en.html"
+          },
+          {
+            "url": "/docs/getting-started/google-sheets/",
+            "title": "Set Up with Google Sheets",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/guia/primeros-pasos/google-sheets/",
+            "path": "docs/1-2-google-sheets-option.md",
+            "order": 2
+          },
+          {
+            "url": "/docs/setup/manual/",
+            "title": "Manual Setup",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/guia/configuracion/configuracion-manual/",
+            "path": "docs/2-1-manual-setup.md",
+            "order": 1
+          },
+          {
+            "url": "/docs/your-data/google-sheets/",
+            "title": "Understand the spreadsheet",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/guia/tus-datos/google-sheets/",
+            "path": "docs/5-1-google-sheets.md",
+            "order": 1
+          },
+          {
+            "url": "/docs/getting-started/add-content/",
+            "title": "Add an object and a first story",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/guia/primeros-pasos/agrega-contenido/",
+            "path": "docs/1-5-add-content.md",
+            "order": 5
+          },
+          {
+            "url": "/docs/getting-started/review-refine/",
+            "title": "Frame, review and publish from Sheets",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/guia/primeros-pasos/revisa-y-perfecciona/",
+            "path": "docs/1-6-review-refine.md",
+            "order": 6
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Guide contents",
+            "items": [
+              {
+                "url": "/docs/google-sheets/",
+                "title": "Google Sheets manual",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/guia/google-sheets/",
+                "path": "guides/sheets.en.html"
+              },
+              {
+                "url": "/docs/getting-started/google-sheets/",
+                "title": "Set Up with Google Sheets",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/guia/primeros-pasos/google-sheets/",
+                "path": "docs/1-2-google-sheets-option.md",
+                "order": 2
+              },
+              {
+                "url": "/docs/setup/manual/",
+                "title": "Manual Setup",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/guia/configuracion/configuracion-manual/",
+                "path": "docs/2-1-manual-setup.md",
+                "order": 1
+              },
+              {
+                "url": "/docs/your-data/google-sheets/",
+                "title": "Understand the spreadsheet",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/guia/tus-datos/google-sheets/",
+                "path": "docs/5-1-google-sheets.md",
+                "order": 1
+              },
+              {
+                "url": "/docs/getting-started/add-content/",
+                "title": "Add an object and a first story",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/guia/primeros-pasos/agrega-contenido/",
+                "path": "docs/1-5-add-content.md",
+                "order": 5
+              },
+              {
+                "url": "/docs/getting-started/review-refine/",
+                "title": "Frame, review and publish from Sheets",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/guia/primeros-pasos/revisa-y-perfecciona/",
+                "path": "docs/1-6-review-refine.md",
+                "order": 6
+              }
+            ]
+          }
+        ]
+      },
+      "local": {
+        "id": "local",
+        "title": "Local authoring & builds",
+        "url": "/docs/local-authoring/",
+        "items": [
+          {
+            "url": "/docs/local-authoring/",
+            "title": "Local authoring & builds",
+            "section": "local",
+            "group": "main",
+            "other_url": "/guia/autoria-local/",
+            "path": "guides/local.en.html"
+          },
+          {
+            "url": "/docs/getting-started/local-dev/",
+            "title": "Install and run Telar locally",
+            "section": "local",
+            "group": "main",
+            "other_url": "/guia/primeros-pasos/desarrollo-local/",
+            "path": "docs/1-3-local-dev.md",
+            "order": 3
+          },
+          {
+            "url": "/docs/local-authoring/content/",
+            "title": "Edit objects, stories and text files",
+            "section": "local",
+            "group": "main",
+            "other_url": "/guia/autoria-local/contenido/",
+            "path": "guides/local-content.en.md"
+          },
+          {
+            "url": "/docs/local-authoring/preview/",
+            "title": "Rebuild and inspect the local site",
+            "section": "local",
+            "group": "main",
+            "other_url": "/guia/autoria-local/vista-previa/",
+            "path": "guides/local-preview.en.md"
+          },
+          {
+            "url": "/docs/local-authoring/publish/",
+            "title": "Publish and maintain a local project",
+            "section": "local",
+            "group": "main",
+            "other_url": "/guia/autoria-local/publicar/",
+            "path": "guides/local-publish.en.md"
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Contents",
+            "items": [
+              {
+                "url": "/docs/local-authoring/",
+                "title": "Local authoring & builds",
+                "section": "local",
+                "group": "main",
+                "other_url": "/guia/autoria-local/",
+                "path": "guides/local.en.html"
+              },
+              {
+                "url": "/docs/getting-started/local-dev/",
+                "title": "Install and run Telar locally",
+                "section": "local",
+                "group": "main",
+                "other_url": "/guia/primeros-pasos/desarrollo-local/",
+                "path": "docs/1-3-local-dev.md",
+                "order": 3
+              },
+              {
+                "url": "/docs/local-authoring/content/",
+                "title": "Edit objects, stories and text files",
+                "section": "local",
+                "group": "main",
+                "other_url": "/guia/autoria-local/contenido/",
+                "path": "guides/local-content.en.md"
+              },
+              {
+                "url": "/docs/local-authoring/preview/",
+                "title": "Rebuild and inspect the local site",
+                "section": "local",
+                "group": "main",
+                "other_url": "/guia/autoria-local/vista-previa/",
+                "path": "guides/local-preview.en.md"
+              },
+              {
+                "url": "/docs/local-authoring/publish/",
+                "title": "Publish and maintain a local project",
+                "section": "local",
+                "group": "main",
+                "other_url": "/guia/autoria-local/publicar/",
+                "path": "guides/local-publish.en.md"
+              }
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "id": "reference",
+        "title": "Reference",
+        "url": "/docs/reference/",
+        "items": [
+          {
+            "url": "/docs/setup/",
+            "title": "Set Up Your Site",
+            "section": "reference",
+            "group": "configuration",
+            "other_url": "/guia/configuracion/",
+            "path": "docs/2-0-setup.md",
+            "order": 2
+          },
+          {
+            "url": "/docs/setup/upgrading/",
+            "title": "Upgrading Telar",
+            "section": "reference",
+            "group": "support",
+            "other_url": "/guia/configuracion/actualizacion/",
+            "path": "docs/2-3-upgrading.md",
+            "order": 3
+          },
+          {
+            "url": "/docs/configure/",
+            "title": "Configure Your Site",
+            "section": "reference",
+            "group": "configuration",
+            "other_url": "/guia/configurar/",
+            "path": "docs/3-0-configure.md",
+            "order": 3
+          },
+          {
+            "url": "/docs/configure/config-generator/",
+            "title": "Config Generator and Editor",
+            "section": "reference",
+            "group": "configuration",
+            "other_url": "/guia/configurar/generador-de-configuracion/",
+            "path": "docs/3-1-config-generator.md",
+            "order": 1
+          },
+          {
+            "url": "/docs/configure/configuration/",
+            "title": "Configuration",
+            "section": "reference",
+            "group": "configuration",
+            "other_url": "/guia/configurar/configuracion/",
+            "path": "docs/3-2-configuration.md",
+            "order": 2
+          },
+          {
+            "url": "/docs/configure/config-validator/",
+            "title": "Config Validator",
+            "section": "reference",
+            "group": "configuration",
+            "other_url": "/guia/configurar/validador-de-configuracion/",
+            "path": "docs/3-3-config-validator.md",
+            "order": 3
+          },
+          {
+            "url": "/docs/your-content/",
+            "title": "Your Content",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/",
+            "path": "docs/4-0-your-content.md",
+            "order": 4
+          },
+          {
+            "url": "/docs/your-content/objects/",
+            "title": "Objects",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/objetos/",
+            "path": "docs/4-1-objects.md",
+            "order": 1
+          },
+          {
+            "url": "/docs/your-content/audio-objects/",
+            "title": "Audio Objects",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/objetos-de-audio/",
+            "path": "docs/4-10-audio-objects.md",
+            "order": 10
+          },
+          {
+            "url": "/docs/your-content/self-hosted-images/",
+            "title": "Self-Hosted Images",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/imagenes-autoalojadas/",
+            "path": "docs/4-2-self-hosted-images.md",
+            "order": 2
+          },
+          {
+            "url": "/docs/your-content/external-iiif/",
+            "title": "External IIIF Images",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/iiif-externo/",
+            "path": "docs/4-3-external-iiif.md",
+            "order": 3
+          },
+          {
+            "url": "/docs/your-content/stories-panels/",
+            "title": "Stories & Panels",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/historias-paneles/",
+            "path": "docs/4-4-stories-panels.md",
+            "order": 4
+          },
+          {
+            "url": "/docs/your-content/rich-content/",
+            "title": "Rich Content with Markdown",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/contenido-enriquecido/",
+            "path": "docs/4-5-rich-content.md",
+            "order": 5
+          },
+          {
+            "url": "/docs/your-content/markdown-syntax/",
+            "title": "Markdown Syntax Reference",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/sintaxis-markdown/",
+            "path": "docs/4-6-markdown-syntax.md",
+            "order": 6
+          },
+          {
+            "url": "/docs/your-content/widgets/",
+            "title": "Widgets",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/widgets/",
+            "path": "docs/4-7-widgets.md",
+            "order": 7
+          },
+          {
+            "url": "/docs/your-content/pdf-documents/",
+            "title": "PDF Documents",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/documentos-pdf/",
+            "path": "docs/4-8-pdf-documents.md",
+            "order": 8
+          },
+          {
+            "url": "/docs/your-content/video-objects/",
+            "title": "Video Objects",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/guia/tu-contenido/objetos-de-video/",
+            "path": "docs/4-9-video-objects.md",
+            "order": 9
+          },
+          {
+            "url": "/docs/your-data/",
+            "title": "Your Data",
+            "section": "reference",
+            "group": "data",
+            "other_url": "/guia/tus-datos/",
+            "path": "docs/5-0-your-data.md",
+            "order": 5
+          },
+          {
+            "url": "/docs/your-data/csv-project/",
+            "title": "Project Columns",
+            "section": "reference",
+            "group": "data",
+            "other_url": "/guia/tus-datos/csv-proyecto/",
+            "path": "docs/5-2-csv-project.md",
+            "order": 2
+          },
+          {
+            "url": "/docs/your-data/csv-objects/",
+            "title": "Object Columns",
+            "section": "reference",
+            "group": "data",
+            "other_url": "/guia/tus-datos/csv-objetos/",
+            "path": "docs/5-3-csv-objects.md",
+            "order": 3
+          },
+          {
+            "url": "/docs/your-data/csv-stories/",
+            "title": "Story Columns",
+            "section": "reference",
+            "group": "data",
+            "other_url": "/guia/tus-datos/csv-historias/",
+            "path": "docs/5-4-csv-stories.md",
+            "order": 4
+          },
+          {
+            "url": "/docs/your-data/csv-glossary/",
+            "title": "Glossary Columns",
+            "section": "reference",
+            "group": "data",
+            "other_url": "/guia/tus-datos/csv-glosario/",
+            "path": "docs/5-5-csv-glossary.md",
+            "order": 5
+          },
+          {
+            "url": "/docs/site-features/",
+            "title": "Site Features",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/guia/funciones/",
+            "path": "docs/6-0-site-features.md",
+            "order": 6
+          },
+          {
+            "url": "/docs/site-features/objects-gallery/",
+            "title": "Objects Gallery",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/guia/funciones/galeria-objetos/",
+            "path": "docs/6-1-objects-gallery.md",
+            "order": 1
+          },
+          {
+            "url": "/docs/site-features/glossary/",
+            "title": "Glossary",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/guia/funciones/glosario/",
+            "path": "docs/6-2-glossary.md",
+            "order": 2
+          },
+          {
+            "url": "/docs/site-features/private-stories/",
+            "title": "Private Stories",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/guia/funciones/historias-privadas/",
+            "path": "docs/6-3-private-stories.md",
+            "order": 3
+          },
+          {
+            "url": "/docs/site-features/custom-pages/",
+            "title": "Custom Pages",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/guia/funciones/paginas-personalizadas/",
+            "path": "docs/6-4-custom-pages.md",
+            "order": 4
+          },
+          {
+            "url": "/docs/site-features/embedding/",
+            "title": "Embedding Telar Stories in LMS & Websites",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/guia/funciones/insercion/",
+            "path": "docs/6-5-embedding.md",
+            "order": 5
+          },
+          {
+            "url": "/docs/customization/",
+            "title": "Customization",
+            "section": "reference",
+            "group": "appearance",
+            "other_url": "/guia/personalizacion/",
+            "path": "docs/7-0-customization.md",
+            "order": 7
+          },
+          {
+            "url": "/docs/customization/themes/",
+            "title": "Themes",
+            "section": "reference",
+            "group": "appearance",
+            "other_url": "/guia/personalizacion/temas/",
+            "path": "docs/7-1-themes.md",
+            "order": 1
+          },
+          {
+            "url": "/docs/customization/home-page/",
+            "title": "Customizing the Home Page",
+            "section": "reference",
+            "group": "appearance",
+            "other_url": "/guia/personalizacion/pagina-de-inicio/",
+            "path": "docs/7-2-home-page.md",
+            "order": 2
+          },
+          {
+            "url": "/docs/customization/navigation-menu/",
+            "title": "Navigation Menu Configuration",
+            "section": "reference",
+            "group": "appearance",
+            "other_url": "/guia/personalizacion/menu-navegacion/",
+            "path": "docs/7-3-navigation-menu.md",
+            "order": 3
+          },
+          {
+            "url": "/docs/customization/demo-content/",
+            "title": "Demo Content",
+            "section": "reference",
+            "group": "appearance",
+            "other_url": "/guia/personalizacion/contenido-demostracion/",
+            "path": "docs/7-4-demo-content.md",
+            "order": 4
+          },
+          {
+            "url": "/docs/reference/",
+            "title": "Reference",
+            "section": "reference",
+            "group": "main",
+            "other_url": "/guia/referencia/",
+            "path": "guides/reference.en.html"
+          }
+        ],
+        "groups": [
+          {
+            "id": "configuration",
+            "title": "Configuration and hosting",
+            "items": [
+              {
+                "url": "/docs/setup/",
+                "title": "Set Up Your Site",
+                "section": "reference",
+                "group": "configuration",
+                "other_url": "/guia/configuracion/",
+                "path": "docs/2-0-setup.md",
+                "order": 2
+              },
+              {
+                "url": "/docs/configure/",
+                "title": "Configure Your Site",
+                "section": "reference",
+                "group": "configuration",
+                "other_url": "/guia/configurar/",
+                "path": "docs/3-0-configure.md",
+                "order": 3
+              },
+              {
+                "url": "/docs/configure/config-generator/",
+                "title": "Config Generator and Editor",
+                "section": "reference",
+                "group": "configuration",
+                "other_url": "/guia/configurar/generador-de-configuracion/",
+                "path": "docs/3-1-config-generator.md",
+                "order": 1
+              },
+              {
+                "url": "/docs/configure/configuration/",
+                "title": "Configuration",
+                "section": "reference",
+                "group": "configuration",
+                "other_url": "/guia/configurar/configuracion/",
+                "path": "docs/3-2-configuration.md",
+                "order": 2
+              },
+              {
+                "url": "/docs/configure/config-validator/",
+                "title": "Config Validator",
+                "section": "reference",
+                "group": "configuration",
+                "other_url": "/guia/configurar/validador-de-configuracion/",
+                "path": "docs/3-3-config-validator.md",
+                "order": 3
+              }
+            ]
+          },
+          {
+            "id": "content",
+            "title": "Sources and content",
+            "items": [
+              {
+                "url": "/docs/your-content/",
+                "title": "Your Content",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/",
+                "path": "docs/4-0-your-content.md",
+                "order": 4
+              },
+              {
+                "url": "/docs/your-content/objects/",
+                "title": "Objects",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/objetos/",
+                "path": "docs/4-1-objects.md",
+                "order": 1
+              },
+              {
+                "url": "/docs/your-content/audio-objects/",
+                "title": "Audio Objects",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/objetos-de-audio/",
+                "path": "docs/4-10-audio-objects.md",
+                "order": 10
+              },
+              {
+                "url": "/docs/your-content/self-hosted-images/",
+                "title": "Self-Hosted Images",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/imagenes-autoalojadas/",
+                "path": "docs/4-2-self-hosted-images.md",
+                "order": 2
+              },
+              {
+                "url": "/docs/your-content/external-iiif/",
+                "title": "External IIIF Images",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/iiif-externo/",
+                "path": "docs/4-3-external-iiif.md",
+                "order": 3
+              },
+              {
+                "url": "/docs/your-content/stories-panels/",
+                "title": "Stories & Panels",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/historias-paneles/",
+                "path": "docs/4-4-stories-panels.md",
+                "order": 4
+              },
+              {
+                "url": "/docs/your-content/rich-content/",
+                "title": "Rich Content with Markdown",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/contenido-enriquecido/",
+                "path": "docs/4-5-rich-content.md",
+                "order": 5
+              },
+              {
+                "url": "/docs/your-content/markdown-syntax/",
+                "title": "Markdown Syntax Reference",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/sintaxis-markdown/",
+                "path": "docs/4-6-markdown-syntax.md",
+                "order": 6
+              },
+              {
+                "url": "/docs/your-content/widgets/",
+                "title": "Widgets",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/widgets/",
+                "path": "docs/4-7-widgets.md",
+                "order": 7
+              },
+              {
+                "url": "/docs/your-content/pdf-documents/",
+                "title": "PDF Documents",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/documentos-pdf/",
+                "path": "docs/4-8-pdf-documents.md",
+                "order": 8
+              },
+              {
+                "url": "/docs/your-content/video-objects/",
+                "title": "Video Objects",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/guia/tu-contenido/objetos-de-video/",
+                "path": "docs/4-9-video-objects.md",
+                "order": 9
+              }
+            ]
+          },
+          {
+            "id": "data",
+            "title": "Data formats",
+            "items": [
+              {
+                "url": "/docs/your-data/",
+                "title": "Your Data",
+                "section": "reference",
+                "group": "data",
+                "other_url": "/guia/tus-datos/",
+                "path": "docs/5-0-your-data.md",
+                "order": 5
+              },
+              {
+                "url": "/docs/your-data/csv-project/",
+                "title": "Project Columns",
+                "section": "reference",
+                "group": "data",
+                "other_url": "/guia/tus-datos/csv-proyecto/",
+                "path": "docs/5-2-csv-project.md",
+                "order": 2
+              },
+              {
+                "url": "/docs/your-data/csv-objects/",
+                "title": "Object Columns",
+                "section": "reference",
+                "group": "data",
+                "other_url": "/guia/tus-datos/csv-objetos/",
+                "path": "docs/5-3-csv-objects.md",
+                "order": 3
+              },
+              {
+                "url": "/docs/your-data/csv-stories/",
+                "title": "Story Columns",
+                "section": "reference",
+                "group": "data",
+                "other_url": "/guia/tus-datos/csv-historias/",
+                "path": "docs/5-4-csv-stories.md",
+                "order": 4
+              },
+              {
+                "url": "/docs/your-data/csv-glossary/",
+                "title": "Glossary Columns",
+                "section": "reference",
+                "group": "data",
+                "other_url": "/guia/tus-datos/csv-glosario/",
+                "path": "docs/5-5-csv-glossary.md",
+                "order": 5
+              }
+            ]
+          },
+          {
+            "id": "features",
+            "title": "Reader features",
+            "items": [
+              {
+                "url": "/docs/site-features/",
+                "title": "Site Features",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/guia/funciones/",
+                "path": "docs/6-0-site-features.md",
+                "order": 6
+              },
+              {
+                "url": "/docs/site-features/objects-gallery/",
+                "title": "Objects Gallery",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/guia/funciones/galeria-objetos/",
+                "path": "docs/6-1-objects-gallery.md",
+                "order": 1
+              },
+              {
+                "url": "/docs/site-features/glossary/",
+                "title": "Glossary",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/guia/funciones/glosario/",
+                "path": "docs/6-2-glossary.md",
+                "order": 2
+              },
+              {
+                "url": "/docs/site-features/private-stories/",
+                "title": "Private Stories",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/guia/funciones/historias-privadas/",
+                "path": "docs/6-3-private-stories.md",
+                "order": 3
+              },
+              {
+                "url": "/docs/site-features/custom-pages/",
+                "title": "Custom Pages",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/guia/funciones/paginas-personalizadas/",
+                "path": "docs/6-4-custom-pages.md",
+                "order": 4
+              },
+              {
+                "url": "/docs/site-features/embedding/",
+                "title": "Embedding Telar Stories in LMS & Websites",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/guia/funciones/insercion/",
+                "path": "docs/6-5-embedding.md",
+                "order": 5
+              }
+            ]
+          },
+          {
+            "id": "appearance",
+            "title": "Appearance and navigation",
+            "items": [
+              {
+                "url": "/docs/customization/",
+                "title": "Customization",
+                "section": "reference",
+                "group": "appearance",
+                "other_url": "/guia/personalizacion/",
+                "path": "docs/7-0-customization.md",
+                "order": 7
+              },
+              {
+                "url": "/docs/customization/themes/",
+                "title": "Themes",
+                "section": "reference",
+                "group": "appearance",
+                "other_url": "/guia/personalizacion/temas/",
+                "path": "docs/7-1-themes.md",
+                "order": 1
+              },
+              {
+                "url": "/docs/customization/home-page/",
+                "title": "Customizing the Home Page",
+                "section": "reference",
+                "group": "appearance",
+                "other_url": "/guia/personalizacion/pagina-de-inicio/",
+                "path": "docs/7-2-home-page.md",
+                "order": 2
+              },
+              {
+                "url": "/docs/customization/navigation-menu/",
+                "title": "Navigation Menu Configuration",
+                "section": "reference",
+                "group": "appearance",
+                "other_url": "/guia/personalizacion/menu-navegacion/",
+                "path": "docs/7-3-navigation-menu.md",
+                "order": 3
+              },
+              {
+                "url": "/docs/customization/demo-content/",
+                "title": "Demo Content",
+                "section": "reference",
+                "group": "appearance",
+                "other_url": "/guia/personalizacion/contenido-demostracion/",
+                "path": "docs/7-4-demo-content.md",
+                "order": 4
+              }
+            ]
+          },
+          {
+            "id": "support",
+            "title": "Maintenance",
+            "items": [
+              {
+                "url": "/docs/setup/upgrading/",
+                "title": "Upgrading Telar",
+                "section": "reference",
+                "group": "support",
+                "other_url": "/guia/configuracion/actualizacion/",
+                "path": "docs/2-3-upgrading.md",
+                "order": 3
+              }
+            ]
+          },
+          {
+            "id": "main",
+            "title": "Guide contents",
+            "items": [
+              {
+                "url": "/docs/reference/",
+                "title": "Reference",
+                "section": "reference",
+                "group": "main",
+                "other_url": "/guia/referencia/",
+                "path": "guides/reference.en.html"
+              }
+            ]
+          }
+        ]
+      },
+      "teaching": {
+        "id": "teaching",
+        "title": "Teaching with Telar",
+        "url": "/docs/teaching/",
+        "items": [
+          {
+            "url": "/docs/teaching/",
+            "title": "Teaching with Telar",
+            "section": "teaching",
+            "group": "main",
+            "other_url": "/guia/ensenar/",
+            "path": "guides/teaching.en.html"
+          },
+          {
+            "url": "/docs/teaching/request-access/",
+            "title": "Request teaching-mode access",
+            "section": "teaching",
+            "group": "main",
+            "other_url": "/guia/ensenar/solicitar-acceso/",
+            "path": "guides/teaching-request.en.html"
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Guide contents",
+            "items": [
+              {
+                "url": "/docs/teaching/",
+                "title": "Teaching with Telar",
+                "section": "teaching",
+                "group": "main",
+                "other_url": "/guia/ensenar/",
+                "path": "guides/teaching.en.html"
+              },
+              {
+                "url": "/docs/teaching/request-access/",
+                "title": "Request teaching-mode access",
+                "section": "teaching",
+                "group": "main",
+                "other_url": "/guia/ensenar/solicitar-acceso/",
+                "path": "guides/teaching-request.en.html"
+              }
+            ]
+          }
+        ]
+      },
+      "developers": {
+        "id": "developers",
+        "title": "For developers",
+        "url": "/docs/developers/",
+        "items": [
+          {
+            "url": "/docs/developers/",
+            "title": "For Developers",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/guia/desarrolladores/",
+            "path": "docs/8-0-for-developers.md",
+            "order": 8
+          },
+          {
+            "url": "/docs/developers/local-development/",
+            "title": "Local Development",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/guia/desarrolladores/desarrollo-local/",
+            "path": "docs/8-1-local-development.md",
+            "order": 1
+          },
+          {
+            "url": "/docs/developers/github-actions/",
+            "title": "GitHub Actions Workflow",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/guia/desarrolladores/github-actions/",
+            "path": "docs/8-2-github-actions.md",
+            "order": 2
+          },
+          {
+            "url": "/docs/developers/demo-system/",
+            "title": "Demo System Architecture",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/guia/desarrolladores/sistema-demos/",
+            "path": "docs/8-3-demo-system-architecture.md",
+            "order": 3
+          },
+          {
+            "url": "/docs/developers/embedding-system/",
+            "title": "Embedding System Reference",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/guia/desarrolladores/sistema-insercion/",
+            "path": "docs/8-4-embedding-system.md",
+            "order": 4
+          },
+          {
+            "url": "/docs/developers/styling/",
+            "title": "Advanced Styling",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/guia/desarrolladores/estilos/",
+            "path": "docs/8-5-styling.md",
+            "order": 5
+          },
+          {
+            "url": "/docs/developers/mobile/",
+            "title": "Layouts and Small Screens",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/guia/desarrolladores/moviles/",
+            "path": "docs/8-6-mobile.md",
+            "order": 6
+          },
+          {
+            "url": "/docs/developers/story-engine/",
+            "title": "Story Engine Vocabulary",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/guia/desarrolladores/motor-de-historias/",
+            "path": "docs/8-7-story-engine.md",
+            "order": 7
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Guide contents",
+            "items": [
+              {
+                "url": "/docs/developers/",
+                "title": "For Developers",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/guia/desarrolladores/",
+                "path": "docs/8-0-for-developers.md",
+                "order": 8
+              },
+              {
+                "url": "/docs/developers/local-development/",
+                "title": "Local Development",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/guia/desarrolladores/desarrollo-local/",
+                "path": "docs/8-1-local-development.md",
+                "order": 1
+              },
+              {
+                "url": "/docs/developers/github-actions/",
+                "title": "GitHub Actions Workflow",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/guia/desarrolladores/github-actions/",
+                "path": "docs/8-2-github-actions.md",
+                "order": 2
+              },
+              {
+                "url": "/docs/developers/demo-system/",
+                "title": "Demo System Architecture",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/guia/desarrolladores/sistema-demos/",
+                "path": "docs/8-3-demo-system-architecture.md",
+                "order": 3
+              },
+              {
+                "url": "/docs/developers/embedding-system/",
+                "title": "Embedding System Reference",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/guia/desarrolladores/sistema-insercion/",
+                "path": "docs/8-4-embedding-system.md",
+                "order": 4
+              },
+              {
+                "url": "/docs/developers/styling/",
+                "title": "Advanced Styling",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/guia/desarrolladores/estilos/",
+                "path": "docs/8-5-styling.md",
+                "order": 5
+              },
+              {
+                "url": "/docs/developers/mobile/",
+                "title": "Layouts and Small Screens",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/guia/desarrolladores/moviles/",
+                "path": "docs/8-6-mobile.md",
+                "order": 6
+              },
+              {
+                "url": "/docs/developers/story-engine/",
+                "title": "Story Engine Vocabulary",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/guia/desarrolladores/motor-de-historias/",
+                "path": "docs/8-7-story-engine.md",
+                "order": 7
+              }
+            ]
+          }
+        ]
+      },
+      "guides": {
+        "id": "guides",
+        "title": "Guides",
+        "url": "/docs/",
+        "items": [],
+        "groups": []
+      }
+    },
+    "es": {
+      "quick": {
+        "id": "quick",
+        "title": "Guía rápida para talleres",
+        "url": "/empezar/",
+        "items": [
+          {
+            "url": "/empezar/",
+            "title": "Guía rápida para talleres",
+            "section": "quick",
+            "group": "main",
+            "other_url": "/start/",
+            "path": "empezar.html"
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Contenido de la guía",
+            "items": [
+              {
+                "url": "/empezar/",
+                "title": "Guía rápida para talleres",
+                "section": "quick",
+                "group": "main",
+                "other_url": "/start/",
+                "path": "empezar.html"
+              }
+            ]
+          }
+        ]
+      },
+      "planning": {
+        "id": "planning",
+        "title": "Planear una exhibición",
+        "url": "/guia/planear/",
+        "items": [
+          {
+            "url": "/guia/planear/",
+            "title": "Planear una exhibición",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/docs/plan/",
+            "path": "guides/planning.es.html"
+          },
+          {
+            "url": "/guia/primeros-pasos/estructura-narrativa/",
+            "title": "Planea el recorrido de la historia",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/docs/getting-started/narrative-structure/",
+            "path": "docs/1-4-narrative-structure.es.md"
+          },
+          {
+            "url": "/guia/planear/fuentes-y-encuadres/",
+            "title": "Elige fuentes y encuadres",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/docs/plan/sources-and-framing/",
+            "path": "guides/planning-sources.es.md"
+          },
+          {
+            "url": "/guia/planear/capas-y-glosario/",
+            "title": "Planea los paneles y el glosario",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/docs/plan/layers-and-glossary/",
+            "path": "guides/planning-layers.es.md"
+          },
+          {
+            "url": "/guia/planear/organizar-la-exhibicion/",
+            "title": "Organiza toda la exhibición",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/docs/plan/exhibition-layout/",
+            "path": "guides/planning-layout.es.md"
+          },
+          {
+            "url": "/guia/planear/revision/",
+            "title": "Prueba la exhibición con lectores",
+            "section": "planning",
+            "group": "main",
+            "other_url": "/docs/plan/review/",
+            "path": "guides/planning-review.es.md"
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Contenido",
+            "items": [
+              {
+                "url": "/guia/planear/",
+                "title": "Planear una exhibición",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/docs/plan/",
+                "path": "guides/planning.es.html"
+              },
+              {
+                "url": "/guia/primeros-pasos/estructura-narrativa/",
+                "title": "Planea el recorrido de la historia",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/docs/getting-started/narrative-structure/",
+                "path": "docs/1-4-narrative-structure.es.md"
+              },
+              {
+                "url": "/guia/planear/fuentes-y-encuadres/",
+                "title": "Elige fuentes y encuadres",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/docs/plan/sources-and-framing/",
+                "path": "guides/planning-sources.es.md"
+              },
+              {
+                "url": "/guia/planear/capas-y-glosario/",
+                "title": "Planea los paneles y el glosario",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/docs/plan/layers-and-glossary/",
+                "path": "guides/planning-layers.es.md"
+              },
+              {
+                "url": "/guia/planear/organizar-la-exhibicion/",
+                "title": "Organiza toda la exhibición",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/docs/plan/exhibition-layout/",
+                "path": "guides/planning-layout.es.md"
+              },
+              {
+                "url": "/guia/planear/revision/",
+                "title": "Prueba la exhibición con lectores",
+                "section": "planning",
+                "group": "main",
+                "other_url": "/docs/plan/review/",
+                "path": "guides/planning-review.es.md"
+              }
+            ]
+          }
+        ]
+      },
+      "compositor": {
+        "id": "compositor",
+        "title": "Manual del Compositor",
+        "url": "/guia/el-compositor/",
+        "items": [
+          {
+            "url": "/guia/el-compositor/",
+            "title": "Manual del Compositor",
+            "section": "compositor",
+            "group": "main",
+            "other_url": "/docs/the-compositor/",
+            "path": "docs/9-0-compositor.es.md",
+            "order": 9
+          },
+          {
+            "url": "/guia/primeros-pasos/compositor/",
+            "title": "Usa el Compositor",
+            "section": "compositor",
+            "group": "begin",
+            "other_url": "/docs/getting-started/compositor/",
+            "path": "docs/1-1-compositor.es.md",
+            "order": 1
+          },
+          {
+            "url": "/guia/el-compositor/primeros-pasos/",
+            "title": "Conectar un sitio existente",
+            "section": "compositor",
+            "group": "begin",
+            "other_url": "/docs/the-compositor/getting-started/",
+            "path": "docs/9-1-getting-started.es.md",
+            "order": 1
+          },
+          {
+            "url": "/guia/el-compositor/panel-de-control/",
+            "title": "Inicio y navegación",
+            "section": "compositor",
+            "group": "begin",
+            "other_url": "/docs/the-compositor/dashboard/",
+            "path": "docs/9-2-dashboard.es.md",
+            "order": 2
+          },
+          {
+            "url": "/guia/el-compositor/objetos/",
+            "title": "Objetos",
+            "section": "compositor",
+            "group": "compose",
+            "other_url": "/docs/the-compositor/objects/",
+            "path": "docs/9-3-objects.es.md",
+            "order": 3
+          },
+          {
+            "url": "/guia/el-compositor/iiif-a-historia/",
+            "title": "Usar un objeto IIIF en una historia",
+            "section": "compositor",
+            "group": "compose",
+            "other_url": "/docs/the-compositor/iiif-to-story/",
+            "path": "guides/iiif.es.md"
+          },
+          {
+            "url": "/guia/el-compositor/editor-historias/",
+            "title": "Editor de historias",
+            "section": "compositor",
+            "group": "compose",
+            "other_url": "/docs/the-compositor/story-editor/",
+            "path": "docs/9-4-story-editor.es.md",
+            "order": 4
+          },
+          {
+            "url": "/guia/el-compositor/video-y-audio/",
+            "title": "Video y audio",
+            "section": "compositor",
+            "group": "compose",
+            "other_url": "/docs/the-compositor/video-audio/",
+            "path": "docs/9-5-video-audio.es.md",
+            "order": 5
+          },
+          {
+            "url": "/guia/el-compositor/glosario/",
+            "title": "Crea y enlaza entradas del glosario",
+            "section": "compositor",
+            "group": "exhibition",
+            "other_url": "/docs/the-compositor/glossary/",
+            "path": "guides/compositor-glossary.es.md"
+          },
+          {
+            "url": "/guia/el-compositor/paginas/",
+            "title": "Organiza el inicio y las páginas",
+            "section": "compositor",
+            "group": "exhibition",
+            "other_url": "/docs/the-compositor/pages/",
+            "path": "guides/compositor-pages.es.md"
+          },
+          {
+            "url": "/guia/el-compositor/configuracion/",
+            "title": "Ajusta la apariencia y la configuración",
+            "section": "compositor",
+            "group": "exhibition",
+            "other_url": "/docs/the-compositor/settings/",
+            "path": "guides/compositor-settings.es.md"
+          },
+          {
+            "url": "/guia/el-compositor/equipo/",
+            "title": "Trabaja en equipo",
+            "section": "compositor",
+            "group": "team",
+            "other_url": "/docs/the-compositor/team/",
+            "path": "guides/compositor-team.es.md"
+          },
+          {
+            "url": "/guia/el-compositor/cursos/",
+            "title": "Organiza un curso con sitios de estudiantes",
+            "section": "compositor",
+            "group": "team",
+            "other_url": "/docs/the-compositor/courses/",
+            "path": "guides/compositor-courses.es.md"
+          },
+          {
+            "url": "/guia/el-compositor/publicacion/",
+            "title": "Publicación",
+            "section": "compositor",
+            "group": "publish",
+            "other_url": "/docs/the-compositor/publishing/",
+            "path": "docs/9-6-publishing.es.md",
+            "order": 6
+          },
+          {
+            "url": "/guia/el-compositor/sincronizacion-y-actualizaciones/",
+            "title": "Sincronización y actualizaciones",
+            "section": "compositor",
+            "group": "publish",
+            "other_url": "/docs/the-compositor/sync-updates/",
+            "path": "docs/9-7-sync-updates.es.md",
+            "order": 7
+          },
+          {
+            "url": "/guia/el-compositor/solucionar-problemas/",
+            "title": "Resuelve problemas y recupera historias",
+            "section": "compositor",
+            "group": "publish",
+            "other_url": "/docs/the-compositor/troubleshooting/",
+            "path": "guides/compositor-recovery.es.md"
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Presentación",
+            "items": [
+              {
+                "url": "/guia/el-compositor/",
+                "title": "Manual del Compositor",
+                "section": "compositor",
+                "group": "main",
+                "other_url": "/docs/the-compositor/",
+                "path": "docs/9-0-compositor.es.md",
+                "order": 9
+              }
+            ]
+          },
+          {
+            "id": "begin",
+            "title": "Comenzar",
+            "items": [
+              {
+                "url": "/guia/primeros-pasos/compositor/",
+                "title": "Usa el Compositor",
+                "section": "compositor",
+                "group": "begin",
+                "other_url": "/docs/getting-started/compositor/",
+                "path": "docs/1-1-compositor.es.md",
+                "order": 1
+              },
+              {
+                "url": "/guia/el-compositor/primeros-pasos/",
+                "title": "Conectar un sitio existente",
+                "section": "compositor",
+                "group": "begin",
+                "other_url": "/docs/the-compositor/getting-started/",
+                "path": "docs/9-1-getting-started.es.md",
+                "order": 1
+              },
+              {
+                "url": "/guia/el-compositor/panel-de-control/",
+                "title": "Inicio y navegación",
+                "section": "compositor",
+                "group": "begin",
+                "other_url": "/docs/the-compositor/dashboard/",
+                "path": "docs/9-2-dashboard.es.md",
+                "order": 2
+              }
+            ]
+          },
+          {
+            "id": "compose",
+            "title": "Fuentes e historias",
+            "items": [
+              {
+                "url": "/guia/el-compositor/objetos/",
+                "title": "Objetos",
+                "section": "compositor",
+                "group": "compose",
+                "other_url": "/docs/the-compositor/objects/",
+                "path": "docs/9-3-objects.es.md",
+                "order": 3
+              },
+              {
+                "url": "/guia/el-compositor/iiif-a-historia/",
+                "title": "Usar un objeto IIIF en una historia",
+                "section": "compositor",
+                "group": "compose",
+                "other_url": "/docs/the-compositor/iiif-to-story/",
+                "path": "guides/iiif.es.md"
+              },
+              {
+                "url": "/guia/el-compositor/editor-historias/",
+                "title": "Editor de historias",
+                "section": "compositor",
+                "group": "compose",
+                "other_url": "/docs/the-compositor/story-editor/",
+                "path": "docs/9-4-story-editor.es.md",
+                "order": 4
+              },
+              {
+                "url": "/guia/el-compositor/video-y-audio/",
+                "title": "Video y audio",
+                "section": "compositor",
+                "group": "compose",
+                "other_url": "/docs/the-compositor/video-audio/",
+                "path": "docs/9-5-video-audio.es.md",
+                "order": 5
+              }
+            ]
+          },
+          {
+            "id": "exhibition",
+            "title": "La exhibición",
+            "items": [
+              {
+                "url": "/guia/el-compositor/glosario/",
+                "title": "Crea y enlaza entradas del glosario",
+                "section": "compositor",
+                "group": "exhibition",
+                "other_url": "/docs/the-compositor/glossary/",
+                "path": "guides/compositor-glossary.es.md"
+              },
+              {
+                "url": "/guia/el-compositor/paginas/",
+                "title": "Organiza el inicio y las páginas",
+                "section": "compositor",
+                "group": "exhibition",
+                "other_url": "/docs/the-compositor/pages/",
+                "path": "guides/compositor-pages.es.md"
+              },
+              {
+                "url": "/guia/el-compositor/configuracion/",
+                "title": "Ajusta la apariencia y la configuración",
+                "section": "compositor",
+                "group": "exhibition",
+                "other_url": "/docs/the-compositor/settings/",
+                "path": "guides/compositor-settings.es.md"
+              }
+            ]
+          },
+          {
+            "id": "team",
+            "title": "Equipo y cursos",
+            "items": [
+              {
+                "url": "/guia/el-compositor/equipo/",
+                "title": "Trabaja en equipo",
+                "section": "compositor",
+                "group": "team",
+                "other_url": "/docs/the-compositor/team/",
+                "path": "guides/compositor-team.es.md"
+              },
+              {
+                "url": "/guia/el-compositor/cursos/",
+                "title": "Organiza un curso con sitios de estudiantes",
+                "section": "compositor",
+                "group": "team",
+                "other_url": "/docs/the-compositor/courses/",
+                "path": "guides/compositor-courses.es.md"
+              }
+            ]
+          },
+          {
+            "id": "publish",
+            "title": "Publicar y mantener",
+            "items": [
+              {
+                "url": "/guia/el-compositor/publicacion/",
+                "title": "Publicación",
+                "section": "compositor",
+                "group": "publish",
+                "other_url": "/docs/the-compositor/publishing/",
+                "path": "docs/9-6-publishing.es.md",
+                "order": 6
+              },
+              {
+                "url": "/guia/el-compositor/sincronizacion-y-actualizaciones/",
+                "title": "Sincronización y actualizaciones",
+                "section": "compositor",
+                "group": "publish",
+                "other_url": "/docs/the-compositor/sync-updates/",
+                "path": "docs/9-7-sync-updates.es.md",
+                "order": 7
+              },
+              {
+                "url": "/guia/el-compositor/solucionar-problemas/",
+                "title": "Resuelve problemas y recupera historias",
+                "section": "compositor",
+                "group": "publish",
+                "other_url": "/docs/the-compositor/troubleshooting/",
+                "path": "guides/compositor-recovery.es.md"
+              }
+            ]
+          }
+        ]
+      },
+      "sheets": {
+        "id": "sheets",
+        "title": "Manual de Google Sheets",
+        "url": "/guia/google-sheets/",
+        "items": [
+          {
+            "url": "/guia/google-sheets/",
+            "title": "Manual de Google Sheets",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/docs/google-sheets/",
+            "path": "guides/sheets.es.html"
+          },
+          {
+            "url": "/guia/primeros-pasos/google-sheets/",
+            "title": "Configura con Google Sheets",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/docs/getting-started/google-sheets/",
+            "path": "docs/1-2-google-sheets-option.es.md",
+            "order": 2
+          },
+          {
+            "url": "/guia/configuracion/configuracion-manual/",
+            "title": "Configuración manual",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/docs/setup/manual/",
+            "path": "docs/2-1-manual-setup.es.md",
+            "order": 1
+          },
+          {
+            "url": "/guia/tus-datos/google-sheets/",
+            "title": "Entiende la hoja de cálculo",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/docs/your-data/google-sheets/",
+            "path": "docs/5-1-google-sheets.es.md",
+            "order": 1
+          },
+          {
+            "url": "/guia/primeros-pasos/agrega-contenido/",
+            "title": "Agrega un objeto y una primera historia",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/docs/getting-started/add-content/",
+            "path": "docs/1-5-add-content.es.md",
+            "order": 5
+          },
+          {
+            "url": "/guia/primeros-pasos/revisa-y-perfecciona/",
+            "title": "Encuadra, revisa y publica desde Sheets",
+            "section": "sheets",
+            "group": "main",
+            "other_url": "/docs/getting-started/review-refine/",
+            "path": "docs/1-6-review-refine.es.md",
+            "order": 6
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Contenido de la guía",
+            "items": [
+              {
+                "url": "/guia/google-sheets/",
+                "title": "Manual de Google Sheets",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/docs/google-sheets/",
+                "path": "guides/sheets.es.html"
+              },
+              {
+                "url": "/guia/primeros-pasos/google-sheets/",
+                "title": "Configura con Google Sheets",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/docs/getting-started/google-sheets/",
+                "path": "docs/1-2-google-sheets-option.es.md",
+                "order": 2
+              },
+              {
+                "url": "/guia/configuracion/configuracion-manual/",
+                "title": "Configuración manual",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/docs/setup/manual/",
+                "path": "docs/2-1-manual-setup.es.md",
+                "order": 1
+              },
+              {
+                "url": "/guia/tus-datos/google-sheets/",
+                "title": "Entiende la hoja de cálculo",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/docs/your-data/google-sheets/",
+                "path": "docs/5-1-google-sheets.es.md",
+                "order": 1
+              },
+              {
+                "url": "/guia/primeros-pasos/agrega-contenido/",
+                "title": "Agrega un objeto y una primera historia",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/docs/getting-started/add-content/",
+                "path": "docs/1-5-add-content.es.md",
+                "order": 5
+              },
+              {
+                "url": "/guia/primeros-pasos/revisa-y-perfecciona/",
+                "title": "Encuadra, revisa y publica desde Sheets",
+                "section": "sheets",
+                "group": "main",
+                "other_url": "/docs/getting-started/review-refine/",
+                "path": "docs/1-6-review-refine.es.md",
+                "order": 6
+              }
+            ]
+          }
+        ]
+      },
+      "local": {
+        "id": "local",
+        "title": "Autoría local",
+        "url": "/guia/autoria-local/",
+        "items": [
+          {
+            "url": "/guia/autoria-local/",
+            "title": "Autoría local",
+            "section": "local",
+            "group": "main",
+            "other_url": "/docs/local-authoring/",
+            "path": "guides/local.es.html"
+          },
+          {
+            "url": "/guia/primeros-pasos/desarrollo-local/",
+            "title": "Instala y ejecuta Telar localmente",
+            "section": "local",
+            "group": "main",
+            "other_url": "/docs/getting-started/local-dev/",
+            "path": "docs/1-3-local-dev.es.md",
+            "order": 3
+          },
+          {
+            "url": "/guia/autoria-local/contenido/",
+            "title": "Edita objetos, historias y textos",
+            "section": "local",
+            "group": "main",
+            "other_url": "/docs/local-authoring/content/",
+            "path": "guides/local-content.es.md"
+          },
+          {
+            "url": "/guia/autoria-local/vista-previa/",
+            "title": "Genera y revisa el sitio local",
+            "section": "local",
+            "group": "main",
+            "other_url": "/docs/local-authoring/preview/",
+            "path": "guides/local-preview.es.md"
+          },
+          {
+            "url": "/guia/autoria-local/publicar/",
+            "title": "Publica y mantén un proyecto local",
+            "section": "local",
+            "group": "main",
+            "other_url": "/docs/local-authoring/publish/",
+            "path": "guides/local-publish.es.md"
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Contenido",
+            "items": [
+              {
+                "url": "/guia/autoria-local/",
+                "title": "Autoría local",
+                "section": "local",
+                "group": "main",
+                "other_url": "/docs/local-authoring/",
+                "path": "guides/local.es.html"
+              },
+              {
+                "url": "/guia/primeros-pasos/desarrollo-local/",
+                "title": "Instala y ejecuta Telar localmente",
+                "section": "local",
+                "group": "main",
+                "other_url": "/docs/getting-started/local-dev/",
+                "path": "docs/1-3-local-dev.es.md",
+                "order": 3
+              },
+              {
+                "url": "/guia/autoria-local/contenido/",
+                "title": "Edita objetos, historias y textos",
+                "section": "local",
+                "group": "main",
+                "other_url": "/docs/local-authoring/content/",
+                "path": "guides/local-content.es.md"
+              },
+              {
+                "url": "/guia/autoria-local/vista-previa/",
+                "title": "Genera y revisa el sitio local",
+                "section": "local",
+                "group": "main",
+                "other_url": "/docs/local-authoring/preview/",
+                "path": "guides/local-preview.es.md"
+              },
+              {
+                "url": "/guia/autoria-local/publicar/",
+                "title": "Publica y mantén un proyecto local",
+                "section": "local",
+                "group": "main",
+                "other_url": "/docs/local-authoring/publish/",
+                "path": "guides/local-publish.es.md"
+              }
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "id": "reference",
+        "title": "Referencia",
+        "url": "/guia/referencia/",
+        "items": [
+          {
+            "url": "/guia/configuracion/",
+            "title": "Configura tu sitio",
+            "section": "reference",
+            "group": "configuration",
+            "other_url": "/docs/setup/",
+            "path": "docs/2-0-setup.es.md",
+            "order": 2
+          },
+          {
+            "url": "/guia/configuracion/actualizacion/",
+            "title": "Actualizar Telar",
+            "section": "reference",
+            "group": "support",
+            "other_url": "/docs/setup/upgrading/",
+            "path": "docs/2-3-upgrading.es.md",
+            "order": 3
+          },
+          {
+            "url": "/guia/configurar/",
+            "title": "Configura tu proyecto",
+            "section": "reference",
+            "group": "configuration",
+            "other_url": "/docs/configure/",
+            "path": "docs/3-0-configure.es.md",
+            "order": 3
+          },
+          {
+            "url": "/guia/configurar/generador-de-configuracion/",
+            "title": "Generador y editor de configuración",
+            "section": "reference",
+            "group": "configuration",
+            "other_url": "/docs/configure/config-generator/",
+            "path": "docs/3-1-config-generator.es.md",
+            "order": 1
+          },
+          {
+            "url": "/guia/configurar/configuracion/",
+            "title": "Configuración",
+            "section": "reference",
+            "group": "configuration",
+            "other_url": "/docs/configure/configuration/",
+            "path": "docs/3-2-configuration.es.md",
+            "order": 2
+          },
+          {
+            "url": "/guia/configurar/validador-de-configuracion/",
+            "title": "Validador de Configuración",
+            "section": "reference",
+            "group": "configuration",
+            "other_url": "/docs/configure/config-validator/",
+            "path": "docs/3-3-config-validator.es.md",
+            "order": 3
+          },
+          {
+            "url": "/guia/tu-contenido/",
+            "title": "Tu contenido",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/",
+            "path": "docs/4-0-your-content.es.md",
+            "order": 4
+          },
+          {
+            "url": "/guia/tu-contenido/objetos/",
+            "title": "Objetos",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/objects/",
+            "path": "docs/4-1-objects.es.md",
+            "order": 1
+          },
+          {
+            "url": "/guia/tu-contenido/objetos-de-audio/",
+            "title": "Objetos de audio",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/audio-objects/",
+            "path": "docs/4-10-audio-objects.es.md",
+            "order": 10
+          },
+          {
+            "url": "/guia/tu-contenido/imagenes-autoalojadas/",
+            "title": "Imágenes autoalojadas",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/self-hosted-images/",
+            "path": "docs/4-2-self-hosted-images.es.md",
+            "order": 2
+          },
+          {
+            "url": "/guia/tu-contenido/iiif-externo/",
+            "title": "Imágenes IIIF externas",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/external-iiif/",
+            "path": "docs/4-3-external-iiif.es.md",
+            "order": 3
+          },
+          {
+            "url": "/guia/tu-contenido/historias-paneles/",
+            "title": "Historias y paneles",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/stories-panels/",
+            "path": "docs/4-4-stories-panels.es.md",
+            "order": 4
+          },
+          {
+            "url": "/guia/tu-contenido/contenido-enriquecido/",
+            "title": "Contenido enriquecido con Markdown",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/rich-content/",
+            "path": "docs/4-5-rich-content.es.md",
+            "order": 5
+          },
+          {
+            "url": "/guia/tu-contenido/sintaxis-markdown/",
+            "title": "Referencia de sintaxis de Markdown",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/markdown-syntax/",
+            "path": "docs/4-6-markdown-syntax.es.md",
+            "order": 6
+          },
+          {
+            "url": "/guia/tu-contenido/widgets/",
+            "title": "Widgets",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/widgets/",
+            "path": "docs/4-7-widgets.es.md",
+            "order": 7
+          },
+          {
+            "url": "/guia/tu-contenido/documentos-pdf/",
+            "title": "Documentos PDF",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/pdf-documents/",
+            "path": "docs/4-8-pdf-documents.es.md",
+            "order": 8
+          },
+          {
+            "url": "/guia/tu-contenido/objetos-de-video/",
+            "title": "Objetos de video",
+            "section": "reference",
+            "group": "content",
+            "other_url": "/docs/your-content/video-objects/",
+            "path": "docs/4-9-video-objects.es.md",
+            "order": 9
+          },
+          {
+            "url": "/guia/tus-datos/",
+            "title": "Tus datos",
+            "section": "reference",
+            "group": "data",
+            "other_url": "/docs/your-data/",
+            "path": "docs/5-0-your-data.es.md",
+            "order": 5
+          },
+          {
+            "url": "/guia/tus-datos/csv-proyecto/",
+            "title": "Columnas del proyecto",
+            "section": "reference",
+            "group": "data",
+            "other_url": "/docs/your-data/csv-project/",
+            "path": "docs/5-2-csv-project.es.md",
+            "order": 2
+          },
+          {
+            "url": "/guia/tus-datos/csv-objetos/",
+            "title": "Columnas de objetos",
+            "section": "reference",
+            "group": "data",
+            "other_url": "/docs/your-data/csv-objects/",
+            "path": "docs/5-3-csv-objects.es.md",
+            "order": 3
+          },
+          {
+            "url": "/guia/tus-datos/csv-historias/",
+            "title": "Columnas de historias",
+            "section": "reference",
+            "group": "data",
+            "other_url": "/docs/your-data/csv-stories/",
+            "path": "docs/5-4-csv-stories.es.md",
+            "order": 4
+          },
+          {
+            "url": "/guia/tus-datos/csv-glosario/",
+            "title": "Columnas del glosario",
+            "section": "reference",
+            "group": "data",
+            "other_url": "/docs/your-data/csv-glossary/",
+            "path": "docs/5-5-csv-glossary.es.md",
+            "order": 5
+          },
+          {
+            "url": "/guia/funciones/",
+            "title": "Funciones del sitio",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/docs/site-features/",
+            "path": "docs/6-0-site-features.es.md",
+            "order": 6
+          },
+          {
+            "url": "/guia/funciones/galeria-objetos/",
+            "title": "Galería de objetos",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/docs/site-features/objects-gallery/",
+            "path": "docs/6-1-objects-gallery.es.md",
+            "order": 1
+          },
+          {
+            "url": "/guia/funciones/glosario/",
+            "title": "Glosario",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/docs/site-features/glossary/",
+            "path": "docs/6-2-glossary.es.md",
+            "order": 2
+          },
+          {
+            "url": "/guia/funciones/historias-privadas/",
+            "title": "Historias privadas",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/docs/site-features/private-stories/",
+            "path": "docs/6-3-private-stories.es.md",
+            "order": 3
+          },
+          {
+            "url": "/guia/funciones/paginas-personalizadas/",
+            "title": "Páginas personalizadas",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/docs/site-features/custom-pages/",
+            "path": "docs/6-4-custom-pages.es.md",
+            "order": 4
+          },
+          {
+            "url": "/guia/funciones/insercion/",
+            "title": "Insertar historias de Telar en LMS y sitios web",
+            "section": "reference",
+            "group": "features",
+            "other_url": "/docs/site-features/embedding/",
+            "path": "docs/6-5-embedding.es.md",
+            "order": 5
+          },
+          {
+            "url": "/guia/personalizacion/",
+            "title": "Personalización",
+            "section": "reference",
+            "group": "appearance",
+            "other_url": "/docs/customization/",
+            "path": "docs/7-0-customization.es.md",
+            "order": 7
+          },
+          {
+            "url": "/guia/personalizacion/temas/",
+            "title": "Temas",
+            "section": "reference",
+            "group": "appearance",
+            "other_url": "/docs/customization/themes/",
+            "path": "docs/7-1-themes.es.md",
+            "order": 1
+          },
+          {
+            "url": "/guia/personalizacion/pagina-de-inicio/",
+            "title": "Personalizar la página de inicio",
+            "section": "reference",
+            "group": "appearance",
+            "other_url": "/docs/customization/home-page/",
+            "path": "docs/7-2-home-page.es.md",
+            "order": 2
+          },
+          {
+            "url": "/guia/personalizacion/menu-navegacion/",
+            "title": "Configuración del menú de navegación",
+            "section": "reference",
+            "group": "appearance",
+            "other_url": "/docs/customization/navigation-menu/",
+            "path": "docs/7-3-navigation-menu.es.md",
+            "order": 3
+          },
+          {
+            "url": "/guia/personalizacion/contenido-demostracion/",
+            "title": "Contenido de demostración",
+            "section": "reference",
+            "group": "appearance",
+            "other_url": "/docs/customization/demo-content/",
+            "path": "docs/7-4-demo-content.es.md",
+            "order": 4
+          },
+          {
+            "url": "/guia/referencia/",
+            "title": "Referencia",
+            "section": "reference",
+            "group": "main",
+            "other_url": "/docs/reference/",
+            "path": "guides/reference.es.html"
+          }
+        ],
+        "groups": [
+          {
+            "id": "configuration",
+            "title": "Configuración y alojamiento",
+            "items": [
+              {
+                "url": "/guia/configuracion/",
+                "title": "Configura tu sitio",
+                "section": "reference",
+                "group": "configuration",
+                "other_url": "/docs/setup/",
+                "path": "docs/2-0-setup.es.md",
+                "order": 2
+              },
+              {
+                "url": "/guia/configurar/",
+                "title": "Configura tu proyecto",
+                "section": "reference",
+                "group": "configuration",
+                "other_url": "/docs/configure/",
+                "path": "docs/3-0-configure.es.md",
+                "order": 3
+              },
+              {
+                "url": "/guia/configurar/generador-de-configuracion/",
+                "title": "Generador y editor de configuración",
+                "section": "reference",
+                "group": "configuration",
+                "other_url": "/docs/configure/config-generator/",
+                "path": "docs/3-1-config-generator.es.md",
+                "order": 1
+              },
+              {
+                "url": "/guia/configurar/configuracion/",
+                "title": "Configuración",
+                "section": "reference",
+                "group": "configuration",
+                "other_url": "/docs/configure/configuration/",
+                "path": "docs/3-2-configuration.es.md",
+                "order": 2
+              },
+              {
+                "url": "/guia/configurar/validador-de-configuracion/",
+                "title": "Validador de Configuración",
+                "section": "reference",
+                "group": "configuration",
+                "other_url": "/docs/configure/config-validator/",
+                "path": "docs/3-3-config-validator.es.md",
+                "order": 3
+              }
+            ]
+          },
+          {
+            "id": "content",
+            "title": "Fuentes y contenido",
+            "items": [
+              {
+                "url": "/guia/tu-contenido/",
+                "title": "Tu contenido",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/",
+                "path": "docs/4-0-your-content.es.md",
+                "order": 4
+              },
+              {
+                "url": "/guia/tu-contenido/objetos/",
+                "title": "Objetos",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/objects/",
+                "path": "docs/4-1-objects.es.md",
+                "order": 1
+              },
+              {
+                "url": "/guia/tu-contenido/objetos-de-audio/",
+                "title": "Objetos de audio",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/audio-objects/",
+                "path": "docs/4-10-audio-objects.es.md",
+                "order": 10
+              },
+              {
+                "url": "/guia/tu-contenido/imagenes-autoalojadas/",
+                "title": "Imágenes autoalojadas",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/self-hosted-images/",
+                "path": "docs/4-2-self-hosted-images.es.md",
+                "order": 2
+              },
+              {
+                "url": "/guia/tu-contenido/iiif-externo/",
+                "title": "Imágenes IIIF externas",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/external-iiif/",
+                "path": "docs/4-3-external-iiif.es.md",
+                "order": 3
+              },
+              {
+                "url": "/guia/tu-contenido/historias-paneles/",
+                "title": "Historias y paneles",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/stories-panels/",
+                "path": "docs/4-4-stories-panels.es.md",
+                "order": 4
+              },
+              {
+                "url": "/guia/tu-contenido/contenido-enriquecido/",
+                "title": "Contenido enriquecido con Markdown",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/rich-content/",
+                "path": "docs/4-5-rich-content.es.md",
+                "order": 5
+              },
+              {
+                "url": "/guia/tu-contenido/sintaxis-markdown/",
+                "title": "Referencia de sintaxis de Markdown",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/markdown-syntax/",
+                "path": "docs/4-6-markdown-syntax.es.md",
+                "order": 6
+              },
+              {
+                "url": "/guia/tu-contenido/widgets/",
+                "title": "Widgets",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/widgets/",
+                "path": "docs/4-7-widgets.es.md",
+                "order": 7
+              },
+              {
+                "url": "/guia/tu-contenido/documentos-pdf/",
+                "title": "Documentos PDF",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/pdf-documents/",
+                "path": "docs/4-8-pdf-documents.es.md",
+                "order": 8
+              },
+              {
+                "url": "/guia/tu-contenido/objetos-de-video/",
+                "title": "Objetos de video",
+                "section": "reference",
+                "group": "content",
+                "other_url": "/docs/your-content/video-objects/",
+                "path": "docs/4-9-video-objects.es.md",
+                "order": 9
+              }
+            ]
+          },
+          {
+            "id": "data",
+            "title": "Formatos de datos",
+            "items": [
+              {
+                "url": "/guia/tus-datos/",
+                "title": "Tus datos",
+                "section": "reference",
+                "group": "data",
+                "other_url": "/docs/your-data/",
+                "path": "docs/5-0-your-data.es.md",
+                "order": 5
+              },
+              {
+                "url": "/guia/tus-datos/csv-proyecto/",
+                "title": "Columnas del proyecto",
+                "section": "reference",
+                "group": "data",
+                "other_url": "/docs/your-data/csv-project/",
+                "path": "docs/5-2-csv-project.es.md",
+                "order": 2
+              },
+              {
+                "url": "/guia/tus-datos/csv-objetos/",
+                "title": "Columnas de objetos",
+                "section": "reference",
+                "group": "data",
+                "other_url": "/docs/your-data/csv-objects/",
+                "path": "docs/5-3-csv-objects.es.md",
+                "order": 3
+              },
+              {
+                "url": "/guia/tus-datos/csv-historias/",
+                "title": "Columnas de historias",
+                "section": "reference",
+                "group": "data",
+                "other_url": "/docs/your-data/csv-stories/",
+                "path": "docs/5-4-csv-stories.es.md",
+                "order": 4
+              },
+              {
+                "url": "/guia/tus-datos/csv-glosario/",
+                "title": "Columnas del glosario",
+                "section": "reference",
+                "group": "data",
+                "other_url": "/docs/your-data/csv-glossary/",
+                "path": "docs/5-5-csv-glossary.es.md",
+                "order": 5
+              }
+            ]
+          },
+          {
+            "id": "features",
+            "title": "Funciones de lectura",
+            "items": [
+              {
+                "url": "/guia/funciones/",
+                "title": "Funciones del sitio",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/docs/site-features/",
+                "path": "docs/6-0-site-features.es.md",
+                "order": 6
+              },
+              {
+                "url": "/guia/funciones/galeria-objetos/",
+                "title": "Galería de objetos",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/docs/site-features/objects-gallery/",
+                "path": "docs/6-1-objects-gallery.es.md",
+                "order": 1
+              },
+              {
+                "url": "/guia/funciones/glosario/",
+                "title": "Glosario",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/docs/site-features/glossary/",
+                "path": "docs/6-2-glossary.es.md",
+                "order": 2
+              },
+              {
+                "url": "/guia/funciones/historias-privadas/",
+                "title": "Historias privadas",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/docs/site-features/private-stories/",
+                "path": "docs/6-3-private-stories.es.md",
+                "order": 3
+              },
+              {
+                "url": "/guia/funciones/paginas-personalizadas/",
+                "title": "Páginas personalizadas",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/docs/site-features/custom-pages/",
+                "path": "docs/6-4-custom-pages.es.md",
+                "order": 4
+              },
+              {
+                "url": "/guia/funciones/insercion/",
+                "title": "Insertar historias de Telar en LMS y sitios web",
+                "section": "reference",
+                "group": "features",
+                "other_url": "/docs/site-features/embedding/",
+                "path": "docs/6-5-embedding.es.md",
+                "order": 5
+              }
+            ]
+          },
+          {
+            "id": "appearance",
+            "title": "Apariencia y navegación",
+            "items": [
+              {
+                "url": "/guia/personalizacion/",
+                "title": "Personalización",
+                "section": "reference",
+                "group": "appearance",
+                "other_url": "/docs/customization/",
+                "path": "docs/7-0-customization.es.md",
+                "order": 7
+              },
+              {
+                "url": "/guia/personalizacion/temas/",
+                "title": "Temas",
+                "section": "reference",
+                "group": "appearance",
+                "other_url": "/docs/customization/themes/",
+                "path": "docs/7-1-themes.es.md",
+                "order": 1
+              },
+              {
+                "url": "/guia/personalizacion/pagina-de-inicio/",
+                "title": "Personalizar la página de inicio",
+                "section": "reference",
+                "group": "appearance",
+                "other_url": "/docs/customization/home-page/",
+                "path": "docs/7-2-home-page.es.md",
+                "order": 2
+              },
+              {
+                "url": "/guia/personalizacion/menu-navegacion/",
+                "title": "Configuración del menú de navegación",
+                "section": "reference",
+                "group": "appearance",
+                "other_url": "/docs/customization/navigation-menu/",
+                "path": "docs/7-3-navigation-menu.es.md",
+                "order": 3
+              },
+              {
+                "url": "/guia/personalizacion/contenido-demostracion/",
+                "title": "Contenido de demostración",
+                "section": "reference",
+                "group": "appearance",
+                "other_url": "/docs/customization/demo-content/",
+                "path": "docs/7-4-demo-content.es.md",
+                "order": 4
+              }
+            ]
+          },
+          {
+            "id": "support",
+            "title": "Mantenimiento",
+            "items": [
+              {
+                "url": "/guia/configuracion/actualizacion/",
+                "title": "Actualizar Telar",
+                "section": "reference",
+                "group": "support",
+                "other_url": "/docs/setup/upgrading/",
+                "path": "docs/2-3-upgrading.es.md",
+                "order": 3
+              }
+            ]
+          },
+          {
+            "id": "main",
+            "title": "Contenido de la guía",
+            "items": [
+              {
+                "url": "/guia/referencia/",
+                "title": "Referencia",
+                "section": "reference",
+                "group": "main",
+                "other_url": "/docs/reference/",
+                "path": "guides/reference.es.html"
+              }
+            ]
+          }
+        ]
+      },
+      "teaching": {
+        "id": "teaching",
+        "title": "Enseñar con Telar",
+        "url": "/guia/ensenar/",
+        "items": [
+          {
+            "url": "/guia/ensenar/",
+            "title": "Enseñar con Telar",
+            "section": "teaching",
+            "group": "main",
+            "other_url": "/docs/teaching/",
+            "path": "guides/teaching.es.html"
+          },
+          {
+            "url": "/guia/ensenar/solicitar-acceso/",
+            "title": "Solicita acceso al modo docente",
+            "section": "teaching",
+            "group": "main",
+            "other_url": "/docs/teaching/request-access/",
+            "path": "guides/teaching-request.es.html"
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Contenido de la guía",
+            "items": [
+              {
+                "url": "/guia/ensenar/",
+                "title": "Enseñar con Telar",
+                "section": "teaching",
+                "group": "main",
+                "other_url": "/docs/teaching/",
+                "path": "guides/teaching.es.html"
+              },
+              {
+                "url": "/guia/ensenar/solicitar-acceso/",
+                "title": "Solicita acceso al modo docente",
+                "section": "teaching",
+                "group": "main",
+                "other_url": "/docs/teaching/request-access/",
+                "path": "guides/teaching-request.es.html"
+              }
+            ]
+          }
+        ]
+      },
+      "developers": {
+        "id": "developers",
+        "title": "Para desarrolladores",
+        "url": "/guia/desarrolladores/",
+        "items": [
+          {
+            "url": "/guia/desarrolladores/",
+            "title": "Para desarrolladores",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/docs/developers/",
+            "path": "docs/8-0-for-developers.es.md",
+            "order": 8
+          },
+          {
+            "url": "/guia/desarrolladores/desarrollo-local/",
+            "title": "Desarrollo local",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/docs/developers/local-development/",
+            "path": "docs/8-1-local-development.es.md",
+            "order": 1
+          },
+          {
+            "url": "/guia/desarrolladores/github-actions/",
+            "title": "GitHub Actions",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/docs/developers/github-actions/",
+            "path": "docs/8-2-github-actions.es.md",
+            "order": 2
+          },
+          {
+            "url": "/guia/desarrolladores/sistema-demos/",
+            "title": "Arquitectura del contenido de demostración",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/docs/developers/demo-system/",
+            "path": "docs/8-3-demo-system-architecture.es.md",
+            "order": 3
+          },
+          {
+            "url": "/guia/desarrolladores/sistema-insercion/",
+            "title": "Referencia del sistema de inserción",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/docs/developers/embedding-system/",
+            "path": "docs/8-4-embedding-system.es.md",
+            "order": 4
+          },
+          {
+            "url": "/guia/desarrolladores/estilos/",
+            "title": "Estilos avanzados",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/docs/developers/styling/",
+            "path": "docs/8-5-styling.es.md",
+            "order": 5
+          },
+          {
+            "url": "/guia/desarrolladores/moviles/",
+            "title": "Diseños y pantallas pequeñas",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/docs/developers/mobile/",
+            "path": "docs/8-6-mobile.es.md",
+            "order": 6
+          },
+          {
+            "url": "/guia/desarrolladores/motor-de-historias/",
+            "title": "Vocabulario del motor de historias",
+            "section": "developers",
+            "group": "main",
+            "other_url": "/docs/developers/story-engine/",
+            "path": "docs/8-7-story-engine.es.md",
+            "order": 7
+          }
+        ],
+        "groups": [
+          {
+            "id": "main",
+            "title": "Contenido de la guía",
+            "items": [
+              {
+                "url": "/guia/desarrolladores/",
+                "title": "Para desarrolladores",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/docs/developers/",
+                "path": "docs/8-0-for-developers.es.md",
+                "order": 8
+              },
+              {
+                "url": "/guia/desarrolladores/desarrollo-local/",
+                "title": "Desarrollo local",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/docs/developers/local-development/",
+                "path": "docs/8-1-local-development.es.md",
+                "order": 1
+              },
+              {
+                "url": "/guia/desarrolladores/github-actions/",
+                "title": "GitHub Actions",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/docs/developers/github-actions/",
+                "path": "docs/8-2-github-actions.es.md",
+                "order": 2
+              },
+              {
+                "url": "/guia/desarrolladores/sistema-demos/",
+                "title": "Arquitectura del contenido de demostración",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/docs/developers/demo-system/",
+                "path": "docs/8-3-demo-system-architecture.es.md",
+                "order": 3
+              },
+              {
+                "url": "/guia/desarrolladores/sistema-insercion/",
+                "title": "Referencia del sistema de inserción",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/docs/developers/embedding-system/",
+                "path": "docs/8-4-embedding-system.es.md",
+                "order": 4
+              },
+              {
+                "url": "/guia/desarrolladores/estilos/",
+                "title": "Estilos avanzados",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/docs/developers/styling/",
+                "path": "docs/8-5-styling.es.md",
+                "order": 5
+              },
+              {
+                "url": "/guia/desarrolladores/moviles/",
+                "title": "Diseños y pantallas pequeñas",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/docs/developers/mobile/",
+                "path": "docs/8-6-mobile.es.md",
+                "order": 6
+              },
+              {
+                "url": "/guia/desarrolladores/motor-de-historias/",
+                "title": "Vocabulario del motor de historias",
+                "section": "developers",
+                "group": "main",
+                "other_url": "/docs/developers/story-engine/",
+                "path": "docs/8-7-story-engine.es.md",
+                "order": 7
+              }
+            ]
+          }
+        ]
+      },
+      "guides": {
+        "id": "guides",
+        "title": "Guías",
+        "url": "/guia/",
+        "items": [],
+        "groups": []
+      }
+    }
+  }
+}

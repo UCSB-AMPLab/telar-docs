@@ -1,0 +1,10 @@
+{
+  "baseURL": "http://127.0.0.1:4004/",
+  "params": {
+    "docs_preview": true,
+    "teaching_api": "http://127.0.0.1:8790",
+    "showcase_api": "http://127.0.0.1:8790",
+    "turnstile_key": "1x00000000000000000000AA",
+    "showcase_turnstile_site_key": "1x00000000000000000000AA"
+  }
+}

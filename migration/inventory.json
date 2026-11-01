@@ -1,0 +1,2102 @@
+{
+  "pages": [
+    {
+      "source": "showcase.md",
+      "content_path": "content/en/showcase/_index.md",
+      "url": "/showcase/",
+      "lang": "en",
+      "type": "section",
+      "translationKey": "showcase",
+      "sha256": "1a0953a23ee80f3f48ba92a17eb6618381880c18c0bd5c5d60750330ff79600e"
+    },
+    {
+      "source": "start.html",
+      "content_path": "content/en/start.md",
+      "url": "/start/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "empezar",
+      "sha256": "62ff502656e87e60065460004589a6f74181732b70dee868125cae278bb36989"
+    },
+    {
+      "source": "showcase-submit.es.md",
+      "content_path": "content/es/proyectos/compartir.md",
+      "url": "/proyectos/compartir/",
+      "lang": "es",
+      "type": "section",
+      "translationKey": "showcase-submit",
+      "sha256": "09664e36e5c767ef8978003366355ae359ea15f48483d539438da021948655c3"
+    },
+    {
+      "source": "empezar.html",
+      "content_path": "content/es/empezar.md",
+      "url": "/empezar/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "empezar",
+      "sha256": "951da86b6f2919a8aaae805839b2f6ce78ccaca5b25424d8fabb998565d8e54c"
+    },
+    {
+      "source": "showcase.es.md",
+      "content_path": "content/es/proyectos/_index.md",
+      "url": "/proyectos/",
+      "lang": "es",
+      "type": "section",
+      "translationKey": "showcase",
+      "sha256": "51f68b74bd6494a5b7ace4cf93e8496dead394177ed3c6374e274094ef9e9590"
+    },
+    {
+      "source": "showcase-submit.md",
+      "content_path": "content/en/showcase/submit.md",
+      "url": "/showcase/submit/",
+      "lang": "en",
+      "type": "section",
+      "translationKey": "showcase-submit",
+      "sha256": "9aed1ff14e797d47e1482b296e7f3e97eebdc94559b9dc28723bd5214ceaf3e6"
+    },
+    {
+      "source": "guide-sketch/index.en.html",
+      "content_path": "content/en/guide-sketch/en/_index.md",
+      "url": "/guide-sketch/en/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "guide-sketch-index-html",
+      "sha256": "485a649d30f77342d1d85a311276758f1e4118584abfc97fe177b68aba62c21b"
+    },
+    {
+      "source": "guide-sketch/quick.en.html",
+      "content_path": "content/en/guide-sketch/en/quick-start.md",
+      "url": "/guide-sketch/en/quick-start/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "guide-sketch-quick-html",
+      "sha256": "db35ac00443b3972ce4ba9d460f39d29e7abea450fddff89ba8195b1b6e77d5a"
+    },
+    {
+      "source": "guide-sketch/plan.es.html",
+      "content_path": "content/es/guide-sketch/es/plan.md",
+      "url": "/guide-sketch/es/plan/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "guide-sketch-plan-html",
+      "sha256": "1c549c187af81ae512714f93c2519e7d4dc4a926ac9f175f5dbc25c41bb8599f"
+    },
+    {
+      "source": "guide-sketch/index.es.html",
+      "content_path": "content/es/guide-sketch/es/_index.md",
+      "url": "/guide-sketch/es/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "guide-sketch-index-html",
+      "sha256": "58f7c23f0bf074ecc4976ddcb11c0ccb5d6a3a01181dae5948baa63f6221fc4d"
+    },
+    {
+      "source": "guide-sketch/quick.es.html",
+      "content_path": "content/es/guide-sketch/es/quick-start.md",
+      "url": "/guide-sketch/es/quick-start/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "guide-sketch-quick-html",
+      "sha256": "b5f15eac86251e9850a973c102ff9a04b119bf33d5cbd8486b53a3bc533d6d73"
+    },
+    {
+      "source": "guide-sketch/plan.en.html",
+      "content_path": "content/en/guide-sketch/en/plan.md",
+      "url": "/guide-sketch/en/plan/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "guide-sketch-plan-html",
+      "sha256": "ab6ee66d9f2b0a6bd0333bddb549c8a082c1288cf49ad1c7e8c9e60ee83d55e6"
+    },
+    {
+      "source": "docs/4-1-objects.md",
+      "content_path": "content/en/docs/your-content/objects.md",
+      "url": "/docs/your-content/objects/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content-objects",
+      "sha256": "ead1eb40347b790eb4fc587affb897d7ad800c9ddfb321933c9db268964b3a8f"
+    },
+    {
+      "source": "docs/4-5-rich-content.md",
+      "content_path": "content/en/docs/your-content/rich-content.md",
+      "url": "/docs/your-content/rich-content/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content-rich-content",
+      "sha256": "382ba34ac3c9968056ef7f6ea048cd1fd3fc12dbc9441d4a8f8beea5d7dc3f03"
+    },
+    {
+      "source": "docs/9-3-objects.es.md",
+      "content_path": "content/es/guia/el-compositor/objetos.md",
+      "url": "/guia/el-compositor/objetos/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-objects",
+      "sha256": "decb19fbfc1698db62325e50a2caa00ff390aeeb612c60259cf9f14154f8ca25"
+    },
+    {
+      "source": "docs/6-5-embedding.md",
+      "content_path": "content/en/docs/site-features/embedding.md",
+      "url": "/docs/site-features/embedding/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-site-features-embedding",
+      "sha256": "851c360b856cba14763cdccf6c2bffd2379bc98f6d92b78302f1a59d113cd19f"
+    },
+    {
+      "source": "docs/6-0-site-features.es.md",
+      "content_path": "content/es/guia/funciones/_index.md",
+      "url": "/guia/funciones/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-site-features",
+      "sha256": "a84fc3cf257ef8a3f58eefef54fca07b89f76351920789634ed98703de8df73b"
+    },
+    {
+      "source": "docs/2-1-manual-setup.es.md",
+      "content_path": "content/es/guia/configuracion/configuracion-manual.md",
+      "url": "/guia/configuracion/configuracion-manual/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-setup-manual",
+      "sha256": "5f4e8e868dd8ea7ef6f477c3c5a82b67ed7290a5f528e0f9854e238b1f0bbb8c"
+    },
+    {
+      "source": "docs/4-3-external-iiif.md",
+      "content_path": "content/en/docs/your-content/external-iiif.md",
+      "url": "/docs/your-content/external-iiif/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content-external-iiif",
+      "sha256": "9c040d1e8da4f18848e47574abc59b5b2fc941415692e876b6f33ff43624df11"
+    },
+    {
+      "source": "docs/9-5-video-audio.md",
+      "content_path": "content/en/docs/the-compositor/video-audio.md",
+      "url": "/docs/the-compositor/video-audio/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-video-audio",
+      "sha256": "856b7291d94182920b82c77bb7df957281709bf7c06197d3623781be7985448d"
+    },
+    {
+      "source": "docs/8-0-for-developers.es.md",
+      "content_path": "content/es/guia/desarrolladores/_index.md",
+      "url": "/guia/desarrolladores/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-developers",
+      "sha256": "b2c7a545dd57f8dd3b4e8041a9b2d9d8b969f82f0aba5e185ad3242e51a8e90c"
+    },
+    {
+      "source": "docs/4-1-objects.es.md",
+      "content_path": "content/es/guia/tu-contenido/objetos.md",
+      "url": "/guia/tu-contenido/objetos/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content-objects",
+      "sha256": "e1e880fb836ce33cdcca9b081c7f0acdd5c2ea9ab59d8f7420fbfbfd5bda9086"
+    },
+    {
+      "source": "docs/3-3-config-validator.md",
+      "content_path": "content/en/docs/configure/config-validator.md",
+      "url": "/docs/configure/config-validator/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-configure-config-validator",
+      "sha256": "67c3564fb5f250567f60bd6a0c51b7f490d3dcc71a55cbb4452f5c7c8764c959"
+    },
+    {
+      "source": "docs/9-5-video-audio.es.md",
+      "content_path": "content/es/guia/el-compositor/video-y-audio.md",
+      "url": "/guia/el-compositor/video-y-audio/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-video-audio",
+      "sha256": "436d401f7f5ba172164bb2f98bb8d1325c7daa2c1dce7bf6230801ae961b012e"
+    },
+    {
+      "source": "docs/4-8-pdf-documents.md",
+      "content_path": "content/en/docs/your-content/pdf-documents.md",
+      "url": "/docs/your-content/pdf-documents/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content-pdf-documents",
+      "sha256": "7275b994042633e506bab8e75ac0e70349b7cd5712c33bae0f13e10f21acf5f2"
+    },
+    {
+      "source": "docs/2-3-upgrading.md",
+      "content_path": "content/en/docs/setup/upgrading.md",
+      "url": "/docs/setup/upgrading/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-setup-upgrading",
+      "sha256": "b06f54c09bce9c85a111f3e200d0cf02496ca9c7a7204e86b143a300b5d636f9"
+    },
+    {
+      "source": "docs/5-3-csv-objects.es.md",
+      "content_path": "content/es/guia/tus-datos/csv-objetos.md",
+      "url": "/guia/tus-datos/csv-objetos/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-data-csv-objects",
+      "sha256": "34789090b4d14258f55719d9960c9e2d698f40b8050b0a0a4b2009d8a0a88ec3"
+    },
+    {
+      "source": "docs/9-6-publishing.es.md",
+      "content_path": "content/es/guia/el-compositor/publicacion.md",
+      "url": "/guia/el-compositor/publicacion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-publishing",
+      "sha256": "18b90369e006a36f78c1804a3555a32699af3f86cfd85211850cafe4ce36def9"
+    },
+    {
+      "source": "docs/6-3-private-stories.md",
+      "content_path": "content/en/docs/site-features/private-stories.md",
+      "url": "/docs/site-features/private-stories/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-site-features-private-stories",
+      "sha256": "a836c61eba5e91630a74e08223184e71952b119ece072288f25028fab918b42f"
+    },
+    {
+      "source": "docs/9-3-objects.md",
+      "content_path": "content/en/docs/the-compositor/objects.md",
+      "url": "/docs/the-compositor/objects/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-objects",
+      "sha256": "9a3f9a2f47689ceac5076e21bdd8ed61ecafe919b18aa83849add82c909d79e7"
+    },
+    {
+      "source": "docs/1-1-compositor.md",
+      "content_path": "content/en/docs/getting-started/compositor.md",
+      "url": "/docs/getting-started/compositor/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-getting-started-compositor",
+      "sha256": "217b9d284eb0305dad38bb6457f7d6f1cbdd966fdb4b48f5f52f89b4169dafbc"
+    },
+    {
+      "source": "docs/4-7-widgets.es.md",
+      "content_path": "content/es/guia/tu-contenido/widgets.md",
+      "url": "/guia/tu-contenido/widgets/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content-widgets",
+      "sha256": "e4a96355aac8f85d1bf79ba774e6a397479f8dbca2d60d42a8c29eb61f0bf09d"
+    },
+    {
+      "source": "docs/7-3-navigation-menu.es.md",
+      "content_path": "content/es/guia/personalizacion/menu-navegacion.md",
+      "url": "/guia/personalizacion/menu-navegacion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-customization-navigation-menu",
+      "sha256": "5ecb04f770a00554bb41c0d055a025ae5b3b41a1f9fe690ae463a0e9d799580b"
+    },
+    {
+      "source": "docs/1-6-review-refine.md",
+      "content_path": "content/en/docs/getting-started/review-refine.md",
+      "url": "/docs/getting-started/review-refine/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-getting-started-review-refine",
+      "sha256": "4ef3bcbdb6bcffff8788a101e923cd163fff8b8a530bada52f8b497f41ab0775"
+    },
+    {
+      "source": "docs/3-2-configuration.es.md",
+      "content_path": "content/es/guia/configurar/configuracion.md",
+      "url": "/guia/configurar/configuracion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-configure-configuration",
+      "sha256": "c0e386114d3de383a96d78822909ec6869a253d88f8e2df95afdea7141153c3b"
+    },
+    {
+      "source": "docs/1-2-google-sheets-option.md",
+      "content_path": "content/en/docs/getting-started/google-sheets.md",
+      "url": "/docs/getting-started/google-sheets/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-getting-started-google-sheets",
+      "sha256": "3605022f24aba55e341b30f1f86fd23591974a27cf766472d29534a0c007462f"
+    },
+    {
+      "source": "docs/1-2-google-sheets-option.es.md",
+      "content_path": "content/es/guia/primeros-pasos/google-sheets.md",
+      "url": "/guia/primeros-pasos/google-sheets/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-getting-started-google-sheets",
+      "sha256": "19b1cbd5fde50a9f136a2ddd6334b8e01055d7aa3858f0e18a4b65fb7d348c79"
+    },
+    {
+      "source": "docs/4-4-stories-panels.md",
+      "content_path": "content/en/docs/your-content/stories-panels.md",
+      "url": "/docs/your-content/stories-panels/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content-stories-panels",
+      "sha256": "3e7a1d1e39b331449640d4d810369379230eabbc5fd767bf1efcd17e8d941d4c"
+    },
+    {
+      "source": "docs/4-0-your-content.es.md",
+      "content_path": "content/es/guia/tu-contenido/_index.md",
+      "url": "/guia/tu-contenido/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content",
+      "sha256": "388b17a1fc4abb856ff14fa81e6a92de9141daceb07c9cb3232b380704b43323"
+    },
+    {
+      "source": "docs/4-5-rich-content.es.md",
+      "content_path": "content/es/guia/tu-contenido/contenido-enriquecido.md",
+      "url": "/guia/tu-contenido/contenido-enriquecido/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content-rich-content",
+      "sha256": "ab5baaae152d975971cf5298627914e07d81be1da403c773be21fd5801940633"
+    },
+    {
+      "source": "docs/9-6-publishing.md",
+      "content_path": "content/en/docs/the-compositor/publishing.md",
+      "url": "/docs/the-compositor/publishing/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-publishing",
+      "sha256": "550a1488532469b6560d6c20240a8d92459f20ae51b349ed5a935c5469cd5068"
+    },
+    {
+      "source": "docs/1-0-getting-started.es.md",
+      "content_path": "content/es/guia/primeros-pasos/_index.md",
+      "url": "/guia/primeros-pasos/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-getting-started",
+      "sha256": "bfbd3c5bf98a7dc5fab59a8479ccc7352b26660586f4f3a21c1f394577297ddb"
+    },
+    {
+      "source": "docs/8-1-local-development.md",
+      "content_path": "content/en/docs/developers/local-development.md",
+      "url": "/docs/developers/local-development/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-developers-local-development",
+      "sha256": "66811083d468fa914c519b0f366228ff197a4ddef5aea733e13cd7d697515ea9"
+    },
+    {
+      "source": "docs/8-3-demo-system-architecture.md",
+      "content_path": "content/en/docs/developers/demo-system.md",
+      "url": "/docs/developers/demo-system/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-developers-demo-system",
+      "sha256": "f9d3dd9a084750b4b075335df9972145f9bfc01f4dfedea8f0784bbb51e01d13"
+    },
+    {
+      "source": "docs/8-3-demo-system-architecture.es.md",
+      "content_path": "content/es/guia/desarrolladores/sistema-demos.md",
+      "url": "/guia/desarrolladores/sistema-demos/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-developers-demo-system",
+      "sha256": "34851deb3739ec79fdb1971031231b5a35fa3322669b5ed5e5bed570ba0d221e"
+    },
+    {
+      "source": "docs/3-1-config-generator.es.md",
+      "content_path": "content/es/guia/configurar/generador-de-configuracion.md",
+      "url": "/guia/configurar/generador-de-configuracion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-configure-config-generator",
+      "sha256": "7b4a02bb331057ebc02362ec51cdcb4f8877394d1a01f0a09ca1d1c14179e6f0"
+    },
+    {
+      "source": "docs/5-0-your-data.es.md",
+      "content_path": "content/es/guia/tus-datos/_index.md",
+      "url": "/guia/tus-datos/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-data",
+      "sha256": "db1c8f63c827157dacdbc5023a2e4de2f30f8a0c440c0b11a1328cb025506c7a"
+    },
+    {
+      "source": "docs/6-3-private-stories.es.md",
+      "content_path": "content/es/guia/funciones/historias-privadas.md",
+      "url": "/guia/funciones/historias-privadas/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-site-features-private-stories",
+      "sha256": "190223ecd57d80faee3eed62b3c3ba5c937361425ac67fe6aab2a5d79433a03e"
+    },
+    {
+      "source": "docs/5-5-csv-glossary.es.md",
+      "content_path": "content/es/guia/tus-datos/csv-glosario.md",
+      "url": "/guia/tus-datos/csv-glosario/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-data-csv-glossary",
+      "sha256": "62c58fe9b5ce753c2bcfcea793da2a3b3531d31e907102ead843dbeca8416349"
+    },
+    {
+      "source": "docs/1-3-local-dev.es.md",
+      "content_path": "content/es/guia/primeros-pasos/desarrollo-local.md",
+      "url": "/guia/primeros-pasos/desarrollo-local/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-getting-started-local-dev",
+      "sha256": "cb2865ebe13940668c066c8bd280d3b295a16104b5527078c3000713673ac942"
+    },
+    {
+      "source": "docs/4-8-pdf-documents.es.md",
+      "content_path": "content/es/guia/tu-contenido/documentos-pdf.md",
+      "url": "/guia/tu-contenido/documentos-pdf/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content-pdf-documents",
+      "sha256": "96b773619fc543cebf83018f131100a7465a096ddd1d37e8d9c841294d33c62b"
+    },
+    {
+      "source": "docs/2-3-upgrading.es.md",
+      "content_path": "content/es/guia/configuracion/actualizacion.md",
+      "url": "/guia/configuracion/actualizacion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-setup-upgrading",
+      "sha256": "079c148e457b3297269c99bdf0fcf953c1e2ae6579fa8a2d9d10cb102d6034a0"
+    },
+    {
+      "source": "docs/7-2-home-page.es.md",
+      "content_path": "content/es/guia/personalizacion/pagina-de-inicio.md",
+      "url": "/guia/personalizacion/pagina-de-inicio/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-customization-home-page",
+      "sha256": "f52bdf8d7e1b69b13c38744660419e021c829a62839a67cf450c892c929ffdbb"
+    },
+    {
+      "source": "docs/6-5-embedding.es.md",
+      "content_path": "content/es/guia/funciones/insercion.md",
+      "url": "/guia/funciones/insercion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-site-features-embedding",
+      "sha256": "6f4b43498e3efb597b1d08cb4ad748c6f0ea7e104e3f9015ab8e201bb630b882"
+    },
+    {
+      "source": "docs/1-5-add-content.md",
+      "content_path": "content/en/docs/getting-started/add-content.md",
+      "url": "/docs/getting-started/add-content/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-getting-started-add-content",
+      "sha256": "cfb07f90f3041d566a0fc6045df0ef47dd899cba30cc2968fcb8936c5eb14953"
+    },
+    {
+      "source": "docs/2-0-setup.es.md",
+      "content_path": "content/es/guia/configuracion/_index.md",
+      "url": "/guia/configuracion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-setup",
+      "sha256": "13edeb522cd570b8c34861f8f81f0ef930c01b7d53150882abdea4f3abe0861f"
+    },
+    {
+      "source": "docs/8-6-mobile.es.md",
+      "content_path": "content/es/guia/desarrolladores/moviles.md",
+      "url": "/guia/desarrolladores/moviles/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-developers-mobile",
+      "sha256": "aef6723fff87a7d75146609031361cb16f1e1f8e7f14d88c90763efbda2efd84"
+    },
+    {
+      "source": "docs/7-4-demo-content.es.md",
+      "content_path": "content/es/guia/personalizacion/contenido-demostracion.md",
+      "url": "/guia/personalizacion/contenido-demostracion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-customization-demo-content",
+      "sha256": "d69da43bf4a81e0fda4b7d3008b19a135cfa8d70873372dda601d8cebe2ec1d1"
+    },
+    {
+      "source": "docs/6-2-glossary.es.md",
+      "content_path": "content/es/guia/funciones/glosario.md",
+      "url": "/guia/funciones/glosario/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-site-features-glossary",
+      "sha256": "c1a37d6434204b7b9e1ef98f11f5f85b2cafd74042db58785d12f8eb9efae876"
+    },
+    {
+      "source": "docs/7-0-customization.es.md",
+      "content_path": "content/es/guia/personalizacion/_index.md",
+      "url": "/guia/personalizacion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-customization",
+      "sha256": "7fc033870265b6057d64c314984953b058a33f9aca2aa1c1cf15ebfa511a104e"
+    },
+    {
+      "source": "docs/5-4-csv-stories.md",
+      "content_path": "content/en/docs/your-data/csv-stories.md",
+      "url": "/docs/your-data/csv-stories/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-data-csv-stories",
+      "sha256": "9c7c8e2798f44953080ad5e9a454eb72663a76af9da9b7b754501e0ac48a200c"
+    },
+    {
+      "source": "docs/1-3-local-dev.md",
+      "content_path": "content/en/docs/getting-started/local-dev.md",
+      "url": "/docs/getting-started/local-dev/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-getting-started-local-dev",
+      "sha256": "f6fbfc4749918a77d389e2df2fcf35da6610f99669a11f1744e902cf7acbea25"
+    },
+    {
+      "source": "docs/8-5-styling.md",
+      "content_path": "content/en/docs/developers/styling.md",
+      "url": "/docs/developers/styling/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-developers-styling",
+      "sha256": "aecd922862383758950d3e681d10b92d585dcc085b6445bf3d329b1231366df9"
+    },
+    {
+      "source": "docs/9-4-story-editor.md",
+      "content_path": "content/en/docs/the-compositor/story-editor.md",
+      "url": "/docs/the-compositor/story-editor/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-story-editor",
+      "sha256": "5c30358f98c8d9ff6ca2ad9cef8eadfff334ae9db56f07b1446f4217fef0fe11"
+    },
+    {
+      "source": "docs/3-3-config-validator.es.md",
+      "content_path": "content/es/guia/configurar/validador-de-configuracion.md",
+      "url": "/guia/configurar/validador-de-configuracion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-configure-config-validator",
+      "sha256": "0d548a1b208fb5cc74a853d0fb1bab7416f5abf816129034399c7c5d86683c0b"
+    },
+    {
+      "source": "docs/8-4-embedding-system.md",
+      "content_path": "content/en/docs/developers/embedding-system.md",
+      "url": "/docs/developers/embedding-system/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-developers-embedding-system",
+      "sha256": "96c41490e690c7fee71b8b72d4aef142ae9643973a4b97335ca0b70e00d003ed"
+    },
+    {
+      "source": "docs/8-7-story-engine.es.md",
+      "content_path": "content/es/guia/desarrolladores/motor-de-historias.md",
+      "url": "/guia/desarrolladores/motor-de-historias/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-developers-story-engine",
+      "sha256": "6a7e1b36c6c8b1207cd03ba2b3b6027b1268f6d07af70ae557406a3471d7b63c"
+    },
+    {
+      "source": "docs/4-2-self-hosted-images.es.md",
+      "content_path": "content/es/guia/tu-contenido/imagenes-autoalojadas.md",
+      "url": "/guia/tu-contenido/imagenes-autoalojadas/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content-self-hosted-images",
+      "sha256": "dac2de970e4d81d635730d55e178d052c8db067cb9a610936d1ac45c9478b728"
+    },
+    {
+      "source": "docs/7-0-customization.md",
+      "content_path": "content/en/docs/customization/_index.md",
+      "url": "/docs/customization/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-customization",
+      "sha256": "c54f737d0bb91df18c399d41754bc216a6958190e67ca6e759ad96be222fc311"
+    },
+    {
+      "source": "docs/5-0-your-data.md",
+      "content_path": "content/en/docs/your-data/_index.md",
+      "url": "/docs/your-data/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-data",
+      "sha256": "31211e5e97d36bd97b6545e57442a52dd4b13bc7c570a48917230f1916b02b8c"
+    },
+    {
+      "source": "docs/1-6-review-refine.es.md",
+      "content_path": "content/es/guia/primeros-pasos/revisa-y-perfecciona.md",
+      "url": "/guia/primeros-pasos/revisa-y-perfecciona/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-getting-started-review-refine",
+      "sha256": "89c0daf636f4a9b3abbb598f2ae4985f29685197f95514cc001c0e1c6cd6ea03"
+    },
+    {
+      "source": "docs/3-0-configure.md",
+      "content_path": "content/en/docs/configure/_index.md",
+      "url": "/docs/configure/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-configure",
+      "sha256": "1d5cd2b61c714e07029b6c47a2dacf09fa0795846f976fc40dad89e83381c19e"
+    },
+    {
+      "source": "docs/4-7-widgets.md",
+      "content_path": "content/en/docs/your-content/widgets.md",
+      "url": "/docs/your-content/widgets/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content-widgets",
+      "sha256": "d23e4ce211a59d698f05e22d91254f004410dd4f21d06d1512944d3807430a20"
+    },
+    {
+      "source": "docs/2-1-manual-setup.md",
+      "content_path": "content/en/docs/setup/manual.md",
+      "url": "/docs/setup/manual/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-setup-manual",
+      "sha256": "380d6c9a07580bf862f30f112614f37c6e70e91ec65d5009c44cb75f17f8c8ce"
+    },
+    {
+      "source": "docs/index.es.md",
+      "content_path": "content/es/guia/_index.md",
+      "url": "/guia/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs",
+      "sha256": "d455b9b588b4eeddd7ad839f6204b18505e557a866272ac78055d42f790a5a52"
+    },
+    {
+      "source": "docs/4-10-audio-objects.es.md",
+      "content_path": "content/es/guia/tu-contenido/objetos-de-audio.md",
+      "url": "/guia/tu-contenido/objetos-de-audio/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content-audio-objects",
+      "sha256": "88b9b5124306f9db1a3524b9787771659b94416d3fd9469f794e59e8ea1b7210"
+    },
+    {
+      "source": "docs/9-1-getting-started.es.md",
+      "content_path": "content/es/guia/el-compositor/primeros-pasos.md",
+      "url": "/guia/el-compositor/primeros-pasos/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-getting-started",
+      "sha256": "a3ae1a50fd1f8f6fd76902fc91943975d32bcf525f6bfdb1aa16dee3d8cc5ed5"
+    },
+    {
+      "source": "docs/1-0-getting-started.md",
+      "content_path": "content/en/docs/getting-started/_index.md",
+      "url": "/docs/getting-started/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-getting-started",
+      "sha256": "58c91901e3e34a01d5695057e1d25f6d5a852f236e67a56550b36437ae0be856"
+    },
+    {
+      "source": "docs/6-1-objects-gallery.es.md",
+      "content_path": "content/es/guia/funciones/galeria-objetos.md",
+      "url": "/guia/funciones/galeria-objetos/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-site-features-objects-gallery",
+      "sha256": "d33dbbc004e5d89dc0ae7cc48ad78321f55e1b03f69a9ed80ee95c42b5db7ff7"
+    },
+    {
+      "source": "docs/4-10-audio-objects.md",
+      "content_path": "content/en/docs/your-content/audio-objects.md",
+      "url": "/docs/your-content/audio-objects/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content-audio-objects",
+      "sha256": "c6b823e30fb337f234d2f0b5a474850c6177c2ad19d03c0e095df33d228260fb"
+    },
+    {
+      "source": "docs/8-4-embedding-system.es.md",
+      "content_path": "content/es/guia/desarrolladores/sistema-insercion.md",
+      "url": "/guia/desarrolladores/sistema-insercion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-developers-embedding-system",
+      "sha256": "a585088f63724bd57145ea96ba05e9a7ce420bcc6208e6d95d76d597a6ef8f00"
+    },
+    {
+      "source": "docs/7-1-themes.es.md",
+      "content_path": "content/es/guia/personalizacion/temas.md",
+      "url": "/guia/personalizacion/temas/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-customization-themes",
+      "sha256": "f8f8f7ebf365bfa6767f4d210d17433e98e298b0d754494b4504b50a7734e98a"
+    },
+    {
+      "source": "docs/1-1-compositor.es.md",
+      "content_path": "content/es/guia/primeros-pasos/compositor.md",
+      "url": "/guia/primeros-pasos/compositor/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-getting-started-compositor",
+      "sha256": "34dddcbb377e8e1214afebe6b67466b9ccd9bde8667b892384a4ad4fd5f1246d"
+    },
+    {
+      "source": "docs/index.md",
+      "content_path": "content/en/docs/_index.md",
+      "url": "/docs/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs",
+      "sha256": "fe4a68f2277f7f4b74e4828e99202d48e7f1ae8f62ad2afa0def4e3d8ac23fea"
+    },
+    {
+      "source": "docs/9-0-compositor.es.md",
+      "content_path": "content/es/guia/el-compositor/_index.md",
+      "url": "/guia/el-compositor/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor",
+      "sha256": "45d6f43103bc5593c070fe308ee094d364e07bf99fc16d49078e52d4c78e1776"
+    },
+    {
+      "source": "docs/4-4-stories-panels.es.md",
+      "content_path": "content/es/guia/tu-contenido/historias-paneles.md",
+      "url": "/guia/tu-contenido/historias-paneles/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content-stories-panels",
+      "sha256": "1428bd931ab435b6b3e3a8e2bcb800e114a0c8c98a1dd309c2beb2434b0cbc9c"
+    },
+    {
+      "source": "docs/4-3-external-iiif.es.md",
+      "content_path": "content/es/guia/tu-contenido/iiif-externo.md",
+      "url": "/guia/tu-contenido/iiif-externo/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content-external-iiif",
+      "sha256": "36ce0a4503c774199aa9b5dc0a9c667867b184fa150312bb279c4486359f7704"
+    },
+    {
+      "source": "docs/3-1-config-generator.md",
+      "content_path": "content/en/docs/configure/config-generator.md",
+      "url": "/docs/configure/config-generator/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-configure-config-generator",
+      "sha256": "d5582f91ec468485a06aa5cac30f3cab9f767c5fd20daf6d33a30ddc21842711"
+    },
+    {
+      "source": "docs/8-7-story-engine.md",
+      "content_path": "content/en/docs/developers/story-engine.md",
+      "url": "/docs/developers/story-engine/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-developers-story-engine",
+      "sha256": "99dbe7eef3020f4d4c9209dbbe188e29ee0111cca271bba7158beb56b62aab64"
+    },
+    {
+      "source": "docs/6-2-glossary.md",
+      "content_path": "content/en/docs/site-features/glossary.md",
+      "url": "/docs/site-features/glossary/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-site-features-glossary",
+      "sha256": "1d49d665df07c33d92a0b878a3bc399e65c30481a69b2a8fd21146bb4bd3aeab"
+    },
+    {
+      "source": "docs/9-2-dashboard.es.md",
+      "content_path": "content/es/guia/el-compositor/panel-de-control.md",
+      "url": "/guia/el-compositor/panel-de-control/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-dashboard",
+      "sha256": "913212be5f5e2d6689d30ecd24a4bf06c342f77e6acd9a95d8bd496cac905a9f"
+    },
+    {
+      "source": "docs/7-1-themes.md",
+      "content_path": "content/en/docs/customization/themes.md",
+      "url": "/docs/customization/themes/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-customization-themes",
+      "sha256": "1bf2438088227f7af2883eaf678b71aa0c482accf835821b9825ee0de1860d3f"
+    },
+    {
+      "source": "docs/4-6-markdown-syntax.es.md",
+      "content_path": "content/es/guia/tu-contenido/sintaxis-markdown.md",
+      "url": "/guia/tu-contenido/sintaxis-markdown/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content-markdown-syntax",
+      "sha256": "88d9f1d8318f5348564726a574ab831c6b855d2ecafa714295d57617fb6a2b70"
+    },
+    {
+      "source": "docs/3-2-configuration.md",
+      "content_path": "content/en/docs/configure/configuration.md",
+      "url": "/docs/configure/configuration/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-configure-configuration",
+      "sha256": "fd6c5e41ac0f78468d6046495c6d11501fcdc49f2db1db1c93c8ec0f2fd07e92"
+    },
+    {
+      "source": "docs/8-2-github-actions.md",
+      "content_path": "content/en/docs/developers/github-actions.md",
+      "url": "/docs/developers/github-actions/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-developers-github-actions",
+      "sha256": "683724e99c4e9539d83dad17d81d4e31a9af25b5a47424a251b483233f118fe0"
+    },
+    {
+      "source": "docs/8-2-github-actions.es.md",
+      "content_path": "content/es/guia/desarrolladores/github-actions.md",
+      "url": "/guia/desarrolladores/github-actions/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-developers-github-actions",
+      "sha256": "f260d541f76510cdf4f2f00da5ba07c562baf25a9e737e25fc41e98ec89be15a"
+    },
+    {
+      "source": "docs/1-4-narrative-structure.md",
+      "content_path": "content/en/docs/getting-started/narrative-structure.md",
+      "url": "/docs/getting-started/narrative-structure/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-getting-started-narrative-structure",
+      "sha256": "e3ad1bbfec089e9b8d184e1a88a62370c2d4313e75ff4289e32d072559aa4098"
+    },
+    {
+      "source": "docs/1-5-add-content.es.md",
+      "content_path": "content/es/guia/primeros-pasos/agrega-contenido.md",
+      "url": "/guia/primeros-pasos/agrega-contenido/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-getting-started-add-content",
+      "sha256": "c15ef9f57d261c8d77010b1aeeb77a3e7e563b7020163af5c6b0ca4d3544b17e"
+    },
+    {
+      "source": "docs/3-0-configure.es.md",
+      "content_path": "content/es/guia/configurar/_index.md",
+      "url": "/guia/configurar/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-configure",
+      "sha256": "e8591d88c807ee6cd8b6a02faf1c5033d2c412369ce919f9f5ef72e80bad94f7"
+    },
+    {
+      "source": "docs/8-5-styling.es.md",
+      "content_path": "content/es/guia/desarrolladores/estilos.md",
+      "url": "/guia/desarrolladores/estilos/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-developers-styling",
+      "sha256": "b94b5a73b529f24e8c873f59a1ebea8328d3085914fb2a3b734fc489035739ad"
+    },
+    {
+      "source": "docs/5-2-csv-project.es.md",
+      "content_path": "content/es/guia/tus-datos/csv-proyecto.md",
+      "url": "/guia/tus-datos/csv-proyecto/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-data-csv-project",
+      "sha256": "dc13295ff3c00fbf794372eddf944fa22eb741fb1de328b28df794e0123c9da7"
+    },
+    {
+      "source": "docs/6-4-custom-pages.es.md",
+      "content_path": "content/es/guia/funciones/paginas-personalizadas.md",
+      "url": "/guia/funciones/paginas-personalizadas/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-site-features-custom-pages",
+      "sha256": "ebc2cd2e5bf61c73b992d34025552edec68c7ff82cb8632039c9366ec9306331"
+    },
+    {
+      "source": "docs/9-2-dashboard.md",
+      "content_path": "content/en/docs/the-compositor/dashboard.md",
+      "url": "/docs/the-compositor/dashboard/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-dashboard",
+      "sha256": "51ab670cc9e6479a3a52fe1a9369dc1dcafb2d1742b2b440c85e64df2a699b4a"
+    },
+    {
+      "source": "docs/4-9-video-objects.md",
+      "content_path": "content/en/docs/your-content/video-objects.md",
+      "url": "/docs/your-content/video-objects/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content-video-objects",
+      "sha256": "4790baeb2e599d906d579d33c7fadad92852df64752d3ae6bb2572ea97268196"
+    },
+    {
+      "source": "docs/5-1-google-sheets.es.md",
+      "content_path": "content/es/guia/tus-datos/google-sheets.md",
+      "url": "/guia/tus-datos/google-sheets/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-data-google-sheets",
+      "sha256": "6e2162579ba6a0e960fa8a6c4da46ab22509aaccf6b5c58b9cb4d94a859ff3e2"
+    },
+    {
+      "source": "docs/8-6-mobile.md",
+      "content_path": "content/en/docs/developers/mobile.md",
+      "url": "/docs/developers/mobile/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-developers-mobile",
+      "sha256": "3d81c8d0776a09dce9e08a46dad44fcaad8d220243db004dd97c91dade3b541a"
+    },
+    {
+      "source": "docs/9-1-getting-started.md",
+      "content_path": "content/en/docs/the-compositor/getting-started.md",
+      "url": "/docs/the-compositor/getting-started/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-getting-started",
+      "sha256": "fe9f92909c8741a9105bb33065e7a563e601e6c0217e6c4c5a97d15bac332fe8"
+    },
+    {
+      "source": "docs/8-0-for-developers.md",
+      "content_path": "content/en/docs/developers/_index.md",
+      "url": "/docs/developers/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-developers",
+      "sha256": "94f48780c6ec1e23926636a2f1390a75acff4c0a857ede57f60b97d0ff87ce13"
+    },
+    {
+      "source": "docs/4-9-video-objects.es.md",
+      "content_path": "content/es/guia/tu-contenido/objetos-de-video.md",
+      "url": "/guia/tu-contenido/objetos-de-video/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-content-video-objects",
+      "sha256": "dd0e7e1af053c2ac0d6c1c6fae6949416c0626e60b8a1c9e2a039fb0d13ae9e8"
+    },
+    {
+      "source": "docs/4-0-your-content.md",
+      "content_path": "content/en/docs/your-content/_index.md",
+      "url": "/docs/your-content/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content",
+      "sha256": "5c96159ed2a1fc1fea8225c7f0f3b3069ef8bef8bc667706851deba1043303cf"
+    },
+    {
+      "source": "docs/6-4-custom-pages.md",
+      "content_path": "content/en/docs/site-features/custom-pages.md",
+      "url": "/docs/site-features/custom-pages/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-site-features-custom-pages",
+      "sha256": "d98644aa3076553041b115648289f55966f1c3b32f4bca493441ee602a049ff4"
+    },
+    {
+      "source": "docs/7-3-navigation-menu.md",
+      "content_path": "content/en/docs/customization/navigation-menu.md",
+      "url": "/docs/customization/navigation-menu/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-customization-navigation-menu",
+      "sha256": "8a937075682ffdeeb5a29edc4b00fdda0153a32b534580ab260c6f507a765cdd"
+    },
+    {
+      "source": "docs/5-3-csv-objects.md",
+      "content_path": "content/en/docs/your-data/csv-objects.md",
+      "url": "/docs/your-data/csv-objects/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-data-csv-objects",
+      "sha256": "9cc166c62fd3badc9a51c7989b837a5623a1a87f20b431adfafca74e7b46ad66"
+    },
+    {
+      "source": "docs/1-4-narrative-structure.es.md",
+      "content_path": "content/es/guia/primeros-pasos/estructura-narrativa.md",
+      "url": "/guia/primeros-pasos/estructura-narrativa/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-getting-started-narrative-structure",
+      "sha256": "056fb404b459e9a62bc09b3c9edfe32537a06bbbe4de47a4cb330179f9bc9d05"
+    },
+    {
+      "source": "docs/5-1-google-sheets.md",
+      "content_path": "content/en/docs/your-data/google-sheets.md",
+      "url": "/docs/your-data/google-sheets/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-data-google-sheets",
+      "sha256": "c3bc5592b0526c8ef17b9981cc4147b735e5d08fce9b2fe1dd2d624fe02c92ac"
+    },
+    {
+      "source": "docs/5-2-csv-project.md",
+      "content_path": "content/en/docs/your-data/csv-project.md",
+      "url": "/docs/your-data/csv-project/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-data-csv-project",
+      "sha256": "371b0315bd9389ceea659608a2327a8befb5ab9cbf7d67e75e4e12809e4417d2"
+    },
+    {
+      "source": "docs/8-1-local-development.es.md",
+      "content_path": "content/es/guia/desarrolladores/desarrollo-local.md",
+      "url": "/guia/desarrolladores/desarrollo-local/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-developers-local-development",
+      "sha256": "179683306d3c3792fdd1666f5b7945632735bd0ee9194f2de77096b33c2d561c"
+    },
+    {
+      "source": "docs/7-2-home-page.md",
+      "content_path": "content/en/docs/customization/home-page.md",
+      "url": "/docs/customization/home-page/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-customization-home-page",
+      "sha256": "1409c50c8bc588a2eb99e4e00afe2c6558252f4c90456ad594307d3ae7391963"
+    },
+    {
+      "source": "docs/5-5-csv-glossary.md",
+      "content_path": "content/en/docs/your-data/csv-glossary.md",
+      "url": "/docs/your-data/csv-glossary/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-data-csv-glossary",
+      "sha256": "7761e42288c25c49ea24f7052ac2bceeaa3f8ec9de1030e7820e2bc74f6e1c52"
+    },
+    {
+      "source": "docs/4-2-self-hosted-images.md",
+      "content_path": "content/en/docs/your-content/self-hosted-images.md",
+      "url": "/docs/your-content/self-hosted-images/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content-self-hosted-images",
+      "sha256": "67e8c14d7f5c3271c440bb1c017c3186966b33c33b9c40e683739da0876cc9ba"
+    },
+    {
+      "source": "docs/9-7-sync-updates.md",
+      "content_path": "content/en/docs/the-compositor/sync-updates.md",
+      "url": "/docs/the-compositor/sync-updates/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-sync-updates",
+      "sha256": "1829d050a30e2025a5c82b29e2b144c93647fb9576b011dec94a8332f2317175"
+    },
+    {
+      "source": "docs/7-4-demo-content.md",
+      "content_path": "content/en/docs/customization/demo-content.md",
+      "url": "/docs/customization/demo-content/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-customization-demo-content",
+      "sha256": "1ba1d8281b3d2dc69c26f249c40b9dd7793f998b3aa41e69ee7f5e039b9a2d4e"
+    },
+    {
+      "source": "docs/9-4-story-editor.es.md",
+      "content_path": "content/es/guia/el-compositor/editor-historias.md",
+      "url": "/guia/el-compositor/editor-historias/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-story-editor",
+      "sha256": "bf8c6d604f58c3e1329ca6aef03b97f42a46224692100367ce95692ef87d6341"
+    },
+    {
+      "source": "docs/6-0-site-features.md",
+      "content_path": "content/en/docs/site-features/_index.md",
+      "url": "/docs/site-features/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-site-features",
+      "sha256": "be7f1f11893cc5b5dc67ae5dd7ce856fb93e10fb8d923e0aa1358ad213ff57e5"
+    },
+    {
+      "source": "docs/2-0-setup.md",
+      "content_path": "content/en/docs/setup/_index.md",
+      "url": "/docs/setup/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-setup",
+      "sha256": "dd3d15a9a12320b06bb7672d17d05203f9b8be84ef3d99c06d56b535c4b82233"
+    },
+    {
+      "source": "docs/9-0-compositor.md",
+      "content_path": "content/en/docs/the-compositor/_index.md",
+      "url": "/docs/the-compositor/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor",
+      "sha256": "a5ec38d049fd0a06aa72a53f2c5829c7fda9021f99e76005ace49f19ed81ebc9"
+    },
+    {
+      "source": "docs/9-7-sync-updates.es.md",
+      "content_path": "content/es/guia/el-compositor/sincronizacion-y-actualizaciones.md",
+      "url": "/guia/el-compositor/sincronizacion-y-actualizaciones/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-sync-updates",
+      "sha256": "a9e93d5c8985ed5e847ddc58a58bf06329d3c2c70d852ad95b5f1dab9cec0468"
+    },
+    {
+      "source": "docs/6-1-objects-gallery.md",
+      "content_path": "content/en/docs/site-features/objects-gallery.md",
+      "url": "/docs/site-features/objects-gallery/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-site-features-objects-gallery",
+      "sha256": "b723ef1e81e2b7490e3243a1f05d6e0ae2760dec5f89b65de89316343b6a6541"
+    },
+    {
+      "source": "docs/5-4-csv-stories.es.md",
+      "content_path": "content/es/guia/tus-datos/csv-historias.md",
+      "url": "/guia/tus-datos/csv-historias/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-your-data-csv-stories",
+      "sha256": "9149b12e76f0877e33b41597bc737043897c499b48b49542e9b362338a4abd6a"
+    },
+    {
+      "source": "docs/4-6-markdown-syntax.md",
+      "content_path": "content/en/docs/your-content/markdown-syntax.md",
+      "url": "/docs/your-content/markdown-syntax/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-your-content-markdown-syntax",
+      "sha256": "1804c701d6b77c30865258d97da90337695f1cd9138c60cb7097e7377acf8515"
+    },
+    {
+      "source": "manual/review.html",
+      "content_path": "content/es/manual/review.md",
+      "url": "/manual/review/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "manual-review-html",
+      "sha256": "ef2de554ef6fcd0d76b62d09f015d34abbf705ab64a3c33b34e692347f931fcf"
+    },
+    {
+      "source": "manual/index.en.html",
+      "content_path": "content/en/manual/en/_index.md",
+      "url": "/manual/en/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "manual-index-html",
+      "sha256": "f7571add236bc7a4ab1d43ce372e7dfa96c9c4f49dc6b8843682ac4e99380df8"
+    },
+    {
+      "source": "manual/iiif.es.md",
+      "content_path": "content/es/manual/es/iiif-a-historia.md",
+      "url": "/manual/es/iiif-a-historia/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "manual-iiif-md",
+      "sha256": "44b400574b620370324881373cf625832311d86efff923733a8f78e19f72f64f"
+    },
+    {
+      "source": "manual/iiif.en.md",
+      "content_path": "content/en/manual/en/iiif-to-story.md",
+      "url": "/manual/en/iiif-to-story/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "manual-iiif-md",
+      "sha256": "615931af1a6ac3b36c2437c80fc9f5537f1e6cad2cc9a39b3cc09e610e91032c"
+    },
+    {
+      "source": "manual/index.es.html",
+      "content_path": "content/es/manual/es/_index.md",
+      "url": "/manual/es/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "manual-index-html",
+      "sha256": "bec3c0fb80c23dd99d40b0ade6d554072236dce419040bff06acc1f38d2bbc91"
+    },
+    {
+      "source": "redirects/es-ec-objetos-galeria.md",
+      "content_path": "content/es/guia/estructura-de-contenido/objetos-galeria.md",
+      "url": "/guia/estructura-de-contenido/objetos-galeria/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ec-objetos-galeria-md",
+      "sha256": "6e762aa0a5486ab4b793f6b3df836bcc54bba4d90e37a71559f7955e0b2fb9a1"
+    },
+    {
+      "source": "redirects/en-wf-embedding.md",
+      "content_path": "content/en/docs/workflows/embedding.md",
+      "url": "/docs/workflows/embedding/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-wf-embedding-md",
+      "sha256": "7943fa2a2f354323ffd07ddd0a71626d265c1d747bc380d761a67e5fcf6cde55"
+    },
+    {
+      "source": "redirects/es-ft-desarrollo-local.md",
+      "content_path": "content/es/guia/flujos-de-trabajo/desarrollo-local.md",
+      "url": "/guia/flujos-de-trabajo/desarrollo-local/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ft-desarrollo-local-md",
+      "sha256": "937532894c8b85c99b43a4ce12000c138f40a01642a90e4dec0205ab04d4ad73"
+    },
+    {
+      "source": "redirects/en-cust-styling.md",
+      "content_path": "content/en/docs/customization/styling.md",
+      "url": "/docs/customization/styling/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-cust-styling-md",
+      "sha256": "eba960fdc0eb35e65469e37ebb68a02fc581282cf47f704feb6f69419a327474"
+    },
+    {
+      "source": "redirects/en-ref-csv-stories-glossary.md",
+      "content_path": "content/en/docs/reference/csv-stories-glossary.md",
+      "url": "/docs/reference/csv-stories-glossary/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-ref-csv-stories-glossary-md",
+      "sha256": "ee3654871cd08e0538306658a28dd3a82c84ff5d69e8b287a574c5033c6a1786"
+    },
+    {
+      "source": "redirects/es-ft-inicio-rapido-guiado.md",
+      "content_path": "content/es/guia/flujos-de-trabajo/inicio-rapido-guiado.md",
+      "url": "/guia/flujos-de-trabajo/inicio-rapido-guiado/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ft-inicio-rapido-guiado-md",
+      "sha256": "9248c8e020383d03a34146af568c88bd191bdd354b725d3a3e49cdabf67f6589"
+    },
+    {
+      "source": "redirects/es-ft-flujos-de-trabajo.md",
+      "content_path": "content/es/guia/flujos-de-trabajo/_index.md",
+      "url": "/guia/flujos-de-trabajo/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ft-flujos-de-trabajo-md",
+      "sha256": "56b4d94f9d46b317030d119be5363efa27bedc5fc25776dd0bf0b9fae04f2ef0"
+    },
+    {
+      "source": "redirects/en-wf-guided-quickstart.md",
+      "content_path": "content/en/docs/workflows/guided-quickstart.md",
+      "url": "/docs/workflows/guided-quickstart/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-wf-guided-quickstart-md",
+      "sha256": "e551f0db4b30fbc009710d0c172aab6856423ed339d1dea6b12cd487ab3611eb"
+    },
+    {
+      "source": "redirects/en-workshop.md",
+      "content_path": "content/en/workshop.md",
+      "url": "/workshop/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-workshop-md",
+      "sha256": "247f9c6d3aa3fdc5731ea10f6b5b46daff3fa01d40cbee1bc1f8d2a18445542d"
+    },
+    {
+      "source": "redirects/es-iiif-contenido-demo.md",
+      "content_path": "content/es/guia/iiif/contenido-demostracion.md",
+      "url": "/guia/iiif/contenido-demostracion/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-iiif-contenido-demo-md",
+      "sha256": "a683cfc1de26ea6585fee00fabacec814ff0753530dd94dd6a52f9a3af2ee945"
+    },
+    {
+      "source": "redirects/en-cs-glossary.md",
+      "content_path": "content/en/docs/content-structure/glossary.md",
+      "url": "/docs/content-structure/glossary/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-cs-glossary-md",
+      "sha256": "1634cfd5539a70ca119f48b79415dd87095f0c80e9893364b29d44d8f68bb783"
+    },
+    {
+      "source": "redirects/es-integracion-iiif.md",
+      "content_path": "content/es/guia/integracion-iiif.md",
+      "url": "/guia/integracion-iiif/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-integracion-iiif-md",
+      "sha256": "aa1d3b2fb08bb3e97a3009e6cc4717bc4be832211f85380144a2916096767b9c"
+    },
+    {
+      "source": "redirects/es-ft-insercion.md",
+      "content_path": "content/es/guia/flujos-de-trabajo/insercion.md",
+      "url": "/guia/flujos-de-trabajo/insercion/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ft-insercion-md",
+      "sha256": "47b23a0417b79e635cf8f904557391947cf39a083c6045f80bad2a2cb3cb0402"
+    },
+    {
+      "source": "redirects/es-conf-desarrollo-local.md",
+      "content_path": "content/es/guia/configuracion/desarrollo-local.md",
+      "url": "/guia/configuracion/desarrollo-local/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-conf-desarrollo-local-md",
+      "sha256": "1b70544eb3a844f0dfe485bbe47e4aa66d2a8f4cceb65c1e070484174e2b7b86"
+    },
+    {
+      "source": "redirects/es-pers-moviles.md",
+      "content_path": "content/es/guia/personalizacion/moviles.md",
+      "url": "/guia/personalizacion/moviles/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-pers-moviles-md",
+      "sha256": "7d4ac59e0a1bebfa68b7e42b2d0125b0984b2b1b38717d9ce35eae79fd9f27ef"
+    },
+    {
+      "source": "redirects/es-ft-actualizacion.md",
+      "content_path": "content/es/guia/flujos-de-trabajo/actualizacion.md",
+      "url": "/guia/flujos-de-trabajo/actualizacion/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ft-actualizacion-md",
+      "sha256": "d48bd4b37764245d748701e4bca0d675d404f51bc5ab14ef2ba8b3ed6d3bdfcf"
+    },
+    {
+      "source": "redirects/en-cs-custom-pages.md",
+      "content_path": "content/en/docs/content-structure/custom-pages.md",
+      "url": "/docs/content-structure/custom-pages/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-cs-custom-pages-md",
+      "sha256": "77dcb846de53508748564ed4eb3530273d2e4b1de92301f5ffa63f57dccaa730"
+    },
+    {
+      "source": "redirects/en-wf-upgrading.md",
+      "content_path": "content/en/docs/workflows/upgrading.md",
+      "url": "/docs/workflows/upgrading/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-wf-upgrading-md",
+      "sha256": "2951c3eb6eb51534802d03962e79e0c832dbfa868f3a4ff1186cec50214c6b93"
+    },
+    {
+      "source": "redirects/en-ref-config-validator.md",
+      "content_path": "content/en/docs/reference/config-validator.md",
+      "url": "/docs/reference/config-validator/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-ref-config-validator-md",
+      "sha256": "a7a68d5a95b79e01a9f41cecdea5b6c4d6b5ac3d67d9ec0c9474909bb25d612f"
+    },
+    {
+      "source": "redirects/en-cs-objects-gallery.md",
+      "content_path": "content/en/docs/content-structure/objects-gallery.md",
+      "url": "/docs/content-structure/objects-gallery/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-cs-objects-gallery-md",
+      "sha256": "48c46ce5f305c3e3fe7751a991c34476079605e4f45f411a2c0919b293cac69a"
+    },
+    {
+      "source": "redirects/es-ref-generador.md",
+      "content_path": "content/es/guia/referencia/generador-de-configuracion.md",
+      "url": "/guia/referencia/generador-de-configuracion/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ref-generador-md",
+      "sha256": "a19fc5d7ff792c9e565bafb62dd90f7bc2ad86e93928238df475bf09c51bf83a"
+    },
+    {
+      "source": "redirects/en-cs-private-stories.md",
+      "content_path": "content/en/docs/content-structure/private-stories.md",
+      "url": "/docs/content-structure/private-stories/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-cs-private-stories-md",
+      "sha256": "0f945c46b166f89826773881fbcebdb27934c5245d3d742675fd40d5cfdbe106"
+    },
+    {
+      "source": "redirects/en-wf-local-dev.md",
+      "content_path": "content/en/docs/workflows/local-dev.md",
+      "url": "/docs/workflows/local-dev/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-wf-local-dev-md",
+      "sha256": "9c2047ffc7972796a598578a3cb83729c8e254d4439e1a4975d278d1fa6175b4"
+    },
+    {
+      "source": "redirects/en-content-structure.md",
+      "content_path": "content/en/docs/content-structure/_index.md",
+      "url": "/docs/content-structure/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-content-structure-md",
+      "sha256": "369ad6c019ed101671d9f0431072b45f8d15b4e22df09c68d530beca9225ba4a"
+    },
+    {
+      "source": "redirects/es-ref-sintaxis-markdown.md",
+      "content_path": "content/es/guia/referencia/sintaxis-markdown.md",
+      "url": "/guia/referencia/sintaxis-markdown/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ref-sintaxis-markdown-md",
+      "sha256": "3ee3d36e8a7dd16dd648c75fb1b4cc97957ddeab607108052b249419a5084436"
+    },
+    {
+      "source": "redirects/en-gs-quick-start.md",
+      "content_path": "content/en/docs/getting-started/quick-start.md",
+      "url": "/docs/getting-started/quick-start/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-gs-quick-start-md",
+      "sha256": "b21ca966168bef67051feb8121af83cf357f071533a9f6e27eac061aa0369b11"
+    },
+    {
+      "source": "redirects/es-pp-inicio-rapido.md",
+      "content_path": "content/es/guia/primeros-pasos/inicio-rapido.md",
+      "url": "/guia/primeros-pasos/inicio-rapido/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-pp-inicio-rapido-md",
+      "sha256": "b8fcb6710964aa9bb245d6ac1119f4959b19df0b3290525c62aeae161ef61c63"
+    },
+    {
+      "source": "redirects/es-pers-estilos.md",
+      "content_path": "content/es/guia/personalizacion/estilos.md",
+      "url": "/guia/personalizacion/estilos/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-pers-estilos-md",
+      "sha256": "9a643eeb5fea98e811ab493ab975776b4261ac2ccaf622a3aaff48d7055231d0"
+    },
+    {
+      "source": "redirects/en-wf-hybrid.md",
+      "content_path": "content/en/docs/workflows/hybrid.md",
+      "url": "/docs/workflows/hybrid/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-wf-hybrid-md",
+      "sha256": "3deddc605edfa39d99c8e898f82bf8ed2d433b166cb086872ef83530e1da4a16"
+    },
+    {
+      "source": "redirects/en-ref-csv-project-objects.md",
+      "content_path": "content/en/docs/reference/csv-project-objects.md",
+      "url": "/docs/reference/csv-project-objects/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-ref-csv-project-objects-md",
+      "sha256": "d474a32c3d50c061c464688fcfd7b38c3950669211eb36afbc5c590168bd1cfe"
+    },
+    {
+      "source": "redirects/en-ref-markdown-syntax.md",
+      "content_path": "content/en/docs/reference/markdown-syntax.md",
+      "url": "/docs/reference/markdown-syntax/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-ref-markdown-syntax-md",
+      "sha256": "6c8f49cc7c6b181b83eddcb4026193cc27300d1cb5bf5723838a2ae3a2bc31ef"
+    },
+    {
+      "source": "redirects/en-ref-configuration.md",
+      "content_path": "content/en/docs/reference/configuration.md",
+      "url": "/docs/reference/configuration/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-ref-configuration-md",
+      "sha256": "6ac295a4f2388c2aa1486d2142d087a2b7a5dc1dfe3a48e96e5278384a5eec7b"
+    },
+    {
+      "source": "redirects/es-ft-interfaz-web-github.md",
+      "content_path": "content/es/guia/flujos-de-trabajo/interfaz-web-github.md",
+      "url": "/guia/flujos-de-trabajo/interfaz-web-github/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ft-interfaz-web-github-md",
+      "sha256": "124f900b5f69ffc64ca53a946827cf3536944ca949bd25cece4c943b3d7b0d36"
+    },
+    {
+      "source": "redirects/en-wf-workflows.md",
+      "content_path": "content/en/docs/workflows/_index.md",
+      "url": "/docs/workflows/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-wf-workflows-md",
+      "sha256": "ed464c9f94ef05cc6d28aba994801a2af7e981b56accbaa212efe963fc13cca2"
+    },
+    {
+      "source": "redirects/es-ref-csv-proyecto-objetos.md",
+      "content_path": "content/es/guia/referencia/csv-proyecto-objetos.md",
+      "url": "/guia/referencia/csv-proyecto-objetos/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ref-csv-proyecto-objetos-md",
+      "sha256": "232a36e8b11bafa6788f1c27d9afbf90407d424eb416a8e87153c836b12c2b6e"
+    },
+    {
+      "source": "redirects/en-worksheet.md",
+      "content_path": "content/en/worksheet.md",
+      "url": "/worksheet/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-worksheet-md",
+      "sha256": "112e2de231e03be1d442f56fa62e9f63f36076c15ddf19093f90d96750079d3b"
+    },
+    {
+      "source": "redirects/es-ft-google-sheets.md",
+      "content_path": "content/es/guia/flujos-de-trabajo/google-sheets.md",
+      "url": "/guia/flujos-de-trabajo/google-sheets/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ft-google-sheets-md",
+      "sha256": "86b7dcdcde1e46b15b35648c2bb2445769b5d972a05bf756f873ee3ffb18aeb3"
+    },
+    {
+      "source": "redirects/es-ft-hibrido.md",
+      "content_path": "content/es/guia/flujos-de-trabajo/hibrido.md",
+      "url": "/guia/flujos-de-trabajo/hibrido/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ft-hibrido-md",
+      "sha256": "6fb7022a634be62edc7290a309658d55c1006e48696ab617a6f12e9979fe289b"
+    },
+    {
+      "source": "redirects/en-cs-stories-panels.md",
+      "content_path": "content/en/docs/content-structure/stories-panels.md",
+      "url": "/docs/content-structure/stories-panels/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-cs-stories-panels-md",
+      "sha256": "d7e93898f18a6e3f87056ed181af73577b4176c9dac0c64fbd19e9e2a08a73d8"
+    },
+    {
+      "source": "redirects/en-setup-local-dev.md",
+      "content_path": "content/en/docs/setup/local-dev.md",
+      "url": "/docs/setup/local-dev/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-setup-local-dev-md",
+      "sha256": "056c9df5c68c5ac1124355dcd81e3d7ef4adb516086d4e997920e0327b372797"
+    },
+    {
+      "source": "redirects/es-ref-csv-historias-glosario.md",
+      "content_path": "content/es/guia/referencia/csv-historias-glosario.md",
+      "url": "/guia/referencia/csv-historias-glosario/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ref-csv-historias-glosario-md",
+      "sha256": "5fa241f2809d8ee6c2a1734760391e0556b476a841169c82a62247a41ee13a08"
+    },
+    {
+      "source": "redirects/es-ref-configuracion.md",
+      "content_path": "content/es/guia/referencia/configuracion.md",
+      "url": "/guia/referencia/configuracion/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ref-configuracion-md",
+      "sha256": "8096facf49d06dedbd4baef9b78cf879d284c8f7f9231e343ab8b2eb3c5081dc"
+    },
+    {
+      "source": "redirects/es-pp-como-funciona-telar.md",
+      "content_path": "content/es/guia/primeros-pasos/como-funciona-telar.md",
+      "url": "/guia/primeros-pasos/como-funciona-telar/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-pp-como-funciona-telar-md",
+      "sha256": "8a7221ed12d798427411d80401cf1fc0fd3215a9f8de019841aba0e4b4743583"
+    },
+    {
+      "source": "redirects/es-estructura-contenido.md",
+      "content_path": "content/es/guia/estructura-de-contenido/_index.md",
+      "url": "/guia/estructura-de-contenido/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-estructura-contenido-md",
+      "sha256": "1f771c7deea658e0d176a4e6b50473c9e2c14efc771a104ba587f4b009096a71"
+    },
+    {
+      "source": "redirects/es-ec-historias-paneles.md",
+      "content_path": "content/es/guia/estructura-de-contenido/historias-paneles.md",
+      "url": "/guia/estructura-de-contenido/historias-paneles/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ec-historias-paneles-md",
+      "sha256": "b7aad9b8abc55f0faefdc149284e95e538bc6736b6e6320ef3835dd1af54b33a"
+    },
+    {
+      "source": "redirects/es-ec-historias-privadas.md",
+      "content_path": "content/es/guia/estructura-de-contenido/historias-privadas.md",
+      "url": "/guia/estructura-de-contenido/historias-privadas/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ec-historias-privadas-md",
+      "sha256": "93f7b97bdd5b1e278e18834ff2a7a979c894b2a2f7d3b27b7ef50a7d2bd73bcd"
+    },
+    {
+      "source": "redirects/en-wf-github-web.md",
+      "content_path": "content/en/docs/workflows/github-web.md",
+      "url": "/docs/workflows/github-web/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-wf-github-web-md",
+      "sha256": "9aed1758956b38c4428ed439f01f6ec9b500d4cc2f783b4d49265237d1283c9b"
+    },
+    {
+      "source": "redirects/en-iiif-integration.md",
+      "content_path": "content/en/docs/iiif-integration.md",
+      "url": "/docs/iiif-integration/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-iiif-integration-md",
+      "sha256": "9dff2fbcf10e5145c4891a1a3baed1717e8ca6042621371d87c93466f7835414"
+    },
+    {
+      "source": "redirects/en-ref-config-generator.md",
+      "content_path": "content/en/docs/reference/config-generator.md",
+      "url": "/docs/reference/config-generator/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-ref-config-generator-md",
+      "sha256": "a45401c9a3192d77e435052655b0c7c09c886a741c1e35d8f57694a3bbde4b2e"
+    },
+    {
+      "source": "redirects/es-ref-validador.md",
+      "content_path": "content/es/guia/referencia/validador-de-configuracion.md",
+      "url": "/guia/referencia/validador-de-configuracion/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ref-validador-md",
+      "sha256": "68bcaadceea83cf28bda82d3d8f76850613e6a0c1ad9e814c0b78d82518d3e49"
+    },
+    {
+      "source": "redirects/en-gs-how-telar-works.md",
+      "content_path": "content/en/docs/getting-started/how-telar-works.md",
+      "url": "/docs/getting-started/how-telar-works/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-gs-how-telar-works-md",
+      "sha256": "7e4454a49ffe39dcdec48fe1e758fba5f556dca4783fe637ee2869cf14dea2bc"
+    },
+    {
+      "source": "redirects/en-iiif-demo-content.md",
+      "content_path": "content/en/docs/iiif/demo-content.md",
+      "url": "/docs/iiif/demo-content/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-iiif-demo-content-md",
+      "sha256": "326140e23bd7cdf802d82b0542b40ea8c35de04d34d1cf77a422ea44f70fad42"
+    },
+    {
+      "source": "redirects/en-cust-mobile.md",
+      "content_path": "content/en/docs/customization/mobile.md",
+      "url": "/docs/customization/mobile/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-cust-mobile-md",
+      "sha256": "a5f48cf10bacc167c8e0e6a590f7db54a75e128f65390c1e7bdfbf654ff74233"
+    },
+    {
+      "source": "redirects/es-ec-glosario.md",
+      "content_path": "content/es/guia/estructura-de-contenido/glosario.md",
+      "url": "/guia/estructura-de-contenido/glosario/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ec-glosario-md",
+      "sha256": "58d9dd05c0487e491e4433e406636e9a581e5ae4a5c88e3c576c8321441a4f8c"
+    },
+    {
+      "source": "redirects/es-ec-paginas-personalizadas.md",
+      "content_path": "content/es/guia/estructura-de-contenido/paginas-personalizadas.md",
+      "url": "/guia/estructura-de-contenido/paginas-personalizadas/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ec-paginas-personalizadas-md",
+      "sha256": "431108417afe4f7c410da571a7468adf447e73587931f267d8a6e09a3a787d9a"
+    },
+    {
+      "source": "redirects/es-ec-widgets.md",
+      "content_path": "content/es/guia/estructura-de-contenido/widgets.md",
+      "url": "/guia/estructura-de-contenido/widgets/",
+      "lang": "es",
+      "type": "redirect",
+      "translationKey": "redirects-es-ec-widgets-md",
+      "sha256": "4ea48b1a3b51464ab5e4177bfc57f7a733c03f0934bb58a3af2a682e28c58275"
+    },
+    {
+      "source": "redirects/en-cs-widgets.md",
+      "content_path": "content/en/docs/content-structure/widgets.md",
+      "url": "/docs/content-structure/widgets/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-cs-widgets-md",
+      "sha256": "1d9bfafdf4b2c64b6ea83c84d3e6850e91a6157ff0887e7c2fba70f80e0a6672"
+    },
+    {
+      "source": "redirects/en-wf-google-sheets.md",
+      "content_path": "content/en/docs/workflows/google-sheets.md",
+      "url": "/docs/workflows/google-sheets/",
+      "lang": "en",
+      "type": "redirect",
+      "translationKey": "redirects-en-wf-google-sheets-md",
+      "sha256": "494854f9951c33589b5b67aa9da1c15a9e4a405edc886272b428edbb72f4124a"
+    },
+    {
+      "source": "guides/local-content.en.md",
+      "content_path": "content/en/docs/local-authoring/content.md",
+      "url": "/docs/local-authoring/content/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-local-authoring-content",
+      "sha256": "01be9ff86fb11c5bba5c2e4c224550398b72264b2729ddadf9ae60126db755bb"
+    },
+    {
+      "source": "guides/sheets.en.html",
+      "content_path": "content/en/docs/google-sheets.md",
+      "url": "/docs/google-sheets/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-google-sheets",
+      "sha256": "d44561ef17e38fcdc34d2b622eb15e6551dc96867fdfdf93c698bf6050ad8990"
+    },
+    {
+      "source": "guides/local-preview.es.md",
+      "content_path": "content/es/guia/autoria-local/vista-previa.md",
+      "url": "/guia/autoria-local/vista-previa/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-local-authoring-preview",
+      "sha256": "77841c15672ac7d57aedbb921b1ac051ececb64d4d49cadd97890560dea7307f"
+    },
+    {
+      "source": "guides/compositor-pages.en.md",
+      "content_path": "content/en/docs/the-compositor/pages.md",
+      "url": "/docs/the-compositor/pages/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-pages",
+      "sha256": "cef1ec3ec7a46a3a001aa9fd91da9e03477790897e584fbf6f68632e1badb00d"
+    },
+    {
+      "source": "guides/local-preview.en.md",
+      "content_path": "content/en/docs/local-authoring/preview.md",
+      "url": "/docs/local-authoring/preview/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-local-authoring-preview",
+      "sha256": "975b368d0299749be12860373b7226478d7fc044a9857b4cf4af72dab426eb50"
+    },
+    {
+      "source": "guides/local-content.es.md",
+      "content_path": "content/es/guia/autoria-local/contenido.md",
+      "url": "/guia/autoria-local/contenido/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-local-authoring-content",
+      "sha256": "7aca98bba7eca26b16deb194db3fbeeb2fdb39ef47d3d0748c817a3f066a1401"
+    },
+    {
+      "source": "guides/compositor-pages.es.md",
+      "content_path": "content/es/guia/el-compositor/paginas.md",
+      "url": "/guia/el-compositor/paginas/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-pages",
+      "sha256": "4ce892497b02e2553eabbf32cee18c57aecd536246cbe5e419378536d66de15b"
+    },
+    {
+      "source": "guides/planning.es.html",
+      "content_path": "content/es/guia/planear/_index.md",
+      "url": "/guia/planear/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-plan",
+      "sha256": "dc9c79d9874e361a3a6360b8a5d12c90ef333e9bdc083f0337d886ad27abfa78"
+    },
+    {
+      "source": "guides/teaching-request.en.html",
+      "content_path": "content/en/docs/teaching/request-access.md",
+      "url": "/docs/teaching/request-access/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-teaching-request-access",
+      "sha256": "9767a762415a5ef8bac28360b28fee059ec9061cb5756cb45a37bd467207423d"
+    },
+    {
+      "source": "guides/local.en.html",
+      "content_path": "content/en/docs/local-authoring/_index.md",
+      "url": "/docs/local-authoring/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-local-authoring",
+      "sha256": "dd4b88736ee9bf52847c4bd2e4f7e6e4fb8500f6a3d8d10deab738c4ffcf3732"
+    },
+    {
+      "source": "guides/planning-sources.es.md",
+      "content_path": "content/es/guia/planear/fuentes-y-encuadres.md",
+      "url": "/guia/planear/fuentes-y-encuadres/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-plan-sources-and-framing",
+      "sha256": "9ec54426b0906954668c4b788eb012d3466d81a633e2ea0b75c867c3cb9aa778"
+    },
+    {
+      "source": "guides/planning-layout.es.md",
+      "content_path": "content/es/guia/planear/organizar-la-exhibicion.md",
+      "url": "/guia/planear/organizar-la-exhibicion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-plan-exhibition-layout",
+      "sha256": "055c5d0c6d5ab92e5bb70a65bde95dcf81a20b7917cad09de3dc95a3b159a384"
+    },
+    {
+      "source": "guides/iiif.es.md",
+      "content_path": "content/es/guia/el-compositor/iiif-a-historia.md",
+      "url": "/guia/el-compositor/iiif-a-historia/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-iiif-to-story",
+      "sha256": "de2ec3def06850ce0c82098c615c393f7dd7981457c819a03b141df3fb195808"
+    },
+    {
+      "source": "guides/reference.en.html",
+      "content_path": "content/en/docs/reference/_index.md",
+      "url": "/docs/reference/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-reference",
+      "sha256": "717ce2514bb9e8ceb991d641c6e1596dfd35716f1f77c713e97a935a21617b14"
+    },
+    {
+      "source": "guides/teaching.es.html",
+      "content_path": "content/es/guia/ensenar/_index.md",
+      "url": "/guia/ensenar/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-teaching",
+      "sha256": "e654d7c2a641c63a5b6bd7132b0fa9823ca3e4ad93b8c5cff5d434f27e19b903"
+    },
+    {
+      "source": "guides/planning-layout.en.md",
+      "content_path": "content/en/docs/plan/exhibition-layout.md",
+      "url": "/docs/plan/exhibition-layout/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-plan-exhibition-layout",
+      "sha256": "75048add869a391d85c1880f30e0465cb4573fcc59fba5f4f416b9c5f4b413a0"
+    },
+    {
+      "source": "guides/planning-sources.en.md",
+      "content_path": "content/en/docs/plan/sources-and-framing.md",
+      "url": "/docs/plan/sources-and-framing/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-plan-sources-and-framing",
+      "sha256": "d82b71982882f4de5945d319f1b9ca8254189f38fc93cdd794be2e1e698c4d5b"
+    },
+    {
+      "source": "guides/iiif.en.md",
+      "content_path": "content/en/docs/the-compositor/iiif-to-story.md",
+      "url": "/docs/the-compositor/iiif-to-story/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-iiif-to-story",
+      "sha256": "cee1a12001d7976819433e01be5f6dba5f60f4fb5da6f532cedb8aae20059d10"
+    },
+    {
+      "source": "guides/compositor-recovery.es.md",
+      "content_path": "content/es/guia/el-compositor/solucionar-problemas.md",
+      "url": "/guia/el-compositor/solucionar-problemas/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-troubleshooting",
+      "sha256": "37476d97b1ad0e3c6dcc40538a2f078a6bc3be707df3315a5187a3199daca3ae"
+    },
+    {
+      "source": "guides/sheets.es.html",
+      "content_path": "content/es/guia/google-sheets.md",
+      "url": "/guia/google-sheets/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-google-sheets",
+      "sha256": "da5246ae47cb524ef235db19c4ac42447d0da48e87c2dd949bc9ea3992d5dac0"
+    },
+    {
+      "source": "guides/planning-review.en.md",
+      "content_path": "content/en/docs/plan/review.md",
+      "url": "/docs/plan/review/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-plan-review",
+      "sha256": "34ca3366816f971713d2d8a8888cbd4654aadd983295aa7d20d368481b4255bf"
+    },
+    {
+      "source": "guides/planning-layers.en.md",
+      "content_path": "content/en/docs/plan/layers-and-glossary.md",
+      "url": "/docs/plan/layers-and-glossary/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-plan-layers-and-glossary",
+      "sha256": "ec85c463a5df1133395fd7381a922bd15e83a274fe91fce251c034d64c721abd"
+    },
+    {
+      "source": "guides/planning-review.es.md",
+      "content_path": "content/es/guia/planear/revision.md",
+      "url": "/guia/planear/revision/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-plan-review",
+      "sha256": "ae814ff77d2a332c71241953bfd02fb5c2358f5182a8a24fc3b35f981b77e682"
+    },
+    {
+      "source": "guides/compositor-recovery.en.md",
+      "content_path": "content/en/docs/the-compositor/troubleshooting.md",
+      "url": "/docs/the-compositor/troubleshooting/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-troubleshooting",
+      "sha256": "957eca1aa3d93485f1c5aca227d8ee284333c52927953ca7885bd60fc540ea1e"
+    },
+    {
+      "source": "guides/planning.en.html",
+      "content_path": "content/en/docs/plan/_index.md",
+      "url": "/docs/plan/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-plan",
+      "sha256": "8a2c3502f8e7904c7958253c4542b2a6398af72cb0c1f9adfb4a16f8b08d1361"
+    },
+    {
+      "source": "guides/local.es.html",
+      "content_path": "content/es/guia/autoria-local/_index.md",
+      "url": "/guia/autoria-local/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-local-authoring",
+      "sha256": "29ad417523f08afe7b3da74d1cc2ff09560e811931563a1ceaf5caaa03cb0489"
+    },
+    {
+      "source": "guides/teaching-request.es.html",
+      "content_path": "content/es/guia/ensenar/solicitar-acceso.md",
+      "url": "/guia/ensenar/solicitar-acceso/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-teaching-request-access",
+      "sha256": "7d4d56126ce52cee166af5b5fa6a14345a461807d89339295675ab2550865549"
+    },
+    {
+      "source": "guides/planning-layers.es.md",
+      "content_path": "content/es/guia/planear/capas-y-glosario.md",
+      "url": "/guia/planear/capas-y-glosario/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-plan-layers-and-glossary",
+      "sha256": "e7346ffce30339551a423a92d7b8a54548d7f3a93878f69571160671e2cf7b38"
+    },
+    {
+      "source": "guides/compositor-glossary.en.md",
+      "content_path": "content/en/docs/the-compositor/glossary.md",
+      "url": "/docs/the-compositor/glossary/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-glossary",
+      "sha256": "c5e904ce600b3ccfcf28c694297703175051eb16c451a22c3bd526f29afc191c"
+    },
+    {
+      "source": "guides/compositor-courses.en.md",
+      "content_path": "content/en/docs/the-compositor/courses.md",
+      "url": "/docs/the-compositor/courses/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-courses",
+      "sha256": "bf228adb8dff8e17cc0ba26c7bb2a0759ec524eee564f4f7f27dffd00564936d"
+    },
+    {
+      "source": "guides/compositor-team.en.md",
+      "content_path": "content/en/docs/the-compositor/team.md",
+      "url": "/docs/the-compositor/team/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-team",
+      "sha256": "65c3b949400de0acf1d7c01fa4928ff992c5d6e0cf1b48751e5fa579ac65d337"
+    },
+    {
+      "source": "guides/compositor-settings.en.md",
+      "content_path": "content/en/docs/the-compositor/settings.md",
+      "url": "/docs/the-compositor/settings/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-settings",
+      "sha256": "710d385cb2182410182e7d79d2a172f01f132bf55c030bea168201eda1b195ef"
+    },
+    {
+      "source": "guides/local-publish.en.md",
+      "content_path": "content/en/docs/local-authoring/publish.md",
+      "url": "/docs/local-authoring/publish/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-local-authoring-publish",
+      "sha256": "8157eb0c033838d915e3cca5cf457a41156d28c9cac9f39930ac57df61251fef"
+    },
+    {
+      "source": "guides/reference.es.html",
+      "content_path": "content/es/guia/referencia/_index.md",
+      "url": "/guia/referencia/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-reference",
+      "sha256": "9ad25b83cbe5c50bcee737b5166d8b11f19f8b63af4bc7829303fd6ac9ba38b7"
+    },
+    {
+      "source": "guides/compositor-team.es.md",
+      "content_path": "content/es/guia/el-compositor/equipo.md",
+      "url": "/guia/el-compositor/equipo/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-team",
+      "sha256": "112e761b35429c97c8a8211097f3e396ffe24604fd78d4e23799bfaf63942b63"
+    },
+    {
+      "source": "guides/teaching.en.html",
+      "content_path": "content/en/docs/teaching/_index.md",
+      "url": "/docs/teaching/",
+      "lang": "en",
+      "type": "guide",
+      "translationKey": "docs-teaching",
+      "sha256": "5fccf3f023234edb28a82271e4dd59392dcca91abe60639de8daab7e13ee970f"
+    },
+    {
+      "source": "guides/compositor-courses.es.md",
+      "content_path": "content/es/guia/el-compositor/cursos.md",
+      "url": "/guia/el-compositor/cursos/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-courses",
+      "sha256": "6921b2cba025a63f7ea603893d2221fcb5c5d0e4d657693fd1aa10412ed7c2e0"
+    },
+    {
+      "source": "guides/compositor-glossary.es.md",
+      "content_path": "content/es/guia/el-compositor/glosario.md",
+      "url": "/guia/el-compositor/glosario/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-glossary",
+      "sha256": "742d2ccd80ecdc8044f3390067e0f4e21298467865cb5fb52872c4443185fbd6"
+    },
+    {
+      "source": "guides/local-publish.es.md",
+      "content_path": "content/es/guia/autoria-local/publicar.md",
+      "url": "/guia/autoria-local/publicar/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-local-authoring-publish",
+      "sha256": "b00441925b9bccc085c91b6c0acda974453337bcb73f281618fd9f1e3d6277ee"
+    },
+    {
+      "source": "guides/compositor-settings.es.md",
+      "content_path": "content/es/guia/el-compositor/configuracion.md",
+      "url": "/guia/el-compositor/configuracion/",
+      "lang": "es",
+      "type": "guide",
+      "translationKey": "docs-the-compositor-settings",
+      "sha256": "06f8513ffeb35be3b8b5cd0e378a3fa1709867addd9c663cae52e8dad0529388"
+    }
+  ],
+  "heading_warnings": []
+}

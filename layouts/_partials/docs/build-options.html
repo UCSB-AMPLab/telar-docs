@@ -1,0 +1,4 @@
+{{ $lang := $.Language.Lang }}{{ $routes := (index (index (index hugo.Data "docs_navigation") "routes") $lang) }}{{ $c := (index (index (index hugo.Data "guides") "copy") $lang) }}{{ $q := (index (index (index hugo.Data "guides") "quick") $lang) }}
+<div class="chapter-outcome"><strong>{{ if (eq $lang "es") }}¿Vienes a un taller?{{ else }}Here for a workshop?{{ end }}</strong><p><a href="{{ (index $routes "quick") }}">{{ (index $q "title") }} →</a></p></div>
+<p><a href="{{ (index $routes "planning") }}">{{ (index $c "plan_title") }} →</a></p>
+<div class="manual-cards">{{ range $loopIndex, $manual := (index (index hugo.Data "guides") "manuals") }}{{ $m := (index $manual $lang) }}<article class="manual-card"><span class="card-index">0{{ (add $loopIndex 1) }}</span><p class="eyebrow">{{ (index $m "tag") }}</p><h2>{{ (index $m "title") }}</h2><p>{{ (index $m "text") }}</p><a href="{{ (index $m "href") }}">{{ (index $m "link") }} →</a></article>{{ end }}</div>

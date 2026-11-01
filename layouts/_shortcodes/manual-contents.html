@@ -1,0 +1,1 @@
+{{ $book := index (index hugo.Data.docs_navigation.sections .Page.Language.Lang) "compositor" }}{{ range $book.groups }}{{ if ne .id "main" }}<h2>{{ .title }}</h2><ul>{{ range .items }}<li><a href="{{ .url }}">{{ .title }}</a></li>{{ end }}</ul>{{ end }}{{ end }}

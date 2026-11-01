@@ -1,0 +1,58 @@
+{
+  "en": {
+    "title": "Request teaching-mode access",
+    "name": "Your name",
+    "email": "Reply email",
+    "github": "GitHub username (optional)",
+    "github_help": "The account you use in the Compositor, if you already have one.",
+    "institution": "Institution or organisation (optional)",
+    "course": "How would you like to use Telar?",
+    "course_help": "A few sentences about your course, workshop or student project are enough.",
+    "privacy": "Your request is shared privately with the Telar team so we can reply.",
+    "send": "Send request",
+    "sending": "Sending…",
+    "success_title": "Your request has been received",
+    "success": "We’ll reply using the email you provided. Teaching access is enabled after the team reviews your request.",
+    "failure": "We couldn’t send your request. Your answers are still in the form; please try again.",
+    "validation": "Please check the highlighted fields.",
+    "verification": "Please complete the verification and try again.",
+    "field_error": "Check this field.",
+    "noscript": "Enable JavaScript to send this form.",
+    "back": "Back to Teaching with Telar",
+    "honeypot": "Leave this field empty",
+    "intro_paragraphs": [
+      "Drawing on our own experience teaching with Telar, we have built a new teaching mode in the Compositor, which we are now testing. It is designed to help educators organise class projects and support students as they create their own visual narratives.",
+      "A Telar project asks students to look closely at sources and turn their research into a narrative for an audience. They select evidence, decide what to show, connect observations and provide the context a reader needs. A project might explore a work of art, trace changes in a landscape through maps and photographs, or bring archival materials and oral histories together in a community exhibition. These assignments offer opportunities to practise interpretation, writing, collaboration and digital publishing, and to produce something students can share and develop beyond the course.",
+      "Use the Compositor with your class: share a collection of objects, let student groups build their own exhibitions and review their sites from one course workspace.",
+      "We would love to share this tool with educators working in different disciplines, institutions and learning environments, and to learn from how you use it. If you would like access, please use the form below to tell us about your course, workshop or student project. We will do our best to reply as quickly as possible."
+    ]
+  },
+  "es": {
+    "title": "Solicita acceso al modo docente",
+    "name": "Tu nombre",
+    "email": "Correo para responderte",
+    "github": "Usuario de GitHub (opcional)",
+    "github_help": "La cuenta con la que entras al Compositor, si ya tienes una.",
+    "institution": "Institución u organización (opcional)",
+    "course": "¿Cómo te gustaría usar Telar?",
+    "course_help": "Bastan unas frases sobre el curso, taller o proyecto estudiantil.",
+    "privacy": "Tu solicitud llega de forma privada al equipo de Telar, para que podamos responderte.",
+    "send": "Enviar solicitud",
+    "sending": "Enviando…",
+    "success_title": "Recibimos tu solicitud",
+    "success": "Te responderemos al correo que indicaste. Habilitamos el acceso al modo docente después de revisar tu solicitud.",
+    "failure": "No pudimos enviar tu solicitud. Lo que escribiste sigue en el formulario: intenta de nuevo.",
+    "validation": "Revisa los campos señalados.",
+    "verification": "Completa la verificación e intenta de nuevo.",
+    "field_error": "Revisa este campo.",
+    "noscript": "Activa JavaScript para enviar este formulario.",
+    "back": "Volver a Enseñar con Telar",
+    "honeypot": "Deja este campo vacío",
+    "intro_paragraphs": [
+      "A partir de lo que hemos aprendido al enseñar con Telar, desarrollamos en el Compositor un nuevo modo docente, que todavía estamos probando. Está pensado para que docentes organicen proyectos de clase y acompañen a los estudiantes mientras crean sus propias narrativas visuales.",
+      "Un proyecto en Telar invita a los estudiantes a observar las fuentes con atención y a convertir su investigación en una narrativa para un público. Eligen la evidencia, deciden qué mostrar, relacionan sus observaciones y dan a quien lee el contexto que necesita. Un proyecto puede explorar una obra de arte, seguir en mapas y fotografías cómo cambia un paisaje o reunir materiales de archivo e historias orales en una exhibición comunitaria. En estas actividades, los estudiantes pueden practicar la interpretación, la escritura, el trabajo colaborativo y la publicación digital, y crear algo para compartir y seguir desarrollando después del curso.",
+      "Con el modo docente puedes usar el Compositor con tu clase: compartir una colección de objetos, dejar que cada grupo de estudiantes cree su propia exhibición y revisar los sitios de todos los grupos desde un mismo espacio de curso.",
+      "Nos encantaría compartir esta herramienta con docentes de distintas disciplinas, instituciones y contextos educativos, y aprender de los usos que le den. Si te interesa obtener acceso, cuéntanos en el formulario de abajo sobre tu curso, taller o proyecto estudiantil. Haremos lo posible por responderte cuanto antes."
+    ]
+  }
+}

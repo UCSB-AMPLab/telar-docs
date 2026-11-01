@@ -1,94 +1,58 @@
-# Telar Documentation
+# Telar project website
 
-Official documentation site for [Telar](https://github.com/UCSB-AMPLab/telar), a minimal-computing framework that weaves together IIIF images, audio, video, and texts to create layered visual narratives for digital scholarship, public exhibitions, community storytelling, and classroom projects.
+The bilingual documentation and project website for [Telar](https://telar.org), built with Hugo Extended and Pagefind. This repository publishes the manuals, exhibition-planning guides, teaching resources, showcase and landing pages. Telar exhibitions themselves still use the separate Telar framework and its Jekyll build.
 
-## About
+## Install and preview
 
-This is a bilingual (English/Spanish) documentation site built with Jekyll using a custom docs theme with [Pagefind](https://pagefind.app/) search.
+Requires Node.js 22 or later. Regression checks additionally use Python 3, with no Python packages required.
 
-## Local Development
-
-### Prerequisites
-
-- Ruby 3.0+
-- Bundler
-- Node.js (for Pagefind search indexing)
-
-### Basic Setup (without search)
-
-```bash
-# Install dependencies
-bundle install
-
-# Serve locally with live reload
-bundle exec jekyll serve --livereload
-
-# View at http://localhost:4000
+```sh
+npm ci
+npm run build:preview
+npm run preview
 ```
 
-### With Search
+Open <http://127.0.0.1:4004/> for English, <http://127.0.0.1:4004/es/> for Spanish, or `/docs/` and `/guia/` for the guides. Existing `?lang=en` and `?lang=es` homepage links forward to the appropriate language's canonical homepage.
 
-Pagefind requires a two-step process (can't use `jekyll serve` as it overwrites the search index):
+For live content/layout rebuilding, run `npm run dev` after the initial preview build. Rebuild with `npm run build:preview` after content changes when checking search results: Pagefind indexes the generated HTML.
 
-```bash
-# Build Jekyll site
-bundle exec jekyll build
+### Previewing forms and the showcase
 
-# Build search index and serve
-npx pagefind --site _site --serve
+The production site uses the separate `telar-showcase` Cloudflare Worker. The local preview points both forms and the gallery to port 8790 instead. To run the local integration harness, use a checkout of that Worker containing the teaching-request endpoint and its installed dependencies:
 
-# View at http://localhost:1414
+```sh
+node scripts/preview-api.mjs --worker /path/to/telar-showcase
 ```
 
-For regular development without search, use `jekyll serve`. Search is automatically built during GitHub Actions deployment.
+The harness copies only Worker source and migrations into a temporary directory, creates a separate local database, loads a public showcase fixture and uses Cloudflare's test Turnstile keys. It does not copy credentials, notification destinations or existing records. Submitted test data remains in that temporary database; Slack delivery is disabled. Stop the API with Ctrl-C. The temporary path is printed at startup.
 
-## Bilingual Structure
+The pages can be browsed without this API. Forms then show their existing connection error; the gallery shows its existing fallback. Production service configuration is in `hugo.json`, and local overrides are in `hugo.preview.json`.
 
-This site uses a manual bilingual approach without plugins:
+## Edit the site
 
-- **English pages**: Standard `.md` files (e.g., `docs/1-getting-started.md`)
-- **Spanish pages**: `.es.md` extension (e.g., `docs/1-getting-started.es.md`)
-- **URL structure**:
-  - English: `/`, `/about/`, `/docs/...`
-  - Spanish: `/es/`, `/acerca-de/`, `/documentacion/...`
+- `content/en/` and `content/es/` contain the content. Paths mirror the published routes. An `_index.md` is a page that also has child pages.
+- Each page's `url` retains its published address. Keep its `translationKey` aligned with its counterpart; Hugo supplies the translation links.
+- `data/guides.json` contains shared guide/quick-guide copy. `data/docs_navigation.json` controls the editorial grouping and order. Page titles and translation pairing live in front matter rather than a second page registry.
+- `data/teaching_contact.json` contains the approved teaching form copy. `data/docs_media.json` supplies screenshot captions and optional animations.
+- `layouts/_partials/docs-shell.html`, `section-shell.html` and `home.html` are the three shared page shells. Metadata lives in `meta.html`.
+- `layouts/_shortcodes/` contains media, callout, diagram and shared-content components. Larger interactive tools use source templates in `layouts/_partials/pages/`.
+- `static/` contains the existing styles, browser scripts and media. Hugo does not rewrite Telar framework examples in the documentation.
 
-### Adding Content
+Preserve explicit heading IDs and alias spans when changing headings. They keep existing links and workshop references working. The approved design and wording carry over; the remaining Spanish editorial review is a separate task.
 
-1. Create English page: `docs/new-page.md`
-2. Add frontmatter with `lang: en` and `permalink:`
-3. Create Spanish version: `docs/new-page.es.md`
-4. Add frontmatter with `lang: es` and Spanish `permalink:`
+## Build and verify
 
-### Navigation
+```sh
+npm run build
+npm test
+```
 
-The custom navigation (`_includes/components/site_nav.html`) groups pages by language, showing:
-- English section with English pages
-- Español section with Spanish pages
+The production build writes `public/` and indexes the guides in English and Spanish. The test command checks the migrated route inventory, legacy anchors, headings, code examples, tables, callouts, images, metadata, translation links and internal link targets. It also rejects prototype dependencies and local runtime URLs in production HTML. Results are written to the ignored `reports/` directory.
 
-The language switcher appears at the top-right of each page.
+After an approved change to a heading or code example, update that page's entry in `migration/content-contracts.json` as part of the same edit. Retain the old anchor IDs as aliases. Ordinary prose changes do not require changing the heading/code contracts.
 
-## Customization
+`migration/inventory.json` records the original source file and native Hugo destination for each migrated page. `migration/content-contracts.json` records the baseline rendering contracts. These are regression evidence, not generated page bodies.
 
-- **Theme styles**: `_sass/custom/custom.scss`
-- **Logo**: `images/telar.png` (placeholder - replace with final logo)
-- **Site config**: `_config.yml`
+The Pages workflow builds and tests pull requests. Its deployment job runs only for `main`, after the checks pass. The deployment artifact is `public/`; source files, local fixtures and migration records are not published.
 
-## Credits
-
-Telar is developed by Adelaida Ávila, Ana María Cárdenas Gasca, Juan Cobo Betancourt, Natalie Cobo, Santiago Muñoz, and students and scholars at the [UCSB Archives, Memory, and Preservation Lab](https://ampl.clair.ucsb.edu), the UT Archives, Mapping, and Pedagogy Lab, and [Neogranadina](https://neogranadina.org).
-
-We gratefully acknowledge the support of the [Caribbean Digital Scholarship Collective](https://cdscollective.org), the [Center for Innovative Teaching, Research, and Learning (CITRAL)](https://citral.ucsb.edu/home) at the University of California, Santa Barbara, the [UCSB Library](https://library.ucsb.edu), the [Routes of Enslavement in the Americas University of California MRPI](https://www.humanities.uci.edu/routes-enslavement-americas), and the [Department of History of The University of Texas at Austin](https://liberalarts.utexas.edu/history/).
-
-Telar is built with:
-- [Jekyll](https://jekyllrb.com/) - Static site generator
-- [OpenSeadragon](https://openseadragon.github.io/) - IIIF viewer
-- [Bootstrap 5](https://getbootstrap.com/) - CSS framework
-- [libvips](https://www.libvips.org/) - IIIF tile generator
-
-It is based on [Paisajes Coloniales](https://paisajescoloniales.com/), and inspired by:
-- [Wax](https://minicomp.github.io/wax/) - Minimal computing for digital exhibitions
-- [CollectionBuilder](https://collectionbuilder.github.io/) - Static digital collections
-
-## License
-
-The Telar documentation site is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE). You are free to share and adapt the content, including for commercial use, as long as you give appropriate credit and indicate if changes were made.
+See [MIGRATION.md](MIGRATION.md) for migration scope, validation and the remaining release steps.

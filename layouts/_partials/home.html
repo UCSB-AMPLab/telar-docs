@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang }}">
+<head>
+  {{ partial "meta.html" . }}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Telar identity colours */
+      --terracotta: #883C36;
+      --dark-grey: #333333;
+      --lavender: #C6D0F8;
+      --gold: #DAB95C;
+      --cream: #FFF6EF;
+      /* Text colors */
+      --text-dark: #333333;
+      --text-medium: #6C7A89;
+      --text-light: #AEB3BB;
+      --bg-white: #ffffff;
+      --bg-light: #f4f5f6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* Sections */
+    .section {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 30px;
+      position: relative;
+    }
+
+    .section--half {
+      min-height: 50vh;
+    }
+
+    .section__content {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--terracotta);
+      text-align: center;
+      padding: 40px 30px 80px;
+    }
+
+    .hero__logo {
+      max-width: 420px;
+      width: 80%;
+      height: auto;
+      margin: 0 auto 16px;
+      display: block;
+    }
+
+    .hero__title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(52px, 10vw, 80px);
+      font-weight: 700;
+      letter-spacing: -2px;
+      margin-bottom: 8px;
+      color: var(--cream);
+    }
+
+    .hero__lang-toggle {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .hero__lang-toggle button {
+      padding: 6px 16px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: transparent;
+      color: rgba(255,255,255,0.8);
+      cursor: pointer;
+      border-radius: 50px;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .hero__lang-toggle button.active {
+      background: var(--cream);
+      color: var(--terracotta);
+      border-color: var(--cream);
+    }
+
+    .hero__lang-toggle button:hover:not(.active) {
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    .hero__tagline {
+      font-size: clamp(18px, 3vw, 22px);
+      color: rgba(255,246,239,0.75);
+      max-width: 700px;
+      margin: 0 auto 24px;
+      font-weight: 300;
+    }
+
+    .hero__cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0.4px;
+      transition: all 0.2s;
+    }
+
+    /* A button that carries a mark sets its own baseline, since inline-block
+       leaves the glyph sitting on the text baseline rather than beside it.
+       The mark is concentric with the pill's end cap: the cap is centred half
+       the button's height from the edge, so the padding is that minus the
+       mark's radius, less the 1px border these buttons draw. */
+    .btn--icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding-left: 15px;
+    }
+
+    .btn__icon {
+      width: 18px;
+      height: 18px;
+      flex: none;
+      fill: currentColor;
+    }
+
+    .hero .btn--primary {
+      background: var(--cream);
+      color: var(--terracotta);
+    }
+
+    .hero .btn--primary:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    .hero .btn--secondary {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .hero .btn--secondary:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+    }
+
+    .btn--primary {
+      background: var(--terracotta);
+      color: white;
+    }
+
+    .btn--primary:hover {
+      background: var(--dark-grey);
+      transform: translateY(-2px);
+    }
+
+    .btn--secondary {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    .btn--secondary:hover {
+      background: #e0e1e2;
+      transform: translateY(-2px);
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
+
+    .hero__scroll svg {
+      width: 32px;
+      height: 32px;
+      stroke: rgba(255,255,255,0.35);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* Beta Notice */
+    .beta-notice {
+      background: var(--cream);
+      border-left: 4px solid var(--gold);
+      padding: 12px 16px;
+      margin: 0 auto 24px;
+      max-width: 600px;
+      text-align: left;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+
+    .beta-notice strong {
+      color: var(--terracotta);
+      font-family: 'Mulish', sans-serif;
+      font-weight: 500;
+    }
+
+    /* About Section */
+    .about {
+      background: var(--bg-light);
+    }
+
+    .about h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .about p {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: var(--text-medium);
+      font-weight: 300;
+    }
+
+    .about__screenshot {
+      display: block;
+      max-width: 100%;
+      margin: 10px auto;
+    }
+
+    .about__video {
+      max-width: 100%;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+
+    .about__video iframe {
+      border: none;
+      transform: scale(1.02);
+    }
+
+    /* Features Section */
+    .features {
+      background: rgba(198, 208, 248, 0.25);
+      padding-top: 40px;
+      padding-bottom: 80px;
+    }
+
+    .features h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      margin-bottom: 32px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+
+    .features__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .features__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .features__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-card {
+      padding: 24px;
+      background: var(--bg-white);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .feature-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 15px;
+      color: var(--text-medium);
+      font-weight: 300;
+    }
+
+    /* Sponsors Section */
+    .sponsors-section {
+      background: var(--dark-grey);
+      color: white;
+      text-align: center;
+    }
+
+    .sponsors-row {
+      margin-bottom: 60px;
+    }
+
+    .sponsors-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .sponsors-row h3 {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 24px;
+      opacity: 0.7;
+    }
+
+    .sponsors-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .sponsors-break {
+      flex-basis: 100%;
+      height: 0;
+    }
+
+    .sponsor-logo {
+      display: block;
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
+    }
+
+    .sponsor-logo:hover {
+      opacity: 1;
+    }
+
+    .sponsor-logo img {
+    height: 130px;
+    width: 350px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    }
+
+    /* Smaller logos for "Supported by" row */
+    .sponsors-row:last-child .sponsor-logo img {
+      height: auto;
+      max-height: 80px;
+      max-width: 250px;
+    }
+
+    /* Keep Developed by logos on one row */
+    .sponsors-row:first-child .sponsors-logos {
+      flex-wrap: nowrap;
+    }
+
+    /* Narrower width for AMPL logos in Developed by row */
+    .sponsors-row:first-child .sponsor-logo img[src*="ampl"] {
+      width: 250px;
+    }
+
+    /* Don't invert already-white logos */
+    .sponsor-logo img[src*="blanco"],
+    .sponsor-logo img[src*="white"] {
+      filter: none;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--cream);
+      text-align: center;
+      min-height: auto;
+      padding: 80px 30px 40px;
+    }
+
+    .cta-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      color: var(--text-medium);
+      margin-bottom: 32px;
+    }
+
+    /* Footer */
+    .landing-footer {
+      padding: 40px 30px;
+      text-align: center;
+      background: var(--cream);
+      border-top: 1px solid rgba(136,60,54,0.1);
+      font-size: 14px;
+      color: var(--text-medium);
+      font-weight: 300;
+    }
+
+    .landing-footer p {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .landing-footer a {
+      color: var(--terracotta);
+    }
+
+    /* Language content visibility */
+    [data-lang="es"] { display: none; }
+    html[lang="es"] [data-lang="en"] { display: none; }
+    html[lang="es"] [data-lang="es"] { display: block; }
+
+    /* Showcase Section */
+    .showcase-section {
+      background: var(--cream);
+      padding-top: 32px;
+      padding-bottom: 40px;
+    }
+
+    .showcase-section[hidden] { display: none; }
+
+    .showcase-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .section__lede {
+      text-align: center;
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-medium);
+      margin-bottom: 24px;
+    }
+
+    /* auto-fit, so two cards fill the row rather than leaving a gap where a
+       third would go. */
+    .showcase__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .showcase__grid { grid-template-columns: 1fr; }
+    }
+
+    .showcase-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-white);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .showcase-card__thumb {
+      aspect-ratio: 2 / 1;
+      background: var(--bg-light);
+    }
+
+    .showcase-card__thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .showcase-card__body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 24px;
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .showcase-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .showcase-card__byline {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .showcase-card p {
+      font-size: 15px;
+      color: var(--text-medium);
+      font-weight: 300;
+    }
+
+    /* The card is a teaser: the gallery carries the whole description. */
+    .showcase-card__body > p:last-of-type {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .showcase-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .showcase-chip {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      background: rgba(136, 60, 54, 0.08);
+      border-radius: 50px;
+      padding: 4px 10px;
+    }
+
+    .showcase-card__footer {
+      margin-top: auto;
+      padding-top: 18px;
+    }
+
+    .showcase-card__link {
+      color: var(--terracotta);
+      text-decoration: none;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .showcase-card__link:hover { text-decoration: underline; }
+
+    .showcase-card--invite {
+      background: transparent;
+      border: 1px dashed rgba(136, 60, 54, 0.35);
+      justify-content: center;
+      padding: 24px;
+    }
+
+    /* The invitation has no card to match in height, so its button sits under
+       its own text rather than at the foot of the row. */
+    .showcase-card--invite .showcase-card__footer { margin-top: 0; }
+
+    .showcase-card--invite:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .showcase__after {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    /* The language rules above set a shown element to display: block, which
+       would stretch a chip or a pill button across its card. */
+    html[lang="es"] .showcase-card__tags [data-lang="es"],
+    html[lang="es"] .showcase-card__footer [data-lang="es"],
+    html[lang="es"] .showcase__after [data-lang="es"] { display: inline-block; }
+
+    /* Same rule, same problem: a button carrying a mark has to keep the flex
+       box that puts the mark beside the text rather than on its baseline. */
+    html[lang="es"] .btn--icon[data-lang="es"] { display: inline-flex; }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 1;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      background: var(--terracotta);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--dark-grey);
+      transform: translateY(-3px);
+    }
+
+    .back-to-top svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      html {
+        scroll-snap-type: none;
+      }
+
+      .section {
+        min-height: auto;
+        padding: 60px 20px;
+      }
+
+      .sponsor-panel {
+        min-height: auto;
+        padding: 30px 20px;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/homepage-demo/lenis.css">
+  <link rel="stylesheet" href="/assets/homepage-demo/homepage-demo.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="es">Saltar al contenido</span></a>
+  <main id="main-content">
+  {{ partial "landing-body.html" . }}
+  </main>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" data-label-en="Back to top" data-label-es="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <footer class="landing-footer">
+    <p data-lang="en">Telar is open source software released under the MIT License. It is developed by Adelaida Ávila, Ana María Cárdenas Gasca, Juan Cobo Betancourt, Natalie Cobo, Santiago Muñoz, and students and scholars at the <a href="https://ampl.clair.ucsb.edu">UCSB Archives, Memory, and Preservation Lab</a>, the UT Archives, Mapping, and Pedagogy Lab, and <a href="https://neogranadina.org/en">Neogranadina</a>. <a href="https://github.com/UCSB-AMPLab/telar">View on GitHub</a></p>
+    <p data-lang="es">Telar es software de código abierto publicado bajo la licencia MIT. Lo desarrollan Adelaida Ávila, Ana María Cárdenas Gasca, Juan Cobo Betancourt, Natalie Cobo, Santiago Muñoz y estudiantes e investigadores del <a href="https://ampl.clair.ucsb.edu">UCSB Archives, Memory, and Preservation Lab</a>, del UT Archives, Mapping, and Pedagogy Lab y de <a href="https://neogranadina.org">Neogranadina</a>. <a href="https://github.com/UCSB-AMPLab/telar">Ver en GitHub</a></p>
+  </footer>
+
+  <script id="site-copy" type="application/json">{{ hugo.Data.site_copy | jsonify | safeJS }}</script>
+  <script>
+    function setLang(lang) {
+      const targetPath = lang === 'es' ? '/es/' : '/';
+      if (location.pathname !== targetPath) {
+        try { localStorage.setItem('telar-lang', lang); } catch (_) {}
+        location.assign(targetPath + location.hash);
+        return;
+      }
+      if (lang !== 'en' && lang !== 'es') lang = 'en';
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-label-en][data-label-es]').forEach(el => {
+        el.setAttribute('aria-label', el.getAttribute('data-label-' + lang));
+      });
+      const copy = JSON.parse(document.getElementById('site-copy').textContent)[lang];
+      document.querySelectorAll('meta[name="description"],meta[property="og:description"],meta[name="twitter:description"]').forEach(el => el.content = copy.description);
+      document.querySelectorAll('meta[property="og:locale"]').forEach(el => el.content = lang);
+      document.querySelectorAll('script[type="application/ld+json"]').forEach(el => {
+        const data = JSON.parse(el.textContent);
+        data.description = copy.description;
+        data.inLanguage = lang;
+        el.textContent = JSON.stringify(data);
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').setAttribute('aria-pressed', String(lang === 'en'));
+      document.getElementById('btn-es').setAttribute('aria-pressed', String(lang === 'es'));
+      try { localStorage.setItem('telar-lang', lang); } catch (_) {}
+      const languageUrl = new URL(location.href);
+      if (languageUrl.searchParams.has('lang')) {
+        languageUrl.searchParams.delete('lang');
+        history.replaceState(null, '', languageUrl);
+      }
+      document.dispatchEvent(new CustomEvent('telar:languagechange',{detail:{language:lang}}));
+      requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
+    }
+
+    // Existing query links forward to each language's canonical homepage.
+    (function() {
+      const requested = new URLSearchParams(location.search).get('lang');
+      setLang(requested === 'en' || requested === 'es' ? requested : document.documentElement.lang);
+    })();
+
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      if (window.telarHomepage) window.telarHomepage.backToTop(); else window.scrollTo(0,0);
+    });
+  </script>
+  <script src="/assets/homepage-demo/lenis.min.js"></script>
+  <script src="/assets/homepage-demo/scroll-motion.js"></script>
+  <script src="/assets/homepage-demo/homepage-demo.js"></script>
+</body>
+</html>
