@@ -353,7 +353,10 @@
 }
 
 .section-content .sc-thumb {
-  aspect-ratio: 1;
+  position: relative;
+  flex: none;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
   background: #F5EDE0;
   display: flex;
   align-items: center;
@@ -363,12 +366,17 @@
   color: #6B7280;
 }
 
-/* A card with a picture: the site's own image, cropped to the square well. */
+/* Images fill a fixed frame without their intrinsic dimensions changing it. */
 .section-content .sc-thumb img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  margin: 0;
+  border-radius: 0;
 }
 
 .section-content .sc-card__body {
