@@ -711,7 +711,7 @@
     }
   </style>
   <link rel="stylesheet" href="/assets/homepage-demo/lenis.css">
-  <link rel="stylesheet" href="/assets/homepage-demo/homepage-demo.css">
+  <link rel="stylesheet" href="/assets/homepage-demo/homepage-demo.css?v={{ printf "%.12s" (crypto.SHA256 (os.ReadFile "static/assets/homepage-demo/homepage-demo.css")) }}">
 </head>
 <body>
 
@@ -803,6 +803,6 @@
   </script>
   <script src="/assets/homepage-demo/lenis.min.js"></script>
   <script src="/assets/homepage-demo/scroll-motion.js"></script>
-  <script src="/assets/homepage-demo/homepage-demo.js"></script>
+  <script src="/assets/homepage-demo/homepage-demo.js?v={{ printf "%.12s" (crypto.SHA256 (os.ReadFile "static/assets/homepage-demo/homepage-demo.js")) }}"></script>
 </body>
 </html>

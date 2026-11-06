@@ -111,11 +111,15 @@
   window.addEventListener('resize',manualInput);window.addEventListener('resize',()=>lenis.resize());
   motion.addEventListener('change',preference);small.addEventListener('change',preference);
 
+  const intro=document.querySelector('[data-telar-intro]');
+  const introStage=intro?.querySelector('.telar-intro-stage'),introCopy=intro?.querySelector('[data-intro-copy]');
+  intro?.classList.add('is-enhanced');
   const root=document.querySelector('[data-telar-demo]'),frame=root.querySelector('[data-demo-frame]');
   const embed=root.querySelector('[data-demo-embed]'),poster=root.querySelector('[data-demo-poster]');
   const error=root.querySelector('[data-demo-error]'),errorText=root.querySelector('[data-demo-error-text]'),errorLink=root.querySelector('[data-demo-error-link]');
   const transcript=root.querySelector('[data-demo-transcript]');
   window.addEventListener('scroll',()=>{
+    updateIntro();
     // Cross-origin iframe wheel events do not bubble. Observe their native movement
     // and hand the gesture to the same step controller, keeping Vimeo clickable.
     if(!embed.querySelector('iframe')?.matches(':hover')){
@@ -133,6 +137,18 @@
   },{passive:true});
   const languages=JSON.parse(document.getElementById('telar-demo-config').textContent);
   let sdkPromise=null,player=null,iframe=null,ready=false,playing=false,inView=false,userPaused=false,pauseExpected=false,generation=0,timeout=0,data;
+  function updateIntro(){
+    if(!intro)return;
+    const showVideo=(scrollY-layoutTop(intro))/Math.max(1,introStage.offsetHeight)>=.15;
+    const mode=showVideo?'video':'copy';if(intro.dataset.introState===mode)return;
+    intro.dataset.introState=mode;intro.classList.toggle('is-video',showVideo);
+    introCopy.inert=showVideo;introCopy.setAttribute('aria-hidden',String(showVideo));
+    root.inert=!showVideo;root.setAttribute('aria-hidden',String(!showVideo));
+    if(showVideo&&introCopy.contains(document.activeElement))focusTarget(root.querySelector('h2'));
+    else if(!showVideo&&root.contains(document.activeElement))focusTarget(introCopy.querySelector('h2'));
+    syncPlayback();
+  }
+  function videoRevealed(){return !intro||intro.dataset.introState==='video'}
   function sdk(){
     if(window.Vimeo?.Player)return Promise.resolve(window.Vimeo);
     if(sdkPromise)return sdkPromise;
@@ -152,7 +168,7 @@
   }
   function syncPlayback(){
     if(!ready||!player)return;
-    if(!inView||document.hidden){suspend();return}
+    if(!inView||!videoRevealed()||document.hidden){suspend();return}
     if(!motion.matches&&!userPaused)player.play().catch(()=>{root.dataset.videoState='paused'});
   }
   function loadPlayer(){
@@ -170,7 +186,7 @@
       current.on('play',()=>{
         if(token!==generation)return;
         playing=true;userPaused=false;root.dataset.videoState='playing';
-        if(!inView||document.hidden)suspend();
+        if(!inView||!videoRevealed()||document.hidden)suspend();
       });
       current.on('pause',()=>{
         if(token!==generation)return;
@@ -209,7 +225,20 @@
     syncPlayback();
   },{threshold:[0,.1]});
   document.addEventListener('visibilitychange',syncPlayback);
-  document.addEventListener('telar:languagechange',language);language();visible.observe(frame);
+  document.addEventListener('telar:languagechange',language);language();updateIntro();visible.observe(frame);
+  function restoreIntroLink(){
+    if(!intro||!['#about','#demo'].includes(location.hash))return;
+    stops();const position=layoutTop(document.querySelector(location.hash));
+    document.documentElement.classList.add('is-stepping');
+    lenis.scrollTo(position,{immediate:true});travel.reset(position);pendingTarget=null;
+    document.documentElement.classList.remove('is-stepping');updateIntro();
+  }
+  let introInput=false;
+  for(const type of ['wheel','keydown','touchstart','pointerdown'])window.addEventListener(type,()=>{introInput=true},{once:true,passive:true});
+  requestAnimationFrame(()=>{intro?.classList.add('intro-ready');restoreIntroLink()});
+  window.addEventListener('hashchange',restoreIntroLink);
+  window.addEventListener('load',()=>{if(!introInput)restoreIntroLink()});
+  window.addEventListener('resize',updateIntro);
   window.addEventListener('pagehide',event=>{
     suspend();if(event.persisted)return;
     clearTimeout(timeout);visible.disconnect();cancelAnimationFrame(raf);
