@@ -20,7 +20,18 @@ a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid var(
 .hero__utility a{color:var(--cream);font-size:15px;text-decoration:underline;text-underline-offset:4px;opacity:.9}
 .hero__utility a:hover{opacity:1}
 .hero__scroll{bottom:20px}
-.telar-about-section{background:var(--demo-background);min-height:100svh;padding:60px 24px}
+.telar-about-section{display:block;background:var(--demo-background);padding:0}
+.telar-intro-copy{padding:60px 24px}
+.telar-about-section.is-enhanced{height:200svh;min-height:200svh;padding:0}
+.is-enhanced .telar-intro-stage{position:sticky;top:0;height:100svh}
+.is-enhanced .telar-intro-copy,.is-enhanced .telar-demo-section{position:absolute;inset:0;transition:opacity 250ms ease;}
+.is-enhanced:not(.intro-ready) .telar-intro-copy,.is-enhanced:not(.intro-ready) .telar-demo-section{transition:none}
+.is-enhanced .telar-intro-copy{display:flex;align-items:center;z-index:2}
+.is-enhanced .telar-demo-section{min-height:0;opacity:0;pointer-events:none;z-index:1}
+.is-enhanced.is-video .telar-intro-copy{opacity:0;pointer-events:none;z-index:1}
+.is-enhanced.is-video .telar-demo-section{opacity:1;pointer-events:auto;z-index:2}
+.telar-intro-demo-stop{position:absolute;width:1px;height:1px;pointer-events:none}
+.is-enhanced .telar-intro-demo-stop{top:50%;left:0}
 .telar-demo-section{background:var(--demo-background);min-height:100svh;padding:24px}
 /* Fit the complete film inside one viewport, including on short desktop windows. */
 .telar-demo-layout{width:100%;max-width:min(1600px,calc((100svh - 48px) * 16 / 9));margin:auto}
@@ -55,7 +66,7 @@ a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid var(
 .landing-footer a:hover{color:var(--gold)}
 @media(max-width:900px){
  .telar-demo-section{min-height:auto}
- .telar-about-section{min-height:auto;padding:64px 24px}
+ .telar-intro-copy{padding:64px 24px}
  .telar-demo-media{width:100%}
 }
 @media(max-width:600px){
@@ -63,11 +74,12 @@ a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid var(
  .hero__lang-toggle button{min-height:44px}
  .hero__utility{gap:4px 18px}
  .telar-demo-section{padding:24px 16px}
- .telar-about-section{padding:48px 20px}
+ .telar-intro-copy{padding:48px 20px}
  .cta-section{padding:56px 20px}
  .features__grid{gap:16px}
 }
 @media(prefers-reduced-motion:reduce){
  .hero__scroll{animation:none}
+ .is-enhanced .telar-intro-copy,.is-enhanced .telar-demo-section{transition:none}
  .fade-in{opacity:1;transform:none;transition:none}
 }

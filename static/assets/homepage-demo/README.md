@@ -1,6 +1,9 @@
 # Telar homepage video
 The homepage uses normal document flow and the supplied Spanish/English Vimeo
-embeds. The definition and viewport-fitted film occupy separate scroll steps. There is no native scroll-film renderer or local MP4 fetch.
+embeds. The definition and viewport-fitted film share a sticky stage: the next scroll
+step fades out the definition and reveals the video in place; the previous step
+restores the definition. Hidden layers are inert and hidden from assistive
+technology, and the video pauses while the definition is showing. There is no native scroll-film renderer or local MP4 fetch.
 
 Only the active-language poster is loaded initially. IntersectionObserver creates
 the iframe and loads Vimeo's SDK as the film enters view. Playback is muted and
