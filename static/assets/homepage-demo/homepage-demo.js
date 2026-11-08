@@ -62,7 +62,16 @@
       if(!section.hidden){
         points.push(top);
         // Tall content gets reading stops too, so stepping never skips its lower rows.
-        if(overflow>64){
+        if(section.matches('[data-telar-intro].is-enhanced')){
+          // Reveal the full-width film first, then expose its lower edge when
+          // a short viewport cannot hold the complete frame at once.
+          offsets.push(Math.min(innerHeight,overflow));
+          const remaining=overflow-innerHeight;
+          if(remaining>64){
+            const parts=Math.ceil(remaining/innerHeight);
+            for(let i=1;i<=parts;i++)offsets.push(innerHeight+remaining*i/parts);
+          }
+        }else if(overflow>64){
           const parts=Math.ceil(section.offsetHeight/innerHeight)-1;
           for(let i=1;i<=parts;i++)offsets.push(overflow*i/parts);
         }
@@ -112,7 +121,7 @@
   motion.addEventListener('change',preference);small.addEventListener('change',preference);
 
   const intro=document.querySelector('[data-telar-intro]');
-  const introStage=intro?.querySelector('.telar-intro-stage'),introCopy=intro?.querySelector('[data-intro-copy]');
+  const introCopy=intro?.querySelector('[data-intro-copy]');
   intro?.classList.add('is-enhanced');
   const root=document.querySelector('[data-telar-demo]'),frame=root.querySelector('[data-demo-frame]');
   const embed=root.querySelector('[data-demo-embed]'),poster=root.querySelector('[data-demo-poster]');
@@ -139,7 +148,7 @@
   let sdkPromise=null,player=null,iframe=null,ready=false,playing=false,inView=false,userPaused=false,pauseExpected=false,generation=0,timeout=0,data;
   function updateIntro(){
     if(!intro)return;
-    const showVideo=(scrollY-layoutTop(intro))/Math.max(1,introStage.offsetHeight)>=.15;
+    const showVideo=(scrollY-layoutTop(intro))/Math.max(1,innerHeight)>=.15;
     const mode=showVideo?'video':'copy';if(intro.dataset.introState===mode)return;
     intro.dataset.introState=mode;intro.classList.toggle('is-video',showVideo);
     introCopy.inert=showVideo;introCopy.setAttribute('aria-hidden',String(showVideo));
