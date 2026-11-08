@@ -20,37 +20,37 @@ a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid var(
 .hero__utility a{color:var(--cream);font-size:15px;text-decoration:underline;text-underline-offset:4px;opacity:.9}
 .hero__utility a:hover{opacity:1}
 .hero__scroll{bottom:20px}
-.telar-about-section{display:block;background:var(--demo-background);padding:0}
+.telar-about-section{--intro-stage-height:max(100svh,56.25vw);display:block;background:var(--demo-background);padding:0}
 .telar-intro-copy{padding:60px 24px}
-.telar-about-section.is-enhanced{height:200svh;min-height:200svh;padding:0}
-.is-enhanced .telar-intro-stage{position:sticky;top:0;height:100svh}
+.telar-about-section.is-enhanced{height:calc(100svh + var(--intro-stage-height));min-height:calc(100svh + var(--intro-stage-height));padding:0}
+.is-enhanced .telar-intro-stage{position:sticky;top:0;height:var(--intro-stage-height)}
 .is-enhanced .telar-intro-copy,.is-enhanced .telar-demo-section{position:absolute;inset:0;transition:opacity 250ms ease;}
 .is-enhanced:not(.intro-ready) .telar-intro-copy,.is-enhanced:not(.intro-ready) .telar-demo-section{transition:none}
-.is-enhanced .telar-intro-copy{display:flex;align-items:center;z-index:2}
+.is-enhanced .telar-intro-copy{height:100svh;bottom:auto;display:flex;align-items:center;z-index:2}
 .is-enhanced .telar-demo-section{min-height:0;opacity:0;pointer-events:none;z-index:1}
 .is-enhanced.is-video .telar-intro-copy{opacity:0;pointer-events:none;z-index:1}
 .is-enhanced.is-video .telar-demo-section{opacity:1;pointer-events:auto;z-index:2}
 .telar-intro-demo-stop{position:absolute;width:1px;height:1px;pointer-events:none}
-.is-enhanced .telar-intro-demo-stop{top:50%;left:0}
-.telar-demo-section{background:var(--demo-background);min-height:100svh;padding:24px}
-/* Fit the complete film inside one viewport, including on short desktop windows. */
-.telar-demo-layout{width:100%;max-width:min(1600px,calc((100svh - 48px) * 16 / 9));margin:auto}
+.is-enhanced .telar-intro-demo-stop{top:100svh;left:0}
+.telar-demo-section{background:var(--demo-background);min-height:100svh;padding:0}
+/* The film spans the page; short, wide windows can scroll to its lower edge. */
+.telar-demo-layout{width:100%;max-width:none;margin:auto}
 .telar-about-copy{background:transparent;box-shadow:none;border:0;padding:0;width:100%;max-width:900px;margin:0 auto}
 .telar-about-copy h2{margin-bottom:24px;text-align:center}
 .telar-about-copy p{font-weight:400;line-height:1.65;margin-bottom:0;font-size:20px}
 .telar-demo-media{margin:0;min-width:0}
 /* The Vimeo exports have 109px of blank padding above and below the
    1920x1080 film. Crop that padding without cropping any film content.
-   The small brightness adjustment plus darken blend brings both encoded
-   pale mattes (#f2f3f5 and #f4f5f7) onto the section's single background. */
+   The brightness adjustment lifts the darker decoded matte; darken blending
+   caps the varying pale mattes at the section's single background. */
 .telar-demo-player{position:relative;aspect-ratio:16/9;width:100%;background:var(--demo-background);overflow:hidden;isolation:isolate}
 .telar-demo-poster,.telar-demo-embed,.telar-demo-embed iframe{position:absolute;inset:0;width:100%;height:100%}
-.telar-demo-poster{display:block;object-fit:cover;filter:brightness(1.01);mix-blend-mode:darken}
+.telar-demo-poster{display:block;object-fit:cover;filter:brightness(1.03);mix-blend-mode:darken}
 .telar-demo-embed{mix-blend-mode:darken}
-.telar-demo-embed iframe{display:block;border:0;height:calc(100% * 1298 / 1080);top:50%;transform:translateY(-50%);filter:brightness(1.01)}
+.telar-demo-embed iframe{display:block;border:0;height:calc(100% * 1298 / 1080);top:50%;transform:translateY(-50%);filter:brightness(1.03)}
 .telar-demo-section:not(.has-player) .telar-demo-embed{opacity:0}
 .telar-demo-section.has-player .telar-demo-poster{visibility:hidden}
-.telar-demo-error{font-size:15px;margin:12px 0 0;color:var(--text-medium)}
+.telar-demo-error{position:absolute;top:12px;left:16px;right:16px;z-index:3;font-size:15px;margin:0;padding:8px 12px;color:var(--text-medium);background:var(--demo-background)}
 .features{background:var(--cream)}
 .showcase-section{background:var(--lavender)}
 .feature-card,.showcase-card:not(.showcase-card--invite){background:white}
@@ -73,7 +73,6 @@ a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid var(
  .hero{padding:24px 20px 68px}
  .hero__lang-toggle button{min-height:44px}
  .hero__utility{gap:4px 18px}
- .telar-demo-section{padding:24px 16px}
  .telar-intro-copy{padding:48px 20px}
  .cta-section{padding:56px 20px}
  .features__grid{gap:16px}
